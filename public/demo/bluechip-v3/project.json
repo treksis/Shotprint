@@ -890,223 +890,288 @@
  "edges": [
   {
    "from": "tpl",
-   "to": "fill"
+   "to": "fill",
+   "role": "template"
   },
   {
    "from": "product",
-   "to": "fill"
+   "to": "fill",
+   "role": "product lock"
   },
   {
    "from": "cast",
-   "to": "fill"
+   "to": "fill",
+   "role": "presenter"
   },
   {
    "from": "fill",
-   "to": "plate_est"
+   "to": "plate_est",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_cam_a"
+   "to": "plate_cam_a",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_cam_b"
+   "to": "plate_cam_b",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_cam_c"
+   "to": "plate_cam_c",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_product_hero"
+   "to": "plate_product_hero",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_product_bench"
+   "to": "plate_product_bench",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_assy_profile"
+   "to": "plate_assy_profile",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_assy_macro"
+   "to": "plate_assy_macro",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_cam_d"
+   "to": "plate_cam_d",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_field"
+   "to": "plate_field",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_etch"
+   "to": "plate_etch",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_etch_etch_sfx"
+   "to": "plate_etch_etch_sfx",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_her_a"
+   "to": "plate_her_a",
+   "role": "shot spec"
   },
   {
    "from": "fill",
-   "to": "plate_her_b"
+   "to": "plate_her_b",
+   "role": "shot spec"
   },
   {
    "from": "plate_cam_a",
-   "to": "take_l1"
+   "to": "take_l1",
+   "role": "setup plate"
   },
   {
    "from": "plate_cam_b",
-   "to": "take_l2"
+   "to": "take_l2",
+   "role": "setup plate"
   },
   {
    "from": "plate_cam_c",
-   "to": "take_l3"
+   "to": "take_l3",
+   "role": "setup plate"
   },
   {
    "from": "plate_cam_a",
-   "to": "take_l4"
+   "to": "take_l4",
+   "role": "setup plate"
   },
   {
    "from": "plate_cam_d",
-   "to": "take_l5"
+   "to": "take_l5",
+   "role": "setup plate"
   },
   {
    "from": "plate_cam_c",
-   "to": "take_l6"
+   "to": "take_l6",
+   "role": "setup plate"
   },
   {
    "from": "plate_est",
-   "to": "clip_est"
+   "to": "clip_est",
+   "role": "first + last frame"
   },
   {
    "from": "plate_cam_a",
-   "to": "clip_l1p"
+   "to": "clip_l1p",
+   "role": "first + last frame"
   },
   {
    "from": "take_l1",
-   "to": "clip_l1p"
+   "to": "clip_l1p",
+   "role": "guide audio"
   },
   {
    "from": "plate_cam_b",
-   "to": "clip_l2"
+   "to": "clip_l2",
+   "role": "reference"
   },
   {
    "from": "plate_cam_c",
-   "to": "clip_l3p"
+   "to": "clip_l3p",
+   "role": "first + last frame"
   },
   {
    "from": "take_l3",
-   "to": "clip_l3p"
+   "to": "clip_l3p",
+   "role": "guide audio"
   },
   {
    "from": "plate_cam_a",
-   "to": "clip_l4p"
+   "to": "clip_l4p",
+   "role": "first + last frame"
   },
   {
    "from": "take_l4",
-   "to": "clip_l4p"
+   "to": "clip_l4p",
+   "role": "guide audio"
   },
   {
    "from": "plate_product_hero",
-   "to": "clip_hero"
+   "to": "clip_hero",
+   "role": "first + last frame"
   },
   {
    "from": "plate_product_bench",
-   "to": "clip_bench"
+   "to": "clip_bench",
+   "role": "first + last frame"
   },
   {
    "from": "plate_assy_profile",
-   "to": "clip_aprof"
+   "to": "clip_aprof",
+   "role": "first + last frame"
   },
   {
    "from": "plate_assy_macro",
-   "to": "clip_amacro"
+   "to": "clip_amacro",
+   "role": "first + last frame"
   },
   {
    "from": "plate_cam_d",
-   "to": "clip_l5"
+   "to": "clip_l5",
+   "role": "reference"
   },
   {
    "from": "plate_cam_c",
-   "to": "clip_l6"
+   "to": "clip_l6",
+   "role": "reference"
   },
   {
    "from": "plate_field",
-   "to": "clip_field"
+   "to": "clip_field",
+   "role": "first + last frame"
   },
   {
    "from": "plate_etch",
-   "to": "clip_etch"
+   "to": "clip_etch",
+   "role": "first + last frame"
   },
   {
    "from": "plate_etch_etch_sfx",
-   "to": "clip_etch_sfx"
+   "to": "clip_etch_sfx",
+   "role": "first + last frame"
   },
   {
    "from": "clip_est",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l1p",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l2",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l3p",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l4p",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_hero",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_bench",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_aprof",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_amacro",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l5",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_l6",
-   "to": "cut"
+   "to": "cut",
+   "role": "voice-over"
   },
   {
    "from": "clip_field",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_etch",
-   "to": "cut"
+   "to": "cut",
+   "role": "shot"
   },
   {
    "from": "clip_etch_sfx",
-   "to": "cut"
+   "to": "cut",
+   "role": "voice-over"
+  },
+  {
+   "from": "plate_her_a",
+   "to": "cut",
+   "role": "still"
+  },
+  {
+   "from": "plate_her_b",
+   "to": "cut",
+   "role": "still"
   },
   {
    "from": "cut",
-   "to": "final"
+   "to": "final",
+   "role": "assemble"
   }
  ],
  "run": [

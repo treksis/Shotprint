@@ -1,5 +1,4 @@
-import React from 'react';
-import type { ExecutionMode } from '../../shared/types';
+import type { Route } from '../App';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Separator } from '@/components/ui/separator';
 import {
@@ -10,58 +9,39 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { Badge } from '@/components/ui/badge';
 
 export interface NavbarProps {
-  currentView: 'landing' | 'vault' | 'studio';
-  onNavigate: (view: 'landing' | 'vault' | 'studio') => void;
-  onClearProject?: () => void;
+  route: Route;
+  onNavigate: (route: Route) => void;
+  projectName?: string;
   isJudgeMode: boolean;
   onRequestLive: () => void;
   onExitLive: () => void;
-  activeProjectName?: string;
-  executionMode?: ExecutionMode;
-  onChangeExecutionMode?: (mode: ExecutionMode) => void;
 }
 
-export function Navbar({
-  currentView,
-  onNavigate,
-  onClearProject,
-  isJudgeMode,
-  onRequestLive,
-  onExitLive,
-  activeProjectName,
-  executionMode = 'api',
-  onChangeExecutionMode,
-}: NavbarProps) {
+export function Navbar({ route, onNavigate, projectName, isJudgeMode, onRequestLive, onExitLive }: NavbarProps) {
+  const section = route.view === 'templates' ? 'Templates' : 'Studio';
   return (
     <header className="flex h-12 shrink-0 items-center justify-between gap-2 px-4">
-      <div className="flex items-center gap-2 min-w-0">
+      <div className="flex min-w-0 items-center gap-2">
         <SidebarTrigger className="-ml-1" />
         <Separator orientation="vertical" className="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink
-                onClick={() => {
-                  if (currentView === 'studio') {
-                    onClearProject?.();
-                  }
-                  onNavigate(currentView);
-                }}
-              >
-                {currentView === 'studio' ? 'Studio' : 'Templates'}
-              </BreadcrumbLink>
+              {route.view === 'project' ? (
+                <BreadcrumbLink className="cursor-pointer" onClick={() => onNavigate({ view: 'home' })}>
+                  {section}
+                </BreadcrumbLink>
+              ) : (
+                <BreadcrumbPage>{section}</BreadcrumbPage>
+              )}
             </BreadcrumbItem>
-
-            {activeProjectName && currentView === 'studio' && (
+            {route.view === 'project' && (
               <>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="truncate max-w-[240px]">
-                    {activeProjectName}
-                  </BreadcrumbPage>
+                  <BreadcrumbPage className="max-w-[320px] truncate">{projectName ?? 'Project'}</BreadcrumbPage>
                 </BreadcrumbItem>
               </>
             )}
@@ -69,58 +49,25 @@ export function Navbar({
         </Breadcrumb>
       </div>
 
-      <div className="flex items-center gap-3 shrink-0">
-        {currentView === 'studio' && onChangeExecutionMode && (
-          <div
-            role="group"
-            aria-label="Execution mode"
-            className="inline-flex items-center rounded-[8px] bg-[#f4f4f2] p-0.5"
-          >
-            <button
-              type="button"
-              onClick={() => onChangeExecutionMode('api')}
-              className={`h-7 px-2.5 rounded-[6px] text-[12px] font-medium cursor-pointer transition-colors ${
-                executionMode === 'api'
-                  ? 'bg-[#111111] text-[#ffffff]'
-                  : 'text-[#6b6b6b] hover:text-[#111111]'
-              }`}
-            >
-              1) API-based
-            </button>
-            <button
-              type="button"
-              onClick={() => onChangeExecutionMode('agent')}
-              className={`h-7 px-2.5 rounded-[6px] text-[12px] font-medium cursor-pointer transition-colors ${
-                executionMode === 'agent'
-                  ? 'bg-[#111111] text-[#ffffff]'
-                  : 'text-[#6b6b6b] hover:text-[#111111]'
-              }`}
-            >
-              2) Agent-based
-            </button>
-          </div>
-        )}
-
-        {isJudgeMode ? (
-          <button
-            type="button"
-            onClick={onExitLive}
-            title="Click to switch back to Demo"
-            className="cursor-pointer"
-          >
-            <Badge variant="success">Live</Badge>
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={onRequestLive}
-            title="Click to enter Live mode"
-            className="cursor-pointer"
-          >
-            <Badge variant="secondary">Demo</Badge>
-          </button>
-        )}
-      </div>
+      {isJudgeMode ? (
+        <button
+          type="button"
+          onClick={onExitLive}
+          title="Switch back to demo mode"
+          className="inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-[6px] bg-[var(--pill-positive-bg)] px-2.5 text-[12px] font-medium text-[var(--pill-positive-ink)]"
+        >
+          <span aria-hidden="true" className="size-1.5 rounded-full bg-[var(--positive)]" />
+          Live
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={onRequestLive}
+          className="inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-[6px] bg-muted px-2.5 text-[12px] font-medium text-muted-foreground hover:text-foreground"
+        >
+          Demo · Go live
+        </button>
+      )}
     </header>
   );
 }

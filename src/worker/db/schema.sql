@@ -64,3 +64,18 @@ CREATE INDEX IF NOT EXISTS idx_templates_is_preset ON templates(is_preset);
 CREATE INDEX IF NOT EXISTS idx_projects_template_id ON projects(template_id);
 CREATE INDEX IF NOT EXISTS idx_project_scenes_project_id ON project_scenes(project_id, scene_index);
 CREATE INDEX IF NOT EXISTS idx_ai_cache_provider ON ai_cache(provider);
+
+-- Studio (agent chat + production canvas). Phase 1 keeps the canvas and chat as one JSON document
+-- per project; normalised items/versions/edges tables follow when the agent writes server-side.
+CREATE TABLE IF NOT EXISTS studio_projects (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  template_id TEXT,
+  prompt TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'draft',
+  thumbnail TEXT,
+  state_json TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_studio_projects_updated ON studio_projects (updated_at DESC);

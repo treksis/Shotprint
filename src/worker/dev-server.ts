@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { serve } from '@hono/node-server';
 import { app } from './index';
+import { memoryStore, setStudioStore } from './studio/store';
+import type { StudioProject } from '../shared/studio';
 
 // Load .env and .dev.vars into process.env for local development
 for (const fileName of ['.env', '.dev.vars']) {
@@ -30,6 +32,21 @@ for (const fileName of ['.env', '.dev.vars']) {
     // Ignore env file load error
   }
 }
+
+// Studio projects persist to .data/studio-projects.json in node dev (D1 in Cloudflare).
+const dataFile = path.resolve(process.cwd(), '.data/studio-projects.json');
+let saved: StudioProject[] = [];
+try {
+  saved = JSON.parse(fs.readFileSync(dataFile, 'utf-8'));
+} catch {
+  saved = [];
+}
+setStudioStore(
+  memoryStore(saved, (all) => {
+    fs.mkdirSync(path.dirname(dataFile), { recursive: true });
+    fs.writeFileSync(dataFile, JSON.stringify(all));
+  })
+);
 
 const port = Number(process.env.PORT || 8788);
 

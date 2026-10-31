@@ -6,3 +6,4 @@ lab/
 .dev.vars
 .wrangler/
 .DS_Store
+.data/

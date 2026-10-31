@@ -87,7 +87,7 @@ add("cast", "inputs", "cast", "Presenter + voice", sub="stand-in founder · timb
 # Fill
 add("fill", "fill", "fill", "Filled template", sub=f"{len(lines)} lines · {len(shot_rows)} shots",
     meta={"lines": lines, "shots": [{"n": int(n), "t": t, "setup": s.strip(), "picture": p.strip()} for n, t, s, p in shot_rows]})
-edges += [("tpl", "fill"), ("product", "fill"), ("cast", "fill")]
+edges += [("tpl", "fill", "template"), ("product", "fill", "product lock"), ("cast", "fill", "presenter")]
 
 # Plates: one card per setup (start + end)
 seen = {}
@@ -100,12 +100,12 @@ for take, p in plates.items():
     add("plate", "plates", pid, p["setup"], sub="start → end" if p.get("end") else "start",
         media={"type": "image", "src": url(jpg(ARM / p["plate"], OUT / f"plates/{pid}.jpg"))},
         meta={"end": url(jpg(ARM / p["end"], OUT / f"plates/{pid}_end.jpg")) if p.get("end") and (ARM / p["end"]).exists() else None})
-    edges.append(("fill", pid))
+    edges.append(("fill", pid, "shot spec"))
 for still in [s for s in cut["picture"] if s.get("still", "").startswith("plates/")]:
     pid = "plate_" + pathlib.Path(still["still"]).stem
     add("plate", "plates", pid, "HERITAGE", sub="archive still · no render",
         media={"type": "image", "src": url(jpg(ARM / still["still"], OUT / f"plates/{pid}.jpg"))})
-    edges.append(("fill", pid))
+    edges.append(("fill", pid, "shot spec"))
 
 # Takes (Ref2V voice) and clips
 take_ids = {}
@@ -120,7 +120,7 @@ for jid, j in jobs.items():
                   meta={"mode": "Ref2V", "line": lines.get(line, "")})
         take_ids[line] = tid
         setup_plate = seen.get(plates.get(jid, plates.get(jid + "p", {})).get("plate", ""), None)
-        if setup_plate: edges.append((setup_plate, tid))
+        if setup_plate: edges.append((setup_plate, tid, "setup plate"))
 
 used = {s.get("take") for s in cut["picture"]} | {s.get("take") for s in cut.get("sound", [])}
 clip_ids = {}
@@ -137,10 +137,11 @@ for name, tk in cut["takes"].items():
               meta={"mode": mode, "duration": round(dur(f), 2), "at": tk["at"],
                     "effect": "lean-in punch-in" if "_fx" in tk["file"] else None})
     clip_ids[name] = cid
-    if p.get("plate") in seen: edges.append((seen[p["plate"]], cid))
+    if p.get("plate") in seen:
+        edges.append((seen[p["plate"]], cid, "first + last frame" if j.get("last_frame") else "reference"))
     if j.get("guide_audio"):
         line = name.upper()[:2]
-        if line in take_ids: edges.append((take_ids[line], cid))
+        if line in take_ids: edges.append((take_ids[line], cid, "guide audio"))
 
 # Cut + final
 shots = []
@@ -149,7 +150,8 @@ for s in cut["picture"]:
     shots.append({"t": s["t"], "item": clip_ids.get(src) or ("plate_" + pathlib.Path(s["still"]).stem if s.get("still", "").startswith("plates/") else None),
                   "label": plates.get(src, {}).get("setup", "END CARD" if "endcard" in s.get("still", "") else "HERITAGE")})
 add("cut", "cut", "cut", "Cut list", sub=f"{len(shots)} shots · 30.0 s · takes placed once", meta={"shots": shots})
-edges += [(c, "cut") for c in clip_ids.values()]
+edges += [(c, "cut", "shot" if any(s.get("take") == n for s in cut["picture"]) else "voice-over") for n, c in clip_ids.items()]
+edges += [("plate_" + pathlib.Path(s["still"]).stem, "cut", "still") for s in cut["picture"] if s.get("still", "").startswith("plates/")]
 final = ARM / "final/final.mp4"
 fmeta = {"duration": round(dur(final), 2)}
 if result:
@@ -158,7 +160,7 @@ if result:
 add("final", "final", "final", "Final film", sub=f"judge {result['mean']}" if result else "",
     media={"type": "video", "src": url(mp4(final, OUT / "final.mp4", 720, 24)), "poster": url(poster(final, OUT / "final.jpg", 16.0, 640))},
     meta=fmeta)
-edges.append(("cut", "final"))
+edges.append(("cut", "final", "assemble"))
 
 n_plates = sum(1 for i in items if i["kind"] == "plate")
 run = [
@@ -174,7 +176,7 @@ run = [
 project = {"id": "bluechip-v3", "name": "Meta VR Glasses × BlueChip", "template": "bluechip-factory",
            "prompt": "Make a 30-second Meta VR Glasses ad from the BlueChip factory template.",
            "lanes": ["inputs", "fill", "plates", "takes", "clips", "cut", "final"],
-           "items": items, "edges": [{"from": a, "to": b} for a, b in edges], "run": run}
+           "items": items, "edges": [{"from": a, "to": b, "role": r} for a, b, r in edges], "run": run}
 (OUT / "project.json").write_text(json.dumps(project, indent=1))
 size = sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file())
 print(f"{len(items)} items, {len(edges)} edges -> {OUT} ({size / 1e6:.1f} MB)")

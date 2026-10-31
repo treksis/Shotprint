@@ -107,7 +107,7 @@ const SidebarProvider = React.forwardRef<
               } as React.CSSProperties
             }
             className={cn(
-              'group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar',
+              'group/sidebar-wrapper flex min-h-[calc(100svh-var(--top-offset,0px))] w-full has-[[data-variant=inset]]:bg-sidebar',
               className
             )}
             ref={ref}
@@ -185,7 +185,7 @@ const Sidebar = React.forwardRef<
       >
         <div
           className={cn(
-            'relative h-svh w-[var(--sidebar-width)] bg-transparent transition-[width] duration-200 ease-linear',
+            'relative h-[calc(100svh-var(--top-offset,0px))] w-[var(--sidebar-width)] bg-transparent transition-[width] duration-200 ease-linear',
             'group-data-[collapsible=offcanvas]:w-0',
             variant === 'floating' || variant === 'inset'
               ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_1rem)]'
@@ -194,7 +194,7 @@ const Sidebar = React.forwardRef<
         />
         <div
           className={cn(
-            'fixed inset-y-0 z-10 hidden h-svh w-[var(--sidebar-width)] transition-[left,right,width] duration-200 ease-linear lg:flex',
+            'fixed top-[var(--top-offset,0px)] bottom-0 z-10 hidden h-[calc(100svh-var(--top-offset,0px))] w-[var(--sidebar-width)] transition-[left,right,width] duration-200 ease-linear lg:flex',
             side === 'left'
               ? 'left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]'
               : 'right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]',
@@ -276,8 +276,8 @@ const SidebarInset = React.forwardRef<
     <main
       ref={ref}
       className={cn(
-        'relative flex min-h-svh flex-1 flex-col bg-background',
-        'peer-data-[variant=inset]:min-h-[calc(100svh-1rem)] lg:peer-data-[variant=inset]:m-2 lg:peer-data-[variant=inset]:ml-0 lg:peer-data-[variant=inset]:rounded-[12px] lg:peer-data-[variant=inset]:border lg:peer-data-[variant=inset]:border-border',
+        'relative flex min-h-[calc(100svh-var(--top-offset,0px))] flex-1 flex-col bg-background',
+        'peer-data-[variant=inset]:min-h-[calc(100svh-var(--top-offset,0px)-1rem)] lg:peer-data-[variant=inset]:m-2 lg:peer-data-[variant=inset]:ml-0 lg:peer-data-[variant=inset]:rounded-[12px] lg:peer-data-[variant=inset]:border lg:peer-data-[variant=inset]:border-border',
         className
       )}
       {...props}

@@ -1,60 +1,5 @@
-/** Studio canvas model. Phase 0: in memory, seeded from a demo project (public/demo/<id>/project.json). */
-
-export type ItemKind =
-  | 'reference'
-  | 'template'
-  | 'product'
-  | 'cast'
-  | 'fill'
-  | 'plate'
-  | 'take'
-  | 'clip'
-  | 'cut'
-  | 'final'
-  | 'note'
-  | 'upload';
-
-export type Lane = 'inputs' | 'fill' | 'plates' | 'takes' | 'clips' | 'cut' | 'final' | 'notes';
-
-export interface ItemMedia {
-  type: 'image' | 'video' | 'audio';
-  src: string;
-  poster?: string;
-}
-
-export interface StudioItem {
-  id: string;
-  kind: ItemKind;
-  lane: Lane;
-  label: string;
-  sub?: string;
-  x: number;
-  y: number;
-  media?: ItemMedia;
-  text?: string;
-  meta?: Record<string, any>;
-  /** Ids of the items this one was made from, drawn as lines. */
-  inputs: string[];
-}
-
-export interface RunStep {
-  text: string;
-  lane: Lane;
-  cost?: string;
-  status: 'running' | 'done' | 'stopped';
-}
-
-export type StudioMessage =
-  | { id: string; role: 'user'; text: string; attachments: string[] }
-  | {
-      id: string;
-      role: 'agent';
-      steps: RunStep[];
-      state: 'running' | 'done' | 'stopped';
-      /** Items the run created, shown as chips. */
-      created: string[];
-      summary?: string;
-    };
+export * from '../../../shared/studio';
+import type { Lane, NodeKind } from '../../../shared/studio';
 
 /** Shape of public/demo/<id>/project.json, written by scripts/export_demo_project.py. */
 export interface DemoProject {
@@ -63,24 +8,32 @@ export interface DemoProject {
   template: string;
   prompt: string;
   lanes: Lane[];
-  items: Array<Omit<StudioItem, 'x' | 'y' | 'inputs'>>;
-  edges: Array<{ from: string; to: string }>;
+  items: Array<{
+    id: string;
+    kind: NodeKind;
+    lane: Lane;
+    label: string;
+    sub?: string;
+    media?: { type: 'image' | 'video' | 'audio'; src: string; poster?: string };
+    meta?: Record<string, any>;
+  }>;
+  edges: Array<{ from: string; to: string; role: string }>;
   run: Array<{ text: string; lane: Lane; cost?: string }>;
 }
 
-export const ITEM_SIZE: Record<ItemKind, { w: number; h: number }> = {
-  reference: { w: 232, h: 196 },
-  template: { w: 232, h: 196 },
-  product: { w: 232, h: 196 },
-  cast: { w: 232, h: 196 },
-  fill: { w: 300, h: 196 },
-  plate: { w: 232, h: 186 },
-  take: { w: 208, h: 168 },
-  clip: { w: 232, h: 186 },
-  cut: { w: 760, h: 176 },
-  final: { w: 380, h: 300 },
-  note: { w: 232, h: 132 },
-  upload: { w: 208, h: 186 },
+export const NODE_SIZE: Record<NodeKind, { w: number; h: number }> = {
+  reference: { w: 216, h: 190 },
+  template: { w: 216, h: 190 },
+  product: { w: 216, h: 190 },
+  cast: { w: 216, h: 190 },
+  upload: { w: 216, h: 190 },
+  fill: { w: 248, h: 214 },
+  plate: { w: 216, h: 176 },
+  take: { w: 216, h: 176 },
+  clip: { w: 216, h: 190 },
+  cut: { w: 312, h: 178 },
+  final: { w: 312, h: 262 },
+  note: { w: 216, h: 120 },
 };
 
 export const LANE_LABEL: Record<Lane, string> = {
@@ -88,25 +41,32 @@ export const LANE_LABEL: Record<Lane, string> = {
   fill: 'Fill',
   plates: 'Plates',
   takes: 'Voice takes',
-  clips: 'Clips',
+  clips: 'Shots',
   cut: 'Cut',
   final: 'Final',
   notes: 'Notes',
 };
 
-export const KIND_LABEL: Record<ItemKind, string> = {
+export const KIND_LABEL: Record<NodeKind, string> = {
   reference: 'Reference ad',
   template: 'Template',
   product: 'Product',
   cast: 'Presenter',
+  upload: 'Upload',
   fill: 'Fill sheet',
   plate: 'Plate',
   take: 'Voice take',
-  clip: 'Clip',
+  clip: 'Shot',
   cut: 'Cut',
-  final: 'Final',
+  final: 'Final film',
   note: 'Note',
-  upload: 'Upload',
 };
 
-export const ITEM_DRAG_TYPE = 'application/x-museclone-item';
+/** How each connection role is drawn. Anything not listed is a plain input. */
+export const EDGE_STYLE: Record<string, { stroke: string; dash?: string; width: number; legend?: string }> = {
+  'first + last frame': { stroke: 'var(--ink)', width: 1.6, legend: 'First + last frame' },
+  'guide audio': { stroke: 'var(--accent)', dash: '6 4', width: 1.6, legend: 'Guide audio (lip-sync)' },
+  reference: { stroke: 'var(--ink)', dash: '2 4', width: 1.4, legend: 'Reference' },
+  'setup plate': { stroke: 'var(--muted)', width: 1.2 },
+};
+export const DEFAULT_EDGE: { stroke: string; dash?: string; width: number; legend?: string } = { stroke: 'var(--control)', width: 1.2, legend: 'Input' };

@@ -274,3 +274,26 @@ the mock's own pan/zoom surface (no new dependency) unless the spike shows it ca
 - Not verified: HTML5 drag and drop from the desktop or the Assets drawer (browser automation can't
   produce those events), Ctrl/Cmd + scroll zoom (the automation's modifier didn't reach the page).
   Test by hand.
+
+## 16. Phase 1 + redesign (done 2026-10-30)
+
+Owner direction: Claude Artifacts pattern, agent-native from day 0 (no image/video/audio modes, API
+mode removed), nodes with visible typed connections and loading states, `/studio` = chat-first home
+with templates under the composer, `/studio/:id` = the workflow, Dreamina-style announcement bar,
+seeded sample projects.
+
+- Routes: `/studio` (home), `/studio/:id` (project), `/templates`. The old API-mode Studio,
+  TemplateVault and the Phase 0 components moved out of `src/` (history in git).
+- `/api/studio` (`src/worker/studio/`): templates catalog (`src/shared/studio-templates.ts`) and
+  projects CRUD. Store = D1 `studio_projects` (one JSON document per project for now) in Cloudflare,
+  `.data/studio-projects.json` in node dev.
+- Home: composer (brief, template chip, uploads through `/api/assets/upload`), skill chips, template
+  gallery with hover previews and Ready/Reference status, recent projects. Three sample projects are
+  seeded on first visit.
+- Project: chat on its own; the production canvas opens as an artifact panel beside it. Nodes in
+  pipeline columns, ports, edges styled and labelled by role (first + last frame, guide audio,
+  reference, setup plate, shot, assemble), lane frames with counts, legend, inspector with "made
+  from / feeds". States: queued (dashed skeleton), running (spinner + indeterminate bar, flowing
+  edges), done, failed. Everything persists (debounced PUT); an interrupted run is marked stopped.
+- Demo behaviour is honest: ready templates replay the real v3 run; references and free briefs get a
+  director reply that dissection/edits need Live mode (Phase 2), with the passcode button.

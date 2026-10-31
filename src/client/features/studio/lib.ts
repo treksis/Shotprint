@@ -1,96 +1,243 @@
-import { ITEM_SIZE, type DemoProject, type Lane, type StudioItem } from './types';
-
-/** Left edge of every lane; the lane label sits to its left. */
-export const LANE_X = 160;
-const GAP_X = 28;
-const GAP_Y = 64;
-const LANE_ORDER: Lane[] = ['inputs', 'fill', 'plates', 'takes', 'clips', 'cut', 'final', 'notes'];
+import { loadDemo } from './api';
+import {
+  NODE_SIZE,
+  type CreateStudioProjectRequest,
+  type DemoProject,
+  type Lane,
+  type StudioEdge,
+  type StudioNode,
+  type StudioState,
+  type StudioTemplate,
+} from './types';
 
 let counter = 0;
-export const newId = (prefix = 'item'): string => `${prefix}_${Date.now().toString(36)}${counter++}`;
+export const newId = (prefix = 'n') => `${prefix}_${Date.now().toString(36)}${(counter++).toString(36)}`;
 
-const WRAP = 7;
-const ROW_GAP = 24;
+/** Pipeline order, left to right on the canvas. */
+export const LANE_ORDER: Lane[] = ['inputs', 'fill', 'plates', 'takes', 'clips', 'cut', 'final', 'notes'];
+/** Lanes with many nodes stack in two sub-columns. */
+const SUBCOLS: Partial<Record<Lane, number>> = { plates: 2, clips: 2 };
+const COL_GAP = 120;
+const ROW_GAP = 18;
+const SUB_GAP = 16;
 
-const rowHeight = (lane: Lane) =>
-  lane === 'cut' ? ITEM_SIZE.cut.h : lane === 'final' ? ITEM_SIZE.final.h : lane === 'fill' ? ITEM_SIZE.fill.h : 196;
+export interface LaneBox {
+  lane: Lane;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
-/** Top of each lane, given how many items each lane holds (lanes wrap at WRAP items per row). */
-export function laneTops(counts: Partial<Record<Lane, number>>): Record<Lane, number> {
-  const tops = {} as Record<Lane, number>;
-  let y = 40;
+/** Lay nodes out as columns in pipeline order, each column centred on the tallest one. */
+export function layoutColumns(nodes: Array<Omit<StudioNode, 'x' | 'y' | 'status'> & Partial<StudioNode>>) {
+  const byLane = new Map<Lane, typeof nodes>();
+  for (const n of nodes) byLane.set(n.lane, [...(byLane.get(n.lane) ?? []), n]);
+  const cols: Array<{ lane: Lane; items: typeof nodes; w: number; h: number; sub: number }> = [];
   for (const lane of LANE_ORDER) {
-    tops[lane] = y;
-    const n = counts[lane] ?? 0;
-    if (!n) continue;
-    const rows = Math.ceil(n / WRAP);
-    y += rows * rowHeight(lane) + (rows - 1) * ROW_GAP + GAP_Y;
+    const items = byLane.get(lane);
+    if (!items?.length) continue;
+    const sub = Math.min(SUBCOLS[lane] ?? 1, items.length);
+    const colW = Math.max(...items.map((n) => NODE_SIZE[n.kind].w));
+    const rows = Math.ceil(items.length / sub);
+    const rowH = Math.max(...items.map((n) => NODE_SIZE[n.kind].h));
+    cols.push({ lane, items, sub, w: sub * colW + (sub - 1) * SUB_GAP, h: rows * rowH + (rows - 1) * ROW_GAP });
   }
-  return tops;
+  const tallest = Math.max(0, ...cols.map((c) => c.h));
+  const placed = new Map<string, { x: number; y: number }>();
+  const boxes: LaneBox[] = [];
+  let x = 0;
+  for (const c of cols) {
+    const top = (tallest - c.h) / 2;
+    const colW = (c.w - (c.sub - 1) * SUB_GAP) / c.sub;
+    const rowH = Math.max(...c.items.map((n) => NODE_SIZE[n.kind].h));
+    c.items.forEach((n, i) => {
+      const col = i % c.sub;
+      const row = Math.floor(i / c.sub);
+      placed.set(n.id, { x: x + col * (colW + SUB_GAP), y: top + row * (rowH + ROW_GAP) });
+    });
+    boxes.push({ lane: c.lane, x, y: top, w: c.w, h: c.h });
+    x += c.w + COL_GAP;
+  }
+  return { placed, boxes };
 }
 
-export function laneCounts(items: Array<{ lane: Lane }>): Partial<Record<Lane, number>> {
-  const counts: Partial<Record<Lane, number>> = {};
-  for (const i of items) counts[i.lane] = (counts[i.lane] ?? 0) + 1;
-  return counts;
+/** Re-flow every node into its lane column (used when nodes arrive or after "Tidy up"). */
+export function relayout(nodes: StudioNode[]): StudioNode[] {
+  const { placed } = layoutColumns(nodes);
+  return nodes.map((n) => ({ ...n, ...placed.get(n.id)! }));
 }
 
-/** Place items left to right in their lane, in project order, wrapping every WRAP items. */
-export function layoutProject(project: DemoProject): StudioItem[] {
-  const tops = laneTops(laneCounts(project.items));
-  const index = {} as Record<Lane, number>;
-  const rowX = {} as Record<string, number>;
-  const inputs = new Map<string, string[]>();
-  for (const e of project.edges) inputs.set(e.to, [...(inputs.get(e.to) ?? []), e.from]);
-  return project.items.map((raw) => {
-    const n = index[raw.lane] ?? 0;
-    index[raw.lane] = n + 1;
-    const row = Math.floor(n / WRAP);
-    const key = `${raw.lane}:${row}`;
-    const x = rowX[key] ?? LANE_X;
-    rowX[key] = x + ITEM_SIZE[raw.kind].w + GAP_X;
-    const y = tops[raw.lane] + row * (rowHeight(raw.lane) + ROW_GAP);
-    return { ...raw, x, y, inputs: inputs.get(raw.id) ?? [] };
+export function laneBoxes(nodes: StudioNode[]): LaneBox[] {
+  const byLane = new Map<Lane, StudioNode[]>();
+  for (const n of nodes) byLane.set(n.lane, [...(byLane.get(n.lane) ?? []), n]);
+  return [...byLane].map(([lane, ns]) => {
+    const x = Math.min(...ns.map((n) => n.x));
+    const y = Math.min(...ns.map((n) => n.y));
+    return {
+      lane,
+      x,
+      y,
+      w: Math.max(...ns.map((n) => n.x + NODE_SIZE[n.kind].w)) - x,
+      h: Math.max(...ns.map((n) => n.y + NODE_SIZE[n.kind].h)) - y,
+    };
   });
 }
 
-/** Where a new item goes: the notes lane, below everything else, after the last note. */
-export function nextSlot(items: StudioItem[]): { x: number; y: number } {
-  const notes = items.filter((i) => i.lane === 'notes');
-  if (notes.length) return { x: Math.max(...notes.map((i) => i.x + ITEM_SIZE[i.kind].w)) + GAP_X, y: notes[0].y };
-  const bottom = items.length ? Math.max(...items.filter((i) => i.lane !== 'notes').map((i) => i.y + ITEM_SIZE[i.kind].h)) : 0;
-  return { x: LANE_X, y: bottom + GAP_Y };
+/** Output port (right middle) to input port (left middle). */
+export function ports(from: StudioNode, to: StudioNode) {
+  const a = { x: from.x + NODE_SIZE[from.kind].w, y: from.y + NODE_SIZE[from.kind].h / 2 };
+  const b = { x: to.x, y: to.y + NODE_SIZE[to.kind].h / 2 };
+  return { a, b };
 }
 
-export function edgesOf(items: StudioItem[]) {
-  const byId = new Map(items.map((i) => [i.id, i]));
-  return items.flatMap((to) =>
-    to.inputs.flatMap((fromId) => {
-      const from = byId.get(fromId);
-      return from ? [{ id: `${fromId}-${to.id}`, from, to }] : [];
-    })
-  );
+export function edgePath(from: StudioNode, to: StudioNode): { d: string; mid: { x: number; y: number } } {
+  const { a, b } = ports(from, to);
+  const bend = Math.max(48, Math.abs(b.x - a.x) * 0.5);
+  const d = `M ${a.x} ${a.y} C ${a.x + bend} ${a.y}, ${b.x - bend} ${b.y}, ${b.x} ${b.y}`;
+  return { d, mid: { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 } };
 }
 
-/** Vertical curve from the bottom of the input to the top of the output (lanes stack downward). */
-export function edgePath(from: StudioItem, to: StudioItem): string {
-  const a = { x: from.x + ITEM_SIZE[from.kind].w / 2, y: from.y + ITEM_SIZE[from.kind].h };
-  const b = { x: to.x + ITEM_SIZE[to.kind].w / 2, y: to.y };
-  if (b.y <= a.y) {
-    const a2 = { x: from.x + ITEM_SIZE[from.kind].w, y: from.y + ITEM_SIZE[from.kind].h / 2 };
-    const b2 = { x: to.x, y: to.y + ITEM_SIZE[to.kind].h / 2 };
-    const bend = Math.max(30, Math.abs(b2.x - a2.x) / 2);
-    return `M ${a2.x} ${a2.y} C ${a2.x + bend} ${a2.y}, ${b2.x - bend} ${b2.y}, ${b2.x} ${b2.y}`;
+/** Demo project -> canvas nodes (all done) and edges. */
+export function demoGraph(demo: DemoProject): { nodes: StudioNode[]; edges: StudioEdge[] } {
+  const withPosters = demo.items.map((i) => {
+    if (i.kind !== 'cut') return i;
+    const byId = new Map(demo.items.map((x) => [x.id, x]));
+    return {
+      ...i,
+      meta: {
+        ...i.meta,
+        shots: (i.meta?.shots ?? []).map((s: any) => {
+          const src = s.item ? byId.get(s.item) : undefined;
+          return { ...s, poster: src?.media?.poster ?? (src?.media?.type === 'image' ? src.media.src : undefined) };
+        }),
+      },
+    };
+  });
+  const { placed } = layoutColumns(withPosters);
+  return {
+    nodes: withPosters.map((i) => ({ ...i, ...placed.get(i.id)!, status: 'done' as const })),
+    edges: demo.edges,
+  };
+}
+
+/** Only edges whose two ends are on the canvas. */
+export const liveEdges = (state: StudioState) => {
+  const ids = new Set(state.nodes.map((n) => n.id));
+  return state.edges.filter((e) => ids.has(e.from) && ids.has(e.to));
+};
+
+export interface Attachment {
+  id: string;
+  name: string;
+  url: string;
+  type: 'image' | 'video' | 'audio';
+}
+
+/** Initial state for a new project: the user's brief plus the inputs the director starts from. */
+export async function initialProject(
+  prompt: string,
+  template: StudioTemplate | null,
+  attachments: Attachment[]
+): Promise<CreateStudioProjectRequest> {
+  let nodes: StudioNode[] = [];
+  let edges: StudioEdge[] = [];
+  if (template?.status === 'ready' && template.example) {
+    const g = demoGraph(await loadDemo(template.example.demoId));
+    nodes = g.nodes.filter((n) => n.lane === 'inputs');
+    edges = g.edges;
+  } else if (template) {
+    nodes = [
+      {
+        id: 'ref',
+        kind: 'reference',
+        lane: 'inputs',
+        label: 'Reference ad',
+        sub: `${template.source} · ${template.durationSec.toFixed(0)} s`,
+        x: 0,
+        y: 0,
+        status: 'done',
+        media: { type: 'video', src: template.preview, poster: template.thumbnail },
+      },
+    ];
   }
-  const bend = Math.max(24, (b.y - a.y) / 2);
-  return `M ${a.x} ${a.y} C ${a.x} ${a.y + bend}, ${b.x} ${b.y - bend}, ${b.x} ${b.y}`;
+  for (const a of attachments)
+    nodes.push({
+      id: newId('upload'),
+      kind: 'upload',
+      lane: 'inputs',
+      label: a.name,
+      sub: `${a.type} · uploaded`,
+      x: 0,
+      y: 0,
+      status: 'done',
+      media: { type: a.type, src: a.url },
+    });
+  nodes = relayout(nodes);
+  const name = template?.example ? `${template.example.product} × ${template.title}` : template ? template.title : prompt.slice(0, 48);
+  return {
+    name,
+    prompt,
+    templateId: template?.id ?? null,
+    thumbnail: template?.thumbnail ?? null,
+    state: {
+      nodes,
+      edges,
+      messages: [{ id: newId('m'), role: 'user', text: prompt, attachments: attachments.map((a) => a.name), templateId: template?.id }],
+    },
+  };
 }
 
-export async function loadDemoProject(id: string): Promise<DemoProject> {
-  const res = await fetch(`/demo/${id}/project.json`);
-  if (!res.ok) throw new Error(`Demo project ${id} not found (${res.status})`);
-  return res.json();
+/** Sample projects so a first-time reviewer sees a populated workspace. */
+export async function seedProjects(templates: StudioTemplate[]): Promise<CreateStudioProjectRequest[]> {
+  const ready = templates.find((t) => t.status === 'ready' && t.example);
+  const out: CreateStudioProjectRequest[] = [];
+  for (const t of templates.filter((x) => x.status === 'reference').slice(0, 2)) {
+    const p = await initialProject(t.prompt, t, []);
+    p.name = `Sample: ${t.title}`;
+    p.state.messages.push({
+      id: newId('m'),
+      role: 'agent',
+      steps: [],
+      state: 'blocked',
+      created: [],
+      text: 'This reference has not been dissected yet. Dissection measures every cut, camera move and line, and needs Live mode.',
+    });
+    out.push(p);
+  }
+  if (ready?.example) {
+    const demo = await loadDemo(ready.example.demoId);
+    const g = demoGraph(demo);
+    out.push({
+      name: `Sample: ${ready.example.product} × ${ready.title}`,
+      prompt: ready.prompt,
+      templateId: ready.id,
+      thumbnail: g.nodes.find((n) => n.kind === 'final')?.media?.poster ?? ready.thumbnail,
+      state: {
+        nodes: g.nodes,
+        edges: g.edges,
+        messages: [
+          { id: newId('m'), role: 'user', text: ready.prompt, attachments: [], templateId: ready.id },
+          {
+            id: newId('m'),
+            role: 'agent',
+            steps: demo.run.map((s) => ({ ...s, status: 'done' as const })),
+            state: 'done',
+            created: ['final', 'cut', 'fill'],
+            text: finishedText(g.nodes),
+          },
+        ],
+      },
+    });
+  }
+  return out;
 }
 
-/** The step delay for the replayed agent run (ms). */
-export const STEP_DELAY_MS = 1100;
+export function finishedText(nodes: StudioNode[]): string {
+  const final = nodes.find((n) => n.kind === 'final');
+  const score = final?.meta?.score as number | undefined;
+  const shots = nodes.find((n) => n.kind === 'cut')?.meta?.shots?.length;
+  return score
+    ? `The film follows the template's ${shots ?? 15} shots and scored ${score.toFixed(2)} out of 10 with the judge, with no major flaws. Open any node on the canvas to see what it was made from.`
+    : 'Done.';
+}

@@ -20,6 +20,7 @@ import {
   renderSceneClip,
   verifyProjectFidelity,
 } from './services/ai-pipeline';
+import { studioRoutes } from './studio/routes';
 import {
   inspectSandboxSession,
   runSandboxAgentTurn,
@@ -109,6 +110,8 @@ app.onError((err, c) => {
 });
 
 // 1. Health & Stack Telemetry Endpoint
+app.route('/api/studio', studioRoutes);
+
 app.get('/api/health', (c) => {
   const hasMetaKey = Boolean(c.env?.META_API_KEY || (c.env as any)?.meta_api_key);
   const activeTextModel = getMetaTextModel(c.env);
