@@ -1,0 +1,7 @@
+{
+  "name": "Dissect: Meta VR Glasses launch film",
+  "prompt": "Dissect Meta's launch film into a reusable director template at templates/meta-launch/, using parallel subagents.",
+  "templateId": "meta-vr-glasses-launch",
+  "thumbnail": "dissection/sheet_02.png",
+  "model": "spark"
+}
