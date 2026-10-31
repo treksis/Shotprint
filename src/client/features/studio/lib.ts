@@ -95,7 +95,3 @@ export function newProject(prompt: string, template: StudioTemplate | null): Cre
   };
 }
 
-/** Sample projects so a first-time reviewer sees a populated sidebar. Their briefs run when opened. */
-export function seedProjects(templates: StudioTemplate[]): CreateStudioProjectRequest[] {
-  return templates.slice(0, 2).map((t) => ({ ...newProject(t.prompt, t), name: `Sample: ${t.title}` }));
-}

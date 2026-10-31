@@ -7,8 +7,7 @@ import { SidebarInset, SidebarProvider } from './components/ui/sidebar';
 import { LandingPage } from './components/LandingPage';
 import { LiveAccessDialog } from './components/LiveAccessDialog';
 import { AnnouncementBar } from './components/AnnouncementBar';
-import { createProject, listProjects, listTemplates } from './features/studio/api';
-import { seedProjects } from './features/studio/lib';
+import { listProjects } from './features/studio/api';
 import { StudioHome } from './features/studio/components/studio-home';
 import { StudioProjectPage } from './features/studio/components/studio-project';
 import { TemplatesPage } from './features/studio/components/templates-page';
@@ -31,8 +30,6 @@ function parseRoute(): Route {
 
 export const pathFor = (r: Route) =>
   r.view === 'project' ? `/studio/${r.id}` : r.view === 'home' ? '/studio' : r.view === 'templates' ? '/templates' : '/';
-
-const SEEDED_KEY = 'museclone.studio.seeded';
 
 export default function App() {
   const [route, setRoute] = useState<Route>(parseRoute);
@@ -57,13 +54,6 @@ export default function App() {
   const refreshProjects = useCallback(() => {
     listProjects()
       .then(async (ps) => {
-        // First visit: seed sample projects so the workspace isn't empty for a reviewer.
-        if (ps.length === 0 && !localStorage.getItem(SEEDED_KEY)) {
-          localStorage.setItem(SEEDED_KEY, '1');
-          const seeds = seedProjects(await listTemplates());
-          for (const s of seeds) await createProject(s);
-          ps = await listProjects();
-        }
         setStudioProjects(ps);
       })
       .catch(() => setStudioProjects([]));

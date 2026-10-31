@@ -5,6 +5,7 @@ import { app } from './index';
 import { memoryStore, setStudioStore } from './studio/store';
 import { setStudioSandbox } from './studio/sandbox';
 import { dockerSandbox } from './sandbox/runtime';
+import { seedProjects } from './sandbox/seeds';
 import type { StudioProject } from '../shared/studio';
 
 // Load .env and .dev.vars into process.env for local development
@@ -43,12 +44,12 @@ try {
 } catch {
   saved = [];
 }
-setStudioStore(
-  memoryStore(saved, (all) => {
-    fs.mkdirSync(path.dirname(dataFile), { recursive: true });
-    fs.writeFileSync(dataFile, JSON.stringify(all));
-  })
-);
+const store = memoryStore(saved, (all) => {
+  fs.mkdirSync(path.dirname(dataFile), { recursive: true });
+  fs.writeFileSync(dataFile, JSON.stringify(all));
+});
+setStudioStore(store);
+void seedProjects(store).catch((e) => console.warn('[studio] seeding failed:', e.message));
 
 // Each project runs Muse Code in its own Docker container (Cloudflare Sandbox when deployed).
 setStudioSandbox(dockerSandbox);
