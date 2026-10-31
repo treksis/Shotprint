@@ -1,0 +1,364 @@
+{
+  "template": "bluechip-factory",
+  "duration": {
+    "target": 30.0,
+    "min": 28.0,
+    "max": 32.0
+  },
+  "format": {
+    "16:9": [
+      1280,
+      720
+    ],
+    "9:16": [
+      720,
+      1280
+    ]
+  },
+  "setups": {
+    "EST": {
+      "frame": "frames/establish_wide.jpg",
+      "presenter": false,
+      "motion": [
+        "static",
+        "push-in"
+      ]
+    },
+    "CAM-A": {
+      "frame": "frames/camA_interview_wide.jpg",
+      "presenter": true,
+      "motion": [
+        "static",
+        "push-in"
+      ]
+    },
+    "CAM-B": {
+      "frame": "frames/camB_offaxis_mcu.jpg",
+      "presenter": true,
+      "motion": [
+        "static",
+        "handheld"
+      ],
+      "eyeline": "screen-right"
+    },
+    "CAM-C": {
+      "frame": "frames/camC_frontal_mcu.jpg",
+      "presenter": true,
+      "motion": [
+        "static",
+        "push-in"
+      ]
+    },
+    "CAM-D": {
+      "frame": "frames/camD_tight_cu.jpg",
+      "presenter": true,
+      "motion": [
+        "static",
+        "handheld"
+      ]
+    },
+    "CAM-E": {
+      "frame": "frames/camE_demo_wide.jpg",
+      "presenter": true,
+      "motion": [
+        "static"
+      ],
+      "product_in_hand": true
+    },
+    "HERITAGE": {
+      "frame": "frames/archive_newsreel.jpg",
+      "presenter": false,
+      "post": "bw_4x3_pillarbox"
+    },
+    "PRODUCT-HERO": {
+      "frame": "frames/product_hero_handheld.jpg",
+      "presenter": false,
+      "product": true
+    },
+    "PRODUCT-RIM": {
+      "frame": "frames/product_rimlight.jpg",
+      "presenter": false,
+      "product": true
+    },
+    "PRODUCT-BENCH": {
+      "frame": "frames/product_on_bench.jpg",
+      "presenter": false,
+      "product": true
+    },
+    "ASSY-PROFILE": {
+      "frame": "frames/assembly_worker_profile.jpg",
+      "presenter": false
+    },
+    "ASSY-MACRO": {
+      "frame": "frames/assembly_macro_hands.jpg",
+      "presenter": false
+    },
+    "ASSY-MEDIUM": {
+      "frame": "frames/assembly_worker_medium.jpg",
+      "presenter": false
+    },
+    "ASSY-LOW": {
+      "frame": "frames/assembly_bench_lowangle.jpg",
+      "presenter": false,
+      "product": true
+    },
+    "FIELD": {
+      "frame": "frames/field_use.jpg",
+      "presenter": false,
+      "product": true
+    },
+    "ETCH": {
+      "frame": "frames/etch_macro.jpg",
+      "presenter": false,
+      "product": true,
+      "post": "etch_text"
+    },
+    "ENDCARD": {
+      "post": "endcard"
+    }
+  },
+  "shots": [
+    {
+      "n": 1,
+      "t": [
+        0.0,
+        2.0
+      ],
+      "setup": [
+        "EST"
+      ]
+    },
+    {
+      "n": 2,
+      "t": [
+        2.0,
+        4.6
+      ],
+      "setup": [
+        "CAM-A"
+      ],
+      "line": "L1",
+      "on_camera": true
+    },
+    {
+      "n": 3,
+      "t": [
+        4.6,
+        6.2
+      ],
+      "setup": [
+        "HERITAGE",
+        "ASSY-MEDIUM"
+      ],
+      "vo": "L2"
+    },
+    {
+      "n": 4,
+      "t": [
+        6.2,
+        7.8
+      ],
+      "setup": [
+        "HERITAGE",
+        "ASSY-MACRO"
+      ],
+      "vo": "L2"
+    },
+    {
+      "n": 5,
+      "t": [
+        7.8,
+        10.2
+      ],
+      "setup": [
+        "CAM-B"
+      ],
+      "line": "L2",
+      "on_camera": true
+    },
+    {
+      "n": 6,
+      "t": [
+        10.2,
+        13.0
+      ],
+      "setup": [
+        "CAM-C"
+      ],
+      "line": "L3",
+      "on_camera": true
+    },
+    {
+      "n": 7,
+      "t": [
+        13.0,
+        15.2
+      ],
+      "setup": [
+        "CAM-A"
+      ],
+      "line": "L4",
+      "on_camera": true
+    },
+    {
+      "n": 8,
+      "t": [
+        15.2,
+        17.2
+      ],
+      "setup": [
+        "PRODUCT-HERO"
+      ]
+    },
+    {
+      "n": 9,
+      "t": [
+        17.2,
+        18.6
+      ],
+      "setup": [
+        "PRODUCT-RIM",
+        "PRODUCT-BENCH"
+      ]
+    },
+    {
+      "n": 10,
+      "t": [
+        18.6,
+        20.4
+      ],
+      "setup": [
+        "ASSY-PROFILE"
+      ],
+      "vo": "L5"
+    },
+    {
+      "n": 11,
+      "t": [
+        20.4,
+        21.8
+      ],
+      "setup": [
+        "ASSY-MACRO",
+        "ASSY-LOW"
+      ],
+      "vo": "L5"
+    },
+    {
+      "n": 12,
+      "t": [
+        21.8,
+        24.2
+      ],
+      "setup": [
+        "CAM-D",
+        "CAM-E"
+      ],
+      "line": "L5",
+      "on_camera": true
+    },
+    {
+      "n": 13,
+      "t": [
+        24.2,
+        26.0
+      ],
+      "setup": [
+        "FIELD"
+      ],
+      "vo": "L6"
+    },
+    {
+      "n": 14,
+      "t": [
+        26.0,
+        28.2
+      ],
+      "setup": [
+        "ETCH"
+      ],
+      "vo": "L6"
+    },
+    {
+      "n": 15,
+      "t": [
+        28.2,
+        30.0
+      ],
+      "setup": [
+        "ENDCARD"
+      ]
+    }
+  ],
+  "shot_tolerance_s": 0.3,
+  "lines": {
+    "L1": {
+      "function": "hook: heritage claim",
+      "max_syllables": 14
+    },
+    "L2": {
+      "function": "loss",
+      "max_syllables": 8
+    },
+    "L3": {
+      "function": "stakes: conditional parallelism",
+      "max_syllables": 16
+    },
+    "L4": {
+      "function": "turn + product name",
+      "max_syllables": 14,
+      "must_include": "{PRODUCT_NAME}"
+    },
+    "L5": {
+      "function": "proof: made here by hand",
+      "max_syllables": 12
+    },
+    "L6": {
+      "function": "mission",
+      "max_syllables": 12
+    }
+  },
+  "rules": {
+    "no_jump_cut_same_setup": true,
+    "presenter_takes_start_from_setup_plate": true,
+    "clip_music": "none (one score in post)",
+    "hard_cuts_only": true,
+    "max_effects": 1,
+    "effects_allowed_on": [
+      "CAM-A",
+      "CAM-C"
+    ],
+    "legible_text_in_post_only": true,
+    "min_product_frame_fraction": 0.33,
+    "anchor_both_ends": true,
+    "speaking_end_plate": "neutral expression, lips parted, hands low; never smile/closed lips",
+    "product_lock_line": "required, pasted into every product prompt",
+    "product_sheet": "assets/product_sheet.png is the authority (shape + finish)",
+    "restraint": "no grins/theatrical gestures/hype delivery, no flares/glow/sparkle, moves within measured size"
+  },
+  "slots": [
+    "PRODUCT_NAME",
+    "PRODUCT_SHEET",
+    "PRODUCT_MUST",
+    "PRODUCT_NEVER",
+    "PRESENTER",
+    "VOICE",
+    "CLAIM_LINE_1",
+    "CLAIM_LINE_2",
+    "BRAND_MARK",
+    "SCORE",
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5",
+    "L6"
+  ],
+  "modes": {
+    "presenter_on_camera": "ref2v voice take -> fl2v picture (first=setup plate, last=end-pose plate, guide_audio=take)",
+    "product": "fl2v (start + end plate, product checked on both)",
+    "broll": "fl2v (start + end plate)",
+    "match_on_action": "chain last frame -> next first_frame",
+    "heritage_still": "plate held as still (no render)"
+  }
+}

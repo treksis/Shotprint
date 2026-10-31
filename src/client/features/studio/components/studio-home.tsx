@@ -1,8 +1,8 @@
 import { ArrowRight, Clapperboard } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { createProject, getBudget, listTemplates, type DirectorModel } from '../api';
-import { initialProject, type Attachment } from '../lib';
+import { createProject, listTemplates, setSessionModel, uploadToProject, type DirectorModel } from '../api';
+import { newProject } from '../lib';
 import type { StudioProjectSummary, StudioTemplate } from '../types';
 import { Composer } from './composer';
 import { TemplateCard } from './template-card';
@@ -22,18 +22,13 @@ export interface StudioHomeProps {
 }
 
 /** /studio: a brief box first (chat-native), templates under it so a reviewer sees what is possible. */
-export function StudioHome({ projects, onOpenProject, onProjectsChanged }: StudioHomeProps) {
+export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged }: StudioHomeProps) {
   const [templates, setTemplates] = useState<StudioTemplate[] | null>(null);
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
   const [busy, setBusy] = useState(false);
   const [model, setModel] = useState<DirectorModel>(() => (localStorage.getItem('museclone.director.model') as DirectorModel) || 'spark');
-  const [allowed, setAllowed] = useState<DirectorModel[]>(['spark']);
-  useEffect(() => {
-    getBudget()
-      .then((b) => setAllowed(b.limits.models))
-      .catch(() => undefined);
-  }, []);
+  const allowed: DirectorModel[] = isLive || import.meta.env.DEV ? ['spark', 'wonder'] : ['spark'];
   const [error, setError] = useState<string | null>(null);
   const top = useRef<HTMLDivElement | null>(null);
 
@@ -58,12 +53,14 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
     top.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const submit = async (text: string, attachments: Attachment[]) => {
+  const submit = async (text: string, files: File[]) => {
     setBusy(true);
     setError(null);
     try {
-      const body = await initialProject(text, template, attachments);
-      const project = await createProject({ ...body, state: body.state });
+      // Files go into the new workspace's inputs/ before its first turn, so the brief can use them.
+      const project = await createProject(newProject(files.length ? `${text}\n\nMy files are in inputs/.` : text, template));
+      for (const f of files) await uploadToProject(project.id, f);
+      if (model !== 'spark') await setSessionModel(project.id, model);
       onProjectsChanged();
       onOpenProject(project.id);
     } catch (e) {
@@ -78,8 +75,8 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
         <div className="mx-auto max-w-[760px] text-center">
           <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What are we making?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Give the director a brief. It rebuilds a dissected film shot for shot around your subject (a product, a
-            person, a story), and every plate, take and shot lands on a canvas you can inspect.
+            Brief Muse Code. It works in its own sandbox, writing plans, making stills and rendering shots, and every
+            file it makes lands on a canvas you can inspect, rewire and steer while it works.
           </p>
         </div>
 

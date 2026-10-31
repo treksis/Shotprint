@@ -1,26 +1,6 @@
 export * from '../../../shared/studio';
 import type { Lane, NodeKind } from '../../../shared/studio';
 
-/** Shape of public/demo/<id>/project.json, written by scripts/export_demo_project.py. */
-export interface DemoProject {
-  id: string;
-  name: string;
-  template: string;
-  prompt: string;
-  lanes: Lane[];
-  items: Array<{
-    id: string;
-    kind: NodeKind;
-    lane: Lane;
-    label: string;
-    sub?: string;
-    media?: { type: 'image' | 'video' | 'audio'; src: string; poster?: string };
-    meta?: Record<string, any>;
-  }>;
-  edges: Array<{ from: string; to: string; role: string }>;
-  run: Array<{ text: string; lane: Lane; cost?: string }>;
-}
-
 export const NODE_SIZE: Record<NodeKind, { w: number; h: number }> = {
   reference: { w: 216, h: 190 },
   template: { w: 216, h: 190 },
@@ -39,10 +19,10 @@ export const NODE_SIZE: Record<NodeKind, { w: number; h: number }> = {
 
 export const LANE_LABEL: Record<Lane, string> = {
   inputs: 'Inputs',
-  fill: 'Fill',
+  fill: 'Plans & notes',
   plates: 'Plates & stills',
-  takes: 'Voice takes',
-  clips: 'Shots',
+  takes: 'Audio',
+  clips: 'Clips',
   cut: 'Cut',
   final: 'Final',
   notes: 'Notes',
@@ -57,8 +37,8 @@ export const KIND_LABEL: Record<NodeKind, string> = {
   fill: 'Fill sheet',
   plate: 'Plate',
   image: 'Image',
-  take: 'Voice take',
-  clip: 'Shot',
+  take: 'Audio',
+  clip: 'Clip',
   cut: 'Cut',
   final: 'Final film',
   note: 'Note',
@@ -66,9 +46,13 @@ export const KIND_LABEL: Record<NodeKind, string> = {
 
 /** How each connection role is drawn. Anything not listed is a plain input. */
 export const EDGE_STYLE: Record<string, { stroke: string; dash?: string; width: number; legend?: string }> = {
-  'first + last frame': { stroke: 'var(--ink)', width: 1.6, legend: 'First + last frame' },
+  'first frame': { stroke: 'var(--ink)', width: 1.6, legend: 'First / last frame' },
+  'last frame': { stroke: 'var(--ink)', width: 1.6, legend: 'First / last frame' },
   'guide audio': { stroke: 'var(--accent)', dash: '6 4', width: 1.6, legend: 'Guide audio (lip-sync)' },
   reference: { stroke: 'var(--ink)', dash: '2 4', width: 1.4, legend: 'Reference' },
-  'setup plate': { stroke: 'var(--muted)', width: 1.2 },
+  voice: { stroke: 'var(--accent)', dash: '2 4', width: 1.4, legend: 'Voice reference' },
+  edit: { stroke: 'var(--muted)', width: 1.3, legend: 'Image edit' },
+  shot: { stroke: 'var(--control)', width: 1.2, legend: 'In the cut' },
+  assemble: { stroke: 'var(--ink)', width: 1.6, legend: 'Assembled' },
 };
 export const DEFAULT_EDGE: { stroke: string; dash?: string; width: number; legend?: string } = { stroke: 'var(--control)', width: 1.2, legend: 'Input' };

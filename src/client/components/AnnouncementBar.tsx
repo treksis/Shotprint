@@ -44,15 +44,15 @@ export function AnnouncementBar({ isLive, onGoLive, onExitLive }: { isLive: bool
       </span>
       {isLive ? (
         <span className="truncate">
-          Live mode is on for Meta Hackathon review: the director runs Muse and renders for real, within a per-session budget.{' '}
+          Live mode is on for Meta Hackathon review: Muse Wonder is unlocked, within a per-project budget.{' '}
           <button type="button" onClick={onExitLive} className="cursor-pointer font-medium underline underline-offset-2">
             Back to demo
           </button>
         </span>
       ) : (
         <span className="truncate">
-          You're exploring replays of real runs. Judges can enter the passcode from the submission notes to run the director
-          live.{' '}
+          Every project runs Muse Code in its own sandbox. Judges can enter the passcode from the submission notes to use
+          Muse Wonder.{' '}
           <button type="button" onClick={onGoLive} className="cursor-pointer font-medium underline underline-offset-2">
             Go live ›
           </button>

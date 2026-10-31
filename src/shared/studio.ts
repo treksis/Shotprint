@@ -1,4 +1,7 @@
-// Studio data contracts shared by the Worker API and the React client.
+// Studio data contracts shared by the API server and the React client.
+//
+// A project is a Muse Code session running in its own sandbox. The chat is that session's item
+// stream (MSP); the canvas is a live view of the sandbox's workspace folder.
 
 export type NodeKind =
   | 'reference'
@@ -25,6 +28,7 @@ export interface NodeMedia {
   poster?: string;
 }
 
+/** A file in the workspace, shown on the canvas. `id` is its workspace-relative path. */
 export interface StudioNode {
   id: string;
   kind: NodeKind;
@@ -39,40 +43,89 @@ export interface StudioNode {
   meta?: Record<string, any>;
 }
 
-/** What one node gives another: "first + last frame", "guide audio", "shot", "assemble"... */
+/** What one node gives another: "first frame", "guide audio", "edit", "shot"... `user` marks canvas wiring. */
 export interface StudioEdge {
   from: string;
   to: string;
   role: string;
+  user?: boolean;
 }
 
-export interface RunStep {
-  text: string;
-  lane: Lane;
-  cost?: string;
-  status: 'pending' | 'running' | 'done' | 'stopped';
-}
-
-export type StudioMessage =
-  | { id: string; role: 'user'; text: string; attachments: string[]; templateId?: string; steer?: boolean }
-  | {
-      id: string;
-      role: 'agent';
-      steps: RunStep[];
-      state: 'running' | 'done' | 'stopped' | 'blocked';
-      created: string[];
-      text?: string;
-      /** Live turns: which model ran and what the turn cost. Replays have neither. */
-      model?: string;
-      usd?: number;
-      /** Muse's reasoning summary for this turn, streamed while it thinks. */
-      thinking?: string;
-    };
-
-export interface StudioState {
-  nodes: StudioNode[];
+export interface WorkspaceGraph {
+  nodes: Array<Omit<StudioNode, 'x' | 'y'>>;
   edges: StudioEdge[];
-  messages: StudioMessage[];
+}
+
+/** One entry of the Muse Code transcript (an MSP view item, trimmed for the browser). */
+export interface SessionItem {
+  id: string;
+  kind: 'userMessage' | 'agentMessage' | 'reasoning' | 'toolCall' | 'subagent' | 'workflow' | 'userShell' | (string & {});
+  status: 'inProgress' | 'completed' | 'failed' | 'cancelled' | (string & {});
+  turnId?: string;
+  text?: string;
+  summary?: string[];
+  tool?: string;
+  args?: Record<string, any>;
+  commandText?: string;
+  output?: string;
+  exitCode?: number;
+  durationMs?: number;
+  steered?: boolean;
+  at: number;
+}
+
+export interface TodoEntry {
+  text: string;
+  status: string;
+  activeForm?: string;
+}
+
+export type SessionStatus = 'offline' | 'starting' | 'idle' | 'running' | 'error';
+
+export type DirectorModel = 'spark' | 'wonder';
+
+export const MODEL_IDS: Record<DirectorModel, string> = {
+  spark: 'muse-spark-1.3-contributor',
+  wonder: 'muse-wonder-1.0',
+};
+
+/** Everything the project page needs to render, sent on connect and kept current by events. */
+export interface SessionView {
+  status: SessionStatus;
+  error?: string;
+  /** Can this server start a sandbox at all (Docker in dev, a container binding in Cloudflare)? */
+  runnable: boolean;
+  model: DirectorModel;
+  activeTurnId: string | null;
+  queued: Array<{ turnId: string; text: string }>;
+  items: SessionItem[];
+  todos: TodoEntry[];
+  usd: number;
+  graph: WorkspaceGraph;
+}
+
+export type StudioEvent =
+  | { type: 'snapshot'; view: SessionView }
+  | { type: 'item'; item: SessionItem }
+  | { type: 'delta'; id: string; field: string; delta: string }
+  | { type: 'status'; status: SessionStatus; activeTurnId: string | null; queued: SessionView['queued']; error?: string; model: DirectorModel }
+  | { type: 'todos'; items: TodoEntry[] }
+  | { type: 'usage'; usd: number }
+  | { type: 'graph'; graph: WorkspaceGraph };
+
+export type TurnMode = 'send' | 'steer' | 'queue';
+
+export interface TurnRequest {
+  text: string;
+  mode?: TurnMode;
+  model?: DirectorModel;
+  /** Workspace paths the person attached (uploads, or nodes dragged onto the chat). */
+  files?: string[];
+}
+
+/** Canvas layout and the person's own wiring; the nodes themselves come from the workspace. */
+export interface StudioState {
+  positions: Record<string, { x: number; y: number }>;
 }
 
 export type ProjectStatus = 'draft' | 'running' | 'done';
@@ -97,7 +150,7 @@ export interface CreateStudioProjectRequest {
   prompt: string;
   templateId: string | null;
   thumbnail: string | null;
-  state: StudioState;
+  state?: StudioState;
 }
 
 export interface UpdateStudioProjectRequest {
@@ -107,7 +160,7 @@ export interface UpdateStudioProjectRequest {
   state?: StudioState;
 }
 
-/** A dissected (ready) or not-yet-dissected (reference) ad the director can rebuild. */
+/** A dissected (ready) or not-yet-dissected (reference) film the director can rebuild. */
 export interface StudioTemplate {
   id: string;
   title: string;
@@ -122,6 +175,4 @@ export interface StudioTemplate {
   preview: string;
   description: string;
   prompt: string;
-  /** A finished run built on this template, replayed in demo mode. */
-  example?: { demoId: string; product: string; score: number };
 }

@@ -67,9 +67,9 @@ export function TemplateCard({
           )}
         </span>
         <span className="mt-2.5">
-          {t.status === 'ready' && t.example ? (
+          {t.status === 'ready' ? (
             <span className="inline-flex h-6 items-center rounded-[6px] bg-[var(--pill-positive-bg)] px-2 text-[12px] font-medium text-[var(--pill-positive-ink)]">
-              Ready · example scored {t.example.score.toFixed(2)}
+              Ready · dissected shot by shot
             </span>
           ) : (
             <span className="inline-flex h-6 items-center rounded-[6px] bg-muted px-2 text-[12px] font-medium text-muted-foreground">

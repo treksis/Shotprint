@@ -1,22 +1,50 @@
-import { Check, CircleDashed, Clapperboard, ListChecks, Loader2, PanelRightOpen, Workflow } from 'lucide-react';
+import { AlertCircle, Check, ChevronRight, Clapperboard, FileText, Loader2, Pencil, Search, SquareTerminal, X } from 'lucide-react';
+import { memo, useEffect, useMemo, useState } from 'react';
 import { Conversation, ConversationContent, ConversationScrollButton } from '@/components/ai-elements/conversation';
+import { useStickToBottomContext } from 'use-stick-to-bottom';
 import { Message, MessageContent, MessageResponse } from '@/components/ai-elements/message';
 import { Reasoning, ReasoningContent, ReasoningTrigger } from '@/components/ai-elements/reasoning';
 import { Shimmer } from '@/components/ai-elements/shimmer';
 import { Suggestion, Suggestions } from '@/components/ai-elements/suggestion';
-import { Task, TaskContent, TaskItem, TaskTrigger } from '@/components/ai-elements/task';
 import { cn } from '@/lib/utils';
-import { useStudio } from '../store';
-import { KIND_LABEL, type StudioNode } from '../types';
+import { useSession } from '../session';
+import type { SessionItem, StudioNode } from '../types';
 
 export interface ChatThreadProps {
-  canvasOpen: boolean;
-  isLive: boolean;
+  nodes: StudioNode[];
   suggestions: string[];
   onSuggestion: (s: string) => void;
-  onOpenCanvas: () => void;
-  onChip: (id: string) => void;
-  onGoLive: () => void;
+  onFocusNode: (id: string) => void;
+}
+
+const ws = (p?: string) => (p ? p.replace(/^\/run\/host_virtiofs/, '').replace(/^.*\/\.data\/workspaces\/[^/]+\//, '') : '');
+
+/** Muse links files by their sandbox path; in the chat they read as workspace paths (the canvas has the file). */
+const tidyLinks = (text: string) =>
+  text
+    .replace(/\[([^\]]+)\]\((?:file:\/\/)?(\/[^)\s]*\/\.data\/workspaces\/[^/]+\/|\.\/)?([^)\s:]+)\)/g, (m, label, abs, rel) => (abs || !/^[a-z]+:/i.test(rel) ? `**${label}** (\`${rel}\`)` : m))
+    .replace(/(?:\/run\/host_virtiofs)?\/[^\s`)]*\/\.data\/workspaces\/[^/\s]+\//g, '');
+
+/** How a tool call reads in the transcript: a verb, its target, and the shell command if there is one. */
+function describe(it: SessionItem): { icon: typeof SquareTerminal; title: string; detail?: string } {
+  const a = it.args ?? {};
+  const tool = (it.tool ?? '').toLowerCase();
+  const cmd = it.commandText ?? (typeof a.command === 'string' ? a.command : undefined);
+  if (tool === 'bash_input') return { icon: SquareTerminal, title: 'Send input to a running command', detail: typeof a.input === 'string' ? a.input : undefined };
+  if (cmd || /bash|shell|exec/.test(tool)) return { icon: SquareTerminal, title: a.description || 'Run', detail: cmd };
+  if (/write|create/.test(tool)) return { icon: Pencil, title: `Write ${ws(a.path ?? a.file_path)}` };
+  if (/edit|patch|replace/.test(tool)) return { icon: Pencil, title: `Edit ${ws(a.path ?? a.file_path)}` };
+  if (/read|view|open/.test(tool)) return { icon: FileText, title: `Read ${ws(a.path ?? a.file_path)}` };
+  if (/grep|glob|search|find|list/.test(tool)) return { icon: Search, title: `${it.tool} ${a.pattern ?? a.path ?? ''}`.trim() };
+  return { icon: SquareTerminal, title: it.tool ?? 'Tool', detail: Object.keys(a).length ? JSON.stringify(a) : undefined };
+}
+
+/** Workspace files a tool call touched that are on the canvas: shown as chips that jump to the node. */
+function touched(it: SessionItem, byId: Map<string, StudioNode>): StudioNode[] {
+  const hay = `${it.commandText ?? ''} ${it.args?.command ?? ''} ${ws(it.args?.path ?? it.args?.file_path)} ${it.status === 'completed' ? (it.output ?? '').slice(-600) : ''}`;
+  const out: StudioNode[] = [];
+  for (const [id, n] of byId) if (hay.includes(id) && out.length < 6) out.push(n);
+  return out;
 }
 
 function NodeChip({ node, onClick }: { node: StudioNode; onClick: () => void }) {
@@ -25,162 +53,164 @@ function NodeChip({ node, onClick }: { node: StudioNode; onClick: () => void }) 
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex h-8 cursor-pointer items-center gap-2 rounded-full bg-[rgba(0,0,0,0.05)] pr-3 pl-1 text-[13px] hover:bg-[rgba(0,0,0,0.08)]"
+      className="inline-flex h-7 max-w-[220px] cursor-pointer items-center gap-1.5 rounded-full bg-[rgba(0,0,0,0.05)] pr-2.5 pl-0.5 text-[12px] hover:bg-[rgba(0,0,0,0.08)]"
     >
-      {thumb ? (
-        <img src={thumb} alt="" className="size-6 rounded-full object-cover" />
-      ) : (
-        <span className="grid size-6 place-items-center rounded-full bg-background">
-          <Workflow className="size-3" />
-        </span>
-      )}
-      <span className="text-muted-foreground">{KIND_LABEL[node.kind]}</span>
-      <span className="max-w-[140px] truncate font-medium">{node.label}</span>
+      {thumb ? <img src={thumb} alt="" className="size-6 rounded-full object-cover" /> : <span className="grid size-6 place-items-center rounded-full bg-background"><FileText className="size-3" /></span>}
+      <span className="truncate font-medium">{node.id}</span>
     </button>
   );
 }
 
-/** The conversation (AI Elements): briefs, the director's task list, results, and the canvas card. */
-export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOpenCanvas, onChip, onGoLive }: ChatThreadProps) {
-  const messages = useStudio((s) => s.messages);
-  const nodes = useStudio((s) => s.nodes);
-  const byId = new Map(nodes.map((n) => [n.id, n]));
-  const done = nodes.filter((n) => n.status === 'done').length;
-  const working = nodes.some((n) => n.status === 'running' || n.status === 'pending');
-  const lastAgent = [...messages].reverse().find((m) => m.role === 'agent');
-  const waiting = messages.at(-1)?.role === 'user';
+const ToolRow = memo(function ToolRow({ it, chips, onFocusNode }: { it: SessionItem; chips: StudioNode[]; onFocusNode: (id: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const d = describe(it);
+  const Icon = d.icon;
+  const running = it.status === 'inProgress';
+  const failed = it.status === 'failed' || (typeof it.exitCode === 'number' && it.exitCode !== 0);
+  const hasBody = !!(it.output?.trim() || d.detail);
+  return (
+    <div className="group">
+      <button
+        type="button"
+        onClick={() => hasBody && setOpen((o) => !o)}
+        className={cn('flex w-full items-center gap-2 rounded-[10px] px-2 py-1.5 text-left text-[13px]', hasBody && 'cursor-pointer hover:bg-[rgba(0,0,0,0.04)]')}
+      >
+        <span className="grid size-4 shrink-0 place-items-center">
+          {running ? <Loader2 className="size-3.5 animate-spin text-[var(--accent)]" /> : failed ? <X className="size-3.5 text-[var(--negative)]" /> : <Icon className="size-3.5 text-muted-foreground" />}
+        </span>
+        <span className="min-w-0 flex-1 truncate">
+          <span className="font-medium text-foreground">{running ? <Shimmer>{d.title}</Shimmer> : d.title}</span>
+          {d.detail && <span className="ml-2 font-mono text-[12px] text-muted-foreground">{d.detail.split('\n')[0].slice(0, 140)}</span>}
+        </span>
+        {typeof it.durationMs === 'number' && !running && <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">{(it.durationMs / 1000).toFixed(1)}s</span>}
+        {hasBody && <ChevronRight className={cn('size-3.5 shrink-0 text-muted-foreground transition-transform', open && 'rotate-90')} />}
+      </button>
+      {open && (
+        <div className="mt-1 mb-2 ml-8 overflow-hidden rounded-[10px] border border-border bg-[var(--chrome)]">
+          {d.detail && <pre className="max-h-40 overflow-auto border-b border-border px-3 py-2 font-mono text-[12px] leading-relaxed whitespace-pre-wrap text-foreground">{d.detail}</pre>}
+          {it.output?.trim() && <pre className="max-h-64 overflow-auto px-3 py-2 font-mono text-[12px] leading-relaxed whitespace-pre-wrap text-muted-foreground">{it.output.trim()}</pre>}
+        </div>
+      )}
+      {chips.length > 0 && (
+        <div className="mt-1 mb-1.5 ml-8 flex flex-wrap gap-1.5">
+          {chips.map((n) => (
+            <NodeChip key={n.id} node={n} onClick={() => onFocusNode(n.id)} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+});
+
+/** Sending a message always brings the conversation back to the bottom, even if you had scrolled up. */
+function FollowOnSend({ lastUserId }: { lastUserId?: string }) {
+  const { scrollToBottom } = useStickToBottomContext();
+  useEffect(() => {
+    if (lastUserId) void scrollToBottom();
+  }, [lastUserId, scrollToBottom]);
+  return null;
+}
+
+/** Muse Code's transcript (AI Elements): your messages, its thinking, replies and every command it runs. */
+export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: ChatThreadProps) {
+  const order = useSession((s) => s.order);
+  const items = useSession((s) => s.byId);
+  const status = useSession((s) => s.status);
+  const error = useSession((s) => s.error);
+  const model = useSession((s) => s.model);
+  const byId = useMemo(() => new Map(nodes.filter((n) => n.status === 'done').map((n) => [n.id, n])), [nodes]);
+
+  // Consecutive agent items form one block under one avatar, like a terminal session.
+  const blocks = useMemo(() => {
+    const out: Array<{ user?: SessionItem; agent?: SessionItem[] }> = [];
+    for (const id of order) {
+      const it = items[id];
+      if (!it) continue;
+      if (it.kind === 'userMessage') out.push({ user: it });
+      else if (out.at(-1)?.agent) out.at(-1)!.agent!.push(it);
+      else out.push({ agent: [it] });
+    }
+    return out;
+  }, [order, items]);
+
+  const running = status === 'running';
+  const last = order.length ? items[order[order.length - 1]] : undefined;
+  const busyTail = running && (!last || last.kind === 'userMessage' || last.status !== 'inProgress');
 
   return (
     <Conversation className="min-h-0 flex-1">
-      <ConversationContent className="mx-auto w-full max-w-[720px] gap-7 px-5 pt-6 pb-10">
-        {messages.map((m) =>
-          m.role === 'user' ? (
-            <Message key={m.id} from="user">
-              {m.steer && <p className="ml-auto text-[12px] font-medium text-[var(--accent)]">Steering · sent while the director was working</p>}
-              <MessageContent className={cn('rounded-[20px] px-4 py-2.5 text-[15px] leading-relaxed', m.steer ? 'bg-[rgba(8,102,255,0.08)]' : 'bg-[rgba(0,0,0,0.05)]')}>
-                {m.text}
+      <ConversationContent className="mx-auto w-full max-w-[720px] gap-6 px-5 pt-6 pb-10">
+        {blocks.map((b, i) =>
+          b.user ? (
+            <Message key={b.user.id} from="user">
+              {b.user.steered && <p className="ml-auto text-[12px] font-medium text-[var(--accent)]">Steered · sent while Muse was working</p>}
+              <MessageContent className={cn('rounded-[20px] px-4 py-2.5 text-[15px] leading-relaxed whitespace-pre-wrap', b.user.steered ? 'bg-[rgba(8,102,255,0.08)]' : 'bg-[rgba(0,0,0,0.05)]')}>
+                {b.user.text?.replace(/\n\n\(Template picked:[^)]*\)\s*$/, '').replace(/\n\n\(Reference film:[^)]*\)\s*$/, '')}
               </MessageContent>
-              {m.attachments.length > 0 && <p className="ml-auto text-[12px] text-muted-foreground">{m.attachments.join(', ')}</p>}
             </Message>
           ) : (
-            <Message key={m.id} from="assistant" className="max-w-full">
-              <div className="flex gap-3">
-                <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
-                  <Clapperboard className="size-3.5" />
-                </span>
-                <MessageContent className="min-w-0 flex-1 gap-3 text-[15px]">
-                  <p className="text-[13px] font-medium text-muted-foreground">Director</p>
-
-                  {(m.thinking || (m.state === 'running' && !m.text && m.steps.length <= 1)) && (
-                    <Reasoning isStreaming={m.state === 'running' && !m.text} defaultOpen={false} className="mb-0">
-                      <ReasoningTrigger />
-                      <ReasoningContent className="text-[13px] leading-relaxed text-muted-foreground">{m.thinking || '…'}</ReasoningContent>
-                    </Reasoning>
-                  )}
-
-                  {m.steps.length > 0 && (
-                    <Task defaultOpen className="rounded-[14px] border border-border">
-                      <TaskTrigger title="">
-                        <button type="button" className="flex w-full cursor-pointer items-center gap-2 px-3.5 py-2.5 text-[13px] text-muted-foreground hover:text-foreground">
-                          <ListChecks className="size-4" />
-                          <span className="flex-1 text-left">
-                            {m.state === 'running'
-                              ? `Working · step ${Math.min(m.steps.filter((s) => s.status === 'done').length + 1, m.steps.length)} of ${m.steps.length}`
-                              : `${m.steps.filter((s) => s.status === 'done').length} of ${m.steps.length} steps done`}
-                          </span>
-                        </button>
-                      </TaskTrigger>
-                      <TaskContent>
-                        <ol className="border-t border-border">
-                          {m.steps.map((s, i) => (
-                            <TaskItem key={i} className={cn('flex items-start gap-2.5 px-3.5 py-2.5 text-[14px]', i > 0 && 'border-t border-border')}>
-                              <span className="mt-[3px] grid size-4 shrink-0 place-items-center">
-                                {s.status === 'done' ? (
-                                  <Check className="size-4 text-[var(--positive)]" />
-                                ) : s.status === 'running' ? (
-                                  <Loader2 className="size-4 animate-spin text-[var(--accent)]" />
-                                ) : (
-                                  <CircleDashed className="size-3.5 text-[var(--control)]" />
-                                )}
-                              </span>
-                              <span className={cn('min-w-0 flex-1 leading-snug', s.status === 'done' || s.status === 'running' ? 'text-foreground' : 'text-muted-foreground')}>
-                                {s.status === 'running' ? <Shimmer>{s.text}</Shimmer> : s.text}
-                              </span>
-                              {s.cost && <span className="shrink-0 pt-px text-[12px] tabular-nums text-muted-foreground">{s.cost}</span>}
-                            </TaskItem>
-                          ))}
-                        </ol>
-                      </TaskContent>
-                    </Task>
-                  )}
-
-                  {nodes.length > 0 && m === lastAgent && (m.state === 'running' || m.state === 'done') && (
-                    <button
-                      type="button"
-                      onClick={onOpenCanvas}
-                      className="flex w-full cursor-pointer items-center gap-3 rounded-[14px] border border-border bg-background p-2.5 text-left hover:border-[#c9c9c6]"
-                    >
-                      <span className="grid size-11 shrink-0 place-items-center rounded-[10px] bg-[var(--chrome)]">
-                        {working ? <Loader2 className="size-4 animate-spin text-[var(--accent)]" /> : <Workflow className="size-4" />}
-                      </span>
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-[14px] font-medium">Production canvas</span>
-                        <span className="block text-[12px] text-muted-foreground">
-                          {working ? `${done} of ${nodes.length} nodes ready` : `${nodes.length} nodes · undo, connect, rearrange`}
-                        </span>
-                      </span>
-                      {!canvasOpen && (
-                        <span className="inline-flex items-center gap-1.5 rounded-[8px] bg-muted px-2.5 py-1 text-[12px] font-medium">
-                          <PanelRightOpen className="size-3.5" />
-                          Open
-                        </span>
-                      )}
-                    </button>
-                  )}
-
-                  {m.text && <MessageResponse className="text-[15px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5">{m.text}</MessageResponse>}
-                  {m.state === 'blocked' && !isLive && (
-                    <div>
-                      <button
-                        type="button"
-                        onClick={onGoLive}
-                        className="inline-flex h-9 cursor-pointer items-center rounded-full bg-[var(--meta-blue)] px-4 text-[14px] font-medium text-white"
-                      >
-                        Enter the judge passcode
-                      </button>
-                    </div>
-                  )}
-                  {m.model && (
-                    <p className="text-[12px] text-muted-foreground">
-                      {m.model.startsWith('muse-wonder') ? 'Muse Wonder' : 'Muse Spark'}
-                      {typeof m.usd === 'number' && ` · $${m.usd < 0.01 ? m.usd.toFixed(4) : m.usd.toFixed(2)}`}
-                    </p>
-                  )}
-                  {m.state === 'stopped' && <p className="text-[14px] text-muted-foreground">Stopped. Send the brief again to restart.</p>}
-                  {m.state === 'done' && m.created.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5">
-                      {m.created.map((id) => {
-                        const n = byId.get(id);
-                        return n ? <NodeChip key={id} node={n} onClick={() => onChip(id)} /> : null;
-                      })}
-                    </div>
-                  )}
-                </MessageContent>
+            <div key={`a${i}`} className="flex gap-3">
+              <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
+                <Clapperboard className="size-3.5" />
+              </span>
+              <div className="min-w-0 flex-1 space-y-1.5">
+                <p className="text-[13px] font-medium text-muted-foreground">Muse Code</p>
+                {b.agent!.map((it) => {
+                  if (it.kind === 'reasoning') {
+                    const text = (it.summary ?? []).filter(Boolean).join('\n\n') || it.text || '';
+                    if (!text && it.status !== 'inProgress') return null;
+                    return (
+                      <Reasoning key={it.id} isStreaming={it.status === 'inProgress'} defaultOpen={false} className="mb-0">
+                        <ReasoningTrigger className="text-[13px]" />
+                        <ReasoningContent className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{text || '…'}</ReasoningContent>
+                      </Reasoning>
+                    );
+                  }
+                  if (it.kind === 'agentMessage')
+                    return it.text ? (
+                      <MessageResponse key={it.id} className="py-0.5 text-[15px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5">
+                        {tidyLinks(it.text)}
+                      </MessageResponse>
+                    ) : null;
+                  if (it.kind === 'toolCall' || it.kind === 'userShell') return <ToolRow key={it.id} it={it} chips={it.status === 'completed' ? touched(it, byId) : []} onFocusNode={onFocusNode} />;
+                  if (it.kind === 'notice') return <p key={it.id} className="px-2 text-[13px] text-muted-foreground">{it.text}</p>;
+                  if (it.kind === 'error')
+                    return (
+                      <p key={it.id} className="flex items-start gap-2 text-[14px] text-[var(--negative)]">
+                        <AlertCircle className="mt-0.5 size-4 shrink-0" />
+                        {it.text}
+                      </p>
+                    );
+                  if (it.kind === 'subagent' || it.kind === 'workflow')
+                    return (
+                      <p key={it.id} className="flex items-center gap-2 px-2 text-[13px] text-muted-foreground">
+                        {it.status === 'inProgress' ? <Loader2 className="size-3.5 animate-spin" /> : <Check className="size-3.5" />}
+                        {it.kind === 'subagent' ? 'Sub-agent' : 'Workflow'} {it.text ? `· ${it.text.slice(0, 120)}` : ''}
+                      </p>
+                    );
+                  return null;
+                })}
               </div>
-            </Message>
+            </div>
           )
         )}
 
-        {waiting && (
+        {(busyTail || status === 'starting') && (
           <div className="flex items-center gap-3">
             <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
               <Clapperboard className="size-3.5" />
             </span>
-            <Shimmer className="text-[14px]">Reading the brief…</Shimmer>
+            <Shimmer className="text-[14px]">{status === 'starting' ? 'Starting the sandbox…' : `Working · ${model === 'wonder' ? 'Muse Wonder' : 'Muse Spark'}`}</Shimmer>
           </div>
         )}
+        {status === 'error' && error && (
+          <p className="flex items-start gap-2 rounded-[14px] bg-[rgba(228,30,63,0.06)] px-4 py-3 text-[14px] text-[var(--negative)]">
+            <AlertCircle className="mt-0.5 size-4 shrink-0" />
+            {error}
+          </p>
+        )}
 
-        {!waiting && suggestions.length > 0 && lastAgent?.state !== 'running' && (
+        {!running && suggestions.length > 0 && (
           <Suggestions>
             {suggestions.map((s) => (
               <Suggestion key={s} suggestion={s} onClick={onSuggestion} className="rounded-full text-[13px]" />
@@ -188,6 +218,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
           </Suggestions>
         )}
       </ConversationContent>
+      <FollowOnSend lastUserId={[...order].reverse().find((id) => items[id]?.kind === 'userMessage')} />
       <ConversationScrollButton />
     </Conversation>
   );

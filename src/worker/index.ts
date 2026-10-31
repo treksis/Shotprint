@@ -50,6 +50,8 @@ export interface WorkerBindings {
     fetch(request: Request): Promise<Response>;
   };
   JUDGE_PASSCODE?: string;
+  /** "1" lets anyone use Muse Wonder without the judge passcode (local dev). */
+  STUDIO_OPEN?: string;
   META_API_KEY?: string;
   META_API_BASE_URL?: string;
   META_TEXT_MODEL?: string;

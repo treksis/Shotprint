@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""bin/h3 inside the sandbox: hand the render to the Studio host (which owns the GPU) and stream its output.
+
+Same commands and options as described in TOOLS.md, plus:
+    bin/h3 wait      keep waiting for (and print) any of your requests still running on the host
+
+A render can take 20+ minutes when the GPU queue is busy. If this command returns with exit code 75
+("still running"), the work continues on the host: run `bin/h3 wait`, don't resubmit.
+"""
+import json, os, pathlib, sys, time, uuid
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+TOOL = "h3"
+B = ROOT / ".bridge"
+WAIT = int(os.environ.get("BRIDGE_WAIT", "540"))
+for d in ("req", "out"): (B / d).mkdir(parents=True, exist_ok=True)
+
+
+def rel(a):
+    p = pathlib.Path(a)
+    if p.is_absolute():
+        try: return str(p.resolve().relative_to(ROOT.resolve()))
+        except ValueError: sys.exit(f"{TOOL}: {a} is outside the workspace")
+    return a
+
+
+def follow(rid, t0):
+    log, ex, pos = B / "out" / f"{rid}.log", B / "out" / f"{rid}.exit", 0
+    while True:
+        done = ex.exists()
+        if log.exists():
+            with log.open(errors="replace") as f:
+                f.seek(pos); s = f.read(); pos = f.tell()
+            if s: sys.stdout.write(s); sys.stdout.flush()
+        if done: return int(ex.read_text().strip() or 1)
+        if time.time() - t0 > WAIT:
+            print(f"\n[{TOOL}] still running on the host (request {rid}). Run `bin/h3 wait` to keep waiting; don't resubmit.", flush=True)
+            return 75
+        time.sleep(3)
+
+
+args = sys.argv[1:]
+if TOOL == "h3" and args[:1] == ["wait"]:
+    pending = sorted((p.stem for p in (B / "req").glob("*.json") if not (B / "out" / f"{p.stem}.exit").exists()),
+                     key=lambda r: (B / "req" / f"{r}.json").stat().st_mtime)
+    if not pending: print("h3: nothing pending; every request has finished (see renders/)."); sys.exit(0)
+    t0 = time.time(); code = 0
+    for rid in pending: code = follow(rid, t0) or code
+    sys.exit(code)
+
+if TOOL == "h3" and args and not args[0].startswith("-") and args[0] not in ("status", "resume"):
+    args[0] = rel(args[0])
+for i, a in enumerate(args):
+    if i and args[i - 1] in ("--out", "--image"): args[i] = rel(a)
+rid = time.strftime("%H%M%S") + "-" + uuid.uuid4().hex[:6]
+cwd = str(pathlib.Path.cwd().resolve().relative_to(ROOT.resolve())) if str(pathlib.Path.cwd().resolve()).startswith(str(ROOT.resolve())) else "."
+tmp = B / "req" / f".{rid}.tmp"
+tmp.write_text(json.dumps({"tool": TOOL, "args": args, "cwd": cwd}))
+tmp.rename(B / "req" / f"{rid}.json")
+sys.exit(follow(rid, time.time()))

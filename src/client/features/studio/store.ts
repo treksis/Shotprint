@@ -1,20 +1,25 @@
+import { useMemo } from 'react';
 import { create } from 'zustand';
 import { temporal } from 'zundo';
-import type { StudioEdge, StudioMessage, StudioNode, StudioState } from './types';
+import { layoutColumns, placeNew } from './lib';
+import type { StudioEdge, StudioNode, WorkspaceGraph } from './types';
+
+type Pos = { x: number; y: number };
 
 /**
- * One store per open project. Undo/redo (zundo) covers the canvas only: nodes and edges.
- * Chat messages and selection are outside history, so undo never rewrites the conversation.
+ * The canvas of the open project. Nodes are the workspace's files (from the sandbox, never undone);
+ * undo/redo (zundo) covers what the person does to the canvas: where nodes sit and their own links.
  */
-interface StudioStore {
-  nodes: StudioNode[];
-  edges: StudioEdge[];
-  messages: StudioMessage[];
+interface CanvasStore {
+  graph: WorkspaceGraph;
+  positions: Record<string, Pos>;
+  links: StudioEdge[];
   selected: string[];
-  load: (s: StudioState) => void;
-  setNodes: (fn: (n: StudioNode[]) => StudioNode[]) => void;
-  setEdges: (fn: (e: StudioEdge[]) => StudioEdge[]) => void;
-  setMessages: (fn: (m: StudioMessage[]) => StudioMessage[]) => void;
+  load: (positions: Record<string, Pos>) => void;
+  setGraph: (g: WorkspaceGraph) => void;
+  move: (moves: Map<string, Pos>) => void;
+  setLinks: (fn: (l: StudioEdge[]) => StudioEdge[]) => void;
+  tidy: () => void;
   setSelected: (ids: string[]) => void;
 }
 
@@ -28,22 +33,50 @@ function throttleLeading<A extends unknown[]>(fn: (...a: A) => void, ms: number)
   };
 }
 
-export const useStudio = create<StudioStore>()(
+let linksLoaded = false;
+
+export const useStudio = create<CanvasStore>()(
   temporal(
-    (set) => ({
-      nodes: [],
-      edges: [],
-      messages: [],
+    (set, get) => ({
+      graph: { nodes: [], edges: [] },
+      positions: {},
+      links: [],
       selected: [],
-      load: (s) => set({ nodes: s.nodes, edges: s.edges, messages: s.messages, selected: [] }),
-      setNodes: (fn) => set((st) => ({ nodes: fn(st.nodes) })),
-      setEdges: (fn) => set((st) => ({ edges: fn(st.edges) })),
-      setMessages: (fn) => set((st) => ({ messages: fn(st.messages) })),
+      load: (positions) => {
+        linksLoaded = false;
+        set({ graph: { nodes: [], edges: [] }, positions, links: [], selected: [] });
+      },
+      setGraph: (g) => {
+        // Files the agent just made get a place on the canvas; that is not an undoable edit.
+        const h = useStudio.temporal.getState();
+        h.pause();
+        const pos = { ...get().positions };
+        const missing = g.nodes.filter((n) => !pos[n.id]);
+        if (missing.length) {
+          const placed = Object.keys(pos).length === 0 ? layoutColumns(g.nodes).placed : null;
+          let laid: StudioNode[] = g.nodes.filter((n) => pos[n.id]).map((n) => ({ ...n, ...pos[n.id] }));
+          for (const n of missing) {
+            const p = placed?.get(n.id) ?? placeNew(laid, n.lane, n.kind);
+            pos[n.id] = p;
+            laid = [...laid, { ...n, ...p }];
+          }
+        }
+        const patch: Partial<CanvasStore> = { graph: g, positions: pos };
+        if (!linksLoaded) {
+          linksLoaded = true;
+          patch.links = g.edges.filter((e) => e.user);
+        }
+        set(patch);
+        h.resume();
+      },
+      move: (moves) => set((s) => ({ positions: { ...s.positions, ...Object.fromEntries(moves) } })),
+      setLinks: (fn) => set((s) => ({ links: fn(s.links) })),
+      tidy: () => set((s) => ({ positions: { ...s.positions, ...Object.fromEntries(layoutColumns(s.graph.nodes).placed) } })),
       setSelected: (ids) => set({ selected: ids }),
     }),
     {
-      partialize: (s) => ({ nodes: s.nodes, edges: s.edges }),
-      equality: (a, b) => a.nodes === b.nodes && a.edges === b.edges,
+      partialize: (s) => ({ positions: s.positions, links: s.links }),
+      equality: (a, b) => a.positions === b.positions && a.links === b.links,
       handleSet: (handleSet) => throttleLeading(handleSet, 400),
       limit: 100,
     }
@@ -51,7 +84,17 @@ export const useStudio = create<StudioStore>()(
 );
 
 export const history = () => useStudio.temporal.getState();
-export const snapshot = (): StudioState => {
-  const s = useStudio.getState();
-  return { nodes: s.nodes, edges: s.edges, messages: s.messages };
-};
+
+/** Workspace files with their canvas positions. */
+export function useCanvasNodes(): StudioNode[] {
+  const graph = useStudio((s) => s.graph);
+  const positions = useStudio((s) => s.positions);
+  return useMemo(() => graph.nodes.map((n) => ({ ...n, ...(positions[n.id] ?? { x: 0, y: 0 }) })), [graph, positions]);
+}
+
+/** The agent's connections plus the person's own links. */
+export function useCanvasEdges(): StudioEdge[] {
+  const graph = useStudio((s) => s.graph);
+  const links = useStudio((s) => s.links);
+  return useMemo(() => [...graph.edges.filter((e) => !e.user), ...links.map((l) => ({ ...l, user: true }))], [graph, links]);
+}

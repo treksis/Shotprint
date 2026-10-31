@@ -78,7 +78,7 @@ function Media({ node, className }: { node: StudioNode; className: string }) {
   if (node.status === 'pending' || node.status === 'running')
     return (
       <span className={cn('relative block overflow-hidden bg-muted', className)}>
-        <span className="studio-indeterminate absolute inset-x-0 bottom-0 h-[2px]" />
+        {node.status === 'running' && <span className="studio-indeterminate absolute inset-x-0 bottom-0 h-[2px]" />}
       </span>
     );
   if (!src && node.media?.type === 'video')
@@ -97,7 +97,7 @@ export function NodeCard({ node, selected, related }: { node: StudioNode; select
   const Icon = ICON[node.kind];
   const pending = node.status === 'pending';
   const t = tags(node);
-  const label = pending ? KIND_LABEL[node.kind] : node.label;
+  const label = node.label || KIND_LABEL[node.kind];
 
   const body = () => {
     if (node.kind === 'fill') {
@@ -189,7 +189,7 @@ export function NodeCard({ node, selected, related }: { node: StudioNode; select
           ))
         ) : (
           <span className="truncate text-[11px] text-muted-foreground">
-            {node.status === 'running' ? 'Working…' : pending ? 'Queued' : node.sub}
+            {node.status === 'running' ? 'Working…' : pending ? 'Not rendered yet' : node.sub}
           </span>
         )}
       </span>

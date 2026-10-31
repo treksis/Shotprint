@@ -1,8 +1,9 @@
 import type { StudioTemplate } from './studio';
 
 /**
- * Template catalog. "ready" = dissected into lab/templates/<id> (TEMPLATE.md + template.json) and
- * validated by a judged run; "reference" = the source film is in the library but not dissected yet.
+ * Template catalog. "ready" = dissected into sandbox/templates/<id> (TEMPLATE.md + template.json),
+ * copied into a project's workspace when it is picked; "reference" = only the source film exists, which
+ * goes into the workspace's inputs/ for the agent to dissect.
  * Shot counts for references are scene-detection estimates, labelled as such in the UI.
  */
 export const STUDIO_TEMPLATES: StudioTemplate[] = [
@@ -21,7 +22,6 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     description:
       'A three-camera founder interview cut across factory B-roll, a late hero reveal and a laser-etched payoff. 30-second cutdown, 15 shots.',
     prompt: 'Make a 30-second Meta VR Glasses film from the BlueChip factory template.',
-    example: { demoId: 'bluechip-v3', product: 'Meta VR Glasses', score: 8.55 },
   },
   {
     id: 'meta-vr-glasses-launch',

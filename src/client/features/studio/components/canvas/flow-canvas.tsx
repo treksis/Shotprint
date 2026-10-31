@@ -22,12 +22,11 @@ import {
 } from '@xyflow/react';
 import { LayoutGrid, Maximize, Minus, Plus, Redo2, Undo2 } from 'lucide-react';
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { uploadFile } from '../../api';
-import { newId } from '../../lib';
+import { uploadToProject } from '../../api';
 import { useStore } from 'zustand';
 import { cn } from '@/lib/utils';
-import { laneBoxes, relayout } from '../../lib';
-import { history, useStudio } from '../../store';
+import { laneBoxes } from '../../lib';
+import { history, useCanvasEdges, useCanvasNodes, useStudio } from '../../store';
 import { DEFAULT_EDGE, EDGE_STYLE, LANE_LABEL, NODE_SIZE, type Lane, type StudioNode } from '../../types';
 import { Inspector } from './inspector';
 import { NodeCard } from './node-card';
@@ -88,9 +87,9 @@ const nodeTypes = { studio: StudioNodeView, lane: LaneNodeView };
 const edgeTypes = { role: RoleEdgeView };
 
 export interface FlowCanvasProps {
+  projectId: string;
   focus: { id: string; n: number } | null;
   fitSignal: number;
-  readOnly?: boolean;
   onAttach: (id: string) => void;
 }
 
@@ -109,11 +108,11 @@ function ToolButton({ label, onClick, disabled, children }: { label: string; onC
   );
 }
 
-function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
-  const nodes = useStudio((s) => s.nodes);
-  const edges = useStudio((s) => s.edges);
+function Canvas({ projectId, focus, fitSignal, onAttach }: FlowCanvasProps) {
+  const nodes = useCanvasNodes();
+  const edges = useCanvasEdges();
   const selected = useStudio((s) => s.selected);
-  const { setNodes, setEdges, setSelected } = useStudio.getState();
+  const { move, setLinks, setSelected } = useStudio.getState();
   const canUndo = useStore(useStudio.temporal, (s) => s.pastStates.length > 0);
   const canRedo = useStore(useStudio.temporal, (s) => s.futureStates.length > 0);
   const flow = useReactFlow();
@@ -122,41 +121,26 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
   const dragStart = useRef<{ id: string; x: number; y: number } | null>(null);
   const overChat = (x: number, y: number) => document.elementsFromPoint(x, y).some((el) => el.closest('[data-chat-drop]'));
 
-  /** Files dropped on the canvas are uploaded and become nodes where they land (undoable). */
+  /** Files dropped on the canvas go into the workspace's inputs/ and appear where they land. */
   const onDrop = useCallback(
     async (e: React.DragEvent) => {
       e.preventDefault();
       setOver(false);
-      if (readOnly) return;
       const files = [...e.dataTransfer.files].filter((f) => /^(image|video|audio)\//.test(f.type));
       if (!files.length) return;
       const at = flow.screenToFlowPosition({ x: e.clientX, y: e.clientY });
       setDropping((n) => n + files.length);
       for (const [i, f] of files.entries()) {
         try {
-          const r = await uploadFile(f);
-          const type = f.type.startsWith('video/') ? 'video' : f.type.startsWith('audio/') ? 'audio' : 'image';
+          const rel = await uploadToProject(projectId, f);
           const { w, h } = NODE_SIZE.upload;
-          setNodes((ns) => [
-            ...ns,
-            {
-              id: newId('upload'),
-              kind: 'upload',
-              lane: 'notes',
-              label: f.name,
-              sub: `${type} · ${(f.size / 1e6).toFixed(1)} MB`,
-              x: at.x - w / 2 + i * 28,
-              y: at.y - h / 2 + i * 28,
-              status: 'done',
-              media: { type, src: r.url },
-            },
-          ]);
+          move(new Map([[rel, { x: at.x - w / 2 + i * 28, y: at.y - h / 2 + i * 28 }]]));
         } finally {
           setDropping((n) => n - 1);
         }
       }
     },
-    [flow, readOnly, setNodes]
+    [flow, projectId, move]
   );
   const zoom = useFlowStore((s) => s.transform[2]);
 
@@ -192,11 +176,11 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
       height: NODE_SIZE[n.kind].h,
       data: { node: n, related: related.has(n.id) },
       selected: sel.has(n.id),
-      draggable: !readOnly,
-      deletable: !readOnly,
+      draggable: true,
+      deletable: false,
     }));
     return [...lanes, ...items];
-  }, [nodes, selected, related, readOnly]);
+  }, [nodes, selected, related]);
 
   const rfEdges = useMemo<RoleRFEdge[]>(
     () =>
@@ -208,51 +192,47 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           source: e.from,
           target: e.to,
           type: 'role',
-          deletable: !readOnly,
+          // Only the person's own links can be deleted; the agent's come from its files.
+          deletable: !!e.user,
           data: { role: e.role, pending: to.status === 'pending' || to.status === 'running', lit, dim: !!focusId && !lit },
         };
       }),
-    [visible, byId, focusId, readOnly]
+    [visible, byId, focusId]
   );
 
   const onNodesChange = useCallback(
     (changes: NodeChange[]) => {
       const moves = new Map<string, { x: number; y: number }>();
-      const removed = new Set<string>();
       let sel: Set<string> | null = null;
       for (const c of changes) {
         if ('id' in c && c.id.startsWith('lane:')) continue;
         if (c.type === 'position' && c.position) moves.set(c.id, c.position);
-        else if (c.type === 'remove') removed.add(c.id);
         else if (c.type === 'select') {
           sel ??= new Set(useStudio.getState().selected);
           c.selected ? sel.add(c.id) : sel.delete(c.id);
         }
       }
-      if (moves.size) setNodes((ns) => ns.map((n) => (moves.has(n.id) ? { ...n, ...moves.get(n.id)! } : n)));
-      if (removed.size) {
-        setNodes((ns) => ns.filter((n) => !removed.has(n.id)));
-        setEdges((es) => es.filter((e) => !removed.has(e.from) && !removed.has(e.to)));
-      }
+      if (moves.size) move(moves);
       if (sel) setSelected([...sel]);
     },
-    [setNodes, setEdges, setSelected]
+    [move, setSelected]
   );
 
   const onEdgesChange = useCallback(
     (changes: EdgeChange[]) => {
       const removed = new Set(changes.filter((c) => c.type === 'remove').map((c) => c.id));
-      if (removed.size) setEdges((es) => es.filter((e) => !removed.has(`${e.from}->${e.to}`)));
+      if (removed.size) setLinks((ls) => ls.filter((e) => !removed.has(`${e.from}->${e.to}`)));
     },
-    [setEdges]
+    [setLinks]
   );
 
+  /** A link the person draws is saved to .studio/links.json, where the agent can read it. */
   const onConnect = useCallback(
     (c: Connection) => {
       if (!c.source || !c.target || c.source === c.target) return;
-      setEdges((es) => (es.some((e) => e.from === c.source && e.to === c.target) ? es : [...es, { from: c.source!, to: c.target!, role: 'input' }]));
+      setLinks((ls) => (ls.some((e) => e.from === c.source && e.to === c.target) ? ls : [...ls, { from: c.source!, to: c.target!, role: 'input', user: true }]));
     },
-    [setEdges]
+    [setLinks]
   );
 
   const fit = useCallback(() => flow.fitView({ padding: 0.12, duration: 300, maxZoom: 1 }), [flow]);
@@ -287,9 +267,7 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, [setSelected]);
 
-  const legend = [EDGE_STYLE['first + last frame'], EDGE_STYLE['guide audio'], EDGE_STYLE.reference, DEFAULT_EDGE].filter((s) =>
-    visible.some((e) => (EDGE_STYLE[e.role] ?? DEFAULT_EDGE) === s)
-  );
+  const legend = [...new Map(visible.map((e) => EDGE_STYLE[e.role] ?? DEFAULT_EDGE).map((s) => [s.legend, s])).values()];
   const inspected = focusId ? byId.get(focusId) : undefined;
 
   return (
@@ -301,7 +279,7 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
         edgeTypes={edgeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onConnect={readOnly ? undefined : onConnect}
+        onConnect={onConnect}
         onNodeDoubleClick={(_, n) => !n.id.startsWith('lane:') && onAttach(n.id)}
         onNodeDragStart={(_, n) => {
           dragStart.current = { id: n.id, x: n.position.x, y: n.position.y };
@@ -312,7 +290,7 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           dragStart.current = null;
           const p = 'clientX' in e ? e : null;
           if (s && s.id === n.id && p && overChat(p.clientX, p.clientY)) {
-            setNodes((ns) => ns.map((x) => (x.id === n.id ? { ...x, x: s.x, y: s.y } : x)));
+            move(new Map([[n.id, { x: s.x, y: s.y }]]));
             onAttach(n.id);
           }
         }}
@@ -326,7 +304,7 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           if (e.currentTarget === e.target) setOver(false);
         }}
         onDrop={onDrop}
-        deleteKeyCode={readOnly ? null : ['Backspace', 'Delete']}
+        deleteKeyCode={['Backspace', 'Delete']}
         multiSelectionKeyCode={['Meta', 'Shift']}
         selectionOnDrag={false}
         panOnScroll
@@ -349,10 +327,10 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           style={{ width: 180, height: 110, marginRight: inspected ? 376 : undefined }}
         />
         <Panel position="top-left" className="!m-3 flex items-center gap-0.5 rounded-[10px] border border-border bg-background p-0.5">
-          <ToolButton label="Undo (⌘Z)" onClick={() => history().undo()} disabled={!canUndo || readOnly}>
+          <ToolButton label="Undo (⌘Z)" onClick={() => history().undo()} disabled={!canUndo}>
             <Undo2 className="size-4" />
           </ToolButton>
-          <ToolButton label="Redo (⇧⌘Z)" onClick={() => history().redo()} disabled={!canRedo || readOnly}>
+          <ToolButton label="Redo (⇧⌘Z)" onClick={() => history().redo()} disabled={!canRedo}>
             <Redo2 className="size-4" />
           </ToolButton>
           <span className="mx-0.5 h-5 w-px bg-border" />
@@ -368,9 +346,8 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           </ToolButton>
           <ToolButton
             label="Tidy up"
-            disabled={readOnly}
             onClick={() => {
-              setNodes((ns) => relayout(ns));
+              useStudio.getState().tidy();
               window.setTimeout(fit, 30);
             }}
           >

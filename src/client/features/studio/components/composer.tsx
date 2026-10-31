@@ -22,19 +22,18 @@ import {
   type PromptInputMessage,
 } from '@/components/ai-elements/prompt-input';
 import { cn } from '@/lib/utils';
-import { uploadFile, type DirectorModel } from '../api';
-import { newId, type Attachment } from '../lib';
+import type { DirectorModel } from '../api';
 import type { StudioTemplate } from '../types';
 
 export interface ComposerProps {
   value: string;
   onChange: (v: string) => void;
-  /** Called with the brief and the uploaded files (already stored server-side). */
-  onSubmit: (text: string, attachments: Attachment[]) => void | Promise<void>;
+  /** Called with the message and the attached files (the caller uploads them into the workspace). */
+  onSubmit: (text: string, files: File[]) => void | Promise<void>;
   onStop?: () => void;
-  /** While the director works: Enter sends the text into the running turn. */
+  /** While Muse works: Enter sends the text into the running turn (MSP turn/steer). */
   onSteer?: (text: string) => void;
-  /** While the director works: hold the text and send it when the turn ends. */
+  /** While Muse works: queue the text as the next turn (MSP turn/start, ifBusy: queue). */
   onQueue?: (text: string) => void;
   running?: boolean;
   busy?: boolean;
@@ -52,18 +51,15 @@ export interface ComposerProps {
 
 const MODELS: Array<{ id: DirectorModel; name: string; hint: string }> = [
   { id: 'spark', name: 'Muse Spark', hint: 'Fast and cheap' },
-  { id: 'wonder', name: 'Muse Wonder', hint: 'Best direction' },
+  { id: 'wonder', name: 'Muse Wonder', hint: 'Best direction, slower' },
 ];
 
-async function toUploaded(msg: PromptInputMessage): Promise<Attachment[]> {
-  const out: Attachment[] = [];
+async function toFiles(msg: PromptInputMessage): Promise<File[]> {
+  const out: File[] = [];
   for (const f of msg.files) {
-    const type = f.mediaType?.startsWith('video/') ? 'video' : f.mediaType?.startsWith('image/') ? 'image' : null;
-    if (!type || !f.url) continue;
+    if (!f.url || !/^(image|video|audio)\//.test(f.mediaType ?? '')) continue;
     const blob = await (await fetch(f.url)).blob();
-    const file = new File([blob], f.filename || `upload.${type === 'video' ? 'mp4' : 'png'}`, { type: f.mediaType });
-    const r = await uploadFile(file);
-    out.push({ id: newId('a'), name: file.name, url: r.url, type });
+    out.push(new File([blob], f.filename || 'upload', { type: f.mediaType }));
   }
   return out;
 }
@@ -104,8 +100,7 @@ export function Composer({
     setError(null);
     setUploading(msg.files.length > 0);
     try {
-      const attachments = await toUploaded(msg);
-      await onSubmit(msg.text.trim(), attachments);
+      await onSubmit(msg.text.trim(), await toFiles(msg));
     } catch (e) {
       setError(String((e as Error).message || e));
       throw e;
@@ -121,7 +116,7 @@ export function Composer({
     <div>
       <PromptInput
         onSubmit={submit}
-        accept="video/*,image/*"
+        accept="video/*,image/*,audio/*"
         multiple
         globalDrop={allowFiles && size === 'lg'}
         maxFileSize={200 * 1024 * 1024}
@@ -170,14 +165,14 @@ export function Composer({
           </PromptInputTools>
           {model && onModelChange ? (
             <PromptInputSelect value={model} onValueChange={(v) => onModelChange(v as DirectorModel)}>
-              <PromptInputSelectTrigger className="ml-auto h-8 gap-1.5 text-[12px]" aria-label="Director model">
-                <PromptInputSelectValue>Director · {MODELS.find((m) => m.id === model)?.name}</PromptInputSelectValue>
+              <PromptInputSelectTrigger className="ml-auto h-8 gap-1.5 text-[12px]" aria-label="Model">
+                <PromptInputSelectValue>{MODELS.find((m) => m.id === model)?.name}</PromptInputSelectValue>
               </PromptInputSelectTrigger>
               <PromptInputSelectContent align="end">
                 {MODELS.map((m) => (
                   <PromptInputSelectItem key={m.id} value={m.id} disabled={!allowedModels.includes(m.id)}>
                     <span className="flex flex-col">
-                      <span className="text-[13px]">Director · {m.name}</span>
+                      <span className="text-[13px]">{m.name}</span>
                       <span className="text-[11px] text-muted-foreground">
                         {allowedModels.includes(m.id) ? m.hint : `${m.hint} · Live mode`}
                       </span>
@@ -187,7 +182,7 @@ export function Composer({
               </PromptInputSelectContent>
             </PromptInputSelect>
           ) : (
-            <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Director · Muse</span>
+            <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Muse Code</span>
           )}
           {running && hasText && onQueue && (
             <button
@@ -196,7 +191,7 @@ export function Composer({
                 onQueue(value.trim());
                 onChange('');
               }}
-              title="Send this after the director finishes"
+              title="Send this after Muse finishes the current turn"
               className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-full bg-[rgba(0,0,0,0.05)] px-3 text-[13px] font-medium hover:bg-[rgba(0,0,0,0.08)]"
             >
               <ListPlus className="size-4" />
@@ -205,8 +200,8 @@ export function Composer({
           )}
           <PromptInputSubmit
             status={status}
-            aria-label={running ? (hasText ? 'Steer the director now' : 'Stop') : 'Send'}
-            title={running ? (hasText ? 'Steer: the director reads this before its next step' : 'Stop') : undefined}
+            aria-label={running ? (hasText ? 'Steer Muse now' : 'Stop') : 'Send'}
+            title={running ? (hasText ? 'Steer: Muse reads this before its next step' : 'Stop') : undefined}
             disabled={!running && (!value.trim() || !!busy || uploading)}
             className="rounded-full bg-[var(--meta-blue)] text-white hover:bg-[var(--meta-blue)]/90"
             onClick={(e) => {

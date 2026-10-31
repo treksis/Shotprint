@@ -35,7 +35,7 @@ export function memoryStore(
     },
     async create(input) {
       const t = now();
-      const project: StudioProject = { id: newProjectId(), status: 'draft', createdAt: t, updatedAt: t, ...input };
+      const project: StudioProject = { id: newProjectId(), status: 'draft', createdAt: t, updatedAt: t, ...input, state: input.state ?? { positions: {} } };
       map.set(project.id, project);
       save();
       return project;
@@ -109,7 +109,7 @@ export function d1Store(db: NonNullable<WorkerBindings['DB']>): StudioStore {
     },
     async create(input) {
       const t = now();
-      const p: StudioProject = { id: newProjectId(), status: 'draft', createdAt: t, updatedAt: t, ...input };
+      const p: StudioProject = { id: newProjectId(), status: 'draft', createdAt: t, updatedAt: t, ...input, state: input.state ?? { positions: {} } };
       await db
         .prepare(
           'INSERT INTO studio_projects (id, name, template_id, prompt, status, thumbnail, state_json, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'

@@ -78,7 +78,9 @@ export function Inspector({ node, nodes, edges, onClose, onSelect, onAttach }: I
           </>
         )}
 
-        {node.sub && node.sub !== m.mode && <Row label="Summary">{node.sub}</Row>}
+        <Row label="File">
+          <code className="font-mono text-[12px]">{node.id}</code>
+        </Row>
         {m.mode && <Row label="Made with">{m.mode}</Row>}
         {m.line && <Row label="Line">“{m.line}”</Row>}
         {m.duration && <Row label="Length">{m.duration} s</Row>}
@@ -171,7 +173,7 @@ export function Inspector({ node, nodes, edges, onClose, onSelect, onAttach }: I
           className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-[8px] px-2.5 text-[13px] hover:bg-muted"
         >
           <MessageSquarePlus className="size-4" />
-          Ask the director about this
+          Mention in the chat
         </button>
       </div>
     </aside>

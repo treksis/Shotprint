@@ -4,6 +4,8 @@ import { serve } from '@hono/node-server';
 import { app } from './index';
 import { memoryStore, setStudioStore } from './studio/store';
 import { setAssetBackend } from './assets';
+import { setStudioSandbox } from './studio/sandbox';
+import { dockerSandbox } from './sandbox/runtime';
 import type { StudioProject } from '../shared/studio';
 
 // Load .env and .dev.vars into process.env for local development
@@ -48,6 +50,11 @@ setStudioStore(
     fs.writeFileSync(dataFile, JSON.stringify(all));
   })
 );
+
+// Each project runs Muse Code in its own Docker container (Cloudflare Sandbox when deployed).
+setStudioSandbox(dockerSandbox);
+// Locally anyone may pick Muse Wonder; deployed, it needs the judge passcode.
+process.env.STUDIO_OPEN ??= '1';
 
 // Uploaded and generated files survive dev-server restarts in .data/assets (R2 in Cloudflare).
 const assetDir = path.resolve(process.cwd(), '.data/assets');
