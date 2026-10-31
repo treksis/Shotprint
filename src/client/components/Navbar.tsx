@@ -54,7 +54,7 @@ export function Navbar({ route, onNavigate, projectName, isJudgeMode, onRequestL
           type="button"
           onClick={onExitLive}
           title="Switch back to demo mode"
-          className="inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-[6px] bg-[var(--pill-positive-bg)] px-2.5 text-[12px] font-medium text-[var(--pill-positive-ink)]"
+          className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-full bg-[var(--pill-positive-bg)] px-3.5 text-[13px] font-medium text-[var(--pill-positive-ink)]"
         >
           <span aria-hidden="true" className="size-1.5 rounded-full bg-[var(--positive)]" />
           Live
@@ -63,7 +63,7 @@ export function Navbar({ route, onNavigate, projectName, isJudgeMode, onRequestL
         <button
           type="button"
           onClick={onRequestLive}
-          className="inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-[6px] bg-muted px-2.5 text-[12px] font-medium text-muted-foreground hover:text-foreground"
+          className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-full bg-[rgba(0,0,0,0.05)] px-3.5 text-[13px] font-medium text-foreground hover:bg-[rgba(0,0,0,0.08)]"
         >
           Demo · Go live
         </button>

@@ -391,7 +391,7 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
         )}
       </ReactFlow>
       {(over || dropping > 0) && (
-        <div className="pointer-events-none absolute inset-3 grid place-items-center rounded-[16px] border-2 border-dashed border-[var(--accent)] bg-[#1a4be0]/5">
+        <div className="pointer-events-none absolute inset-3 grid place-items-center rounded-[16px] border-2 border-dashed border-[var(--accent)] bg-[#0866ff]/5">
           <span className="rounded-[10px] bg-background px-3 py-2 text-[14px] font-medium">
             {dropping > 0 ? `Uploading ${dropping}…` : 'Drop to add to the canvas'}
           </span>

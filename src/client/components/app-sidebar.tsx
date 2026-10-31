@@ -29,7 +29,7 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'home' })} tooltip="MuseClone Studio">
-              <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-[6px] bg-[#1a4be0] text-[#ffffff]">
+              <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-[6px] bg-[#0866ff] text-[#ffffff]">
                 <Clapperboard className="size-4" />
               </div>
               <div className="grid flex-1 text-left text-[14px] leading-tight">

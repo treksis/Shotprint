@@ -36,7 +36,7 @@ export function AnnouncementBar({ isLive, onGoLive, onExitLive }: { isLive: bool
       className={
         isLive
           ? 'relative z-30 flex h-10 items-center justify-center gap-2 bg-[var(--pill-positive-bg)] px-12 text-[13px] text-[var(--pill-positive-ink)]'
-          : 'relative z-30 flex h-10 items-center justify-center gap-2 bg-[#1a4be0] px-12 text-[13px] text-[#ffffff]'
+          : 'relative z-30 flex h-10 items-center justify-center gap-2 bg-[#0866ff] px-12 text-[13px] text-[#ffffff]'
       }
     >
       <span className="rounded-[4px] bg-[#ffffff]/15 px-1.5 py-0.5 text-[11px] font-semibold" hidden={isLive}>

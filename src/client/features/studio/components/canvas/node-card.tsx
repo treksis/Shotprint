@@ -10,6 +10,7 @@ const ICON: Record<NodeKind, typeof Film> = {
   upload: Upload,
   fill: FileText,
   plate: ImageIcon,
+  image: ImageIcon,
   take: AudioLines,
   clip: Clapperboard,
   cut: Scissors,
@@ -114,7 +115,7 @@ export function NodeCard({ node, selected, related }: { node: StudioNode; select
     if (node.kind === 'note') return <span className="line-clamp-3 block px-3 text-[13px] leading-snug">{node.text}</span>;
     return (
       <span className="block px-2">
-        <Media node={node} className={cn('w-full rounded-[8px]', node.kind === 'final' ? 'aspect-video' : node.kind === 'plate' || node.kind === 'take' ? 'h-[92px]' : 'aspect-video')} />
+        <Media node={node} className={cn('w-full rounded-[8px]', node.kind === 'final' ? 'aspect-video' : node.kind === 'plate' || node.kind === 'take' || node.kind === 'image' ? 'h-[92px]' : 'aspect-video')} />
       </span>
     );
   };

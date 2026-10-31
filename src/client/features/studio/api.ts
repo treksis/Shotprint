@@ -6,6 +6,7 @@ import type {
   UpdateStudioProjectRequest,
 } from './types';
 import type { DemoProject } from './types';
+import { getJudgeModeState, getJudgePasscode } from '../../lib/api';
 
 async function json<T>(res: Response): Promise<T> {
   if (!res.ok) {
@@ -54,4 +55,75 @@ export async function uploadFile(file: File): Promise<{ url: string; fileName: s
   const form = new FormData();
   form.append('file', file);
   return json(await fetch('/api/assets/upload', { method: 'POST', body: form }));
+}
+
+export type DirectorModel = 'spark' | 'wonder';
+
+/** A per-browser id so the server can cap demo spend per visitor. */
+export function sessionId(): string {
+  try {
+    let id = localStorage.getItem('museclone.session');
+    if (!id) {
+      id = `s_${crypto.randomUUID()}`;
+      localStorage.setItem('museclone.session', id);
+    }
+    return id;
+  } catch {
+    return 'anon';
+  }
+}
+
+function authHeaders(): Record<string, string> {
+  const h: Record<string, string> = { 'X-Studio-Session': sessionId() };
+  if (getJudgeModeState()) {
+    const k = getJudgePasscode();
+    if (k) h['X-Judge-Key'] = k;
+  }
+  return h;
+}
+
+export interface Budget {
+  live: boolean;
+  limits: { turns: number; images: number; usd: number; models: DirectorModel[] };
+  used: { turns: number; images: number; usd: number };
+}
+export const getBudget = () => fetch('/api/studio/budget', { headers: authHeaders() }).then((r) => json<Budget>(r));
+
+export type DirectorEvent =
+  | { type: 'step'; id: string; text: string; status: 'running' | 'done' | 'failed'; cost?: string }
+  | { type: 'node'; node: any; edges?: Array<{ from: string; to: string; role: string }> }
+  | { type: 'edge'; edge: { from: string; to: string; role: string } }
+  | { type: 'text'; text: string }
+  | { type: 'delta'; text: string }
+  | { type: 'done'; usd: number; model: string }
+  | { type: 'error'; message: string };
+
+/** One director turn; events arrive as they happen (server-sent events over a POST). */
+export async function runDirector(body: unknown, onEvent: (e: DirectorEvent) => void, signal?: AbortSignal) {
+  const res = await fetch('/api/studio/agent', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', ...authHeaders() },
+    body: JSON.stringify(body),
+    signal,
+  });
+  if (!res.ok || !res.body) throw new Error(`Director request failed (${res.status})`);
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = '';
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+    let i;
+    while ((i = buf.indexOf('\n\n')) >= 0) {
+      const chunk = buf.slice(0, i);
+      buf = buf.slice(i + 2);
+      const data = chunk
+        .split('\n')
+        .filter((l) => l.startsWith('data:'))
+        .map((l) => l.slice(5).trim())
+        .join('');
+      if (data) onEvent(JSON.parse(data));
+    }
+  }
 }

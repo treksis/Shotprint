@@ -11,13 +11,18 @@ import {
   PromptInputBody,
   PromptInputFooter,
   PromptInputHeader,
+  PromptInputSelect,
+  PromptInputSelectContent,
+  PromptInputSelectItem,
+  PromptInputSelectTrigger,
+  PromptInputSelectValue,
   PromptInputSubmit,
   PromptInputTextarea,
   PromptInputTools,
   type PromptInputMessage,
 } from '@/components/ai-elements/prompt-input';
 import { cn } from '@/lib/utils';
-import { uploadFile } from '../api';
+import { uploadFile, type DirectorModel } from '../api';
 import { newId, type Attachment } from '../lib';
 import type { StudioTemplate } from '../types';
 
@@ -34,7 +39,17 @@ export interface ComposerProps {
   placeholder?: string;
   size?: 'lg' | 'md';
   allowFiles?: boolean;
+  model?: DirectorModel;
+  onModelChange?: (m: DirectorModel) => void;
+  /** Models this session may use (Wonder needs Live mode). */
+  allowedModels?: DirectorModel[];
+  footnote?: React.ReactNode;
 }
+
+const MODELS: Array<{ id: DirectorModel; name: string; hint: string }> = [
+  { id: 'spark', name: 'Muse Spark', hint: 'Fast and cheap' },
+  { id: 'wonder', name: 'Muse Wonder', hint: 'Best direction' },
+];
 
 async function toUploaded(msg: PromptInputMessage): Promise<Attachment[]> {
   const out: Attachment[] = [];
@@ -62,6 +77,10 @@ export function Composer({
   placeholder = 'Describe the video you want, or pick a template below',
   size = 'md',
   allowFiles = true,
+  model,
+  onModelChange,
+  allowedModels = ['spark', 'wonder'],
+  footnote,
 }: ComposerProps) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -93,7 +112,7 @@ export function Composer({
         globalDrop={allowFiles && size === 'lg'}
         maxFileSize={200 * 1024 * 1024}
         onError={(e) => setError(e.message)}
-        className={cn('rounded-[20px] border-border bg-background [&_[data-slot=input-group]]:rounded-[20px]', size === 'lg' && 'text-[16px]')}
+        className={cn('rounded-[24px] border-border bg-background [&_[data-slot=input-group]]:rounded-[24px] [&_[data-slot=input-group]]:shadow-[0_2px_8px_rgba(17,17,18,0.06),0_2px_16px_rgba(17,17,18,0.04)]', size === 'lg' && 'text-[16px]')}
       >
         {(template || allowFiles) && (
           <PromptInputHeader className="flex-wrap gap-1.5 px-3 pt-3 pb-0 empty:hidden">
@@ -135,11 +154,31 @@ export function Composer({
               </PromptInputActionMenu>
             )}
           </PromptInputTools>
-          <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Director · Muse Wonder</span>
+          {model && onModelChange ? (
+            <PromptInputSelect value={model} onValueChange={(v) => onModelChange(v as DirectorModel)}>
+              <PromptInputSelectTrigger className="ml-auto h-8 gap-1.5 text-[12px]" aria-label="Director model">
+                <PromptInputSelectValue>Director · {MODELS.find((m) => m.id === model)?.name}</PromptInputSelectValue>
+              </PromptInputSelectTrigger>
+              <PromptInputSelectContent align="end">
+                {MODELS.map((m) => (
+                  <PromptInputSelectItem key={m.id} value={m.id} disabled={!allowedModels.includes(m.id)}>
+                    <span className="flex flex-col">
+                      <span className="text-[13px]">Director · {m.name}</span>
+                      <span className="text-[11px] text-muted-foreground">
+                        {allowedModels.includes(m.id) ? m.hint : `${m.hint} · Live mode`}
+                      </span>
+                    </span>
+                  </PromptInputSelectItem>
+                ))}
+              </PromptInputSelectContent>
+            </PromptInputSelect>
+          ) : (
+            <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Director · Muse</span>
+          )}
           <PromptInputSubmit
             status={status}
             disabled={!running && (!value.trim() || !!busy || uploading)}
-            className="rounded-full"
+            className="rounded-full bg-[var(--meta-blue)] text-white hover:bg-[var(--meta-blue)]/90"
             onClick={(e) => {
               if (running) {
                 e.preventDefault();
@@ -150,6 +189,7 @@ export function Composer({
         </PromptInputFooter>
       </PromptInput>
       {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
+      {footnote && <p className="mt-1.5 px-3 text-[12px] text-muted-foreground">{footnote}</p>}
     </div>
   );
 }

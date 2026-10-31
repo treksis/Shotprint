@@ -3,6 +3,7 @@ import path from 'node:path';
 import { serve } from '@hono/node-server';
 import { app } from './index';
 import { memoryStore, setStudioStore } from './studio/store';
+import { setAssetBackend } from './assets';
 import type { StudioProject } from '../shared/studio';
 
 // Load .env and .dev.vars into process.env for local development
@@ -47,6 +48,25 @@ setStudioStore(
     fs.writeFileSync(dataFile, JSON.stringify(all));
   })
 );
+
+// Uploaded and generated files survive dev-server restarts in .data/assets (R2 in Cloudflare).
+const assetDir = path.resolve(process.cwd(), '.data/assets');
+setAssetBackend({
+  async get(key) {
+    try {
+      const meta = JSON.parse(fs.readFileSync(path.join(assetDir, `${key}.json`), 'utf-8'));
+      const buf = fs.readFileSync(path.join(assetDir, key));
+      return { buffer: buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength), ...meta };
+    } catch {
+      return null;
+    }
+  },
+  async put(key, asset) {
+    fs.mkdirSync(assetDir, { recursive: true });
+    fs.writeFileSync(path.join(assetDir, key), Buffer.from(asset.buffer));
+    fs.writeFileSync(path.join(assetDir, `${key}.json`), JSON.stringify({ contentType: asset.contentType, fileName: asset.fileName }));
+  },
+});
 
 const port = Number(process.env.PORT || 8788);
 

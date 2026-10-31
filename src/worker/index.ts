@@ -21,6 +21,7 @@ import {
   verifyProjectFidelity,
 } from './services/ai-pipeline';
 import { studioRoutes } from './studio/routes';
+import { getAsset, putAsset } from './assets';
 import {
   inspectSandboxSession,
   runSandboxAgentTurn,
@@ -66,11 +67,6 @@ const projectsStore = new Map<string, RemixProject>(
   PRESET_PROJECTS.map((proj) => [proj.id, structuredClone(proj)])
 );
 
-const uploadedAssetsStore = new Map<
-  string,
-  { buffer: ArrayBuffer; contentType: string; fileName: string }
->();
-
 function constantTimeEqual(a: string, b: string): boolean {
   if (!a || !b || a.length !== b.length) return false;
   let mismatch = 0;
@@ -80,7 +76,7 @@ function constantTimeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-function isLiveAuthorized(c: any): boolean {
+export function isLiveAuthorized(c: any): boolean {
   const expected = String(c.env?.JUDGE_PASSCODE || '').trim().toUpperCase();
   if (!expected) return false;
   const provided = String(c.req.header('X-Judge-Key') || '').trim().toUpperCase();
@@ -242,65 +238,17 @@ app.post('/api/assets/upload', async (c) => {
   if (!file || typeof file === 'string') {
     return c.json({ error: 'Please select a valid video or image file to upload.' }, 400);
   }
-
   const blob = file as File;
-  const arrayBuffer = await blob.arrayBuffer();
-  const safeName = (blob.name || 'upload.bin').replace(/[^a-zA-Z0-9._-]/g, '_');
-  const key = `${Date.now()}-${safeName}`;
-  const contentType = blob.type || 'application/octet-stream';
-
-  uploadedAssetsStore.set(key, {
-    buffer: arrayBuffer,
-    contentType,
-    fileName: blob.name || safeName,
-  });
-
-  if (c.env?.MEDIA_BUCKET) {
-    try {
-      await c.env.MEDIA_BUCKET.put(key, arrayBuffer, {
-        httpMetadata: { contentType },
-      });
-    } catch {
-      // Fall back to in-memory asset store if R2 write fails in local dev
-    }
-  }
-
-  return c.json({
-    key,
-    url: `/api/assets/${encodeURIComponent(key)}`,
-    fileName: blob.name || safeName,
-    contentType,
-    sizeBytes: arrayBuffer.byteLength,
-  });
+  return c.json(await putAsset(c.env, blob.name || 'upload.bin', await blob.arrayBuffer(), blob.type || 'application/octet-stream'));
 });
 
 app.get('/api/assets/:key', async (c) => {
-  const key = c.req.param('key');
-  const mem = uploadedAssetsStore.get(key);
-  if (mem) {
-    return new Response(mem.buffer, {
-      status: 200,
-      headers: {
-        'Content-Type': mem.contentType,
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
-  }
-
-  if (c.env?.MEDIA_BUCKET) {
-    const obj = await c.env.MEDIA_BUCKET.get(key);
-    if (obj) {
-      return new Response(obj.body, {
-        status: 200,
-        headers: {
-          'Content-Type': obj.httpMetadata?.contentType || 'application/octet-stream',
-          'Cache-Control': 'public, max-age=3600',
-        },
-      });
-    }
-  }
-
-  return c.json({ error: 'Asset not found' }, 404);
+  const asset = await getAsset(c.env, c.req.param('key'));
+  if (!asset) return c.json({ error: 'Asset not found' }, 404);
+  return new Response(asset.buffer, {
+    status: 200,
+    headers: { 'Content-Type': asset.contentType, 'Cache-Control': 'public, max-age=3600' },
+  });
 });
 
 // 3. Viral Templates Vault Endpoints

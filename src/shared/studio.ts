@@ -12,7 +12,8 @@ export type NodeKind =
   | 'cut'
   | 'final'
   | 'note'
-  | 'upload';
+  | 'upload'
+  | 'image';
 
 export type Lane = 'inputs' | 'fill' | 'plates' | 'takes' | 'clips' | 'cut' | 'final' | 'notes';
 
@@ -61,6 +62,9 @@ export type StudioMessage =
       state: 'running' | 'done' | 'stopped' | 'blocked';
       created: string[];
       text?: string;
+      /** Live turns: which model ran and what the turn cost. Replays have neither. */
+      model?: string;
+      usd?: number;
     };
 
 export interface StudioState {

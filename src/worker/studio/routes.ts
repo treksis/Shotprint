@@ -1,8 +1,11 @@
 import { Hono } from 'hono';
+import { streamSSE } from 'hono/streaming';
 import type { CreateStudioProjectRequest, UpdateStudioProjectRequest } from '../../shared/studio';
 import { STUDIO_TEMPLATES } from '../../shared/studio-templates';
 import type { WorkerBindings } from '../index';
 import { studioStore } from './store';
+import { budgetFor, LIMITS, runDirector, type AgentRequest } from './agent';
+import { isLiveAuthorized } from '../index';
 
 /**
  * /api/studio: templates and persisted projects (Phase 1: the canvas and chat survive a reload).
@@ -53,4 +56,35 @@ studioRoutes.put('/projects/:id', async (c) => {
 studioRoutes.delete('/projects/:id', async (c) => {
   await studioStore(c.env).remove(c.req.param('id'));
   return c.json({ ok: true });
+});
+
+const sessionOf = (c: any) => String(c.req.header('X-Studio-Session') || 'anon').slice(0, 64);
+
+/** What this browser session may still spend (demo: Spark only and a small budget). */
+studioRoutes.get('/budget', (c) => {
+  const live = isLiveAuthorized(c);
+  const limits = live ? LIMITS.live : LIMITS.demo;
+  const used = budgetFor(sessionOf(c));
+  return c.json({ live, limits, used });
+});
+
+/** One director turn, streamed as server-sent events (steps, nodes, edges, text, done). */
+studioRoutes.post('/agent', async (c) => {
+  const body = (await c.req.json().catch(() => null)) as AgentRequest | null;
+  if (!body || typeof body.text !== 'string' || !body.canvas) return c.json({ error: 'invalid_request' }, 400);
+  const live = isLiveAuthorized(c);
+  const origin = c.req.header('origin') || new URL(c.req.url).origin;
+  return streamSSE(c, async (stream) => {
+    // Writes are chained and awaited, so the stream never closes with events still queued.
+    let chain = Promise.resolve();
+    const emit = (e: unknown) => {
+      chain = chain.then(() => stream.writeSSE({ data: JSON.stringify(e) }));
+    };
+    try {
+      await runDirector(c.env, body, sessionOf(c), live, origin, emit);
+    } catch (e) {
+      emit({ type: 'error', message: String((e as Error).message || e).slice(0, 400) });
+    }
+    await chain;
+  });
 });

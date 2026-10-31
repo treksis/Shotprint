@@ -1,16 +1,29 @@
 import { Loader2, PanelRightClose, PanelRightOpen, Workflow } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { getProject, listTemplates, loadDemo, updateProject } from '../api';
+import { getBudget, getProject, listTemplates, loadDemo, runDirector, updateProject, type Budget, type DirectorModel } from '../api';
 import { demoGraph, finishedText, newId, type Attachment } from '../lib';
 import { history, snapshot, useStudio } from '../store';
-import type { RunStep, StudioMessage, StudioProject, StudioTemplate } from '../types';
+import { NODE_SIZE, type Lane, type RunStep, type StudioMessage, type StudioNode, type StudioProject, type StudioTemplate } from '../types';
 import { FlowCanvas } from './canvas/flow-canvas';
 import { ChatThread } from './chat-thread';
 import { Composer } from './composer';
 
 type AgentMsg = Extract<StudioMessage, { role: 'agent' }>;
 const STEP_MS = 1500;
+const MODEL_KEY = 'museclone.director.model';
+
+/** Where a node the director just made goes: under the last node of its lane, or in a new column. */
+function placeNew(nodes: StudioNode[], lane: Lane, kind: StudioNode['kind']) {
+  const inLane = nodes.filter((n) => n.lane === lane);
+  if (inLane.length) {
+    const last = inLane.reduce((a, b) => (b.y > a.y || (b.y === a.y && b.x > a.x) ? b : a));
+    return { x: last.x, y: last.y + NODE_SIZE[last.kind].h + 18 };
+  }
+  const right = nodes.length ? Math.max(...nodes.map((n) => n.x + NODE_SIZE[n.kind].w)) + 140 : 0;
+  const top = nodes.length ? Math.min(...nodes.map((n) => n.y)) : 0;
+  return { x: right, y: top + (kind === 'note' ? 0 : 0) };
+}
 
 export interface StudioProjectPageProps {
   projectId: string;
@@ -32,6 +45,10 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   const [fitSignal, setFitSignal] = useState(0);
   const [draft, setDraft] = useState('');
   const [running, setRunning] = useState(false);
+  const [retry, setRetry] = useState(0);
+  const [model, setModel] = useState<DirectorModel>(() => (localStorage.getItem(MODEL_KEY) as DirectorModel) || 'spark');
+  const [budget, setBudget] = useState<Budget | null>(null);
+  const abort = useRef<AbortController | null>(null);
   const nodes = useStudio((s) => s.nodes);
   const timers = useRef<number[]>([]);
   const status = useRef<StudioProject['status']>('draft');
@@ -69,14 +86,23 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
         setFitSignal((n) => n + 1);
         loaded.current = true;
       })
-      .catch(() => alive && onMissing());
+      .catch((err: Error) => {
+        // Only a missing project sends you home; a dev-server restart or network blip retries.
+        if (!alive) return;
+        if (/not_found|404/.test(err.message)) onMissing();
+        else window.setTimeout(() => alive && setRetry((n) => n + 1), 1500);
+      });
     return () => {
       alive = false;
       timers.current.forEach(window.clearTimeout);
       timers.current = [];
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [projectId]);
+  }, [projectId, retry]);
+
+  useEffect(() => {
+    getBudget().then(setBudget).catch(() => setBudget(null));
+  }, [isLive]);
 
   // Persist every change to the canvas or chat (debounced); status/thumbnail changes refresh the sidebar.
   useEffect(() => {
@@ -158,30 +184,91 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /** The director's answer to the latest brief. */
-  const respond = useCallback(
-    (tpl: StudioTemplate | null) => {
-      const finished = useStudio.getState().nodes.some((n) => n.kind === 'final');
-      const say = (text: string, blocked = true) =>
-        setMessages((ms) => [...ms, { id: newId('m'), role: 'agent', steps: [], state: blocked ? 'blocked' : 'done', created: [], text }]);
-      if (tpl?.status === 'ready' && tpl.example && !finished) return void replay(tpl);
-      if (finished)
-        return say(
-          isLive
-            ? 'Editing a finished film with live tools (retake a shot, swap a plate) is the next step being wired up. You can already rearrange, connect and undo on the canvas, and open any node to see how it was made.'
-            : "This project is a replay of a real run, so the director can't re-render it in demo mode. You can still rearrange, connect and undo on the canvas. In Live mode the director retakes shots and swaps plates on request.",
-          !isLive
+  /** A live director turn: Muse with tools; steps, nodes and the reply stream in as they happen. */
+  const direct = useCallback(
+    async (text: string) => {
+      const agentId = newId('m');
+      const st = useStudio.getState();
+      const chat = st.messages
+        .filter((m) => (m.role === 'user' ? m.text : m.text))
+        .slice(0, -1)
+        .map((m) => ({ role: m.role === 'user' ? ('user' as const) : ('assistant' as const), content: (m.role === 'user' ? m.text : m.text) ?? '' }));
+      const canvas = {
+        nodes: st.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, sub: n.sub, media: n.media ? { type: n.media.type, src: n.media.type === 'image' ? n.media.src : n.media.poster ?? n.media.src } : undefined })),
+        edges: st.edges,
+      };
+      const chosen: DirectorModel = budget?.limits.models.includes(model) ? model : 'spark';
+      setMessages((ms) => [...ms, { id: agentId, role: 'agent', steps: [], state: 'running', created: [] }]);
+      setRunning(true);
+      history().pause();
+      const ctrl = new AbortController();
+      abort.current = ctrl;
+      const stepIndex = new Map<string, number>();
+      try {
+        await runDirector(
+          { model: chosen, text, history: chat, canvas, template: template ? { id: template.id, title: template.title, status: template.status } : null },
+          (e) => {
+            if (e.type === 'step') {
+              patchAgent(agentId, (m) => {
+                const steps = [...m.steps];
+                const s: RunStep = { text: e.text, lane: 'notes', cost: e.cost, status: e.status === 'failed' ? 'stopped' : e.status };
+                if (stepIndex.has(e.id)) steps[stepIndex.get(e.id)!] = s;
+                else {
+                  stepIndex.set(e.id, steps.length);
+                  steps.push(s);
+                }
+                return { ...m, steps };
+              });
+            } else if (e.type === 'node') {
+              setNodes((ns) => {
+                const i = ns.findIndex((n) => n.id === e.node.id);
+                if (i >= 0) return ns.map((n) => (n.id === e.node.id ? { ...n, ...e.node, x: n.x, y: n.y } : n));
+                const pos = placeNew(ns, e.node.lane, e.node.kind);
+                return [...ns, { ...e.node, ...pos }];
+              });
+              if (e.edges?.length) setEdges((es) => [...es, ...e.edges!]);
+              patchAgent(agentId, (m) => (m.created.includes(e.node.id) ? m : { ...m, created: [...m.created, e.node.id] }));
+              setCanvasOpen(true);
+              setFitSignal((n) => n + 1);
+            } else if (e.type === 'edge') {
+              setEdges((es) => [...es, e.edge]);
+            } else if (e.type === 'delta') {
+              patchAgent(agentId, (m) => ({ ...m, text: (m.text ?? '') + e.text }));
+            } else if (e.type === 'text') {
+              patchAgent(agentId, (m) => ({ ...m, text: e.text }));
+            } else if (e.type === 'done') {
+              patchAgent(agentId, (m) => ({ ...m, state: 'done', model: e.model, usd: e.usd }));
+            } else if (e.type === 'error') {
+              patchAgent(agentId, (m) => ({ ...m, state: 'blocked', text: e.message }));
+            }
+          },
+          ctrl.signal
         );
-      if (tpl)
-        return say(
-          isLive
-            ? `**${tpl.title}** hasn't been dissected yet. Live dissection (cuts, camera moves, lines) is being wired up next; the BlueChip template is ready today.`
-            : `**${tpl.title}** hasn't been dissected yet. Dissection measures every cut, camera move and line, and it runs Muse and the GPU, so it needs Live mode. The BlueChip template is ready to try in the demo.`
-        );
-      say('I make videos by filling a dissected template: a real film taken apart into shots, camera setups and lines. Pick one from the gallery on the Studio page, or attach a reference video to dissect in Live mode.');
+      } catch (err) {
+        if ((err as Error).name !== 'AbortError') patchAgent(agentId, (m) => ({ ...m, state: 'blocked', text: `The director hit an error: ${(err as Error).message}` }));
+      } finally {
+        patchAgent(agentId, (m) => (m.state === 'running' ? { ...m, state: ctrl.signal.aborted ? 'stopped' : 'done' } : m));
+        history().resume();
+        abort.current = null;
+        setRunning(false);
+        getBudget().then(setBudget).catch(() => undefined);
+      }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [replay, isLive]
+    [budget, model, template]
+  );
+
+  /** The director's answer to the latest brief. */
+  const respond = useCallback(
+    (text: string) => {
+      const st = useStudio.getState();
+      const firstBrief = !st.messages.some((m) => m.role === 'agent');
+      const finished = st.nodes.some((n) => n.kind === 'final');
+      // The template's showcase: its first brief replays the real, judged run.
+      if (firstBrief && template?.status === 'ready' && template.example && !finished) return void replay(template);
+      void direct(text);
+    },
+    [replay, direct, template]
   );
 
   // A new project arrives with the brief and no answer yet: answer it once.
@@ -189,7 +276,8 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
     if (!project || running || answered.current) return;
     if (useStudio.getState().messages.at(-1)?.role === 'user') {
       answered.current = true;
-      respond(template);
+      const last = useStudio.getState().messages.at(-1);
+      respond(last?.role === 'user' ? last.text : '');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project]);
@@ -218,10 +306,11 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
       setCanvasOpen(true);
     }
     setMessages((ms) => [...ms, { id: newId('m'), role: 'user', text, attachments: attachments.map((a) => a.name) }]);
-    window.setTimeout(() => respond(template), 600);
+    window.setTimeout(() => respond(text), 50);
   };
 
   const stop = () => {
+    abort.current?.abort();
     timers.current.forEach(window.clearTimeout);
     timers.current = [];
     status.current = 'draft';
@@ -275,7 +364,25 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
           onGoLive={() => onRequestLive()}
         />
         <div className={cn('mx-auto w-full px-4 pb-4', !showCanvas && 'max-w-[760px]')}>
-          <Composer value={draft} onChange={setDraft} onSubmit={send} onStop={stop} running={running} placeholder="Reply to the director" />
+          <Composer
+            value={draft}
+            onChange={setDraft}
+            onSubmit={send}
+            onStop={stop}
+            running={running}
+            placeholder="Ask the director: make keyframes, write a shot list, change a plate…"
+            model={model}
+            onModelChange={(m) => {
+              setModel(m);
+              localStorage.setItem(MODEL_KEY, m);
+            }}
+            allowedModels={budget?.limits.models ?? ['spark']}
+            footnote={
+              budget
+                ? `${budget.live ? 'Live' : 'Demo'} budget: ${Math.max(0, budget.limits.images - budget.used.images)} of ${budget.limits.images} images, $${budget.used.usd.toFixed(3)} of $${budget.limits.usd} used this session${budget.live ? '' : ' · Wonder needs Live mode'}`
+                : undefined
+            }
+          />
         </div>
       </section>
 

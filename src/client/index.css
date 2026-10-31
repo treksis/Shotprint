@@ -1,51 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #ffffff;
-  --surface: #f4f4f4;
-  --ink: #111111;
-  --muted: #6b6b6b;
-  --accent: #1a4be0;
+  --bg: #fcfcfc;
+  --surface: #f3f4f5;
+  --ink: #111112;
+  --muted: #67696c;
+  --accent: #0866ff;
+  --meta-blue: #005abf;
   --accent-ink: #ffffff;
   --field-1: #111111;
   --field-1-ink: #ffffff;
 
   /* shadcn/ui CSS variables */
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #fcfcfc;
+  --foreground: #111112;
   --card: #ffffff;
   --card-foreground: #111111;
   --popover: #ffffff;
   --popover-foreground: #111111;
-  --primary: #111111;
+  --primary: #005abf;
   --primary-foreground: #ffffff;
-  --secondary: #f4f4f2;
+  --secondary: #f3f4f5;
   --secondary-foreground: #111111;
-  --muted-bg: #f4f4f2;
-  --muted-foreground: #6b6b6b;
-  --accent-bg: #f4f4f2;
+  --muted-bg: #f0f1f2;
+  --muted-foreground: #67696c;
+  --accent-bg: #f0f1f2;
   --accent-foreground: #111111;
   --destructive: #c4242a;
   --destructive-foreground: #ffffff;
-  --border: #eaeaea;
+  --border: #e8e9eb;
   --input: #e5e5e5;
-  --ring: #1a4be0;
+  --ring: #0866ff;
   --radius: 0.5rem;
 
   /* shadcn Sidebar tokens */
-  --sidebar: #f6f6f4;
+  --sidebar: #f3f4f5;
   --sidebar-foreground: #111111;
   --sidebar-primary: #111111;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e9e9e7;
+  --sidebar-accent: #e6e7e9;
   --sidebar-accent-foreground: #111111;
   --sidebar-border: #eaeaea;
-  --sidebar-ring: #1a4be0;
+  --sidebar-ring: #0866ff;
 
   /* Framed sheet app tokens */
-  --chrome: #f6f6f4;
+  --chrome: #f3f4f5;
   --sheet: #ffffff;
-  --well: #f2f2ef;
+  --well: #f0f1f2;
   --rule: #f0f0ee;
   --control: #d1d5db;
   --positive: #247b50;
@@ -96,7 +97,8 @@
 
 @layer base {
   body {
-    font-family: 'Literata', Georgia, serif;
+    /* Muse (muse.ai) uses Meta's Optimistic; Figtree is the closest open stand-in. */
+    font-family: 'Optimistic', 'Figtree', system-ui, sans-serif;
     font-optical-sizing: auto;
     background-color: var(--bg);
     color: var(--ink);
@@ -104,9 +106,10 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Literata', Georgia, serif;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    font-family: 'Optimistic', 'Figtree', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
     text-wrap: balance;
   }
 
@@ -175,6 +178,6 @@
 }
 .studio-flow .studio-handle:hover, .studio-flow .react-flow__handle.connectingfrom { transform: scale(1.4); background: var(--accent); }
 .studio-flow .react-flow__selection, .studio-flow .react-flow__nodesselection-rect {
-  background: rgba(26, 75, 224, 0.06); border: 1px solid rgba(26, 75, 224, 0.4);
+  background: rgba(8, 102, 255, 0.06); border: 1px solid rgba(8, 102, 255, 0.4);
 }
 .studio-flow .react-flow__connectionline path { stroke: var(--accent); stroke-width: 1.6; }

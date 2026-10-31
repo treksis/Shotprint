@@ -1,7 +1,7 @@
 import { ArrowRight, Clapperboard } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { createProject, listTemplates } from '../api';
+import { createProject, getBudget, listTemplates, type DirectorModel } from '../api';
 import { initialProject, type Attachment } from '../lib';
 import type { StudioProjectSummary, StudioTemplate } from '../types';
 import { Composer } from './composer';
@@ -27,6 +27,13 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
   const [busy, setBusy] = useState(false);
+  const [model, setModel] = useState<DirectorModel>(() => (localStorage.getItem('museclone.director.model') as DirectorModel) || 'spark');
+  const [allowed, setAllowed] = useState<DirectorModel[]>(['spark']);
+  useEffect(() => {
+    getBudget()
+      .then((b) => setAllowed(b.limits.models))
+      .catch(() => undefined);
+  }, []);
   const [error, setError] = useState<string | null>(null);
   const top = useRef<HTMLDivElement | null>(null);
 
@@ -69,7 +76,7 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
     <div className="flex-1 overflow-y-auto">
       <div ref={top} className="mx-auto w-full max-w-[1120px] px-6 pt-[9vh] pb-24">
         <div className="mx-auto max-w-[760px] text-center">
-          <h1 className="text-[40px] leading-tight tracking-[-0.01em] text-foreground">What are we making?</h1>
+          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What are we making?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
             Give the director a brief. It rebuilds a dissected film shot for shot around your subject (a product, a
             person, a story), and every plate, take and shot lands on a canvas you can inspect.
@@ -85,6 +92,12 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
             busy={busy}
             template={template}
             onClearTemplate={() => setTemplate(null)}
+            model={model}
+            onModelChange={(m) => {
+              setModel(m);
+              localStorage.setItem('museclone.director.model', m);
+            }}
+            allowedModels={allowed}
           />
           {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
           <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -93,7 +106,7 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
                 key={s.label}
                 type="button"
                 onClick={() => setDraft(s.text)}
-                className="h-8 cursor-pointer rounded-[10px] border border-border bg-background px-3 text-[13px] text-muted-foreground transition-colors hover:border-[#c9c9c6] hover:text-foreground"
+                className="h-9 cursor-pointer rounded-full bg-[rgba(0,0,0,0.05)] px-4 text-[14px] font-medium text-foreground transition-colors hover:bg-[rgba(0,0,0,0.08)]"
               >
                 {s.label}
               </button>

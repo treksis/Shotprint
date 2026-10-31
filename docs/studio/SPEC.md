@@ -328,3 +328,26 @@ Owner: use libraries for the node system (undo/redo etc.) and the chat; hackatho
   -> new "input" edge (57 -> 58); node dragged onto the chat -> attached, node returned; file dropped
   on the chat composer -> attachment -> on send, upload node + message; file dropped anywhere on the
   home page -> composer attachment; reload keeps dropped nodes and new edges.
+
+## 19. Live director (Phase 2 core) + Muse style (2026-10-30)
+
+- The chat is now a real agent. `POST /api/studio/agent` (SSE) runs a Muse tool-calling loop
+  (`src/worker/studio/agent.ts`, max 8 steps per turn) with tools `list_canvas`, `generate_image`
+  (Muse Image; canvas images as references -> edits), `add_note`, `connect`. Tokens and tool calls
+  are streamed from Muse (`stream: true`, OpenAI chunk format) straight to the chat; tool results
+  stream as nodes/edges onto the canvas. Video rendering is not a tool yet; the system prompt makes
+  the director say so instead of claiming it.
+- Model picker (AI Elements PromptInputSelect): Director · Muse Spark (`muse-spark-1.3-contributor`)
+  or Muse Wonder (`muse-wonder-1.0`, Live mode only). Each reply shows model and cost.
+- Budget per browser session (`X-Studio-Session`), enforced server-side: demo 30 turns / 8 images /
+  $0.50, Spark only; live 200 turns / 80 images / $10. `GET /api/studio/budget`; shown under the
+  composer.
+- First brief on a ready template still replays the real judged run; everything else is live.
+- Assets (uploads + generated images) moved to `src/worker/assets.ts`: R2 in Cloudflare, `.data/assets`
+  in node dev (survive restarts).
+- Verified: free brief -> 2 Muse Image keyframes + reference edge ($0.02); follow-up -> note +
+  2 connections using conversation memory; general question -> 77 incremental UI updates over 2.4 s
+  (true streaming); Wonder in Live mode streamed ($0.0073); demo shows Wonder disabled.
+- Style follows Meta's Muse (muse.ai, © Meta): Figtree as the open stand-in for Meta's Optimistic,
+  #fcfcfc / #111112 / #f3f4f5, Meta blue #005abf actions and #0866ff accents, pill buttons and chips,
+  500-weight headlines, soft shadow on the composer.

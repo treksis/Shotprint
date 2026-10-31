@@ -24,12 +24,12 @@ function NodeChip({ node, onClick }: { node: StudioNode; onClick: () => void }) 
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex h-8 cursor-pointer items-center gap-2 rounded-[10px] border border-border bg-background pr-2.5 pl-1 text-[13px] hover:border-[#c9c9c6]"
+      className="inline-flex h-8 cursor-pointer items-center gap-2 rounded-full bg-[rgba(0,0,0,0.05)] pr-3 pl-1 text-[13px] hover:bg-[rgba(0,0,0,0.08)]"
     >
       {thumb ? (
-        <img src={thumb} alt="" className="h-6 w-9 rounded-[6px] object-cover" />
+        <img src={thumb} alt="" className="size-6 rounded-full object-cover" />
       ) : (
-        <span className="grid size-6 place-items-center rounded-[6px] bg-muted">
+        <span className="grid size-6 place-items-center rounded-full bg-background">
           <Workflow className="size-3" />
         </span>
       )}
@@ -55,7 +55,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
         {messages.map((m) =>
           m.role === 'user' ? (
             <Message key={m.id} from="user">
-              <MessageContent className="rounded-[18px] bg-[var(--chrome)] px-4 py-2.5 text-[15px] leading-relaxed">
+              <MessageContent className="rounded-[20px] bg-[rgba(0,0,0,0.05)] px-4 py-2.5 text-[15px] leading-relaxed">
                 {m.text}
               </MessageContent>
               {m.attachments.length > 0 && <p className="ml-auto text-[12px] text-muted-foreground">{m.attachments.join(', ')}</p>}
@@ -63,7 +63,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
           ) : (
             <Message key={m.id} from="assistant" className="max-w-full">
               <div className="flex gap-3">
-                <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#1a4be0] text-[#ffffff]">
+                <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
                   <Clapperboard className="size-3.5" />
                 </span>
                 <MessageContent className="min-w-0 flex-1 gap-3 text-[15px]">
@@ -135,11 +135,17 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
                       <button
                         type="button"
                         onClick={onGoLive}
-                        className="inline-flex h-9 cursor-pointer items-center rounded-[10px] bg-foreground px-3.5 text-[14px] font-medium text-background"
+                        className="inline-flex h-9 cursor-pointer items-center rounded-full bg-[var(--meta-blue)] px-4 text-[14px] font-medium text-white"
                       >
                         Enter the judge passcode
                       </button>
                     </div>
+                  )}
+                  {m.model && (
+                    <p className="text-[12px] text-muted-foreground">
+                      {m.model.startsWith('muse-wonder') ? 'Muse Wonder' : 'Muse Spark'}
+                      {typeof m.usd === 'number' && ` · $${m.usd < 0.01 ? m.usd.toFixed(4) : m.usd.toFixed(2)}`}
+                    </p>
                   )}
                   {m.state === 'stopped' && <p className="text-[14px] text-muted-foreground">Stopped. Send the brief again to restart.</p>}
                   {m.state === 'done' && m.created.length > 0 && (
@@ -158,7 +164,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
 
         {waiting && (
           <div className="flex items-center gap-3">
-            <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#1a4be0] text-[#ffffff]">
+            <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
               <Clapperboard className="size-3.5" />
             </span>
             <Shimmer className="text-[14px]">Reading the brief…</Shimmer>
@@ -168,7 +174,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
         {!waiting && suggestions.length > 0 && lastAgent?.state !== 'running' && (
           <Suggestions>
             {suggestions.map((s) => (
-              <Suggestion key={s} suggestion={s} onClick={onSuggestion} className="rounded-[10px] text-[13px]" />
+              <Suggestion key={s} suggestion={s} onClick={onSuggestion} className="rounded-full text-[13px]" />
             ))}
           </Suggestions>
         )}
