@@ -1,8 +1,8 @@
 import { ArrowRight, Clapperboard } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { createProject, listTemplates, uploadFile } from '../api';
-import { initialProject, newId, type Attachment } from '../lib';
+import { createProject, listTemplates } from '../api';
+import { initialProject, type Attachment } from '../lib';
 import type { StudioProjectSummary, StudioTemplate } from '../types';
 import { Composer } from './composer';
 import { TemplateCard } from './template-card';
@@ -26,8 +26,6 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
   const [templates, setTemplates] = useState<StudioTemplate[] | null>(null);
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
-  const [attachments, setAttachments] = useState<Attachment[]>([]);
-  const [uploading, setUploading] = useState(0);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const top = useRef<HTMLDivElement | null>(null);
@@ -53,27 +51,11 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
     top.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const attach = async (files: File[]) => {
-    setUploading((n) => n + files.length);
-    for (const f of files) {
-      const type = f.type.startsWith('video/') ? 'video' : f.type.startsWith('image/') ? 'image' : null;
-      try {
-        if (!type) throw new Error(`${f.name}: only video or image files`);
-        const r = await uploadFile(f);
-        setAttachments((a) => [...a, { id: newId('a'), name: f.name, url: r.url, type }]);
-      } catch (e) {
-        setError(String((e as Error).message || e));
-      } finally {
-        setUploading((n) => n - 1);
-      }
-    }
-  };
-
-  const submit = async () => {
+  const submit = async (text: string, attachments: Attachment[]) => {
     setBusy(true);
     setError(null);
     try {
-      const body = await initialProject(draft.trim(), template, attachments);
+      const body = await initialProject(text, template, attachments);
       const project = await createProject({ ...body, state: body.state });
       onProjectsChanged();
       onOpenProject(project.id);
@@ -97,17 +79,12 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
         <div className="mx-auto mt-8 max-w-[760px]">
           <Composer
             size="lg"
-            autoFocus
             value={draft}
             onChange={setDraft}
             onSubmit={submit}
             busy={busy}
             template={template}
             onClearTemplate={() => setTemplate(null)}
-            attachments={attachments}
-            uploading={uploading}
-            onAttachFiles={attach}
-            onRemoveAttachment={(id) => setAttachments((a) => a.filter((x) => x.id !== id))}
           />
           {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
           <div className="mt-3 flex flex-wrap justify-center gap-2">

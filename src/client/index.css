@@ -166,3 +166,15 @@
 @media (prefers-reduced-motion: reduce) {
   .studio-item-in { animation: none; }
 }
+
+/* React Flow inside the Studio: our node chrome, quiet handles that grow on hover. */
+.studio-flow .react-flow__node-studio { border-radius: 14px; }
+.studio-flow .studio-handle {
+  width: 10px; height: 10px; border: 2px solid #ffffff; background: #9a9a96;
+  transition: transform 120ms var(--ease-out), background-color 120ms;
+}
+.studio-flow .studio-handle:hover, .studio-flow .react-flow__handle.connectingfrom { transform: scale(1.4); background: var(--accent); }
+.studio-flow .react-flow__selection, .studio-flow .react-flow__nodesselection-rect {
+  background: rgba(26, 75, 224, 0.06); border: 1px solid rgba(26, 75, 224, 0.4);
+}
+.studio-flow .react-flow__connectionline path { stroke: var(--accent); stroke-width: 1.6; }

@@ -1,29 +1,35 @@
-import { Check, Clapperboard, Loader2, PanelRightOpen, Workflow } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { Check, CircleDashed, Clapperboard, ListChecks, Loader2, PanelRightOpen, Workflow } from 'lucide-react';
+import { Conversation, ConversationContent, ConversationScrollButton } from '@/components/ai-elements/conversation';
+import { Message, MessageContent, MessageResponse } from '@/components/ai-elements/message';
+import { Shimmer } from '@/components/ai-elements/shimmer';
+import { Suggestion, Suggestions } from '@/components/ai-elements/suggestion';
+import { Task, TaskContent, TaskItem, TaskTrigger } from '@/components/ai-elements/task';
 import { cn } from '@/lib/utils';
-import { KIND_LABEL, type StudioMessage, type StudioNode } from '../types';
+import { useStudio } from '../store';
+import { KIND_LABEL, type StudioNode } from '../types';
 
 export interface ChatThreadProps {
-  messages: StudioMessage[];
-  nodes: StudioNode[];
   canvasOpen: boolean;
   isLive: boolean;
+  suggestions: string[];
+  onSuggestion: (s: string) => void;
   onOpenCanvas: () => void;
   onChip: (id: string) => void;
   onGoLive: () => void;
 }
 
-function Chip({ node, onClick }: { node: StudioNode; onClick: () => void }) {
+function NodeChip({ node, onClick }: { node: StudioNode; onClick: () => void }) {
+  const thumb = node.media?.poster ?? (node.media?.type === 'image' ? node.media.src : undefined);
   return (
     <button
       type="button"
       onClick={onClick}
       className="inline-flex h-8 cursor-pointer items-center gap-2 rounded-[10px] border border-border bg-background pr-2.5 pl-1 text-[13px] hover:border-[#c9c9c6]"
     >
-      {node.media?.poster || node.media?.type === 'image' ? (
-        <img src={node.media.poster ?? node.media.src} alt="" className="h-6 w-9 rounded-[6px] object-cover" />
+      {thumb ? (
+        <img src={thumb} alt="" className="h-6 w-9 rounded-[6px] object-cover" />
       ) : (
-        <span className="grid h-6 w-6 place-items-center rounded-[6px] bg-muted">
+        <span className="grid size-6 place-items-center rounded-[6px] bg-muted">
           <Workflow className="size-3" />
         </span>
       )}
@@ -33,115 +39,141 @@ function Chip({ node, onClick }: { node: StudioNode; onClick: () => void }) {
   );
 }
 
-/** The conversation: your briefs, and the director's steps, results and the canvas card. */
-export function ChatThread({ messages, nodes, canvasOpen, isLive, onOpenCanvas, onChip, onGoLive }: ChatThreadProps) {
-  const scroller = useRef<HTMLDivElement | null>(null);
+/** The conversation (AI Elements): briefs, the director's task list, results, and the canvas card. */
+export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOpenCanvas, onChip, onGoLive }: ChatThreadProps) {
+  const messages = useStudio((s) => s.messages);
+  const nodes = useStudio((s) => s.nodes);
   const byId = new Map(nodes.map((n) => [n.id, n]));
-  useEffect(() => {
-    const el = scroller.current;
-    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
-  }, [messages]);
   const done = nodes.filter((n) => n.status === 'done').length;
   const working = nodes.some((n) => n.status === 'running' || n.status === 'pending');
+  const lastAgent = [...messages].reverse().find((m) => m.role === 'agent');
+  const waiting = messages.at(-1)?.role === 'user';
 
   return (
-    <div ref={scroller} className="min-h-0 flex-1 overflow-y-auto">
-      <div className="mx-auto flex w-full max-w-[720px] flex-col gap-7 px-5 pt-6 pb-10">
+    <Conversation className="min-h-0 flex-1">
+      <ConversationContent className="mx-auto w-full max-w-[720px] gap-7 px-5 pt-6 pb-10">
         {messages.map((m) =>
           m.role === 'user' ? (
-            <div key={m.id} className="flex flex-col items-end gap-1.5">
-              <p className="max-w-[85%] rounded-[18px] bg-[var(--chrome)] px-4 py-2.5 text-[15px] leading-relaxed whitespace-pre-wrap">{m.text}</p>
-              {m.attachments.length > 0 && <p className="text-[12px] text-muted-foreground">{m.attachments.join(', ')}</p>}
-            </div>
+            <Message key={m.id} from="user">
+              <MessageContent className="rounded-[18px] bg-[var(--chrome)] px-4 py-2.5 text-[15px] leading-relaxed">
+                {m.text}
+              </MessageContent>
+              {m.attachments.length > 0 && <p className="ml-auto text-[12px] text-muted-foreground">{m.attachments.join(', ')}</p>}
+            </Message>
           ) : (
-            <div key={m.id} className="flex gap-3">
-              <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#1a4be0] text-[#ffffff]">
-                <Clapperboard className="size-3.5" />
-              </span>
-              <div className="min-w-0 flex-1 space-y-3">
-                <p className="text-[13px] font-medium text-muted-foreground">Director</p>
-                {m.steps.length > 0 && (
-                  <ol className="overflow-hidden rounded-[14px] border border-border">
-                    {m.steps.map((s, i) => (
-                      <li key={i} className={cn('flex items-start gap-2.5 px-3.5 py-2.5 text-[14px]', i > 0 && 'border-t border-border')}>
-                        <span className="mt-[3px] grid size-4 shrink-0 place-items-center">
-                          {s.status === 'done' ? (
-                            <Check className="size-4 text-[var(--positive)]" />
-                          ) : s.status === 'running' ? (
-                            <Loader2 className="size-4 animate-spin text-[var(--accent)]" />
-                          ) : (
-                            <span className="size-2 rounded-full border border-[var(--control)]" />
-                          )}
-                        </span>
-                        <span className={cn('min-w-0 flex-1 leading-snug', s.status === 'pending' || s.status === 'stopped' ? 'text-muted-foreground' : 'text-foreground')}>
-                          {s.text}
-                        </span>
-                        {s.cost && <span className="shrink-0 pt-px text-[12px] tabular-nums text-muted-foreground">{s.cost}</span>}
-                      </li>
-                    ))}
-                  </ol>
-                )}
+            <Message key={m.id} from="assistant" className="max-w-full">
+              <div className="flex gap-3">
+                <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#1a4be0] text-[#ffffff]">
+                  <Clapperboard className="size-3.5" />
+                </span>
+                <MessageContent className="min-w-0 flex-1 gap-3 text-[15px]">
+                  <p className="text-[13px] font-medium text-muted-foreground">Director</p>
 
-                {nodes.length > 0 && (m.state === 'running' || m.state === 'done') && m === messages.filter((x) => x.role === 'agent').at(-1) && (
-                  <button
-                    type="button"
-                    onClick={onOpenCanvas}
-                    className="flex w-full cursor-pointer items-center gap-3 rounded-[14px] border border-border bg-background p-2.5 text-left hover:border-[#c9c9c6]"
-                  >
-                    <span className="grid size-11 shrink-0 place-items-center rounded-[10px] bg-[var(--chrome)]">
-                      {working ? <Loader2 className="size-4 animate-spin text-[var(--accent)]" /> : <Workflow className="size-4" />}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-[14px] font-medium">Production canvas</span>
-                      <span className="block text-[12px] text-muted-foreground">
-                        {working ? `${done} of ${nodes.length} nodes ready` : `${nodes.length} nodes`}
-                      </span>
-                    </span>
-                    {!canvasOpen && (
-                      <span className="inline-flex items-center gap-1.5 rounded-[8px] bg-muted px-2.5 py-1 text-[12px] font-medium">
-                        <PanelRightOpen className="size-3.5" />
-                        Open
-                      </span>
-                    )}
-                  </button>
-                )}
+                  {m.steps.length > 0 && (
+                    <Task defaultOpen className="rounded-[14px] border border-border">
+                      <TaskTrigger title="">
+                        <button type="button" className="flex w-full cursor-pointer items-center gap-2 px-3.5 py-2.5 text-[13px] text-muted-foreground hover:text-foreground">
+                          <ListChecks className="size-4" />
+                          <span className="flex-1 text-left">
+                            {m.state === 'running'
+                              ? `Working · step ${Math.min(m.steps.filter((s) => s.status === 'done').length + 1, m.steps.length)} of ${m.steps.length}`
+                              : `${m.steps.filter((s) => s.status === 'done').length} of ${m.steps.length} steps done`}
+                          </span>
+                        </button>
+                      </TaskTrigger>
+                      <TaskContent>
+                        <ol className="border-t border-border">
+                          {m.steps.map((s, i) => (
+                            <TaskItem key={i} className={cn('flex items-start gap-2.5 px-3.5 py-2.5 text-[14px]', i > 0 && 'border-t border-border')}>
+                              <span className="mt-[3px] grid size-4 shrink-0 place-items-center">
+                                {s.status === 'done' ? (
+                                  <Check className="size-4 text-[var(--positive)]" />
+                                ) : s.status === 'running' ? (
+                                  <Loader2 className="size-4 animate-spin text-[var(--accent)]" />
+                                ) : (
+                                  <CircleDashed className="size-3.5 text-[var(--control)]" />
+                                )}
+                              </span>
+                              <span className={cn('min-w-0 flex-1 leading-snug', s.status === 'done' || s.status === 'running' ? 'text-foreground' : 'text-muted-foreground')}>
+                                {s.status === 'running' ? <Shimmer>{s.text}</Shimmer> : s.text}
+                              </span>
+                              {s.cost && <span className="shrink-0 pt-px text-[12px] tabular-nums text-muted-foreground">{s.cost}</span>}
+                            </TaskItem>
+                          ))}
+                        </ol>
+                      </TaskContent>
+                    </Task>
+                  )}
 
-                {m.text && <p className="text-[15px] leading-relaxed">{m.text}</p>}
-                {m.state === 'blocked' && !isLive && (
-                  <button
-                    type="button"
-                    onClick={onGoLive}
-                    className="inline-flex h-9 cursor-pointer items-center rounded-[10px] bg-foreground px-3.5 text-[14px] font-medium text-background"
-                  >
-                    Enter the judge passcode
-                  </button>
-                )}
-                {m.state === 'stopped' && <p className="text-[14px] text-muted-foreground">Stopped. Send the brief again to restart.</p>}
-                {m.state === 'done' && m.created.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {m.created.map((id) => {
-                      const n = byId.get(id);
-                      return n ? <Chip key={id} node={n} onClick={() => onChip(id)} /> : null;
-                    })}
-                  </div>
-                )}
+                  {nodes.length > 0 && m === lastAgent && (m.state === 'running' || m.state === 'done') && (
+                    <button
+                      type="button"
+                      onClick={onOpenCanvas}
+                      className="flex w-full cursor-pointer items-center gap-3 rounded-[14px] border border-border bg-background p-2.5 text-left hover:border-[#c9c9c6]"
+                    >
+                      <span className="grid size-11 shrink-0 place-items-center rounded-[10px] bg-[var(--chrome)]">
+                        {working ? <Loader2 className="size-4 animate-spin text-[var(--accent)]" /> : <Workflow className="size-4" />}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-[14px] font-medium">Production canvas</span>
+                        <span className="block text-[12px] text-muted-foreground">
+                          {working ? `${done} of ${nodes.length} nodes ready` : `${nodes.length} nodes · undo, connect, rearrange`}
+                        </span>
+                      </span>
+                      {!canvasOpen && (
+                        <span className="inline-flex items-center gap-1.5 rounded-[8px] bg-muted px-2.5 py-1 text-[12px] font-medium">
+                          <PanelRightOpen className="size-3.5" />
+                          Open
+                        </span>
+                      )}
+                    </button>
+                  )}
+
+                  {m.text && <MessageResponse className="text-[15px] leading-relaxed">{m.text}</MessageResponse>}
+                  {m.state === 'blocked' && !isLive && (
+                    <div>
+                      <button
+                        type="button"
+                        onClick={onGoLive}
+                        className="inline-flex h-9 cursor-pointer items-center rounded-[10px] bg-foreground px-3.5 text-[14px] font-medium text-background"
+                      >
+                        Enter the judge passcode
+                      </button>
+                    </div>
+                  )}
+                  {m.state === 'stopped' && <p className="text-[14px] text-muted-foreground">Stopped. Send the brief again to restart.</p>}
+                  {m.state === 'done' && m.created.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5">
+                      {m.created.map((id) => {
+                        const n = byId.get(id);
+                        return n ? <NodeChip key={id} node={n} onClick={() => onChip(id)} /> : null;
+                      })}
+                    </div>
+                  )}
+                </MessageContent>
               </div>
-            </div>
+            </Message>
           )
         )}
-        {messages.at(-1)?.role === 'user' && (
-          <div className="flex gap-3">
+
+        {waiting && (
+          <div className="flex items-center gap-3">
             <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#1a4be0] text-[#ffffff]">
               <Clapperboard className="size-3.5" />
             </span>
-            <span className="mt-1.5 flex gap-1" aria-label="The director is thinking">
-              {[0, 1, 2].map((i) => (
-                <span key={i} className="studio-dot size-1.5 rounded-full bg-muted-foreground" style={{ animationDelay: `${i * 160}ms` }} />
-              ))}
-            </span>
+            <Shimmer className="text-[14px]">Reading the brief…</Shimmer>
           </div>
         )}
-      </div>
-    </div>
+
+        {!waiting && suggestions.length > 0 && lastAgent?.state !== 'running' && (
+          <Suggestions>
+            {suggestions.map((s) => (
+              <Suggestion key={s} suggestion={s} onClick={onSuggestion} className="rounded-[10px] text-[13px]" />
+            ))}
+          </Suggestions>
+        )}
+      </ConversationContent>
+      <ConversationScrollButton />
+    </Conversation>
   );
 }

@@ -297,3 +297,17 @@ seeded sample projects.
   edges), done, failed. Everything persists (debounced PUT); an interrupted run is marked stopped.
 - Demo behaviour is honest: ready templates replay the real v3 run; references and free briefs get a
   director reply that dissection/edits need Live mode (Phase 2), with the passcode button.
+
+## 17. Libraries instead of hand-built UI (2026-10-30)
+
+Owner: use libraries for the node system (undo/redo etc.) and the chat; hackathon, not a product.
+- Canvas: **React Flow** (`@xyflow/react` 12): pan/zoom, minimap, select, Shift/Cmd multi-select,
+  connect by dragging handle to handle (new edge, role "input"), Delete/Backspace removes nodes or
+  edges, custom node (our NodeCard + handles), custom edge (style + label by role), lane frames as
+  non-interactive background nodes, fit/tidy/zoom toolbar.
+- History: **zustand + zundo** (`features/studio/store.ts`): undo/redo of nodes and edges only
+  (Cmd/Ctrl+Z, Shift+Cmd+Z / Ctrl+Y, toolbar buttons), a drag is one step, paused during an agent
+  run and cleared after it, so undo never takes a run apart.
+- Chat: **AI Elements** (shadcn registry from Vercel): Conversation (stick-to-bottom + scroll button),
+  Message + MessageResponse (markdown), Task (collapsible step list), Shimmer, Suggestions,
+  PromptInput (attachments via menu, paste or drop; uploaded to `/api/assets/upload` on send).

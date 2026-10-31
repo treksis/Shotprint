@@ -1,28 +1,55 @@
-import { ArrowUp, FileVideo, ImageIcon, Loader2, Paperclip, Square, X } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { X } from 'lucide-react';
+import { useState } from 'react';
+import {
+  PromptInput,
+  PromptInputActionAddAttachments,
+  PromptInputActionMenu,
+  PromptInputActionMenuContent,
+  PromptInputActionMenuTrigger,
+  PromptInputAttachment,
+  PromptInputAttachments,
+  PromptInputBody,
+  PromptInputFooter,
+  PromptInputHeader,
+  PromptInputSubmit,
+  PromptInputTextarea,
+  PromptInputTools,
+  type PromptInputMessage,
+} from '@/components/ai-elements/prompt-input';
 import { cn } from '@/lib/utils';
-import type { Attachment } from '../lib';
+import { uploadFile } from '../api';
+import { newId, type Attachment } from '../lib';
 import type { StudioTemplate } from '../types';
 
 export interface ComposerProps {
   value: string;
   onChange: (v: string) => void;
-  onSubmit: () => void;
+  /** Called with the brief and the uploaded files (already stored server-side). */
+  onSubmit: (text: string, attachments: Attachment[]) => void | Promise<void>;
   onStop?: () => void;
   running?: boolean;
   busy?: boolean;
   template?: StudioTemplate | null;
   onClearTemplate?: () => void;
-  attachments?: Attachment[];
-  uploading?: number;
-  onAttachFiles?: (files: File[]) => void;
-  onRemoveAttachment?: (id: string) => void;
   placeholder?: string;
   size?: 'lg' | 'md';
-  autoFocus?: boolean;
+  allowFiles?: boolean;
 }
 
-/** The message box: brief, template chip, attachments, send. Enter sends, Shift+Enter breaks a line. */
+async function toUploaded(msg: PromptInputMessage): Promise<Attachment[]> {
+  const out: Attachment[] = [];
+  for (const f of msg.files) {
+    const type = f.mediaType?.startsWith('video/') ? 'video' : f.mediaType?.startsWith('image/') ? 'image' : null;
+    if (!type || !f.url) continue;
+    const blob = await (await fetch(f.url)).blob();
+    const file = new File([blob], f.filename || `upload.${type === 'video' ? 'mp4' : 'png'}`, { type: f.mediaType });
+    const r = await uploadFile(file);
+    out.push({ id: newId('a'), name: file.name, url: r.url, type });
+  }
+  return out;
+}
+
+/** The message box (AI Elements PromptInput): brief, template chip, attachments, send/stop. */
 export function Composer({
   value,
   onChange,
@@ -32,148 +59,97 @@ export function Composer({
   busy,
   template,
   onClearTemplate,
-  attachments = [],
-  uploading = 0,
-  onAttachFiles,
-  onRemoveAttachment,
   placeholder = 'Describe the ad you want, or pick a template below',
   size = 'md',
-  autoFocus,
+  allowFiles = true,
 }: ComposerProps) {
-  const area = useRef<HTMLTextAreaElement | null>(null);
-  const file = useRef<HTMLInputElement | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const el = area.current;
-    if (!el) return;
-    el.style.height = '0px';
-    el.style.height = `${Math.min(el.scrollHeight, size === 'lg' ? 220 : 180)}px`;
-  }, [value, size]);
+  const submit = async (msg: PromptInputMessage) => {
+    if (running) return onStop?.();
+    if (!msg.text.trim()) return;
+    setError(null);
+    setUploading(msg.files.length > 0);
+    try {
+      const attachments = await toUploaded(msg);
+      await onSubmit(msg.text.trim(), attachments);
+    } catch (e) {
+      setError(String((e as Error).message || e));
+      throw e;
+    } finally {
+      setUploading(false);
+    }
+  };
 
-  const canSend = value.trim().length > 0 && !busy && uploading === 0;
+  const status = running ? 'streaming' : busy || uploading ? 'submitted' : undefined;
 
   return (
-    <div
-      className={cn(
-        'rounded-[20px] border border-border bg-background transition-colors focus-within:border-[#c9c9c6]',
-        size === 'lg' ? 'p-3' : 'p-2.5'
-      )}
-      onDragOver={(e) => onAttachFiles && e.preventDefault()}
-      onDrop={(e) => {
-        if (!onAttachFiles || !e.dataTransfer.files.length) return;
-        e.preventDefault();
-        onAttachFiles([...e.dataTransfer.files]);
-      }}
-    >
-      {(template || attachments.length > 0 || uploading > 0) && (
-        <div className="mb-2 flex flex-wrap gap-1.5 px-1">
-          {template && (
-            <span className="inline-flex h-8 items-center gap-2 rounded-[10px] border border-border bg-[var(--chrome)] pr-1 pl-1 text-[13px]">
-              <img src={template.thumbnail} alt="" className="h-6 w-10 rounded-[6px] object-cover" />
-              <span className="max-w-[220px] truncate font-medium">{template.title}</span>
-              {onClearTemplate && (
-                <button
-                  type="button"
-                  aria-label="Remove template"
-                  onClick={onClearTemplate}
-                  className="grid size-6 cursor-pointer place-items-center rounded-[6px] text-muted-foreground hover:bg-muted hover:text-foreground"
-                >
-                  <X className="size-3.5" />
-                </button>
-              )}
-            </span>
-          )}
-          {attachments.map((a) => (
-            <span key={a.id} className="inline-flex h-8 items-center gap-1.5 rounded-[10px] border border-border bg-[var(--chrome)] pr-1 pl-2.5 text-[13px]">
-              {a.type === 'video' ? <FileVideo className="size-3.5" /> : <ImageIcon className="size-3.5" />}
-              <span className="max-w-[160px] truncate">{a.name}</span>
-              {onRemoveAttachment && (
-                <button
-                  type="button"
-                  aria-label={`Remove ${a.name}`}
-                  onClick={() => onRemoveAttachment(a.id)}
-                  className="grid size-6 cursor-pointer place-items-center rounded-[6px] text-muted-foreground hover:bg-muted hover:text-foreground"
-                >
-                  <X className="size-3.5" />
-                </button>
-              )}
-            </span>
-          ))}
-          {uploading > 0 && (
-            <span className="inline-flex h-8 items-center gap-1.5 rounded-[10px] border border-dashed border-border px-2.5 text-[13px] text-muted-foreground">
-              <Loader2 className="size-3.5 animate-spin" />
-              Uploading {uploading}
-            </span>
-          )}
-        </div>
-      )}
-
-      <textarea
-        ref={area}
-        value={value}
-        autoFocus={autoFocus}
-        rows={1}
-        aria-label="Message the director"
-        placeholder={placeholder}
-        onChange={(e) => onChange(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
-            e.preventDefault();
-            if (canSend) onSubmit();
-          }
-        }}
-        className={cn(
-          'block w-full resize-none bg-transparent px-2 outline-none placeholder:text-muted-foreground',
-          size === 'lg' ? 'min-h-[68px] py-2 text-[16px] leading-relaxed' : 'min-h-[44px] py-1.5 text-[15px] leading-relaxed'
+    <div>
+      <PromptInput
+        onSubmit={submit}
+        accept="video/*,image/*"
+        multiple
+        globalDrop={allowFiles && size === 'lg'}
+        maxFileSize={200 * 1024 * 1024}
+        onError={(e) => setError(e.message)}
+        className={cn('rounded-[20px] border-border bg-background [&_[data-slot=input-group]]:rounded-[20px]', size === 'lg' && 'text-[16px]')}
+      >
+        {(template || allowFiles) && (
+          <PromptInputHeader className="flex-wrap gap-1.5 px-3 pt-3 pb-0 empty:hidden">
+            {template && (
+              <span className="inline-flex h-8 items-center gap-2 rounded-[10px] border border-border bg-[var(--chrome)] pr-1 pl-1 text-[13px]">
+                <img src={template.thumbnail} alt="" className="h-6 w-10 rounded-[6px] object-cover" />
+                <span className="max-w-[220px] truncate font-medium">{template.title}</span>
+                {onClearTemplate && (
+                  <button
+                    type="button"
+                    aria-label="Remove template"
+                    onClick={onClearTemplate}
+                    className="grid size-6 cursor-pointer place-items-center rounded-[6px] text-muted-foreground hover:bg-muted hover:text-foreground"
+                  >
+                    <X className="size-3.5" />
+                  </button>
+                )}
+              </span>
+            )}
+            <PromptInputAttachments className="w-auto p-0">{(a) => <PromptInputAttachment data={a} />}</PromptInputAttachments>
+          </PromptInputHeader>
         )}
-      />
-
-      <div className="mt-1 flex items-center gap-1.5">
-        {onAttachFiles && (
-          <>
-            <input
-              ref={file}
-              type="file"
-              multiple
-              accept="video/*,image/*"
-              className="hidden"
-              onChange={(e) => {
-                if (e.target.files?.length) onAttachFiles([...e.target.files]);
-                e.target.value = '';
-              }}
-            />
-            <button
-              type="button"
-              onClick={() => file.current?.click()}
-              className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-[10px] px-2.5 text-[13px] text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              <Paperclip className="size-4" />
-              Reference or product
-            </button>
-          </>
-        )}
-        <span className="ml-auto pr-1 text-[12px] text-muted-foreground">Director · Muse Wonder</span>
-        {running ? (
-          <button
-            type="button"
-            aria-label="Stop"
-            onClick={onStop}
-            className="grid size-9 cursor-pointer place-items-center rounded-full border border-border bg-background hover:bg-muted"
-          >
-            <Square className="size-3.5 fill-current" />
-          </button>
-        ) : (
-          <button
-            type="button"
-            aria-label="Send"
-            disabled={!canSend}
-            onClick={onSubmit}
-            className="grid size-9 cursor-pointer place-items-center rounded-full bg-foreground text-background transition-opacity disabled:cursor-default disabled:opacity-25"
-          >
-            {busy ? <Loader2 className="size-4 animate-spin" /> : <ArrowUp className="size-4" />}
-          </button>
-        )}
-      </div>
+        <PromptInputBody>
+          <PromptInputTextarea
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={placeholder}
+            className={cn('px-4', size === 'lg' ? 'min-h-[76px] text-[16px]' : 'min-h-[52px] text-[15px]')}
+          />
+        </PromptInputBody>
+        <PromptInputFooter className="px-2 pb-2">
+          <PromptInputTools>
+            {allowFiles && (
+              <PromptInputActionMenu>
+                <PromptInputActionMenuTrigger aria-label="Add reference or product files" />
+                <PromptInputActionMenuContent>
+                  <PromptInputActionAddAttachments label="Add a reference ad or product photos" />
+                </PromptInputActionMenuContent>
+              </PromptInputActionMenu>
+            )}
+          </PromptInputTools>
+          <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Director · Muse Wonder</span>
+          <PromptInputSubmit
+            status={status}
+            disabled={!running && (!value.trim() || !!busy || uploading)}
+            className="rounded-full"
+            onClick={(e) => {
+              if (running) {
+                e.preventDefault();
+                onStop?.();
+              }
+            }}
+          />
+        </PromptInputFooter>
+      </PromptInput>
+      {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
     </div>
   );
 }
