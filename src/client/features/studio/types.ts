@@ -55,5 +55,8 @@ export const EDGE_STYLE: Record<string, { stroke: string; dash?: string; width: 
   shot: { stroke: 'var(--control)', width: 1.2, legend: 'In the cut' },
   assemble: { stroke: 'var(--ink)', width: 1.6, legend: 'Assembled' },
   frames: { stroke: 'var(--muted)', dash: '1 3', width: 1.3, legend: 'Frames studied' },
+  sound: { stroke: 'var(--accent)', width: 1.3, legend: 'Sound in the cut' },
+  score: { stroke: 'var(--accent)', dash: '4 3', width: 1.3, legend: 'Score' },
+  overlay: { stroke: 'var(--muted)', dash: '4 3', width: 1.3, legend: 'Overlay' },
 };
 export const DEFAULT_EDGE: { stroke: string; dash?: string; width: number; legend?: string } = { stroke: 'var(--control)', width: 1.2, legend: 'Input' };

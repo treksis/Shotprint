@@ -177,7 +177,21 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
   }
 
   // The cut: clips -> cut -> final.
+  // Two formats: the simple {out, shots:[{src,in,out}]} from AGENTS.md, and tools/assemble.py's
+  // {takes:{name:{file,at}}, picture:[{t,take|still}], sound, overlays, score} used by template-fill.
   const cut = readJson(path.join(root, 'cut.json'));
+  if (cut && Array.isArray(cut.picture) && !Array.isArray(cut.shots)) {
+    const takes = (cut.takes ?? {}) as Record<string, { file?: string }>;
+    const fileOf = (x: any) => norm(x?.take ? takes[x.take]?.file ?? `renders/${x.take}.mp4` : x?.still ?? x?.file);
+    cut.shots = cut.picture.map((x: any) => {
+      const [a, b] = Array.isArray(x?.t) ? x.t.map(Number) : [0, 0];
+      return { src: fileOf(x), in: a, out: b, label: x?.take ?? path.posix.basename(String(x?.still ?? '')) };
+    });
+    for (const x of cut.sound ?? []) if (!cut.picture.some((y: any) => y?.take === x?.take)) edge(fileOf(x), 'cut.json', 'sound');
+    for (const x of cut.overlays ?? []) edge(norm(x?.file), 'cut.json', 'overlay');
+    if (cut.score?.file) edge(norm(cut.score.file), 'cut.json', 'score');
+    cut.out ??= fs.existsSync(path.join(root, 'final/final.mp4')) ? 'final/final.mp4' : undefined;
+  }
   if (cut && Array.isArray(cut.shots)) {
     const shots = cut.shots
       .map((s: any) => ({ src: norm(s?.src ?? s?.clip ?? s?.file), in: Number(s?.in ?? 0), out: Number(s?.out ?? 0), label: String(s?.label ?? '') }))
