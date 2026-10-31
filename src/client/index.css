@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #ffffff;
+  --surface: #f4f4f4;
+  --ink: #111111;
+  --muted: #6b6b6b;
+  --accent: #1a4be0;
+  --accent-ink: #ffffff;
+  --field-1: #111111;
+  --field-1-ink: #ffffff;
+
+  /* shadcn/ui CSS variables */
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #ffffff;
+  --card-foreground: #111111;
+  --popover: #ffffff;
+  --popover-foreground: #111111;
+  --primary: #111111;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f2;
+  --secondary-foreground: #111111;
+  --muted-bg: #f4f4f2;
+  --muted-foreground: #6b6b6b;
+  --accent-bg: #f4f4f2;
+  --accent-foreground: #111111;
+  --destructive: #c4242a;
+  --destructive-foreground: #ffffff;
+  --border: #eaeaea;
+  --input: #e5e5e5;
+  --ring: #1a4be0;
+  --radius: 0.5rem;
+
+  /* shadcn Sidebar tokens */
+  --sidebar: #f6f6f4;
+  --sidebar-foreground: #111111;
+  --sidebar-primary: #111111;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e9e9e7;
+  --sidebar-accent-foreground: #111111;
+  --sidebar-border: #eaeaea;
+  --sidebar-ring: #1a4be0;
+
+  /* Framed sheet app tokens */
+  --chrome: #f6f6f4;
+  --sheet: #ffffff;
+  --well: #f2f2ef;
+  --rule: #f0f0ee;
+  --control: #d1d5db;
+  --positive: #247b50;
+  --pill-positive-bg: #dcfae5;
+  --pill-positive-ink: #04250e;
+  --negative: #c4242a;
+  --pill-negative-bg: #ffedea;
+  --pill-negative-ink: #831c1e;
+
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1.02rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --step-head: clamp(2rem, 1.3rem + 2.8vw, 3.5rem);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted-bg);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent-bg);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  body {
+    font-family: 'Literata', Georgia, serif;
+    font-optical-sizing: auto;
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Literata', Georgia, serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.num, .tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile button press & Emil Kowalski motion rules */
+.btn-tactile {
+  transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out), background-color 160ms ease;
+}
+.btn-tactile:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out);
+  }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-tactile:active {
+    transform: none !important;
+  }
+}

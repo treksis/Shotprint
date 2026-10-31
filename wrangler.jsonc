@@ -1,0 +1,54 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "muse-viral-studio",
+  "main": "src/worker/cf-entry.ts",
+  "compatibility_date": "2025-02-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  // Set secrets via: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY / FAL_KEY
+  // For local development, set keys in .env or .dev.vars
+  "vars": {
+    "META_API_BASE_URL": "https://api.meta.ai/v1",
+    "META_TEXT_MODEL": "muse-spark-1.3-contributor",
+    "FAL_API_BASE_URL": "https://queue.fal.run",
+    "SANDBOX_TRANSPORT": "rpc"
+  },
+  "containers": [
+    {
+      "class_name": "MuseSandbox",
+      "image": "./Dockerfile",
+      "max_instances": 5
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SANDBOX_DO",
+        "class_name": "MuseSandbox"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["MuseSandbox"]
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "muse-viral-db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "muse-viral-media"
+    }
+  ]
+}

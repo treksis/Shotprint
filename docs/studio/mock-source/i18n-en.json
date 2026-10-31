@@ -1,0 +1,50 @@
+{
+  "nav.studio": "Studio",
+  "studio": {
+    "projectName": "Spring launch",
+    "mockBadge": "Preview · mock data",
+    "creditsUsed": "{count} credits used",
+    "view": "View",
+    "chat": "Chat",
+    "canvas": "Canvas",
+    "resize": "Resize chat",
+    "chatEmptyTitle": "What are we making?",
+    "chatEmptyDescription": "Describe a post. The agent writes the prompt, makes the image and drafts the post on the canvas. Nothing is published until you say so.",
+    "suggestion1": "A teaser for our spring collection",
+    "suggestion2": "Three product shots with a clean background",
+    "suggestion3": "A launch announcement for Instagram and Pinterest",
+    "composerLabel": "Message the agent",
+    "composerPlaceholder": "Describe what to make, or drop files here",
+    "dropToAttach": "Drop to attach",
+    "send": "Send",
+    "stop": "Stop",
+    "steps": {
+      "reading": "Reading the canvas · {count, plural, one {# item} other {# items}}",
+      "prompt": "Writing the prompt",
+      "generate": "Generating the image",
+      "caption": "Drafting the caption",
+      "post": "Creating the post draft"
+    },
+    "credits": "{count} credits",
+    "runDone": "Done. I added a prompt, an image and a post draft to the canvas. Nothing is scheduled, so review the draft before it goes to Posts.",
+    "runStopped": "Stopped. Nothing further was created.",
+    "mockCaption": "Fresh from the studio: {prompt}",
+    "kinds": {
+      "note": "Prompt",
+      "image": "Image",
+      "post": "Post draft"
+    },
+    "postDraftHint": "Draft only. Needs your approval.",
+    "assets": "Assets",
+    "assetsHint": "Drag a file onto the canvas or the chat.",
+    "assetsEmpty": "No images in your library yet.",
+    "emptyTitle": "Your canvas is empty",
+    "emptyDescription": "Ask the agent for something, or drag files in from Assets or your desktop.",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit to screen",
+    "attachToChat": "Ask about this",
+    "removeFromCanvas": "Remove from canvas",
+    "detach": "Remove attachment"
+  }
+}
