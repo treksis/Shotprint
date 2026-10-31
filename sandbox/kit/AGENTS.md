@@ -48,12 +48,19 @@ Write `cut.json` before you assemble, then build `out` from it with ffmpeg (or `
   made from. Keep it current as you go; the person reads it on the canvas.
 - Make stills before clips. A clip that starts on a plate you made (`first_frame`) and ends on the
   next shot's plate (`last_frame`) cuts together continuously instead of jumping around.
-- You cannot watch video directly (the models reject video input). To study a video, detect the cuts
-  with ffmpeg, then read **contact sheets**, never single frames one by one: tile about 20 frames per
-  image with the timestamp burned on each tile, e.g.
-  `ffmpeg -i in.mp4 -vf "fps=1,scale=384:-2,drawtext=text='%{pts\:hms}':x=8:y=8:fontcolor=white:box=1:boxcolor=black@0.6,tile=5x4" dissection/<video>_contact_%02d.jpg`
-  A 90-second film is 4-5 images. Zoom into single frames only to settle a specific question. Keep the
-  sheets in `dissection/` so the person sees on the canvas what you saw. Subagents follow this too.
+- You cannot watch video directly (the models reject video input). To study a video, run
+  `bin/dissect <video>` first (add `--template <name>` when the goal is a template). In about 30 s it
+  measures everything mechanical: cuts and gradual transitions, shot times, loudness, silences, a
+  transcript, and **shot boards** (`dissection/<video>_shots_NN.jpg`, one row per shot: start, middle,
+  end, labelled). Read `dissection/<video>.md`, then the boards: a 90-second film is about 5 images.
+  Don't re-measure what the tool measured, don't extract frames one by one, and don't write your own
+  ffmpeg analysis; open a single frame (`dissection/frames/`) or a 1 fps contact sheet only to settle a
+  specific question. Shots marked "check" may be a camera move rather than a transition: merge them if so.
+- Be quick. Dissecting a film under about 2 minutes is one pass by you, no subagents: run the tool,
+  read the boards, write the template. Independent shell work runs in parallel in one command
+  (`bin/img ... & bin/img ... & wait`), not one call at a time. Use subagents only for work that is
+  large and truly separate (a long film split by time range, not by topic); they cost a fresh session
+  each and the person can't follow them on the canvas.
 - Look at what you make. Open images and extract a few video frames with ffmpeg before moving on.
   Redo what is wrong rather than explaining it away.
 - Restraint: natural light, real motion, plausible performances. No exaggerated AI looks, no
@@ -68,7 +75,8 @@ Write `cut.json` before you assemble, then build `out` from it with ffmpeg (or `
 
 ## Tools
 
-See `TOOLS.md`: `bin/img` (stills, $0.01 each) and `bin/h3` (video with sound, MiniMax-H3 on a GPU).
+See `TOOLS.md`: `bin/dissect` (measure a video), `bin/img` (stills, $0.01 each) and `bin/h3` (video
+with sound, MiniMax-H3 on a GPU).
 ffmpeg, ffprobe, python3 and node are installed.
 
 ## Director templates

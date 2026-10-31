@@ -4,6 +4,19 @@ Everything below runs from the workspace root.
 ffmpeg, ffprobe, python3 and node are installed. You can look at images and video frames
 yourself with your file-reading tool (extract frames with ffmpeg first).
 
+## Measuring a video: `bin/dissect` (about 30 s, no model calls except the transcript)
+
+```bash
+bin/dissect inputs/film.mp4                          # dissection/film.md, film.json, film_shots_NN.jpg, film_contact_NN.jpg
+bin/dissect inputs/film.mp4 --template film-style    # also templates/film-style/template.json + frames/shotNN.jpg
+```
+
+`film.md` is the shot table (times, transition in, loudness, speech turns) plus soft-cut candidates,
+black, silences and the transcript. The shot boards show every shot's start, middle and end. With
+`--template`, `template.json` already holds every measured field; fill the `null` ones (setup,
+framing, camera_move, light, on_screen, text, out) and the acts from the boards, then write
+`TEMPLATE.md`. `--threshold` (default 0.3) and `--min-shot` (default 0.4 s) tune cut detection.
+
 ## Stills: `bin/img` (Muse Image, $0.01 per image, 1280x720 PNG)
 
 ```bash

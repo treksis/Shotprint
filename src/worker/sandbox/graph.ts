@@ -225,10 +225,10 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
   }
   for (const n of nodes.values()) if (n.kind === 'clip' && n.status === 'pending' && activity.rendering.has(n.meta?.job)) n.status = 'running';
 
-  // Contact sheets: dissection/<video>_contact.jpg came from the video with that name.
+  // Contact sheets and shot boards: dissection/<video>_contact.jpg came from the video with that name.
   for (const n of nodes.values()) {
     if (!n.id.startsWith('dissection/')) continue;
-    const stem = path.posix.basename(n.id).replace(/_contact(_\d+)?\.[a-z]+$/i, '');
+    const stem = path.posix.basename(n.id).replace(/(_(contact|shots)(_\d+)?)?\.[a-z]+$/i, '');
     const videos = [...nodes.values()].filter((m) => m.media?.type === 'video');
     const inputs = videos.filter((m) => m.id.startsWith('inputs/'));
     const src = videos.find((m) => path.posix.basename(m.id).replace(/\.[^.]+$/, '') === stem) ?? (inputs.length === 1 ? inputs[0] : undefined);
