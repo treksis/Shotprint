@@ -229,7 +229,9 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
   for (const n of nodes.values()) {
     if (!n.id.startsWith('dissection/')) continue;
     const stem = path.posix.basename(n.id).replace(/_contact(_\d+)?\.[a-z]+$/i, '');
-    const src = [...nodes.values()].find((m) => m.media?.type === 'video' && path.posix.basename(m.id).replace(/\.[^.]+$/, '') === stem);
+    const videos = [...nodes.values()].filter((m) => m.media?.type === 'video');
+    const inputs = videos.filter((m) => m.id.startsWith('inputs/'));
+    const src = videos.find((m) => path.posix.basename(m.id).replace(/\.[^.]+$/, '') === stem) ?? (inputs.length === 1 ? inputs[0] : undefined);
     if (src) edge(src.id, n.id, 'frames');
   }
 

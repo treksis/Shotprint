@@ -298,6 +298,8 @@ class Runtime implements ProjectSession {
       this.llmUsd = Math.max(this.mspUsd, this.estUsd);
       this.emit({ type: 'usage', usd: this.usd() });
       if (this.usd() > usdCap() && this.activeTurnId) void this.interrupt();
+    } else if (method === 'approval/requested' || method === 'approval/updated') {
+      this.approve(p);
     } else if (method === 'session/todoListChanged') {
       this.todos = (p.items ?? []).map((x: any) => ({ text: x.text, status: x.status, activeForm: x.activeForm }));
       this.emit({ type: 'todos', items: this.todos });
@@ -392,6 +394,8 @@ class Runtime implements ProjectSession {
         this.msp = msp;
         this.activeTurnId = session.activeTurnId ?? this.activeTurnId;
         this.setStatus(session.status === 'running' || this.activeTurnId ? 'running' : 'idle');
+        const pending = await msp.request('approval/listPending', { sessionId: this.sessionId }).catch(() => null);
+        for (const a of pending?.approvals ?? []) this.approve(a);
       } catch (e) {
         this.setStatus('error', (e as Error).message);
         throw e;
@@ -400,6 +404,23 @@ class Runtime implements ProjectSession {
       }
     })();
     return this.starting;
+  }
+
+  /**
+   * The sandbox is the security boundary, so every tool call is allowed. The main session runs with
+   * approvalMode allowAll, but subagents' child sessions still ask; nobody answering left them waiting
+   * forever, so the runtime approves on the person's behalf (and clears any left pending on reconnect).
+   */
+  private approved = new Set<string>();
+  private approve(req: any) {
+    if (!this.msp || !this.sessionId || !req?.approvalId || this.approved.has(`${req.approvalId}:${req.currentRequirementId?.sourceIndex}`)) return;
+    const choices: any[] = req.availableChoices ?? [];
+    const choice = choices.find((c) => c.decision === 'approved' && c.scope !== 'once') ?? choices.find((c) => c.decision === 'approved');
+    if (!choice) return;
+    this.approved.add(`${req.approvalId}:${req.currentRequirementId?.sourceIndex}`);
+    void this.msp
+      .request('approval/decide', { commandId: uuid7(), sessionId: req.sessionId ?? this.sessionId, approvalId: req.approvalId, choiceId: choice.choiceId, requirementId: req.currentRequirementId })
+      .catch((e) => console.warn('[studio] approval failed', (e as Error).message));
   }
 
   async setModel(model: DirectorModel) {
