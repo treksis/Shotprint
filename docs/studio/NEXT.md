@@ -18,7 +18,25 @@ Three recorded sessions are the sample projects (`sandbox/seeds/`; workspaces ar
 
 Commits on 2026-10-31: `56ac4b4` (v1 pipeline removed) through `ea2bcdb`.
 
-## Problem 1 (tomorrow's first topic): dissection is far too slow
+## Problem 1: dissection speed — solved 2026-10-31 (`8fa1490`)
+
+`bin/dissect` (kit) measures a film in ~17 s with no model: one decode to a 384 px all-intra proxy, adaptive
+scene-score cuts + grey-diff gradual transitions, black, silences, loudness, Muse transcript, labelled shot
+boards (start/mid/end per shot), contact sheets, key frames, `--template` skeleton. AGENTS.md: run it, read
+boards, one pass, no subagents under ~2 min, parallel shell for independent work. Reviewed by Opus (5 bugs
+fixed: unsafe stems, audio-length duration, VFR frames, template rerun merge, stale outputs; 2x faster).
+
+| Run (Meta launch film, 86 s, Spark) | Wall | Cost | Shots |
+|---|---|---|---|
+| Before (subagents, frame by frame) | ~73 min | $0.58 | 28 |
+| Bench 1 (`stp_mvwwxe0r60una`) | 3m56s | ~$0.10 | 29 (all 28 + a UI dissolve Muse confirmed) |
+| Bench 2 (`stp_mvwyfyl1l9nuj`, faster tool) | 3m54s | $0.11 | 29, 8 acts, no empty fields |
+
+Now ~90% of the time is Spark writing (~22k output tokens: template.json fill, TEMPLATE.md, master_shots.md).
+Next levers if needed: fewer/shorter documents (master_shots.md overlaps TEMPLATE.md), or split the writing
+by act across subagents for long films. Container is capped at 2 CPUs (`STUDIO_SANDBOX_CPUS`).
+
+### Original notes (before the fix)
 
 The dissection seed took **about 75 minutes**. A dissection should take a few minutes.
 
