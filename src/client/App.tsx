@@ -20,7 +20,7 @@ import { LandingPage } from './components/LandingPage';
 import { TemplateVault } from './components/TemplateVault';
 import { StudioWorkspace } from './components/studio/StudioWorkspace';
 import { EmptyStudioForm } from './components/studio/EmptyStudioForm';
-import { AgentSandboxWorkspace } from './components/studio/AgentSandboxWorkspace';
+import { StudioWorkspace as ProductionStudio } from './features/studio/components/studio-workspace';
 import { LiveAccessDialog } from './components/LiveAccessDialog';
 
 function parseViewFromUrl(): 'landing' | 'vault' | 'studio' {
@@ -59,7 +59,7 @@ export default function App() {
   const [templates, setTemplates] = useState<ViralTemplate[]>([]);
   const [projects, setProjects] = useState<RemixProject[]>([]);
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
-  const [executionMode, setExecutionMode] = useState<ExecutionMode>('api');
+  const [executionMode, setExecutionMode] = useState<ExecutionMode>('agent');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [studioBusy, setStudioBusy] = useState<boolean>(false);
@@ -406,16 +406,7 @@ export default function App() {
                 onTemplateCreated={handleTemplateCreated}
               />
             ) : executionMode === 'agent' ? (
-              <AgentSandboxWorkspace
-                templates={templates}
-                projects={projects}
-                activeTemplate={activeTemplate}
-                activeProject={activeProject}
-                isJudgeMode={isJudgeMode}
-                onSwitchToApiMode={() => setExecutionMode('api')}
-                onTemplateUpdated={handleTemplateCreated}
-                onProjectUpdated={handleProjectUpdated}
-              />
+              <ProductionStudio />
             ) : activeTemplate && activeProject ? (
               <StudioWorkspace
                 template={activeTemplate}

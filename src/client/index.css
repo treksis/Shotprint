@@ -144,3 +144,13 @@
     transform: none !important;
   }
 }
+
+/* Studio canvas: items fade in when the director adds them. */
+@keyframes studio-item-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.studio-item-in { animation: studio-item-in 240ms var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) {
+  .studio-item-in { animation: none; }
+}

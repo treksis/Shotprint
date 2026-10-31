@@ -249,11 +249,28 @@ the mock's own pan/zoom surface (no new dependency) unless the spike shows it ca
 - Versions: an agent edit adds a version, never overwrites.
 - Item persistence round-trip; sandbox name derived server-side.
 
-## 14. Open questions for the owner
+## 14. Decisions (owner gave full permission, 2026-10-30)
 
-1. Approve Phase 0 (port the mock into this project, lanes layout)?
-2. ~~Video backend~~ **Decided:** H3 (Colab) while building, fal.ai when shipping.
-3. Live-mode spend cap per session (GPU clips, images, Muse tokens) and the approval threshold?
-4. Demo project: use the v3 BlueChip × Meta glasses run as the seeded showcase?
-5. Merge (today's panels become inspectors, recommended) or replace the current Studio outright?
-6. A second template for the demo (e.g. the Meta VR Glasses launch film or the Muse tour), or BlueChip only?
+1. **Phase 0 approved and built** (see §15).
+2. **Video backend:** H3 (Colab) while building, fal.ai when shipping.
+3. **Spend cap (default, change any time):** per Live session 24 GPU clips, 60 images, $5 of Muse
+   tokens; any single run above 12 clips asks for an approval click.
+4. **Demo project:** the v3 BlueChip × Meta VR Glasses run, seeded read-only.
+5. **Merge:** today's panels become inspectors; the classic API pipeline stays behind the navbar toggle
+   ("1) API-based") until the merge is done; "2) Agent-based" is the new Studio and the default.
+6. **Templates:** BlueChip only for the submission; a second template is a stretch goal.
+
+## 15. Phase 0 (done 2026-10-30)
+
+- `src/client/features/studio/` (types, lib, studio-workspace, chat-panel, canvas-panel, item-card,
+  inspector, assets-drawer), ported from `docs/studio/mock-source/` to this app's shadcn components,
+  tokens and English strings; mounted as the Agent-based Studio view.
+- Lanes Inputs → Fill → Plates → Voice takes → Clips → Cut → Final, wrapping at 7 items per row.
+- Demo data: `scripts/export_demo_project.py` packs the v3 lab run into `public/demo/bluechip-v3/`
+  (41 items, 55 edges, 10 MB). Sending the suggested prompt replays the real run lane by lane;
+  "Show finished project" loads it at once.
+- Verified in Chrome: replay, chips → select + centre, inspector (video, end frames, judge scores),
+  item drag on the board, item drag onto the chat (attaches a chip), zoom buttons, no console errors.
+- Not verified: HTML5 drag and drop from the desktop or the Assets drawer (browser automation can't
+  produce those events), Ctrl/Cmd + scroll zoom (the automation's modifier didn't reach the page).
+  Test by hand.
