@@ -1,4 +1,4 @@
-import { AlertCircle, Check, ChevronRight, Clapperboard, FileText, Loader2, Pencil, Search, SquareTerminal, X } from 'lucide-react';
+import { AlertCircle, Bot, Check, ChevronRight, Clapperboard, FileText, Loader2, Pencil, Search, SquareTerminal, X } from 'lucide-react';
 import { memo, useEffect, useMemo, useState } from 'react';
 import { Conversation, ConversationContent, ConversationScrollButton } from '@/components/ai-elements/conversation';
 import { useStickToBottomContext } from 'use-stick-to-bottom';
@@ -102,6 +102,28 @@ const ToolRow = memo(function ToolRow({ it, chips, onFocusNode }: { it: SessionI
   );
 });
 
+/** A workflow Muse launched, or one of its subagents: what it was asked to do and whether it is done. */
+function AgentCard({ it }: { it: SessionItem }) {
+  const [open, setOpen] = useState(false);
+  const running = it.status === 'inProgress';
+  const sub = it.kind === 'subagent';
+  const title = sub ? `Subagent${it.args?.path ? ` · ${it.args.path}` : ''}` : `Workflow · ${it.text}`;
+  const body = sub ? it.text ?? '' : '';
+  const kids = !sub && typeof it.args?.children === 'number' ? `${it.args.children} subagent${it.args.children === 1 ? '' : 's'}` : '';
+  return (
+    <div className="my-1 rounded-[12px] border border-border bg-background">
+      <button type="button" onClick={() => body && setOpen((o) => !o)} className={cn('flex w-full items-center gap-2 px-3 py-2 text-left text-[13px]', body && 'cursor-pointer')}>
+        {running ? <Loader2 className="size-3.5 shrink-0 animate-spin text-[var(--accent)]" /> : it.status === 'failed' ? <X className="size-3.5 shrink-0 text-[var(--negative)]" /> : <Check className="size-3.5 shrink-0 text-[var(--positive)]" />}
+        <Bot className="size-3.5 shrink-0 text-muted-foreground" />
+        <span className="min-w-0 flex-1 truncate font-medium">{title}</span>
+        {kids && <span className="shrink-0 text-[12px] text-muted-foreground">{kids}</span>}
+        {body && <ChevronRight className={cn('size-3.5 shrink-0 text-muted-foreground transition-transform', open && 'rotate-90')} />}
+      </button>
+      {body && <p className={cn('px-3 pb-2.5 text-[12.5px] leading-relaxed whitespace-pre-wrap text-muted-foreground', !open && 'line-clamp-2')}>{body}</p>}
+    </div>
+  );
+}
+
 /** Sending a message always brings the conversation back to the bottom, even if you had scrolled up. */
 function FollowOnSend({ lastUserId }: { lastUserId?: string }) {
   const { scrollToBottom } = useStickToBottomContext();
@@ -181,13 +203,7 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
                         {it.text}
                       </p>
                     );
-                  if (it.kind === 'subagent' || it.kind === 'workflow')
-                    return (
-                      <p key={it.id} className="flex items-center gap-2 px-2 text-[13px] text-muted-foreground">
-                        {it.status === 'inProgress' ? <Loader2 className="size-3.5 animate-spin" /> : <Check className="size-3.5" />}
-                        {it.kind === 'subagent' ? 'Sub-agent' : 'Workflow'} {it.text ? `· ${it.text.slice(0, 120)}` : ''}
-                      </p>
-                    );
+                  if (it.kind === 'subagent' || it.kind === 'workflow') return <AgentCard key={it.id} it={it} />;
                   return null;
                 })}
               </div>

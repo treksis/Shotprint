@@ -20,6 +20,12 @@ import { connectRelay, containerName, dockerAvailable, ensureContainer, hostRoot
 import { outputsOf, scanWorkspace, type Activity } from './graph';
 import { MspClient, uuid7 } from './msp';
 
+/** The template's source film: the full-length copy if this machine has it, else the gallery preview. */
+function referenceFilm(templateId: string) {
+  const full = path.resolve('sandbox/references', `${templateId}.mp4`);
+  return fs.existsSync(full) ? full : path.resolve('public/templates', `${templateId}.mp4`);
+}
+
 const SHOWN = new Set(['userMessage', 'agentMessage', 'reasoning', 'toolCall', 'subagent', 'workflow', 'userShell']);
 const MAX_OUTPUT = 16_000;
 /** Read when checked: module imports run before the dev server loads .env / .dev.vars. */
@@ -75,6 +81,16 @@ function trimItem(raw: any, prev?: SessionItem): SessionItem {
   if (typeof raw.exitCode === 'number') out.exitCode = raw.exitCode;
   if (typeof raw.durationMs === 'number') out.durationMs = raw.durationMs;
   if (raw.steered) out.steered = true;
+  // Subagents and workflows: what they were asked to do, by whom, and how many children run.
+  if (raw.kind === 'subagent') {
+    out.text = String(raw.objective ?? raw.fallbackText ?? '').replace(/^Subagent:\s*/, '');
+    out.tool = raw.role ?? 'subagent';
+    out.args = { path: raw.agentPath, control: raw.controlStatus };
+  } else if (raw.kind === 'workflow') {
+    out.text = String(raw.entryId ?? raw.fallbackText ?? 'Workflow').replace(/^Workflow:\s*/, '');
+    const kids = Array.isArray(raw.children) ? raw.children : [];
+    out.args = { children: kids.length, running: kids.filter((k: any) => k?.status === 'started' || k?.status === 'running').length };
+  }
   return out;
 }
 
@@ -111,7 +127,7 @@ class Runtime implements ProjectSession {
   ) {
     this.root = seedWorkspace(project.id, {
       templateId: project.templateId,
-      templateVideo: project.templateId ? path.resolve('public/templates', `${project.templateId}.mp4`) : null,
+      templateVideo: project.templateId ? referenceFilm(project.templateId) : null,
     });
     this.saved = this.readSaved();
     this.model = this.saved.model ?? 'spark';

@@ -7,3 +7,6 @@ lab/
 .wrangler/
 .DS_Store
 .data/
+
+# Full-length reference films (copied from lab/); seeding falls back to public/templates previews
+sandbox/references/
