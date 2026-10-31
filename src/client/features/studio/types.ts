@@ -48,7 +48,7 @@ export const LANE_LABEL: Record<Lane, string> = {
 };
 
 export const KIND_LABEL: Record<NodeKind, string> = {
-  reference: 'Reference ad',
+  reference: 'Reference video',
   template: 'Template',
   product: 'Product',
   cast: 'Presenter',

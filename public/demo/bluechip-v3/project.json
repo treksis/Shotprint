@@ -2,7 +2,7 @@
  "id": "bluechip-v3",
  "name": "Meta VR Glasses \u00d7 BlueChip",
  "template": "bluechip-factory",
- "prompt": "Make a 30-second Meta VR Glasses ad from the BlueChip factory template.",
+ "prompt": "Make a 30-second Meta VR Glasses film from the BlueChip factory template.",
  "lanes": [
   "inputs",
   "fill",
@@ -17,7 +17,7 @@
    "id": "ref",
    "kind": "reference",
    "lane": "inputs",
-   "label": "Reference ad",
+   "label": "Reference video",
    "sub": "BlueChip \u00b7 117 s \u00b7 52 shots",
    "media": {
     "type": "video",

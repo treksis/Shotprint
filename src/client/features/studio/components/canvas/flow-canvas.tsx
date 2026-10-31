@@ -21,7 +21,9 @@ import {
   type NodeProps,
 } from '@xyflow/react';
 import { LayoutGrid, Maximize, Minus, Plus, Redo2, Undo2 } from 'lucide-react';
-import { memo, useCallback, useEffect, useMemo } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { uploadFile } from '../../api';
+import { newId } from '../../lib';
 import { useStore } from 'zustand';
 import { cn } from '@/lib/utils';
 import { laneBoxes, relayout } from '../../lib';
@@ -115,6 +117,47 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
   const canUndo = useStore(useStudio.temporal, (s) => s.pastStates.length > 0);
   const canRedo = useStore(useStudio.temporal, (s) => s.futureStates.length > 0);
   const flow = useReactFlow();
+  const [dropping, setDropping] = useState(0);
+  const [over, setOver] = useState(false);
+  const dragStart = useRef<{ id: string; x: number; y: number } | null>(null);
+  const overChat = (x: number, y: number) => document.elementsFromPoint(x, y).some((el) => el.closest('[data-chat-drop]'));
+
+  /** Files dropped on the canvas are uploaded and become nodes where they land (undoable). */
+  const onDrop = useCallback(
+    async (e: React.DragEvent) => {
+      e.preventDefault();
+      setOver(false);
+      if (readOnly) return;
+      const files = [...e.dataTransfer.files].filter((f) => /^(image|video|audio)\//.test(f.type));
+      if (!files.length) return;
+      const at = flow.screenToFlowPosition({ x: e.clientX, y: e.clientY });
+      setDropping((n) => n + files.length);
+      for (const [i, f] of files.entries()) {
+        try {
+          const r = await uploadFile(f);
+          const type = f.type.startsWith('video/') ? 'video' : f.type.startsWith('audio/') ? 'audio' : 'image';
+          const { w, h } = NODE_SIZE.upload;
+          setNodes((ns) => [
+            ...ns,
+            {
+              id: newId('upload'),
+              kind: 'upload',
+              lane: 'notes',
+              label: f.name,
+              sub: `${type} · ${(f.size / 1e6).toFixed(1)} MB`,
+              x: at.x - w / 2 + i * 28,
+              y: at.y - h / 2 + i * 28,
+              status: 'done',
+              media: { type, src: r.url },
+            },
+          ]);
+        } finally {
+          setDropping((n) => n - 1);
+        }
+      }
+    },
+    [flow, readOnly, setNodes]
+  );
   const zoom = useFlowStore((s) => s.transform[2]);
 
   const byId = useMemo(() => new Map(nodes.map((n) => [n.id, n])), [nodes]);
@@ -260,7 +303,29 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
         onEdgesChange={onEdgesChange}
         onConnect={readOnly ? undefined : onConnect}
         onNodeDoubleClick={(_, n) => !n.id.startsWith('lane:') && onAttach(n.id)}
+        onNodeDragStart={(_, n) => {
+          dragStart.current = { id: n.id, x: n.position.x, y: n.position.y };
+        }}
+        onNodeDragStop={(e, n) => {
+          // Dropping a node on the chat attaches it to the next message and puts it back where it was.
+          const s = dragStart.current;
+          dragStart.current = null;
+          const p = 'clientX' in e ? e : null;
+          if (s && s.id === n.id && p && overChat(p.clientX, p.clientY)) {
+            setNodes((ns) => ns.map((x) => (x.id === n.id ? { ...x, x: s.x, y: s.y } : x)));
+            onAttach(n.id);
+          }
+        }}
         onPaneClick={() => setSelected([])}
+        onDragOver={(e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'copy';
+          if (!over) setOver(true);
+        }}
+        onDragLeave={(e) => {
+          if (e.currentTarget === e.target) setOver(false);
+        }}
+        onDrop={onDrop}
         deleteKeyCode={readOnly ? null : ['Backspace', 'Delete']}
         multiSelectionKeyCode={['Meta', 'Shift']}
         selectionOnDrag={false}
@@ -325,6 +390,13 @@ function Canvas({ focus, fitSignal, readOnly, onAttach }: FlowCanvasProps) {
           </Panel>
         )}
       </ReactFlow>
+      {(over || dropping > 0) && (
+        <div className="pointer-events-none absolute inset-3 grid place-items-center rounded-[16px] border-2 border-dashed border-[var(--accent)] bg-[#1a4be0]/5">
+          <span className="rounded-[10px] bg-background px-3 py-2 text-[14px] font-medium">
+            {dropping > 0 ? `Uploading ${dropping}…` : 'Drop to add to the canvas'}
+          </span>
+        </div>
+      )}
       {inspected && (
         <Inspector
           node={inspected}

@@ -70,7 +70,7 @@ export function relayout(nodes: StudioNode[]): StudioNode[] {
 
 export function laneBoxes(nodes: StudioNode[]): LaneBox[] {
   const byLane = new Map<Lane, StudioNode[]>();
-  for (const n of nodes) byLane.set(n.lane, [...(byLane.get(n.lane) ?? []), n]);
+  for (const n of nodes) if (n.lane !== 'notes') byLane.set(n.lane, [...(byLane.get(n.lane) ?? []), n]);
   return [...byLane].map(([lane, ns]) => {
     const x = Math.min(...ns.map((n) => n.x));
     const y = Math.min(...ns.map((n) => n.y));
@@ -152,7 +152,7 @@ export async function initialProject(
         id: 'ref',
         kind: 'reference',
         lane: 'inputs',
-        label: 'Reference ad',
+        label: 'Reference video',
         sub: `${template.source} · ${template.durationSec.toFixed(0)} s`,
         x: 0,
         y: 0,

@@ -69,7 +69,7 @@ def add(kind, lane, iid, label, **kw):
 
 
 # Inputs
-add("reference", "inputs", "ref", "Reference ad", sub="BlueChip · 117 s · 52 shots",
+add("reference", "inputs", "ref", "Reference video", sub="BlueChip · 117 s · 52 shots",
     media={"type": "video", "src": url(mp4(ROOT / "lab/arena/kit/assets/template_bluechip.mp4", OUT / "inputs/reference.mp4", 360, 32)),
            "poster": url(poster(ROOT / "lab/arena/kit/assets/template_bluechip.mp4", OUT / "inputs/reference.jpg", 20))})
 add("template", "inputs", "tpl", "Director's template", sub="15 shots · 5 camera setups · 6 lines",
@@ -174,7 +174,7 @@ run = [
     {"text": f"Judging against the reference: {result['mean']} (no major flaws)" if result else "Judging", "lane": "final", "cost": "text"},
 ]
 project = {"id": "bluechip-v3", "name": "Meta VR Glasses × BlueChip", "template": "bluechip-factory",
-           "prompt": "Make a 30-second Meta VR Glasses ad from the BlueChip factory template.",
+           "prompt": "Make a 30-second Meta VR Glasses film from the BlueChip factory template.",
            "lanes": ["inputs", "fill", "plates", "takes", "clips", "cut", "final"],
            "items": items, "edges": [{"from": a, "to": b, "role": r} for a, b, r in edges], "run": run}
 (OUT / "project.json").write_text(json.dumps(project, indent=1))

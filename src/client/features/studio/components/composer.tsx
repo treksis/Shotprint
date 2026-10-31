@@ -59,7 +59,7 @@ export function Composer({
   busy,
   template,
   onClearTemplate,
-  placeholder = 'Describe the ad you want, or pick a template below',
+  placeholder = 'Describe the video you want, or pick a template below',
   size = 'md',
   allowFiles = true,
 }: ComposerProps) {
@@ -130,7 +130,7 @@ export function Composer({
               <PromptInputActionMenu>
                 <PromptInputActionMenuTrigger aria-label="Add reference or product files" />
                 <PromptInputActionMenuContent>
-                  <PromptInputActionAddAttachments label="Add a reference ad or product photos" />
+                  <PromptInputActionAddAttachments label="Add a reference video, photos or footage" />
                 </PromptInputActionMenuContent>
               </PromptInputActionMenu>
             )}

@@ -43,6 +43,8 @@ function Media({ node, className }: { node: StudioNode; className: string }) {
         <span className="studio-indeterminate absolute inset-x-0 bottom-0 h-[2px]" />
       </span>
     );
+  if (!src && node.media?.type === 'video')
+    return <video src={`${node.media.src}#t=0.5`} muted preload="metadata" playsInline className={cn('block bg-muted object-cover', className)} />;
   if (!src)
     return (
       <span className={cn('grid place-items-center bg-muted text-muted-foreground', className)}>

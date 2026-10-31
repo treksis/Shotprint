@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 import type { StudioTemplate } from '../types';
 
-/** A template in the gallery: hover plays a few seconds of the source ad. */
+/** A template in the gallery: hover plays a few seconds of the source film. */
 export function TemplateCard({
   template,
   selected,

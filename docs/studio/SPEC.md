@@ -1,5 +1,9 @@
 # Spec (draft): MuseClone Studio, an agent chat with a persistent production canvas
 
+> **Scope (owner, 2026-10-30): a general video engine, not an ad engine.** Ads are one use; templates
+> are any real film (documentary, launch film, tour, short) taken apart, and the subject can be a
+> product, a person or a story.
+
 Status: **draft for the owner's review, 2026-10-30.** Replaces the Pikvato draft
 (`spec-studio.pikvato.md`, kept as reference only). English only. Hackathon deadline: **Nov 4, 2026**
 (Meta Global AI Developer Hackathon), so the phases in §11 are sized to land a working demo first.
@@ -311,3 +315,16 @@ Owner: use libraries for the node system (undo/redo etc.) and the chat; hackatho
 - Chat: **AI Elements** (shadcn registry from Vercel): Conversation (stick-to-bottom + scroll button),
   Message + MessageResponse (markdown), Task (collapsible step list), Shimmer, Suggestions,
   PromptInput (attachments via menu, paste or drop; uploaded to `/api/assets/upload` on send).
+
+## 18. General video framing + drag and drop verified (2026-10-30)
+
+- Copy says video/film everywhere (home, composer, skills: Remake a video / Swap the subject /
+  Vertical 9:16 cut / Dissect a video, director replies, templates page, demo prompt).
+- New: files dropped on the canvas upload and become nodes where they land (undoable); files attached
+  in a project chat also land on the canvas; dragging a node onto the chat attaches it again
+  (React Flow `onNodeDragStop`).
+- Verified in Chrome with real events (synthetic DragEvent + DataTransfer carrying a File for file
+  drops, real mouse drags for handles): file drop on the canvas -> upload node; handle-to-handle drag
+  -> new "input" edge (57 -> 58); node dragged onto the chat -> attached, node returned; file dropped
+  on the chat composer -> attachment -> on send, upload node + message; file dropped anywhere on the
+  home page -> composer attachment; reload keeps dropped nodes and new edges.

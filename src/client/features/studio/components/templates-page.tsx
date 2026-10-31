@@ -14,7 +14,7 @@ export function TemplatesPage({ onUseTemplate }: { onUseTemplate: (id: string) =
       <div className="mx-auto w-full max-w-[1120px] px-6 pt-10 pb-24">
         <h1 className="text-[32px] leading-tight">Templates</h1>
         <p className="mt-2 max-w-[640px] text-[15px] text-muted-foreground">
-          A template is a real ad taken apart: every cut timed, every camera setup and move measured, every line given a
+          A template is a real film taken apart: every cut timed, every camera setup and move measured, every line given a
           job and a syllable budget. <span className="text-foreground">Ready</span> templates have been dissected and
           proven with a judged film. <span className="text-foreground">References</span> are in the library and get
           dissected the first time you use them, in Live mode.

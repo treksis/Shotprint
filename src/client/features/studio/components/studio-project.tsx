@@ -178,7 +178,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
             ? `**${tpl.title}** hasn't been dissected yet. Live dissection (cuts, camera moves, lines) is being wired up next; the BlueChip template is ready today.`
             : `**${tpl.title}** hasn't been dissected yet. Dissection measures every cut, camera move and line, and it runs Muse and the GPU, so it needs Live mode. The BlueChip template is ready to try in the demo.`
         );
-      say('I build ads by filling a dissected template. Pick one from the gallery on the Studio page, or attach a reference ad to dissect in Live mode.');
+      say('I make videos by filling a dissected template: a real film taken apart into shots, camera setups and lines. Pick one from the gallery on the Studio page, or attach a reference video to dissect in Live mode.');
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [replay, isLive]
@@ -196,6 +196,27 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
 
   const send = async (text: string, attachments: Attachment[]) => {
     setDraft('');
+    if (attachments.length) {
+      // Attached files land on the canvas too, in the Notes lane after everything else.
+      setNodes((ns) => {
+        const bottom = ns.length ? Math.max(...ns.map((n) => n.y + 260)) : 0;
+        return [
+          ...ns,
+          ...attachments.map((a, i) => ({
+            id: newId('upload'),
+            kind: 'upload' as const,
+            lane: 'notes' as const,
+            label: a.name,
+            sub: `${a.type} · uploaded`,
+            x: i * 240,
+            y: bottom,
+            status: 'done' as const,
+            media: { type: a.type, src: a.url },
+          })),
+        ];
+      });
+      setCanvasOpen(true);
+    }
     setMessages((ms) => [...ms, { id: newId('m'), role: 'user', text, attachments: attachments.map((a) => a.name) }]);
     window.setTimeout(() => respond(template), 600);
   };

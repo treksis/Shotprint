@@ -8,10 +8,10 @@ import { Composer } from './composer';
 import { TemplateCard } from './template-card';
 
 const SKILLS = [
-  { label: 'Rebuild a reference ad', text: 'Rebuild this reference ad for my product, shot for shot.' },
-  { label: 'Swap the product', text: 'Keep the film, the presenter and the cuts. Swap the product for mine.' },
+  { label: 'Remake a video', text: 'Remake this reference video shot for shot with my own subject.' },
+  { label: 'Swap the subject', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
   { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Shorts.' },
-  { label: 'Dissect an ad', text: 'Dissect this ad into a template: cuts, camera moves, lines and sound.' },
+  { label: 'Dissect a video', text: 'Dissect this video into a template: cuts, camera moves, lines and sound.' },
 ];
 
 export interface StudioHomeProps {
@@ -71,8 +71,8 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
         <div className="mx-auto max-w-[760px] text-center">
           <h1 className="text-[40px] leading-tight tracking-[-0.01em] text-foreground">What are we making?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Give the director a brief. It rebuilds a dissected ad shot for shot with your product, and every plate, take
-            and shot lands on a canvas you can inspect.
+            Give the director a brief. It rebuilds a dissected film shot for shot around your subject (a product, a
+            person, a story), and every plate, take and shot lands on a canvas you can inspect.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export function StudioHome({ projects, onOpenProject, onProjectsChanged }: Studi
         <section className="mt-16" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 id="tpl-heading" className="text-[18px] font-medium">Start from a template</h2>
-            <p className="text-[13px] text-muted-foreground">Templates are real ads, dissected into shots, camera setups and lines.</p>
+            <p className="text-[13px] text-muted-foreground">Templates are real films, dissected into shots, camera setups and lines.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {templates === null
