@@ -73,9 +73,9 @@ Open:
 
 ## Running costs to watch
 
-- Colab G4 `h3` is **up** (started 2026-10-31 00:09, ~10 compute units/h). Stop with
-  `cd ~/Documents/infocaton-template && tools/colab/mac/colab stop -s h3`.
-- An **orphan G4** (`[?] gpu-g4-s-…`, not created by the CLI) also bills ~10 units/h; the CLI can't stop
-  it. Close it at colab.research.google.com → Runtime → Manage sessions.
+- **One Colab G4 is still up** (`[?] gpu-g4-s-use5c0-…`, ~10 compute units/h; 715 units left at 01:50).
+  It lost its CLI name, so `colab stop` can't reach it: close it at colab.research.google.com →
+  Runtime → Manage sessions. Next render session: `colab sessions` first, then bootstrap a fresh `h3`
+  (never ssh to a name `sessions` doesn't list; that silently starts a billed CPU box).
 - Project containers (`museclone-*`) idle on `sleep`; harmless, removed when a project is deleted.
 - `.dev.vars` has `H3_ENABLED=1` and `STUDIO_USD_CAP=25` for these runs.
