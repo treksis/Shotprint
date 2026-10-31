@@ -75,6 +75,7 @@ function classify(rel: string): { kind: NodeKind; lane: Lane; media?: 'image' | 
   const top = rel.split('/')[0];
   const media = IMAGE.test(rel) ? 'image' : VIDEO.test(rel) ? 'video' : AUDIO.test(rel) ? 'audio' : undefined;
   if (top === 'inputs') return media ? { kind: 'upload', lane: 'inputs', media } : rel.endsWith('.md') ? { kind: 'note', lane: 'inputs' } : null;
+  if (top === 'dissection' && media === 'image') return { kind: 'image', lane: 'inputs', media };
   if (rel.endsWith('.md')) return { kind: 'note', lane: 'fill' };
   if (top === 'final' && media === 'video') return { kind: 'final', lane: 'final', media };
   if (media === 'audio') return { kind: 'take', lane: 'takes', media };
@@ -209,6 +210,14 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
     if (c) nodes.set(w, { id: w, kind: c.kind, lane: c.lane, label: path.posix.basename(w), sub: path.posix.dirname(w), status: 'running' });
   }
   for (const n of nodes.values()) if (n.kind === 'clip' && n.status === 'pending' && activity.rendering.has(n.meta?.job)) n.status = 'running';
+
+  // Contact sheets: dissection/<video>_contact.jpg came from the video with that name.
+  for (const n of nodes.values()) {
+    if (!n.id.startsWith('dissection/')) continue;
+    const stem = path.posix.basename(n.id).replace(/_contact\.[a-z]+$/i, '');
+    const src = [...nodes.values()].find((m) => m.media?.type === 'video' && path.posix.basename(m.id).replace(/\.[^.]+$/, '') === stem);
+    if (src) edge(src.id, n.id, 'frames');
+  }
 
   // The person's own wiring on the canvas.
   const links = readJson(path.join(root, '.studio/links.json'));

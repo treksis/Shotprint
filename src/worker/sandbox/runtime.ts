@@ -415,7 +415,15 @@ class Runtime implements ProjectSession {
     if (req.model && req.model !== this.model) await this.setModel(req.model);
     const files = (req.files ?? []).filter(Boolean);
     const text = files.length ? `${req.text}\n\nAttached: ${files.map((f) => `\`${f}\``).join(', ')}` : req.text;
-    const input = [{ type: 'text', text }];
+    const input: Array<Record<string, unknown>> = [{ type: 'text', text }];
+    // MSP can carry a video part (media/upload), but Muse Spark and Muse Wonder both answer it with
+    // "[video omitted: the selected model does not support video input]" (tested 2026-10-31), so it is
+    // off unless STUDIO_NATIVE_VIDEO=1. Without it Muse samples frames with ffmpeg, as AGENTS.md says.
+    const nativeVideo = process.env.STUDIO_NATIVE_VIDEO === '1';
+    for (const f of nativeVideo ? files.filter((x) => /\.(mp4|mov)$/i.test(x)).slice(0, 2) : []) {
+      const uploadId = await this.uploadVideo(f).catch((e) => (console.warn('[studio] video upload failed', f, (e as Error).message), null));
+      if (uploadId) input.push({ type: 'video', uploadId });
+    }
     if (req.mode === 'steer' && this.activeTurnId) {
       try {
         await this.msp!.request('turn/steer', { commandId: uuid7(), sessionId: this.sessionId, expectedTurnId: this.activeTurnId, input });
@@ -433,6 +441,32 @@ class Runtime implements ProjectSession {
       this.setStatus('running');
     }
     return { disposition: r.disposition as string };
+  }
+
+  /** MSP media/upload: the video in chunks, into the session's video store; returns the receipt id. */
+  private async uploadVideo(rel: string): Promise<string> {
+    const p = this.resolve(rel);
+    if (!p || !fs.existsSync(p)) throw new Error(`no such file ${rel}`);
+    const buf = fs.readFileSync(p);
+    if (buf.length > 200 * 1024 * 1024) throw new Error('video too large');
+    const CHUNK = 512 * 1024;
+    const chunkCount = Math.max(1, Math.ceil(buf.length / CHUNK));
+    const uploadId = uuid7();
+    const mediaType = /\.mov$/i.test(rel) ? 'video/quicktime' : 'video/mp4';
+    for (let i = 0; i < chunkCount; i++) {
+      await this.msp!.request('media/upload', {
+        commandId: uuid7(),
+        sessionId: this.sessionId,
+        uploadId,
+        mediaType,
+        totalBytes: buf.length,
+        chunkCount,
+        chunkIndex: i,
+        chunkBase64: buf.subarray(i * CHUNK, (i + 1) * CHUNK).toString('base64'),
+      });
+    }
+    console.log(`[studio] uploaded ${rel} (${buf.length} bytes, ${chunkCount} chunks) as video ${uploadId}`);
+    return uploadId;
   }
 
   async start() {
