@@ -48,10 +48,12 @@ Write `cut.json` before you assemble, then build `out` from it with ffmpeg (or `
   made from. Keep it current as you go; the person reads it on the canvas.
 - Make stills before clips. A clip that starts on a plate you made (`first_frame`) and ends on the
   next shot's plate (`last_frame`) cuts together continuously instead of jumping around.
-- You cannot watch video directly. To study a video (a reference film, a render), detect the cuts
-  with ffmpeg, extract frames, and read them as images. Save a contact sheet of the frames you looked
-  at as `dissection/<video name>_contact.jpg` (one tiled image, timestamps burned in), so the person
-  sees on the canvas what you saw.
+- You cannot watch video directly (the models reject video input). To study a video, detect the cuts
+  with ffmpeg, then read **contact sheets**, never single frames one by one: tile about 20 frames per
+  image with the timestamp burned on each tile, e.g.
+  `ffmpeg -i in.mp4 -vf "fps=1,scale=384:-2,drawtext=text='%{pts\:hms}':x=8:y=8:fontcolor=white:box=1:boxcolor=black@0.6,tile=5x4" dissection/<video>_contact_%02d.jpg`
+  A 90-second film is 4-5 images. Zoom into single frames only to settle a specific question. Keep the
+  sheets in `dissection/` so the person sees on the canvas what you saw. Subagents follow this too.
 - Look at what you make. Open images and extract a few video frames with ffmpeg before moving on.
   Redo what is wrong rather than explaining it away.
 - Restraint: natural light, real motion, plausible performances. No exaggerated AI looks, no

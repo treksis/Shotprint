@@ -10,3 +10,4 @@ lab/
 
 # Full-length reference films (copied from lab/); seeding falls back to public/templates previews
 sandbox/references/
+sandbox/seeds/*/workspace/

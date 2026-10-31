@@ -1,0 +1,7 @@
+{
+  "name": "Render modes: a 12-second founder teaser",
+  "prompt": "A 12-second teaser with three shots, one per render mode: text only, first + last frame, reference + voice.",
+  "templateId": null,
+  "thumbnail": "plates/s02a.png",
+  "model": "spark"
+}

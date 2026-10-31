@@ -9,7 +9,7 @@ const IMAGE = /\.(png|jpe?g|webp|gif)$/i;
 const VIDEO = /\.(mp4|mov|webm|m4v)$/i;
 const AUDIO = /\.(wav|mp3|m4a|aac|flac|ogg)$/i;
 /** Workspace plumbing that never appears on the canvas. */
-const HIDDEN_DIRS = new Set(['bin', 'tools', 'docs', 'node_modules', '__pycache__', '_prev', 'frames', 'work']);
+const HIDDEN_DIRS = new Set(['bin', 'tools', 'docs', 'node_modules', '__pycache__', '_prev', 'frames', 'work', 'site-packages']);
 const HIDDEN_FILES = new Set(['AGENTS.md', 'TOOLS.md', 'CLAUDE.md']);
 const MAX_FILES = 400;
 
@@ -228,7 +228,7 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
   // Contact sheets: dissection/<video>_contact.jpg came from the video with that name.
   for (const n of nodes.values()) {
     if (!n.id.startsWith('dissection/')) continue;
-    const stem = path.posix.basename(n.id).replace(/_contact\.[a-z]+$/i, '');
+    const stem = path.posix.basename(n.id).replace(/_contact(_\d+)?\.[a-z]+$/i, '');
     const src = [...nodes.values()].find((m) => m.media?.type === 'video' && path.posix.basename(m.id).replace(/\.[^.]+$/, '') === stem);
     if (src) edge(src.id, n.id, 'frames');
   }

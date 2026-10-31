@@ -1,0 +1,7 @@
+{
+  "name": "Meta VR Glasses × Founder on the factory floor",
+  "prompt": "Make a 30-second film for Meta VR Glasses in the style of the BlueChip factory template.",
+  "templateId": "bluechip-factory",
+  "thumbnail": "plates/camB.png",
+  "model": "spark"
+}
