@@ -3,7 +3,7 @@ import { NODE_SIZE, type CreateStudioProjectRequest, type Lane, type StudioNode,
 /** Pipeline order, left to right on the canvas. */
 export const LANE_ORDER: Lane[] = ['inputs', 'fill', 'plates', 'takes', 'clips', 'cut', 'final', 'notes'];
 /** Lanes with many nodes stack in two sub-columns. */
-const SUBCOLS: Partial<Record<Lane, number>> = { plates: 2, clips: 2 };
+const SUBCOLS: Partial<Record<Lane, number>> = { inputs: 2, plates: 2, clips: 2 };
 const COL_GAP = 120;
 const ROW_GAP = 18;
 const SUB_GAP = 16;

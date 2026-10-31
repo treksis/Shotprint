@@ -55,6 +55,8 @@ Write `cut.json` before you assemble, then build `out` from it with ffmpeg (or `
 - Branding: Meta's own branding is fine. No other company's logo, name or product.
 - When the person connects nodes on the canvas, the wiring is saved in `.studio/links.json`
   (`[{"from": "...", "to": "...", "role": "..."}]`). If they mention a connection, read it.
+- Write everything in English (replies, notes, prompts, file names), whatever language the
+  person or a tool uses.
 - Keep replies short: say what you made and what is next. The canvas shows the files themselves.
   Name files by their workspace path (`plates/s01.png`), not absolute paths or links.
 

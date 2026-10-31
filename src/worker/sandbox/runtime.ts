@@ -22,8 +22,14 @@ import { MspClient, uuid7 } from './msp';
 
 const SHOWN = new Set(['userMessage', 'agentMessage', 'reasoning', 'toolCall', 'subagent', 'workflow', 'userShell']);
 const MAX_OUTPUT = 16_000;
-const USD_CAP = Number(process.env.STUDIO_USD_CAP || 3);
-const H3_TOOL = path.resolve(process.env.H3_TOOL || 'lab/arena/kit/bin/h3');
+/** Read when checked: module imports run before the dev server loads .env / .dev.vars. */
+const usdCap = () => Number(process.env.STUDIO_USD_CAP || 3);
+/** List prices per million tokens. */
+const PRICE: Record<string, { in: number; out: number }> = {
+  'muse-spark-1.3-contributor': { in: 0.1, out: 0.2 },
+  'muse-wonder-1.0': { in: 4, out: 20 },
+};
+const h3Tool = () => path.resolve(process.env.H3_TOOL || 'lab/arena/kit/bin/h3');
 const MIME: Record<string, string> = {
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif',
   '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.webm': 'video/webm', '.m4v': 'video/mp4',
@@ -81,6 +87,8 @@ class Runtime implements ProjectSession {
   private items = new Map<string, SessionItem>();
   private todos: TodoEntry[] = [];
   private llmUsd = 0;
+  private mspUsd = 0;
+  private estUsd = 0;
   private activeTurnId: string | null = null;
   private queued: SessionView['queued'] = [];
   private graph: WorkspaceGraph = { nodes: [], edges: [] };
@@ -263,12 +271,17 @@ class Runtime implements ProjectSession {
       this.queued = this.queued.filter((q) => q.turnId !== p.turnId);
       this.setStatus(this.status);
     } else if (method === 'session/tokenUsage') {
-      const usd = p.cumulative?.cost?.usd;
-      if (typeof usd === 'number') {
-        this.llmUsd = usd;
-        this.emit({ type: 'usage', usd: this.usd() });
-        if (this.usd() > USD_CAP && this.activeTurnId) void this.interrupt();
+      // Muse Code prices some models itself (cumulative.cost); for the rest (Muse Wonder) we price each
+      // call's tokens from the list price, cached prompt tokens at the full rate so the cap errs safe.
+      const priced = p.cumulative?.cost?.usd;
+      if (typeof priced === 'number' && !p.cumulative?.cost?.partial) this.mspUsd = priced;
+      else if (p.usage) {
+        const price = PRICE[p.modelId] ?? PRICE['muse-wonder-1.0'];
+        this.estUsd += ((p.usage.inputTokens ?? 0) * price.in + (p.usage.outputTokens ?? 0) * price.out) / 1e6;
       }
+      this.llmUsd = Math.max(this.mspUsd, this.estUsd);
+      this.emit({ type: 'usage', usd: this.usd() });
+      if (this.usd() > usdCap() && this.activeTurnId) void this.interrupt();
     } else if (method === 'session/todoListChanged') {
       this.todos = (p.items ?? []).map((x: any) => ({ text: x.text, status: x.status, activeForm: x.activeForm }));
       this.emit({ type: 'todos', items: this.todos });
@@ -327,7 +340,10 @@ class Runtime implements ProjectSession {
       this.setStatus('starting');
       try {
         this.container = await ensureContainer(this.project.id);
-        if (!(await relayRunning(this.container))) await startRelay(this.project.id, this.container, MODEL_IDS[this.model]);
+        // A running relay already holds the session on its one MSP connection: reattach without
+        // session/resume, which Muse Code treats as crash recovery and cancels the running turn.
+        const warm = await relayRunning(this.container);
+        if (!warm) await startRelay(this.project.id, this.container, MODEL_IDS[this.model]);
         const proc = connectRelay(this.container);
         const msp = new MspClient(proc);
         proc.on('exit', () => {
@@ -339,7 +355,8 @@ class Runtime implements ProjectSession {
         await msp.request('initialize', { clientInfo: { name: 'museclone_studio', title: 'MuseClone Studio', version: '0.2.0' }, capabilities: { experimentalApi: true } });
         msp.notify('initialized');
         let session: any;
-        if (this.saved.sessionId) {
+        if (warm && this.saved.sessionId) session = { sessionId: this.saved.sessionId, activeTurnId: this.activeTurnId, status: this.activeTurnId ? 'running' : 'idle' };
+        else if (this.saved.sessionId) {
           try {
             session = (await msp.request('session/resume', { commandId: uuid7(), sessionId: this.saved.sessionId, excludeItems: true })).session;
           } catch (e) {
@@ -377,7 +394,7 @@ class Runtime implements ProjectSession {
   }
 
   async turn(req: TurnRequest) {
-    if (this.usd() > USD_CAP) throw new Error(`This project reached its $${USD_CAP} spend cap.`);
+    if (this.usd() > usdCap()) throw new Error(`This project reached its $${usdCap()} spend cap.`);
     await this.ensureStarted();
     if (req.model && req.model !== this.model) await this.setModel(req.model);
     const files = (req.files ?? []).filter(Boolean);
@@ -508,7 +525,7 @@ class Runtime implements ProjectSession {
         continue;
       }
       // The GPU box is opt-in: ssh to a Colab session that isn't running would start a billed one.
-      if (process.env.H3_ENABLED !== '1' || !fs.existsSync(H3_TOOL)) {
+      if (process.env.H3_ENABLED !== '1' || !fs.existsSync(h3Tool())) {
         fs.writeFileSync(log, 'h3: the video renderer is offline right now (the GPU is switched off).\nKeep going with plans and stills; the jobs file is saved and can be rendered later.\n');
         finish(69);
         continue;
@@ -516,7 +533,7 @@ class Runtime implements ProjectSession {
       if (jobs) this.rendering.add(jobs);
       this.scheduleScan(50);
       const fd = fs.openSync(log, 'w');
-      const p = spawn('python3', [H3_TOOL, ...r.args], {
+      const p = spawn('python3', [h3Tool(), ...r.args], {
         cwd: this.root,
         stdio: ['ignore', fd, fd],
         env: { ...process.env, ARM_ROOT: this.root, PYTHONUNBUFFERED: '1' },
