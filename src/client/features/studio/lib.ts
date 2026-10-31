@@ -1,8 +1,5 @@
 import { NODE_SIZE, type CreateStudioProjectRequest, type Lane, type StudioNode, type StudioTemplate, type WorkspaceGraph } from './types';
 
-let counter = 0;
-export const newId = (prefix = 'n') => `${prefix}_${Date.now().toString(36)}${(counter++).toString(36)}`;
-
 /** Pipeline order, left to right on the canvas. */
 export const LANE_ORDER: Lane[] = ['inputs', 'fill', 'plates', 'takes', 'clips', 'cut', 'final', 'notes'];
 /** Lanes with many nodes stack in two sub-columns. */

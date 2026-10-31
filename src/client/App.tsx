@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { RemixProject, ViralTemplate } from '../shared/types';
 import type { StudioProjectSummary } from '../shared/studio';
-import { fetchProjects, fetchTemplates, getInitialJudgeMode, setJudgeModeState } from './lib/api';
+import { getInitialJudgeMode, setJudgeModeState } from './lib/api';
 import { Navbar } from './components/Navbar';
 import { AppSidebar } from './components/app-sidebar';
 import { SidebarInset, SidebarProvider } from './components/ui/sidebar';
@@ -41,9 +40,6 @@ export default function App() {
   const [showLiveGate, setShowLiveGate] = useState(false);
   const [liveGateReason, setLiveGateReason] = useState<string | undefined>(undefined);
   const [studioProjects, setStudioProjects] = useState<StudioProjectSummary[]>([]);
-  // The landing page still shows the original pipeline's sample data.
-  const [landingTemplates, setLandingTemplates] = useState<ViralTemplate[]>([]);
-  const [landingProjects, setLandingProjects] = useState<RemixProject[]>([]);
 
   const navigate = useCallback((next: Route) => {
     setRoute(next);
@@ -64,7 +60,7 @@ export default function App() {
         // First visit: seed sample projects so the workspace isn't empty for a reviewer.
         if (ps.length === 0 && !localStorage.getItem(SEEDED_KEY)) {
           localStorage.setItem(SEEDED_KEY, '1');
-          const seeds = await seedProjects(await listTemplates());
+          const seeds = seedProjects(await listTemplates());
           for (const s of seeds) await createProject(s);
           ps = await listProjects();
         }
@@ -76,16 +72,6 @@ export default function App() {
   useEffect(() => {
     if (route.view !== 'landing') refreshProjects();
   }, [route, refreshProjects]);
-
-  useEffect(() => {
-    if (route.view !== 'landing') return;
-    Promise.all([fetchTemplates(), fetchProjects()])
-      .then(([t, p]) => {
-        setLandingTemplates(t);
-        setLandingProjects(p);
-      })
-      .catch(() => undefined);
-  }, [route.view]);
 
   const openGate = useCallback((reason?: string) => {
     setLiveGateReason(reason);
@@ -104,8 +90,6 @@ export default function App() {
       {route.view === 'landing' ? (
         <div className="min-h-svh bg-[#ffffff] text-[#111111]">
           <LandingPage
-            templates={landingTemplates}
-            projects={landingProjects}
             onEnterJudgeStudio={() => navigate({ view: 'home' })}
             onOpenVault={() => navigate({ view: 'templates' })}
           />

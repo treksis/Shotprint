@@ -1,5 +1,5 @@
 import React from 'react';
-import type { RemixProject, ViralTemplate } from '../../shared/types';
+import { STUDIO_TEMPLATES } from '../../shared/studio-templates';
 import { useReveal } from '../lib/useReveal';
 import { SiteHeader } from './landing/SiteHeader';
 import { HeroSection } from './landing/HeroSection';
@@ -12,15 +12,11 @@ import { FinalCta } from './landing/FinalCta';
 import { SiteFooter } from './landing/SiteFooter';
 
 export interface LandingPageProps {
-  templates: ViralTemplate[];
-  projects: RemixProject[];
   onEnterJudgeStudio: (projectId?: string, opts?: { openLiveGate?: boolean }) => void;
   onOpenVault: () => void;
 }
 
 export function LandingPage({
-  templates,
-  projects,
   onEnterJudgeStudio,
   onOpenVault,
 }: LandingPageProps) {
@@ -48,12 +44,12 @@ export function LandingPage({
       </div>
       <main>
         <HeroSection
-          fallbackPoster={templates[0]?.thumbnailUrl}
+          fallbackPoster={STUDIO_TEMPLATES[0]?.thumbnail}
           onOpenStudio={onOpenStudio}
         />
         <LogoStrip />
         <ProblemSection />
-        <FeatureSection templates={templates} projects={projects} />
+        <FeatureSection />
         <HowItWorks onOpenVault={onOpenVault} />
         <DemoVsLive onOpenStudio={onOpenStudio} onOpenLiveGate={onOpenLiveGate} />
         <FinalCta onOpenStudio={onOpenStudio} />

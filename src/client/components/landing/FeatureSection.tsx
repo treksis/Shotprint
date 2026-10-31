@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
-import type { RemixProject, ViralTemplate } from '../../../shared/types';
+import { STUDIO_TEMPLATES } from '../../../shared/studio-templates';
 
-export interface FeatureSectionProps {
-  templates: ViralTemplate[];
-  projects: RemixProject[];
-}
-
-export function FeatureSection({ templates, projects }: FeatureSectionProps) {
-  const tpl = templates[0];
-  const proj = projects[0];
-  const samRegion = tpl?.blueprint?.scenes?.[0]?.samFocalRegion ?? {
+export function FeatureSection() {
+  const samRegion = {
     label: 'Primary Subject',
     confidence: 0.99,
     x: 0.26,
@@ -18,20 +11,11 @@ export function FeatureSection({ templates, projects }: FeatureSectionProps) {
     h: 0.56,
   };
 
-  const fallbackMedia = [
-    tpl?.thumbnailUrl ||
-      'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=960&q=80',
-    tpl?.thumbnailUrl ||
-      'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=960&q=80',
-    proj?.scenes?.[0]?.keyframeUrl ||
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=960&q=80',
-    proj?.scenes?.[1]?.keyframeUrl ||
-      'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=960&q=80',
-  ];
+  const fallbackMedia = [0, 1, 2, 3].map((i) => STUDIO_TEMPLATES[i % STUDIO_TEMPLATES.length].thumbnail);
 
   const [imgSrcs, setImgSrcs] = useState<string[]>(fallbackMedia);
 
-  const fidelityScore = proj?.fidelityReport?.overallScore ?? 96;
+  const fidelityScore = 96;
 
   const rows = [
     {

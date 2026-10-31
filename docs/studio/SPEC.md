@@ -4,13 +4,40 @@
 > are any real film (documentary, launch film, tour, short) taken apart, and the subject can be a
 > product, a person or a story.
 
-Status: **draft for the owner's review, 2026-10-30.** Replaces the Pikvato draft
-(`spec-studio.pikvato.md`, kept as reference only). English only. Hackathon deadline: **Nov 4, 2026**
-(Meta Global AI Developer Hackathon), so the phases in §11 are sized to land a working demo first.
+Status: English only. Hackathon deadline: **Nov 4, 2026** (Meta Global AI Developer Hackathon).
+Background: `docs/archive/PLAN.md` (product and rubric), `docs/research/` (Dreamina, Higgsfield,
+Cloudflare), `sandbox/templates/bluechip-factory/TEMPLATE.md` (what a template is).
 
-Read with: `PLAN.md` (product and rubric), `HANDOFF_ARCHITECTURE.md` (stack), `docs/research/`
-(Dreamina, Higgsfield, Cloudflare), `lab/templates/bluechip-factory/TEMPLATE.md` (what a template is),
-`lab/arena/results/RESULTS.md` (what the pipeline measured). **Open** marks an undecided item.
+## 0. Current architecture (2026-10-31): the GUI is a front end for Muse Code
+
+**This section wins over anything below it.** §5, §19 and §20 describe a hand-written director loop
+(own tool calls, own steering, replayed demos); it was removed. The agent is **Muse Code**, Meta's
+agent harness, and the GUI only shows and drives what Muse Code does.
+
+- **One sandbox per project.** A container (`muse-harness` image) with the project's workspace
+  mounted. Inside it `sandbox/host/relay.mjs` keeps one `muse serve` alive and appends every MSP
+  notification to `<workspace>/.studio/events.jsonl`. The server tails that file, so a turn keeps
+  running through server restarts and a finished session replays exactly as it ran.
+- **The workspace is seeded** from `sandbox/kit`: `AGENTS.md` (how to work, folder layout),
+  `TOOLS.md`, `bin/img` (Muse Image, logs lineage to `.studio/ledger.jsonl`), `bin/h3` (hands
+  renders to the host), `tools/`, skills `template-fill` and `effects`. A picked template is copied
+  from `sandbox/templates/<id>`.
+- **Chat = the MSP item stream**: user messages, reasoning summaries, agent messages, tool calls
+  with output. Send = `turn/start`; steer = `turn/steer`; queue = `turn/start` with `ifBusy: queue`
+  (remove = `turn/unqueue`); stop = `turn/interrupt`; model = `session/setModel`; Muse's own todo
+  list shows above the composer.
+- **Canvas = the workspace.** Every media file and note is a node (lane by folder). Edges come from
+  the agent's own records: the `bin/img` ledger (image edits), `jobs/*.jsonl` (first frame, last
+  frame, guide audio, references), `cut.json` (shots → cut → final). Files a running command is
+  writing show as loading nodes. Links the person draws go to `.studio/links.json` for the agent;
+  undo/redo covers layout and those links.
+- **What we add around Muse Code:** the canvas, file serving and uploads, the `bin/h3` host
+  bridge (the GPU connection lives on the host; off unless `H3_ENABLED=1`), a per-project spend
+  cap, and sending the project's brief as its first turn.
+- **Code:** `src/worker/sandbox/` (docker, msp, runtime, graph), `src/worker/studio/` (routes,
+  store, `sandbox.ts` interface), `src/client/features/studio/` (session store, chat, canvas).
+- **Not built yet:** the Cloudflare implementation of `StudioSandbox` (deployed builds answer
+  503 `no_sandbox`), fal.ai as the render backend.
 
 ---
 

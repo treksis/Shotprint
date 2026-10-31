@@ -9,14 +9,8 @@
     "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   },
-  // Set secrets via: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY / FAL_KEY
-  // For local development, set keys in .env or .dev.vars
-  "vars": {
-    "META_API_BASE_URL": "https://api.meta.ai/v1",
-    "META_TEXT_MODEL": "muse-spark-1.3-contributor",
-    "FAL_API_BASE_URL": "https://queue.fal.run",
-    "SANDBOX_TRANSPORT": "rpc"
-  },
+  // Secrets: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY (local dev: .env or .dev.vars)
+  // The container below is where each project's Muse Code sandbox runs when deployed (not wired yet).
   "containers": [
     {
       "class_name": "MuseSandbox",
@@ -43,12 +37,6 @@
       "binding": "DB",
       "database_name": "muse-viral-db",
       "database_id": "00000000-0000-0000-0000-000000000000"
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "MEDIA_BUCKET",
-      "bucket_name": "muse-viral-media"
     }
   ]
 }
