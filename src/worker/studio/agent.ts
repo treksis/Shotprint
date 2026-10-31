@@ -36,6 +36,10 @@ export type AgentEvent =
   | { type: 'edge'; edge: { from: string; to: string; role: string } }
   | { type: 'text'; text: string }
   | { type: 'delta'; text: string }
+  | { type: 'thinking'; text: string }
+  | { type: 'run'; id: string }
+  | { type: 'steer'; text: string }
+  | { type: 'stopped' }
   | { type: 'done'; usd: number; model: string }
   | { type: 'error'; message: string };
 
@@ -56,7 +60,7 @@ export function budgetFor(session: string) {
 }
 
 // ---------- tools ----------
-const TOOLS = [
+const CHAT_TOOLS = [
   {
     type: 'function',
     function: {
@@ -109,6 +113,9 @@ const TOOLS = [
   },
 ];
 
+/** Responses API tool shape: name/description/parameters at the top level. */
+const TOOLS = CHAT_TOOLS.map((x) => ({ type: 'function', ...x.function }));
+
 function systemPrompt(req: AgentRequest) {
   const nodes = req.canvas.nodes
     .slice(0, 80)
@@ -124,28 +131,44 @@ ${req.template ? `Project template: "${req.template.title}" (${req.template.stat
 ${nodes || '(empty)'}`;
 }
 
-/** One streamed Muse call: text deltas go to onDelta as they arrive; tool calls are assembled from their deltas. */
-async function callMuse(env: WorkerBindings, model: DirectorModel, messages: any[], onDelta: (s: string) => void) {
-  const body = { model: MODEL_ID[model], messages, tools: TOOLS, max_tokens: 4000, reasoning_effort: model === 'wonder' ? 'medium' : 'low', stream: true, stream_options: { include_usage: true } };
-  const post = (b: unknown) =>
-    fetch(`${env.META_API_BASE_URL || 'https://api.meta.ai/v1'}/chat/completions`, {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${env.META_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(b),
-    });
-  let res = await post(body);
-  if (res.status === 400) {
-    // Older gateways reject stream_options; stream without usage then.
-    const { stream_options: _s, ...rest } = body;
-    res = await post(rest);
-  }
+/**
+ * One streamed Muse call on the Responses API. Reasoning summaries ("thinking") and text arrive as
+ * deltas; function calls are collected when their output item completes. Stateless: the caller sends
+ * the whole turn transcript every time (Muse's stored responses expired mid-turn when chained with
+ * previous_response_id, measured 2026-10-30).
+ */
+async function callMuse(
+  env: WorkerBindings,
+  model: DirectorModel,
+  instructions: string,
+  input: any[],
+  on: { text: (s: string) => void; thinking: (s: string) => void },
+  signal: AbortSignal
+) {
+  const res = await fetch(`${env.META_API_BASE_URL || 'https://api.meta.ai/v1'}/responses`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.META_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: MODEL_ID[model],
+      instructions,
+      input,
+      tools: TOOLS,
+      parallel_tool_calls: true,
+      reasoning: { effort: 'medium', summary: 'auto' },
+      max_output_tokens: 4000,
+      store: false,
+      stream: true,
+    }),
+    signal,
+  });
   if (!res.ok || !res.body) throw new Error(`Muse ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const reader = res.body.getReader();
   const dec = new TextDecoder();
   let buf = '';
+  let id: string | null = null;
   let content = '';
   let usage: any = null;
-  const calls: Array<{ id: string; type: 'function'; function: { name: string; arguments: string } }> = [];
+  const calls: Array<{ call_id: string; name: string; arguments: string }> = [];
   for (;;) {
     const { done, value } = await reader.read();
     if (done) break;
@@ -155,33 +178,49 @@ async function callMuse(env: WorkerBindings, model: DirectorModel, messages: any
       const line = buf.slice(0, i).trim();
       buf = buf.slice(i + 1);
       if (!line.startsWith('data:')) continue;
-      const data = line.slice(5).trim();
-      if (data === '[DONE]') continue;
-      let chunk: any;
+      let ev: any;
       try {
-        chunk = JSON.parse(data);
+        ev = JSON.parse(line.slice(5).trim());
       } catch {
         continue;
       }
-      if (chunk.usage) usage = chunk.usage;
-      const delta = chunk.choices?.[0]?.delta;
-      if (!delta) continue;
-      if (delta.content) {
-        content += delta.content;
-        onDelta(delta.content);
-      }
-      for (const tc of delta.tool_calls ?? []) {
-        const slot = (calls[tc.index ?? 0] ??= { id: '', type: 'function', function: { name: '', arguments: '' } });
-        if (tc.id) slot.id = tc.id;
-        if (tc.function?.name) slot.function.name += tc.function.name;
-        if (tc.function?.arguments) slot.function.arguments += tc.function.arguments;
-      }
+      if (ev.type === 'response.created') id = ev.response?.id ?? id;
+      else if (ev.type === 'response.output_text.delta') {
+        content += ev.delta;
+        on.text(ev.delta);
+      } else if (ev.type === 'response.reasoning_summary_text.delta') on.thinking(ev.delta);
+      else if (ev.type === 'response.reasoning_summary_part.done') on.thinking('\n\n');
+      else if (ev.type === 'response.output_item.done' && ev.item?.type === 'function_call')
+        calls.push({ call_id: ev.item.call_id, name: ev.item.name, arguments: ev.item.arguments ?? '{}' });
+      else if (ev.type === 'response.completed') {
+        usage = ev.response?.usage;
+        id = ev.response?.id ?? id;
+      } else if (ev.type === 'response.failed' || ev.type === 'error') throw new Error(ev.response?.error?.message || ev.message || 'Muse response failed');
     }
   }
   const u = usage ?? {};
-  const usd = ((u.prompt_tokens ?? 0) * PRICE[model].in + (u.completion_tokens ?? 0) * PRICE[model].out) / 1e6;
-  return { message: { content, tool_calls: calls.filter(Boolean) }, usd };
+  const usd = ((u.input_tokens ?? 0) * PRICE[model].in + (u.output_tokens ?? 0) * PRICE[model].out) / 1e6;
+  return { id, content, calls, usd };
 }
+
+// ---------- runs: steering and stop ----------
+interface RunControl {
+  steer: string[];
+  aborted: AbortController;
+}
+const runs = new Map<string, RunControl>();
+export const steerRun = (id: string, text: string) => {
+  const r = runs.get(id);
+  if (!r) return false;
+  r.steer.push(text);
+  return true;
+};
+export const stopRun = (id: string) => {
+  const r = runs.get(id);
+  if (!r) return false;
+  r.aborted.abort();
+  return true;
+};
 
 async function toDataUrl(env: WorkerBindings, src: string, origin: string): Promise<string | null> {
   try {
@@ -235,8 +274,86 @@ async function generateImage(env: WorkerBindings, args: any, req: AgentRequest, 
 let nodeCounter = 0;
 const nodeId = (p: string) => `${p}_${Date.now().toString(36)}${(nodeCounter++).toString(36)}`;
 
+/** Run one tool call; returns what goes back to the model and what it cost. */
+async function runTool(
+  env: WorkerBindings,
+  name: string,
+  args: any,
+  stepId: string,
+  req: AgentRequest,
+  canvas: { nodes: CanvasNodeSummary[]; edges: Array<{ from: string; to: string; role: string }> },
+  b: Spend,
+  limits: (typeof LIMITS)['demo'],
+  live: boolean,
+  origin: string,
+  emit: (e: AgentEvent) => void
+): Promise<{ result: any; usd: number }> {
+  try {
+    if (name === 'list_canvas') {
+      emit({ type: 'step', id: stepId, text: 'Looking at the canvas', status: 'done' });
+      return { result: canvas, usd: 0 };
+    }
+    if (name === 'generate_image') {
+      if (b.images >= limits.images) throw new Error(`image budget used (${limits.images} per session${live ? '' : ' in demo mode'})`);
+      const label = String(args.label || 'Image').slice(0, 60);
+      const id = nodeId('img');
+      emit({ type: 'step', id: stepId, text: `Generating "${label}" with Muse Image`, status: 'running', cost: '1 image' });
+      emit({ type: 'node', node: { id, kind: 'image', lane: 'plates', label, sub: 'Muse Image', status: 'running', meta: { prompt: args.prompt } } });
+      const img = await generateImage(env, args, { ...req, canvas }, origin);
+      b.images++;
+      b.usd += IMAGE_USD;
+      const node = {
+        id,
+        kind: 'image',
+        lane: 'plates',
+        label,
+        sub: img.refs.length ? `Muse Image · edit of ${img.refs.length} reference${img.refs.length > 1 ? 's' : ''}` : 'Muse Image',
+        status: 'done',
+        media: { type: 'image', src: img.url },
+        meta: { prompt: args.prompt, mode: img.refs.length ? 'image edit' : 'text to image', aspect: args.aspect ?? '16:9' },
+      };
+      const edges = img.refs.map((r: string) => ({ from: r, to: id, role: 'reference' }));
+      canvas.nodes.push({ id, kind: 'image', label, media: { type: 'image', src: img.url } });
+      canvas.edges.push(...edges);
+      emit({ type: 'node', node, edges });
+      emit({ type: 'step', id: stepId, text: `Generated "${label}"`, status: 'done', cost: '1 image' });
+      return { result: { node_id: id, label, used_references: img.refs }, usd: IMAGE_USD };
+    }
+    if (name === 'add_note') {
+      const id = nodeId('note');
+      const node = { id, kind: 'note', lane: 'notes', label: String(args.label || 'Note').slice(0, 60), text: String(args.text || ''), status: 'done' };
+      canvas.nodes.push({ id, kind: 'note', label: node.label });
+      emit({ type: 'node', node });
+      emit({ type: 'step', id: stepId, text: `Added note "${node.label}"`, status: 'done' });
+      return { result: { node_id: id }, usd: 0 };
+    }
+    if (name === 'connect') {
+      const label = (id: string) => canvas.nodes.find((n) => n.id === id)?.label;
+      if (!label(args.from) || !label(args.to)) throw new Error('unknown node id');
+      const edge = { from: args.from, to: args.to, role: String(args.role || 'input') };
+      canvas.edges.push(edge);
+      emit({ type: 'edge', edge });
+      emit({ type: 'step', id: stepId, text: `Connected "${label(args.from)}" → "${label(args.to)}" (${edge.role})`, status: 'done' });
+      return { result: { ok: true }, usd: 0 };
+    }
+    throw new Error(`unknown tool ${name}`);
+  } catch (e) {
+    const msg = (e as Error).message;
+    emit({ type: 'step', id: stepId, text: `${name} failed: ${msg}`, status: 'failed' });
+    return { result: { error: msg }, usd: 0 };
+  }
+}
+
 /** Run one director turn, emitting events as it goes. */
-export async function runDirector(env: WorkerBindings, req: AgentRequest, session: string, live: boolean, origin: string, emit: (e: AgentEvent) => void) {
+export async function runDirector(
+  env: WorkerBindings,
+  req: AgentRequest,
+  session: string,
+  live: boolean,
+  origin: string,
+  emit: (e: AgentEvent) => void,
+  onClientAbort: (fn: () => void) => void = () => undefined
+) {
   const limits = live ? LIMITS.live : LIMITS.demo;
   const b = budgetFor(session);
   const model: DirectorModel = limits.models.includes(req.model) ? req.model : 'spark';
@@ -249,94 +366,72 @@ export async function runDirector(env: WorkerBindings, req: AgentRequest, sessio
     return;
   }
   b.turns++;
+  const runId = `run_${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+  const ctl: RunControl = { steer: [], aborted: new AbortController() };
+  runs.set(runId, ctl);
+  onClientAbort(() => ctl.aborted.abort());
+  emit({ type: 'run', id: runId });
   const canvas = { nodes: [...req.canvas.nodes], edges: [...req.canvas.edges] };
-  const messages: any[] = [{ role: 'system', content: systemPrompt(req) }, ...req.history.slice(-12), { role: 'user', content: req.text }];
+  const instructions = systemPrompt(req);
+  let input: any[] = [...req.history.slice(-12).map((m) => ({ role: m.role, content: m.content })), { role: 'user', content: req.text }];
   let usd = 0;
-  for (let step = 0; step < MAX_STEPS; step++) {
-    const thinkId = `think_${step}`;
-    emit({ type: 'step', id: thinkId, text: step === 0 ? 'Reading the brief and the canvas' : 'Deciding the next step', status: 'running' });
-    let streamed = false;
-    const { message, usd: cost } = await callMuse(env, model, messages, (d) => {
-      if (!streamed && step > 0) emit({ type: 'delta', text: '\n\n' });
-      streamed = true;
-      emit({ type: 'delta', text: d });
-    });
-    usd += cost;
-    b.usd += cost;
-    emit({ type: 'step', id: thinkId, text: step === 0 ? 'Read the brief and the canvas' : 'Decided the next step', status: 'done' });
-    const calls = message.tool_calls ?? [];
-    if (!calls.length) {
-      if (!message.content) emit({ type: 'text', text: 'Done.' });
-      break;
-    }
-    messages.push({ role: 'assistant', content: message.content ?? '', tool_calls: calls });
-    for (const call of calls) {
-      let args: any = {};
-      try {
-        args = JSON.parse(call.function.arguments || '{}');
-      } catch {
-        /* model sent bad JSON; tool reports it */
+  try {
+    for (let step = 0; step < MAX_STEPS; step++) {
+      if (ctl.aborted.signal.aborted) break;
+      // Mid-turn steering: anything the user sent while the director worked goes in before the next step.
+      for (const s of ctl.steer.splice(0)) {
+        input.push({ role: 'user', content: `(The user adds, while you are working:) ${s}` });
+        emit({ type: 'steer', text: s });
       }
-      const name = call.function.name;
-      const stepId = call.id;
-      let result: any;
-      try {
-        if (name === 'list_canvas') {
-          emit({ type: 'step', id: stepId, text: 'Looking at the canvas', status: 'done' });
-          result = canvas;
-        } else if (name === 'generate_image') {
-          if (b.images >= limits.images) throw new Error(`image budget used (${limits.images} per session${live ? '' : ' in demo mode'})`);
-          const label = String(args.label || 'Image').slice(0, 60);
-          const pendingId = nodeId('img');
-          emit({ type: 'step', id: stepId, text: `Generating "${label}" with Muse Image`, status: 'running', cost: '1 image' });
-          emit({ type: 'node', node: { id: pendingId, kind: 'image', lane: 'plates', label, sub: 'Muse Image', status: 'running', meta: { prompt: args.prompt } } });
-          const img = await generateImage(env, args, req, origin);
-          b.images++;
-          b.usd += IMAGE_USD;
-          usd += IMAGE_USD;
-          const node = {
-            id: pendingId,
-            kind: 'image',
-            lane: 'plates',
-            label,
-            sub: img.refs.length ? `Muse Image · edit of ${img.refs.length} reference${img.refs.length > 1 ? 's' : ''}` : 'Muse Image',
-            status: 'done',
-            media: { type: 'image', src: img.url },
-            meta: { prompt: args.prompt, mode: img.refs.length ? 'image edit' : 'text to image', aspect: args.aspect ?? '16:9' },
-          };
-          const edges = img.refs.map((r: string) => ({ from: r, to: pendingId, role: 'reference' }));
-          canvas.nodes.push({ id: pendingId, kind: 'image', label, media: { type: 'image', src: img.url } });
-          canvas.edges.push(...edges);
-          emit({ type: 'node', node, edges });
-          emit({ type: 'step', id: stepId, text: `Generated "${label}"`, status: 'done', cost: '1 image' });
-          result = { node_id: pendingId, label, used_references: img.refs };
-        } else if (name === 'add_note') {
-          const id = nodeId('note');
-          const node = { id, kind: 'note', lane: 'notes', label: String(args.label || 'Note').slice(0, 60), text: String(args.text || ''), status: 'done' };
-          canvas.nodes.push({ id, kind: 'note', label: node.label });
-          emit({ type: 'node', node });
-          emit({ type: 'step', id: stepId, text: `Added note "${node.label}"`, status: 'done' });
-          result = { node_id: id };
-        } else if (name === 'connect') {
-          const ok = canvas.nodes.some((n) => n.id === args.from) && canvas.nodes.some((n) => n.id === args.to);
-          if (!ok) throw new Error('unknown node id');
-          const edge = { from: args.from, to: args.to, role: String(args.role || 'input') };
-          canvas.edges.push(edge);
-          emit({ type: 'edge', edge });
-          const name = (id: string) => canvas.nodes.find((n) => n.id === id)?.label ?? id;
-          emit({ type: 'step', id: stepId, text: `Connected "${name(args.from)}" → "${name(args.to)}" (${edge.role})`, status: 'done' });
-          result = { ok: true };
-        } else {
-          throw new Error(`unknown tool ${name}`);
+      const thinkId = `think_${step}`;
+      emit({ type: 'step', id: thinkId, text: step === 0 ? 'Reading the brief and the canvas' : 'Deciding the next step', status: 'running' });
+      let streamed = false;
+      const r = await callMuse(
+        env,
+        model,
+        instructions,
+        input,
+        {
+          text: (d) => {
+            if (!streamed && step > 0) emit({ type: 'delta', text: '\n\n' });
+            streamed = true;
+            emit({ type: 'delta', text: d });
+          },
+          thinking: (d) => emit({ type: 'thinking', text: d }),
+        },
+        ctl.aborted.signal
+      );
+      // Keep the model's own output in the transcript: its text and its function calls.
+      if (r.content) input.push({ role: 'assistant', content: r.content });
+      for (const c of r.calls) input.push({ type: 'function_call', call_id: c.call_id, name: c.name, arguments: c.arguments });
+      usd += r.usd;
+      b.usd += r.usd;
+      emit({ type: 'step', id: thinkId, text: step === 0 ? 'Read the brief and the canvas' : 'Decided the next step', status: 'done' });
+      if (!r.calls.length) {
+        // A steering message that arrived during the answer gets its own follow-up step.
+        if (ctl.steer.length && step < MAX_STEPS - 1) continue;
+        if (!r.content) emit({ type: 'text', text: 'Done.' });
+        break;
+      }
+      for (const call of r.calls) {
+        if (ctl.aborted.signal.aborted) break;
+        let args: any = {};
+        try {
+          args = JSON.parse(call.arguments || '{}');
+        } catch {
+          /* bad JSON from the model; the tool reports it */
         }
-      } catch (e) {
-        const msg = (e as Error).message;
-        emit({ type: 'step', id: stepId, text: `${name} failed: ${msg}`, status: 'failed' });
-        result = { error: msg };
+        const out = await runTool(env, call.name, args, call.call_id, req, canvas, b, limits, live, origin, emit);
+        usd += out.usd;
+        input.push({ type: 'function_call_output', call_id: call.call_id, output: JSON.stringify(out.result).slice(0, 4000) });
       }
-      messages.push({ role: 'tool', tool_call_id: call.id, content: JSON.stringify(result).slice(0, 4000) });
+      if (step === MAX_STEPS - 1) emit({ type: 'text', text: 'I stopped after the maximum number of steps for one turn. Tell me how to continue.' });
     }
-    if (step === MAX_STEPS - 1) emit({ type: 'text', text: 'I stopped after the maximum number of steps for one turn. Tell me how to continue.' });
+  } catch (e) {
+    if (!ctl.aborted.signal.aborted) throw e;
+  } finally {
+    runs.delete(runId);
   }
+  if (ctl.aborted.signal.aborted) emit({ type: 'stopped' });
   emit({ type: 'done', usd: Number(usd.toFixed(4)), model: MODEL_ID[model] });
 }

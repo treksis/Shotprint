@@ -1,6 +1,7 @@
 import { Check, CircleDashed, Clapperboard, ListChecks, Loader2, PanelRightOpen, Workflow } from 'lucide-react';
 import { Conversation, ConversationContent, ConversationScrollButton } from '@/components/ai-elements/conversation';
 import { Message, MessageContent, MessageResponse } from '@/components/ai-elements/message';
+import { Reasoning, ReasoningContent, ReasoningTrigger } from '@/components/ai-elements/reasoning';
 import { Shimmer } from '@/components/ai-elements/shimmer';
 import { Suggestion, Suggestions } from '@/components/ai-elements/suggestion';
 import { Task, TaskContent, TaskItem, TaskTrigger } from '@/components/ai-elements/task';
@@ -55,7 +56,8 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
         {messages.map((m) =>
           m.role === 'user' ? (
             <Message key={m.id} from="user">
-              <MessageContent className="rounded-[20px] bg-[rgba(0,0,0,0.05)] px-4 py-2.5 text-[15px] leading-relaxed">
+              {m.steer && <p className="ml-auto text-[12px] font-medium text-[var(--accent)]">Steering · sent while the director was working</p>}
+              <MessageContent className={cn('rounded-[20px] px-4 py-2.5 text-[15px] leading-relaxed', m.steer ? 'bg-[rgba(8,102,255,0.08)]' : 'bg-[rgba(0,0,0,0.05)]')}>
                 {m.text}
               </MessageContent>
               {m.attachments.length > 0 && <p className="ml-auto text-[12px] text-muted-foreground">{m.attachments.join(', ')}</p>}
@@ -68,6 +70,13 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
                 </span>
                 <MessageContent className="min-w-0 flex-1 gap-3 text-[15px]">
                   <p className="text-[13px] font-medium text-muted-foreground">Director</p>
+
+                  {(m.thinking || (m.state === 'running' && !m.text && m.steps.length <= 1)) && (
+                    <Reasoning isStreaming={m.state === 'running' && !m.text} defaultOpen={false} className="mb-0">
+                      <ReasoningTrigger />
+                      <ReasoningContent className="text-[13px] leading-relaxed text-muted-foreground">{m.thinking || '…'}</ReasoningContent>
+                    </Reasoning>
+                  )}
 
                   {m.steps.length > 0 && (
                     <Task defaultOpen className="rounded-[14px] border border-border">
@@ -129,7 +138,7 @@ export function ChatThread({ canvasOpen, isLive, suggestions, onSuggestion, onOp
                     </button>
                   )}
 
-                  {m.text && <MessageResponse className="text-[15px] leading-relaxed">{m.text}</MessageResponse>}
+                  {m.text && <MessageResponse className="text-[15px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5">{m.text}</MessageResponse>}
                   {m.state === 'blocked' && !isLive && (
                     <div>
                       <button

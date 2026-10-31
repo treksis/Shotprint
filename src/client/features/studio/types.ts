@@ -34,7 +34,7 @@ export const NODE_SIZE: Record<NodeKind, { w: number; h: number }> = {
   clip: { w: 216, h: 190 },
   cut: { w: 312, h: 178 },
   final: { w: 312, h: 262 },
-  note: { w: 216, h: 120 },
+  note: { w: 264, h: 214 },
 };
 
 export const LANE_LABEL: Record<Lane, string> = {

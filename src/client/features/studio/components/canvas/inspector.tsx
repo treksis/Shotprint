@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, MessageSquarePlus, X } from 'lucide-react';
+import { MessageResponse } from '@/components/ai-elements/message';
 import { KIND_LABEL, type StudioEdge, type StudioNode } from '../../types';
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
@@ -84,7 +85,19 @@ export function Inspector({ node, nodes, edges, onClose, onSelect, onAttach }: I
         {typeof m.at === 'number' && <Row label="On the cut">placed at {m.at.toFixed(2)} s, never retimed</Row>}
         {m.effect && <Row label="Effect">{m.effect}</Row>}
         {m.lock && <Row label="Product lock">{m.lock}</Row>}
-        {node.text && <Row label="Text">{node.text}</Row>}
+        {node.text && (
+          <div className="mb-3 rounded-[14px] bg-[rgba(0,0,0,0.04)] px-4 py-3">
+            <MessageResponse className="text-[14px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1">{node.text.replace(/\s(?=S?\d{1,2}[.):]\s)/g, '\n')}</MessageResponse>
+          </div>
+        )}
+        {m.prompt && (
+          <div className="mb-3">
+            <p className="mb-1 text-[12px] text-muted-foreground">Prompt</p>
+            <blockquote className="rounded-[14px] border-l-2 border-[var(--accent)] bg-[rgba(8,102,255,0.04)] px-3.5 py-2.5 text-[13px] leading-relaxed text-foreground/85">
+              {m.prompt}
+            </blockquote>
+          </div>
+        )}
 
         {m.lines && (
           <div className="mt-2">

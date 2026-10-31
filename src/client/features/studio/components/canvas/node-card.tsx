@@ -18,6 +18,43 @@ const ICON: Record<NodeKind, typeof Film> = {
   note: StickyNote,
 };
 
+/** Notes are scripts, shot lists and plans: show list lines as a list and prose as readable text. */
+function parseNote(text = '') {
+  const lines = text
+    .replace(/\r/g, '')
+    .split(/\n+|\s(?=(?:S\d{1,2}\s|\d{1,2}[.):]\s))/)
+    .map((l) => l.trim())
+    .filter(Boolean);
+  const items = lines.map((l) => {
+    const m = l.match(/^(?:[-•*]|(\d{1,2})[.):]|(S\d{1,2})(?=\s))\s*(.*)$/);
+    if (m) return { marker: m[1] ?? m[2] ?? '', text: m[3] };
+    return { marker: null as string | null, text: l };
+  });
+  const isList = items.filter((i) => i.marker !== null).length >= 2;
+  return { isList, items };
+}
+
+function NoteBody({ text }: { text?: string }) {
+  const { isList, items } = parseNote(text);
+  if (!isList)
+    return <span className="line-clamp-7 px-3.5 text-[13px] leading-[1.55] text-foreground/85">{text}</span>;
+  return (
+    <span className="block space-y-1.5 overflow-hidden px-3.5">
+      {items.slice(0, 5).map((it, i) => (
+        <span key={i} className="flex items-start gap-2 text-[12.5px] leading-[1.45]">
+          {it.marker !== null ? (
+            <span className="mt-[1px] grid h-[18px] min-w-[18px] shrink-0 place-items-center rounded-full bg-[rgba(0,0,0,0.05)] px-1 text-[10.5px] font-medium tabular-nums text-muted-foreground">
+              {it.marker || '•'}
+            </span>
+          ) : null}
+          <span className={cn('line-clamp-1', it.marker === null ? 'font-medium text-foreground' : 'text-foreground/85')}>{it.text}</span>
+        </span>
+      ))}
+      {items.length > 5 && <span className="block pl-[26px] text-[12px] text-muted-foreground">+{items.length - 5} more</span>}
+    </span>
+  );
+}
+
 function Status({ node }: { node: StudioNode }) {
   if (node.status === 'running') return <Loader2 className="size-3.5 animate-spin text-[var(--accent)]" aria-label="Running" />;
   if (node.status === 'pending') return <span className="size-2 rounded-full border border-[var(--control)]" aria-label="Queued" />;
@@ -112,7 +149,7 @@ export function NodeCard({ node, selected, related }: { node: StudioNode; select
         </span>
       );
     }
-    if (node.kind === 'note') return <span className="line-clamp-3 block px-3 text-[13px] leading-snug">{node.text}</span>;
+    if (node.kind === 'note') return <NoteBody text={node.text} />;
     return (
       <span className="block px-2">
         <Media node={node} className={cn('w-full rounded-[8px]', node.kind === 'final' ? 'aspect-video' : node.kind === 'plate' || node.kind === 'take' || node.kind === 'image' ? 'h-[92px]' : 'aspect-video')} />
@@ -134,11 +171,15 @@ export function NodeCard({ node, selected, related }: { node: StudioNode; select
         <span className={cn('min-w-0 flex-1 truncate text-[13px] font-medium', pending && 'text-muted-foreground')}>{label}</span>
         <Status node={node} />
       </span>
-      <span className="min-h-0 flex-1">{body()}</span>
+      <span className="min-h-0 flex-1 overflow-hidden">{body()}</span>
       <span className="flex h-8 shrink-0 items-center gap-1 overflow-hidden px-3">
         {node.kind === 'final' && typeof node.meta?.score === 'number' && !pending ? (
           <span className="rounded-[6px] bg-[var(--pill-positive-bg)] px-1.5 py-0.5 text-[11px] font-medium tabular-nums text-[var(--pill-positive-ink)]">
             Judge {node.meta.score.toFixed(2)} / 10
+          </span>
+        ) : node.kind === 'note' && !pending ? (
+          <span className="truncate text-[11px] text-muted-foreground">
+            {parseNote(node.text).isList ? `${parseNote(node.text).items.length} items` : `${(node.text ?? '').split(/\s+/).filter(Boolean).length} words`} · open to read
           </span>
         ) : t.length && !pending ? (
           t.map((x) => (

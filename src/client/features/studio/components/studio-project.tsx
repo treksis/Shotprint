@@ -1,7 +1,9 @@
 import { Loader2, PanelRightClose, PanelRightOpen, Workflow } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { getBudget, getProject, listTemplates, loadDemo, runDirector, updateProject, type Budget, type DirectorModel } from '../api';
+import { getBudget, getProject, listTemplates, loadDemo, runDirector, steerRun, stopRun, updateProject, type Budget, type DirectorModel } from '../api';
+import { Queue, QueueItem, QueueItemAction, QueueItemActions, QueueItemContent, QueueItemIndicator, QueueList } from '@/components/ai-elements/queue';
+import { X } from 'lucide-react';
 import { demoGraph, finishedText, newId, type Attachment } from '../lib';
 import { history, snapshot, useStudio } from '../store';
 import { NODE_SIZE, type Lane, type RunStep, type StudioMessage, type StudioNode, type StudioProject, type StudioTemplate } from '../types';
@@ -49,6 +51,8 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   const [model, setModel] = useState<DirectorModel>(() => (localStorage.getItem(MODEL_KEY) as DirectorModel) || 'spark');
   const [budget, setBudget] = useState<Budget | null>(null);
   const abort = useRef<AbortController | null>(null);
+  const runId = useRef<string | null>(null);
+  const [queued, setQueued] = useState<Array<{ id: string; text: string }>>([]);
   const nodes = useStudio((s) => s.nodes);
   const timers = useRef<number[]>([]);
   const status = useRef<StudioProject['status']>('draft');
@@ -208,7 +212,13 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
         await runDirector(
           { model: chosen, text, history: chat, canvas, template: template ? { id: template.id, title: template.title, status: template.status } : null },
           (e) => {
-            if (e.type === 'step') {
+            if (e.type === 'run') {
+              runId.current = e.id;
+            } else if (e.type === 'thinking') {
+              patchAgent(agentId, (m) => ({ ...m, thinking: (m.thinking ?? '') + e.text }));
+            } else if (e.type === 'stopped') {
+              patchAgent(agentId, (m) => ({ ...m, state: 'stopped' }));
+            } else if (e.type === 'step') {
               patchAgent(agentId, (m) => {
                 const steps = [...m.steps];
                 const s: RunStep = { text: e.text, lane: 'notes', cost: e.cost, status: e.status === 'failed' ? 'stopped' : e.status };
@@ -250,6 +260,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
         patchAgent(agentId, (m) => (m.state === 'running' ? { ...m, state: ctrl.signal.aborted ? 'stopped' : 'done' } : m));
         history().resume();
         abort.current = null;
+        runId.current = null;
         setRunning(false);
         getBudget().then(setBudget).catch(() => undefined);
       }
@@ -309,7 +320,31 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
     window.setTimeout(() => respond(text), 50);
   };
 
+  /** Mid-turn steering: shown in the chat now, read by the director before its next step. */
+  const steer = async (text: string) => {
+    const id = runId.current;
+    if (!id) return queue(text);
+    setMessages((ms) => {
+      // Keep the steering message just above the running director message, in send order.
+      const i = ms.length - 1;
+      return [...ms.slice(0, i), { id: newId('m'), role: 'user', text, attachments: [], steer: true }, ms[i]];
+    });
+    const ok = await steerRun(id, text).catch(() => false);
+    if (!ok) queue(text);
+  };
+  const queue = (text: string) => setQueued((q) => [...q, { id: newId('q'), text }]);
+
+  // When a turn ends, the next queued message goes out by itself.
+  useEffect(() => {
+    if (running || !queued.length || !project) return;
+    const [next, ...rest] = queued;
+    setQueued(rest);
+    void send(next.text, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [running, queued.length]);
+
   const stop = () => {
+    if (runId.current) void stopRun(runId.current);
     abort.current?.abort();
     timers.current.forEach(window.clearTimeout);
     timers.current = [];
@@ -364,13 +399,35 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
           onGoLive={() => onRequestLive()}
         />
         <div className={cn('mx-auto w-full px-4 pb-4', !showCanvas && 'max-w-[760px]')}>
+          {queued.length > 0 && (
+            <Queue className="mb-2 rounded-[18px] border-border bg-background px-2 py-1.5">
+              <QueueList>
+                {queued.map((q) => (
+                  <QueueItem key={q.id}>
+                    <div className="flex items-center gap-2">
+                      <QueueItemIndicator />
+                      <QueueItemContent>{q.text}</QueueItemContent>
+                      <QueueItemActions>
+                        <QueueItemAction aria-label="Remove from queue" onClick={() => setQueued((x) => x.filter((y) => y.id !== q.id))}>
+                          <X className="size-3" />
+                        </QueueItemAction>
+                      </QueueItemActions>
+                    </div>
+                  </QueueItem>
+                ))}
+              </QueueList>
+              <p className="px-2 pb-1 text-[11px] text-muted-foreground">Queued · sent when the director finishes</p>
+            </Queue>
+          )}
           <Composer
             value={draft}
             onChange={setDraft}
             onSubmit={send}
             onStop={stop}
+            onSteer={steer}
+            onQueue={queue}
             running={running}
-            placeholder="Ask the director: make keyframes, write a shot list, change a plate…"
+            placeholder={running ? 'Steer the director (Enter) or queue a message for later' : 'Ask the director: make keyframes, write a shot list, change a plate…'}
             model={model}
             onModelChange={(m) => {
               setModel(m);

@@ -351,3 +351,24 @@ Owner: use libraries for the node system (undo/redo etc.) and the chat; hackatho
 - Style follows Meta's Muse (muse.ai, © Meta): Figtree as the open stand-in for Meta's Optimistic,
   #fcfcfc / #111112 / #f3f4f5, Meta blue #005abf actions and #0866ff accents, pill buttons and chips,
   500-weight headlines, soft shadow on the composer.
+
+## 20. Agent harness: thinking, steering, queueing, stop (2026-10-30)
+
+Meta Model API measured: tool calls (OpenAI format, parallel), token streaming, and on the Responses
+API (`/v1/responses`) streamed reasoning summaries; no raw chain of thought. Server-side state via
+`previous_response_id` expired mid-turn ("referenced response not found or expired"), so the director
+is stateless: it keeps the turn transcript (function_call + function_call_output items) itself.
+Queueing/steering/stop are harness features, built here:
+- Thinking: `thinking` events -> AI Elements `Reasoning` ("Thinking…" -> "Thought for N seconds").
+- Steering: while a run is active, Enter sends the text to `POST /api/studio/agent/runs/:id/steer`;
+  the loop injects it before its next step (also after a final answer, triggering one more step).
+  Shown in the chat as a blue "Steering" message. Run registry is in-isolate memory (a Durable Object
+  would be needed for multi-isolate Cloudflare deploys).
+- Queue: "Queue" holds the text in an AI Elements `Queue` above the composer; sent automatically when
+  the turn ends.
+- Stop: `POST /agent/runs/:id/stop` aborts the server loop and in-flight Muse call; the client aborts
+  the stream.
+- Image edit verified: canvas image as reference -> `/images/edits` ("edit of 1 reference"),
+  composition kept, framing drifts slightly.
+- Note nodes redesigned: list detection (1., -, S1) with numbered badges, readable prose, inspector
+  renders markdown; image prompts shown as a quote in the inspector.

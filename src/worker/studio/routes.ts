@@ -4,7 +4,7 @@ import type { CreateStudioProjectRequest, UpdateStudioProjectRequest } from '../
 import { STUDIO_TEMPLATES } from '../../shared/studio-templates';
 import type { WorkerBindings } from '../index';
 import { studioStore } from './store';
-import { budgetFor, LIMITS, runDirector, type AgentRequest } from './agent';
+import { budgetFor, LIMITS, runDirector, steerRun, stopRun, type AgentRequest } from './agent';
 import { isLiveAuthorized } from '../index';
 
 /**
@@ -81,10 +81,20 @@ studioRoutes.post('/agent', async (c) => {
       chain = chain.then(() => stream.writeSSE({ data: JSON.stringify(e) }));
     };
     try {
-      await runDirector(c.env, body, sessionOf(c), live, origin, emit);
+      await runDirector(c.env, body, sessionOf(c), live, origin, emit, (fn) => stream.onAbort(fn));
     } catch (e) {
       emit({ type: 'error', message: String((e as Error).message || e).slice(0, 400) });
     }
     await chain;
   });
 });
+
+/** Mid-turn steering: the director reads this before its next step. */
+studioRoutes.post('/agent/runs/:id/steer', async (c) => {
+  const body = (await c.req.json().catch(() => ({}))) as { text?: string };
+  if (!body.text?.trim()) return c.json({ error: 'invalid_request' }, 400);
+  return steerRun(c.req.param('id'), body.text.trim().slice(0, 2000)) ? c.json({ ok: true }) : c.json({ error: 'run_finished' }, 409);
+});
+
+/** Stop a run on the server (the browser also closes the stream). */
+studioRoutes.post('/agent/runs/:id/stop', (c) => (stopRun(c.req.param('id')) ? c.json({ ok: true }) : c.json({ error: 'run_finished' }, 409)));

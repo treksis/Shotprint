@@ -54,7 +54,7 @@ export interface RunStep {
 }
 
 export type StudioMessage =
-  | { id: string; role: 'user'; text: string; attachments: string[]; templateId?: string }
+  | { id: string; role: 'user'; text: string; attachments: string[]; templateId?: string; steer?: boolean }
   | {
       id: string;
       role: 'agent';
@@ -65,6 +65,8 @@ export type StudioMessage =
       /** Live turns: which model ran and what the turn cost. Replays have neither. */
       model?: string;
       usd?: number;
+      /** Muse's reasoning summary for this turn, streamed while it thinks. */
+      thinking?: string;
     };
 
 export interface StudioState {

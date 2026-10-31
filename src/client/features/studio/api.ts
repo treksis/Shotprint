@@ -95,6 +95,10 @@ export type DirectorEvent =
   | { type: 'edge'; edge: { from: string; to: string; role: string } }
   | { type: 'text'; text: string }
   | { type: 'delta'; text: string }
+  | { type: 'thinking'; text: string }
+  | { type: 'run'; id: string }
+  | { type: 'steer'; text: string }
+  | { type: 'stopped' }
   | { type: 'done'; usd: number; model: string }
   | { type: 'error'; message: string };
 
@@ -127,3 +131,7 @@ export async function runDirector(body: unknown, onEvent: (e: DirectorEvent) => 
     }
   }
 }
+
+export const steerRun = (runId: string, text: string) =>
+  fetch(`/api/studio/agent/runs/${runId}/steer`, { method: 'POST', headers: { 'content-type': 'application/json', ...authHeaders() }, body: JSON.stringify({ text }) }).then((r) => r.ok);
+export const stopRun = (runId: string) => fetch(`/api/studio/agent/runs/${runId}/stop`, { method: 'POST', headers: authHeaders() }).then((r) => r.ok);

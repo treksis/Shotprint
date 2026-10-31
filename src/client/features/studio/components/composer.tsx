@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { ListPlus, X } from 'lucide-react';
 import { useState } from 'react';
 import {
   PromptInput,
@@ -32,6 +32,10 @@ export interface ComposerProps {
   /** Called with the brief and the uploaded files (already stored server-side). */
   onSubmit: (text: string, attachments: Attachment[]) => void | Promise<void>;
   onStop?: () => void;
+  /** While the director works: Enter sends the text into the running turn. */
+  onSteer?: (text: string) => void;
+  /** While the director works: hold the text and send it when the turn ends. */
+  onQueue?: (text: string) => void;
   running?: boolean;
   busy?: boolean;
   template?: StudioTemplate | null;
@@ -70,6 +74,8 @@ export function Composer({
   onChange,
   onSubmit,
   onStop,
+  onSteer,
+  onQueue,
   running,
   busy,
   template,
@@ -86,7 +92,14 @@ export function Composer({
   const [error, setError] = useState<string | null>(null);
 
   const submit = async (msg: PromptInputMessage) => {
-    if (running) return onStop?.();
+    if (running) {
+      if (msg.text.trim() && onSteer) {
+        onSteer(msg.text.trim());
+        onChange('');
+        return;
+      }
+      return onStop?.();
+    }
     if (!msg.text.trim()) return;
     setError(null);
     setUploading(msg.files.length > 0);
@@ -101,7 +114,8 @@ export function Composer({
     }
   };
 
-  const status = running ? 'streaming' : busy || uploading ? 'submitted' : undefined;
+  const hasText = value.trim().length > 0;
+  const status = running && !hasText ? 'streaming' : busy || uploading ? 'submitted' : undefined;
 
   return (
     <div>
@@ -175,12 +189,28 @@ export function Composer({
           ) : (
             <span className="ml-auto pr-2 text-[12px] text-muted-foreground">Director · Muse</span>
           )}
+          {running && hasText && onQueue && (
+            <button
+              type="button"
+              onClick={() => {
+                onQueue(value.trim());
+                onChange('');
+              }}
+              title="Send this after the director finishes"
+              className="inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-full bg-[rgba(0,0,0,0.05)] px-3 text-[13px] font-medium hover:bg-[rgba(0,0,0,0.08)]"
+            >
+              <ListPlus className="size-4" />
+              Queue
+            </button>
+          )}
           <PromptInputSubmit
             status={status}
+            aria-label={running ? (hasText ? 'Steer the director now' : 'Stop') : 'Send'}
+            title={running ? (hasText ? 'Steer: the director reads this before its next step' : 'Stop') : undefined}
             disabled={!running && (!value.trim() || !!busy || uploading)}
             className="rounded-full bg-[var(--meta-blue)] text-white hover:bg-[var(--meta-blue)]/90"
             onClick={(e) => {
-              if (running) {
+              if (running && !hasText) {
                 e.preventDefault();
                 onStop?.();
               }
