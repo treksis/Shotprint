@@ -1,0 +1,2142 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 60.08,
+  "size": "1920x1080",
+  "fps": 23.92,
+  "shots": 29,
+  "average_shot": 2.07,
+  "median_shot": 1.8,
+  "note": "29 shots: bin/dissect found 28; its shot 6 holds a hidden cut inside a white sun-flash (now shots 6 and 7, cut at 16.665), and its S21/S22 boundary is moved from 41.23 (lights coming on) to the real cut at 40.889. Shots 8-29 are dissect's 7-28. All shot times are frame-exact (first frame of each shot, from frame differences; dissect's rounded times run 1-3 frames late). Frame k of the source is at k * 12/287 s (23.917 fps)."
+ },
+ "acts": [
+  {
+   "name": "The ask",
+   "shots": [
+    1,
+    5
+   ],
+   "time": [
+    0.0,
+    13.92
+   ],
+   "function": "Hook. Dawn over the farm, then the porch at golden hour: the old farmer says it may be time to retire; his grown daughter answers 'How about one last time? Together.' Almost no music: dialogue and room tone."
+  },
+  {
+   "name": "The last season",
+   "shots": [
+    6,
+    20
+   ],
+   "time": [
+    13.92,
+    38.43
+   ],
+   "function": "The song enters on the cut to the field. Planting to harvest, father and daughter side by side, intercut with her childhood on the same farm through then/now pairs (planting: a white sun-flash into the memory; tailgate snack with {BRAND}: same two, same pose, decades apart; the card she drew him, now taped in his cab). Ends at harvest with a potato held up to the sky and the loaded truck."
+  },
+  {
+   "name": "The surprise",
+   "shots": [
+    21,
+    24
+   ],
+   "time": [
+    38.43,
+    45.49
+   ],
+   "function": "'One more thing.' She leads him into the dark barn; the lights snap on to a retirement party for him."
+  },
+  {
+   "name": "The handover",
+   "shots": [
+    25,
+    28
+   ],
+   "time": [
+    45.49,
+    57.91
+   ],
+   "function": "Night, back on the same porch (bookend of act 1, same over-the-shoulder setups): he presses the farm keys into her hand, 'It's your farm now.', she breaks into tears and they hug. Wide of the porch, the old dog at their feet, the super about generations of farmers."
+  },
+  {
+   "name": "End card",
+   "shots": [
+    29,
+    29
+   ],
+   "time": [
+    57.91,
+    60.08
+   ],
+   "function": "Golden-hour aerial over the crop rows: {BRAND} badge, {TAGLINE}, {SUBLINE}; the song's final chord rings out."
+  }
+ ],
+ "look": {
+  "grade": "natural, filmic, warm; earth browns, denim blues and creams; skin warm and true. Present day is clean and contrasty; memories (shots 7-10, 12, 16) are warmer and softer, with hazy cream skies and a honey-rust palette (saturated warm soil, gentle contrast). No stylised teal-orange, no added haze.",
+  "brightness": "0-255 frame averages from bin/dissect: dawn aerial 52; porch at golden hour 62-78 (wide 62, OTS 71-78); field planting under hard sun 61-82; memory planting 92-112 (white flash peak 146); tailgate pair 53-57; cab interior at blue hour 23-37; harvest under overcast evening sky 92-108 (bright skies); dusk exteriors 57-59; barn 15 (dark) -> 52 (lights on); night porch 23-26 (keys insert), 36-48 (OTS and wide); end card 57.",
+  "contrast": "medium; faces never crushed; night shots hold detail in the dark jackets at 15-25/255.",
+  "light": "always motivated: low golden sun from screen-left on the porch (act 1), hard late-morning sun in the planting field, soft overcast at harvest, cool blue-hour ambience plus one warm practical (porch lamp, glowing curtains, dashboard) at night.",
+  "depth_of_field": "shallow on people (85 mm feel, f/2: backgrounds and over-the-shoulder foregrounds fully soft); deep on landscapes and wides.",
+  "lens": "people: 50-85 mm; wides: 28-35 mm; aerials: wide.",
+  "grain": "fine 35 mm-like grain, slightly heavier in the night shots.",
+  "aspect": "16:9 full frame, no letterbox."
+ },
+ "text_style": {
+  "super": {
+   "words": "{SUPER} (default: 'Real potatoes grown by generations' / 'of farmers.')",
+   "typeface": "humanist sans, semibold, slightly rounded terminals (stand-in: Avenir Next Demi Bold)",
+   "case": "sentence case",
+   "colour": "#EDCC0C (warm yellow), no shadow, no box",
+   "size": "about 4.4% of frame height per line (47 px on 1080); line gap 1.3%",
+   "position": "two lines centred at x 50%; block x 27.7-72.2%, y 45.2-54.8% (centred on the frame)",
+   "animation": "fades in over 0.67 s (fast start: 0 -> 85% in the first 0.2 s, then eases to 100%); no move; cuts out with the shot",
+   "file": "set/ui_super.png"
+  },
+  "end_card": {
+   "badge": "{BRAND} badge centred, x 42.6-57.4%, y 30.4-53.4% (set/ui_end_card_badge.png)",
+   "tagline": "{TAGLINE} in white, same face, 46 px (4.3% H), centred, y 56.7-60.6%",
+   "subline": "{SUBLINE} in #EDCC0C, medium weight, 21 px (1.9% H), centred, y 62.4-64.3%; fades in 0.39-0.79 s after the card cuts in",
+   "legal": "{LEGAL}: two lines of 12 px light grey, centred, y 93-96%",
+   "corner": "{PARENT_LOGO} slot top right, x 87.5-94.7%, y 5.6-14.3% (empty by default)",
+   "animation": "badge and tagline are on from the first frame of the card (hard cut in); only the sub-line fades",
+   "file": "set/ui_end_card.jpg"
+  },
+  "diegetic": "Only one piece of text lives in the picture: the hand-painted banner 'HAPPY RETIREMENT' in the barn (shot 23, not in either cut). Licence plates and the child's card are drawn in the scene, never as graphics."
+ },
+ "sound": {
+  "music": "One song carries the film: a slow, intimate piano-and-voice cover of a 2000s indie-pop ballad about returning to a shared place, sung by a soft female voice, ~85 bpm and rubato (the beat drifts 0.63-0.86 s; bar about 2.8 s). It is set/score.wav, the film's own soundtrack with the spoken lines removed (vocal/music separation; the singer stays in, the dialogue is cut out of the vocal stem where it stands alone). The keys jingle (5.40-6.20) sits in the score.",
+  "sections": [
+   {
+    "time": [
+     0.0,
+     6.8
+    ],
+    "what": "near silence: room tone and faint birds, -55 to -63 dB; dialogue L01, L02 almost dry; key-ring jingle 5.40-6.20 (-34 dB)"
+   },
+   {
+    "time": [
+     6.8,
+     13.4
+    ],
+    "what": "soft piano bed creeps in (-47 -> -35 dB) under L03 and L04"
+   },
+   {
+    "time": [
+     13.4,
+     13.92
+    ],
+    "what": "swell into the song (-27 dB at 13.4-13.9); the cut to the field lands on it"
+   },
+   {
+    "time": [
+     14.2,
+     18.5
+    ],
+    "what": "the singer enters (sung phrase 1, 'I walked across...', a held note 16.1-17.3); music at -24 to -30 dB"
+   },
+   {
+    "time": [
+     19.7,
+     24.62
+    ],
+    "what": "sung phrase 2 ('I knew the pathway...'), ends 24.62: a clean phrase end"
+   },
+   {
+    "time": [
+     25.2,
+     35.6
+    ],
+    "what": "sung phrases 3-4 under the cab and the harvest"
+   },
+   {
+    "time": [
+     35.56,
+     41.5
+    ],
+    "what": "sung phrase 5 ('And if you have a minute...'); L05 'One more thing.' is spoken over it at 38.22-38.92 (stays in the score)"
+   },
+   {
+    "time": [
+     42.0,
+     47.26
+    ],
+    "what": "sung phrase 6 ('Talk about it...') over the party and the keys"
+   },
+   {
+    "time": [
+     47.3,
+     50.28
+    ],
+    "what": "a piano-only gap: L06 'It's your farm now.' at 48.52-49.30 sits alone in it"
+   },
+   {
+    "time": [
+     50.28,
+     53.36
+    ],
+    "what": "sung phrase 7 ('So why don't we go'), over the hug"
+   },
+   {
+    "time": [
+     53.84,
+     56.86
+    ],
+    "what": "final sung phrase (the title hook) over the porch wide and the super"
+   },
+   {
+    "time": [
+     57.04,
+     59.61
+    ],
+    "what": "the final chord (strongest onset of the track) rings and decays under the end card; silence from 59.61"
+   }
+  ],
+  "downbeats": "measured (librosa beat track + chord change): 1.46 2.22 2.91 ... 13.55 14.33 ... 24.71 ... 30.59 33.08 35.84 ... 47.29 49.96 52.73 53.48 ... 57.04. bin/template beats reports 172.25 bpm (double time) on a fixed grid that drifts up to 0.3 s from the real downbeats in this rubato ballad; the cuts join the score on the measured beats.",
+  "speech": "Six spoken lines, all diegetic and close-miked, no narrator. Father: L01, L02 (heard over the aerial, the porch wide and the keys: his face is never readable while he says them), L04 and L06 on camera. Daughter: L03 on camera, L05 on camera at the cut. Lines are never under music in act 1; in acts 3-4 they sit in gaps of the song.",
+  "mix": "Dialogue dry, intimate, no reverb, at about -24 to -30 dB RMS (peaks -7 to -16 dBFS); the score under it in act 1 is 15-30 dB lower. From 13.9 the song is the bed at -24 to -30 LUFS momentary; it never ducks. No sound effects beyond the keys jingle and natural room tone: no wind, no footsteps, no crowd noise from the party.",
+  "files": {
+   "score": "set/score.wav",
+   "score_30": "set/score_30.wav",
+   "score_15": "set/score_15.wav",
+   "lines": "set/lines/LNN.wav (L01-L06) + set/lines.json"
+  }
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "start": 0.63,
+   "end": 1.48,
+   "words": "So I've been thinking,",
+   "speaker": "char_father",
+   "kind": "on the soundtrack over the dawn aerial (voice-over in effect; he is on the porch)",
+   "shots": [
+    1
+   ]
+  },
+  {
+   "id": "L02",
+   "start": 3.97,
+   "end": 5.22,
+   "words": "might be time to hang it up.",
+   "speaker": "char_father",
+   "kind": "off-face: over the porch wide (his face is 2% of the frame) and on over the keys insert",
+   "shots": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "L03",
+   "start": 8.22,
+   "end": 10.48,
+   "words": "How about one last time? Together.",
+   "speaker": "char_daughter",
+   "kind": "on camera (lip-sync), a breath at 7.87",
+   "shots": [
+    4
+   ]
+  },
+  {
+   "id": "L04",
+   "start": 12.56,
+   "end": 13.26,
+   "words": "Okay, kiddo.",
+   "speaker": "char_father",
+   "kind": "on camera (lip-sync)",
+   "shots": [
+    5
+   ]
+  },
+  {
+   "id": "L05",
+   "start": 38.22,
+   "end": 38.92,
+   "words": "One more thing.",
+   "speaker": "char_daughter",
+   "kind": "on camera, pre-laps the cut into shot 21 by 0.21 s; spoken over the singer, so it stays in the score (clip carries singer bleed)",
+   "shots": [
+    20,
+    21
+   ]
+  },
+  {
+   "id": "L06",
+   "start": 48.52,
+   "end": 49.3,
+   "words": "It's your farm now.",
+   "speaker": "char_father",
+   "kind": "on camera (lip-sync), alone in a piano gap of the song",
+   "shots": [
+    26
+   ]
+  }
+ ],
+ "setups": {
+  "EST_AERIAL_DAWN": "high aerial (~120 m), looking down ~20 degrees toward the low sun, wide lens, deep focus (s01)",
+  "PORCH_WIDE_DAY": "on the porch near the house wall, seated eye level (~1.1 m), looking along the porch to screen-left; 35 mm; the two on the bench in the right third (s02)",
+  "KEYS_INSERT_DAY": "high angle over his lap, ~45 degrees down, 85-100 mm, very shallow focus (s03)",
+  "OTS_DAUGHTER_DAY": "over his left shoulder onto her three-quarter front, eye level, 85 mm f/2 (s04); same position at night = OTS_DAUGHTER_NIGHT",
+  "OTS_FATHER_DAY": "over her right shoulder onto his three-quarter front, eye level, 85 mm f/2 (s05); same position at night = OTS_FATHER_NIGHT",
+  "FIELD_PLANTING_NOW": "handheld at knee height (~0.6 m) in the furrow, 35 mm, slightly low angle (s06)",
+  "FIELD_PLANTING_THEN": "locked off at ~0.8 m, 50 mm, square to the furrows (s07)",
+  "TAILGATE_THEN": "locked off at tailgate height (~1.0 m), square to the open tailgate of the red pickup, 35 mm (s10)",
+  "TAILGATE_NOW": "same position and lens as TAILGATE_THEN, on the dark pickup (s11): the then/now match",
+  "HARVEST_LOW": "handheld low (~0.5 m) inside the potato rows, 28-35 mm, looking slightly up (s18)",
+  "POTATO_RAISE": "locked off at canopy height (~0.7 m), 50 mm, horizon at 44% (s19)",
+  "KEYS_HANDOVER_NIGHT": "top-down-ish over their laps on the bench, 85-100 mm, very shallow focus (s25)",
+  "OTS_FATHER_NIGHT": "as OTS_FATHER_DAY, at night (s26)",
+  "OTS_DAUGHTER_NIGHT": "as OTS_DAUGHTER_DAY, at night (s27), handheld drift in",
+  "PORCH_WIDE_NIGHT": "locked off, standing eye level (~1.5 m) square to the bench from the porch steps, 35 mm (s28)",
+  "END_CARD_FIELD": "drone ~15 m up looking along the crop rows into the sunset, wide lens (s29)",
+  "OTHER": "shots 8, 9, 12-17, 20-24 each have their own position (see their 'setup')"
+ },
+ "set": {
+  "char_father": {
+   "files": [
+    "set/char_father_sheet.jpg",
+    "set/char_father_wardrobe.jpg"
+   ],
+   "fixes": "The farmer, an invented man ~72 (not a likeness of anyone): 1.80 m, lean, broad slightly stooped shoulders, big work-worn hands; bald crown with close-cropped white hair at the sides; full short white beard and moustache; weathered tanned fair skin; warm brown eyes; gentle wry half-smile. Wardrobe sheet, left to right: (1) porch day, shots 2-5: tan-brown duck-canvas chore jacket with brown corduroy collar over a navy-blue plaid flannel shirt, jeans; (2) planting, shot 6: faded navy denim chore jacket, navy cap, tan leather gloves; (3) tailgate, shot 11: charcoal flannel work shirt, grey-navy mesh-back trucker cap, brown canvas trousers; (4) night porch, shots 25-28: dark charcoal-brown waxed jacket with brown corduroy cuffs over a cream henley, sage-green knit scarf. Harvest (shot 18): outfit 1 jacket with a cap. Wedding ring on his left hand."
+  },
+  "char_daughter": {
+   "files": [
+    "set/char_daughter_sheet.jpg",
+    "set/char_daughter_wardrobe.jpg"
+   ],
+   "fixes": "The daughter, an invented woman ~42: 1.68 m, slim and strong; light olive skin, faint freckles; dark-brown hair in a low loose ponytail with face-framing strands; dark-brown eyes, straight brows; small gold studs; no makeup. Wardrobe sheet: (1) porch day, shots 2-5: off-white canvas chore jacket with brown corduroy collar over a dark navy top; (2) planting, shot 6: black-navy work jacket, navy cap with the ponytail through it, tan gloves; (3) tailgate, shot 11: cream button-up work shirt, jeans, tan boots; (4) harvest and night, shots 18-19, 25-28: rust-brown canvas chore jacket (knit cuffs) over a blue denim shirt (a dark cap at harvest)."
+  },
+  "char_young_father": {
+   "files": [
+    "set/char_young_father_sheet.jpg",
+    "set/char_young_father_wardrobe.jpg"
+   ],
+   "fixes": "The farmer in the memories (~35), derived from char_father so the face carries across 37 years: thick dark-brown hair, short full dark-brown beard. Wardrobe: (left) planting memory, shot 7: worn tan canvas jacket over a brown shirt, brown cap; (right) tailgate memory, shot 10: teal short-sleeved shirt open over a grey tee, khaki trousers, olive-tan trucker cap."
+  },
+  "char_girl": {
+   "files": [
+    "set/char_girl_sheet.jpg",
+    "set/char_girl_wardrobe.jpg"
+   ],
+   "fixes": "The daughter at ~6, derived from char_daughter: light olive skin, dark-brown chin-length bob with straight bangs, big brown eyes. Wardrobe: (left) planting memory, shot 7: mustard-yellow hooded rain jacket, brown trousers, bright yellow rubber boots, small yellow gloves; (right) tailgate memory, shot 10: brown canvas bib overalls over a navy-white striped tee."
+  },
+  "char_dog": {
+   "files": [
+    "set/char_dog_sheet.jpg"
+   ],
+   "fixes": "The family golden retriever: a pale cream-gold 10-week puppy in the memories (shot 10, in the girl's arms); the same dog at 12 with a deep golden-red coat and white-grey muzzle in the present (shot 11 in the truck bed on a striped dog bed; shot 28 lying at their feet)."
+  },
+  "product_bag": {
+   "files": [
+    "set/product_bag_sheet.jpg"
+   ],
+   "fixes": "The {BRAND} snack bag (default generic design): pillow foil bag ~28 x 20 cm, glossy golden yellow (#F2C200), crimped seals; white rounded-rectangle label with 'POTATO CHIPS' in bold dark-brown rounded capitals and a small green sprout; a chip photo under it; a dark-green bottom band. Seen standing on the tailgate between them (shot 10) and in her lap / hand (shot 11), label to camera. A new film swaps in its own bag."
+  },
+  "product_potato": {
+   "files": [
+    "set/product_potato_sheet.jpg"
+   ],
+   "fixes": "The crop: fresh-dug oval yellow-skinned potatoes (~9 cm) with soil specks (shot 19, held up to the sky), and a whole pulled plant with ~7 tubers hanging from its roots (shot 18)."
+  },
+  "prop_keys": {
+   "files": [
+    "set/prop_keys.jpg"
+   ],
+   "fixes": "The farm keys: steel split ring, two brass keys, a padlock key, a long steel truck key with a black head, a round domed antique-silver medallion fob (~3 cm, embossed sprout, no letters) and a black leather tag. In his palm on the porch (shot 3) and pressed into her hand at night (shot 25): the story's prop."
+  },
+  "prop_pickup_then": {
+   "files": [
+    "set/prop_pickup_then.jpg"
+   ],
+   "fixes": "Memory truck (shot 10): early-1990s regular-cab pickup, faded cherry red, chrome bumpers, no badges, tailgate down under a teal-and-cream plaid blanket."
+  },
+  "prop_pickup_now": {
+   "files": [
+    "set/prop_pickup_now.jpg"
+   ],
+   "fixes": "Present truck (shot 11): late-2010s crew-cab pickup, dusty dark charcoal, black wheels, no badges; tailgate down, a striped dog bed in the bed."
+  },
+  "loc_farm_aerial": {
+   "files": [
+    "set/loc_farm_aerial.jpg"
+   ],
+   "fixes": "The farm at dawn from the air (shot 1): wooded hills, valley haze, low sun upper left, a white gabled farmhouse small among dark trees; land in deep shadow; brightness 55 (film 52)."
+  },
+  "loc_porch_day": {
+   "files": [
+    "set/loc_porch_day.jpg"
+   ],
+   "fixes": "The farmhouse porch at golden hour (shots 2-5): white board-and-batten walls, tall white-trimmed windows, grey floor, weathered wooden benches, potted topiary, wall lanterns; low warm sun from the left; brightness 68 (film 62-78)."
+  },
+  "loc_porch_night": {
+   "files": [
+    "set/loc_porch_night.jpg"
+   ],
+   "fixes": "The same porch at night (shots 25-28): the bench, a white post wrapped in a dark twisted vine, a side table with a potted flower, a round dark shrub, windows and door with mustard-orange curtains glowing, one warm lamp above; blue-hour ambience; brightness 42 (film 36-48)."
+  },
+  "loc_field_planting": {
+   "files": [
+    "set/loc_field_planting.jpg"
+   ],
+   "fixes": "The planting field now (shot 6): long straight furrows of loose red-brown soil to a low tree line, a small tractor far right, pale-blue sky, hard late-morning sun; brightness 74 (film 61-82)."
+  },
+  "loc_field_planting_then": {
+   "files": [
+    "set/loc_field_planting_then.jpg"
+   ],
+   "fixes": "The same field in the memory (shot 7): hazy beige-cream sky, warm red-brown soil, soft afternoon light, gentle contrast; brightness 93 (film 92-93 once the flash settles)."
+  },
+  "loc_barnyard": {
+   "files": [
+    "set/loc_barnyard.jpg"
+   ],
+   "fixes": "Where both tailgate snacks happen (shots 10-11): a tall weathered grey vertical-plank barn wall with a dark open doorway, gravel yard, a shovel against the wall, stacked wooden crates; midday sun; brightness 55 (film 53-57)."
+  },
+  "loc_potato_field": {
+   "files": [
+    "set/loc_potato_field.jpg"
+   ],
+   "fixes": "The potato field at harvest (shots 18-19): rows of leafy green potato plants with red-brown ridges, overcast bright creamy evening sky; brightness 100 (film 92-108); mature knee-high plants, rows almost closed into one canopy."
+  },
+  "loc_endcard_field": {
+   "files": [
+    "set/loc_endcard_field.jpg"
+   ],
+   "fixes": "End card background (shot 29): aerial along converging crop rows into a golden-hour sunset on a tree-lined horizon; brightness 50 (film 57)."
+  },
+  "ui_super": {
+   "files": [
+    "set/ui_super.png"
+   ],
+   "fixes": "The super, full-frame transparent PNG at its exact position and size (see text_style.super and ui.json)."
+  },
+  "ui_end_card": {
+   "files": [
+    "set/ui_end_card.jpg",
+    "set/ui_end_card_badge.png"
+   ],
+   "fixes": "The finished end card (field + {BRAND} badge + tagline + sub-line + legal) and the badge alone (transparent). Generic default brand: a cream oval with a green rim and sprout and 'POTATO CHIPS' in brown rounded capitals."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav"
+   ],
+   "fixes": "The six recorded lines with word times; guide_audio for the speaking shots."
+  },
+  "voice_father": {
+   "files": [
+    "set/voice_father.wav"
+   ],
+   "fixes": "All of the father's speech joined with 0.35 s gaps (L01, L02, L04, L06; 5.3 s file, 3.6 s of speech: the whole film's worth): low, warm, slightly gravelly, slow, a smile in it."
+  },
+  "voice_daughter": {
+   "files": [
+    "set/voice_daughter.wav"
+   ],
+   "fixes": "The daughter's clean speech (L03, 2.8 s; L05 is under the singer): warm mid-low, soft, a little breathy, unhurried."
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "The soundtrack minus the spoken lines (see sound), and its 30 s / 15 s cuts."
+  },
+  "ui": {
+   "files": [
+    "set/ui.json"
+   ],
+   "fixes": "Positions, sizes and timings of every graphic."
+  }
+ },
+ "slots": {
+  "{BRAND}": "the snack brand: its bag (product_bag, shots 10-11) and its badge on the end card. Default: a generic yellow bag reading 'POTATO CHIPS' and a cream oval sprout badge.",
+  "{PRODUCT}": "what the family's crop becomes (default: potato chips). The crop itself (potatoes, product_potato) can change with it: apples for cider, wheat for bread, grapes for wine; then the fields, the pulled plant and the raised produce change too.",
+  "{SUPER}": "the two-line super on the night porch wide. Default: 'Real potatoes grown by generations' / 'of farmers.'",
+  "{TAGLINE}": "end card line 1. Default: 'Grown by families. Made for yours.'",
+  "{SUBLINE}": "end card line 2. Default: 'Made from real potatoes.'",
+  "{LEGAL}": "end card fine print. Default: placeholder text.",
+  "{PARENT_LOGO}": "optional corner mark on the end card (top right). Default: none.",
+  "cast": "father (~70s) and grown daughter (~40s), their younger selves (~35 and ~6), the family dog at two ages. Keep the ages: the film is about one generation handing on to the next.",
+  "places": "a family farm: house with a porch, fields at planting and harvest, a barn and yard. Any crop.",
+  "lines": "L01-L06 can be rewritten, keeping each line's length (count syllables; a generated read runs 10-20% slower, so write shorter) and the two-beat structure: he hints at stopping, she asks for one last season together; at the end he hands it over in four words.",
+  "music": "a soft cover of a well-known ballad about a shared place, female voice, piano-led, ~85 bpm. A new film may license its own; keep the arc: silence under the ask, entry on the cut to the field, a gap for the handover line, the last phrase on the wide, the final chord on the end card."
+ },
+ "cast_notes": "All people in the set are invented (text-to-image), never likenesses of the actors. The young father and the girl are derived from the adult sheets so that faces carry across the years.",
+ "shots": [
+  {
+   "n": 1,
+   "start": 0,
+   "end": 1.796,
+   "dur": 1.796,
+   "in": "start",
+   "brightness": {
+    "start": 52,
+    "mid": 52,
+    "end": 52
+   },
+   "colour": "#36322d",
+   "change": 0.5,
+   "sound": "-43.23 LUFS mean, -18.14 peak",
+   "action": "Dawn aerial over the farm: low sun in the haze over the hills, the white farmhouse small in its valley. The camera barely drifts forward. L01 'So I've been thinking,' starts at 0.63 over it.",
+   "setup": "EST_AERIAL_DAWN",
+   "location": "loc_farm_aerial",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "farmhouse at x 41-55%, y 60-69% (about 8% of the width); ridge line at y 22-26%; sun bloom at x 8-11%, y 14-19%; everything below the ridge in deep shadow",
+   "camera": "aerial, ~120 m, tilted ~20 degrees down toward the sun, wide lens, deep focus",
+   "camera_move": "slow drone drift forward, scale 1.00 -> 1.03 over 1.8 s, linear (change 0.5)",
+   "light": "dawn backlight: sun low upper left behind thin haze, warm bloom; land at 10-25/255, sky bright; frame 52 throughout",
+   "text": [],
+   "out": "hard cut",
+   "audio": "near silence (room tone, faint birds, -50 to -63 dB); L01 'So I've been thinking,' 0.63-1.48 (father, heard as voice-over)",
+   "render": "first + last frame: loc_farm_aerial as plate A, plate B pushed in 3%; no speech in the clip (L01 is laid in the mix)",
+   "board": "boards/s01.jpg",
+   "voice": "spoken L01 (father, 0.63-1.48): \"So I've been thinking,\""
+  },
+  {
+   "n": 2,
+   "start": 1.796,
+   "end": 4.761,
+   "dur": 2.965,
+   "in": "cut",
+   "brightness": {
+    "start": 62,
+    "mid": 62,
+    "end": 62
+   },
+   "colour": "#413b38",
+   "change": 1.5,
+   "sound": "-41.36 LUFS mean, -24.14 peak",
+   "action": "Golden hour on the porch: father and daughter sit side by side on a wooden bench, looking out over the yard; he glances at her, then down. L02 'might be time to hang it up.' starts at 3.97.",
+   "setup": "PORCH_WIDE_DAY",
+   "location": "loc_porch_day",
+   "cast": [
+    "char_father",
+    "char_daughter"
+   ],
+   "wardrobe": "father: wardrobe 1 (tan canvas chore jacket, plaid flannel, jeans); daughter: wardrobe 1 (off-white chore jacket with brown corduroy collar, jeans)",
+   "shot_size": "wide",
+   "subject_in_frame": "the pair on the bench at x 57-82% (25% of the width), heads at y 22-36% (his x 61-66%, hers x 70-76%), feet at y 94-97%; empty far bench at x 2-17%, y 42-52%; topiary pots x 25-35%; window at the right edge x 88-100%; grey floor fills the lower-left 30%",
+   "camera": "seated eye level (~1.1 m) on the porch, looking along it to screen-left, 35 mm, deep focus",
+   "camera_move": "locked off (change 1.5)",
+   "light": "late-afternoon golden sun raking from screen-left and behind; warm rims on faces, white wall in soft warm light; frame 62",
+   "text": [],
+   "out": "hard cut",
+   "audio": "room tone; L02 'might be time to hang it up.' 3.97-5.22 (father, his face too small to read: off-face) runs over the cut into shot 3",
+   "render": "first + last frame on loc_porch_day with char_father, char_daughter (wardrobe 1): plate A = boards/s02.jpg, plate B = the same with his head turned down; no lip-sync needed (L02 laid in the mix)",
+   "board": "boards/s02.jpg",
+   "voice": "spoken L02 (father, 3.97-5.22): \"might be time to hang it up.\""
+  },
+  {
+   "n": 3,
+   "start": 4.761,
+   "end": 6.223,
+   "dur": 1.462,
+   "in": "cut",
+   "brightness": {
+    "start": 67,
+    "mid": 69,
+    "end": 70
+   },
+   "colour": "#514036",
+   "change": 10,
+   "sound": "-35.64 LUFS mean, -27.17 peak",
+   "action": "Insert: his weathered hand, palm up on his knee, turns the farm keys over with his thumb; the medallion fob catches the light (jingle 5.40-6.20). L02 ends over it.",
+   "setup": "KEYS_INSERT_DAY",
+   "location": "loc_porch_day",
+   "cast": [
+    "char_father",
+    "prop_keys"
+   ],
+   "wardrobe": "father wardrobe 1: tan-brown canvas sleeve; her off-white jacket soft in the lower half",
+   "shot_size": "close-up",
+   "subject_in_frame": "hand at x 48-83%, y 17-56%; keys and fob x 63-73%, y 28-58% (fob ~6% of the width); his canvas sleeve enters from the left edge at y 30-70%; her cream jacket blurred across the bottom 40%; soft white window at the top right",
+   "camera": "high angle over his lap, ~45 degrees down, 85-100 mm, very shallow focus on the fob",
+   "camera_move": "handheld float with a slight push in, 1.00 -> 1.04 over 1.46 s (change 10 is mostly the hand turning)",
+   "light": "warm low sun from screen-left; specular glint on the fob at ~5.5; frame 67-70",
+   "text": [],
+   "out": "hard cut",
+   "audio": "L02 tail 4.77-5.22; key-ring jingle 5.40-6.20 (in the score)",
+   "render": "first + last frame: plate A = hand holding the keys flat (boards/s03.jpg with prop_keys), plate B = keys turned, fob facing camera; 3 s clip trimmed to the shot",
+   "board": "boards/s03.jpg",
+   "voice": "spoken L02 (father, 3.97-5.22): \"might be time to hang it up.\""
+  },
+  {
+   "n": 4,
+   "start": 6.223,
+   "end": 10.776,
+   "dur": 4.553,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 78,
+    "end": 76
+   },
+   "colour": "#584840",
+   "change": 7.4,
+   "sound": "-33.59 LUFS mean, -21.58 peak",
+   "action": "Over his shoulder onto her: she looks down (6.23-7.7), takes a breath (7.87), lifts her eyes to him and says 'How about one last time? Together.' (8.22-10.48), smiling on 'Together' and holding his gaze.",
+   "setup": "OTS_DAUGHTER_DAY",
+   "location": "loc_porch_day",
+   "cast": [
+    "char_daughter",
+    "char_father"
+   ],
+   "wardrobe": "daughter wardrobe 1 (off-white chore jacket, brown corduroy collar, dark top); his white beard and brown jacket soft in the foreground",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "her head x 42-63% (21% of the width): hair top y 8%, eyes y 31%, chin y 46%; frame bottom at mid-chest; his soft bearded profile fills the left edge x 0-22%, full height; a cool blue wall shadow behind her head, white siding and a dark window at the right",
+   "camera": "eye level, over his left shoulder onto her three-quarter front, 85 mm f/2, his profile fully soft",
+   "camera_move": "locked off with a faint handheld breath (change 7.4 is her head turning up)",
+   "light": "low golden sun from screen-left behind him, warm key on her cheek, soft fill from the white wall; frame 75-78",
+   "text": [],
+   "out": "hard cut",
+   "audio": "soft piano bed creeping in (-47 to -40 dB); L03 breath 7.87, words 8.22-10.48 (lip-sync)",
+   "render": "first frame + guide_audio: first_frame = OTS_DAUGHTER_DAY plate (boards/s04.jpg + char_daughter_sheet + char_father beard/jacket in the foreground + loc_porch_day), guide_audio = set/lines/L03.wav; 4 s clip, trim to the shot; end on a neutral held look. If the framing drifts, re-render from the same plate (never use reference mode).",
+   "board": "boards/s04.jpg",
+   "voice": "spoken L03 (daughter, 8.22-10.48): \"How about one last time? Together.\""
+  },
+  {
+   "n": 5,
+   "start": 10.776,
+   "end": 13.908,
+   "dur": 3.132,
+   "in": "cut",
+   "brightness": {
+    "start": 71,
+    "mid": 71,
+    "end": 71
+   },
+   "colour": "#52423b",
+   "change": 2.51,
+   "sound": "-32.61 LUFS mean, -24.63 peak",
+   "action": "Over her shoulder onto him: he looks at her with a slow smile and says 'Okay, kiddo.' (12.56-13.26), then keeps smiling at her.",
+   "setup": "OTS_FATHER_DAY",
+   "location": "loc_porch_day",
+   "cast": [
+    "char_father",
+    "char_daughter"
+   ],
+   "wardrobe": "father wardrobe 1 (tan canvas chore jacket with corduroy collar over the plaid flannel)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "his head x 40-64% (24% of the width): bald crown at y 7%, eyes y 33%, beard bottom y 60%; frame bottom at the chest; the back of her head soft at the right x 71-100%; white window frames behind him on the left; a few pink flowers soft at the bottom-left corner",
+   "camera": "eye level, over her right shoulder onto his three-quarter front, 85 mm f/2",
+   "camera_move": "locked off (change 2.5)",
+   "light": "golden sun from screen-left, warm on his bald head and beard; frame 71",
+   "text": [],
+   "out": "hard cut on the music swell (13.92)",
+   "audio": "piano bed rising (-41 -> -27 dB), L04 12.56-13.26 (lip-sync), swell 13.4-13.9 into the cut",
+   "render": "first frame + guide_audio: first_frame = OTS_FATHER_DAY plate (boards/s05.jpg + char_father_sheet + wardrobe 1 + loc_porch_day), guide_audio = set/lines/L04.wav; 3 s clip, trim; neutral smile at the end",
+   "board": "boards/s05.jpg",
+   "voice": "spoken L04 (father, 12.56-13.26): \"Okay, kiddo.\""
+  },
+  {
+   "n": 6,
+   "start": 13.908,
+   "end": 16.665,
+   "dur": 2.757,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 76,
+    "end": 93
+   },
+   "colour": "#504b47",
+   "change": 14.67,
+   "sound": "-24.62 LUFS mean, -18.55 peak",
+   "action": "Present-day planting, bright sun: father and daughter crouch in a fresh furrow in caps and work gloves, setting seed potatoes; she gestures and they laugh together (no audible words). The handheld camera eases back from waist-high on both to their whole crouched bodies.",
+   "setup": "FIELD_PLANTING_NOW",
+   "location": "loc_field_planting",
+   "cast": [
+    "char_father",
+    "char_daughter"
+   ],
+   "wardrobe": "father wardrobe 2 (navy denim chore jacket, navy cap, tan gloves); daughter wardrobe 2 (black-navy work jacket, navy cap, tan gloves)",
+   "shot_size": "medium wide",
+   "subject_in_frame": "father kneeling at the left x 9-48% (head x 23-39%, y 4-22%), daughter crouched at the right x 50-88% (head x 59-73%, y 11-30%); tree line on the horizon at y 35%; furrows converging to the centre; sky the top 35%. At the end (board s06b) both are smaller: x 20-45% and 55-82%, heads at y 15-30%",
+   "camera": "handheld at knee height (~0.6 m), 35 mm, slight low angle, deep-ish focus",
+   "camera_move": "handheld ease-back: scale 1.15 -> 1.00 over 2.76 s, ease-out, with a slight rise (change 14.7)",
+   "light": "hard late-morning sun high from behind-left, crisp shadows in the furrows, blue sky; frame 61 -> 76 -> 82 as the camera pulls back, then the warm white bloom lifts the last two frames to 93",
+   "text": [],
+   "out": "hard cut at 16.665 hidden inside a white sun-flash that starts on this shot's last two frames (16.581, 16.623)",
+   "audio": "the song enters (music -24 dB); the singer starts at 14.20",
+   "render": "first + last frame: plate A = boards/s06a.jpg (tight), plate B = boards/s06b.jpg (wider), both on loc_field_planting with char_father/char_daughter wardrobe 2; 3 s clip",
+   "board": "boards/s06.jpg",
+   "boards_extra": [
+    "boards/s06a.jpg",
+    "boards/s06b.jpg"
+   ],
+   "voice": "sung phrase S1 in the score (14.2-18.48): I walked across..."
+  },
+  {
+   "n": 7,
+   "start": 16.665,
+   "end": 18.502,
+   "dur": 1.837,
+   "in": "hard cut at 16.665 hidden in a white sun-flash: the bloom starts on the last two frames of shot 6 (16.581-16.623), peaks on shot 7 at 16.72-16.84 (146/255) and settles by 17.14 (the dissector missed this cut)",
+   "brightness": {
+    "start": 144,
+    "mid": 93,
+    "end": 92
+   },
+   "colour": "#79614a",
+   "change": 3.21,
+   "sound": "-24.58 LUFS mean, -19.92 peak",
+   "action": "Memory: the same field years ago. Through a white sun-flash the young father and his little girl (yellow rain jacket, yellow boots) kneel side by side pressing seed potatoes into the furrow; a farmhand with a wheelbarrow far right.",
+   "setup": "FIELD_PLANTING_THEN",
+   "location": "loc_field_planting_then",
+   "cast": [
+    "char_young_father",
+    "char_girl"
+   ],
+   "wardrobe": "young father left outfit (tan canvas jacket, brown cap); girl left outfit (mustard-yellow hooded rain jacket, brown trousers, yellow rubber boots, yellow gloves)",
+   "shot_size": "wide",
+   "subject_in_frame": "young father crouched at x 21-48% (head y 22-36%), girl kneeling at x 52-76% (head y 36-47%, boots at y 75-85%); horizon at y 47%; a small figure with a wheelbarrow at x 87%, y 42-50%; furrows across the bottom half",
+   "camera": "locked off at ~0.8 m, square to the furrow, 50 mm",
+   "camera_move": "locked off (change 3.2)",
+   "light": "memory grade: soft warm afternoon light under a hazy cream sky, gentle contrast, saturated red-brown soil. White flash across the cut: the bloom starts on shot 6 (16.581: 92), the cut lands at 16.665 (144), peak 16.72-16.84 (146), back to 92 by 17.14: a warm sun-bloom from the upper right washing the frame; then 93",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song, sung phrase 1 continuing ('...an empty land', held note to 18.48)",
+   "render": "first + last frame on loc_field_planting_then with char_young_father and char_girl; the flash is added in post (ui.json flash_into_memory): a warm white bloom starting 2 frames before the cut on shot 6, peaking 2-4 frames after it at 146/255, settling over 7 frames",
+   "board": "boards/s07.jpg",
+   "voice": "sung phrase S1 in the score (14.2-18.48): I walked across..."
+  },
+  {
+   "n": 8,
+   "start": 18.502,
+   "end": 19.463,
+   "dur": 0.961,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 58,
+    "end": 48
+   },
+   "colour": "#4d2f1c",
+   "change": 27.14,
+   "sound": "-26.73 LUFS mean, -23.5 peak",
+   "action": "Memory macro: a child's yellow glove and a man's brown glove press a seed potato into the loose soil together.",
+   "setup": "HANDS_SOIL_MACRO",
+   "location": "loc_field_planting_then",
+   "text": [],
+   "voice": null
+  },
+  {
+   "n": 9,
+   "start": 19.463,
+   "end": 21.05,
+   "dur": 1.587,
+   "in": "cut",
+   "brightness": {
+    "start": 78,
+    "mid": 79,
+    "end": 78
+   },
+   "colour": "#5b4a32",
+   "change": 24.98,
+   "sound": "-25.51 LUFS mean, -22.12 peak",
+   "action": "Memory: the little girl in yellow boots bursts out of the farmhouse door and down the porch steps toward camera, the puppy bounding after her, her father in the doorway.",
+   "setup": "DOORWAY_RUN_THEN",
+   "location": "loc_porch_day",
+   "text": [],
+   "voice": "sung phrase S2 in the score (19.7-24.62): I knew the pathway..."
+  },
+  {
+   "n": 10,
+   "start": 21.05,
+   "end": 22.888,
+   "dur": 1.838,
+   "in": "cut",
+   "brightness": {
+    "start": 57,
+    "mid": 58,
+    "end": 57
+   },
+   "colour": "#43362a",
+   "change": 5.19,
+   "sound": "-22.95 LUFS mean, -21.18 peak",
+   "action": "Memory: the young father and the girl sit on the open tailgate of the red pickup by the barn; she hugs the puppy, he eats a chip and talks; the {BRAND} bag stands on the blanket between them.",
+   "setup": "TAILGATE_THEN",
+   "location": "loc_barnyard",
+   "cast": [
+    "char_young_father",
+    "char_girl",
+    "char_dog",
+    "prop_pickup_then",
+    "product_bag"
+   ],
+   "wardrobe": "young father right outfit (teal shirt open over a grey tee, khaki trousers, olive-tan trucker cap); girl right outfit (brown bib overalls, striped tee)",
+   "shot_size": "wide",
+   "subject_in_frame": "girl at x 31-45% (head y 14-28%) with the puppy at x 23-31%; the bag standing on the tailgate at x 47-54%, y 58-75%, label to camera; father at x 55-75% (head y 11-31%); the red cab and tailgate span x 12-100%, plaid blanket across the bottom 25%; grey barn wall behind, the top 20%",
+   "camera": "locked off at tailgate height (~1.0 m), square to the tailgate, 35 mm",
+   "camera_move": "locked off (change 5.2 is their movement)",
+   "light": "memory grade, warm soft daylight under the barn's eave; frame 57-58",
+   "text": [],
+   "out": "hard cut (then -> now match)",
+   "audio": "song, sung phrase 2 ('I knew the pathway...')",
+   "render": "first + last frame on loc_barnyard with prop_pickup_then, char_young_father, char_girl, char_dog (puppy) and product_bag; the bag label must read cleanly; 2-3 s clip",
+   "board": "boards/s10.jpg",
+   "voice": "sung phrase S2 in the score (19.7-24.62): I knew the pathway..."
+  },
+  {
+   "n": 11,
+   "start": 22.888,
+   "end": 24.266,
+   "dur": 1.378,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 54,
+    "end": 54
+   },
+   "colour": "#3b322b",
+   "change": 4.77,
+   "sound": "-26.03 LUFS mean, -25.29 peak",
+   "action": "Now: the same two, decades later, on the tailgate of the dark pickup in the same spot; she eats from the {BRAND} bag in her lap, he eats a chip, the old dog lies on its bed in the truck bed beside them.",
+   "setup": "TAILGATE_NOW",
+   "location": "loc_barnyard",
+   "cast": [
+    "char_daughter",
+    "char_father",
+    "char_dog",
+    "prop_pickup_now",
+    "product_bag"
+   ],
+   "wardrobe": "daughter wardrobe 3 (cream work shirt, jeans, tan boots); father wardrobe 3 (charcoal flannel, mesh-back cap, brown trousers)",
+   "shot_size": "wide",
+   "subject_in_frame": "daughter at x 28-41% (head y 11-25%), the bag in her lap at x 34-38%, y 46-60%; father at x 40-66% (head x 48-56%, y 10-26%); old dog on its bed at x 63-77%, y 42-69%; dark tailgate y 66-83%; barn wall with a dark doorway behind on the left; gravel the bottom 15%",
+   "camera": "same position and lens as shot 10 (locked, ~1.0 m, 35 mm): the match",
+   "camera_move": "locked off (change 4.8)",
+   "light": "clear midday sun on the gravel and their legs, barn wall in shade; frame 53-54",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song, sung phrase 2, ending 24.62",
+   "render": "first + last frame on loc_barnyard with prop_pickup_now, char_daughter (w3), char_father (w3), char_dog (old) and product_bag; same plate geometry as shot 10",
+   "board": "boards/s11.jpg",
+   "voice": "sung phrase S2 in the score (19.7-24.62): I knew the pathway..."
+  },
+  {
+   "n": 12,
+   "start": 24.266,
+   "end": 26.313,
+   "dur": 2.047,
+   "in": "cut",
+   "brightness": {
+    "start": 34,
+    "mid": 49,
+    "end": 52
+   },
+   "colour": "#392c20",
+   "change": 22.22,
+   "sound": "-24.36 LUFS mean, -21.78 peak",
+   "action": "Memory: in warm low light the girl hands her father a crayon card she drew ('I [heart] you DAD'); over her shoulder, his hand takes it.",
+   "setup": "CARD_OTS_THEN",
+   "location": "farmhouse interior",
+   "text": [],
+   "voice": "sung phrase S2 in the score (19.7-24.62): I knew the pathway... | sung phrase S3 in the score (25.2-29.7): I felt the earth..."
+  },
+  {
+   "n": 13,
+   "start": 26.313,
+   "end": 27.816,
+   "dur": 1.503,
+   "in": "cut",
+   "brightness": {
+    "start": 23,
+    "mid": 24,
+    "end": 23
+   },
+   "colour": "#12161b",
+   "change": 7.81,
+   "sound": "-25.75 LUFS mean, -21.49 peak",
+   "action": "Blue hour: the old father climbs into the harvester cab and settles at the wheel.",
+   "setup": "CAB_INTERIOR",
+   "location": "harvester cab",
+   "text": [],
+   "voice": "sung phrase S3 in the score (25.2-29.7): I felt the earth..."
+  },
+  {
+   "n": 14,
+   "start": 27.816,
+   "end": 29.403,
+   "dur": 1.587,
+   "in": "cut",
+   "brightness": {
+    "start": 37,
+    "mid": 25,
+    "end": 27
+   },
+   "colour": "#16191e",
+   "change": 14.88,
+   "sound": "-25.27 LUFS mean, -21.65 peak",
+   "action": "The same card, faded, taped above the cab's windscreen; rack focus from the dark glass to the card.",
+   "setup": "CARD_IN_CAB",
+   "location": "harvester cab",
+   "text": [],
+   "voice": "sung phrase S3 in the score (25.2-29.7): I felt the earth..."
+  },
+  {
+   "n": 15,
+   "start": 29.403,
+   "end": 30.948,
+   "dur": 1.545,
+   "in": "cut",
+   "brightness": {
+    "start": 25,
+    "mid": 25,
+    "end": 25
+   },
+   "colour": "#13171d",
+   "change": 1.06,
+   "sound": "-29.1 LUFS mean, -23.27 peak",
+   "action": "He drives the harvester at blue hour, side profile, lit by the dashboard (same cab setup as 13).",
+   "setup": "CAB_INTERIOR",
+   "location": "harvester cab",
+   "text": [],
+   "voice": "sung phrase S3 in the score (25.2-29.7): I felt the earth... | sung phrase S4 in the score (30.0-35.56): Sat by the river..."
+  },
+  {
+   "n": 16,
+   "start": 30.948,
+   "end": 32.577,
+   "dur": 1.629,
+   "in": "cut",
+   "brightness": {
+    "start": 52,
+    "mid": 54,
+    "end": 57
+   },
+   "colour": "#3e3419",
+   "change": 12.74,
+   "sound": "-22.06 LUFS mean, -20.88 peak",
+   "action": "Memory: a woman (the girl's mother) kneels among green potato plants as the girl in yellow runs past with the puppy; handheld follow.",
+   "setup": "FIELD_RUN_THEN",
+   "location": "loc_potato_field (memory grade)",
+   "text": [],
+   "voice": "sung phrase S4 in the score (30.0-35.56): Sat by the river..."
+  },
+  {
+   "n": 17,
+   "start": 32.577,
+   "end": 34.206,
+   "dur": 1.629,
+   "in": "cut",
+   "brightness": {
+    "start": 67,
+    "mid": 68,
+    "end": 68
+   },
+   "colour": "#3d4340",
+   "change": 3.2,
+   "sound": "-23.21 LUFS mean, -21.44 peak",
+   "action": "Dusk: father and daughter walk side by side through the green potato field, a red harvester on the horizon behind them.",
+   "setup": "FIELD_WALK_DUSK",
+   "location": "loc_potato_field at dusk",
+   "text": [],
+   "voice": "sung phrase S4 in the score (30.0-35.56): Sat by the river..."
+  },
+  {
+   "n": 18,
+   "start": 34.206,
+   "end": 35.501,
+   "dur": 1.295,
+   "in": "cut",
+   "brightness": {
+    "start": 92,
+    "mid": 94,
+    "end": 101
+   },
+   "colour": "#655d49",
+   "change": 12.03,
+   "sound": "-22.84 LUFS mean, -20.34 peak",
+   "action": "Harvest, from low in the rows: the daughter, crouched, pulls a whole potato plant out of the ridge, tubers swinging from its roots; her father bends over the plants behind her.",
+   "setup": "HARVEST_LOW",
+   "location": "loc_potato_field",
+   "cast": [
+    "char_daughter",
+    "char_father",
+    "product_potato"
+   ],
+   "wardrobe": "daughter wardrobe 4 with a dark cap (rust-brown canvas jacket); father wardrobe 1 jacket with a cap",
+   "shot_size": "medium wide",
+   "subject_in_frame": "daughter crouched at x 19-31%, y 33-67%; the plant she pulls rises from x 22% to x 50%, stems up to y 0%, tubers at y 75-90%; father bent over at x 67-80%, y 21-40%; dense green canopy the bottom 60%, red-brown soil ridge at the bottom edge; bright overcast sky the top 40%",
+   "camera": "handheld low (~0.5 m) inside the rows, looking slightly up, 28-35 mm",
+   "camera_move": "handheld, near-static (change 12 is the plant coming up)",
+   "light": "soft overcast evening light, bright creamy sky (frame 92 -> 101), no hard shadows",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song (sung phrase 4)",
+   "render": "first + last frame: plate A = boards/s18a.jpg (plant still in the ground), plate B = boards/s18b.jpg (plant up, tubers hanging), loc_potato_field with char_daughter (w4 + cap), char_father, product_potato (plant)",
+   "board": "boards/s18.jpg",
+   "boards_extra": [
+    "boards/s18a.jpg",
+    "boards/s18b.jpg"
+   ],
+   "voice": "sung phrase S4 in the score (30.0-35.56): Sat by the river..."
+  },
+  {
+   "n": 19,
+   "start": 35.501,
+   "end": 37.046,
+   "dur": 1.545,
+   "in": "cut",
+   "brightness": {
+    "start": 108,
+    "mid": 105,
+    "end": 104
+   },
+   "colour": "#6d694d",
+   "change": 8.03,
+   "sound": "-22.04 LUFS mean, -20.36 peak",
+   "action": "Low over the canopy against a creamy sky: an arm in a rust-brown knit cuff rises out of the potato plants and holds a fresh potato up to the sky (rises 35.9-36.3, then holds).",
+   "setup": "POTATO_RAISE",
+   "location": "loc_potato_field",
+   "cast": [
+    "char_daughter",
+    "product_potato"
+   ],
+   "wardrobe": "daughter wardrobe 4 (rust-brown jacket, knit cuff); only her forearm and hand are seen",
+   "shot_size": "medium wide",
+   "subject_in_frame": "green potato canopy fills y 44-100% (horizon at 44%), two taller stems silhouetted at x 18-30% and x 72-95%; the arm rises at x 41-50% from y 67% (cuff) to the potato at x 43-50%, y 21-36% (potato ~4% of the width)",
+   "camera": "locked off at canopy height (~0.7 m), 50 mm, horizon at 44%",
+   "camera_move": "locked off (change 8 is the arm)",
+   "light": "overcast evening, bright creamy sky (frame 105-108), the potato backlit with a soft rim",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song (sung phrase 5 begins 35.56)",
+   "render": "first + last frame: plate A = boards/s19a.jpg (canopy only), plate B = boards/s19b.jpg (arm up with the potato), loc_potato_field with product_potato",
+   "board": "boards/s19.jpg",
+   "boards_extra": [
+    "boards/s19a.jpg",
+    "boards/s19b.jpg"
+   ],
+   "voice": "sung phrase S4 in the score (30.0-35.56): Sat by the river... | sung phrase S5 in the score (35.56-41.48): And if you have a minute..."
+  },
+  {
+   "n": 20,
+   "start": 37.046,
+   "end": 38.382,
+   "dur": 1.336,
+   "in": "cut",
+   "brightness": {
+    "start": 59,
+    "mid": 59,
+    "end": 59
+   },
+   "colour": "#383a39",
+   "change": 0.92,
+   "sound": "-20.85 LUFS mean, -18.23 peak",
+   "action": "Dusk wide: a white dump truck heaped with potatoes stands by a dark barn; father and daughter stand beside it, looking at the load (truck livery made generic).",
+   "setup": "TRUCK_WIDE_DUSK",
+   "location": "barnyard at dusk",
+   "text": [],
+   "voice": "spoken L05 (daughter, 38.22-38.92): \"One more thing.\" | sung phrase S5 in the score (35.56-41.48): And if you have a minute..."
+  },
+  {
+   "n": 21,
+   "start": 38.382,
+   "end": 39.302,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 57,
+    "mid": 57,
+    "end": 57
+   },
+   "colour": "#36373a",
+   "change": 1.72,
+   "sound": "-24.4 LUFS mean, -20.39 peak",
+   "action": "Dusk two-shot by the truck: father in his cap, the daughter's hand on his shoulder; she says 'One more thing.' (L05, starting 0.21 s before the cut).",
+   "setup": "TWO_SHOT_DUSK",
+   "location": "barnyard at dusk",
+   "text": [],
+   "voice": "spoken L05 (daughter, 38.22-38.92): \"One more thing.\" | sung phrase S5 in the score (35.56-41.48): And if you have a minute..."
+  },
+  {
+   "n": 22,
+   "start": 39.302,
+   "end": 40.889,
+   "dur": 1.587,
+   "in": "cut",
+   "brightness": {
+    "start": 24,
+    "mid": 25,
+    "end": 21
+   },
+   "colour": "#1b1917",
+   "change": 9.21,
+   "sound": "-22.20 LUFS mean, -18.73 peak",
+   "action": "Inside the dark barn entrance: she leads him through a doorway into darkness, seen from behind.",
+   "setup": "BARN_DOOR",
+   "location": "barn interior, dark",
+   "text": [],
+   "voice": "sung phrase S5 in the score (35.56-41.48): And if you have a minute..."
+  },
+  {
+   "n": 23,
+   "start": 40.889,
+   "end": 42.726,
+   "dur": 1.837,
+   "in": "hard cut at 40.889 into darkness (brightness 15); the barn's string lights switch on 40.98-41.32 (the dissector read the light-up as a dissolve at 41.23)",
+   "brightness": {
+    "start": 15,
+    "mid": 52,
+    "end": 52
+   },
+   "colour": "#3c2b1f",
+   "change": 3.73,
+   "sound": "-22.05 LUFS mean, -15.62 peak",
+   "action": "The barn lights snap on (40.98-41.32): a surprise retirement party, a long table of food, a cheering crowd under a hand-painted 'HAPPY RETIREMENT' banner and string lights, the old dog in the middle.",
+   "setup": "PARTY_WIDE",
+   "location": "barn interior, party",
+   "text": [],
+   "voice": "sung phrase S5 in the score (35.56-41.48): And if you have a minute... | sung phrase S6 in the score (42.0-47.26): Talk about it..."
+  },
+  {
+   "n": 24,
+   "start": 42.726,
+   "end": 45.441,
+   "dur": 2.715,
+   "in": "cut",
+   "brightness": {
+    "start": 35,
+    "mid": 37,
+    "end": 38
+   },
+   "colour": "#252220",
+   "change": 5.04,
+   "sound": "-19.93 LUFS mean, -16.2 peak",
+   "action": "In the barn doorway he lifts his cap and waves to the crowd, overwhelmed; the daughter beside him beams; slow push in.",
+   "setup": "DOORWAY_WAVE",
+   "location": "barn doorway",
+   "text": [],
+   "voice": "sung phrase S6 in the score (42.0-47.26): Talk about it..."
+  },
+  {
+   "n": 25,
+   "start": 45.441,
+   "end": 47.404,
+   "dur": 1.963,
+   "in": "cut",
+   "brightness": {
+    "start": 23,
+    "mid": 26,
+    "end": 24
+   },
+   "colour": "#19181a",
+   "change": 7.4,
+   "sound": "-26.32 LUFS mean, -23.43 peak",
+   "action": "Night, on the porch bench: his weathered hand presses the key ring into her open hand on her lap (45.5-45.8), then closes her fingers over it and rests on her hand, wedding ring showing (from 46.6).",
+   "setup": "KEYS_HANDOVER_NIGHT",
+   "location": "loc_porch_night",
+   "cast": [
+    "char_father",
+    "char_daughter",
+    "prop_keys"
+   ],
+   "wardrobe": "his dark waxed sleeve with a brown corduroy cuff (wardrobe 4); her dark denim jeans",
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "the hands at x 30-65%, y 25-100%; the fob x 45-55%, y 50-62% at the start; dark blue jeans fill the right half; near-black background",
+   "camera": "high angle over their laps, 85-100 mm, very shallow focus",
+   "camera_move": "handheld slow drift down and left (change 7.4)",
+   "light": "night: cool blue ambience with a warm edge from the porch lamp above; frame 23-26",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song (sung phrase 6, ending 47.26)",
+   "render": "first + last frame: plate A = boards/s25a.jpg (keys in his hand over hers), plate B = boards/s25b.jpg (his ringed hand closed over hers), on loc_porch_night light with prop_keys",
+   "board": "boards/s25.jpg",
+   "boards_extra": [
+    "boards/s25a.jpg",
+    "boards/s25b.jpg"
+   ],
+   "voice": "sung phrase S6 in the score (42.0-47.26): Talk about it..."
+  },
+  {
+   "n": 26,
+   "start": 47.404,
+   "end": 49.66,
+   "dur": 2.256,
+   "in": "cut",
+   "brightness": {
+    "start": 37,
+    "mid": 36,
+    "end": 36
+   },
+   "colour": "#242223",
+   "change": 2.02,
+   "sound": "-29.19 LUFS mean, -20.81 peak",
+   "action": "Night, over her shoulder onto him (the act-1 setup again): he looks at her, smiles, says 'It's your farm now.' (48.52-49.30) and nods once.",
+   "setup": "OTS_FATHER_NIGHT",
+   "location": "loc_porch_night",
+   "cast": [
+    "char_father",
+    "char_daughter"
+   ],
+   "wardrobe": "father wardrobe 4 (dark waxed jacket, cream henley, sage scarf)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "his head x 30-56% (26% of the width): crown y 3%, eyes y 26%, beard bottom y 58%; frame bottom mid-chest; her dark hair soft at the right x 72-100%; dim white siding and window frames behind on the left",
+   "camera": "eye level over her right shoulder, 85 mm f/2 (as OTS_FATHER_DAY)",
+   "camera_move": "locked off (change 4.5)",
+   "light": "night: soft warm porch lamp from above-left on his face, cool blue fill; frame 36-44",
+   "text": [],
+   "out": "hard cut",
+   "audio": "piano-only gap in the song; L06 48.52-49.30 (lip-sync)",
+   "render": "first frame + guide_audio: first_frame = OTS_FATHER_NIGHT plate (boards/s26.jpg + char_father_sheet + wardrobe 4 + loc_porch_night), guide_audio = set/lines/L06.wav; 3 s clip, trim",
+   "board": "boards/s26.jpg",
+   "voice": "spoken L06 (father, 48.52-49.3): \"It's your farm now.\""
+  },
+  {
+   "n": 27,
+   "start": 49.66,
+   "end": 52.917,
+   "dur": 3.257,
+   "in": "cut",
+   "brightness": {
+    "start": 44,
+    "mid": 39,
+    "end": 48
+   },
+   "colour": "#2e292a",
+   "change": 13.14,
+   "sound": "-25.43 LUFS mean, -20.6 peak",
+   "action": "Over his shoulder onto her: tears fill her eyes as she takes it in (49.7-50.6), she leans in and they hug (from 50.8): her face over his shoulder, eyes shut, crying, his hand on her back.",
+   "setup": "OTS_DAUGHTER_NIGHT",
+   "location": "loc_porch_night",
+   "cast": [
+    "char_daughter",
+    "char_father"
+   ],
+   "wardrobe": "daughter wardrobe 4 (rust-brown chore jacket over a denim shirt); father wardrobe 4",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "start (s27a): her head x 56-81%, his bald head soft at the left x 3-47%; in the hug (s27b): her face x 44-78%, y 10-60%, his shoulder and back fill the left half, his hand on her back at x 30-45%, y 70-95%",
+   "camera": "eye level over his left shoulder, 85 mm (as OTS_DAUGHTER_DAY)",
+   "camera_move": "handheld slow push in 1.00 -> 1.08 over the shot, following her into the hug (change 13)",
+   "light": "night: warm porch lamp from above-right on her face, cool blue fill; a warm glowing window soft behind; frame 44 -> 39 -> 48",
+   "text": [],
+   "out": "hard cut",
+   "audio": "song, sung phrase 7 ('So why don't we go', from 50.28)",
+   "render": "first + last frame: plate A = boards/s27a.jpg (tearful look), plate B = boards/s27b.jpg (the hug), loc_porch_night with char_daughter, char_father (w4); no speech",
+   "board": "boards/s27.jpg",
+   "boards_extra": [
+    "boards/s27a.jpg",
+    "boards/s27b.jpg"
+   ],
+   "voice": "sung phrase S7 in the score (50.28-53.36): So why don't we go"
+  },
+  {
+   "n": 28,
+   "start": 52.917,
+   "end": 57.845,
+   "dur": 4.928,
+   "in": "cut",
+   "brightness": {
+    "start": 46,
+    "mid": 47,
+    "end": 47
+   },
+   "colour": "#322c27",
+   "change": 1.62,
+   "sound": "-26.38 LUFS mean, -21.09 peak",
+   "action": "Wide of the night porch: they hug on the bench (52.98-55.0), he kisses the top of her head (~55.4), they part and sit close, his arm round her (from 56.5); the old dog lies at their feet. The super fades in at 54.19.",
+   "setup": "PORCH_WIDE_NIGHT",
+   "location": "loc_porch_night",
+   "cast": [
+    "char_father",
+    "char_daughter",
+    "char_dog"
+   ],
+   "wardrobe": "father wardrobe 4; daughter wardrobe 4",
+   "shot_size": "wide",
+   "subject_in_frame": "bench at x 28-70%, y 39-64%; the pair at x 34-61%, heads at y 22-31%; the old dog lying at x 50-73%, y 75-92%; white post with a twisted vine at x 18-25%, full height; glowing mustard-curtained window and door at x 72-98%, y 0-47%; dark round shrub at x 78-100%, y 78-100%; porch lamp at the top, x 20-30%",
+   "camera": "standing eye level (~1.5 m), square to the bench, 35 mm, deep focus",
+   "camera_move": "locked off with an imperceptible push, 1.00 -> 1.02 over 4.93 s (change 1.6)",
+   "light": "night: one warm lamp above-left pooling on the white siding, warm curtain glow, cool blue ambience; frame 46-47",
+   "text": [
+    {
+     "words": "{SUPER} = 'Real potatoes grown by generations' / 'of farmers.'",
+     "position": "two lines centred, block x 27.7-72.2%, y 45.2-54.8% (over the bench)",
+     "size": "4.4% of frame height per line",
+     "colour": "#EDCC0C",
+     "in": 54.19,
+     "full": 54.86,
+     "out": 57.845,
+     "animation": "fade in 0.67 s, out with the cut",
+     "file": "set/ui_super.png"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "song, final sung phrase 53.84-56.86; final chord 57.04 rings into the end card",
+   "render": "first + last frame: plate A = boards/s28a.jpg (the hug), plate B = boards/s28b.jpg (sitting apart, his arm round her) on loc_porch_night with char_father, char_daughter (w4) and char_dog (old); the super is composited in post from set/ui_super.png",
+   "board": "boards/s28.jpg",
+   "boards_extra": [
+    "boards/s28a.jpg",
+    "boards/s28b.jpg"
+   ],
+   "voice": "sung phrase S7 in the score (50.28-53.36): So why don't we go | sung phrase S8 in the score (53.84-56.86): (the title hook)"
+  },
+  {
+   "n": 29,
+   "start": 57.845,
+   "end": 60.08,
+   "dur": 2.235,
+   "in": "cut",
+   "brightness": {
+    "start": 57,
+    "mid": 57,
+    "end": 57
+   },
+   "colour": "#413528",
+   "change": 4.51,
+   "sound": "-38.21 LUFS mean, -25.9 peak",
+   "action": "End card: a golden-hour aerial glides along the crop rows into the sunset; the {BRAND} badge and {TAGLINE} are on from the first frame, {SUBLINE} fades in under them.",
+   "setup": "END_CARD_FIELD",
+   "location": "loc_endcard_field",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "rows converge to a vanishing point at x 50%, y 8%; sun glow on the tree-lined horizon at the top centre (y 0-10%); badge x 42.6-57.4%, y 30.4-53.4%; tagline y 56.7-60.6%; sub-line y 62.4-64.3%; legal y 93-96%",
+   "camera": "drone ~15 m, looking along the rows into the low sun, wide lens",
+   "camera_move": "slow push forward, scale 1.00 -> 1.04 over 2.17 s, linear (change 4.5)",
+   "light": "golden-hour backlight, rim-lit plant tops, dark foreground; frame 57",
+   "text": [
+    {
+     "words": "{BRAND} badge",
+     "position": "x 42.6-57.4%, y 30.4-53.4%",
+     "in": 57.845,
+     "out": 60.08,
+     "animation": "on with the cut",
+     "file": "set/ui_end_card_badge.png"
+    },
+    {
+     "words": "{TAGLINE} = 'Grown by families. Made for yours.'",
+     "position": "centred, y 56.7-60.6%",
+     "size": "4.3% H, white",
+     "in": 57.845,
+     "out": 60.08,
+     "animation": "on with the cut"
+    },
+    {
+     "words": "{SUBLINE} = 'Made from real potatoes.'",
+     "position": "centred, y 62.4-64.3%",
+     "size": "1.9% H, #EDCC0C",
+     "in": 58.3,
+     "full": 58.7,
+     "out": 60.08,
+     "animation": "fade in 0.4 s"
+    },
+    {
+     "words": "{LEGAL}",
+     "position": "centred, y 93-96%",
+     "size": "1.1% H, light grey",
+     "in": 57.845,
+     "out": 60.08
+    }
+   ],
+   "out": "end",
+   "audio": "the song's final chord (from 57.04) decaying; silence from 59.61",
+   "render": "plate = loc_endcard_field; push 1.00 -> 1.04 in post (or a 3 s first+last-frame clip); composite ui_end_card layers in code (never ask the video model for the badge or the type)",
+   "board": "boards/s29.jpg",
+   "voice": null
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 1.45,
+    "dur": 1.45,
+    "src": [
+     0.0,
+     1.45
+    ],
+    "setup": "EST_AERIAL_DAWN",
+    "board": "boards/s01.jpg",
+    "change": "first 1.45 s of the aerial; L01 pre-laps over it exactly as in the source (0.63)",
+    "lines": [
+     "L01"
+    ]
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 1.45,
+    "end": 3.58,
+    "dur": 2.13,
+    "src": [
+     1.795,
+     3.925
+    ],
+    "setup": "PORCH_WIDE_DAY",
+    "board": "boards/s02.jpg",
+    "change": "head 2.13 s of the porch wide (source 2.97 s); L02 starts 0.80 s before the cut to the keys, as in the source",
+    "lines": [
+     "L02"
+    ]
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 3.58,
+    "end": 5.04,
+    "dur": 1.46,
+    "src": [
+     4.76,
+     6.22
+    ],
+    "setup": "KEYS_INSERT_DAY",
+    "board": "boards/s03.jpg",
+    "change": "whole shot, and in sync with the score: the key-ring jingle in the score lands on the hand (4.21-5.01)",
+    "lines": []
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 5.04,
+    "end": 8.07,
+    "dur": 3.03,
+    "src": [
+     7.725,
+     10.755
+    ],
+    "setup": "OTS_DAUGHTER_DAY",
+    "board": "boards/s04.jpg",
+    "change": "starts 1.50 s in (drops her silent look down; opens as she lifts her eyes); L03 in lip-sync",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 5,
+    "from": 5,
+    "start": 8.07,
+    "end": 10.12,
+    "dur": 2.05,
+    "src": [
+     11.819,
+     13.869
+    ],
+    "setup": "OTS_FATHER_DAY",
+    "board": "boards/s05.jpg",
+    "change": "last 2.05 s; L04 in lip-sync; cut to the field between the music swell (9.90) and the singer's entry (10.22)",
+    "lines": [
+     "L04"
+    ]
+   },
+   {
+    "n": 6,
+    "from": 6,
+    "start": 10.12,
+    "end": 12.87,
+    "dur": 2.75,
+    "src": [
+     13.907,
+     16.657
+    ],
+    "setup": "FIELD_PLANTING_NOW",
+    "board": "boards/s06.jpg",
+    "change": "whole shot (present-day planting, the answer to 'one last time'); the white bloom starts on its last two frames",
+    "lines": []
+   },
+   {
+    "n": 7,
+    "from": 7,
+    "start": 12.87,
+    "end": 14.7,
+    "dur": 1.83,
+    "src": [
+     16.664,
+     18.494
+    ],
+    "setup": "FIELD_PLANTING_THEN",
+    "board": "boards/s07.jpg",
+    "change": "whole shot: enters still blooming white (peak 12.93-13.04, settled by 13.35) into the childhood memory",
+    "lines": []
+   },
+   {
+    "n": 8,
+    "from": 10,
+    "start": 14.7,
+    "end": 16.53,
+    "dur": 1.83,
+    "src": [
+     21.049,
+     22.879
+    ],
+    "setup": "TAILGATE_THEN",
+    "board": "boards/s10.jpg",
+    "change": "whole shot (memory: picnic on the red pickup with the {BRAND} bag)",
+    "lines": []
+   },
+   {
+    "n": 9,
+    "from": 11,
+    "start": 16.53,
+    "end": 17.9,
+    "dur": 1.37,
+    "src": [
+     22.887,
+     24.257
+    ],
+    "setup": "TAILGATE_NOW",
+    "board": "boards/s11.jpg",
+    "change": "whole shot (now: same two on the dark pickup, {BRAND} bag in her lap, the dog grown old)",
+    "lines": []
+   },
+   {
+    "n": 10,
+    "from": 18,
+    "start": 17.9,
+    "end": 19.19,
+    "dur": 1.29,
+    "src": [
+     34.205,
+     35.495
+    ],
+    "setup": "HARVEST_LOW",
+    "board": "boards/s18.jpg",
+    "change": "whole shot (moved up: harvest follows the tailgate pair)",
+    "lines": []
+   },
+   {
+    "n": 11,
+    "from": 19,
+    "start": 19.19,
+    "end": 20.73,
+    "dur": 1.54,
+    "src": [
+     35.5,
+     37.04
+    ],
+    "setup": "POTATO_RAISE",
+    "board": "boards/s19.jpg",
+    "change": "whole shot (the potato held up to the sky)",
+    "lines": []
+   },
+   {
+    "n": 12,
+    "from": 25,
+    "start": 20.73,
+    "end": 21.85,
+    "dur": 1.12,
+    "src": [
+     45.523,
+     46.643
+    ],
+    "setup": "KEYS_HANDOVER_NIGHT",
+    "board": "boards/s25.jpg",
+    "change": "first 1.12 s after 0.08 s: keys in his hand over hers, his hand closes hers over them",
+    "lines": []
+   },
+   {
+    "n": 13,
+    "from": 26,
+    "start": 21.85,
+    "end": 23.4,
+    "dur": 1.55,
+    "src": [
+     48.071,
+     49.621
+    ],
+    "setup": "OTS_FATHER_NIGHT",
+    "board": "boards/s26.jpg",
+    "change": "last 1.55 s; L06 in lip-sync",
+    "lines": [
+     "L06"
+    ]
+   },
+   {
+    "n": 14,
+    "from": 27,
+    "start": 23.4,
+    "end": 25.6,
+    "dur": 2.2,
+    "src": [
+     50.62,
+     52.82
+    ],
+    "setup": "OTS_DAUGHTER_NIGHT",
+    "board": "boards/s27.jpg",
+    "change": "middle 2.20 s: from her tearful look into the embrace",
+    "lines": []
+   },
+   {
+    "n": 15,
+    "from": 28,
+    "start": 25.6,
+    "end": 27.83,
+    "dur": 2.23,
+    "src": [
+     54.002,
+     56.232
+    ],
+    "setup": "PORCH_WIDE_NIGHT",
+    "board": "boards/s28.jpg",
+    "change": "2.23 s from 1.09 s in: the hug on the bench, the super fades in 0.19 s after the cut, they part",
+    "lines": []
+   },
+   {
+    "n": 16,
+    "from": 29,
+    "start": 27.83,
+    "end": 30.0,
+    "dur": 2.17,
+    "src": [
+     57.928,
+     60.098
+    ],
+    "setup": "END_CARD_FIELD",
+    "board": "boards/s29.jpg",
+    "change": "from 0.08 s in to the end (end card)",
+    "lines": []
+   }
+  ],
+  "shots_count": 16,
+  "average_shot": 1.88,
+  "median_shot": 1.83,
+  "lines": [
+   {
+    "id": "L01",
+    "words": "So I've been thinking,",
+    "speaker": "char_father",
+    "start": 0.57,
+    "end": 1.58,
+    "speech": [
+     0.63,
+     1.48
+    ],
+    "clip": "set/lines/L01.wav",
+    "src": [
+     0.63,
+     1.48
+    ],
+    "clip_src": [
+     0.57,
+     1.58
+    ],
+    "in_score": false,
+    "placement": "voice-over: pre-laps over the aerial as in the source; ends 0.03 s into shot 2",
+    "shot": 1
+   },
+   {
+    "id": "L02",
+    "words": "might be time to hang it up.",
+    "speaker": "char_father",
+    "start": 2.72,
+    "end": 4.13,
+    "speech": [
+     2.78,
+     4.03
+    ],
+    "clip": "set/lines/L02.wav",
+    "src": [
+     3.97,
+     5.22
+    ],
+    "clip_src": [
+     3.91,
+     5.32
+    ],
+    "in_score": false,
+    "placement": "off-face: over the porch wide (his face is 2% of the frame) and on over the keys insert, as in the source",
+    "shot": 2
+   },
+   {
+    "id": "L03",
+    "words": "How about one last time? Together.",
+    "speaker": "char_daughter",
+    "start": 5.12,
+    "end": 7.89,
+    "speech": [
+     5.53,
+     7.79
+    ],
+    "clip": "set/lines/L03.wav",
+    "src": [
+     8.22,
+     10.48
+    ],
+    "clip_src": [
+     7.81,
+     10.58
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 4
+   },
+   {
+    "id": "L04",
+    "words": "Okay, kiddo.",
+    "speaker": "char_father",
+    "start": 8.75,
+    "end": 9.61,
+    "speech": [
+     8.81,
+     9.51
+    ],
+    "clip": "set/lines/L04.wav",
+    "src": [
+     12.56,
+     13.26
+    ],
+    "clip_src": [
+     12.5,
+     13.36
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 5
+   },
+   {
+    "id": "L06",
+    "words": "It's your farm now.",
+    "speaker": "char_father",
+    "start": 22.24,
+    "end": 23.18,
+    "speech": [
+     22.3,
+     23.08
+    ],
+    "clip": "set/lines/L06.wav",
+    "src": [
+     48.52,
+     49.3
+    ],
+    "clip_src": [
+     48.46,
+     49.4
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 13
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 1.19,
+     "src_out": 6.58,
+     "start": 0.0,
+     "end": 5.39,
+     "offset": 1.19
+    },
+    {
+     "src_in": 9.37,
+     "src_out": 24.71,
+     "start": 5.39,
+     "end": 20.73,
+     "offset": 3.98
+    },
+    {
+     "src_in": 47.29,
+     "src_out": 49.96,
+     "start": 20.73,
+     "end": 23.4,
+     "offset": 26.56
+    },
+    {
+     "src_in": 53.48,
+     "src_out": 60.08,
+     "start": 23.4,
+     "end": 30.0,
+     "offset": 30.08
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0.0,
+   "fade_out": 0.15
+  },
+  "arc": {
+   "hook": "0.00-5.04: dawn over the farm, the porch, his hand on the keys: 'So I've been thinking, / might be time to hang it up.' Near silence.",
+   "ask": "5.04-10.12: over-the-shoulders: 'How about one last time? Together.' / 'Okay, kiddo.' The piano creeps in and swells.",
+   "last_season": "10.12-20.73: the song enters (swell 9.90, singer 10.22); cut to the field at 10.12. Planting now -> white flash -> planting then; tailgate then ({BRAND} bag) -> tailgate now (same spot, same bag, the dog grown old); harvest: the plant pulled, a potato raised to the sky. Sung phrases 1-2.",
+   "handover": "20.73-25.60: night porch: the keys pressed into her hand, 'It's your farm now.' alone in a piano gap, her tears and the hug as the last phrase begins.",
+   "payoff_end_card": "25.60-30.00: the porch wide with the dog at their feet, {SUPER} fades in; the final chord lands, end card at 27.83."
+  },
+  "pace_note": "16 shots, average 1.88 s, median 1.83 s; the source averages 2.07 s over 29 shots (median 1.80 s). Dropped: the running girl, the card and the cab (12-15), the mother memory (16), the field walk (17), the truck (20) and the whole surprise party (21-24, with L05). The handover keeps the act-1 setups at night, so the bookend survives.",
+  "text": [
+   {
+    "shot": 15,
+    "words": "{SUPER}",
+    "in": 25.79,
+    "full": 26.46,
+    "out": 27.83,
+    "position": "block x 27.7-72.2%, y 45.2-54.8%",
+    "file": "set/ui_super.png"
+   },
+   {
+    "shot": 16,
+    "words": "{BRAND} badge + {TAGLINE}",
+    "in": 27.83,
+    "out": 30.0,
+    "file": "set/ui_end_card.jpg"
+   },
+   {
+    "shot": 16,
+    "words": "{SUBLINE}",
+    "in": 28.2,
+    "full": 28.6,
+    "out": 30.0
+   }
+  ],
+  "end_card": {
+   "start": 27.83,
+   "end": 30.0,
+   "file": "set/ui_end_card.jpg",
+   "music": "the final chord from 26.96 decays under it; silence from 29.53, fade out 29.85-30.00"
+  },
+  "score_notes": {
+   "map": "segment 1: cut = src - 1.19; segment 2: cut = src - 3.98; segment 3: cut = src - 26.56; segment 4: cut = src - 30.08",
+   "sections": "0.00-5.39 room tone (the key jingle at 4.21-5.01 lands on the keys insert); 5.39-9.90 piano bed; 9.90 swell; 10.22 the singer enters; 14.50 phrase 1 ends; 15.72-20.64 phrase 2; 20.73 piano gap (L06 22.30-23.08); 23.76-26.78 final phrase; 26.96 final chord; 27.83 end card",
+   "joins": [
+    {
+     "at": 5.39,
+     "src_out": 6.58,
+     "src_in": 9.37,
+     "note": "inside the quiet bed (-45 dB) under the daughter's breath before L03; inaudible"
+    },
+    {
+     "at": 20.73,
+     "src_out": 24.71,
+     "src_in": 47.29,
+     "note": "on the picture cut potato -> keys: the end of sung phrase 2 into the piano gap; chord distance across the join 0.105 (the source's own continuation at either point is 0.18)"
+    },
+    {
+     "at": 23.4,
+     "src_out": 49.96,
+     "src_in": 53.48,
+     "note": "on the picture cut father -> her: the gap into the pickup of the final phrase; what follows matches what should follow (chord distance 0.028)"
+    }
+   ]
+  },
+  "lines_note": "L01 at its source time over the aerial; L02 keeps its source relation to the keys cut (starts 0.80 s before it); L03, L04, L06 sit exactly where their shot's picture puts them (offset = the picture's). No line is in the score. Dropped: L05 (with the party)."
+ },
+ "cut15": {
+  "duration": 15.0,
+  "shots": [
+   {
+    "n": 1,
+    "from": 2,
+    "start": 0.0,
+    "end": 1.8,
+    "dur": 1.8,
+    "src": [
+     2.923,
+     4.723
+    ],
+    "setup": "PORCH_WIDE_DAY",
+    "board": "boards/s02.jpg",
+    "change": "last 1.80 s of the porch wide (ends 0.04 s before its cut); carries L02 alone (0.70 s earlier than its picture offset, off-face)",
+    "lines": [
+     "L02"
+    ]
+   },
+   {
+    "n": 2,
+    "from": 4,
+    "start": 1.8,
+    "end": 4.83,
+    "dur": 3.03,
+    "src": [
+     7.725,
+     10.755
+    ],
+    "setup": "OTS_DAUGHTER_DAY",
+    "board": "boards/s04.jpg",
+    "change": "as in cut30 (from 1.50 s in); L03 in lip-sync",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 3,
+    "from": 5,
+    "start": 4.83,
+    "end": 6.82,
+    "dur": 1.99,
+    "src": [
+     11.903,
+     13.893
+    ],
+    "setup": "OTS_FATHER_DAY",
+    "board": "boards/s05.jpg",
+    "change": "last 1.99 s; L04 in lip-sync; cut 0.05 s after the swell",
+    "lines": [
+     "L04"
+    ]
+   },
+   {
+    "n": 4,
+    "from": 10,
+    "start": 6.82,
+    "end": 8.1,
+    "dur": 1.28,
+    "src": [
+     21.425,
+     22.705
+    ],
+    "setup": "TAILGATE_THEN",
+    "board": "boards/s10.jpg",
+    "change": "middle 1.28 s (he lifts a chip, she hugs the puppy)",
+    "lines": []
+   },
+   {
+    "n": 5,
+    "from": 11,
+    "start": 8.1,
+    "end": 9.29,
+    "dur": 1.19,
+    "src": [
+     22.929,
+     24.119
+    ],
+    "setup": "TAILGATE_NOW",
+    "board": "boards/s11.jpg",
+    "change": "first 1.19 s",
+    "lines": []
+   },
+   {
+    "n": 6,
+    "from": 26,
+    "start": 9.29,
+    "end": 11.54,
+    "dur": 2.25,
+    "src": [
+     47.403,
+     49.653
+    ],
+    "setup": "OTS_FATHER_NIGHT",
+    "board": "boards/s26.jpg",
+    "change": "whole shot; L06 in lip-sync",
+    "lines": [
+     "L06"
+    ]
+   },
+   {
+    "n": 7,
+    "from": 28,
+    "start": 11.54,
+    "end": 13.0,
+    "dur": 1.46,
+    "src": [
+     54.963,
+     56.423
+    ],
+    "setup": "PORCH_WIDE_NIGHT",
+    "board": "boards/s28.jpg",
+    "change": "1.46 s from 2.05 s in: the super already full; he kisses her head, they part",
+    "lines": []
+   },
+   {
+    "n": 8,
+    "from": 29,
+    "start": 13.0,
+    "end": 15.0,
+    "dur": 2.0,
+    "src": [
+     57.928,
+     59.928
+    ],
+    "setup": "END_CARD_FIELD",
+    "board": "boards/s29.jpg",
+    "change": "2.00 s from 0.08 s in",
+    "lines": []
+   }
+  ],
+  "shots_count": 8,
+  "average_shot": 1.88,
+  "median_shot": 1.9,
+  "lines": [
+   {
+    "id": "L02",
+    "words": "might be time to hang it up.",
+    "speaker": "char_father",
+    "start": 0.29,
+    "end": 1.7,
+    "speech": [
+     0.35,
+     1.6
+    ],
+    "clip": "set/lines/L02.wav",
+    "src": [
+     3.97,
+     5.22
+    ],
+    "clip_src": [
+     3.91,
+     5.32
+    ],
+    "in_score": false,
+    "placement": "off-face over the porch wide, moved 0.70 s earlier than the picture offset so it ends 0.20 s before the cut",
+    "shot": 1
+   },
+   {
+    "id": "L03",
+    "words": "How about one last time? Together.",
+    "speaker": "char_daughter",
+    "start": 1.88,
+    "end": 4.65,
+    "speech": [
+     2.29,
+     4.55
+    ],
+    "clip": "set/lines/L03.wav",
+    "src": [
+     8.22,
+     10.48
+    ],
+    "clip_src": [
+     7.81,
+     10.58
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 2
+   },
+   {
+    "id": "L04",
+    "words": "Okay, kiddo.",
+    "speaker": "char_father",
+    "start": 5.43,
+    "end": 6.29,
+    "speech": [
+     5.49,
+     6.19
+    ],
+    "clip": "set/lines/L04.wav",
+    "src": [
+     12.56,
+     13.26
+    ],
+    "clip_src": [
+     12.5,
+     13.36
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 3
+   },
+   {
+    "id": "L06",
+    "words": "It's your farm now.",
+    "speaker": "char_father",
+    "start": 10.35,
+    "end": 11.29,
+    "speech": [
+     10.41,
+     11.19
+    ],
+    "clip": "set/lines/L06.wav",
+    "src": [
+     48.52,
+     49.3
+    ],
+    "clip_src": [
+     48.46,
+     49.4
+    ],
+    "in_score": false,
+    "placement": "lip-sync with its shot",
+    "shot": 6
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 7.1,
+     "src_out": 16.39,
+     "start": 0.0,
+     "end": 9.29,
+     "offset": 7.1
+    },
+    {
+     "src_in": 47.29,
+     "src_out": 49.96,
+     "start": 9.29,
+     "end": 11.96,
+     "offset": 38.0
+    },
+    {
+     "src_in": 57.04,
+     "src_out": 60.08,
+     "start": 11.96,
+     "end": 15.0,
+     "offset": 45.08
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0.0,
+   "fade_out": 0.15
+  },
+  "arc": {
+   "hook": "0.00-1.80: the porch wide at golden hour: 'Might be time to hang it up.'",
+   "ask": "1.80-6.82: 'How about one last time? Together.' / 'Okay, kiddo.' over the shoulders; the piano swells into the song.",
+   "proof": "6.82-9.29: the then/now tailgate pair with the {BRAND} bag: the same two, the same spot, decades apart.",
+   "handover": "9.29-11.54: night, over her shoulder: 'It's your farm now.' in the piano gap.",
+   "payoff_end_card": "11.54-15.00: the porch wide with {SUPER} up as the final chord lands (11.96); end card at 13.00."
+  },
+  "pace_note": "8 shots, average 1.88 s, median 1.90 s (same pace as cut30). The 30 tightened: drops the aerial, the keys, the planting pair, the harvest, the keys handover and the hug close-up; keeps both act-1 OTS lines, the product pair and the handover line.",
+  "text": [
+   {
+    "shot": 7,
+    "words": "{SUPER}",
+    "in": 11.54,
+    "out": 13.0,
+    "position": "block x 27.7-72.2%, y 45.2-54.8%",
+    "note": "already full at the cut (source window starts after the fade)",
+    "file": "set/ui_super.png"
+   },
+   {
+    "shot": 8,
+    "words": "{BRAND} badge + {TAGLINE}",
+    "in": 13.0,
+    "out": 15.0,
+    "file": "set/ui_end_card.jpg"
+   },
+   {
+    "shot": 8,
+    "words": "{SUBLINE}",
+    "in": 13.37,
+    "full": 13.77,
+    "out": 15.0
+   }
+  ],
+  "end_card": {
+   "start": 13.0,
+   "end": 15.0,
+   "file": "set/ui_end_card.jpg",
+   "music": "final chord from 11.96 decaying; silence from 14.53"
+  },
+  "score_notes": {
+   "map": "segment 1: cut = src - 7.10; segment 2: cut = src - 38.00; segment 3: cut = src - 45.08",
+   "sections": "0.00-6.78 piano bed rising; 6.78 swell; 7.10 the singer enters; 8.70 end of the first sung words; 9.29 piano gap (L06 10.41-11.19); 11.96 final chord; 13.00 end card",
+   "joins": [
+    {
+     "at": 9.29,
+     "src_out": 16.39,
+     "src_in": 47.29,
+     "note": "on the picture cut tailgate -> father: the singer's breath after phrase 1 into the piano gap; a chord change on the downbeat"
+    },
+    {
+     "at": 11.96,
+     "src_out": 49.96,
+     "src_in": 57.04,
+     "note": "the gap straight into the final chord (the track's strongest onset), 0.42 s into the porch wide"
+    }
+   ]
+  },
+  "lines_note": "L02 moved 0.70 s earlier than its picture offset so it ends 0.20 s before the cut to her; L03, L04, L06 in lip-sync with their shots. Dropped: L01, L05."
+ }
+}

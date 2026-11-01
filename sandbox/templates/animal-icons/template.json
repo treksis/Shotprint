@@ -1,0 +1,2273 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 60.06,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 36,
+  "average_shot": 1.67,
+  "median_shot": 1.61,
+  "title": "animal-icons",
+  "format": "60 s big-game animal epic, cut to 30 s and 15 s",
+  "picture_area": "2.20:1 letterbox inside 1920x1080: black bars y 0-103 and 977-1080 (9.6% each); picture 1920x874",
+  "cuts_per_minute": 34.97
+ },
+ "acts": [
+  {
+   "name": "Meeting",
+   "shots": [
+    1,
+    8
+   ],
+   "time": [
+    0.0,
+    14.97
+   ],
+   "function": "a newborn draft foal on a ranch finds a downy eaglet under a fallen log; tenderness, quiet intro music"
+  },
+  {
+   "name": "Storm",
+   "shots": [
+    9,
+    12
+   ],
+   "time": [
+    14.97,
+    22.11
+   ],
+   "function": "the eaglet alone in a night storm; the foal goes out and shelters it; the band and the vocal enter on the shelter"
+  },
+  {
+   "name": "Winter",
+   "shots": [
+    13,
+    16
+   ],
+   "time": [
+    22.11,
+    27.4
+   ],
+   "function": "seasons pass: tracks side by side in the snow, the yearling on the farm"
+  },
+  {
+   "name": "Lessons",
+   "shots": [
+    17,
+    24
+   ],
+   "time": [
+    27.4,
+    37.12
+   ],
+   "function": "summer: the young eagle rides the running yearling and tries to fly, falls, tries again; ranchers watch"
+  },
+  {
+   "name": "Grown",
+   "shots": [
+    25,
+    32
+   ],
+   "time": [
+    37.12,
+    50.22
+   ],
+   "function": "the grown horse charges; the eagle spreads its wings behind it (the winged-horse image) and finally flies free"
+  },
+  {
+   "name": "Product and tag",
+   "shots": [
+    33,
+    36
+   ],
+   "time": [
+    50.22,
+    60.06
+   ],
+   "function": "glass of lager on the rail, tagline, the rancher's dry joke, end card"
+  }
+ ],
+ "shots": [
+  {
+   "action": "0.0-0.8: the foal skitters in from the pasture side and fills the doorway mid-trot; 0.8-1.5: it stops in the opening, ears up, head turned to the pasture. Dark barn interior: the draft foal skitters into the bright open doorway and stops there in silhouette.",
+   "setup": "barn_door_wide",
+   "location": "loc_barn: dark barn interior, open sliding door to the bright pasture (no sign on the walls)",
+   "cast": [
+    "char_foal"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "wide",
+   "subject_in_frame": "bright doorway rectangle x 59-71%, y 22-84%; the foal a black silhouette inside it at x 62-68%, y 48-80% (6% of width); stall gate with white X-brace x 43-56%, y 40-78%; everything else near-black. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "low, ~60 cm above the straw floor, square to the back wall, normal lens ~50 mm, deep focus on the doorway",
+   "camera_move": "locked off (change 2.4)",
+   "light": "only daylight through the door: hard late-afternoon backlight; interior unlit, frame average 23-24/255, doorway ~200; rim light on the gate and the foal's outline; no practicals",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 0.0-1.84: near silence, soft room tone and a few quiet high piano notes (-50 to -40 dB), the first G chord (piano + organ) strikes at 1.10 (-27 dB)",
+   "render": "first + last frame on loc_barn with char_foal_sheet: plate A = boards/s01.jpg with the foal mid-trot entering the doorway, plate B = foal standing in the doorway; keep the frame at 20-25/255",
+   "board": "boards/s01.jpg",
+   "n": 1,
+   "start": 0,
+   "end": 1.84,
+   "dur": 1.84,
+   "in": "start",
+   "brightness": {
+    "start": 23,
+    "mid": 24,
+    "end": 24
+   },
+   "colour": "#171614",
+   "change": 2.37,
+   "sound": "-49.52 LUFS mean, -26.03 peak",
+   "voice": null
+  },
+  {
+   "action": "Summer pasture: the foal gallops toward camera across the grass, red barn and silos behind; camera pans with it.",
+   "setup": "pasture_pan",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 2,
+   "start": 1.84,
+   "end": 3.55,
+   "dur": 1.71,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 82,
+    "end": 92
+   },
+   "colour": "#535341",
+   "change": 20.24,
+   "sound": "-36.83 LUFS mean, -30.36 peak",
+   "voice": null
+  },
+  {
+   "action": "Low wide at the thicket edge: the foal trots past a long fallen log, sunlit.",
+   "setup": "log_thicket_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 3,
+   "start": 3.55,
+   "end": 5.46,
+   "dur": 1.92,
+   "in": "cut",
+   "brightness": {
+    "start": 63,
+    "mid": 68,
+    "end": 70
+   },
+   "colour": "#42423a",
+   "change": 14.68,
+   "sound": "-31.94 LUFS mean, -26.06 peak",
+   "voice": null
+  },
+  {
+   "action": "Ground level under the fallen log: a twig nest with a downy eaglet in the foreground, the foal's white-feathered legs walk up behind.",
+   "setup": "under_log_nest",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 4,
+   "start": 5.46,
+   "end": 7.26,
+   "dur": 1.79,
+   "in": "cut",
+   "brightness": {
+    "start": 45,
+    "mid": 44,
+    "end": 45
+   },
+   "colour": "#2e2b21",
+   "change": 5.58,
+   "sound": "-33.41 LUFS mean, -27.55 peak",
+   "voice": null
+  },
+  {
+   "action": "0.0-0.5: the foal's head dips into frame looking down; 0.5-1.15: it turns to face the lens, ears pricked, head cocked, nostrils flaring: first look at the eaglet",
+   "setup": "nest_pov_up",
+   "location": "pasture edge by the fallen tree, looking straight up at a pale sky with soft green trees at the left and right edges",
+   "cast": [
+    "char_foal"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "close-up",
+   "subject_in_frame": "start (boards/s05a.jpg): head and neck in left three-quarter profile from the left, head x 12-55%, muzzle at x 15%, y 35-60%, ears at the top edge; end (boards/s05b.jpg): the face turned to the lens, centred x 52-72%, from the top edge to the bottom edge (90% of the picture height, 30% of width), white blaze vertical in the middle. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "worm's-eye from the nest on the ground, looking up ~45 deg at the foal (the eaglet's point of view), wide-normal lens ~35 mm, shallow depth (trees soft)",
+   "camera_move": "locked off; the head moves: dips in from the left over 0.5 s, then swings to face the lens and cocks ~20 deg",
+   "light": "bright soft daylight from above, sky 140-150/255; face front-lit softly; frame 118-148",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 7.26-8.51: intro, quiet sustained chord and piano arpeggio (-28 dB)",
+   "render": "first + last frame: boards/s05a.jpg -> boards/s05b.jpg as plates with char_foal_sheet (white blaze, pink-grey muzzle) on a sky-and-trees background",
+   "board": "boards/s05.jpg",
+   "n": 5,
+   "start": 7.26,
+   "end": 8.51,
+   "dur": 1.25,
+   "in": "cut",
+   "brightness": {
+    "start": 118,
+    "mid": 138,
+    "end": 148
+   },
+   "colour": "#838785",
+   "change": 32.65,
+   "sound": "-27.59 LUFS mean, -26.43 peak",
+   "voice": null
+  },
+  {
+   "action": "Close on the downy grey-white eaglet in its twig nest, looking up.",
+   "setup": "nest_close",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 6,
+   "start": 8.51,
+   "end": 9.84,
+   "dur": 1.33,
+   "in": "cut",
+   "brightness": {
+    "start": 41,
+    "mid": 40,
+    "end": 39
+   },
+   "colour": "#2b261f",
+   "change": 6.74,
+   "sound": "-28.03 LUFS mean, -25.87 peak",
+   "voice": null
+  },
+  {
+   "action": "0.0-0.9: the foal lowers its muzzle and sniffs the eaglet; 0.9-1.65: it lifts its head out of frame; the eaglet wobbles to its feet and looks up after it",
+   "setup": "ground_under_log",
+   "location": "loc_log_nest: twig nest on bare earth under the fallen tree's low branches, sunlit pasture beyond",
+   "cast": [
+    "char_foal",
+    "char_eaglet"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "dark shaded earth band across the bottom 25%; nest x 0-20%, y 45-75%; eaglet at x 34-40%, y 70-88% (6% of width); the foal's muzzle hangs from the top edge at x 50-62%, down to y 55%; a white-feathered foreleg at x 88-100%, y 30-90%; branches across the top 30%. End: muzzle out of frame, eaglet standing at x 42-48% by the nest. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "on the ground, lens ~10 cm above the soil, level, normal lens ~50 mm, shallow focus on the eaglet; pasture soft",
+   "camera_move": "slow drift right ~3% of frame width over the shot (change 19)",
+   "light": "open shade under the tree, ground 45-54/255; sunlit grass behind ~110; warm afternoon",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 9.84-12.68: intro, sustained minor chord, piano; next chord at 11.0 (-25 dB)",
+   "render": "first + last frame on loc_log_nest with char_foal_sheet + char_eaglet_sheet: plate A = boards/s07.jpg (muzzle down at the eaglet), plate B = same set-up, head lifted out, eaglet standing",
+   "board": "boards/s07.jpg",
+   "n": 7,
+   "start": 9.84,
+   "end": 12.68,
+   "dur": 2.84,
+   "in": "cut",
+   "brightness": {
+    "start": 45,
+    "mid": 50,
+    "end": 54
+   },
+   "colour": "#333124",
+   "change": 19.37,
+   "sound": "-26.43 LUFS mean, -23.38 peak",
+   "voice": null
+  },
+  {
+   "action": "still tableau: the foal stands looking back at the eaglet sitting in the grass; the two are friends now",
+   "setup": "pasture_sunset_wide",
+   "location": "loc_pasture_sunset: pasture below a ridge with two trees, grey silos and a red barn, white rail fence",
+   "cast": [
+    "char_foal",
+    "char_eaglet"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "wide",
+   "subject_in_frame": "ridge line at y 36%; silos x 2-12% and x 54-60%, red barn x 64-95% on the ridge; trees at x 25% and x 55% reaching the top; the foal small at x 56-60%, y 63-79% (4% of width), standing; the eaglet a white fluff at x 28-32%, y 79-90% in the foreground grass; dry orange weeds along the bottom edge. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "low, ~50 cm above the grass, level, long lens ~85 mm compressing the ridge, foreground weeds soft",
+   "camera_move": "locked off (change 1.8)",
+   "light": "dusk after sunset: pink-peach sky ~170/255, ground in shadow 40-65/255, frame 65-67",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 12.68-14.97: intro, chord change at 13.1, a low boom at 14.0 (dropped in the cuts)",
+   "render": "first + last frame on loc_pasture_sunset with char_foal_sheet + char_eaglet_sheet, plates from boards/s08.jpg; nothing moves but grass and a tail flick",
+   "board": "boards/s08.jpg",
+   "n": 8,
+   "start": 12.68,
+   "end": 14.97,
+   "dur": 2.29,
+   "in": "cut",
+   "brightness": {
+    "start": 65,
+    "mid": 67,
+    "end": 67
+   },
+   "colour": "#4c4031",
+   "change": 1.84,
+   "sound": "-24.77 LUFS mean, -19.81 peak",
+   "voice": null
+  },
+  {
+   "action": "the eaglet sits hunched and alone in the rain, down plastered flat, shivering",
+   "setup": "storm_ground",
+   "location": "loc_storm_pasture at night, ground level",
+   "cast": [
+    "char_eaglet"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "wide",
+   "subject_in_frame": "the soaked eaglet alone at x 44-50%, y 52-70% (6% of width) on dark grass; the field dissolves into rain haze above y 30%; no horizon detail. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "ground level ~20 cm, level, normal lens ~50 mm, background lost in rain",
+   "camera_move": "locked off (change 0.9)",
+   "light": "night storm: dull teal ambient, no key, frame 37/255 throughout; rain streaks catching faint light",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 14.97-16.73: rain hiss starts at 15.0; a new bar (sustained major chord, organ and bass swell) at 15.14",
+   "render": "first + last frame on loc_storm_pasture darkened to ~37/255 with char_eaglet_sheet (wet down), plates from boards/s09.jpg",
+   "board": "boards/s09.jpg",
+   "n": 9,
+   "start": 14.97,
+   "end": 16.73,
+   "dur": 1.75,
+   "in": "cut",
+   "brightness": {
+    "start": 37,
+    "mid": 37,
+    "end": 37
+   },
+   "colour": "#1e2523",
+   "change": 0.88,
+   "sound": "-25.11 LUFS mean, -23.97 peak",
+   "voice": null
+  },
+  {
+   "action": "the foal stands inside peering out at the rain, ears forward, worried; it blinks",
+   "setup": "barn_door_night",
+   "location": "loc_barn at night: the open door seen from inside, rain outside",
+   "cast": [
+    "char_foal"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "close-up",
+   "subject_in_frame": "frame split by the dark door edge: open doorway x 0-35% showing teal rain; the foal's head in three-quarter left peers round the jamb at x 35-55%, blaze at x 40%, head 70% of the picture height (y 15-85%); dark red-brown door boards fill x 55-100%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "inside the barn at the foal's eye height ~1.2 m, level, normal lens ~50 mm, focus on the eye",
+   "camera_move": "very slow push in, ~3% scale over the shot",
+   "light": "cold teal spill from the doorway on the blaze; interior black; frame 23-24/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 16.73-17.89: rain; the sustained chord swells",
+   "render": "first + last frame on loc_barn (night: doorway teal and wet) with char_foal_sheet, plates from boards/s10.jpg; keep ~24/255",
+   "board": "boards/s10.jpg",
+   "n": 10,
+   "start": 16.73,
+   "end": 17.89,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 24,
+    "mid": 23,
+    "end": 24
+   },
+   "colour": "#141617",
+   "change": 4.94,
+   "sound": "-25.85 LUFS mean, -24.68 peak",
+   "voice": null
+  },
+  {
+   "action": "0.0-1.0: the eaglet shakes and flaps its stubby wings in the rain; 1.0-2.5: the foal's feathered legs step in on both sides; the eaglet looks up: it is under the foal",
+   "setup": "storm_ground",
+   "location": "loc_storm_pasture at night, ground level",
+   "cast": [
+    "char_eaglet",
+    "char_foal"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "medium wide",
+   "subject_in_frame": "the eaglet at x 43-50%, y 35-70% (7% of width) on wet grass; start: nothing around it; end (boards/s11b.jpg): the foal's white-feathered legs, out of focus, fill x 0-15% and x 68-92% of the foreground, framing it. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "ground level ~20 cm, level, normal lens ~50 mm, focus on the eaglet, legs soft",
+   "camera_move": "locked off",
+   "light": "night storm teal, 31-36/255, rain",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 17.89-20.56: rain; the chord swells; the band enters on the downbeat at 19.67 (drums, bass, electric guitar); first sung pickup at 20.3",
+   "render": "first + last frame: boards/s11a.jpg -> boards/s11b.jpg as plates on loc_storm_pasture with char_eaglet_sheet + char_foal_sheet (legs only)",
+   "board": "boards/s11.jpg",
+   "n": 11,
+   "start": 17.89,
+   "end": 20.56,
+   "dur": 2.67,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 31,
+    "end": 34
+   },
+   "colour": "#1c201f",
+   "change": 3.63,
+   "sound": "-24.71 LUFS mean, -21.21 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "the foal stands its ground in the storm over the hidden eaglet, mane blowing; at 1.0 s it bows its head down-left toward its chest",
+   "setup": "storm_low_wide",
+   "location": "loc_storm_pasture: low horizon, white rail fence, silos and barn at right, storm sky",
+   "cast": [
+    "char_foal"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "wide",
+   "subject_in_frame": "the foal full-body at x 36-48%, y 25-92% (12% of width, 67% of height), three-quarter to the lens; horizon with the white fence at y 72%; silos and barn x 65-100% on the horizon; storm sky fills the top 70%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "low, ~40 cm, looking slightly up, wide-normal lens ~35 mm, deep focus",
+   "camera_move": "slow push in, ~5% scale over 1.4 s (change 14)",
+   "light": "storm daylight: flat teal-grey sky 100-120/255, the foal near silhouette with soft fill; frame 76-86",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 20.56-22.11: full band, the first sung line begins ('Cause I'm as free...')",
+   "render": "first + last frame on loc_storm_pasture with char_foal_sheet: plate A = boards/s12.jpg, plate B = 5% tighter, head bowed",
+   "board": "boards/s12.jpg",
+   "n": 12,
+   "start": 20.56,
+   "end": 22.11,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 86,
+    "mid": 82,
+    "end": 76
+   },
+   "colour": "#415451",
+   "change": 13.91,
+   "sound": "-22.8 LUFS mean, -21.29 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "tracks of hoof and claw side by side in the snow; the tilt finds the yearling walking home with the farm behind (the two still travel together)",
+   "setup": "winter_tilt",
+   "location": "loc_winter_farm: snow field, red barns with snowy roofs, white fence",
+   "cast": [
+    "char_yearling"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "wide",
+   "subject_in_frame": "start (boards/s13a.jpg): snow fills the frame, a line of hoofprints with small bird tracks beside it curves from x 75%, y 95% up to x 50%, y 30%; bare twig x 5-25% at left; end (boards/s13b.jpg): horizon at y 22%, red barns x 0-60% along the top, the yearling small (3% of width) at x 31-35%, y 25-42%, walking toward the lens at the end of the tracks. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "standing height ~1.5 m, starts looking down ~45 deg, normal lens ~50 mm, deep focus",
+   "camera_move": "tilt up ~25 deg over 1.2 s, ease-in-out, revealing the farm and the yearling",
+   "light": "overcast winter daylight, no shadows, snow 120-140/255, cold blue-grey",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 22.11-23.94: band, sung 'as a bird'",
+   "render": "first + last frame: boards/s13a.jpg -> boards/s13b.jpg as plates on loc_winter_farm with char_yearling_sheet",
+   "board": "boards/s13.jpg",
+   "n": 13,
+   "start": 22.11,
+   "end": 23.94,
+   "dur": 1.84,
+   "in": "cut",
+   "brightness": {
+    "start": 123,
+    "mid": 123,
+    "end": 120
+   },
+   "colour": "#6e7c78",
+   "change": 18.27,
+   "sound": "-24.21 LUFS mean, -21.63 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "From inside a dim barn: the yearling small outside in the snow, feed sacks and hay at right.",
+   "setup": "barn_out_snow",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 14,
+   "start": 23.94,
+   "end": 25.53,
+   "dur": 1.58,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 53,
+    "end": 54
+   },
+   "colour": "#343432",
+   "change": 1.5,
+   "sound": "-22.83 LUFS mean, -21.46 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "Snowy paddock through the barn door: the yearling stands, two adult horses behind, a spotted farm dog lying in the snow.",
+   "setup": "barn_door_snow",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 15,
+   "start": 25.53,
+   "end": 26.69,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 72,
+    "mid": 73,
+    "end": 73
+   },
+   "colour": "#414948",
+   "change": 10.48,
+   "sound": "-25.19 LUFS mean, -24.59 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "The farm dog lies in the snow, the yearling's legs soft in the foreground.",
+   "setup": "dog_snow",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 16,
+   "start": 26.69,
+   "end": 27.4,
+   "dur": 0.71,
+   "in": "cut",
+   "brightness": {
+    "start": 95,
+    "mid": 95,
+    "end": 95
+   },
+   "colour": "#546160",
+   "change": 3.27,
+   "sound": "-24.62 LUFS mean, -23.84 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "Summer transition: low sun flaring through leaves, out of focus.",
+   "setup": "leaf_flare",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 17,
+   "start": 27.4,
+   "end": 28.65,
+   "dur": 1.25,
+   "in": "cut",
+   "brightness": {
+    "start": 66,
+    "mid": 76,
+    "end": 81
+   },
+   "colour": "#4d473e",
+   "change": 9.47,
+   "sound": "-26.05 LUFS mean, -24.86 peak",
+   "voice": "As a bird now,"
+  },
+  {
+   "action": "Low tracking through tall grass: the yearling runs with the young eagle riding on its back.",
+   "setup": "grass_tracking_low",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 18,
+   "start": 28.65,
+   "end": 30.28,
+   "dur": 1.63,
+   "in": "cut",
+   "brightness": {
+    "start": 77,
+    "mid": 80,
+    "end": 95
+   },
+   "colour": "#56532e",
+   "change": 15.32,
+   "sound": "-24.05 LUFS mean, -23.41 peak",
+   "voice": "and this bird you'll never change"
+  },
+  {
+   "action": "0.0-0.4: the young eagle spreads its wings on the running horse's back; 0.4-0.8: it hops into the air, flapping hard; 0.8-1.15: it drops behind as the horse runs on (its first try at flying)",
+   "setup": "meadow_tracking_low",
+   "location": "loc_meadow: tall summer grass, wooded hills",
+   "cast": [
+    "char_yearling",
+    "char_young_eagle"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "medium",
+   "subject_in_frame": "start (boards/s19a.jpg): the running horse's back a motion-blurred hump across x 20-100%, y 55-85%, the young eagle on it at x 25-40%, y 40-70%, wings opening; mid (boards/s19.jpg): the bird airborne at x 25-40%, y 0-30%, horse rump lower right; end (boards/s19b.jpg): blurred grass only. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "at the horse's back height ~1.3 m, tracking alongside, long lens ~85 mm, heavy motion blur in the grass",
+   "camera_move": "fast track right with the horse (about one frame width per second); the bird rises out of the top and drops behind",
+   "light": "bright afternoon sun from the left, backlit grass 82-106/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 30.28-31.61: band; in the cuts this shot sits under the sung 'bird'",
+   "render": "first + last frame: boards/s19a.jpg -> boards/s19b.jpg as plates on loc_meadow with char_yearling_sheet + char_young_eagle_sheet; motion blur from the move",
+   "board": "boards/s19.jpg",
+   "n": 19,
+   "start": 30.28,
+   "end": 31.61,
+   "dur": 1.33,
+   "in": "cut",
+   "brightness": {
+    "start": 82,
+    "mid": 106,
+    "end": 83
+   },
+   "colour": "#665f3a",
+   "change": 26.37,
+   "sound": "-24.8 LUFS mean, -23.71 peak",
+   "voice": "and this bird you'll never change"
+  },
+  {
+   "action": "Ground level: the young eagle tumbles into the dirt in a puff of dust.",
+   "setup": "dirt_ground",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 20,
+   "start": 31.61,
+   "end": 33.16,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 62,
+    "mid": 52,
+    "end": 54
+   },
+   "colour": "#3b3527",
+   "change": 20.76,
+   "sound": "-23.7 LUFS mean, -23.01 peak",
+   "voice": "and this bird you'll never change"
+  },
+  {
+   "action": "Two ranchers in tall flowering grass watch, amused; a pickup behind.",
+   "setup": "ranchers_grass",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 21,
+   "start": 33.16,
+   "end": 34.24,
+   "dur": 1.08,
+   "in": "cut",
+   "brightness": {
+    "start": 83,
+    "mid": 83,
+    "end": 84
+   },
+   "colour": "#555433",
+   "change": 6,
+   "sound": "-25.97 LUFS mean, -24.21 peak",
+   "voice": "and this bird you'll never change"
+  },
+  {
+   "action": "the yearling canters left to right, the young eagle balancing on its back with wings half out",
+   "setup": "meadow_side_tracking",
+   "location": "loc_meadow: tall summer grass, wooded hills",
+   "cast": [
+    "char_yearling",
+    "char_young_eagle"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "medium wide",
+   "subject_in_frame": "the yearling in full side profile cantering left to right, body x 10-72%, y 8-92% (62% of width); the young eagle perched on its withers at x 45-50%, y 3-18%; hills fill the top 25%; at the end a blurred grass stalk wipes across x 0-40%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "at the horse's shoulder height ~1.2 m, side-on, long lens ~100 mm, tracking at its speed, shallow depth",
+   "camera_move": "track right with the horse at matched speed; foreground grass wipes across at 0.8 s",
+   "light": "warm afternoon sun from behind-left, backlit mane, 75-83/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 34.24-35.29: band; in the cuts, under the held 'now'",
+   "render": "first + last frame on loc_meadow with char_yearling_sheet + char_young_eagle_sheet: plate A = boards/s22.jpg, plate B = the horse 15% further right",
+   "board": "boards/s22.jpg",
+   "n": 22,
+   "start": 34.24,
+   "end": 35.29,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 75,
+    "end": 83
+   },
+   "colour": "#525038",
+   "change": 16.79,
+   "sound": "-23.56 LUFS mean, -23.18 peak",
+   "voice": "and this bird you'll never change"
+  },
+  {
+   "action": "Close tracking on the yearling's running legs, white feathering flying.",
+   "setup": "legs_tracking",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 23,
+   "start": 35.29,
+   "end": 36.12,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 95,
+    "mid": 84,
+    "end": 80
+   },
+   "colour": "#59573a",
+   "change": 21.73,
+   "sound": "-24.51 LUFS mean, -24.01 peak",
+   "voice": null
+  },
+  {
+   "action": "Hooves splash through shallow icy water, very close.",
+   "setup": "splash_close",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 24,
+   "start": 36.12,
+   "end": 37.12,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 82,
+    "mid": 79,
+    "end": 83
+   },
+   "colour": "#4a504f",
+   "change": 28.86,
+   "sound": "-22.6 LUFS mean, -20.69 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "Time jump: the grown horse's head and chest come head-on out of cold mist.",
+   "setup": "mist_headon",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 25,
+   "start": 37.12,
+   "end": 38.12,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 55,
+    "mid": 59,
+    "end": 65
+   },
+   "colour": "#343b3c",
+   "change": 13.03,
+   "sound": "-22.09 LUFS mean, -20.42 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "Whip transition: snowy branches blur to warm bokeh to a sunlit field through fence posts.",
+   "setup": "whip_transition",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 26,
+   "start": 38.12,
+   "end": 40.33,
+   "dur": 2.21,
+   "in": "cut",
+   "brightness": {
+    "start": 110,
+    "mid": 89,
+    "end": 65
+   },
+   "colour": "#4f5148",
+   "change": 26.69,
+   "sound": "-23.91 LUFS mean, -22.79 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "the grown horse gallops straight at camera, mane flying, about to jump the log; dust and seeds float in the backlight",
+   "setup": "log_field_low",
+   "location": "loc_log_field: fallen log across dry grass, dark oaks, hazy backlit sky",
+   "cast": [
+    "char_horse"
+   ],
+   "wardrobe": "none (animal)",
+   "shot_size": "wide",
+   "subject_in_frame": "the grown horse head-on at x 45-55%, y 18-55% (10% of width) galloping toward the lens behind the dark log that crosses the frame at y 55-75%; tall seed-head grass soft in the left foreground x 5-25%; dark oaks frame left and right; hazy bright sky at the top. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "very low ~30 cm behind the grass, looking slightly up, long lens ~100 mm, shallow focus",
+   "camera_move": "locked off; the horse grows from 10% to 14% of the width as it comes",
+   "light": "low golden sun behind it, haze, frame 73-77/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 40.33-41.46: the climax section (72 bpm)",
+   "render": "first + last frame on loc_log_field with char_horse_sheet: plate A = boards/s27.jpg, plate B = horse 40% larger, front hooves lifting",
+   "board": "boards/s27.jpg",
+   "n": 27,
+   "start": 40.33,
+   "end": 41.46,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 73,
+    "mid": 73,
+    "end": 77
+   },
+   "colour": "#4a4841",
+   "change": 11.76,
+   "sound": "-22.82 LUFS mean, -22.12 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "Very low: the horse's chest and legs clear the log, dust in the sun.",
+   "setup": "log_low_legs",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 28,
+   "start": 41.46,
+   "end": 42.29,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 43,
+    "mid": 41,
+    "end": 41
+   },
+   "colour": "#2c2721",
+   "change": 20.94,
+   "sound": "-22.61 LUFS mean, -21.92 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "0.0-0.8: the horse rises onto its hind legs on the mound; the eagle behind it lifts its wings; 0.8-2.4: the wings open fully above its back: for a beat it is a winged horse, the sun flaring beside it",
+   "setup": "mound_silhouette",
+   "location": "loc_log_field shot into the sun: low dirt mound, dead branch tangle",
+   "cast": [
+    "char_horse",
+    "char_eagle"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "wide",
+   "subject_in_frame": "the horse rearing on the mound at x 40-55%, y 10-80% (14% of width); the eagle hidden exactly behind its withers opens its wings so they read as the horse's: start (boards/s29a.jpg) wingspan x 35-62%, end (boards/s29b.jpg) x 22-75% with tips up to y 5%; sun starburst just left of the horse at x 33%, y 55%; branch tangle x 0-30%; dark mound x 55-100% bottom right. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "on the ground, looking up ~15 deg, wide lens ~28 mm, deep focus, straight into the sun",
+   "camera_move": "locked off (change 4.8)",
+   "light": "backlit by the low sun (flare, starburst), horse and eagle in silhouette with a golden rim; sky 150-180/255, frame 114",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 42.29-45.09: climax, downbeat at 42.94, sung 'Lord...' from 44.0",
+   "render": "first + last frame: boards/s29a.jpg -> boards/s29b.jpg as plates on loc_log_field into the sun with char_horse_sheet + char_eagle_sheet; the eagle sits exactly behind the withers so its wings read as the horse's",
+   "board": "boards/s29.jpg",
+   "n": 29,
+   "start": 42.29,
+   "end": 45.09,
+   "dur": 2.79,
+   "in": "cut",
+   "brightness": {
+    "start": 114,
+    "mid": 114,
+    "end": 114
+   },
+   "colour": "#6f716c",
+   "change": 4.75,
+   "sound": "-23.77 LUFS mean, -21.7 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "Low close: hooves land in the dust.",
+   "setup": "hooves_low",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 30,
+   "start": 45.09,
+   "end": 45.88,
+   "dur": 0.79,
+   "in": "cut",
+   "brightness": {
+    "start": 72,
+    "mid": 74,
+    "end": 75
+   },
+   "colour": "#4f483c",
+   "change": 12.7,
+   "sound": "-22.77 LUFS mean, -22.51 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "the horse runs at the lens; the eagle riding on its head beats its wings and lifts off upward",
+   "setup": "headon_run",
+   "location": "loc_log_field edge: oak trees soft in golden haze",
+   "cast": [
+    "char_horse",
+    "char_eagle"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "the horse's head and chest head-on at x 40-60%, from y 45% to the bottom edge, blaze centred at x 50%; the eagle on its poll with wings raised in a V from x 25% to 70% (start, boards/s31a.jpg), rising to the top edge (end, boards/s31b.jpg). positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "eye level with the head ~2 m, long lens ~135 mm, tracking back ahead of the horse, shallow focus, trees soft",
+   "camera_move": "track back at the horse's running speed, slight bob; the horse stays centred",
+   "light": "hazy golden backlight from upper left, rim on the mane, 98-100/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score 45.88-48.17: climax, sung 'I can't change' (ends 47.3)",
+   "render": "first + last frame: boards/s31a.jpg -> boards/s31b.jpg as plates with char_horse_sheet + char_eagle_sheet on soft oaks and haze (loc_log_field background)",
+   "board": "boards/s31.jpg",
+   "n": 31,
+   "start": 45.88,
+   "end": 48.17,
+   "dur": 2.29,
+   "in": "cut",
+   "brightness": {
+    "start": 98,
+    "mid": 100,
+    "end": 99
+   },
+   "colour": "#676156",
+   "change": 7.38,
+   "sound": "-23.51 LUFS mean, -23.04 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "the eagle lifts off the horse's back and flies toward the lens, wings wide; the horse watches it go",
+   "setup": "haze_flyaway",
+   "location": "loc_golden_field edge with oaks, heavy backlit haze",
+   "cast": [
+    "char_horse",
+    "char_eagle"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "wide",
+   "subject_in_frame": "start (boards/s32a.jpg): the horse at x 55-75%, y 45-100%, the eagle just above its back at x 40-75%, y 25-50%, wings spread; end (boards/s32b.jpg): the eagle flying at the lens at x 45-75%, y 25-45%, wingspan 30% of width; the horse small at x 75% lower right, half lost in glare; legal line along the bottom at y 95%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "eye level ~1.5 m, long lens ~100 mm, focus on the eagle, strong flare",
+   "camera_move": "locked off; the glare grows (91 -> 143/255) as the eagle comes toward the lens",
+   "light": "contre-jour low sun in bright haze, frame rising 91-143/255",
+   "text": [
+    {
+     "words": "{LEGAL}",
+     "default": "Please enjoy responsibly. Animals filmed under professional supervision.",
+     "file": "set/ui_legal.png",
+     "position": "centred, y 95% of the picture",
+     "size": "cap height 1.3% of picture height, white 85%",
+     "in": 48.2,
+     "out": 52.09,
+     "animation": "cut in, no fade"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score 48.17-50.22: bass walk-up from 48.9, sung 'Won't you fly high' from 49.0, downbeat at 49.60",
+   "render": "first + last frame: boards/s32a.jpg -> boards/s32b.jpg as plates on loc_golden_field (haze) with char_eagle_sheet + char_horse_sheet; legal line laid in post",
+   "board": "boards/s32.jpg",
+   "n": 32,
+   "start": 48.17,
+   "end": 50.22,
+   "dur": 2.04,
+   "in": "cut",
+   "brightness": {
+    "start": 91,
+    "mid": 131,
+    "end": 143
+   },
+   "colour": "#82786a",
+   "change": 26.72,
+   "sound": "-23.71 LUFS mean, -22.47 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "a weathered hand holds the full glass of lager up against the golden field; bubbles rise; the super fades in",
+   "setup": "glass_hand_close",
+   "location": "loc_rail: soft golden valley behind; a dark door frame at the left edge",
+   "cast": [
+    "char_rancher",
+    "product_glass"
+   ],
+   "wardrobe": "the rancher's weathered hand and plaid cuff only",
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "the full glass tilted ~25 deg right fills x 25-92%, cut by the top and bottom edges; the hand holds it from the right, thumb at x 74-85%, y 40-62%; dark out-of-focus door frame x 0-15%; golden field soft behind; super centred over the glass. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "level with the glass, macro lens ~100 mm, very shallow focus on the glass surface and bubbles",
+   "camera_move": "locked off with a slight handheld drift (change 2.3)",
+   "light": "warm low sun behind, glowing through the beer (amber), frame 105/255",
+   "text": [
+    {
+     "words": "{SUPER_1}",
+     "default": "Made of the land",
+     "file": "set/ui_super.png",
+     "position": "centred x 50%, y 50% of the picture",
+     "size": "cap height 5.5% of picture height (66 px at 1080), white bold serif, 36% of frame width",
+     "in": 50.7,
+     "out": 52.09,
+     "animation": "fade in 0.30 s (50.70-51.00), holds to the cut"
+    },
+    {
+     "words": "{LEGAL}",
+     "file": "set/ui_legal.png",
+     "position": "centred, y 95%",
+     "in": 48.2,
+     "out": 52.09,
+     "animation": "continues from shot 32"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score 50.22-52.09: sung 'fly high' tail; next downbeat 52.93",
+   "render": "first + last frame from boards/s33.jpg with product_glass_sheet and the rancher's hand (char_rancher_sheet skin tone); super and legal composited from ui_super.png and ui_legal.png",
+   "board": "boards/s33.jpg",
+   "n": 33,
+   "start": 50.22,
+   "end": 52.09,
+   "dur": 1.88,
+   "in": "cut",
+   "brightness": {
+    "start": 105,
+    "mid": 105,
+    "end": 106
+   },
+   "colour": "#706854",
+   "change": 2.3,
+   "sound": "-22.83 LUFS mean, -22.19 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "0.0-0.2: the glass alone on the rail; 0.2-1.3: a hand sets the cold can beside it and withdraws; the tagline builds in two lines",
+   "setup": "rail_product",
+   "location": "loc_rail: weathered pale rail across the lower third, soft golden valley",
+   "cast": [
+    "char_rancher",
+    "product_glass",
+    "product_can"
+   ],
+   "wardrobe": "the rancher's bare forearm only",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "the glass stands on the rail at x 29-46% (17% of width), y 12-85% (73% of the picture height); rail top edge at y 85% across the full width; from 0.2 s a forearm enters from the left and sets the can down left of the glass at x 16-29%, y 25-85%, then leaves by 1.3 s; tagline block x 50-78%, y 40-57%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "level with the rail top ~1.1 m, normal-long lens ~75 mm, shallow focus on glass and can, field soft",
+   "camera_move": "locked off",
+   "light": "warm low sun from the right behind, rays in the haze, the glass glowing; frame 119-124/255",
+   "text": [
+    {
+     "words": "{TAGLINE_1}",
+     "default": "Some things",
+     "file": "set/ui_tagline.png",
+     "position": "left-aligned at x 50%, line centre y 44% of the picture",
+     "size": "cap height 6.4% of picture height (62 px font at 1080), white bold serif",
+     "in": 52.2,
+     "out": 54.43,
+     "animation": "fade in 0.25 s"
+    },
+    {
+     "words": "{TAGLINE_2}",
+     "default": "never change.",
+     "file": "set/ui_tagline.png",
+     "position": "left-aligned at x 50%, line centre y 53%",
+     "size": "same as line 1",
+     "in": 53.0,
+     "out": 54.43,
+     "animation": "fade in 0.25 s"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score 52.09-54.43: sung 'free bird, yeah' (52.5-54.6), downbeat 52.93",
+   "render": "first + last frame: boards/s34a.jpg (glass alone) -> boards/s34b.jpg (glass + can) on loc_rail with product_glass_sheet + product_can_sheet and the rancher's forearm; tagline in post from ui_tagline.png",
+   "board": "boards/s34.jpg",
+   "n": 34,
+   "start": 52.09,
+   "end": 54.43,
+   "dur": 2.34,
+   "in": "cut",
+   "brightness": {
+    "start": 122,
+    "mid": 119,
+    "end": 124
+   },
+   "colour": "#84775f",
+   "change": 10.06,
+   "sound": "-23.01 LUFS mean, -22.36 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free"
+  },
+  {
+   "action": "0.0-0.7: the friend, eyeing him, asks 'You crying?'; 0.7-1.9: the rancher keeps looking out at the field, eyes wet, jaw set; 1.9-2.8: without turning he answers flatly 'Sun's in my eyes.'",
+   "setup": "porch_two_shot",
+   "location": "loc_porch: clapboard farmhouse porch, mint-green window trim, pickup with hay bales behind",
+   "cast": [
+    "char_rancher",
+    "char_friend",
+    "product_can"
+   ],
+   "wardrobe": "rancher: faded dark-brown cap with a plain front, brown-grey plaid flannel shirt open over a white t-shirt, the can in his right hand; friend: faded olive cap, tan canvas bib overalls over a grey henley",
+   "shot_size": "medium",
+   "subject_in_frame": "the rancher foreground left-centre, chest-up, x 22-55%, head y 12-45% (13% of width), leaning on the clapboard wall, can at chest height x 42-48%, y 75-92%; the friend behind at x 52-72%, waist-up, head y 18-35% (7% of width), right arm up on the porch post at x 72%; clapboard x 0-15%; porch posts, window and truck in the warm background right. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "eye level ~1.6 m, normal lens ~50 mm, focus on the rancher, friend slightly soft",
+   "camera_move": "locked off (change 1.8)",
+   "light": "warm late-afternoon sun from the right, soft fill, faces 80-90/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "L01 'You crying?' 54.45-55.15 (friend, on camera); L02 'Sun's in my eyes.' 56.35-57.20 (rancher, on camera); the music tail underneath",
+   "render": "first frame + guide audio: plate from boards/s35.jpg on loc_porch with char_rancher_sheet + char_friend_sheet + product_can_sheet; guide_audio set/lines/S35_take.wav (2.79 s, L01 at 0.02 s, L02 at 1.92 s). If the lips drift, re-render on the same first frame; never retime the take",
+   "board": "boards/s35.jpg",
+   "n": 35,
+   "start": 54.43,
+   "end": 57.22,
+   "dur": 2.79,
+   "in": "cut",
+   "brightness": {
+    "start": 82,
+    "mid": 82,
+    "end": 82
+   },
+   "colour": "#565040",
+   "change": 1.82,
+   "sound": "-22.26 LUFS mean, -19.82 peak",
+   "voice": "where you cannot change Lord I can't change won't you fly free / you crying / Sun's in my eyes"
+  },
+  {
+   "action": "the eagle flies away from near the lens over the field and climbs above the tree line; the horse stands far off; the end card fades in and holds",
+   "setup": "golden_field_endcard",
+   "location": "loc_golden_field: wide dry golden field, dirt track, oak line, sun at the left edge",
+   "cast": [
+    "char_eagle",
+    "char_horse"
+   ],
+   "wardrobe": "none (animals)",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "tree line at y 45%; sun flare at the left edge x 0-15%, y 40%; dark oaks x 75-100%; start (boards/s36a.jpg): the eagle large and blurred at x 35-45%, y 30-50% flying away; end (boards/s36b.jpg): the eagle small (3% of width) climbing at x 55-62%, y 10-25%; the horse tiny (2% of width) far in the field at x 50-53%, y 68-75%; end card centred x 50%, y 47-62%. positions are % of the 2.20:1 picture area inside the letterbox (x from the left edge, y from the top of the picture)",
+   "camera": "eye level ~1.7 m, wide-normal lens ~35 mm, deep focus",
+   "camera_move": "locked off; the flare blooms (76 -> 112/255)",
+   "light": "low sun from the left edge, golden backlit field and haze, 76-112/255",
+   "text": [
+    {
+     "words": "{BRAND} end card",
+     "default": "EST. 1902 / Halvard",
+     "file": "set/ui_endcard.png",
+     "position": "centred x 50%; small spaced line at y 47%, wordmark centre y 57% of the picture",
+     "size": "wordmark 26% of frame width (118 px font at 1080), white bold serif; emblem line 26 px spaced caps",
+     "in": 57.75,
+     "out": 60.06,
+     "animation": "fade in 0.25 s (57.75-58.00), holds to the end"
+    }
+   ],
+   "out": "end (score fades 0.15 s)",
+   "audio": "score 57.22-60.06: the closing chords, last downbeat at 59.59, ring-out",
+   "render": "first + last frame: boards/s36a.jpg -> boards/s36b.jpg as plates on loc_golden_field with char_eagle_sheet (and char_horse_sheet tiny); end card composited from ui_endcard.png",
+   "board": "boards/s36.jpg",
+   "n": 36,
+   "start": 57.22,
+   "end": 60.06,
+   "dur": 2.84,
+   "in": "cut",
+   "brightness": {
+    "start": 76,
+    "mid": 104,
+    "end": 112
+   },
+   "colour": "#686355",
+   "change": 9.12,
+   "sound": "-26.23 LUFS mean, -23.39 peak",
+   "voice": "Sun's in my eyes"
+  }
+ ],
+ "sound": {
+  "silences": [],
+  "black": [],
+  "music": "a famous 1970s Southern-rock power ballad about a bird that cannot be tamed, in a re-recorded slow arrangement (piano, organ, slide guitar, then full band). It carries the whole film; there is no voice-over. The score file is set/score.wav (the full 60 s mix, including rain effects and the two spoken lines).",
+  "sections": [
+   {
+    "time": [
+     0.0,
+     1.1
+    ],
+    "what": "near silence: room tone and a few soft high piano notes (-50 to -40 dB)"
+   },
+   {
+    "time": [
+     1.1,
+     3.88
+    ],
+    "what": "first chord (G) struck on piano and organ (-27 dB), decaying to -45 dB"
+   },
+   {
+    "time": [
+     3.88,
+     6.1
+    ],
+    "what": "second chord (D over F#) swells in (-28 dB): end of intro bar 1"
+   },
+   {
+    "time": [
+     6.1,
+     15.14
+    ],
+    "what": "intro continues rubato (~48 bpm): Em 6.1, F 11.0, C 13.1; a low boom at 14.0"
+   },
+   {
+    "time": [
+     15.14,
+     19.67
+    ],
+    "what": "dominant bar (D) swelling with organ and bass; rain hiss enters at 15.0 (storm effects mixed in)"
+   },
+   {
+    "time": [
+     19.67,
+     27.47
+    ],
+    "what": "BAND ENTRY on the downbeat at 19.67 (drums, bass, electric guitar), verse ~60 bpm, bars at 19.67, 23.74, 27.47; sung line 1 20.3-27.4"
+   },
+   {
+    "time": [
+     27.47,
+     39.61
+    ],
+    "what": "verse continues, sung line 2 28.9-35.3; bars 31.6, 35.5; tempo pushes up"
+   },
+   {
+    "time": [
+     39.61,
+     54.6
+    ],
+    "what": "climax at 72 bpm (bar 3.33 s; downbeats 39.61, 42.94, 46.27, 49.60, 52.93): ad-libs, 'Lord, I can't change' 44.0-47.3, bass walk-up 48.9-49.6, 'Won't you fly high' 49.0-51.7, 'free bird, yeah' 52.5-54.6"
+   },
+   {
+    "time": [
+     54.43,
+     57.22
+    ],
+    "what": "music tail under the porch dialogue (L01 54.45, L02 56.35)"
+   },
+   {
+    "time": [
+     57.22,
+     60.06
+    ],
+    "what": "closing chords (Bb 57.33, C ~59.3-59.6) ring out under the end card"
+   }
+  ],
+  "tempo_note": "bin/template beats reports 145.75 bpm / 1.647 s bars: that is the eighth-note pulse of the climax, and its 'bar starts' sit a beat off the real downbeats there; the intro is rubato and the verse ~60 bpm, so the cut points below are the real downbeats and chord changes found by ear-proxy (chroma, bass and onset analysis), not the tool's grid.",
+  "speech": "two on-camera lines only, both in shot 35: 'You crying?' (friend, 54.45-55.15) and 'Sun's in my eyes.' (rancher, 56.35-57.20). Sung lyrics are part of the score.",
+  "mix": "music up front, -22 to -26 LUFS once the band is in (intro -50 to -28); rain and wind effects sit under the music in the storm (15.0-22); dialogue sits on top of a music tail at the end; no sound design hits on cuts",
+  "lyrics_in_score": [
+   {
+    "words": "'Cause I'm as free as a bird now",
+    "start": 20.3,
+    "end": 27.42
+   },
+   {
+    "words": "And this bird you cannot change",
+    "start": 28.9,
+    "end": 35.3
+   },
+   {
+    "words": "(and this bird you cannot change / ad-libs)",
+    "start": 36.9,
+    "end": 44.0,
+    "note": "words unclear in the transcript"
+   },
+   {
+    "words": "Lord, I can't change",
+    "start": 44.0,
+    "end": 47.3
+   },
+   {
+    "words": "Won't you fly high",
+    "start": 49.0,
+    "end": 51.7,
+    "note": "word 'high' inferred"
+   },
+   {
+    "words": "free bird, yeah",
+    "start": 52.5,
+    "end": 54.6,
+    "note": "transcript hears only 'free'"
+   }
+  ]
+ },
+ "look": {
+  "frame": "2.20:1 letterbox (picture 1920x874 inside 1080). Generate 16:9 plates with the action inside the central band y 10-90% and add 103 px black bars top and bottom in assembly.",
+  "grade": "natural, filmic, warm golden for day and dusk, cold teal for the storm, neutral blue-grey for winter; lifted blacks only in haze",
+  "contrast": "medium-high; silhouettes against bright doorways and suns",
+  "light": "available light: low sun backlight, open shade, dusk sky, storm ambient; no visible fill sources",
+  "depth_of_field": "shallow on the long-lens animal shots (85-135 mm feel), deep on the wides",
+  "grain": "fine 35 mm film grain throughout",
+  "brightness": "dark interiors and the night storm sit at 23-45/255 (shots 1, 6, 9-11, 28); day shade and dusk 45-90 (2-4, 7, 8, 12, 14-23); golden backlit and bright exteriors 90-150 (5, 13, 26, 29, 31-34, 36). Frame average over the film rises from 23 at the open to ~110 at the end.",
+  "pace": "36 shots in 60.06 s, average 1.67 s, median 1.61 s; no shot over 2.84 s"
+ },
+ "text_style": {
+  "typeface": "classic bold serif (old-style, slab-ish weight), white, no outline, faint 2 px soft shadow",
+  "case": "sentence/title case for supers; brand wordmark title case; tiny spaced caps for the emblem line",
+  "size": "super cap height 5.5% of picture height; tagline 6.4%; wordmark 26% of frame width; legal 1.3%",
+  "tracking": "normal for supers, very wide (+400) for the emblem line",
+  "position": "super centred over the product; tagline left-aligned at x 50% in the right half beside the glass; end card centred slightly below middle",
+  "animation": "0.25-0.30 s linear fade-ins, no movement, held to the cut; the legal line cuts in and out",
+  "files": "set/ui_super.png, set/ui_tagline.png, set/ui_endcard.png, set/ui_legal.png (1920x1080 transparent overlays, positions already in place); set/ui.json"
+ },
+ "set": {
+  "char_foal": {
+   "file": "set/char_foal_sheet.jpg",
+   "fixes": "the foal (shots 1-12): rich red-bay coat, fuzzy brown mane, broad white blaze, pink-grey muzzle, four white stockings with soft feathering"
+  },
+  "char_yearling": {
+   "file": "set/char_yearling_sheet.jpg",
+   "fixes": "the same horse at about one year (shots 13-24): glossy red-bay, darker brown mane and tail, white blaze, tall white feathered stockings"
+  },
+  "char_horse": {
+   "file": "set/char_horse_sheet.jpg",
+   "fixes": "the same horse grown (shots 25-36): massive deep-bay draft horse, black mane and tail, white blaze, heavy white feathering"
+  },
+  "char_eaglet": {
+   "file": "set/char_eaglet_sheet.jpg",
+   "fixes": "the eaglet (shots 4-11): pale grey-white down, dark hooked beak, pale cere"
+  },
+  "char_young_eagle": {
+   "file": "set/char_young_eagle_sheet.jpg",
+   "fixes": "the young eagle (shots 18-22): patchy grey-brown down with dark flight feathers, yellow cere and feet"
+  },
+  "char_eagle": {
+   "file": "set/char_eagle_sheet.jpg",
+   "fixes": "the adult white-headed eagle (shots 29-36): white head and tail, dark brown body, yellow beak and feet"
+  },
+  "char_rancher": {
+   "file": "set/char_rancher_sheet.jpg",
+   "fixes": "invented rancher, late 50s, lean, tanned olive-brown skin, grey stubble, faded brown cap, plaid flannel over white tee (shot 35; his hand and forearm in 33-34)"
+  },
+  "char_friend": {
+   "file": "set/char_friend_sheet.jpg",
+   "fixes": "invented farmhand, early 50s, stocky, fair ruddy skin, sandy beard, olive cap, tan bib overalls over grey henley (shot 35)"
+  },
+  "product_glass": {
+   "file": "set/product_glass_sheet.jpg",
+   "fixes": "plain clear tapered pint glass, golden lager (amber-gold), 1.5 cm white head; no etching"
+  },
+  "product_can": {
+   "file": "set/product_can_sheet.jpg",
+   "fixes": "355 ml can, matte cream body, forest-green bands top and bottom, gold serif {BRAND} wordmark (default HALVARD) and LAGER; silver lid"
+  },
+  "loc_barn": {
+   "file": "set/loc_barn.jpg",
+   "fixes": "dark barn interior, X-braced stall gate, open sliding door onto pasture; interior ~20/255 (shots 1, 10 at night)"
+  },
+  "loc_log_nest": {
+   "file": "set/loc_log_nest.jpg",
+   "fixes": "ground-level twig nest under the fallen tree's branches, sunlit pasture beyond (shots 4-7)"
+  },
+  "loc_pasture_sunset": {
+   "file": "set/loc_pasture_sunset.jpg",
+   "fixes": "pasture below a ridge with trees, silos, red barn, at dusk, pink sky (shot 8)"
+  },
+  "loc_storm_pasture": {
+   "file": "set/loc_storm_pasture.jpg",
+   "fixes": "the same pasture in a night storm: white fence, silos, teal clouds, rain (shots 9, 11, 12)"
+  },
+  "loc_winter_farm": {
+   "file": "set/loc_winter_farm.jpg",
+   "fixes": "snow field with hoof and bird tracks, red barns with snowy roofs (shot 13)"
+  },
+  "loc_meadow": {
+   "file": "set/loc_meadow.jpg",
+   "fixes": "tall green summer meadow with wildflowers below wooded hills (shots 18-22)"
+  },
+  "loc_log_field": {
+   "file": "set/loc_log_field.jpg",
+   "fixes": "big fallen log in dry grass, dark oaks, low backlit sun (shots 27-31)"
+  },
+  "loc_golden_field": {
+   "file": "set/loc_golden_field.jpg",
+   "fixes": "wide golden field, dirt track, oak line, sun at the left edge (shots 32, 36)"
+  },
+  "loc_rail": {
+   "file": "set/loc_rail.jpg",
+   "fixes": "weathered pale fence rail across the lower third, soft golden valley (shots 33-34)"
+  },
+  "loc_porch": {
+   "file": "set/loc_porch.jpg",
+   "fixes": "clapboard farmhouse porch, mint-green trim, pickup with hay bales (shot 35)"
+  },
+  "ui": {
+   "file": [
+    "set/ui_super.png",
+    "set/ui_tagline.png",
+    "set/ui_endcard.png",
+    "set/ui_legal.png",
+    "set/ui.json"
+   ],
+   "fixes": "every super, the tagline, the end card and the legal line, flat 1920x1080 overlays already in position"
+  },
+  "lines": {
+   "file": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/S35_take.wav"
+   ],
+   "fixes": "the two spoken lines cut from the source at phrase boundaries, and shot 35's whole 2.79 s take for guide audio"
+  },
+  "voices": {
+   "file": [
+    "set/lines/L01.wav",
+    "set/lines/L02.wav"
+   ],
+   "fixes": "only 0.7-0.9 s of each voice exists in the film; use the line clips as the timbre and timing reference (no 10-20 s clip is possible)"
+  },
+  "score": {
+   "file": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "the film's soundtrack and the two bar-cut versions"
+  }
+ },
+ "slots": [
+  {
+   "slot": "{BRAND}",
+   "default": "Halvard (wordmark) / EST. 1902",
+   "where": "can label, end card (shot 36)"
+  },
+  {
+   "slot": "{PRODUCT}",
+   "default": "a golden lager: product_glass + product_can",
+   "where": "shots 33, 34, 35"
+  },
+  {
+   "slot": "{SUPER_1}",
+   "default": "Made of the land",
+   "where": "shot 33"
+  },
+  {
+   "slot": "{TAGLINE_1} / {TAGLINE_2}",
+   "default": "Some things / never change.",
+   "where": "shot 34"
+  },
+  {
+   "slot": "{LEGAL}",
+   "default": "Please enjoy responsibly. Animals filmed under professional supervision.",
+   "where": "shots 32-33"
+  },
+  {
+   "slot": "{ANIMAL_A}",
+   "default": "draft foal -> yearling -> grown horse",
+   "where": "char_foal, char_yearling, char_horse"
+  },
+  {
+   "slot": "{ANIMAL_B}",
+   "default": "eaglet -> young eagle -> adult eagle",
+   "where": "char_eaglet, char_young_eagle, char_eagle"
+  },
+  {
+   "slot": "{RANCHER} / {FRIEND}",
+   "default": "char_rancher / char_friend",
+   "where": "shot 35 (rancher's hand also in 33-34)"
+  },
+  {
+   "slot": "{LINES}",
+   "default": "'You crying?' / 'Sun's in my eyes.'",
+   "where": "shot 35; keep the setup-and-deadpan shape and lines.json timing"
+  },
+  {
+   "slot": "{PLACE}",
+   "default": "a working ranch: barn, pasture with silos, snow field, meadow, golden field, porch",
+   "where": "loc_* sheets"
+  },
+  {
+   "slot": "{SCORE}",
+   "default": "set/score.wav (the ballad)",
+   "where": "all; a new film may license another slow-build rock ballad and re-cut on its downbeats"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "arc": "Hook 0-5.55: foal in the barn door, the eaglet's-eye look, the first touch, dusk tableau, all on the quiet intro. Middle 5.55-17.88: the storm starts with the rain on the score join, the foal shelters the eaglet as the band crashes in (10.08), then 'free as a bird now' carries winter, the first failed flight, the canter, the grown horse charging and the winged-horse image. Payoff 17.88-24.37: the score jumps to the climax, the eagle lifts off the horse on 'won't you fly high', glass and tagline on 'free bird'. Tag and end card 24.37-30.0: 'You crying?' / 'Sun's in my eyes.', eagle over the golden field, {BRAND}.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 1.5,
+    "dur": 1.5,
+    "src": [
+     0.0,
+     1.5
+    ],
+    "change": "first 1.50 s: the foal arrives in the doorway"
+   },
+   {
+    "n": 2,
+    "from": 5,
+    "start": 1.5,
+    "end": 2.65,
+    "dur": 1.15,
+    "src": [
+     7.3,
+     8.45
+    ],
+    "change": "trimmed to the head entering and turning to the lens"
+   },
+   {
+    "n": 3,
+    "from": 7,
+    "start": 2.65,
+    "end": 4.3,
+    "dur": 1.65,
+    "src": [
+     10.35,
+     12.0
+    ],
+    "change": "trimmed: muzzle down to the eaglet, then lifted out"
+   },
+   {
+    "n": 4,
+    "from": 8,
+    "start": 4.3,
+    "end": 5.55,
+    "dur": 1.25,
+    "src": [
+     13.1,
+     14.35
+    ],
+    "change": "middle 1.25 s"
+   },
+   {
+    "n": 5,
+    "from": 9,
+    "start": 5.55,
+    "end": 6.8,
+    "dur": 1.25,
+    "src": [
+     15.14,
+     16.39
+    ],
+    "change": "first 1.25 s from 15.14, picture and rain start together on the score join"
+   },
+   {
+    "n": 6,
+    "from": 10,
+    "start": 6.8,
+    "end": 7.96,
+    "dur": 1.16,
+    "src": [
+     16.73,
+     17.89
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 7,
+    "from": 11,
+    "start": 7.96,
+    "end": 10.42,
+    "dur": 2.46,
+    "src": [
+     18.06,
+     20.52
+    ],
+    "change": "starts 0.17 s late; the band hits 2.12 s into the shot"
+   },
+   {
+    "n": 8,
+    "from": 12,
+    "start": 10.42,
+    "end": 11.85,
+    "dur": 1.43,
+    "src": [
+     20.6,
+     22.03
+    ],
+    "change": "first 1.43 s"
+   },
+   {
+    "n": 9,
+    "from": 13,
+    "start": 11.85,
+    "end": 13.05,
+    "dur": 1.2,
+    "src": [
+     22.7,
+     23.9
+    ],
+    "change": "the last 1.20 s of the tilt: tracks to the yearling and barns"
+   },
+   {
+    "n": 10,
+    "from": 19,
+    "start": 13.05,
+    "end": 14.2,
+    "dur": 1.15,
+    "src": [
+     30.36,
+     31.51
+    ],
+    "change": "1.15 s: lift-off and drop"
+   },
+   {
+    "n": 11,
+    "from": 22,
+    "start": 14.2,
+    "end": 15.2,
+    "dur": 1.0,
+    "src": [
+     34.26,
+     35.26
+    ],
+    "change": "1.00 s of the canter"
+   },
+   {
+    "n": 12,
+    "from": 27,
+    "start": 15.2,
+    "end": 16.2,
+    "dur": 1.0,
+    "src": [
+     40.38,
+     41.38
+    ],
+    "change": "1.00 s of the approach"
+   },
+   {
+    "n": 13,
+    "from": 29,
+    "start": 16.2,
+    "end": 18.6,
+    "dur": 2.4,
+    "src": [
+     42.55,
+     44.95
+    ],
+    "change": "2.40 s: wings half to fully open"
+   },
+   {
+    "n": 14,
+    "from": 31,
+    "start": 18.6,
+    "end": 19.8,
+    "dur": 1.2,
+    "src": [
+     46.3,
+     47.5
+    ],
+    "change": "1.20 s: the eagle lifts off the head"
+   },
+   {
+    "n": 15,
+    "from": 32,
+    "start": 19.8,
+    "end": 21.0,
+    "dur": 1.2,
+    "src": [
+     48.4,
+     49.6
+    ],
+    "change": "first 1.20 s of the fly-away"
+   },
+   {
+    "n": 16,
+    "from": 33,
+    "start": 21.0,
+    "end": 22.03,
+    "dur": 1.03,
+    "src": [
+     50.98,
+     52.01
+    ],
+    "change": "the last 1.03 s, super already in"
+   },
+   {
+    "n": 17,
+    "from": 34,
+    "start": 22.03,
+    "end": 24.37,
+    "dur": 2.34,
+    "src": [
+     52.09,
+     54.43
+    ],
+    "change": "whole shot, in sync with the score"
+   },
+   {
+    "n": 18,
+    "from": 35,
+    "start": 24.37,
+    "end": 27.16,
+    "dur": 2.79,
+    "src": [
+     54.43,
+     57.22
+    ],
+    "change": "whole shot, in sync (dialogue in the score)"
+   },
+   {
+    "n": 19,
+    "from": 36,
+    "start": 27.16,
+    "end": 30.0,
+    "dur": 2.84,
+    "src": [
+     57.22,
+     60.06
+    ],
+    "change": "whole shot, in sync, end card"
+   }
+  ],
+  "lines": [
+   {
+    "id": "lyric_1",
+    "words": "'Cause I'm as free as a bird now",
+    "kind": "sung lyric",
+    "start": 10.71,
+    "end": 17.83,
+    "src": [
+     20.3,
+     27.42
+    ],
+    "in_score": true
+   },
+   {
+    "id": "lyric_2",
+    "words": "Won't you fly high",
+    "kind": "sung lyric",
+    "start": 18.94,
+    "end": 21.64,
+    "src": [
+     49.0,
+     51.7
+    ],
+    "in_score": true
+   },
+   {
+    "id": "lyric_3",
+    "words": "free bird, yeah",
+    "kind": "sung lyric",
+    "start": 22.44,
+    "end": 24.54,
+    "src": [
+     52.5,
+     54.6
+    ],
+    "in_score": true
+   },
+   {
+    "id": "L01",
+    "words": "You crying?",
+    "kind": "on-camera speech (friend)",
+    "start": 24.39,
+    "end": 25.09,
+    "src": [
+     54.45,
+     55.15
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "Sun's in my eyes.",
+    "kind": "on-camera speech (rancher)",
+    "start": 26.29,
+    "end": 27.14,
+    "src": [
+     56.35,
+     57.2
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": true
+   }
+  ],
+  "text": [
+   {
+    "words": "{LEGAL}",
+    "file": "set/ui_legal.png",
+    "start": 19.8,
+    "end": 22.03,
+    "shots": [
+     15,
+     16
+    ]
+   },
+   {
+    "words": "{SUPER_1}",
+    "file": "set/ui_super.png",
+    "start": 21.0,
+    "end": 22.03,
+    "shots": [
+     16
+    ],
+    "note": "already fully in at the cut (source fade 50.70-51.00 is before the window)"
+   },
+   {
+    "words": "{TAGLINE_1}",
+    "file": "set/ui_tagline.png",
+    "start": 22.14,
+    "end": 24.37,
+    "fade_in": [
+     22.14,
+     22.39
+    ]
+   },
+   {
+    "words": "{TAGLINE_2}",
+    "file": "set/ui_tagline.png",
+    "start": 22.94,
+    "end": 24.37,
+    "fade_in": [
+     22.94,
+     23.19
+    ]
+   }
+  ],
+  "end_card": {
+   "words": "{BRAND} end card",
+   "file": "set/ui_endcard.png",
+   "start": 27.69,
+   "end": 30.0,
+   "fade_in": [
+    27.69,
+    27.94
+   ],
+   "shot": 19
+  },
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 5.55,
+     "what": "intro: soft notes, first chord (1.10), second chord swell (3.88); out before the 5.6 lead-in run"
+    },
+    {
+     "src_in": 15.14,
+     "src_out": 27.47,
+     "what": "dominant bar with rain from its downbeat (15.14), band entry downbeat 19.67, sung line 1; out on the next downbeat 27.47 after 'now'"
+    },
+    {
+     "src_in": 47.94,
+     "src_out": 60.06,
+     "what": "climax from beat 3 of the bar before 'Won't you fly high' (downbeat 49.60): walk-up, 'fly high', 'free bird', dialogue, end"
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "joins": [
+    5.55,
+    17.88
+   ],
+   "sections_in_cut": [
+    {
+     "time": [
+      0.0,
+      5.55
+     ],
+     "what": "intro (source 0-5.55)"
+    },
+    {
+     "time": [
+      5.55,
+      10.08
+     ],
+     "what": "dominant bar + rain (source 15.14-19.67)"
+    },
+    {
+     "time": [
+      10.08,
+      17.88
+     ],
+     "what": "band entry and sung line 1 (source 19.67-27.47)"
+    },
+    {
+     "time": [
+      17.88,
+      30.0
+     ],
+     "what": "climax to end (source 47.94-60.06): downbeats at 19.54, 22.87, 26.20, 29.53"
+    }
+   ],
+   "join_notes": "join 1: D chord to the same D chord's next bar (rain enters with it), on the intro's decay; join 2: verse downbeat into beat 3 of the climax bar before 'Won't you fly' (a two-beat pickup), where the tempo already changes in the source"
+  },
+  "average_shot": 1.58
+ },
+ "cut15": {
+  "duration": 15.0,
+  "arc": "Hook 0-3.71: foal, the eaglet's-eye look, the first touch, on the quiet intro. Proof 3.71-7.33: hard cut on the score jump to the grown horse rearing with the eagle's wings behind it; 'Won't you fly high' as the eagle lifts off and flies. Payoff 7.33-9.37: glass and can on the rail, tagline, 'free bird'. Tag and end card 9.37-15.0: 'You crying?' / 'Sun's in my eyes.', eagle over the field, {BRAND}.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 1.25,
+    "dur": 1.25,
+    "src": [
+     0.0,
+     1.25
+    ],
+    "change": "first 1.25 s"
+   },
+   {
+    "n": 2,
+    "from": 5,
+    "start": 1.25,
+    "end": 2.35,
+    "dur": 1.1,
+    "src": [
+     7.32,
+     8.42
+    ],
+    "change": "head turns to the lens"
+   },
+   {
+    "n": 3,
+    "from": 7,
+    "start": 2.35,
+    "end": 3.71,
+    "dur": 1.36,
+    "src": [
+     10.5,
+     11.86
+    ],
+    "change": "muzzle to the eaglet"
+   },
+   {
+    "n": 4,
+    "from": 29,
+    "start": 3.71,
+    "end": 5.41,
+    "dur": 1.7,
+    "src": [
+     43.0,
+     44.7
+    ],
+    "change": "1.70 s: wings opening, on the score jump"
+   },
+   {
+    "n": 5,
+    "from": 31,
+    "start": 5.41,
+    "end": 6.31,
+    "dur": 0.9,
+    "src": [
+     46.4,
+     47.3
+    ],
+    "change": "0.90 s: the eagle lifts off the head"
+   },
+   {
+    "n": 6,
+    "from": 32,
+    "start": 6.31,
+    "end": 7.33,
+    "dur": 1.02,
+    "src": [
+     48.5,
+     49.52
+    ],
+    "change": "1.02 s of the fly-away"
+   },
+   {
+    "n": 7,
+    "from": 34,
+    "start": 7.33,
+    "end": 9.37,
+    "dur": 2.04,
+    "src": [
+     52.39,
+     54.43
+    ],
+    "change": "last 2.04 s, in sync: can already arriving, tagline line 1 nearly in"
+   },
+   {
+    "n": 8,
+    "from": 35,
+    "start": 9.37,
+    "end": 12.16,
+    "dur": 2.79,
+    "src": [
+     54.43,
+     57.22
+    ],
+    "change": "whole shot, in sync (dialogue in the score)"
+   },
+   {
+    "n": 9,
+    "from": 36,
+    "start": 12.16,
+    "end": 15.0,
+    "dur": 2.84,
+    "src": [
+     57.22,
+     60.06
+    ],
+    "change": "whole shot, in sync, end card"
+   }
+  ],
+  "lines": [
+   {
+    "id": "lyric_2",
+    "words": "Won't you fly high",
+    "kind": "sung lyric",
+    "start": 3.94,
+    "end": 6.64,
+    "src": [
+     49.0,
+     51.7
+    ],
+    "in_score": true
+   },
+   {
+    "id": "lyric_3",
+    "words": "free bird, yeah",
+    "kind": "sung lyric",
+    "start": 7.44,
+    "end": 9.54,
+    "src": [
+     52.5,
+     54.6
+    ],
+    "in_score": true
+   },
+   {
+    "id": "L01",
+    "words": "You crying?",
+    "kind": "on-camera speech (friend)",
+    "start": 9.39,
+    "end": 10.09,
+    "src": [
+     54.45,
+     55.15
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "Sun's in my eyes.",
+    "kind": "on-camera speech (rancher)",
+    "start": 11.29,
+    "end": 12.14,
+    "src": [
+     56.35,
+     57.2
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": true
+   }
+  ],
+  "text": [
+   {
+    "words": "{TAGLINE_1}",
+    "file": "set/ui_tagline.png",
+    "start": 7.33,
+    "end": 9.37,
+    "note": "the source fade (52.20-52.45) maps to 7.14-7.39, so the line is ~75% in at the cut; finish the fade by 7.39"
+   },
+   {
+    "words": "{TAGLINE_2}",
+    "file": "set/ui_tagline.png",
+    "start": 7.94,
+    "end": 9.37,
+    "fade_in": [
+     7.94,
+     8.19
+    ]
+   }
+  ],
+  "end_card": {
+   "words": "{BRAND} end card",
+   "file": "set/ui_endcard.png",
+   "start": 12.69,
+   "end": 15.0,
+   "fade_in": [
+    12.69,
+    12.94
+   ],
+   "shot": 9
+  },
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 3.71,
+     "what": "intro: soft notes and the first chord; out before the second chord's swell (3.88)"
+    },
+    {
+     "src_in": 48.77,
+     "src_out": 60.06,
+     "what": "beat 4 before the walk-up: 'Won't you fly high' (downbeat 49.60), 'free bird', dialogue, end"
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "joins": [
+    3.71
+   ],
+   "sections_in_cut": [
+    {
+     "time": [
+      0.0,
+      3.71
+     ],
+     "what": "intro (source 0-3.71)"
+    },
+    {
+     "time": [
+      3.71,
+      15.0
+     ],
+     "what": "climax to end (source 48.77-60.06): downbeats at 4.54, 7.87, 11.20, 14.53"
+    }
+   ],
+   "join_notes": "the decaying first chord slams into the climax on beat 4 with the bass walk-up; the picture cuts from the foal to the grown horse on the same frame"
+  },
+  "average_shot": 1.67
+ }
+}

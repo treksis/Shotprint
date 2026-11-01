@@ -1,0 +1,42 @@
+{
+ "frame": "1920x1080 overlays with alpha; the picture under them is 1.85:1 letterboxed (bars 2.0% top and bottom).",
+ "redraw": "python3 templates/fan-moments/draw_ui.py templates/fan-moments/set <BRAND> <TAGLINE> <PARTNER_LINE> <BRAND_COLOUR>",
+ "screens": [
+  {
+   "id": "tagline",
+   "file": "set/ui_tagline.png",
+   "shot": 24,
+   "copy": "Feel the rush with SODA ({TAGLINE} {BRAND})",
+   "layout": "one line, group centred at 50% W; serif part DejaVu Serif tracked -6%, ascender height 72 px (6.7% H); wordmark Roboto Bold caps, cap height 76 px (7.0% H); shared baseline y 572 px (53.0% H); 24 px gap before the wordmark. Source group: x 26.3-73.6%, y 44.5-55.3% (its brand mark is a taller script).",
+   "times": {
+    "cut30": [
+     24.48,
+     26.4
+    ],
+    "cut15": [
+     10.27,
+     12.19
+    ]
+   },
+   "motion": "none: cut in and out with the shot"
+  },
+  {
+   "id": "end_card",
+   "file": "set/ui_end_card.png",
+   "shot": 25,
+   "copy": "[{BRAND} tile] [{PARTNER_MARK} tile] / {PARTNER_LINE}",
+   "layout": "brand tile: {BRAND_COLOUR} square x 780-975, y 442-637 px (x 40.6-50.8%, y 40.9-59.0%), white bold wordmark centred, 54 px; partner tile: white rounded square x 990-1140, y 442-637 px (radius 34 px) with a black football pictogram 100 px wide; partner line: white bold caps cap height 11 px (1.0% H), tracking +12%, centred at x 960, baseline y 680 px (63.0% H).",
+   "times": {
+    "cut30": [
+     26.4,
+     30.0
+    ],
+    "cut15": [
+     12.19,
+     15.0
+    ]
+   },
+   "motion": "none: cut in with the shot, holds to the last frame"
+  }
+ ]
+}

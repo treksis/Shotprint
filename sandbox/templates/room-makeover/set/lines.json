@@ -1,0 +1,1162 @@
+{
+ "about": "Every spoken line of the film, one clip per line (set/lines/Lnn.wav), cut from a separated, music-free vocal stem of the source at the voice onset and offset (10 ms fades), 48 kHz, written as dual-mono stereo (both channels identical) so an ffmpeg mix places them at full level. The clip starts exactly at 'src'[0], so placing the wav at a line's start time puts the first word where the source has it. Use each clip as guide_audio for its speaking shot and as the timing target; never retime. Times: 'src' = source film = cut30 timeline (the 30 s cut keeps every line at its source time); 'cut15' = the 15 s timeline (absent if the line is not in the 15). Word times: forced word timestamps on the vocal stem with boundaries snapped to energy dips (good to about 0.05 s); first and last word snapped to the measured onset/offset. Slots: the source's brand name and web address are MUTED in the clips (digital silence) - L06, L07 and L08 are entirely the brand name, so their clips are silent timing targets; fill exactly those windows with the new {BRAND} / {URL} read by the same speaker. L09s is L09 shortened at its phrase boundary (from 'turn'), for the 15 s cut.",
+ "speakers": {
+  "char_mom": "the mother (on camera): bright, warm, theatrical; 190-400 Hz, jumps high when excited (L01, L11). Timbre: set/voice_mom.wav (7.9 s, all her brand-free lines).",
+  "char_daughter": "the daughter (on camera): relaxed, dry, lower and flatter than her mother (190-300 Hz). Timbre: set/voice_daughter.wav (2.7 s - the source has no more of her).",
+  "voice_announcer": "off-screen female announcer: warm, friendly, unhurried, mid-low (165-270 Hz), close-mic, no reverb. Timbre: set/voice_announcer.wav (7.6 s)."
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "file": "set/lines/L01.wav",
+   "speaker": "char_mom",
+   "kind": "on camera",
+   "text": "I finally get to see your new place.",
+   "src": [
+    0.25,
+    3.03
+   ],
+   "dur": 2.78,
+   "delivery": "bright, sing-song, excited; 'place' held long (1.1 s) on a rising pitch as she steps in",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    0.25,
+    3.03
+   ],
+   "words": [
+    {
+     "w": "I",
+     "src": [
+      0.25,
+      0.47
+     ],
+     "clip": [
+      0.0,
+      0.22
+     ],
+     "cut15": [
+      0.25,
+      0.47
+     ]
+    },
+    {
+     "w": "finally",
+     "src": [
+      0.55,
+      0.95
+     ],
+     "clip": [
+      0.3,
+      0.7
+     ],
+     "cut15": [
+      0.55,
+      0.95
+     ]
+    },
+    {
+     "w": "get",
+     "src": [
+      0.95,
+      1.17
+     ],
+     "clip": [
+      0.7,
+      0.92
+     ],
+     "cut15": [
+      0.95,
+      1.17
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      1.17,
+      1.34
+     ],
+     "clip": [
+      0.92,
+      1.09
+     ],
+     "cut15": [
+      1.17,
+      1.34
+     ]
+    },
+    {
+     "w": "see",
+     "src": [
+      1.34,
+      1.52
+     ],
+     "clip": [
+      1.09,
+      1.27
+     ],
+     "cut15": [
+      1.34,
+      1.52
+     ]
+    },
+    {
+     "w": "your",
+     "src": [
+      1.52,
+      1.73
+     ],
+     "clip": [
+      1.27,
+      1.48
+     ],
+     "cut15": [
+      1.52,
+      1.73
+     ]
+    },
+    {
+     "w": "new",
+     "src": [
+      1.73,
+      1.91
+     ],
+     "clip": [
+      1.48,
+      1.66
+     ],
+     "cut15": [
+      1.73,
+      1.91
+     ]
+    },
+    {
+     "w": "place.",
+     "src": [
+      1.93,
+      3.03
+     ],
+     "clip": [
+      1.68,
+      2.78
+     ],
+     "cut15": [
+      1.93,
+      3.03
+     ]
+    }
+   ],
+   "cut15": [
+    0.25,
+    3.03
+   ]
+  },
+  {
+   "id": "L02",
+   "file": "set/lines/L02.wav",
+   "speaker": "char_daughter",
+   "kind": "on camera, runs over the cut into the wide",
+   "text": "Ta-da!",
+   "src": [
+    3.35,
+    4.1
+   ],
+   "dur": 0.75,
+   "delivery": "proud presentation, 'da' held 0.6 s, arm sweeping out toward the room",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    3.35,
+    4.1
+   ],
+   "words": [
+    {
+     "w": "Ta-da!",
+     "src": [
+      3.35,
+      4.1
+     ],
+     "clip": [
+      0.0,
+      0.75
+     ],
+     "cut15": [
+      3.35,
+      4.1
+     ]
+    }
+   ],
+   "cut15": [
+    3.35,
+    4.1
+   ]
+  },
+  {
+   "id": "L03",
+   "file": "set/lines/L03.wav",
+   "speaker": "char_mom",
+   "kind": "on camera in the wide (small in frame)",
+   "text": "Not what I was expecting.",
+   "src": [
+    4.79,
+    6.24
+   ],
+   "dur": 1.45,
+   "delivery": "polite dismay, pitch climbs on 'expecting' (200 -> 380 Hz)",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    4.79,
+    6.24
+   ],
+   "words": [
+    {
+     "w": "Not",
+     "src": [
+      4.79,
+      4.97
+     ],
+     "clip": [
+      0.0,
+      0.18
+     ],
+     "cut15": [
+      4.79,
+      4.97
+     ]
+    },
+    {
+     "w": "what",
+     "src": [
+      4.99,
+      5.1
+     ],
+     "clip": [
+      0.2,
+      0.31
+     ],
+     "cut15": [
+      4.99,
+      5.1
+     ]
+    },
+    {
+     "w": "I",
+     "src": [
+      5.1,
+      5.24
+     ],
+     "clip": [
+      0.31,
+      0.45
+     ],
+     "cut15": [
+      5.1,
+      5.24
+     ]
+    },
+    {
+     "w": "was",
+     "src": [
+      5.24,
+      5.41
+     ],
+     "clip": [
+      0.45,
+      0.62
+     ],
+     "cut15": [
+      5.24,
+      5.41
+     ]
+    },
+    {
+     "w": "expecting.",
+     "src": [
+      5.41,
+      6.24
+     ],
+     "clip": [
+      0.62,
+      1.45
+     ],
+     "cut15": [
+      5.41,
+      6.24
+     ]
+    }
+   ],
+   "cut15": [
+    4.79,
+    6.24
+   ]
+  },
+  {
+   "id": "L04",
+   "file": "set/lines/L04.wav",
+   "speaker": "char_daughter",
+   "kind": "on camera",
+   "text": "It's a vibe.",
+   "src": [
+    7.75,
+    8.56
+   ],
+   "dur": 0.81,
+   "delivery": "cheerful, defensive, low and flat (about 190 Hz)",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    7.75,
+    8.56
+   ],
+   "words": [
+    {
+     "w": "It's",
+     "src": [
+      7.75,
+      7.9
+     ],
+     "clip": [
+      0.0,
+      0.15
+     ]
+    },
+    {
+     "w": "a",
+     "src": [
+      7.9,
+      8.12
+     ],
+     "clip": [
+      0.15,
+      0.37
+     ]
+    },
+    {
+     "w": "vibe.",
+     "src": [
+      8.12,
+      8.56
+     ],
+     "clip": [
+      0.37,
+      0.81
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "file": "set/lines/L05.wav",
+   "speaker": "char_mom",
+   "kind": "starts off-screen in the wide, ends on camera in the two-shot",
+   "text": "And you're sleeping here?",
+   "src": [
+    10.79,
+    12.31
+   ],
+   "dur": 1.52,
+   "delivery": "drawn-out 'And...', then incredulous; 'here?' trails off",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    10.79,
+    12.31
+   ],
+   "words": [
+    {
+     "w": "And",
+     "src": [
+      10.79,
+      11.18
+     ],
+     "clip": [
+      0.0,
+      0.39
+     ]
+    },
+    {
+     "w": "you're",
+     "src": [
+      11.18,
+      11.39
+     ],
+     "clip": [
+      0.39,
+      0.6
+     ]
+    },
+    {
+     "w": "sleeping",
+     "src": [
+      11.39,
+      11.62
+     ],
+     "clip": [
+      0.6,
+      0.83
+     ]
+    },
+    {
+     "w": "here?",
+     "src": [
+      11.62,
+      12.31
+     ],
+     "clip": [
+      0.83,
+      1.52
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "file": "set/lines/L06.wav",
+   "speaker": "char_daughter",
+   "kind": "on camera",
+   "text": "{BRAND}?",
+   "src": [
+    14.26,
+    14.82
+   ],
+   "dur": 0.56,
+   "delivery": "tentative suggestion, rising question, turned to her mother",
+   "slot": "BRAND",
+   "muted": [
+    14.26,
+    14.82
+   ],
+   "cut30": [
+    14.26,
+    14.82
+   ],
+   "words": [
+    {
+     "w": "{BRAND}?",
+     "src": [
+      14.26,
+      14.82
+     ],
+     "clip": [
+      0.0,
+      0.56
+     ],
+     "cut15": [
+      7.662,
+      8.222
+     ]
+    }
+   ],
+   "cut15": [
+    7.662,
+    8.222
+   ]
+  },
+  {
+   "id": "L07",
+   "file": "set/lines/L07.wav",
+   "speaker": "char_mom",
+   "kind": "on camera",
+   "text": "{BRAND}.",
+   "src": [
+    14.96,
+    15.48
+   ],
+   "dur": 0.52,
+   "delivery": "decisive, falling, lower (160-230 Hz); the music re-enters 0.05 s before it",
+   "slot": "BRAND",
+   "muted": [
+    14.96,
+    15.48
+   ],
+   "cut30": [
+    14.96,
+    15.48
+   ],
+   "words": [
+    {
+     "w": "{BRAND}.",
+     "src": [
+      14.96,
+      15.48
+     ],
+     "clip": [
+      0.0,
+      0.52
+     ],
+     "cut15": [
+      8.362,
+      8.882
+     ]
+    }
+   ],
+   "cut15": [
+    8.362,
+    8.882
+   ]
+  },
+  {
+   "id": "L08",
+   "file": "set/lines/L08.wav",
+   "speaker": "char_mom",
+   "kind": "on camera, muttered while she takes out her phone (speaker uncertain: may be the announcer's lead-in)",
+   "text": "{BRAND}...",
+   "src": [
+    15.57,
+    16.1
+   ],
+   "dur": 0.53,
+   "delivery": "soft, to herself, pitch falling 270 -> 145 Hz",
+   "slot": "BRAND",
+   "muted": [
+    15.57,
+    16.1
+   ],
+   "cut30": [
+    15.57,
+    16.1
+   ],
+   "words": [
+    {
+     "w": "{BRAND}...",
+     "src": [
+      15.57,
+      16.1
+     ],
+     "clip": [
+      0.0,
+      0.53
+     ],
+     "cut15": [
+      8.972,
+      9.502
+     ]
+    }
+   ],
+   "cut15": [
+    8.972,
+    9.502
+   ]
+  },
+  {
+   "id": "L09",
+   "file": "set/lines/L09.wav",
+   "speaker": "voice_announcer",
+   "kind": "voice-over",
+   "text": "When you need to get them settled into college, turn to the ease and convenience of {BRAND}.",
+   "src": [
+    16.11,
+    20.41
+   ],
+   "dur": 4.3,
+   "delivery": "warm, friendly female announcer, conversational, 0.17 s breath after 'college,'",
+   "slot": "BRAND",
+   "muted": [
+    19.86,
+    20.41
+   ],
+   "cut30": [
+    16.11,
+    20.41
+   ],
+   "words": [
+    {
+     "w": "When",
+     "src": [
+      16.11,
+      16.3
+     ],
+     "clip": [
+      0.0,
+      0.19
+     ]
+    },
+    {
+     "w": "you",
+     "src": [
+      16.3,
+      16.44
+     ],
+     "clip": [
+      0.19,
+      0.33
+     ]
+    },
+    {
+     "w": "need",
+     "src": [
+      16.44,
+      16.65
+     ],
+     "clip": [
+      0.33,
+      0.54
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      16.65,
+      16.77
+     ],
+     "clip": [
+      0.54,
+      0.66
+     ]
+    },
+    {
+     "w": "get",
+     "src": [
+      16.77,
+      16.98
+     ],
+     "clip": [
+      0.66,
+      0.87
+     ]
+    },
+    {
+     "w": "them",
+     "src": [
+      16.98,
+      17.17
+     ],
+     "clip": [
+      0.87,
+      1.06
+     ]
+    },
+    {
+     "w": "settled",
+     "src": [
+      17.17,
+      17.49
+     ],
+     "clip": [
+      1.06,
+      1.38
+     ]
+    },
+    {
+     "w": "into",
+     "src": [
+      17.49,
+      17.66
+     ],
+     "clip": [
+      1.38,
+      1.55
+     ]
+    },
+    {
+     "w": "college,",
+     "src": [
+      17.66,
+      18.38
+     ],
+     "clip": [
+      1.55,
+      2.27
+     ]
+    },
+    {
+     "w": "turn",
+     "src": [
+      18.55,
+      18.73
+     ],
+     "clip": [
+      2.44,
+      2.62
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      18.73,
+      18.84
+     ],
+     "clip": [
+      2.62,
+      2.73
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      18.84,
+      18.95
+     ],
+     "clip": [
+      2.73,
+      2.84
+     ]
+    },
+    {
+     "w": "ease",
+     "src": [
+      18.95,
+      19.11
+     ],
+     "clip": [
+      2.84,
+      3.0
+     ]
+    },
+    {
+     "w": "and",
+     "src": [
+      19.11,
+      19.29
+     ],
+     "clip": [
+      3.0,
+      3.18
+     ]
+    },
+    {
+     "w": "convenience",
+     "src": [
+      19.29,
+      19.72
+     ],
+     "clip": [
+      3.18,
+      3.61
+     ]
+    },
+    {
+     "w": "of",
+     "src": [
+      19.74,
+      19.86
+     ],
+     "clip": [
+      3.63,
+      3.75
+     ]
+    },
+    {
+     "w": "{BRAND}.",
+     "src": [
+      19.86,
+      20.41
+     ],
+     "clip": [
+      3.75,
+      4.3
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "file": "set/lines/L10.wav",
+   "speaker": "char_daughter",
+   "kind": "off-screen over the photo insert, lands on the wide",
+   "text": "Mom,",
+   "src": [
+    20.72,
+    21.2
+   ],
+   "dur": 0.48,
+   "delivery": "embarrassed two-note whine ('Mo-om')",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    20.72,
+    21.2
+   ],
+   "words": [
+    {
+     "w": "Mom,",
+     "src": [
+      20.72,
+      21.2
+     ],
+     "clip": [
+      0.0,
+      0.48
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "file": "set/lines/L11.wav",
+   "speaker": "char_mom",
+   "kind": "on camera in the wide (small in frame)",
+   "text": "It's a great photo.",
+   "src": [
+    21.27,
+    22.35
+   ],
+   "dur": 1.08,
+   "delivery": "delighted, high (310-400 Hz), unapologetic",
+   "slot": null,
+   "muted": null,
+   "cut30": [
+    21.27,
+    22.35
+   ],
+   "words": [
+    {
+     "w": "It's",
+     "src": [
+      21.27,
+      21.41
+     ],
+     "clip": [
+      0.0,
+      0.14
+     ]
+    },
+    {
+     "w": "a",
+     "src": [
+      21.41,
+      21.5
+     ],
+     "clip": [
+      0.14,
+      0.23
+     ]
+    },
+    {
+     "w": "great",
+     "src": [
+      21.5,
+      21.75
+     ],
+     "clip": [
+      0.23,
+      0.48
+     ]
+    },
+    {
+     "w": "photo.",
+     "src": [
+      21.75,
+      22.35
+     ],
+     "clip": [
+      0.48,
+      1.08
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "file": "set/lines/L12.wav",
+   "speaker": "voice_announcer",
+   "kind": "voice-over on the end card",
+   "text": "Shop online and choose from thousands of pickup options or delivery at {URL}.",
+   "src": [
+    24.23,
+    29.44
+   ],
+   "dur": 5.21,
+   "delivery": "warm announcer, even pace; the URL read slowly (1.66 s)",
+   "slot": "URL",
+   "muted": [
+    27.78,
+    29.44
+   ],
+   "cut30": [
+    24.23,
+    29.44
+   ],
+   "words": [
+    {
+     "w": "Shop",
+     "src": [
+      24.23,
+      24.51
+     ],
+     "clip": [
+      0.0,
+      0.28
+     ]
+    },
+    {
+     "w": "online",
+     "src": [
+      24.51,
+      24.93
+     ],
+     "clip": [
+      0.28,
+      0.7
+     ]
+    },
+    {
+     "w": "and",
+     "src": [
+      24.93,
+      25.07
+     ],
+     "clip": [
+      0.7,
+      0.84
+     ]
+    },
+    {
+     "w": "choose",
+     "src": [
+      25.07,
+      25.29
+     ],
+     "clip": [
+      0.84,
+      1.06
+     ]
+    },
+    {
+     "w": "from",
+     "src": [
+      25.29,
+      25.49
+     ],
+     "clip": [
+      1.06,
+      1.26
+     ]
+    },
+    {
+     "w": "thousands",
+     "src": [
+      25.49,
+      25.79
+     ],
+     "clip": [
+      1.26,
+      1.56
+     ]
+    },
+    {
+     "w": "of",
+     "src": [
+      25.79,
+      26.07
+     ],
+     "clip": [
+      1.56,
+      1.84
+     ]
+    },
+    {
+     "w": "pickup",
+     "src": [
+      26.07,
+      26.37
+     ],
+     "clip": [
+      1.84,
+      2.14
+     ]
+    },
+    {
+     "w": "options",
+     "src": [
+      26.37,
+      26.76
+     ],
+     "clip": [
+      2.14,
+      2.53
+     ]
+    },
+    {
+     "w": "or",
+     "src": [
+      26.76,
+      27.03
+     ],
+     "clip": [
+      2.53,
+      2.8
+     ]
+    },
+    {
+     "w": "delivery",
+     "src": [
+      27.03,
+      27.46
+     ],
+     "clip": [
+      2.8,
+      3.23
+     ]
+    },
+    {
+     "w": "at",
+     "src": [
+      27.52,
+      27.76
+     ],
+     "clip": [
+      3.29,
+      3.53
+     ]
+    },
+    {
+     "w": "{URL}.",
+     "src": [
+      27.78,
+      29.44
+     ],
+     "clip": [
+      3.55,
+      5.21
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L09s",
+   "file": "set/lines/L09s.wav",
+   "speaker": "voice_announcer",
+   "kind": "voice-over (L09 shortened at its phrase boundary, for the 15 s cut)",
+   "text": "turn to the ease and convenience of {BRAND}.",
+   "src": [
+    18.55,
+    20.41
+   ],
+   "dur": 1.86,
+   "delivery": "warm, friendly female announcer, conversational, 0.17 s breath after 'college,'",
+   "slot": "BRAND",
+   "muted": [
+    19.86,
+    20.41
+   ],
+   "cut15": [
+    9.7,
+    11.56
+   ],
+   "words": [
+    {
+     "w": "turn",
+     "src": [
+      18.55,
+      18.73
+     ],
+     "clip": [
+      0.0,
+      0.18
+     ],
+     "cut15": [
+      9.7,
+      9.88
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      18.73,
+      18.84
+     ],
+     "clip": [
+      0.18,
+      0.29
+     ],
+     "cut15": [
+      9.88,
+      9.99
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      18.84,
+      18.95
+     ],
+     "clip": [
+      0.29,
+      0.4
+     ],
+     "cut15": [
+      9.99,
+      10.1
+     ]
+    },
+    {
+     "w": "ease",
+     "src": [
+      18.95,
+      19.11
+     ],
+     "clip": [
+      0.4,
+      0.56
+     ],
+     "cut15": [
+      10.1,
+      10.26
+     ]
+    },
+    {
+     "w": "and",
+     "src": [
+      19.11,
+      19.29
+     ],
+     "clip": [
+      0.56,
+      0.74
+     ],
+     "cut15": [
+      10.26,
+      10.44
+     ]
+    },
+    {
+     "w": "convenience",
+     "src": [
+      19.29,
+      19.72
+     ],
+     "clip": [
+      0.74,
+      1.17
+     ],
+     "cut15": [
+      10.44,
+      10.87
+     ]
+    },
+    {
+     "w": "of",
+     "src": [
+      19.74,
+      19.86
+     ],
+     "clip": [
+      1.19,
+      1.31
+     ],
+     "cut15": [
+      10.89,
+      11.01
+     ]
+    },
+    {
+     "w": "{BRAND}.",
+     "src": [
+      19.86,
+      20.41
+     ],
+     "clip": [
+      1.31,
+      1.86
+     ],
+     "cut15": [
+      11.01,
+      11.56
+     ]
+    }
+   ]
+  }
+ ]
+}

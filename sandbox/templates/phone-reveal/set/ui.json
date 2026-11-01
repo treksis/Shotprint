@@ -1,0 +1,201 @@
+{
+ "about": "Screens and graphics composited in code. Times are seconds inside the source shot (and the absolute source time).",
+ "screens": [
+  {
+   "id": "ui_photo_earthrise",
+   "file": "set/ui_photo_earthrise.jpg",
+   "shot": 1,
+   "use": "full frame 0-5.4 s, then the content of the phone screen during the pull-back",
+   "moves": [
+    {
+     "t": [
+      0.0,
+      2.4
+     ],
+     "scale": [
+      1.0,
+      1.02
+     ],
+     "ease": "in-out"
+    },
+    {
+     "t": [
+      2.4,
+      5.4
+     ],
+     "scale": [
+      1.02,
+      0.96
+     ],
+     "ease": "linear"
+    }
+   ]
+  },
+  {
+   "id": "ui_caption_mission",
+   "file": "set/ui_caption_mission.png",
+   "shot": 1,
+   "opacity": [
+    {
+     "t": 1.45,
+     "v": 0
+    },
+    {
+     "t": 1.8,
+     "v": 1
+    },
+    {
+     "t": 4.15,
+     "v": 1
+    },
+    {
+     "t": 4.5,
+     "v": 0
+    }
+   ],
+   "copy": [
+    "{MISSION_LINE}",
+    "Shot on {PREVIOUS_PRODUCT_NAME}",
+    "{DATE}"
+   ]
+  },
+  {
+   "id": "ui_camera_pro",
+   "files": {
+    "before": "set/ui_camera_pro_3800.jpg",
+    "after": "set/ui_camera_pro_daylight.jpg"
+   },
+   "shot": 96,
+   "size": "1920x1080, landscape phone screen shown full frame",
+   "layout": {
+    "preview": [
+     281,
+     99,
+     1458,
+     980
+    ],
+    "settings_column_x": 192,
+    "zoom_ladder_x": 1155,
+    "shutter_centre": [
+     1357,
+     540
+    ],
+    "f_button_centre": [
+     1357,
+     855
+    ],
+    "wb_panel": [
+     1500,
+     118,
+     1900,
+     962
+    ],
+    "green_dot": [
+     71,
+     526
+    ]
+   },
+   "copy": {
+    "left_column": [
+     "f/4.0 (yellow)",
+     "histogram icon",
+     "3.8 / WB -> 5.5 / WB",
+     "1/22 / SHUTTER",
+     "0.0 / EV",
+     "night-mode moon",
+     "AF",
+     "RAW / 48"
+    ],
+    "zoom": [
+     "8",
+     "4",
+     "2",
+     "1x (yellow on grey disc)",
+     ".5"
+    ],
+    "panel": [
+     "A (yellow -> white)",
+     "WHITE BALANCE (vertical)",
+     "3800K -> DAYLIGHT (vertical)",
+     "presets: flash, cloud, sun, fluorescent, bulb, AWB",
+     "X close"
+    ]
+   },
+   "timeline": [
+    {
+     "t": 0.0,
+     "abs": 139.64,
+     "state": "3800K, AWB selected (yellow dot), preview cool"
+    },
+    {
+     "t": 0.25,
+     "abs": 139.89,
+     "state": "hard switch: preview warms, value DAYLIGHT, WB 5.5"
+    },
+    {
+     "t": [
+      0.33,
+      0.54
+     ],
+     "abs": [
+      139.97,
+      140.18
+     ],
+     "state": "yellow dot fades in on the sun row, out on AWB"
+    }
+   ],
+   "taps": "no finger visible (screen recording)"
+  },
+  {
+   "id": "ui_photo_night_halo",
+   "file": "set/ui_photo_night_halo_frame.jpg",
+   "shot": 98,
+   "use": "full frame, static, 4:3 photo pillarboxed (x 240-1680 of 1920)"
+  },
+  {
+   "id": "ui_end_card",
+   "file": "set/ui_end_card.jpg",
+   "shot": 116,
+   "opacity": [
+    {
+     "t": 0.0,
+     "v": 1
+    },
+    {
+     "t": 2.37,
+     "v": 0,
+     "hard": true
+    }
+   ],
+   "copy": [
+    "{PRODUCT_NAME}",
+    "{LEGAL_LINE_1}",
+    "{LEGAL_LINE_2}"
+   ]
+  },
+  {
+   "id": "hero_finish_swaps",
+   "shot": 115,
+   "files": "product_phone_finishes on loc_dark_office, identical framing",
+   "cuts": [
+    {
+     "abs": 168.08,
+     "to": "silver"
+    },
+    {
+     "abs": 168.41,
+     "to": "black"
+    },
+    {
+     "abs": 168.75,
+     "to": "mist blue"
+    },
+    {
+     "abs": 169.08,
+     "to": "wine"
+    }
+   ],
+   "note": "hard cuts every 8 frames (0.33 s), on the music's eighth notes"
+  }
+ ]
+}

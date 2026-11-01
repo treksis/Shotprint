@@ -1,0 +1,2184 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 30.03,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 25,
+  "average_shot": 1.2,
+  "median_shot": 1.08,
+  "measured_note": "bin/dissect found 22 shots; frame checks found 3 missed hard cuts (9.30, 16.43, 18.77), so the source has 25 shots (average 1.20 s). Letterboxed 1.85:1 inside 16:9 (black bars 2.0% of height top and bottom); positions are % of the full 16:9 frame.",
+  "letterbox": "1.85:1 picture, black bars 22 px of 1080 (2.0%) top and bottom"
+ },
+ "acts": [
+  {
+   "name": "The match",
+   "shots": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "start": 0.0,
+   "end": 9.88,
+   "function": "Hook and tension: the commentator calls it, fans everywhere clutch the drink and wait; whistle, 'It'll be a free kick.'"
+  },
+  {
+   "name": "The held breath",
+   "shots": [
+    9,
+    10,
+    11
+   ],
+   "start": 9.88,
+   "end": 14.22,
+   "function": "Time stops inside the drink: a bubble, fizz, a drop falling into the glass; the sound drains to silence."
+  },
+  {
+   "name": "The goal",
+   "shots": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "start": 14.22,
+   "end": 21.31,
+   "function": "The drop lands and the world erupts: pupil, screams, toasts, sprays, pours; 'Oh, what a goal! Ecstasy, euphoria!'"
+  },
+  {
+   "name": "Overflow",
+   "shots": [
+    21,
+    22,
+    23,
+    24
+   ],
+   "start": 21.31,
+   "end": 26.4,
+   "function": "Emotion overflows: a droplet on the bottle matches a tear; she drinks by the sea; tagline."
+  },
+  {
+   "name": "End card",
+   "shots": [
+    25
+   ],
+   "start": 26.4,
+   "end": 30.03,
+   "function": "Product macro under the brand lockup."
+  }
+ ],
+ "look": {
+  "grade": "Warm, naturalistic and filmic. Tension shots are low-key with teal-green shadows and warm skin; the only saturated colour is the product red. Product macros sit in near-black voids. The goal section opens up into daylight: warm sun at the sea, soft overcast in the street, golden sunset.",
+  "contrast": "Medium-high: deep but not crushed blacks, highlights only on practicals, glass and sun.",
+  "light": "Motivated practicals inside (lamp, TV glow, fairy lights, window strips), hard sun outside, rim and backlight on every product macro.",
+  "depth_of_field": "Shallow everywhere (85-100 mm close-ups and macros, f/1.4-2.8 feel); only s19 and s20 hold some depth.",
+  "grain": "Fine film-like grain, slight halation on highlights; no haze or smoke.",
+  "brightness": "Measured 0-255: the match (s01-s08) 30-64; the held breath (s09-s11) 11-17; the goal interiors 39-83, street and sunset exteriors 66-149 (s20 peaks at 149); overflow 52-124 (seafront s23-s24 at 83-124); end card 65-95.",
+  "frame": "Letterboxed 1.85:1 inside 16:9 (black bars 2.0% of height top and bottom); positions are % of the full 16:9 frame."
+ },
+ "text_style": {
+  "typeface": "Tagline: a regular-weight transitional serif (set/font_serif.ttf, tracked -6%) in sentence case, followed by the {BRAND} wordmark in a bold grotesk (set/font_sans.ttf) caps. Lockup: bold sans wordmark in a square brand tile; partner line in small bold caps.",
+  "case": "Tagline sentence case + wordmark caps; partner line all caps",
+  "size": "Tagline: serif ascender height 6.7% H, wordmark cap height 7.0% H, one baseline at 53.0% H, group centred at 50% W. Lockup: brand tile 10.2% W square; partner line cap height 1.0% H, tracking +12%.",
+  "position": "Centred on frame; exact layouts in set/ui_tagline.png, set/ui_end_card.png and set/ui.json",
+  "animation": "None: both cut in with their shot and hold until the cut / the end. No captions, no supers, no lower-thirds anywhere else; the commentator's monitor shows a match with no score bug."
+ },
+ "sound": {
+  "music": "set/score.wav is the film's full mix (voice, crowd, effects and music in one track). 0.00-6.05 stadium murmur bed (-23 to -18 LUFS) with a low hum at 2.9-3.8 | 6.05-6.65 referee's whistle (pure tone ~3.7 kHz) | 7.4-10.2 the crowd's tension swells to -12 LUFS, a sharp hit at 9.88 | 10.2-14.0 everything drains away exponentially to near silence (-45 LUFS at 13.6-14.0): the held breath | 14.04 SLAM: crowd roar and music enter at once (-44 -> -14 dB in 40 ms) as the drop lands | 14.0-23.5 warm swelling anthem (sustained chords, no hard drum grid) under cheering, -12 to -17 LUFS | 23.5-29.5 music alone under the drink and end card, -16/-17 LUFS | 29.5-30.03 eases out to silence.",
+  "speech": "One voice: a veteran football commentator, close-miked and dry, always on top (-14 to -18 LUFS momentary). On camera only in s01 (from behind); every other line is voice-over over the montage. Five lines: L01 0.28-1.55, L02 6.38-7.42, L03 14.50-15.78, L04 17.70-20.45, L05 21.00-23.15. He builds from a calm observation to an incredulous call to an almost sung, drawn-out delivery on 'Ecstasy, euphoria' and 'emotion overflows'.",
+  "effects": "Whistle 6.05; whoosh-hit 9.88 on the cut into the bubble; the drop's slam 14.04; crowd throughout. No can-opening or pour sounds are featured on their own.",
+  "mix": "Voice on top; crowd and music ducked under him; the 4-second drain to silence before the slam is the film's key sound move.",
+  "silences": [
+   {
+    "start": 13.6,
+    "end": 14.0,
+    "note": "near silence, -45 LUFS"
+   }
+  ],
+  "black": [
+   {
+    "start": 10.14,
+    "end": 11.05
+   }
+  ]
+ },
+ "lines": "set/lines.json",
+ "setups": {
+  "BOOTH_OTS": {
+   "shots": [
+    1
+   ],
+   "camera": "eye level, behind-right three-quarter rear (over his right shoulder), normal-long lens (~75 mm), shallow depth of field: ear cup and mic sharp, monitor and pitch soft",
+   "location": "loc_booth"
+  },
+  "HOME_TABLE_CU": {
+   "shots": [
+    2
+   ],
+   "camera": "slightly high, three-quarter front, ~50 mm, shallow depth of field (bottle sharp, lamp and man soft)",
+   "location": "loc_home"
+  },
+  "BAR_HANDS_CU": {
+   "shots": [
+    3
+   ],
+   "camera": "eye level, close, ~85 mm, very shallow depth of field (nails and can sharp)",
+   "location": "loc_bar"
+  },
+  "TERRACE_TABLE_MED": {
+   "shots": [
+    4
+   ],
+   "camera": "eye level at seated height, ~50 mm, moderate depth of field",
+   "location": "loc_terrace"
+  },
+  "YOUNG_FAN_PRAY": {
+   "shots": [
+    5
+   ],
+   "camera": "eye level, ~85 mm, shallow depth of field",
+   "location": "loc_bar"
+  },
+  "YOUNG_FAN_CAN": {
+   "shots": [
+    6
+   ],
+   "camera": "slightly low, just below the can, ~85 mm, shallow depth of field (can sharp, face soft)",
+   "location": "loc_bar"
+  },
+  "CAN_TOP_MACRO": {
+   "shots": [
+    7
+   ],
+   "camera": "high angle, near top-down, ~100 mm macro, shallow depth of field (lid sharp, fingers soft)",
+   "location": "loc_bar (his wooden table)"
+  },
+  "SKIN_MACRO": {
+   "shots": [
+    8
+   ],
+   "camera": "side-on, at the arm's height, ~100 mm macro, razor-thin depth of field on the hairs",
+   "location": "black void"
+  },
+  "BUBBLE_MACRO": {
+   "shots": [
+    9,
+    10
+   ],
+   "camera": "eye level, ~100 mm probe macro, very shallow depth of field",
+   "location": "black void (inside the drink)"
+  },
+  "GLASS_TOPDOWN": {
+   "shots": [
+    11
+   ],
+   "camera": "top-down, ~50 mm macro, deep enough to hold the whole rim",
+   "location": "black void"
+  },
+  "EYE_MACRO": {
+   "shots": [
+    12
+   ],
+   "camera": "frontal, ~100 mm macro, focus on the iris",
+   "location": "none (face fills frame)"
+  },
+  "SEA_HANDHELD_CU": {
+   "shots": [
+    13
+   ],
+   "camera": "very close, slightly low, ~35 mm, handheld",
+   "location": "loc_seafront"
+  },
+  "BAR_WIDE_LOW": {
+   "shots": [
+    14
+   ],
+   "camera": "slightly low, ~35 mm, moderate depth of field",
+   "location": "loc_bar"
+  },
+  "TERRACE_TOAST_CU": {
+   "shots": [
+    15
+   ],
+   "camera": "eye level, ~35 mm, handheld",
+   "location": "loc_terrace"
+  },
+  "BAR_BLUE_MED": {
+   "shots": [
+    16
+   ],
+   "camera": "eye level, ~50 mm, shallow depth of field",
+   "location": "loc_bar (dark end, blue window light)"
+  },
+  "SPRAY_MACRO": {
+   "shots": [
+    17
+   ],
+   "camera": "low, side-on, ~100 mm macro, high-speed slow motion, dark soft background",
+   "location": "dark street background, out of focus"
+  },
+  "STREET_FACE_CU": {
+   "shots": [
+    18
+   ],
+   "camera": "eye level, profile, ~85 mm, shallow depth of field",
+   "location": "loc_street"
+  },
+  "STREET_LOW_GROUP": {
+   "shots": [
+    19
+   ],
+   "camera": "low angle (~1 m), ~28 mm wide, deep-ish depth of field",
+   "location": "loc_street"
+  },
+  "SUNSET_LOW": {
+   "shots": [
+    20
+   ],
+   "camera": "low, ~35 mm, backlit",
+   "location": "loc_seafront_sunset"
+  },
+  "BOTTLE_MACRO": {
+   "shots": [
+    21
+   ],
+   "camera": "side-on, ~100 mm macro, razor depth of field",
+   "location": "none"
+  },
+  "TEAR_MACRO": {
+   "shots": [
+    22
+   ],
+   "camera": "three-quarter front, ~100 mm macro",
+   "location": "none"
+  },
+  "SEA_DRINK_CU": {
+   "shots": [
+    23
+   ],
+   "camera": "eye level, ~85 mm, shallow depth of field",
+   "location": "loc_seafront"
+  },
+  "SEA_DRINK_MED": {
+   "shots": [
+    24
+   ],
+   "camera": "eye level, ~50 mm",
+   "location": "loc_seafront"
+  },
+  "ENDCARD_CAN_MACRO": {
+   "shots": [
+    25
+   ],
+   "camera": "low angle, ~100 mm macro",
+   "location": "none (soft sky)"
+  }
+ },
+ "set": {
+  "char_commentator": {
+   "file": "set/char_commentator_sheet.jpg",
+   "fixes": "the commentator (invented): ~60, shaved bald head, fair tanned skin, beige linen jacket, black headset and lip mic"
+  },
+  "char_home_fan": {
+   "file": "set/char_home_fan_sheet.jpg",
+   "fixes": "the older man at home (s02) and the tear macro's skin (s22): ~65, deep brown skin, grey beard, sky-blue t-shirt"
+  },
+  "char_nails_fan": {
+   "file": "set/char_nails_fan_sheet.jpg",
+   "fixes": "the woman with emerald-green nails (s03)"
+  },
+  "char_bearded_fan": {
+   "file": "set/char_bearded_fan_sheet.jpg",
+   "fixes": "the heavy-set bearded man in the cream pleated shirt (s04, s15)"
+  },
+  "char_scarf_fan": {
+   "file": "set/char_scarf_fan_sheet.jpg",
+   "fixes": "the white-haired man with the sky-blue and white striped scarf (s04, s15)"
+  },
+  "char_young_fan": {
+   "file": "set/char_young_fan_sheet.jpg",
+   "fixes": "the anxious young man (s05-s08: face, hands, forearm)"
+  },
+  "char_sea_woman": {
+   "file": "set/char_sea_woman_sheet.jpg",
+   "fixes": "the hero woman by the sea (s12 eye, s13, s23, s24): curly brown hair, white crochet top, silver hoops"
+  },
+  "char_bar_fan": {
+   "file": "set/char_bar_fan_sheet.jpg",
+   "fixes": "the shouting man in the bar (s14)"
+  },
+  "char_white_shirt_fan": {
+   "file": "set/char_white_shirt_fan_sheet.jpg",
+   "fixes": "the man in the white stand-collar shirt (s16, his hand in s17)"
+  },
+  "char_street_woman": {
+   "file": "set/char_street_woman_sheet.jpg",
+   "fixes": "the laughing woman with the long braid (s18, s19)"
+  },
+  "char_curly_fan": {
+   "file": "set/char_curly_fan_sheet.jpg",
+   "fixes": "the curly-haired young man (s19)"
+  },
+  "char_crowd_wardrobe": {
+   "file": "set/char_crowd_wardrobe.jpg",
+   "fixes": "generic fan wardrobe for extras (yellow t-shirt, striped yellow polo, sky-blue/white scarf); no crests"
+  },
+  "product_can": {
+   "file": "set/product_can_sheet.jpg",
+   "fixes": "330 ml can, deep red body #B5121B ({BRAND_COLOUR}), plain white bold sans {BRAND} wordmark across the front (~60% of the can width), silver lid, ring-pull and base rim, condensation beads"
+  },
+  "product_bottle": {
+   "file": "set/product_bottle_sheet.jpg",
+   "fixes": "330 ml clear straight-walled glass bottle (no waist, no flutes), long straight neck, silver crown cap, dark amber-brown cola, red #B5121B label band across the middle third with the white {BRAND} wordmark"
+  },
+  "product_macro": {
+   "file": "set/product_macro_sheet.jpg",
+   "fixes": "the drink's macro looks: 1 glass from above, 2 amber bubble, 3 crown splash, 4 condensation on red metal"
+  },
+  "loc_booth": {
+   "file": "set/loc_booth.jpg",
+   "fixes": "commentary booth over a floodlit pitch, dim interior (52 of 255)"
+  },
+  "loc_home": {
+   "file": "set/loc_home.jpg",
+   "fixes": "dark living room, warm lamp left, blue TV glow right (38)"
+  },
+  "loc_bar": {
+   "file": "set/loc_bar.jpg",
+   "fixes": "neighbourhood football bar: dark wood, red fairy lights, green lamp, TV high, blue window light at one side (40)"
+  },
+  "loc_terrace": {
+   "file": "set/loc_terrace.jpg",
+   "fixes": "open-air cafe terrace with red-and-white checked cloths in late sun (72)"
+  },
+  "loc_seafront": {
+   "file": "set/loc_seafront.jpg",
+   "fixes": "sunny concrete pier, metal shade canopy on thin blue poles, calm sea, low headland (145; the film's frames with people sit at 83-124)"
+  },
+  "loc_seafront_sunset": {
+   "file": "set/loc_seafront_sunset.jpg",
+   "fixes": "the same seafront at sunset, low angle, canopy edge top right (130)"
+  },
+  "loc_street": {
+   "file": "set/loc_street.jpg",
+   "fixes": "narrow street between pale ochre stone blocks, low angle, bright overcast (118)"
+  },
+  "ui_tagline": {
+   "file": "set/ui_tagline.png",
+   "fixes": "tagline super, 1920x1080 with alpha; redraw with draw_ui.py for a new brand"
+  },
+  "ui_end_card": {
+   "file": "set/ui_end_card.png",
+   "fixes": "end lockup, 1920x1080 with alpha; redraw with draw_ui.py"
+  },
+  "ui": {
+   "file": "set/ui.json",
+   "fixes": "positions and times of both graphics"
+  },
+  "fonts": {
+   "file": [
+    "set/font_serif.ttf",
+    "set/font_sans.ttf"
+   ],
+   "fixes": "DejaVu Serif (free licence) and Roboto Bold (Apache 2.0) for the graphics"
+  },
+  "lines": {
+   "file": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav"
+   ],
+   "fixes": "the commentator's five recorded lines (cut from the full mix, so crowd and music sit under them) and their timing"
+  },
+  "voice_commentator": {
+   "file": "set/voice_commentator.wav",
+   "fixes": "10.3 s of the commentator's voice (the five lines joined) for timbre"
+  },
+  "score": {
+   "file": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "the soundtrack (full mix) and its 30 s / 15 s cuts"
+  }
+ },
+ "slots": {
+  "brand": {
+   "default": "{BRAND} = SODA",
+   "swap": "the new drink's name; it appears on the can, the bottle label, the tagline and the lockup tile. Redraw graphics: python3 templates/fan-moments/draw_ui.py templates/fan-moments/set <BRAND> <TAGLINE> <PARTNER_LINE> <BRAND_COLOUR>"
+  },
+  "brand_colour": {
+   "default": "{BRAND_COLOUR} = #B5121B deep red",
+   "swap": "the can body, label band and lockup tile; keep it the only saturated colour in the tension shots"
+  },
+  "product": {
+   "default": "product_can + product_bottle + product_macro",
+   "swap": "any chilled drink in a can and a glass bottle; keep condensation, fizz and the dark liquid for the macros (s07, s09-s11, s17, s21, s25)"
+  },
+  "tagline": {
+   "default": "{TAGLINE} = 'Feel the rush with' + {BRAND}",
+   "swap": "about 16-20 characters of sentence-case serif before the wordmark"
+  },
+  "partner": {
+   "default": "{PARTNER_MARK} = plain football pictogram tile; {PARTNER_LINE} = 'FOR EVERY FAN'",
+   "swap": "an event or club mark the new client owns, or drop the second tile and centre the brand tile"
+  },
+  "commentator": {
+   "default": "char_commentator + voice_commentator + lines L01-L05",
+   "swap": "any match commentator; keep the five-line build (observation, set-up, the call, two drawn-out emotional lines) and the line times in set/lines.json"
+  },
+  "lines": {
+   "default": "L01 'This is quite a game.' L02 'It'll be a free kick.' L03 'Oh, what a goal!' L04 'Ecstasy, euphoria!' L05 'And emotion overflows.'",
+   "swap": "new words of the same length and shape; keep them inside the times in lines.json"
+  },
+  "fans": {
+   "default": "the eleven invented cast sheets",
+   "swap": "any mix of ages and places; keep one fan per place and the hero woman for eye, scream and drink"
+  },
+  "places": {
+   "default": "booth, home, bar, terrace, street, seafront (day and sunset)",
+   "swap": "any city's equivalents; keep dark interiors before the goal and daylight after it"
+  },
+  "sport": {
+   "default": "football (monitor, whistle, 'free kick', 'goal')",
+   "swap": "another sport's equivalent beat (penalty, last shot, match point); keep the whistle -> held breath -> slam structure"
+  }
+ },
+ "shots": [
+  {
+   "n": 1,
+   "start": 0,
+   "end": 2.21,
+   "dur": 2.21,
+   "in": "start",
+   "brightness": {
+    "start": 50,
+    "mid": 54,
+    "end": 61
+   },
+   "colour": "#31372b",
+   "change": 11.65,
+   "sound": "-20 LUFS momentary under the voice (the -34 mean includes the 0.06 s of silence at the head), -18.1 peak",
+   "setup": "BOOTH_OTS",
+   "location": "loc_booth",
+   "cast": [
+    "char_commentator"
+   ],
+   "wardrobe": "light beige linen jacket over a pale off-white shirt; black closed-back headset; black handheld lip microphone on a coiled cable",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Over his right shoulder from behind: his bald head, ear cup and shoulder fill the right half (x 50-100% at the start, x 63-100% at the end), the head top cropped by the frame top; the lip mic at his mouth at x 43-50%, y 45-60% (start). The slim black commentary monitor fills the left 43% (x 0-43%, y 28-88%) showing a match from a high wide angle (green pitch, players in yellow and in white). Through the booth window behind it the real pitch (bright green) and dark stands with a yellow crowd fill the top 30%. A white notepad at the bottom centre (x 35-65%, y 78-100%) by the end.",
+   "camera": "eye level, behind-right three-quarter rear (over his right shoulder), normal-long lens (~75 mm), shallow depth of field: ear cup and mic sharp, monitor and pitch soft",
+   "camera_move": "near locked handheld float, about 2% drift right over 2.21 s; no push",
+   "action": "0.00-1.55 he speaks into the lip mic, 'This is quite a game.' (L01); 1.6-2.2 he lowers the mic to his chin and turns his head a little away to the right toward the window, eyes on the play.",
+   "light": "Cool floodlit daylight from the booth window (frame left/front) rims his head and shoulder; the booth interior is dim grey; the monitor and pitch are the brightest areas. Brightness 50/54/61.",
+   "out": "hard cut",
+   "audio": "L01 'This is quite a game.' 0.28-1.55, on camera (his mouth is hidden behind the mic, seen from behind), close, dry broadcast voice on top at about -18 LUFS; under it a low stadium murmur.",
+   "lines": [
+    "L01"
+   ],
+   "render": "first frame + guide audio: plate from loc_booth + char_commentator_sheet seen from behind-right, guide_audio set/lines/L01.wav (the mouth is hidden, so sync tolerance is high). If the framing drifts, re-render on the same first frame.",
+   "board_start": "boards/s01a.jpg",
+   "board_end": "boards/s01b.jpg",
+   "text": [],
+   "board": "boards/s01.jpg"
+  },
+  {
+   "n": 2,
+   "start": 2.21,
+   "end": 3.29,
+   "dur": 1.08,
+   "in": "cut",
+   "brightness": {
+    "start": 37,
+    "mid": 40,
+    "end": 41
+   },
+   "colour": "#1f272c",
+   "change": 13.92,
+   "sound": "-23.42 LUFS mean, -22.35 peak",
+   "setup": "HOME_TABLE_CU",
+   "location": "loc_home",
+   "cast": [
+    "char_home_fan",
+    "product_bottle"
+   ],
+   "wardrobe": "faded sky-blue crew-neck t-shirt; red-and-white string bracelet on the right wrist",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "A full glass bottle stands on the table at x 30-38% (8% of the width, y 15-95%), sharp. His chest in the blue t-shirt fills x 40-100%; the face is cropped above the mouth, only the grey beard at the top edge (x 55-70%). His right hand is at his beard, his left hand fidgets with a key ring at x 85-95%, y 55-70%. The cream table lamp glows at the left edge (x 0-18%, y 35-75%).",
+   "camera": "slightly high, three-quarter front, ~50 mm, shallow depth of field (bottle sharp, lamp and man soft)",
+   "camera_move": "locked off with a slight handheld breathing",
+   "action": "He rubs his beard and bites a knuckle, eyes on a TV off-screen right; the bottle stands untouched.",
+   "light": "Warm lamp key from the left, cool blue TV glow from the right turns the t-shirt cyan; very dark room. Brightness 37/40/41.",
+   "out": "hard cut",
+   "audio": "Crowd murmur bed around -23 LUFS; no speech.",
+   "render": "first + last frame: plate from loc_home + char_home_fan_sheet + product_bottle_sheet; the second frame is the same plate with his hand moved from beard to mouth.",
+   "text": [],
+   "board": "boards/s02.jpg",
+   "lines": []
+  },
+  {
+   "n": 3,
+   "start": 3.29,
+   "end": 4.67,
+   "dur": 1.38,
+   "in": "cut",
+   "brightness": {
+    "start": 38,
+    "mid": 40,
+    "end": 37
+   },
+   "colour": "#282421",
+   "change": 17.58,
+   "sound": "-22.06 LUFS mean, -21.61 peak",
+   "setup": "BAR_HANDS_CU",
+   "location": "loc_bar",
+   "cast": [
+    "char_nails_fan",
+    "product_can"
+   ],
+   "wardrobe": "pale aqua shirt over a black top; emerald-green almond nails; gold ring",
+   "shot_size": "close-up",
+   "subject_in_frame": "Two hands grip a red can at x 45-85% (can 18% of the width, y 25-80%): the right hand's green-nailed fingers curl over the lid, the left hand cups the base. Her chin and mouth are soft and out of focus at the top left (x 0-40%, y 0-35%); another fan's pale shirt is blurred at the left edge.",
+   "camera": "eye level, close, ~85 mm, very shallow depth of field (nails and can sharp)",
+   "camera_move": "slow handheld push in, about 3% over 1.38 s",
+   "action": "She squeezes the can and drums her green nails on the lid, waiting.",
+   "light": "Warm low practical key from the right, teal-green ambient fill; dark bar. Brightness 38/40/37.",
+   "out": "hard cut",
+   "audio": "Crowd murmur around -22 LUFS with a low sustained hum (about 250 Hz) at 2.9-3.8.",
+   "render": "first + last frame: plate from loc_bar + char_nails_fan_sheet + product_can_sheet; last frame = fingers moved on the lid, 3% tighter.",
+   "text": [],
+   "board": "boards/s03.jpg",
+   "lines": []
+  },
+  {
+   "n": 4,
+   "start": 4.67,
+   "end": 6.09,
+   "dur": 1.42,
+   "in": "cut",
+   "brightness": {
+    "start": 59,
+    "mid": 64,
+    "end": 62
+   },
+   "colour": "#4d392f",
+   "change": 42.18,
+   "sound": "-20.27 LUFS mean, -18.14 peak",
+   "setup": "TERRACE_TABLE_MED",
+   "location": "loc_terrace",
+   "cast": [
+    "char_bearded_fan",
+    "char_scarf_fan",
+    "product_can"
+   ],
+   "wardrobe": "bearded fan: cream pleated short-sleeve shirt; scarf fan: beige jacket, sky-blue and white striped scarf",
+   "shot_size": "medium",
+   "subject_in_frame": "The bearded fan's torso fills x 0-60% (head cropped above the beard; beard at the top, x 35-55%); his two open hands rub together around a red can held at x 45-65%, y 50-80%. The scarf fan sits to his left at x 60-100%, face cropped, his striped scarf visible; a second red can stands on the table at the right edge.",
+   "camera": "eye level at seated height, ~50 mm, moderate depth of field",
+   "camera_move": "handheld, slight drift left (about 3%)",
+   "action": "The bearded fan rolls the can between his palms as if warming his hands, then claps them together once around it (0.6-1.2 s into the shot).",
+   "light": "Warm late-afternoon shade under the pergola, bright background. Brightness 59/64/62.",
+   "out": "hard cut",
+   "audio": "Murmur rising to about -18 LUFS; the referee's whistle starts at 6.05, 0.04 s before the cut.",
+   "render": "first + last frame: plate from loc_terrace (shaded table) + char_bearded_fan_sheet + char_scarf_fan_sheet + product_can_sheet; last frame = palms pressed together around the can.",
+   "text": [],
+   "board": "boards/s04.jpg",
+   "lines": []
+  },
+  {
+   "n": 5,
+   "start": 6.09,
+   "end": 7.13,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 54,
+    "mid": 51,
+    "end": 50
+   },
+   "colour": "#38302c",
+   "change": 10.47,
+   "sound": "-15.59 LUFS mean, -14.39 peak",
+   "setup": "YOUNG_FAN_PRAY",
+   "location": "loc_bar",
+   "cast": [
+    "char_young_fan",
+    "product_can"
+   ],
+   "wardrobe": "white t-shirt under an open light grey overshirt",
+   "shot_size": "close-up",
+   "subject_in_frame": "The young fan in three-quarter left profile at x 40-90%, eyes half closed; his clasped hands rest on top of a red can that stands at x 30-48%, y 45-100% (17% of the width); a bright window strip at the top left (x 20-45%, y 0-10%).",
+   "camera": "eye level, ~85 mm, shallow depth of field",
+   "camera_move": "locked off, very slow push (about 2%)",
+   "action": "He presses his clasped hands down on the can's lid and touches his lips to his knuckles, praying.",
+   "light": "Soft cool window light from the top left, warm low fill; dim bar corner. Brightness 54/51/50.",
+   "out": "hard cut",
+   "audio": "Referee's whistle 6.05-6.65 (pure tone about 3.7 kHz), then L02 'It'll be a free kick.' 6.38-7.42, commentator voice-over.",
+   "lines": [
+    "L02"
+   ],
+   "render": "first + last frame: plate from loc_bar (window corner) + char_young_fan_sheet + product_can_sheet.",
+   "text": [],
+   "board": "boards/s05.jpg"
+  },
+  {
+   "n": 6,
+   "start": 7.13,
+   "end": 8.34,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 33,
+    "end": 30
+   },
+   "colour": "#311b15",
+   "change": 20.52,
+   "sound": "-17.24 LUFS mean, -15.2 peak",
+   "setup": "YOUNG_FAN_CAN",
+   "location": "loc_bar",
+   "cast": [
+    "char_young_fan",
+    "product_can"
+   ],
+   "wardrobe": "as s05",
+   "shot_size": "close-up",
+   "subject_in_frame": "The red can is held up in the foreground at x 20-55%, y 25-100% (30% of the width), sharp; his face is soft behind it at x 50-90%, y 0-80%, looking up and right at a screen off-frame.",
+   "camera": "slightly low, just below the can, ~85 mm, shallow depth of field (can sharp, face soft)",
+   "camera_move": "slow push in, about 4% over 1.21 s, ease-in",
+   "action": "He holds the can at his chest and stares up at the screen, motionless, lips parted.",
+   "light": "Warm key from the right (screen glow), dark background with warm bokeh. Brightness 36/33/30.",
+   "out": "hard cut",
+   "audio": "End of L02 (to 7.42); the crowd's tension swells from -18 to -16 LUFS.",
+   "render": "first + last frame: plate from loc_bar + char_young_fan_sheet + product_can_sheet; last frame pushed in 4%.",
+   "text": [],
+   "board": "boards/s06.jpg",
+   "lines": []
+  },
+  {
+   "n": 7,
+   "start": 8.34,
+   "end": 9.3,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 56,
+    "mid": 59,
+    "end": 50
+   },
+   "colour": "#60321b",
+   "change": 36.04,
+   "sound": "-14.1 LUFS mean, -13.8 peak",
+   "measured_note": "split from bin/dissect shot 7 by a hard cut the detector missed (frame-checked at 9.3 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "CAN_TOP_MACRO",
+   "location": "loc_bar (his wooden table)",
+   "cast": [
+    "char_young_fan (hands)",
+    "product_can"
+   ],
+   "wardrobe": "bare hands",
+   "shot_size": "macro",
+   "subject_in_frame": "Looking down at about 60 degrees onto an open red can on a warm wooden table: the silver lid, raised ring-pull and black drinking hole fill x 55-100% (lid 45% of the width), the red body running off the top right, beaded with condensation; his two fists and twisting fingers at the lower left (x 0-35%, y 45-100%); brown wood fills the rest.",
+   "camera": "high angle, near top-down, ~100 mm macro, shallow depth of field (lid sharp, fingers soft)",
+   "camera_move": "locked off",
+   "action": "His knuckles twist and fidget; the condensation glistens; the can does not move.",
+   "light": "Warm tungsten top light, glints on the lid's droplets. Brightness 56/59/50.",
+   "out": "hard cut (match on tension: knuckles -> skin)",
+   "audio": "Crowd swell around -14 LUFS.",
+   "render": "first + last frame from product plates: product_can_sheet (top view) on loc_bar's wood with char_young_fan_sheet hands; last frame = fingers clenched tighter.",
+   "text": [],
+   "board": "boards/s07.jpg",
+   "lines": []
+  },
+  {
+   "n": 8,
+   "start": 9.3,
+   "end": 9.88,
+   "dur": 0.58,
+   "in": "hard cut (match on tension: knuckles -> skin)",
+   "brightness": {
+    "start": 30,
+    "mid": 31,
+    "end": 33
+   },
+   "colour": "#291e12",
+   "change": 36.04,
+   "sound": "-12.9 LUFS mean, -12.8 peak",
+   "measured_note": "split from bin/dissect shot 7 by a hard cut the detector missed (frame-checked at 9.3 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "SKIN_MACRO",
+   "location": "black void",
+   "cast": [
+    "char_young_fan (forearm)"
+   ],
+   "wardrobe": "bare forearm",
+   "shot_size": "macro",
+   "subject_in_frame": "A forearm in profile crosses the lower 35% of the frame (x 0-100%, y 62-100%, curving up slightly to the right); fine hairs along its top edge stand up against a dark olive background.",
+   "camera": "side-on, at the arm's height, ~100 mm macro, razor-thin depth of field on the hairs",
+   "camera_move": "locked off",
+   "action": "Goosebumps: the hairs rise during the shot.",
+   "light": "Warm backlight from the right rims the hairs; the background falls to dark olive. Brightness 30/31/33.",
+   "out": "hard cut",
+   "audio": "Crowd swell at its peak (-12.9 LUFS); a sharp whoosh-hit at 9.88 on the cut.",
+   "render": "first + last frame: macro plate of the forearm from char_young_fan_sheet's skin tone (hairs flat) -> the same plate with the hairs raised.",
+   "text": [],
+   "board": "boards/s08.jpg",
+   "lines": []
+  },
+  {
+   "n": 9,
+   "start": 9.88,
+   "end": 11.05,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 15,
+    "mid": 12,
+    "end": 13
+   },
+   "colour": "#0b0b0a",
+   "change": 6,
+   "sound": "-17.75 LUFS mean, -11.77 peak",
+   "setup": "BUBBLE_MACRO",
+   "location": "black void (inside the drink)",
+   "cast": [
+    "product_macro"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "A single amber bubble in a near-black liquid void: at the start it fills x 30-70%, y 35-100% (40% of the width), close and soft; it recedes to a 3%-wide pinpoint at x 50%, y 55% by the end. Red-amber sparkle particles drift in the upper left.",
+   "camera": "eye level, ~100 mm probe macro, very shallow depth of field",
+   "camera_move": "locked off; the bubble flies away from camera (scale 40% -> 3% of the width, ease-out, most of it in the first 0.5 s)",
+   "action": "Time stops: the bubble shrinks away into the dark in slow motion.",
+   "light": "Amber-red rim light from the right, black void. Brightness 15/12/13.",
+   "out": "hard cut",
+   "audio": "The crowd drains away: -13 -> -21 LUFS across the shot.",
+   "render": "first + last frame from product plates: product_macro_sheet panel 2 enlarged (bubble 40% of the width, soft) -> the same bubble 3% wide.",
+   "board_start": "boards/s09a.jpg",
+   "board_end": "boards/s09b.jpg",
+   "text": [],
+   "board": "boards/s09.jpg",
+   "lines": []
+  },
+  {
+   "n": 10,
+   "start": 11.05,
+   "end": 12.72,
+   "dur": 1.67,
+   "in": "hard cut (both shots sit near black, 11-17 of 255; bin/dissect calls it 'from black')",
+   "brightness": {
+    "start": 11,
+    "mid": 12,
+    "end": 17
+   },
+   "colour": "#0f0a08",
+   "change": 6.18,
+   "sound": "-26.93 LUFS mean, -22.19 peak",
+   "setup": "BUBBLE_MACRO",
+   "location": "black void (inside the drink)",
+   "cast": [
+    "product_macro"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "The amber bubble (6% of the width) rises slowly through the frame centre from y 60% to y 40% (x 45-50%); thin streaks of tiny fizz bubbles rise all around it; warm amber bokeh at the left.",
+   "camera": "eye level, ~100 mm macro, shallow depth of field",
+   "camera_move": "locked off (slow motion; the bubble rises 20% of the height in 1.67 s)",
+   "action": "The bubble rises through the fizz.",
+   "light": "Amber rim light, near-black liquid. Brightness 11/12/17.",
+   "out": "hard cut",
+   "audio": "Still draining: -22 -> -31 LUFS, a low rumble only.",
+   "render": "first + last frame from product plates: product_macro_sheet panel 2 (bubble low, y 60%) -> (bubble high, y 40%).",
+   "text": [],
+   "board": "boards/s10.jpg",
+   "lines": []
+  },
+  {
+   "n": 11,
+   "start": 12.72,
+   "end": 14.22,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 14,
+    "mid": 15,
+    "end": 17
+   },
+   "colour": "#130c0d",
+   "change": 3.46,
+   "sound": "-34.73 LUFS mean, -17.44 peak",
+   "setup": "GLASS_TOPDOWN",
+   "location": "black void",
+   "cast": [
+    "product_macro"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "Straight down into a clear glass tumbler of dark cola: the rim is a circle filling x 21-79% (58% of the width, the full picture height), a ring of fizz at its edge, a red glint at the lower right of the glass. A single drop falls from the top edge (y 15%) toward the centre and lands at 14.00, throwing up a white crown splash about 15% of the width at the centre.",
+   "camera": "top-down, ~50 mm macro, deep enough to hold the whole rim",
+   "camera_move": "locked off",
+   "action": "0.00-1.28 the drop falls (slow motion); 1.28 it hits the surface and the crown splash rises; cut at 1.50.",
+   "light": "Top light rims the glass, black surround. Brightness 14/15/17.",
+   "out": "hard cut (on the splash: the sound has already slammed back at 14.04)",
+   "audio": "Near silence (-37 -> -45 LUFS, 13.6-14.0), then at 14.04 the score slams in: crowd roar and music (-44 -> -14 dB in 40 ms).",
+   "render": "first + last frame from product plates: product_macro_sheet panel 1 (glass, drop at the top) -> panel 3 (crown splash at the centre); keep the splash at 1.28 s, in sync with the score's hit.",
+   "board_start": "boards/s11a.jpg",
+   "board_end": "boards/s11b.jpg",
+   "text": [],
+   "board": "boards/s11.jpg",
+   "lines": []
+  },
+  {
+   "n": 12,
+   "start": 14.22,
+   "end": 14.68,
+   "dur": 0.46,
+   "in": "cut",
+   "brightness": {
+    "start": 48,
+    "mid": 62,
+    "end": 67
+   },
+   "colour": "#493724",
+   "change": 0,
+   "sound": "-13.84 LUFS mean, -12.07 peak",
+   "setup": "EYE_MACRO",
+   "location": "none (face fills frame)",
+   "cast": [
+    "char_sea_woman (eye)"
+   ],
+   "wardrobe": "none",
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "One eye fills the frame: the hazel-green iris spans x 25-95% (70% of the width, full height); lashes and lid along the top edge; the pupil contracts from 45% of the iris to 25%.",
+   "camera": "frontal, ~100 mm macro, focus on the iris",
+   "camera_move": "locked off",
+   "action": "The pupil snaps smaller in 0.46 s: the goal.",
+   "light": "Warm soft key from the top left, catchlight upper left; it brightens as the pupil closes. Brightness 48/62/67.",
+   "out": "hard cut",
+   "audio": "Crowd roar about -14 LUFS; L03 'Oh,' starts at 14.50.",
+   "lines": [
+    "L03"
+   ],
+   "render": "first + last frame: eye macro plate from char_sea_woman_sheet (hazel-green iris, pupil wide) -> same plate, pupil narrow.",
+   "text": [],
+   "board": "boards/s12.jpg"
+  },
+  {
+   "n": 13,
+   "start": 14.68,
+   "end": 15.27,
+   "dur": 0.59,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 83,
+    "end": 79
+   },
+   "colour": "#584c43",
+   "change": 0,
+   "sound": "-12.38 LUFS mean, -11.41 peak",
+   "setup": "SEA_HANDHELD_CU",
+   "location": "loc_seafront",
+   "cast": [
+    "char_sea_woman",
+    "product_bottle",
+    "extras (a man on the seawall)"
+   ],
+   "wardrobe": "white open-knit crochet top, silver hoop earrings",
+   "shot_size": "close-up",
+   "subject_in_frame": "Her mouth wide open in a scream fills x 30-75%, y 0-55% (face cropped above the nose); the neck of an empty glass bottle passes through the extreme foreground at x 15-45% (soft, y 10-100%); the crochet top below; a man sitting on the seawall at the right (x 75-95%), sea and sky behind.",
+   "camera": "very close, slightly low, ~35 mm, handheld",
+   "camera_move": "handheld shake and a fast drift right (about 8%)",
+   "action": "She screams with joy; the bottle swings past the lens.",
+   "light": "Hard midday sun from the left, bright sky. Brightness 69/83/79.",
+   "out": "hard cut",
+   "audio": "L03 'Oh, what a' (14.50-15.15) over the roar.",
+   "lines": [
+    "L03"
+   ],
+   "render": "first + last frame: plate from loc_seafront + char_sea_woman_sheet + product_bottle_sheet (neck in the foreground).",
+   "text": [],
+   "board": "boards/s13.jpg"
+  },
+  {
+   "n": 14,
+   "start": 15.27,
+   "end": 15.93,
+   "dur": 0.66,
+   "in": "cut",
+   "brightness": {
+    "start": 39,
+    "mid": 41,
+    "end": 30
+   },
+   "colour": "#302117",
+   "change": 28.08,
+   "sound": "-13.32 LUFS mean, -12.16 peak",
+   "setup": "BAR_WIDE_LOW",
+   "location": "loc_bar",
+   "cast": [
+    "char_bar_fan",
+    "product_can",
+    "extras (backs to camera)"
+   ],
+   "wardrobe": "charcoal long-sleeve shirt, sleeves pushed up",
+   "shot_size": "medium wide",
+   "subject_in_frame": "The bar fan at the centre (x 25-55%, head at y 35-55%) shouting, his right arm raised with a red can high at x 70-75%, y 0-15%; a fan's back at the lower right (x 55-90%); the TV at the top (x 25-65%, y 0-15%) showing the green pitch; red fairy lights along the shelves and a green glass lamp at x 85-92%, y 15-30%.",
+   "camera": "slightly low, ~35 mm, moderate depth of field",
+   "camera_move": "handheld, slight push in",
+   "action": "He roars with his can aloft, foam spilling over its rim.",
+   "light": "Warm tungsten with red practicals; the TV is the brightest patch. Brightness 39/41/30.",
+   "out": "hard cut",
+   "audio": "L03 'goal!' 15.25-15.78; crowd roar about -13 LUFS.",
+   "lines": [
+    "L03"
+   ],
+   "render": "first + last frame: plate from loc_bar + char_bar_fan_sheet + product_can_sheet + extras.",
+   "text": [],
+   "board": "boards/s14.jpg"
+  },
+  {
+   "n": 15,
+   "start": 15.93,
+   "end": 16.43,
+   "dur": 0.5,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 71,
+    "end": 63
+   },
+   "colour": "#5c4436",
+   "change": 60.9,
+   "sound": "-18.3 LUFS mean, -18.2 peak",
+   "measured_note": "split from bin/dissect shot 14 by a hard cut the detector missed (frame-checked at 16.43 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "TERRACE_TOAST_CU",
+   "location": "loc_terrace",
+   "cast": [
+    "char_scarf_fan",
+    "char_bearded_fan (shoulder)",
+    "product_can",
+    "extras"
+   ],
+   "wardrobe": "striped scarf, beige jacket; extras in the crowd wardrobe",
+   "shot_size": "close-up",
+   "subject_in_frame": "A red can thrust toward camera at the centre-left (x 35-55%, y 25-75%), foam spurting from its top; the scarf fan laughs behind it at x 60-90% (face y 0-35%); the bearded fan's shoulder at the left; hands clapping at the right; sunny crowd behind.",
+   "camera": "eye level, ~35 mm, handheld",
+   "camera_move": "handheld jolt forward",
+   "action": "The cans clash in a toast; foam erupts from the can.",
+   "light": "Bright late-afternoon sun, backlit crowd. Brightness 61/71/63.",
+   "out": "hard cut",
+   "audio": "Crowd roar and music swell, -18 LUFS.",
+   "render": "first + last frame: plate from loc_terrace (sunny tables) + char_scarf_fan_sheet + product_can_sheet.",
+   "text": [],
+   "board": "boards/s15.jpg",
+   "lines": []
+  },
+  {
+   "n": 16,
+   "start": 16.43,
+   "end": 17.35,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 60,
+    "mid": 60,
+    "end": 60
+   },
+   "colour": "#403e3c",
+   "change": 60.9,
+   "sound": "-18.9 LUFS mean, -18.5 peak",
+   "measured_note": "split from bin/dissect shot 14 by a hard cut the detector missed (frame-checked at 16.43 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "BAR_BLUE_MED",
+   "location": "loc_bar (dark end, blue window light)",
+   "cast": [
+    "char_white_shirt_fan",
+    "product_can",
+    "extras (a second white shirt)"
+   ],
+   "wardrobe": "crisp white stand-collar shirt",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "His head thrown back, shouting, at x 45-80%, y 0-50%; his arm stretched across the frame with a red can in his fist at x 15-25%, y 35-60%, cola leaping out of it in an arc; a second man in white behind at x 35-50%.",
+   "camera": "eye level, ~50 mm, shallow depth of field",
+   "camera_move": "locked off (slow motion, about 50%)",
+   "action": "He shouts at the ceiling and the jerk of his fist throws an arc of cola out of the can.",
+   "light": "Cool blue backlight from a window, the white shirt glows; deep shadows. Brightness 60/60/60.",
+   "out": "hard cut",
+   "audio": "Music swells under the crowd, about -19 LUFS.",
+   "render": "first + last frame: plate from loc_bar (cool end) + char_white_shirt_fan_sheet + product_can_sheet.",
+   "text": [],
+   "board": "boards/s16.jpg",
+   "lines": []
+  },
+  {
+   "n": 17,
+   "start": 17.35,
+   "end": 18.77,
+   "dur": 1.42,
+   "in": "cut",
+   "brightness": {
+    "start": 60,
+    "mid": 70,
+    "end": 69
+   },
+   "colour": "#52463d",
+   "change": 35.71,
+   "sound": "-14.7 LUFS mean, -13.8 peak",
+   "measured_note": "split from bin/dissect shot 15 by a hard cut the detector missed (frame-checked at 18.77 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "SPRAY_MACRO",
+   "location": "dark street background, out of focus",
+   "cast": [
+    "product_bottle",
+    "a hand (char_white_shirt_fan)"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "A hand at the right (x 70-100%, y 50-90%) holds a shaken glass bottle angled up-left at 30 degrees (bottle x 35-80%, label band x 50-70%); a jet of foam and cola sprays from the neck toward the top-left corner, filling 25% of the frame at the start and the upper-left 60% by the end.",
+   "camera": "low, side-on, ~100 mm macro, high-speed slow motion, dark soft background",
+   "camera_move": "locked off",
+   "action": "The spray erupts and widens; droplets sparkle.",
+   "light": "Hard backlight from the top left makes the spray sparkle against the dark. Brightness 60/70/69.",
+   "out": "hard cut",
+   "audio": "L04 'Ecstasy,' 17.70-18.55 over the music.",
+   "lines": [
+    "L04"
+   ],
+   "render": "first + last frame from product plates: product_bottle_sheet in a hand, spray small -> spray wide.",
+   "board_start": "boards/s17a.jpg",
+   "board_end": "boards/s17b.jpg",
+   "text": [],
+   "board": "boards/s17.jpg"
+  },
+  {
+   "n": 18,
+   "start": 18.77,
+   "end": 19.73,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 81,
+    "mid": 66,
+    "end": 78
+   },
+   "colour": "#593e31",
+   "change": 35.71,
+   "sound": "-14.5 LUFS mean, -12.3 peak",
+   "measured_note": "split from bin/dissect shot 15 by a hard cut the detector missed (frame-checked at 18.77 s); brightness re-measured inside the 1.85:1 picture, change is the parent shot's",
+   "setup": "STREET_FACE_CU",
+   "location": "loc_street",
+   "cast": [
+    "char_street_woman"
+   ],
+   "wardrobe": "lilac shirt, gold hoop earrings, long braid",
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "Her laughing open mouth and cheek in profile facing left fill x 25-80%, the full height (face cropped above the eyes); a gold hoop earring at x 78%, y 35%; her braid at the right edge; a pale building with windows soft at the left; pink-gold bokeh discs drift across.",
+   "camera": "eye level, profile, ~85 mm, shallow depth of field",
+   "camera_move": "handheld float",
+   "action": "She laughs, tipping her head back.",
+   "light": "Soft bright overcast daylight. Brightness 81/66/78.",
+   "out": "hard cut",
+   "audio": "L04 'euphoria!' begins at 19.28.",
+   "lines": [
+    "L04"
+   ],
+   "render": "first + last frame: plate from loc_street + char_street_woman_sheet.",
+   "text": [],
+   "board": "boards/s18.jpg"
+  },
+  {
+   "n": 19,
+   "start": 19.73,
+   "end": 20.52,
+   "dur": 0.79,
+   "in": "cut",
+   "brightness": {
+    "start": 118,
+    "mid": 101,
+    "end": 90
+   },
+   "colour": "#7a614f",
+   "change": 66.35,
+   "sound": "-13.57 LUFS mean, -12.21 peak",
+   "setup": "STREET_LOW_GROUP",
+   "location": "loc_street",
+   "cast": [
+    "char_street_woman",
+    "char_curly_fan",
+    "char_crowd_wardrobe extras",
+    "product_can"
+   ],
+   "wardrobe": "street woman: lilac shirt; curly fan: black vest over a patterned shirt; extras: yellow t-shirt, yellow polo with blue and green stripes",
+   "shot_size": "medium",
+   "subject_in_frame": "Low angle up at a tight group: the street woman at x 15-50% raises a red can over her head and pours it; the curly fan at x 50-85% laughs and points at her; a fan in a yellow t-shirt at the left edge, one in a striped yellow polo at the right; red cans raised; pale apartment facades and white sky in the top 30%.",
+   "camera": "low angle (~1 m), ~28 mm wide, deep-ish depth of field",
+   "camera_move": "handheld arc right about 10% with a slight tilt up",
+   "action": "She pours the can over her head, cola splashing; they cheer and point.",
+   "light": "Bright overcast daylight. Brightness 118/101/90.",
+   "out": "hard cut",
+   "audio": "L04 'euphoria!' 19.28-20.45; music and crowd about -13 LUFS.",
+   "lines": [
+    "L04"
+   ],
+   "render": "first + last frame: plate from loc_street + char_street_woman_sheet + char_curly_fan_sheet + char_crowd_wardrobe + product_can_sheet.",
+   "board_start": "boards/s19a.jpg",
+   "board_end": "boards/s19b.jpg",
+   "text": [],
+   "board": "boards/s19.jpg"
+  },
+  {
+   "n": 20,
+   "start": 20.52,
+   "end": 21.31,
+   "dur": 0.79,
+   "in": "cut",
+   "brightness": {
+    "start": 109,
+    "mid": 134,
+    "end": 149
+   },
+   "colour": "#908278",
+   "change": 64.29,
+   "sound": "-16.08 LUFS mean, -12.74 peak",
+   "setup": "SUNSET_LOW",
+   "location": "loc_seafront_sunset",
+   "cast": [
+    "extras (raised arms)",
+    "product_bottle"
+   ],
+   "wardrobe": "bare arms, crowd wardrobe",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Low angle into the setting sun over the sea: three glass bottles raised and clinking at the top centre (x 35-55%, y 0-45%), a fourth bottle at the right edge (x 90-100%, y 10-55%); arms and fists rise from the bottom; the sun at x 60%, y 60% on the horizon (horizon y 62%); a dark canopy edge across the top right.",
+   "camera": "low, ~35 mm, backlit",
+   "camera_move": "handheld slight rise",
+   "action": "The bottles clink together in the air.",
+   "light": "Golden backlight, small soft sun flare. Brightness 109/134/149 (brightens toward the sun).",
+   "out": "hard cut",
+   "audio": "Music and crowd about -16 LUFS; L05 'And' at 21.00.",
+   "lines": [
+    "L05"
+   ],
+   "render": "first + last frame: plate from loc_seafront_sunset + product_bottle_sheet x4 in raised hands.",
+   "text": [],
+   "board": "boards/s20.jpg"
+  },
+  {
+   "n": 21,
+   "start": 21.31,
+   "end": 22.23,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 72,
+    "mid": 73,
+    "end": 73
+   },
+   "colour": "#644038",
+   "change": 5.22,
+   "sound": "-13.78 LUFS mean, -12.91 peak",
+   "setup": "BOTTLE_MACRO",
+   "location": "none",
+   "cast": [
+    "product_bottle"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "The bottle's red label band beaded with condensation fills x 10-100%; a fat droplet runs down a clear glass channel through the centre (x 40-55%) from the top to y 60%; warm cream backlight at the left edge (x 0-10%).",
+   "camera": "side-on, ~100 mm macro, razor depth of field",
+   "camera_move": "locked off",
+   "action": "A droplet slides down the bottle (matches the tear in s22).",
+   "light": "Warm backlight from the left. Brightness 72/73/73.",
+   "out": "hard cut (match: droplet -> tear)",
+   "audio": "L05 'emotion' 21.32-22.10.",
+   "lines": [
+    "L05"
+   ],
+   "render": "first + last frame from product plates: product_bottle_sheet label + product_macro_sheet panel 4 (droplet at the top -> droplet at y 60%).",
+   "text": [],
+   "board": "boards/s21.jpg"
+  },
+  {
+   "n": 22,
+   "start": 22.23,
+   "end": 23.57,
+   "dur": 1.34,
+   "in": "cut",
+   "brightness": {
+    "start": 52,
+    "mid": 54,
+    "end": 55
+   },
+   "colour": "#502e1e",
+   "change": 15.01,
+   "sound": "-14.22 LUFS mean, -13.28 peak",
+   "setup": "TEAR_MACRO",
+   "location": "none",
+   "cast": [
+    "char_home_fan (cheek)"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "Below an eye: the lower lashes and lid run along the top 20% (x 30-100%); a tear wells at x 75%, y 20% and runs down a crease of the cheek to y 70% (x 55-65%); grey-black stubble at the lower right; the nose soft at the left 35%.",
+   "camera": "three-quarter front, ~100 mm macro",
+   "camera_move": "locked off",
+   "action": "A tear of joy rolls down the cheek.",
+   "light": "Warm side light from the right. Brightness 52/54/55.",
+   "out": "hard cut",
+   "audio": "L05 'overflows' 22.22-23.15.",
+   "lines": [
+    "L05"
+   ],
+   "render": "first + last frame: skin macro plate from char_home_fan_sheet (tear at the lid) -> tear at y 70%.",
+   "text": [],
+   "board": "boards/s22.jpg"
+  },
+  {
+   "n": 23,
+   "start": 23.57,
+   "end": 24.48,
+   "dur": 0.91,
+   "in": "cut",
+   "brightness": {
+    "start": 84,
+    "mid": 83,
+    "end": 85
+   },
+   "colour": "#604f45",
+   "change": 47.22,
+   "sound": "-17.34 LUFS mean, -16.46 peak",
+   "setup": "SEA_DRINK_CU",
+   "location": "loc_seafront",
+   "cast": [
+    "char_sea_woman",
+    "product_bottle"
+   ],
+   "wardrobe": "white crochet top, silver hoops",
+   "shot_size": "close-up",
+   "subject_in_frame": "Her face in three-quarter right at x 50-85%, eyes closed, drinking from the bottle tipped up from the left (bottle x 0-60%, y 0-35%, label band x 35-55%); silver hoop earring at x 72%, y 60%; curly hair; sea and rocks soft behind.",
+   "camera": "eye level, ~85 mm, shallow depth of field",
+   "camera_move": "locked off",
+   "action": "She tips the bottle and drinks, eyes closed.",
+   "light": "Bright sun, backlight from the left. Brightness 84/83/85.",
+   "out": "hard cut",
+   "audio": "Music only, about -17 LUFS.",
+   "render": "first + last frame: plate from loc_seafront + char_sea_woman_sheet + product_bottle_sheet.",
+   "text": [],
+   "board": "boards/s23.jpg",
+   "lines": []
+  },
+  {
+   "n": 24,
+   "start": 24.48,
+   "end": 26.4,
+   "dur": 1.92,
+   "in": "cut",
+   "brightness": {
+    "start": 124,
+    "mid": 116,
+    "end": 117
+   },
+   "colour": "#797472",
+   "change": 31.25,
+   "sound": "-16.84 LUFS mean, -16.42 peak",
+   "setup": "SEA_DRINK_MED",
+   "location": "loc_seafront",
+   "cast": [
+    "char_sea_woman",
+    "product_bottle",
+    "extras (two people seated on the pier)"
+   ],
+   "wardrobe": "as s23",
+   "shot_size": "medium",
+   "subject_in_frame": "She stands at x 20-80% (head x 60-78%, y 15-45%), head back, drinking from the bottle held high (x 55-68%, y 0-25%); the crochet top fills the lower half; the metal shade canopy at the left (x 0-20%, y 15-35%), two people seated at the left edge; sea horizon at y 37%.",
+   "camera": "eye level, ~50 mm",
+   "camera_move": "locked off with a tiny drift",
+   "action": "She drinks with her head thrown back.",
+   "light": "Bright midday sun. Brightness 124/116/117.",
+   "text": [
+    {
+     "words": "{TAGLINE} {BRAND}",
+     "default": "Feel the rush with SODA",
+     "file": "set/ui_tagline.png",
+     "position": "one line centred at 50% W, baseline at 53.0% H (source group spans x 26.3-73.6%, y 44.5-55.3%)",
+     "in": 24.48,
+     "out": 26.4,
+     "kind": "post supers, cut in and out with the shot, no animation"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Music only, about -17 LUFS.",
+   "render": "first + last frame: plate from loc_seafront + char_sea_woman_sheet + product_bottle_sheet; tagline composited in post from set/ui_tagline.png.",
+   "board": "boards/s24.jpg",
+   "lines": []
+  },
+  {
+   "n": 25,
+   "start": 26.4,
+   "end": 30.03,
+   "dur": 3.63,
+   "in": "cut",
+   "brightness": {
+    "start": 65,
+    "mid": 69,
+    "end": 95
+   },
+   "colour": "#524447",
+   "change": 21.82,
+   "sound": "-17.19 LUFS mean, -15.3 peak",
+   "setup": "ENDCARD_CAN_MACRO",
+   "location": "none (soft sky)",
+   "cast": [
+    "product_can"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "Low-angle macro of the red can's curved shoulder beaded with condensation: at the start it fills the lower 80% (top edge an arc peaking at y 20%), the white {BRAND} wordmark partly visible on its side; over 3.6 s it sinks until only the silver rim lies along the bottom 12%. Amber drops fly past at the left. Background slate blue-grey at the top, turning to pink bokeh from about 28.0.",
+   "camera": "low angle, ~100 mm macro",
+   "camera_move": "the can sinks out of frame (equivalently a slow crane up), linear, about 60% of the height over 3.63 s",
+   "action": "The can slides down out of frame while the lockup holds.",
+   "light": "Soft top backlight, cool sky turning pink. Brightness 65/69/95.",
+   "text": [
+    {
+     "words": "{BRAND} tile + {PARTNER_MARK} tile + {PARTNER_LINE}",
+     "default": "SODA / football pictogram / FOR EVERY FAN",
+     "file": "set/ui_end_card.png",
+     "position": "centred lockup: brand tile x 40.6-50.8%, y 40.9-59.0%; partner tile x 51.6-59.4%; partner line centred at 50% W, y 61.9-63.0%",
+     "in": 26.4,
+     "out": 30.03,
+     "kind": "post lockup, cut in with the shot, no animation"
+    }
+   ],
+   "out": "end (the picture holds to the last frame)",
+   "audio": "Music only (-16/-17 LUFS), easing out 29.5-30.03 (-19 -> -41).",
+   "render": "first + last frame from product plates: product_can_sheet shoulder macro (can high) -> rim only (can low); the lockup composited in post from set/ui_end_card.png.",
+   "board_start": "boards/s25a.jpg",
+   "board_end": "boards/s25b.jpg",
+   "board": "boards/s25.jpg",
+   "lines": []
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "arc": "The whole film: hook (booth, 'This is quite a game.') -> tension (fans clutch the drink at home, bar, terrace; whistle; 'It'll be a free kick.'; can, goosebumps) -> held breath (bubble, fizz, drop into the glass, silence) -> slam and eruption ('Oh, what a goal! Ecstasy, euphoria!': eye, scream, roars, toasts, spray, pour, sunset bottles) -> overflow (droplet = tear, 'And emotion overflows.', she drinks by the sea, tagline) -> lockup.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 2.21,
+    "dur": 2.21,
+    "src": [
+     0,
+     2.21
+    ],
+    "setup": "BOOTH_OTS",
+    "board": "boards/s01.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L01"
+    ],
+    "board_start": "boards/s01a.jpg",
+    "board_end": "boards/s01b.jpg"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 2.21,
+    "end": 3.29,
+    "dur": 1.08,
+    "src": [
+     2.21,
+     3.29
+    ],
+    "setup": "HOME_TABLE_CU",
+    "board": "boards/s02.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 3.29,
+    "end": 4.67,
+    "dur": 1.38,
+    "src": [
+     3.29,
+     4.67
+    ],
+    "setup": "BAR_HANDS_CU",
+    "board": "boards/s03.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 4.67,
+    "end": 6.09,
+    "dur": 1.42,
+    "src": [
+     4.67,
+     6.09
+    ],
+    "setup": "TERRACE_TABLE_MED",
+    "board": "boards/s04.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 5,
+    "from": 5,
+    "start": 6.09,
+    "end": 7.13,
+    "dur": 1.04,
+    "src": [
+     6.09,
+     7.13
+    ],
+    "setup": "YOUNG_FAN_PRAY",
+    "board": "boards/s05.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L02"
+    ]
+   },
+   {
+    "n": 6,
+    "from": 6,
+    "start": 7.13,
+    "end": 8.34,
+    "dur": 1.21,
+    "src": [
+     7.13,
+     8.34
+    ],
+    "setup": "YOUNG_FAN_CAN",
+    "board": "boards/s06.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 7,
+    "from": 7,
+    "start": 8.34,
+    "end": 9.3,
+    "dur": 0.96,
+    "src": [
+     8.34,
+     9.3
+    ],
+    "setup": "CAN_TOP_MACRO",
+    "board": "boards/s07.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 8,
+    "from": 8,
+    "start": 9.3,
+    "end": 9.88,
+    "dur": 0.58,
+    "src": [
+     9.3,
+     9.88
+    ],
+    "setup": "SKIN_MACRO",
+    "board": "boards/s08.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 9,
+    "from": 9,
+    "start": 9.88,
+    "end": 11.05,
+    "dur": 1.17,
+    "src": [
+     9.88,
+     11.05
+    ],
+    "setup": "BUBBLE_MACRO",
+    "board": "boards/s09.jpg",
+    "change": "unchanged",
+    "lines": [],
+    "board_start": "boards/s09a.jpg",
+    "board_end": "boards/s09b.jpg"
+   },
+   {
+    "n": 10,
+    "from": 10,
+    "start": 11.05,
+    "end": 12.72,
+    "dur": 1.67,
+    "src": [
+     11.05,
+     12.72
+    ],
+    "setup": "BUBBLE_MACRO",
+    "board": "boards/s10.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 11,
+    "from": 11,
+    "start": 12.72,
+    "end": 14.22,
+    "dur": 1.5,
+    "src": [
+     12.72,
+     14.22
+    ],
+    "setup": "GLASS_TOPDOWN",
+    "board": "boards/s11.jpg",
+    "change": "unchanged",
+    "lines": [],
+    "board_start": "boards/s11a.jpg",
+    "board_end": "boards/s11b.jpg"
+   },
+   {
+    "n": 12,
+    "from": 12,
+    "start": 14.22,
+    "end": 14.68,
+    "dur": 0.46,
+    "src": [
+     14.22,
+     14.68
+    ],
+    "setup": "EYE_MACRO",
+    "board": "boards/s12.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 13,
+    "from": 13,
+    "start": 14.68,
+    "end": 15.27,
+    "dur": 0.59,
+    "src": [
+     14.68,
+     15.27
+    ],
+    "setup": "SEA_HANDHELD_CU",
+    "board": "boards/s13.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 14,
+    "from": 14,
+    "start": 15.27,
+    "end": 15.93,
+    "dur": 0.66,
+    "src": [
+     15.27,
+     15.93
+    ],
+    "setup": "BAR_WIDE_LOW",
+    "board": "boards/s14.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 15,
+    "from": 15,
+    "start": 15.93,
+    "end": 16.43,
+    "dur": 0.5,
+    "src": [
+     15.93,
+     16.43
+    ],
+    "setup": "TERRACE_TOAST_CU",
+    "board": "boards/s15.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 16,
+    "from": 16,
+    "start": 16.43,
+    "end": 17.35,
+    "dur": 0.92,
+    "src": [
+     16.43,
+     17.35
+    ],
+    "setup": "BAR_BLUE_MED",
+    "board": "boards/s16.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 17,
+    "from": 17,
+    "start": 17.35,
+    "end": 18.77,
+    "dur": 1.42,
+    "src": [
+     17.35,
+     18.77
+    ],
+    "setup": "SPRAY_MACRO",
+    "board": "boards/s17.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L04"
+    ],
+    "board_start": "boards/s17a.jpg",
+    "board_end": "boards/s17b.jpg"
+   },
+   {
+    "n": 18,
+    "from": 18,
+    "start": 18.77,
+    "end": 19.73,
+    "dur": 0.96,
+    "src": [
+     18.77,
+     19.73
+    ],
+    "setup": "STREET_FACE_CU",
+    "board": "boards/s18.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L04"
+    ]
+   },
+   {
+    "n": 19,
+    "from": 19,
+    "start": 19.73,
+    "end": 20.52,
+    "dur": 0.79,
+    "src": [
+     19.73,
+     20.52
+    ],
+    "setup": "STREET_LOW_GROUP",
+    "board": "boards/s19.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L04"
+    ],
+    "board_start": "boards/s19a.jpg",
+    "board_end": "boards/s19b.jpg"
+   },
+   {
+    "n": 20,
+    "from": 20,
+    "start": 20.52,
+    "end": 21.31,
+    "dur": 0.79,
+    "src": [
+     20.52,
+     21.31
+    ],
+    "setup": "SUNSET_LOW",
+    "board": "boards/s20.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L05"
+    ]
+   },
+   {
+    "n": 21,
+    "from": 21,
+    "start": 21.31,
+    "end": 22.23,
+    "dur": 0.92,
+    "src": [
+     21.31,
+     22.23
+    ],
+    "setup": "BOTTLE_MACRO",
+    "board": "boards/s21.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L05"
+    ]
+   },
+   {
+    "n": 22,
+    "from": 22,
+    "start": 22.23,
+    "end": 23.57,
+    "dur": 1.34,
+    "src": [
+     22.23,
+     23.57
+    ],
+    "setup": "TEAR_MACRO",
+    "board": "boards/s22.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L05"
+    ]
+   },
+   {
+    "n": 23,
+    "from": 23,
+    "start": 23.57,
+    "end": 24.48,
+    "dur": 0.91,
+    "src": [
+     23.57,
+     24.48
+    ],
+    "setup": "SEA_DRINK_CU",
+    "board": "boards/s23.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 24,
+    "from": 24,
+    "start": 24.48,
+    "end": 26.4,
+    "dur": 1.92,
+    "src": [
+     24.48,
+     26.4
+    ],
+    "setup": "SEA_DRINK_MED",
+    "board": "boards/s24.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 25,
+    "from": 25,
+    "start": 26.4,
+    "end": 30.0,
+    "dur": 3.6,
+    "src": [
+     26.4,
+     30.0
+    ],
+    "setup": "ENDCARD_CAN_MACRO",
+    "board": "boards/s25.jpg",
+    "change": "trimmed by 0.03 s to end at 30.00",
+    "lines": [],
+    "board_start": "boards/s25a.jpg",
+    "board_end": "boards/s25b.jpg"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "This is quite a game.",
+    "start": 0.28,
+    "end": 1.55,
+    "clip": "set/lines/L01.wav",
+    "clip_starts_at": 0.2,
+    "delivery": "on camera (from behind)",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "It'll be a free kick.",
+    "start": 6.38,
+    "end": 7.42,
+    "clip": "set/lines/L02.wav",
+    "clip_starts_at": 6.33,
+    "delivery": "voice-over",
+    "in_score": true
+   },
+   {
+    "id": "L03",
+    "words": "Oh, what a goal!",
+    "start": 14.5,
+    "end": 15.78,
+    "clip": "set/lines/L03.wav",
+    "clip_starts_at": 14.42,
+    "delivery": "voice-over",
+    "in_score": true
+   },
+   {
+    "id": "L04",
+    "words": "Ecstasy, euphoria!",
+    "start": 17.7,
+    "end": 20.45,
+    "clip": "set/lines/L04.wav",
+    "clip_starts_at": 17.62,
+    "delivery": "voice-over, drawn out",
+    "in_score": true
+   },
+   {
+    "id": "L05",
+    "words": "And emotion overflows.",
+    "start": 21.0,
+    "end": 23.15,
+    "clip": "set/lines/L05.wav",
+    "clip_starts_at": 20.92,
+    "delivery": "voice-over, drawn out",
+    "in_score": true
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "as the source: murmur 0-6.05, whistle 6.05, swell 7.4-10.2, drain 10.2-14.0, slam 14.04, music 14.0-29.5, ease out 29.5-30.0"
+  },
+  "text": [
+   {
+    "id": "tagline",
+    "file": "set/ui_tagline.png",
+    "in": 24.48,
+    "out": 26.4
+   },
+   {
+    "id": "end_card",
+    "file": "set/ui_end_card.png",
+    "in": 26.4,
+    "out": 30.0
+   }
+  ],
+  "end_card": {
+   "start": 26.4,
+   "end": 30.0,
+   "shot": 25,
+   "graphic": "set/ui_end_card.png"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "arc": "Hook (booth, 'This is quite a game.') -> tension (bearded fan rolls the can, the young fan prays over his, whistle, 'It'll be a free kick.') -> held breath (can lid, goosebumps, rising bubble, drop into the glass, the sound drains to silence) -> the slam at 7.73 ('Oh, what a goal!': pupil, scream, roar) -> release (she drinks by the sea, tagline) -> lockup.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 1.614,
+    "dur": 1.614,
+    "src": [
+     0.0,
+     1.614
+    ],
+    "setup": "BOOTH_OTS",
+    "board": "boards/s01.jpg",
+    "change": "first 1.61 s of 2.21: ends on the line, before he lowers the mic",
+    "lines": [
+     "L01"
+    ],
+    "board_start": "boards/s01a.jpg",
+    "board_end": "boards/s01b.jpg"
+   },
+   {
+    "n": 2,
+    "from": 4,
+    "start": 1.614,
+    "end": 2.932,
+    "dur": 1.318,
+    "src": [
+     4.772,
+     6.09
+    ],
+    "setup": "TERRACE_TABLE_MED",
+    "board": "boards/s04.jpg",
+    "change": "last 1.32 s of 1.42 (starts 0.10 s later)",
+    "lines": []
+   },
+   {
+    "n": 3,
+    "from": 5,
+    "start": 2.932,
+    "end": 3.972,
+    "dur": 1.04,
+    "src": [
+     6.09,
+     7.13
+    ],
+    "setup": "YOUNG_FAN_PRAY",
+    "board": "boards/s05.jpg",
+    "change": "unchanged: whistle and L02 in sync",
+    "lines": [
+     "L02"
+    ]
+   },
+   {
+    "n": 4,
+    "from": 6,
+    "start": 3.972,
+    "end": 4.772,
+    "dur": 0.8,
+    "src": [
+     7.13,
+     7.93
+    ],
+    "setup": "YOUNG_FAN_CAN",
+    "board": "boards/s06.jpg",
+    "change": "first 0.80 s of 1.21",
+    "lines": []
+   },
+   {
+    "n": 5,
+    "from": 7,
+    "start": 4.772,
+    "end": 5.622,
+    "dur": 0.85,
+    "src": [
+     8.45,
+     9.3
+    ],
+    "setup": "CAN_TOP_MACRO",
+    "board": "boards/s07.jpg",
+    "change": "last 0.85 s of 0.96; plays over the draining crowd instead of the swell",
+    "lines": []
+   },
+   {
+    "n": 6,
+    "from": 8,
+    "start": 5.622,
+    "end": 6.202,
+    "dur": 0.58,
+    "src": [
+     9.3,
+     9.88
+    ],
+    "setup": "SKIN_MACRO",
+    "board": "boards/s08.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 7,
+    "from": 10,
+    "start": 6.202,
+    "end": 6.952,
+    "dur": 0.75,
+    "src": [
+     11.3,
+     12.05
+    ],
+    "setup": "BUBBLE_MACRO",
+    "board": "boards/s10.jpg",
+    "change": "middle 0.75 s of the rising bubble (s09's receding bubble is dropped)",
+    "lines": []
+   },
+   {
+    "n": 8,
+    "from": 11,
+    "start": 6.952,
+    "end": 7.905,
+    "dur": 0.953,
+    "src": [
+     13.267,
+     14.22
+    ],
+    "setup": "GLASS_TOPDOWN",
+    "board": "boards/s11.jpg",
+    "change": "last 0.95 s: the drop falls and lands at 7.725, exactly on the score's slam",
+    "lines": [],
+    "board_start": "boards/s11a.jpg",
+    "board_end": "boards/s11b.jpg"
+   },
+   {
+    "n": 9,
+    "from": 12,
+    "start": 7.905,
+    "end": 8.365,
+    "dur": 0.46,
+    "src": [
+     14.22,
+     14.68
+    ],
+    "setup": "EYE_MACRO",
+    "board": "boards/s12.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 10,
+    "from": 13,
+    "start": 8.365,
+    "end": 8.955,
+    "dur": 0.59,
+    "src": [
+     14.68,
+     15.27
+    ],
+    "setup": "SEA_HANDHELD_CU",
+    "board": "boards/s13.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 11,
+    "from": 14,
+    "start": 8.955,
+    "end": 9.509,
+    "dur": 0.554,
+    "src": [
+     15.27,
+     15.824
+    ],
+    "setup": "BAR_WIDE_LOW",
+    "board": "boards/s14.jpg",
+    "change": "first 0.55 s; cut on the score join after 'goal!'",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 12,
+    "from": 23,
+    "start": 9.509,
+    "end": 10.27,
+    "dur": 0.761,
+    "src": [
+     23.719,
+     24.48
+    ],
+    "setup": "SEA_DRINK_CU",
+    "board": "boards/s23.jpg",
+    "change": "last 0.76 s of 0.91",
+    "lines": []
+   },
+   {
+    "n": 13,
+    "from": 24,
+    "start": 10.27,
+    "end": 12.19,
+    "dur": 1.92,
+    "src": [
+     24.48,
+     26.4
+    ],
+    "setup": "SEA_DRINK_MED",
+    "board": "boards/s24.jpg",
+    "change": "unchanged, tagline on",
+    "lines": []
+   },
+   {
+    "n": 14,
+    "from": 25,
+    "start": 12.19,
+    "end": 15.0,
+    "dur": 2.81,
+    "src": [
+     26.4,
+     29.21
+    ],
+    "setup": "ENDCARD_CAN_MACRO",
+    "board": "boards/s25.jpg",
+    "change": "first 2.81 s of the 3.63 s descent; the lockup holds to the end",
+    "lines": [],
+    "board_start": "boards/s25a.jpg",
+    "board_end": "boards/s25b.jpg"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "This is quite a game.",
+    "start": 0.28,
+    "end": 1.55,
+    "clip": "set/lines/L01.wav",
+    "delivery": "on camera (from behind)",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "It'll be a free kick.",
+    "start": 3.222,
+    "end": 4.262,
+    "clip": "set/lines/L02.wav",
+    "delivery": "voice-over",
+    "in_score": true
+   },
+   {
+    "id": "L03",
+    "words": "Oh, what a goal!",
+    "start": 8.185,
+    "end": 9.465,
+    "clip": "set/lines/L03.wav",
+    "delivery": "voice-over",
+    "in_score": true
+   }
+  ],
+  "lines_dropped": [
+   "L04",
+   "L05"
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 1.614
+    },
+    {
+     "src_in": 4.772,
+     "src_out": 7.93
+    },
+    {
+     "src_in": 11.087,
+     "src_out": 15.824
+    },
+    {
+     "src_in": 23.719,
+     "src_out": 29.21
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "L01 + murmur 0-1.61 | murmur, whistle at 2.89, L02 3.22-4.26 | the drain 4.77-7.72 (from the source's 11.09) | slam 7.725 | 'Oh, what a goal!' 8.19-9.47 over roar and music | music 9.51-15.0 (from the source's 23.72) | 0.15 s fade at the end",
+   "bars": "bin/template beats: 152 bpm grid, bar 1.579 s; the source's music after 14.0 has no clear drum grid, so the joins sit on the tool's bar starts and in places where the sound already changes (after a line, in the drain, under the roar)"
+  },
+  "text": [
+   {
+    "id": "tagline",
+    "file": "set/ui_tagline.png",
+    "in": 10.27,
+    "out": 12.19
+   },
+   {
+    "id": "end_card",
+    "file": "set/ui_end_card.png",
+    "in": 12.19,
+    "out": 15.0
+   }
+  ],
+  "end_card": {
+   "start": 12.19,
+   "end": 15.0,
+   "shot": 14,
+   "from": 25,
+   "graphic": "set/ui_end_card.png"
+  }
+ }
+}

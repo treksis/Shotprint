@@ -1,0 +1,5018 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 177.39,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 116,
+  "average_shot": 1.53,
+  "median_shot": 1.13,
+  "about": "A 177 s flagship-smartphone launch film (2026), cut by its maker into one long piece. Narrated by one off-screen voice over a cinematic score. Brand, product, chip and mission names are slots here; the phone is a generic flagship (product_phone).",
+  "measured_by": "bin/dissect (cuts, brightness, loudness), demucs stem separation (music / narration), whisper word times snapped to the narration stem's voice onsets.",
+  "cut_rate": "38.9 cuts per minute; average 1.53 s, median 1.13 s; long holds only on the opener (8.51 s), the hero (5.96 s) and the end card.",
+  "aspect": "16:9 1920x1080; phone photos/videos shown full screen are pillarboxed 4:3 or 3:4 inside black bars (shots 63, 66-69, 75, 89-91, 98, 100, 104)"
+ },
+ "acts": [
+  {
+   "name": "Cold open: back from the moon",
+   "shots": "1-5",
+   "time": "0.00-11.51",
+   "function": "Hook. A photo of the Earth rising over the moon turns out to be on the screen of a phone floating in a spacecraft cabin ('Once you've been to the moon, where do you go next?'); dip to black on 'Back to work.'; the music hits as a white engineering lab lights up."
+  },
+  {
+   "name": "The chip",
+   "shots": "6-27",
+   "time": "11.51-37.45",
+   "function": "Teardown flat-lay, the chip on the flat-lay, blueprints and glowing die graphics, a cave user, chip generations ending on the new chip's etched name, a lab microscope."
+  },
+  {
+   "name": "Heat and battery",
+   "shots": "28-40",
+   "time": "37.45-62.31",
+   "function": "Thermal camera, vapor-chamber graphics, the open phone on a lab table, a photographer hiking a mountain valley, satellite status icons, a test lab."
+  },
+  {
+   "name": "Toughness and finish",
+   "shots": "41-50",
+   "time": "62.31-72.28",
+   "function": "Water and drop tests, colour frames picked from a stand, back glass pressed on, spray rig."
+  },
+  {
+   "name": "Designing the camera",
+   "shots": "51-59",
+   "time": "72.28-88.09",
+   "function": "Measuring loupe, lens macros, X-ray lens graphic, aperture blades drawn and manufactured, lens test rig."
+  },
+  {
+   "name": "The camera in the field",
+   "shots": "60-108",
+   "time": "88.09-154.20",
+   "function": "Cavers on ropes in light shafts, surfers, a photographer on a tripod at a rock pinnacle, time-lapse, video editing with focus changes, picture styles, night photography with pro controls, glow-worm cave; climax on the music hit at 146.35 (surfer in whitewater)."
+  },
+  {
+   "name": "Recap and reveal",
+   "shots": "109-116",
+   "time": "154.20-177.39",
+   "function": "Exploded view of the phone under the three-claim recap (chip, battery, camera), the parts fly together into the hero, finish swaps on the beat, product name on black on the final chord, silence."
+  }
+ ],
+ "shots": [
+  {
+   "action": "The Earth-rise photo holds full frame; the caption fades in 1.45-1.80 s and out 4.15-4.50 s. From 5.4 s the camera pulls back: the photo is on the screen of a phone floating weightless in a dark spacecraft cabin. 6.6-8.0 s the phone tumbles slowly and turns its back to camera (silver finish, the plateau catching the window light); it keeps drifting to the cut.",
+   "setup": "SPACE_PULLBACK",
+   "location": "ui_photo_earthrise (0-5.4 s, on the phone screen) -> loc_capsule (5.4 s on)",
+   "cast": [],
+   "wardrobe": "none (no people)",
+   "shot_size": "extreme wide (the full-frame photo) pulling back to a medium close-up of the floating phone",
+   "subject_in_frame": "0-5.4 s: ui_photo_earthrise fills 100% of the frame: lunar horizon arc peaks at 54% of H in the centre and meets the left edge at 73% H; the Earth is a dome centred at 51% x, 21% of W wide, top at 47% H; the caption block sits at x 15%, 44-53% H. 5.4-6.6 s: the phone's black bezel enters from all edges, the screen shrinks from 100% to ~45% of W, tilted ~8 deg counter-clockwise, then the screen turns away. 7.0-8.51 s: the silver phone, back to camera, floats at 34-65% x, 23-62% y, its long side ~32% of W, rotated ~25 deg clockwise, plateau at its lower left; instrument panels fill the left 30% (0-28% x, 25-100% y), the window's bright curved rim runs through the upper centre (37-75% x), cream padded panel on the right edge (boards/s01b.jpg).",
+   "camera": "Eye level with the phone, normal lens (~35 mm feel). Deep focus on the photo; on the phone about f/2.8: the phone sharp, panels and window soft.",
+   "camera_move": "0-2.4 s slow push in on the photo (scale 1.00 -> 1.02, ease in-out); 2.4-5.4 s slow pull back (1.02 -> 0.96, linear); 5.4-6.6 s fast pull back with a slight roll (screen 100% -> 45% of W, ease-in) revealing the phone in the cabin; 6.6-8.51 s the camera drifts left ~5% of W with the phone while the phone rotates ~160 deg about its long axis to show its back.",
+   "light": "0-5.4 s the photo's own light: space 0-5, moon surface 110-150, Earth highlights 200+ (shot brightness 39-40). From 5.4 s: low-key cabin, a hard white sun key through the window upper right raking across the panels and the phone's back, almost no fill; brightness 49 at the end.",
+   "text": [
+    {
+     "words": "{MISSION_LINE}",
+     "default": "Lunar Flyby Mission",
+     "line": 1,
+     "weight": "SemiBold"
+    },
+    {
+     "words": "Shot on {PREVIOUS_PRODUCT_NAME}",
+     "default": "Shot on Lune Pro",
+     "line": 2,
+     "weight": "SemiBold"
+    },
+    {
+     "words": "{DATE}",
+     "default": "Spring 2026",
+     "line": 3,
+     "weight": "Light"
+    },
+    {
+     "file": "set/ui_caption_mission.png",
+     "position": "left-aligned at x 15% of W, block 44-53% of H, line pitch 33 px at 1080",
+     "size": "34 px at 1080 (3.1% of H), white",
+     "in": 1.45,
+     "fade_in": 0.35,
+     "out": 4.15,
+     "fade_out": 0.35
+    }
+   ],
+   "out": "no cut: the take continues as source shot 2, where the fade to black begins (8.51).",
+   "audio": "Music: opener pad (low pulsing synth on 16ths, about -25 LUFS momentary). Narration (voice-over) L01 'Once you've been to the moon,' 3.41-4.36; L02 'where do you go next?' 6.01-6.84. No effects.",
+   "render": "Two parts joined on a matched frame at 5.4 s. (a) 0-5.4 s drawn in code: set/ui_photo_earthrise.jpg full frame with the push/pull above and set/ui_caption_mission.png composited. (b) 5.4 s to the end of source shot 2 (4.15 s): one H3 keyframe take, first + last frame. First = plate of the phone's screen seen square-on, showing ui_photo_earthrise and filling 102% of the frame (bezel just outside the edges); last = plate of the silver phone floating back-up in loc_capsule as boards/s01b.jpg. Prompt: the camera pulls back fast from the screen, the phone floats weightless in the dark cabin and slowly tumbles to show its back; hard window light. Fade to black in post from 8.51.",
+   "board": "boards/s01.jpg",
+   "n": 1,
+   "start": 0,
+   "end": 8.51,
+   "dur": 8.51,
+   "in": "start",
+   "brightness": {
+    "start": 39,
+    "mid": 40,
+    "end": 49
+   },
+   "colour": "#252828",
+   "change": 4.33,
+   "sound": "-26.15 LUFS mean, -15.22 peak",
+   "props": "product_phone in the silver finish (product_phone_finishes, 2nd from left)",
+   "boards": [
+    "boards/s01a.jpg (0-5.4 s, the photo)",
+    "boards/s01.jpg (5.9 s, mid pull-back)",
+    "boards/s01b.jpg (8.0 s, end)"
+   ],
+   "narration": [
+    "L01 'Once you've been to the moon,' 3.41-4.36",
+    "L02 'where do you go next?' 6.01-6.84"
+   ]
+  },
+  {
+   "action": "The phone keeps drifting and turns edge-on while the picture fades to black: brightness 41 -> 10 -> 8.",
+   "setup": "SPACE_PULLBACK",
+   "location": "loc_capsule",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "The phone at 45-62% x, 33-55% y, ~20% of W long, drifting up-right and turning edge-on (edge-on by 9.27); panels at the left 0-35% x lower half; the window rim's lower curve at 40-55% x, 45% y (boards/s02.jpg).",
+   "camera": "As shot 1 (same take): eye level, normal lens, phone sharp.",
+   "camera_move": "continues shot 1's slow drift left (~2% of W); no new move.",
+   "light": "Same cabin light, dimming with the fade (post fade 8.51 -> 9.30, linear).",
+   "text": [],
+   "out": "dip to black: black 9.30-9.45, then source shot 3/4: the lab window fades up from black (9.45-9.55).",
+   "audio": "Narration L03 'Back to work.' 8.74-9.33 over the fade. The music hit lands at 9.45 on black, 0.10 s before the lab picture (s04).",
+   "render": "The tail of take (b) of shot 1 with a fade to black in post (8.51-9.30), black 9.30-9.45, and the first 0.10 s of shot 4's fade-up (9.45-9.55).",
+   "board": "boards/s02.jpg",
+   "n": 2,
+   "start": 8.51,
+   "end": 9.09,
+   "dur": 0.58,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 41,
+    "mid": 10,
+    "end": 8
+   },
+   "colour": "#0e1112",
+   "change": 0,
+   "sound": "-19.55 LUFS mean, -17.72 peak",
+   "props": "product_phone, silver finish",
+   "narration": [
+    "L03 'Back to work.' 8.74-9.33"
+   ]
+  },
+  {
+   "action": "Black hold, then the start of the fade-up into shot 4 (dip-to-black transition).",
+   "setup": "SPACE_PULLBACK",
+   "location": "loc_capsule -> loc_lab_window",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "(black)",
+   "subject_in_frame": "Near black (brightness 6-8); from 9.45 the lit lab window (17-82% x, 16-82% y) starts to fade up.",
+   "camera": "as shots 1 and 4",
+   "camera_move": "none",
+   "light": "black (6-8)",
+   "text": [],
+   "out": "fade up into shot 4 (it continues from black)",
+   "audio": "L03 tail 'work.' ends 9.33; music hit 9.45.",
+   "render": "post: black frame 9.09-9.45, then shot 4's first frame fading up from black (0.10 s).",
+   "board": "boards/s02.jpg (end of the fade) / boards/s04.jpg (what rises)",
+   "n": 3,
+   "start": 9.09,
+   "end": 9.55,
+   "dur": 0.46,
+   "in": "to black",
+   "brightness": {
+    "start": 7,
+    "mid": 6,
+    "end": 8
+   },
+   "colour": "#040608",
+   "change": 0,
+   "sound": "-20.33 LUFS mean, -17.28 peak",
+   "narration": [
+    "L03 'Back to work.' 8.74-9.33"
+   ]
+  },
+  {
+   "action": "It rises out of black, then the lab's ceiling lights switch on row by row from the far end toward camera (rows at about +0.2, +0.45, +0.7, +0.95 s); the hall goes from grey to white.",
+   "setup": "LAB_WINDOW",
+   "location": "loc_lab_window",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "wide",
+   "subject_in_frame": "The window opening fills 17-82% x, 16-82% y (65% of W) inside a dark steel frame; the lab's long central table centred at 50% x, 55-72% y; the ceiling-light rows converge at 50% x, 42% y; glass partitions at both sides of the hall (boards/s04.jpg).",
+   "camera": "Eye level, square-on to the window, ~40 mm, deep focus.",
+   "camera_move": "locked off (no move).",
+   "light": "Only practicals: rows of linear cool-white ceiling lights in the lab; the viewing room is unlit, near black. Brightness 16 -> 28 -> 46.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "The music's first pulse phrase after the 9.45 hit; no narration.",
+   "render": "first + last frame: plate A = loc_lab_window with the lab lights off (brightness ~16) -> plate B = loc_lab_window lights on (~46). Prompt: locked camera, the ceiling light rows switch on one after another from the far end toward camera. Fade up from black over the first 0.10 s in post.",
+   "board": "boards/s04.jpg",
+   "n": 4,
+   "start": 9.55,
+   "end": 10.84,
+   "dur": 1.29,
+   "in": "from black",
+   "brightness": {
+    "start": 16,
+    "mid": 28,
+    "end": 46
+   },
+   "colour": "#141c1d",
+   "change": 10.66,
+   "sound": "-15.93 LUFS mean, -13.53 peak",
+   "narration": []
+  },
+  {
+   "action": "The corridor lights come on: brightness 61 -> 88 -> 142 (near white by the cut).",
+   "setup": "LAB_CORRIDOR",
+   "location": "loc_lab_corridor",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "medium wide",
+   "subject_in_frame": "The interior window's steel frame runs from the top right corner down the right third (55-98% x); the far doorway at 50-62% x, 30-75% y; the tall light strip on the left wall at 22-27% x, 25-70% y; the duct unit lower left at 10-20% x, 45-100% y (boards/s05.jpg).",
+   "camera": "Eye level, slightly low, wide (24-28 mm), deep focus.",
+   "camera_move": "locked off; the exposure rises with the lights.",
+   "light": "Cool-white ceiling panels switching on, soft, desaturated grey-blue.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music pulse, phrase starting 10.77; no narration.",
+   "render": "first + last frame: loc_lab_corridor dim (~60) -> bright (~140). Prompt: locked camera, the lights in a white lab corridor switch on.",
+   "board": "boards/s05.jpg",
+   "n": 5,
+   "start": 10.84,
+   "end": 11.51,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 88,
+    "end": 142
+   },
+   "colour": "#555f5f",
+   "change": 80.31,
+   "sound": "-16.52 LUFS mean, -14.59 peak",
+   "narration": []
+  },
+  {
+   "action": "Stop-motion: at +0.44 s (11.95) the parts swap state in one frame (the coil turns copper, the midframe shows its internals, the back glass lightens).",
+   "setup": "FLATLAY_WIDE",
+   "location": "pale sage-grey paper surface #c9cdc2 (studio top shot)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "wide (top-down)",
+   "subject_in_frame": "The flat-lay fills ~95% of the frame in a loose grid: display panel top left (24-36% x, 8-18% y), midframe centre right (51-58% x, 32-78% y), back glass right (66-78% x, 34-78% y), copper coil centre left (22% x, 58% y), a dark square plate at 36% x, 45-62% y, dozens of small parts and screws around them with even gaps (boards/s06.jpg).",
+   "camera": "Top-down 90 deg, long lens (~85 mm), flat perspective, deep focus.",
+   "camera_move": "locked off.",
+   "light": "Soft shadowless overhead light; brightness 156-176.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music (end of the opener's pulse phrase). In the 30 s cut the narration L04 'A chip built for AI ...' starts 0.25 s into this shot.",
+   "render": "Drawn in code from two still plates (flat-lay layouts A and B made with bin/img from product_parts_sheet on #c9cdc2 paper, as boards/s06.jpg), hard cut between them at +0.44 s, with a 1% push in code.",
+   "board": "boards/s06.jpg",
+   "n": 6,
+   "start": 11.51,
+   "end": 12.1,
+   "dur": 0.58,
+   "in": "cut",
+   "brightness": {
+    "start": 156,
+    "mid": 160,
+    "end": 176
+   },
+   "colour": "#99a197",
+   "change": 0,
+   "sound": "-21.54 LUFS mean, -19.75 peak",
+   "props": "product_parts",
+   "narration": []
+  },
+  {
+   "action": "Top-down, tight: the midframe with its three lens openings in the flat-lay (stop-motion).",
+   "setup": "FLATLAY_TIGHT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 7,
+   "start": 12.1,
+   "end": 12.64,
+   "dur": 0.54,
+   "in": "cut",
+   "brightness": {
+    "start": 112,
+    "mid": 144,
+    "end": 144
+   },
+   "colour": "#848a81",
+   "change": 0,
+   "sound": "-18.19 LUFS mean, -16.71 peak",
+   "narration": []
+  },
+  {
+   "action": "Top-down: the black logic board drops into place on the paper (stop-motion).",
+   "setup": "FLATLAY_TIGHT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 8,
+   "start": 12.64,
+   "end": 13.6,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 134,
+    "mid": 149,
+    "end": 151
+   },
+   "colour": "#8a9086",
+   "change": 16.65,
+   "sound": "-21.75 LUFS mean, -19.2 peak",
+   "narration": []
+  },
+  {
+   "action": "Top-down: parts pop in around the midframe; the camera module appears (stop-motion).",
+   "setup": "FLATLAY_TIGHT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 9,
+   "start": 13.6,
+   "end": 15.02,
+   "dur": 1.42,
+   "in": "cut",
+   "brightness": {
+    "start": 135,
+    "mid": 132,
+    "end": 127
+   },
+   "colour": "#7a847e",
+   "change": 69.38,
+   "sound": "-19.01 LUFS mean, -16.99 peak",
+   "narration": []
+  },
+  {
+   "action": "Static: the chip lies on the paper.",
+   "setup": "FLATLAY_TIGHT",
+   "location": "pale sage-grey paper #c9cdc2",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "close-up (top-down)",
+   "subject_in_frame": "The chip package centred at 50% x, 47% y, square, 27% of W wide; the speaker module cut by the top-right corner (84-100% x, 0-40% y); a phone frame edge across the bottom-left corner; six tiny screws lower right (76-97% x, 78-94% y) (boards/s10.jpg).",
+   "camera": "Top-down 90 deg, ~100 mm, deep focus.",
+   "camera_move": "locked off (nothing moves).",
+   "light": "Soft even overhead light, brightness 173.",
+   "text": [
+    {
+     "words": "{CHIP_NAME}",
+     "default": "C2 PRO",
+     "where": "laser-etched on the chip lid, centred; the letters span ~40% of the lid width",
+     "in": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "30 s cut: L04 'A chip built for AI that runs faster than ever.' runs across this shot (11.76-14.67); the word 'chip' falls 0.2 s before this shot starts.",
+   "render": "Still plate from product_chip_sheet (top view) on the flat-lay paper with the neighbouring parts as boards/s10.jpg; drawn in code, no move.",
+   "board": "boards/s10.jpg",
+   "n": 10,
+   "start": 15.02,
+   "end": 15.97,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 173,
+    "mid": 173,
+    "end": 173
+   },
+   "colour": "#a9aea1",
+   "change": 0.23,
+   "sound": "-17.26 LUFS mean, -15.92 peak",
+   "props": "product_chip (top view), speaker module, screws",
+   "narration": []
+  },
+  {
+   "action": "A paper blueprint of the chip die: push from a small drawing to full-frame lines, then a defocus.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 11,
+   "start": 15.97,
+   "end": 21.19,
+   "dur": 5.21,
+   "in": "cut",
+   "brightness": {
+    "start": 199,
+    "mid": 176,
+    "end": 204
+   },
+   "colour": "#bcbdae",
+   "change": 21.52,
+   "sound": "-18.37 LUFS mean, -15.91 peak",
+   "narration": []
+  },
+  {
+   "action": "Whip blur onto an engineer's hand sketching in pencil over the parts.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 12,
+   "start": 21.19,
+   "end": 21.94,
+   "dur": 0.75,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 209,
+    "end": 186
+   },
+   "colour": "#a3a69b",
+   "change": 145.2,
+   "sound": "-19.24 LUFS mean, -17.75 peak",
+   "narration": []
+  },
+  {
+   "action": "Blurred cyan bars resolve into the die floorplan, which draws itself (its right half builds last), then glows steadily.",
+   "setup": "CG_DIE",
+   "location": "CG: dark circuit board in black",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "macro (graphic)",
+   "subject_in_frame": "The glowing die square at 36-80% x, 5-95% y (44% of W), cyan #3fd0ff lines; a dark board with glowing traces and connectors around it, a dark component block at 82-90% x, 40-55% y (boards/s13.jpg). Start (22.10): only horizontal blurred bars of cyan light across 5-90% x, 40-80% y (boards/s13a.jpg).",
+   "camera": "Near top-down, tilted ~15 deg from vertical, long lens; shallow focus at the start.",
+   "camera_move": "22.40-22.58 the blurred bars snap into focus and assemble into the die (0.18 s); then a slow linear push in 100 -> 104% over the rest of the shot.",
+   "light": "Self-lit cyan emissive lines, everything else black; brightness 9 -> 41 -> 54.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music. 30 s cut: L04 '... that runs faster than ever.' over it.",
+   "render": "Motion graphic from set/product_chip_die.jpg: in code, gaussian blur 30 px -> 0 over 0.18 s plus a 4% push (or an H3 first + last frame take boards/s13a look -> boards/s13 look).",
+   "board": "boards/s13.jpg",
+   "n": 13,
+   "start": 21.94,
+   "end": 23.86,
+   "dur": 1.92,
+   "in": "cut",
+   "brightness": {
+    "start": 9,
+    "mid": 41,
+    "end": 54
+   },
+   "colour": "#0a344b",
+   "change": 40.52,
+   "sound": "-15.82 LUFS mean, -13.27 peak",
+   "props": "product_chip_die",
+   "boards": [
+    "boards/s13a.jpg (start)",
+    "boards/s13.jpg (settled)"
+   ],
+   "narration": []
+  },
+  {
+   "action": "Glowing cyan circuit traces streak past in the dark (CG fly-through).",
+   "setup": "CG_DIE",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 14,
+   "start": 23.86,
+   "end": 24.9,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 7,
+    "mid": 59,
+    "end": 87
+   },
+   "colour": "#243d47",
+   "change": 61.99,
+   "sound": "-15.81 LUFS mean, -13.75 peak",
+   "narration": []
+  },
+  {
+   "action": "Fast low fly-over along glowing traces (CG).",
+   "setup": "CG_DIE",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 15,
+   "start": 24.9,
+   "end": 25.36,
+   "dur": 0.46,
+   "in": "cut",
+   "brightness": {
+    "start": 50,
+    "mid": 82,
+    "end": 57
+   },
+   "colour": "#2e454e",
+   "change": 0,
+   "sound": "-16.84 LUFS mean, -16.44 peak",
+   "narration": []
+  },
+  {
+   "action": "Gloved hands raise the wine-coloured phone in a dark cave, lit by a headlamp.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 16,
+   "start": 25.36,
+   "end": 26.82,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 45,
+    "mid": 24,
+    "end": 38
+   },
+   "colour": "#152229",
+   "change": 38.61,
+   "sound": "-18.86 LUFS mean, -16.7 peak",
+   "narration": []
+  },
+  {
+   "action": "A gloved hand holds the phone showing a map, cave mist behind.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 17,
+   "start": 26.82,
+   "end": 27.65,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 29,
+    "mid": 33,
+    "end": 37
+   },
+   "colour": "#142127",
+   "change": 12.29,
+   "sound": "-16.45 LUFS mean, -15.02 peak",
+   "narration": []
+  },
+  {
+   "action": "Wide: a caver with a headlamp at a dark cave mouth.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 18,
+   "start": 27.65,
+   "end": 28.86,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 17,
+    "mid": 17,
+    "end": 18
+   },
+   "colour": "#0d1010",
+   "change": 3.09,
+   "sound": "-16.52 LUFS mean, -15.13 peak",
+   "narration": []
+  },
+  {
+   "action": "Lock-screen close-up of the phone on a lab table, slow push toward the large clock numerals.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 19,
+   "start": 28.86,
+   "end": 30.03,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 101,
+    "mid": 95,
+    "end": 109
+   },
+   "colour": "#616463",
+   "change": 31.71,
+   "sound": "-17.48 LUFS mean, -15.33 peak",
+   "narration": []
+  },
+  {
+   "action": "A hand holds a blue phone at a misty coast; an assistant panel appears on its screen.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 20,
+   "start": 30.03,
+   "end": 31.49,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 126,
+    "mid": 119,
+    "end": 119
+   },
+   "colour": "#617a8a",
+   "change": 20.75,
+   "sound": "-16.57 LUFS mean, -15.12 peak",
+   "narration": []
+  },
+  {
+   "action": "Wide: a lone figure on dark coastal rocks in sea mist.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 21,
+   "start": 31.49,
+   "end": 32.53,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 85,
+    "mid": 85,
+    "end": 85
+   },
+   "colour": "#415766",
+   "change": 1.33,
+   "sound": "-18.9 LUFS mean, -17.6 peak",
+   "narration": []
+  },
+  {
+   "action": "Low macro sliding across older chips on their boards, one generation per beat.",
+   "setup": "CHIP_MACRO",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 22,
+   "start": 32.53,
+   "end": 33.2,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 78,
+    "mid": 78,
+    "end": 49
+   },
+   "colour": "#3a4345",
+   "change": 48.58,
+   "sound": "-15.58 LUFS mean, -14.34 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro across two more chip generations ending on the previous chip.",
+   "setup": "CHIP_MACRO",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 23,
+   "start": 33.2,
+   "end": 34.12,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 91,
+    "mid": 58,
+    "end": 82
+   },
+   "colour": "#415255",
+   "change": 49.68,
+   "sound": "-14.94 LUFS mean, -13.5 peak",
+   "narration": []
+  },
+  {
+   "action": "A vertical specular glint sweeps left to right across the lid (from 20% x at 0 s to 85% x at 1.1 s), lighting the etched name as it passes.",
+   "setup": "CHIP_MACRO",
+   "location": "the chip on a dark green-black circuit board",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "The chip lid fills the frame: its top and left edges are outside the frame, its right edge runs from 78% x (top) to 82% x (bottom); the etched '{CHIP_NAME}' spans ~60% of W centred at 45% x, 40% y, 'PRO' smaller below at 35-55% x, 62-78% y; tiny board components along the right edge (boards/s24.jpg).",
+   "camera": "Low three-quarter, ~20 deg above the lid, macro lens, shallow depth of field (the etch sharp, the components soft).",
+   "camera_move": "slow drift right with a slight rack focus, ~3% over 1.29 s.",
+   "light": "Hard grazing key from the right, cool white; the lid at 109-127.",
+   "text": [
+    {
+     "words": "{CHIP_NAME}",
+     "default": "C2 PRO",
+     "where": "etched on the lid as above",
+     "in": "revealed progressively by the glint 0-1.1 s"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "30 s cut: the end of L04 '... than ever.' (ends 0.37 s into this shot).",
+   "render": "first + last frame from product plates: plate A = the lid with the name half lit, glint at 25% x -> plate B = the name fully lit, glint at 85% x (both made from product_chip_sheet, right view, reframed as boards/s24.jpg).",
+   "board": "boards/s24.jpg",
+   "n": 24,
+   "start": 34.12,
+   "end": 35.41,
+   "dur": 1.29,
+   "in": "cut",
+   "brightness": {
+    "start": 127,
+    "mid": 121,
+    "end": 109
+   },
+   "colour": "#6e7673",
+   "change": 16.96,
+   "sound": "-15.62 LUFS mean, -14.54 peak",
+   "props": "product_chip",
+   "narration": []
+  },
+  {
+   "action": "A technician in a clean suit at a microscope; through the eyepiece, the new chip held in tweezers.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 25,
+   "start": 35.41,
+   "end": 36.41,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 55,
+    "mid": 84,
+    "end": 88
+   },
+   "colour": "#434f54",
+   "change": 57.86,
+   "sound": "-15.92 LUFS mean, -14.53 peak",
+   "narration": []
+  },
+  {
+   "action": "Extreme close-up of a technician's eye at an eyepiece.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 26,
+   "start": 36.41,
+   "end": 36.95,
+   "dur": 0.54,
+   "in": "cut",
+   "brightness": {
+    "start": 131,
+    "mid": 125,
+    "end": 120
+   },
+   "colour": "#757d78",
+   "change": 0,
+   "sound": "-15.92 LUFS mean, -15.27 peak",
+   "narration": []
+  },
+  {
+   "action": "Blurred figures cross a bright office (whip transition).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 27,
+   "start": 36.95,
+   "end": 37.45,
+   "dur": 0.5,
+   "in": "cut",
+   "brightness": {
+    "start": 143,
+    "mid": 210,
+    "end": 180
+   },
+   "colour": "#b1b4a5",
+   "change": 0,
+   "sound": "-14.82 LUFS mean, -14.49 peak",
+   "narration": []
+  },
+  {
+   "action": "Dark: a person in front of a monitor showing a thermal image.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 28,
+   "start": 37.45,
+   "end": 38,
+   "dur": 0.54,
+   "in": "cut",
+   "brightness": {
+    "start": 63,
+    "mid": 16,
+    "end": 17
+   },
+   "colour": "#1a1a1e",
+   "change": 0,
+   "sound": "-13.54 LUFS mean, -12.93 peak",
+   "narration": []
+  },
+  {
+   "action": "Thermal-camera view of the phone's internals; a hot spot grows orange.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 29,
+   "start": 38,
+   "end": 41,
+   "dur": 3,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 51,
+    "end": 54
+   },
+   "colour": "#402b4d",
+   "change": 11.73,
+   "sound": "-17.28 LUFS mean, -13.07 peak",
+   "narration": []
+  },
+  {
+   "action": "A vapor-chamber drawing on grid paper turns into a 3D render that rotates toward camera.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 30,
+   "start": 41,
+   "end": 45.38,
+   "dur": 4.38,
+   "in": "cut",
+   "brightness": {
+    "start": 217,
+    "mid": 131,
+    "end": 36
+   },
+   "colour": "#797f77",
+   "change": 13.54,
+   "sound": "-16.55 LUFS mean, -14.09 peak",
+   "narration": []
+  },
+  {
+   "action": "Dark render: vapor spreads through the chamber.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 31,
+   "start": 45.38,
+   "end": 46.46,
+   "dur": 1.08,
+   "in": "cut",
+   "brightness": {
+    "start": 15,
+    "mid": 19,
+    "end": 22
+   },
+   "colour": "#0e1114",
+   "change": 6.06,
+   "sound": "-17.08 LUFS mean, -15.75 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro: vapor curls around pillar structures inside the chamber.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 32,
+   "start": 46.46,
+   "end": 47.51,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 81,
+    "end": 92
+   },
+   "colour": "#465253",
+   "change": 21.1,
+   "sound": "-18.59 LUFS mean, -16.55 peak",
+   "narration": []
+  },
+  {
+   "action": "X-ray view of the phone with the chip glowing hot, cooling to blue.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 33,
+   "start": 47.51,
+   "end": 50.68,
+   "dur": 3.17,
+   "in": "cut",
+   "brightness": {
+    "start": 15,
+    "mid": 19,
+    "end": 62
+   },
+   "colour": "#121315",
+   "change": 2.4,
+   "sound": "-18.27 LUFS mean, -14.94 peak",
+   "narration": []
+  },
+  {
+   "action": "The wine-coloured phone with its back open on a lab table, low angle, slow push.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 34,
+   "start": 50.68,
+   "end": 55.39,
+   "dur": 4.71,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 112,
+    "mid": 83,
+    "end": 75
+   },
+   "colour": "#475357",
+   "change": 32.89,
+   "sound": "-17.63 LUFS mean, -11.81 peak",
+   "narration": []
+  },
+  {
+   "action": "The hiker walks away up the gully with small steps; seed fluffs drift across the frame.",
+   "setup": "VALLEY_WIDE",
+   "location": "loc_valley",
+   "cast": [
+    "char_hiker"
+   ],
+   "wardrobe": "dark charcoal hooded jacket, black backpack, tripod over the right shoulder",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "The hiker is tiny, 1.5% of H tall, at 54% x, 82% y in the gully; a huge dark outcrop on the left (0-38% x, 10-62% y), more outcrops right of centre (45-70% x, 25-50% y), snow peaks along the top 15% (boards/s35.jpg).",
+   "camera": "Eye level from the slope, long lens (~100 mm) compressing the valley, deep focus.",
+   "camera_move": "locked off.",
+   "light": "Low warm sun from the left; rock faces in shadow, grass golden; brightness 72-73.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: L05 '... lasts longer than ever.' ends 0.36 s into this shot; then music.",
+   "render": "first + last frame: loc_valley with char_hiker at 54% x, 82% y -> 52% x, 80% y and slightly smaller.",
+   "board": "boards/s35.jpg",
+   "n": 35,
+   "start": 55.39,
+   "end": 57.31,
+   "dur": 1.92,
+   "in": "cut",
+   "brightness": {
+    "start": 73,
+    "mid": 72,
+    "end": 72
+   },
+   "colour": "#4b4637",
+   "change": 3.32,
+   "sound": "-17.9 LUFS mean, -13.93 peak",
+   "narration": []
+  },
+  {
+   "action": "The hiker, tripod on his shoulder, climbs toward camera.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 36,
+   "start": 57.31,
+   "end": 58.31,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 58,
+    "end": 58
+   },
+   "colour": "#41382a",
+   "change": 14.04,
+   "sound": "-24.02 LUFS mean, -23.31 peak",
+   "narration": []
+  },
+  {
+   "action": "Wide: the hiker small at the foot of a huge rock outcrop.",
+   "setup": "VALLEY_WIDE",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 37,
+   "start": 58.31,
+   "end": 59.18,
+   "dur": 0.88,
+   "in": "cut",
+   "brightness": {
+    "start": 66,
+    "mid": 66,
+    "end": 66
+   },
+   "colour": "#404037",
+   "change": 0.86,
+   "sound": "-17.81 LUFS mean, -15.59 peak",
+   "narration": []
+  },
+  {
+   "action": "The photographer's face beside a phone on a tripod in golden grass.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 38,
+   "start": 59.18,
+   "end": 59.81,
+   "dur": 0.63,
+   "in": "cut",
+   "brightness": {
+    "start": 71,
+    "mid": 72,
+    "end": 73
+   },
+   "colour": "#4c4638",
+   "change": 6.61,
+   "sound": "-19.79 LUFS mean, -17.95 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro of the screen edge showing satellite and emergency status icons.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 39,
+   "start": 59.81,
+   "end": 61.31,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 95,
+    "mid": 67,
+    "end": 28
+   },
+   "colour": "#3f4243",
+   "change": 19.33,
+   "sound": "-19.06 LUFS mean, -17.08 peak",
+   "narration": []
+  },
+  {
+   "action": "A technician in protective gear tests a phone at a lab bench.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 40,
+   "start": 61.31,
+   "end": 62.31,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 77,
+    "mid": 81,
+    "end": 85
+   },
+   "colour": "#495152",
+   "change": 6.49,
+   "sound": "-21.8 LUFS mean, -20.41 peak",
+   "narration": []
+  },
+  {
+   "action": "Water splashes over the camera plateau; then the phone hangs in a test chamber.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 41,
+   "start": 62.31,
+   "end": 63.56,
+   "dur": 1.25,
+   "in": "cut",
+   "brightness": {
+    "start": 80,
+    "mid": 142,
+    "end": 93
+   },
+   "colour": "#505d5d",
+   "change": 77.03,
+   "sound": "-19.19 LUFS mean, -15.97 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro of drops on the plateau, then a technician in a lab.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 42,
+   "start": 63.56,
+   "end": 64.48,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 54,
+    "end": 76
+   },
+   "colour": "#32373b",
+   "change": 54.33,
+   "sound": "-16.31 LUFS mean, -14.88 peak",
+   "narration": []
+  },
+  {
+   "action": "Over-the-shoulder: a woman studies a wine-coloured back panel in her hand.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 43,
+   "start": 64.48,
+   "end": 65.48,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 65,
+    "mid": 68,
+    "end": 73
+   },
+   "colour": "#404241",
+   "change": 40.56,
+   "sound": "-15.67 LUFS mean, -12.91 peak",
+   "narration": []
+  },
+  {
+   "action": "A hand lifts a wine-coloured frame from a row of four colour frames on a white stand.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 44,
+   "start": 65.48,
+   "end": 66.07,
+   "dur": 0.58,
+   "in": "cut",
+   "brightness": {
+    "start": 137,
+    "mid": 138,
+    "end": 144
+   },
+   "colour": "#858b84",
+   "change": 0,
+   "sound": "-14.19 LUFS mean, -13.09 peak",
+   "narration": []
+  },
+  {
+   "action": "Hands press the back glass onto a wine-coloured phone.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 45,
+   "start": 66.07,
+   "end": 66.48,
+   "dur": 0.42,
+   "in": "cut",
+   "brightness": {
+    "start": 45,
+    "mid": 45,
+    "end": 46
+   },
+   "colour": "#2b2c2d",
+   "change": 0,
+   "sound": "-15.6 LUFS mean, -14.99 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro of the wine back glass and the plateau edge.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 46,
+   "start": 66.48,
+   "end": 67.32,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 52,
+    "mid": 58,
+    "end": 56
+   },
+   "colour": "#493036",
+   "change": 20.57,
+   "sound": "-16.06 LUFS mean, -15.19 peak",
+   "narration": []
+  },
+  {
+   "action": "A drop-test rig lowers a blue phone between yellow-black hazard panels.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 47,
+   "start": 67.32,
+   "end": 68.03,
+   "dur": 0.71,
+   "in": "cut",
+   "brightness": {
+    "start": 79,
+    "mid": 78,
+    "end": 76
+   },
+   "colour": "#434e53",
+   "change": 30.03,
+   "sound": "-17.12 LUFS mean, -16.06 peak",
+   "narration": []
+  },
+  {
+   "action": "A spray-test rig fires nozzles in a dark chamber.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 48,
+   "start": 68.03,
+   "end": 68.78,
+   "dur": 0.75,
+   "in": "cut",
+   "brightness": {
+    "start": 42,
+    "mid": 42,
+    "end": 41
+   },
+   "colour": "#1b2a32",
+   "change": 3.04,
+   "sound": "-15.51 LUFS mean, -13.99 peak",
+   "narration": []
+  },
+  {
+   "action": "A blue phone dripping under spray, dark.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 49,
+   "start": 68.78,
+   "end": 69.69,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 84,
+    "mid": 82,
+    "end": 81
+   },
+   "colour": "#42545e",
+   "change": 5.43,
+   "sound": "-17.83 LUFS mean, -13.99 peak",
+   "narration": []
+  },
+  {
+   "action": "Near-black: a tiny light point in dark vegetation.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 50,
+   "start": 69.69,
+   "end": 72.28,
+   "dur": 2.59,
+   "in": "cut",
+   "brightness": {
+    "start": 18,
+    "mid": 17,
+    "end": 14
+   },
+   "colour": "#091014",
+   "change": 1.32,
+   "sound": "-16.78 LUFS mean, -13.33 peak",
+   "narration": []
+  },
+  {
+   "action": "Whip into a measuring loupe with a scale reticle over a part.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 51,
+   "start": 72.28,
+   "end": 73.99,
+   "dur": 1.71,
+   "in": "cut",
+   "brightness": {
+    "start": 208,
+    "mid": 123,
+    "end": 121
+   },
+   "colour": "#818981",
+   "change": 44.06,
+   "sound": "-15.78 LUFS mean, -12.8 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro over a camera module's lenses on a white table.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 52,
+   "start": 73.99,
+   "end": 74.87,
+   "dur": 0.88,
+   "in": "cut",
+   "brightness": {
+    "start": 158,
+    "mid": 138,
+    "end": 116
+   },
+   "colour": "#858d85",
+   "change": 85.45,
+   "sound": "-15.22 LUFS mean, -14.43 peak",
+   "narration": []
+  },
+  {
+   "action": "The lens rim catches the light as we push in (source continues with an X-ray lens graphic from 76.4, not used).",
+   "setup": "LENS_MACRO",
+   "location": "black studio void",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "One lens ring of the camera plateau, 55% of W wide, centred at 50% x, 55% y; the plateau's surface across the bottom third; a second lens ring out of focus top left; black above (boards/s53.jpg).",
+   "camera": "Low angle ~10 deg above the plateau, macro, very shallow depth of field.",
+   "camera_move": "slow push in and rise, ring 55% -> 60% of W over 1.2 s, ease-out.",
+   "light": "Single soft top key; the wine aluminium edges glow; black background; brightness 16-31.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: L06 'The most intelligent pro camera ...' (starts 0.17 s before this shot). 15 s cut: L06 starts 0.23 s into it.",
+   "render": "first + last frame from product plates (a plateau macro made from product_phone_sheet in the wine finish): ring 55% of W -> 60% of W.",
+   "board": "boards/s53.jpg",
+   "n": 53,
+   "start": 74.87,
+   "end": 78.2,
+   "dur": 3.34,
+   "in": "cut",
+   "brightness": {
+    "start": 16,
+    "mid": 22,
+    "end": 31
+   },
+   "colour": "#171517",
+   "change": 13.05,
+   "sound": "-16.12 LUFS mean, -12.67 peak",
+   "props": "product_phone camera plateau",
+   "narration": []
+  },
+  {
+   "action": "A pencil drawing of an aperture blade, then the black blade itself.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 54,
+   "start": 78.2,
+   "end": 79.2,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 193,
+    "mid": 220,
+    "end": 196
+   },
+   "colour": "#c4c7b8",
+   "change": 27.98,
+   "sound": "-17.91 LUFS mean, -15.03 peak",
+   "narration": []
+  },
+  {
+   "action": "One black aperture blade on pale paper.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 55,
+   "start": 79.2,
+   "end": 79.75,
+   "dur": 0.54,
+   "in": "cut",
+   "brightness": {
+    "start": 169,
+    "mid": 165,
+    "end": 164
+   },
+   "colour": "#a5a89b",
+   "change": 0,
+   "sound": "-15.54 LUFS mean, -14.41 peak",
+   "narration": []
+  },
+  {
+   "action": "Rows of black aperture blades in a manufacturing tray.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 56,
+   "start": 79.75,
+   "end": 80.46,
+   "dur": 0.71,
+   "in": "cut",
+   "brightness": {
+    "start": 78,
+    "mid": 77,
+    "end": 74
+   },
+   "colour": "#404d50",
+   "change": 37.44,
+   "sound": "-16.94 LUFS mean, -15.68 peak",
+   "narration": []
+  },
+  {
+   "action": "A lens on a test rig flares blue-white in a white lab.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 57,
+   "start": 80.46,
+   "end": 81.46,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 113,
+    "mid": 111,
+    "end": 112
+   },
+   "colour": "#637f85",
+   "change": 17.86,
+   "sound": "-17.93 LUFS mean, -14.72 peak",
+   "narration": []
+  },
+  {
+   "action": "A light line reveals an etched pattern in the dark, then a macro of the lens in the wine plateau.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 58,
+   "start": 81.46,
+   "end": 84.33,
+   "dur": 2.88,
+   "in": "cut",
+   "brightness": {
+    "start": 51,
+    "mid": 28,
+    "end": 26
+   },
+   "colour": "#1a1b1f",
+   "change": 16.16,
+   "sound": "-15.58 LUFS mean, -12.45 peak",
+   "narration": []
+  },
+  {
+   "action": "A light beam on a lens, then a cave shaft with a beam of daylight.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 59,
+   "start": 84.33,
+   "end": 88.09,
+   "dur": 3.75,
+   "in": "cut",
+   "brightness": {
+    "start": 16,
+    "mid": 14,
+    "end": 14
+   },
+   "colour": "#0b0d10",
+   "change": 0.06,
+   "sound": "-19.41 LUFS mean, -14.15 peak",
+   "narration": []
+  },
+  {
+   "action": "Cave shaft: a tiny caver descends a rope through a beam of light.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 60,
+   "start": 88.09,
+   "end": 91.17,
+   "dur": 3.09,
+   "in": "cut",
+   "brightness": {
+    "start": 32,
+    "mid": 33,
+    "end": 33
+   },
+   "colour": "#152128",
+   "change": 0.87,
+   "sound": "-16.69 LUFS mean, -14.94 peak",
+   "narration": []
+  },
+  {
+   "action": "Close: a caver's face in his headlamp; the phone passes in front.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 61,
+   "start": 91.17,
+   "end": 92.13,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 18,
+    "mid": 16,
+    "end": 15
+   },
+   "colour": "#0d0e10",
+   "change": 15.07,
+   "sound": "-19.22 LUFS mean, -16.45 peak",
+   "narration": []
+  },
+  {
+   "action": "A caver at the cave floor holds up the phone; another descends high above.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 62,
+   "start": 92.13,
+   "end": 93.64,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 23,
+    "mid": 22,
+    "end": 21
+   },
+   "colour": "#0c151c",
+   "change": 1.27,
+   "sound": "-16.65 LUFS mean, -15.04 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photo (pillarboxed): the caver on a rope in the light shaft.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 63,
+   "start": 93.64,
+   "end": 95.6,
+   "dur": 1.96,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 36,
+    "end": 36
+   },
+   "colour": "#1a242a",
+   "change": 0.11,
+   "sound": "-15.88 LUFS mean, -12.41 peak",
+   "narration": []
+  },
+  {
+   "action": "The caver raises the wine phone to shoot upward.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 64,
+   "start": 95.6,
+   "end": 97.97,
+   "dur": 2.38,
+   "in": "cut",
+   "brightness": {
+    "start": 13,
+    "mid": 13,
+    "end": 13
+   },
+   "colour": "#0a0b0d",
+   "change": 3.58,
+   "sound": "-14.62 LUFS mean, -13.48 peak",
+   "narration": []
+  },
+  {
+   "action": "Gloved hands hold the phone; the camera app shows the caver on the rope.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 65,
+   "start": 97.97,
+   "end": 101.6,
+   "dur": 3.63,
+   "in": "cut",
+   "brightness": {
+    "start": 33,
+    "mid": 31,
+    "end": 23
+   },
+   "colour": "#161b1f",
+   "change": 5.39,
+   "sound": "-15.08 LUFS mean, -11.39 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photo (pillarboxed): the caver in the beam.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 66,
+   "start": 101.6,
+   "end": 102.23,
+   "dur": 0.63,
+   "in": "cut",
+   "brightness": {
+    "start": 29,
+    "mid": 31,
+    "end": 31
+   },
+   "colour": "#161e23",
+   "change": 4.03,
+   "sound": "-15.21 LUFS mean, -14.12 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photo (pillarboxed): cave wall with a waterfall and a headlamp.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 67,
+   "start": 102.23,
+   "end": 103.52,
+   "dur": 1.29,
+   "in": "cut",
+   "brightness": {
+    "start": 17,
+    "mid": 17,
+    "end": 17
+   },
+   "colour": "#0d1011",
+   "change": 0.09,
+   "sound": "-17.56 LUFS mean, -15.23 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photo (pillarboxed): a caver looking up, headlamp on.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 68,
+   "start": 103.52,
+   "end": 104.69,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 13,
+    "mid": 13,
+    "end": 13
+   },
+   "colour": "#0b0d0e",
+   "change": 0,
+   "sound": "-16.6 LUFS mean, -14.28 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photo (pillarboxed): a huge cave wall with a tiny caver.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 69,
+   "start": 104.69,
+   "end": 106.11,
+   "dur": 1.42,
+   "in": "cut",
+   "brightness": {
+    "start": 25,
+    "mid": 25,
+    "end": 25
+   },
+   "colour": "#161816",
+   "change": 0.15,
+   "sound": "-14.72 LUFS mean, -12.29 peak",
+   "narration": []
+  },
+  {
+   "action": "A sea-cave arch in silhouette framing the bright ocean.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 70,
+   "start": 106.11,
+   "end": 107.69,
+   "dur": 1.59,
+   "in": "cut",
+   "brightness": {
+    "start": 35,
+    "mid": 37,
+    "end": 39
+   },
+   "colour": "#222421",
+   "change": 4.14,
+   "sound": "-15.11 LUFS mean, -12.39 peak",
+   "narration": []
+  },
+  {
+   "action": "A woman swims in the ocean holding the phone in a waterproof housing.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 71,
+   "start": 107.69,
+   "end": 108.98,
+   "dur": 1.29,
+   "in": "cut",
+   "brightness": {
+    "start": 104,
+    "mid": 84,
+    "end": 114
+   },
+   "colour": "#4e6163",
+   "change": 33.09,
+   "sound": "-13.75 LUFS mean, -12.53 peak",
+   "narration": []
+  },
+  {
+   "action": "Half under water: the housing in the waves.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 72,
+   "start": 108.98,
+   "end": 109.74,
+   "dur": 0.75,
+   "in": "cut",
+   "brightness": {
+    "start": 140,
+    "mid": 126,
+    "end": 131
+   },
+   "colour": "#6c7b74",
+   "change": 65.66,
+   "sound": "-13 LUFS mean, -12.47 peak",
+   "narration": []
+  },
+  {
+   "action": "Close: the phone in its housing, water sheeting off.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 73,
+   "start": 109.74,
+   "end": 110.61,
+   "dur": 0.88,
+   "in": "cut",
+   "brightness": {
+    "start": 74,
+    "mid": 85,
+    "end": 83
+   },
+   "colour": "#42515a",
+   "change": 45.08,
+   "sound": "-13.69 LUFS mean, -13.07 peak",
+   "narration": []
+  },
+  {
+   "action": "He carves along the wave face toward camera, left arm out for balance, a plume of spray behind him.",
+   "setup": "SURF_FOLLOW",
+   "location": "loc_surf_break",
+   "cast": [
+    "char_surfer"
+   ],
+   "wardrobe": "black long-sleeve wetsuit, cream shortboard",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Start (boards/s74a.jpg): the surfer crouched on the board at 30-44% x, 42-75% y (~35% of H), left arm out, carving left to right along the face toward camera; spray plume behind him at 55-95% x, 20-60% y; the headland across the top 40%. End (boards/s74b.jpg, +1.2 s): he is at 40-52% x, 38-80% y and larger (~42% of H).",
+   "camera": "Water level, low, wide (~24 mm) in a water housing, deep focus.",
+   "camera_move": "tracks backwards with the surfer, slight pan right, bobbing about 2% vertically.",
+   "light": "Bright midday sun from the upper right, sparkling water; brightness 99-100.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: music only (a gap between L06 and L07). 15 s cut: the end of L06 '... ever.'",
+   "render": "first + last frame: plates of char_surfer in loc_surf_break as boards/s74a.jpg -> boards/s74b.jpg.",
+   "board": "boards/s74.jpg",
+   "n": 74,
+   "start": 110.61,
+   "end": 113.07,
+   "dur": 2.46,
+   "in": "cut",
+   "brightness": {
+    "start": 100,
+    "mid": 99,
+    "end": 100
+   },
+   "colour": "#5a6460",
+   "change": 32.84,
+   "sound": "-14.13 LUFS mean, -12.7 peak",
+   "boards": [
+    "boards/s74a.jpg",
+    "boards/s74.jpg",
+    "boards/s74b.jpg"
+   ],
+   "narration": []
+  },
+  {
+   "action": "Photo (pillarboxed): a surfer inside a green barrel.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 75,
+   "start": 113.07,
+   "end": 114.53,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 88,
+    "end": 88
+   },
+   "colour": "#4c555b",
+   "change": 31.27,
+   "sound": "-17.89 LUFS mean, -15.4 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro: the phone on a tripod clamp, plateau in golden light.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 76,
+   "start": 114.53,
+   "end": 115.2,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 51,
+    "end": 50
+   },
+   "colour": "#32322c",
+   "change": 7.32,
+   "sound": "-17.82 LUFS mean, -16.2 peak",
+   "narration": []
+  },
+  {
+   "action": "The photographer taps record on the phone's camera app; the rock landscape on screen.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 77,
+   "start": 115.2,
+   "end": 117.66,
+   "dur": 2.46,
+   "in": "cut",
+   "brightness": {
+    "start": 66,
+    "mid": 67,
+    "end": 66
+   },
+   "colour": "#464137",
+   "change": 14.12,
+   "sound": "-14.76 LUFS mean, -12.59 peak",
+   "narration": []
+  },
+  {
+   "action": "Time-lapse: a lone rock pinnacle on a golden plain under moving clouds.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 78,
+   "start": 117.66,
+   "end": 118.58,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 109,
+    "mid": 98,
+    "end": 90
+   },
+   "colour": "#5d626c",
+   "change": 20.09,
+   "sound": "-17.39 LUFS mean, -16.22 peak",
+   "narration": []
+  },
+  {
+   "action": "Time-lapse: the same landscape darkens to night.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 79,
+   "start": 118.58,
+   "end": 119.7,
+   "dur": 1.13,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 76,
+    "mid": 22,
+    "end": 11
+   },
+   "colour": "#17191f",
+   "change": 53.13,
+   "sound": "-18.18 LUFS mean, -16.48 peak",
+   "narration": []
+  },
+  {
+   "action": "Three surfers walk out of the sea at sunset, backlit by a rock arch.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 80,
+   "start": 119.7,
+   "end": 120.66,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 134,
+    "mid": 136,
+    "end": 137
+   },
+   "colour": "#93846c",
+   "change": 24.06,
+   "sound": "-13.24 LUFS mean, -11.91 peak",
+   "narration": []
+  },
+  {
+   "action": "A woman surfer at sunset looks at the phone in her hands.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 81,
+   "start": 120.66,
+   "end": 122.12,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 146,
+    "mid": 154,
+    "end": 158
+   },
+   "colour": "#a0977d",
+   "change": 28.69,
+   "sound": "-15.29 LUFS mean, -12.44 peak",
+   "narration": []
+  },
+  {
+   "action": "Fingers scrub a video timeline on the phone; surfers on screen.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 82,
+   "start": 122.12,
+   "end": 122.96,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 80,
+    "mid": 76,
+    "end": 74
+   },
+   "colour": "#504a40",
+   "change": 16.89,
+   "sound": "-15.55 LUFS mean, -14.1 peak",
+   "narration": []
+  },
+  {
+   "action": "Phone screen: a video editor with focus boxes on two surfers.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 83,
+   "start": 122.96,
+   "end": 124.5,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 83,
+    "mid": 83,
+    "end": 83
+   },
+   "colour": "#4f5450",
+   "change": 0.96,
+   "sound": "-14.73 LUFS mean, -13.33 peak",
+   "narration": []
+  },
+  {
+   "action": "The edited video full frame: two surfers paddling.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 84,
+   "start": 124.5,
+   "end": 126.08,
+   "dur": 1.59,
+   "in": "cut",
+   "brightness": {
+    "start": 132,
+    "mid": 126,
+    "end": 126
+   },
+   "colour": "#79807c",
+   "change": 20.41,
+   "sound": "-14.54 LUFS mean, -11.81 peak",
+   "narration": []
+  },
+  {
+   "action": "Cave: a tiny caver with a headlamp at the bottom of a misty shaft.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 85,
+   "start": 126.08,
+   "end": 126.75,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 36,
+    "end": 36
+   },
+   "colour": "#1d2327",
+   "change": 0.43,
+   "sound": "-14.19 LUFS mean, -13.2 peak",
+   "narration": []
+  },
+  {
+   "action": "Gloved hands hold the phone; the camera app shows style swatches over the caver's selfie.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 86,
+   "start": 126.75,
+   "end": 127.79,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 14,
+    "mid": 13,
+    "end": 13
+   },
+   "colour": "#0a0b0d",
+   "change": 6.27,
+   "sound": "-14.07 LUFS mean, -13.68 peak",
+   "narration": []
+  },
+  {
+   "action": "Close on the screen: a style palette being adjusted.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 87,
+   "start": 127.79,
+   "end": 128.96,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 13,
+    "mid": 14,
+    "end": 13
+   },
+   "colour": "#0d0b0a",
+   "change": 12.05,
+   "sound": "-14.03 LUFS mean, -13.31 peak",
+   "narration": []
+  },
+  {
+   "action": "The phone screen centred on black: style settings over the caver's portrait.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 88,
+   "start": 128.96,
+   "end": 131.34,
+   "dur": 2.38,
+   "in": "cut",
+   "brightness": {
+    "start": 4,
+    "mid": 4,
+    "end": 4
+   },
+   "colour": "#030303",
+   "change": 0.6,
+   "sound": "-15.35 LUFS mean, -13.71 peak",
+   "narration": []
+  },
+  {
+   "action": "Portrait photos (pillarboxed): two cavers in helmets, one after the other.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 89,
+   "start": 131.34,
+   "end": 132.55,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 16,
+    "mid": 16,
+    "end": 12
+   },
+   "colour": "#0e0e0d",
+   "change": 12.12,
+   "sound": "-19.69 LUFS mean, -18.92 peak",
+   "narration": []
+  },
+  {
+   "action": "Photo (pillarboxed): a sunset coastline with a lone surfer.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 90,
+   "start": 132.55,
+   "end": 133.55,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 61,
+    "end": 47
+   },
+   "colour": "#34373a",
+   "change": 0.08,
+   "sound": "-21.56 LUFS mean, -16.74 peak",
+   "narration": []
+  },
+  {
+   "action": "Photos (pillarboxed): portraits of two surfers at sunset.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 91,
+   "start": 133.55,
+   "end": 134.22,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 61,
+    "mid": 60,
+    "end": 60
+   },
+   "colour": "#3d3b35",
+   "change": 24.56,
+   "sound": "-18.46 LUFS mean, -16.44 peak",
+   "narration": []
+  },
+  {
+   "action": "The photographer launches a small drone at dusk in the mountains.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 92,
+   "start": 134.22,
+   "end": 135.18,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 41,
+    "mid": 42,
+    "end": 41
+   },
+   "colour": "#242830",
+   "change": 1.42,
+   "sound": "-14.59 LUFS mean, -12.04 peak",
+   "narration": []
+  },
+  {
+   "action": "The rock pinnacle at blue hour with a bright planet; a light moves across.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 93,
+   "start": 135.18,
+   "end": 136.89,
+   "dur": 1.71,
+   "in": "cut",
+   "brightness": {
+    "start": 29,
+    "mid": 36,
+    "end": 39
+   },
+   "colour": "#1b2228",
+   "change": 3.81,
+   "sound": "-14.67 LUFS mean, -13.26 peak",
+   "narration": []
+  },
+  {
+   "action": "The photographer's face, lit in the dark, beside the phone on a tripod.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 94,
+   "start": 136.89,
+   "end": 138.01,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 5,
+    "mid": 11,
+    "end": 17
+   },
+   "colour": "#09090a",
+   "change": 7.04,
+   "sound": "-15.22 LUFS mean, -13.4 peak",
+   "narration": []
+  },
+  {
+   "action": "A finger adjusts the pro camera app on the tripod-mounted phone at night.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 95,
+   "start": 138.01,
+   "end": 139.64,
+   "dur": 1.63,
+   "in": "cut",
+   "brightness": {
+    "start": 24,
+    "mid": 13,
+    "end": 14
+   },
+   "colour": "#0d0e0f",
+   "change": 3.16,
+   "sound": "-16.15 LUFS mean, -14.5 peak",
+   "narration": []
+  },
+  {
+   "action": "At +0.25 s (139.89) the white balance switches from 3800K (AWB selected) to DAYLIGHT: the preview warms in one frame, the panel value changes, the left column WB 3.8 -> 5.5; the yellow selection dot moves from AWB to the sun row by fading 0.33-0.54 s.",
+   "setup": "SCREEN_UI_FULL",
+   "location": "the phone's screen (ui_camera_pro); preview = loc_night_pinnacle",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "screen, full frame",
+   "subject_in_frame": "The app fills the frame: 4:3 preview at 15-76% x, 9-91% y; settings column at 10% x; zoom ladder at 60% x (1x highlighted at 50% y); white shutter at 70.7% x, 50% y (9% of W); white-balance panel at 78-99% x, 11-89% y (boards/s96.jpg, set/ui_camera_pro_3800.jpg).",
+   "camera": "none (screen recording, flat)",
+   "camera_move": "none",
+   "light": "Screen light; preview dark (frame brightness 23-24).",
+   "text": [
+    {
+     "words": "WHITE BALANCE / 3800K -> DAYLIGHT / AWB / f/4.0 / 3.8 -> 5.5 WB / 1/22 SHUTTER / 0.0 EV / AF / RAW 48 / 8 4 2 1x .5",
+     "where": "in-app copy, see set/ui.json",
+     "in": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "30 s cut: the end of L06 '... system ever.' (ends 20.56). 15 s cut: L06 'intelligent pro camera' over it.",
+   "render": "Composited from ui sheets: set/ui_camera_pro_3800.jpg for 0-0.25 s, set/ui_camera_pro_daylight.jpg after (yellow dot crossfade 0.33-0.54 s); see set/ui.json. No camera move.",
+   "board": "boards/s96.jpg",
+   "n": 96,
+   "start": 139.64,
+   "end": 140.81,
+   "dur": 1.17,
+   "in": "cut",
+   "brightness": {
+    "start": 23,
+    "mid": 24,
+    "end": 24
+   },
+   "colour": "#161617",
+   "change": 1.69,
+   "sound": "-17.72 LUFS mean, -15.13 peak",
+   "narration": []
+  },
+  {
+   "action": "Close: the photographer watches; the phone at frame left.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 97,
+   "start": 140.81,
+   "end": 142.31,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 19,
+    "mid": 18,
+    "end": 13
+   },
+   "colour": "#110f0e",
+   "change": 9.06,
+   "sound": "-15.68 LUFS mean, -14.66 peak",
+   "narration": []
+  },
+  {
+   "action": "A still photograph holds.",
+   "setup": "PHOTO_FULL",
+   "location": "the photo: ui_photo_night_halo",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "full-screen photograph (4:3, pillarboxed)",
+   "subject_in_frame": "Photo at 12.5-87.5% x, full height, black bars either side; the rock pinnacle centred at 50% x, 35-80% y; the light ring at 40-62% x, 25-32% y; the Milky Way rising vertically behind (boards/s98.jpg).",
+   "camera": "none (a still photo shown full screen)",
+   "camera_move": "none (optional 1% push in code)",
+   "light": "Night photo, cool blue, the rock softly lit; frame brightness 47.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: L07 'This is what happens when you go to the moon,' starts 0.09 s before this shot.",
+   "render": "Drawn in code: set/ui_photo_night_halo_frame.jpg full frame, static.",
+   "board": "boards/s98.jpg",
+   "n": 98,
+   "start": 142.31,
+   "end": 144.31,
+   "dur": 2,
+   "in": "cut",
+   "brightness": {
+    "start": 47,
+    "mid": 47,
+    "end": 47
+   },
+   "colour": "#252e37",
+   "change": 0,
+   "sound": "-17.17 LUFS mean, -15.22 peak",
+   "narration": []
+  },
+  {
+   "action": "The wine phone held up close at night, plateau facing camera.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 99,
+   "start": 144.31,
+   "end": 145.23,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 33,
+    "mid": 46,
+    "end": 47
+   },
+   "colour": "#322729",
+   "change": 24.92,
+   "sound": "-18.06 LUFS mean, -16.44 peak",
+   "narration": []
+  },
+  {
+   "action": "Photo (pillarboxed): a glow-worm cave ceiling, thousands of cyan points over dark water.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 100,
+   "start": 145.23,
+   "end": 146.48,
+   "dur": 1.25,
+   "in": "cut",
+   "brightness": {
+    "start": 3,
+    "mid": 17,
+    "end": 17
+   },
+   "colour": "#080d10",
+   "change": 14.24,
+   "sound": "-27.7 LUFS mean, -17.84 peak",
+   "narration": []
+  },
+  {
+   "action": "He rides the whitewater straight at camera, arms loose, spray bursting around him.",
+   "setup": "SURF_FRONT",
+   "location": "loc_surf_break (whitewater, sun behind)",
+   "cast": [
+    "char_surfer"
+   ],
+   "wardrobe": "black long-sleeve wetsuit",
+   "shot_size": "medium wide",
+   "subject_in_frame": "The surfer's silhouette standing on the board at 42-52% x, 35-72% y (~35% of H), whitewater filling the bottom 55%, the sun disc upper right at 82% x, 10% y (boards/s101.jpg).",
+   "camera": "Water level in front of him, wide, backlit.",
+   "camera_move": "tracks back as he rides toward camera, handheld bounce about 3%.",
+   "light": "Backlit by the sun upper right, near silhouette, bright sky; brightness 123-144.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: L07 '... come back,' over it.",
+   "render": "first + last frame: char_surfer in loc_surf_break, backlit whitewater, as boards/s101.jpg (start) -> the same 10% closer.",
+   "board": "boards/s101.jpg",
+   "n": 101,
+   "start": 146.48,
+   "end": 147.61,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 123,
+    "mid": 136,
+    "end": 144
+   },
+   "colour": "#7b8787",
+   "change": 24.76,
+   "sound": "-15.21 LUFS mean, -13.68 peak",
+   "narration": []
+  },
+  {
+   "action": "The phone in its housing punches through a wave.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 102,
+   "start": 147.61,
+   "end": 148.23,
+   "dur": 0.63,
+   "in": "cut",
+   "brightness": {
+    "start": 117,
+    "mid": 126,
+    "end": 114
+   },
+   "colour": "#77776f",
+   "change": 56.18,
+   "sound": "-13.85 LUFS mean, -12.31 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro passes a camera module, then cave lights.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 103,
+   "start": 148.23,
+   "end": 149.52,
+   "dur": 1.29,
+   "in": "cut",
+   "brightness": {
+    "start": 89,
+    "mid": 36,
+    "end": 40
+   },
+   "colour": "#283034",
+   "change": 51.89,
+   "sound": "-13.6 LUFS mean, -11.13 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro of a lens ring on the plateau, then a portrait Milky Way photo (pillarboxed).",
+   "setup": "LENS_MACRO",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 104,
+   "start": 149.52,
+   "end": 151.11,
+   "dur": 1.59,
+   "in": "cut",
+   "brightness": {
+    "start": 33,
+    "mid": 35,
+    "end": 25
+   },
+   "colour": "#211f26",
+   "change": 38.82,
+   "sound": "-15.31 LUFS mean, -13.61 peak",
+   "narration": []
+  },
+  {
+   "action": "Wide night: a tiny figure under snowy mountains.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 105,
+   "start": 151.11,
+   "end": 151.78,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 12,
+    "mid": 12,
+    "end": 12
+   },
+   "colour": "#070a0f",
+   "change": 0.27,
+   "sound": "-14.82 LUFS mean, -13.98 peak",
+   "narration": []
+  },
+  {
+   "action": "Low macro along the plateau's lens rings, wine.",
+   "setup": "LENS_MACRO",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 106,
+   "start": 151.78,
+   "end": 152.36,
+   "dur": 0.58,
+   "in": "cut",
+   "brightness": {
+    "start": 49,
+    "mid": 51,
+    "end": 61
+   },
+   "colour": "#343330",
+   "change": 0,
+   "sound": "-14.6 LUFS mean, -12.96 peak",
+   "narration": []
+  },
+  {
+   "action": "Night: rock silhouettes in the dark.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 107,
+   "start": 152.36,
+   "end": 152.99,
+   "dur": 0.63,
+   "in": "cut",
+   "brightness": {
+    "start": 9,
+    "mid": 10,
+    "end": 12
+   },
+   "colour": "#080908",
+   "change": 3.55,
+   "sound": "-13.98 LUFS mean, -13.56 peak",
+   "narration": []
+  },
+  {
+   "action": "Macro of the camera module fading to black.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 108,
+   "start": 152.99,
+   "end": 154.2,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 76,
+    "mid": 17,
+    "end": 6
+   },
+   "colour": "#12191e",
+   "change": 57.22,
+   "sound": "-13.63 LUFS mean, -12.12 peak",
+   "narration": []
+  },
+  {
+   "action": "Top-down flat-lay of the wine phone's parts, lit from above.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 109,
+   "start": 154.2,
+   "end": 155.28,
+   "dur": 1.08,
+   "in": "cut",
+   "brightness": {
+    "start": 89,
+    "mid": 158,
+    "end": 184
+   },
+   "colour": "#8d8f88",
+   "change": 68.98,
+   "sound": "-19.04 LUFS mean, -15.33 peak",
+   "narration": [
+    "L04 'A chip built for AI that runs faster than ever.' 155.19-158.1"
+   ]
+  },
+  {
+   "action": "Exploded phone parts float in a dark studio, slow orbit.",
+   "setup": "EXPLODED_ORBIT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 110,
+   "start": 155.28,
+   "end": 156.66,
+   "dur": 1.38,
+   "in": "cut",
+   "brightness": {
+    "start": 46,
+    "mid": 42,
+    "end": 33
+   },
+   "colour": "#252729",
+   "change": 29.51,
+   "sound": "-15.26 LUFS mean, -13.87 peak",
+   "narration": [
+    "L04 'A chip built for AI that runs faster than ever.' 155.19-158.1"
+   ]
+  },
+  {
+   "action": "Exploded view on white: the parts separate in layers.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 111,
+   "start": 156.66,
+   "end": 157.49,
+   "dur": 0.84,
+   "in": "cut",
+   "brightness": {
+    "start": 157,
+    "mid": 157,
+    "end": 158
+   },
+   "colour": "#9d9b93",
+   "change": 12.58,
+   "sound": "-14.62 LUFS mean, -13.73 peak",
+   "narration": [
+    "L04 'A chip built for AI that runs faster than ever.' 155.19-158.1"
+   ]
+  },
+  {
+   "action": "The logic board with the new chip floats over the wine frame (exploded, dark).",
+   "setup": "EXPLODED_ORBIT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 112,
+   "start": 157.49,
+   "end": 159.24,
+   "dur": 1.75,
+   "in": "cut",
+   "brightness": {
+    "start": 52,
+    "mid": 61,
+    "end": 66
+   },
+   "colour": "#373a3c",
+   "change": 15.91,
+   "sound": "-15.8 LUFS mean, -13.63 peak",
+   "narration": [
+    "L04 'A chip built for AI that runs faster than ever.' 155.19-158.1",
+    "L05 'A battery that lasts longer than ever.' 159.0-160.88"
+   ]
+  },
+  {
+   "action": "The battery slab settles down into the frame's bay while small parts drift.",
+   "setup": "EXPLODED_ORBIT",
+   "location": "loc_dark_office (out of focus)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "The exploded stack runs diagonally from lower left to upper right: the wine frame at 15-90% x, 10-95% y; the brushed-steel battery slab centred at 45% x, 52% y (35% of W); the logic board upper right; small screws and particles floating around (boards/s113.jpg).",
+   "camera": "High three-quarter (~40 deg down), normal lens, about f/4.",
+   "camera_move": "slow orbit left with a ~3% push in over 1.5 s.",
+   "light": "Low-key studio, one soft key from the top left making the steel battery glow, a rim on the wine frame; brightness 35-52.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "30 s cut: L05 'A battery that lasts longer than ever.' (15.57-17.45).",
+   "render": "first + last frame from product plates (product_parts_sheet + product_phone_sheet in loc_dark_office): battery 8% of H above the bay -> seated.",
+   "board": "boards/s113.jpg",
+   "n": 113,
+   "start": 159.24,
+   "end": 161.83,
+   "dur": 2.59,
+   "in": "cut",
+   "brightness": {
+    "start": 48,
+    "mid": 35,
+    "end": 52
+   },
+   "colour": "#24292a",
+   "change": 15.61,
+   "sound": "-14.1 LUFS mean, -11.33 peak",
+   "props": "product_parts (exploded), wine frame",
+   "narration": [
+    "L05 'A battery that lasts longer than ever.' 159.0-160.88",
+    "L06 'The most intelligent pro camera system ever.' 161.55-163.99"
+   ]
+  },
+  {
+   "action": "The camera module and lenses in the exploded stack, slow orbit.",
+   "setup": "EXPLODED_ORBIT",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 114,
+   "start": 161.83,
+   "end": 164.04,
+   "dur": 2.21,
+   "in": "cut",
+   "brightness": {
+    "start": 40,
+    "mid": 40,
+    "end": 43
+   },
+   "colour": "#24292b",
+   "change": 15.03,
+   "sound": "-14.37 LUFS mean, -11.47 peak",
+   "narration": [
+    "L06 'The most intelligent pro camera system ever.' 161.55-163.99"
+   ]
+  },
+  {
+   "action": "The phone hangs perfectly still while its finish hard-cuts on the music's eighth notes: wine until 168.08, silver 168.08-168.41, black 168.41-168.75, mist blue 168.75-169.08, wine from 169.08 to the end. (Source 164.04-166.6, not used: the parts fly together and the phone turns its back to camera.)",
+   "setup": "HERO_FLOAT",
+   "location": "loc_dark_office",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "medium (product hero)",
+   "subject_in_frame": "The phone, back to camera, vertical, centred at 50% x, 17-83% y (66% of H tall, 17.7% of W wide); the camera plateau at the top 29% of the back; a pale table edge glowing along the bottom 4% of the frame; office background soft (boards/s115.jpg).",
+   "camera": "Eye level, square-on, long lens (~85 mm), background out of focus.",
+   "camera_move": "locked off (perfectly static from 166.6).",
+   "light": "Low-key: soft top key making the frame edges glow, background 20-40; phone 24-39; the silver finish reads 151, black 17, mist blue 123-162.",
+   "text": [],
+   "out": "hard cut to the end card",
+   "audio": "L07 '... and ask, what's next?' ends 0.06 s after the cut to the end card (as in the source).",
+   "render": "One still plate per finish (product_phone_finishes on loc_dark_office, identical framing as boards/s115.jpg), cut in code at the swap times; optionally a 4 s H3 first + last frame take of the wine plate (no move) for natural light flicker.",
+   "board": "boards/s115.jpg",
+   "n": 115,
+   "start": 164.04,
+   "end": 170,
+   "dur": 5.96,
+   "in": "cut",
+   "brightness": {
+    "start": 27,
+    "mid": 39,
+    "end": 24
+   },
+   "colour": "#1b1d21",
+   "change": 21.13,
+   "sound": "-15.73 LUFS mean, -12.33 peak",
+   "props": "product_phone, all four finishes",
+   "narration": [
+    "L07 'This is what happens when you go to the moon, come back, and ask, what's next?' 165.2-170.06"
+   ]
+  },
+  {
+   "action": "The title holds 2.37 s (170.00-172.37), then a hard cut to black for the rest.",
+   "setup": "END_CARD",
+   "location": "pure black",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "title card",
+   "subject_in_frame": "The product name centred (50% x, 50% y), 12-18% of W wide; two legal lines centred at 91% and 93.5% of H, ~45% of W wide (boards/s116.jpg, set/ui_end_card.jpg).",
+   "camera": "none",
+   "camera_move": "none",
+   "light": "black, brightness 0-1",
+   "text": [
+    {
+     "words": "{PRODUCT_NAME}",
+     "default": "Lune 2 Pro",
+     "where": "centred, Medium 46 px at 1080, white",
+     "in": 0.0,
+     "out": 2.37
+    },
+    {
+     "words": "{LEGAL_LINE_1} / {LEGAL_LINE_2}",
+     "default": "Some features may not be available in all regions or languages. Battery life varies by use and configuration. / Product images are simulated. Features and specifications are subject to change.",
+     "where": "centred at 91% and 93.5% of H, 15 px, grey #696969",
+     "in": 0.0,
+     "out": 2.37
+    }
+   ],
+   "out": "end",
+   "audio": "Final chord hit 0.09 s after the cut (170.09), decays to silence by 172.3; silence after.",
+   "render": "Drawn in code: set/ui_end_card.jpg with the slot values; hard in, hard out to black after 2.37 s.",
+   "board": "boards/s116.jpg",
+   "n": 116,
+   "start": 170,
+   "end": 177.39,
+   "dur": 7.38,
+   "in": "cut",
+   "brightness": {
+    "start": 1,
+    "mid": 0,
+    "end": 0
+   },
+   "colour": "#000000",
+   "change": 0,
+   "sound": "-34.24 LUFS mean, -11.77 peak",
+   "narration": [
+    "L07 'This is what happens when you go to the moon, come back, and ask, what's next?' 165.2-170.06"
+   ]
+  }
+ ],
+ "sound": {
+  "files": "set/score.wav is the film's music with the narration removed (demucs stem; 48 kHz stereo, same timeline as the film). The narration lives in set/lines/ (one clip per kept line, from the narration stem) and set/voice_narrator.wav. Score + lines placed at their times rebuild the original mix.",
+  "music_arc": "0.00-9.45 low pulsing synth pad on 16th notes, about -25 LUFS momentary; 9.45 hit on the black frame into the main 92.5 bpm pulse (beat 0.649 s), phrases every 2 beats (1.30 s) with a short gap before each (10.77, 12.06, 13.36...); steady build through the middle (-15 to -20); 145.25-146.35 break to near silence on a black frame, 146.35 hit into the climax (146.4-154.8, -13 to -15); 154.83-155.49 bass-only breath; 155.49 finale texture under the three-claim recap; 170.09 final chord, one frame-group after the cut to the title (170.00); decay to silence by 172.3; silence to the end.",
+  "bar_grid": "Use the music stem, not the mix, for beats: 92.5 bpm; the opener's phrase starts at 9.45, 10.77, 12.06, 13.36; the finale's downbeats at 155.49, 158.08, 160.68, 163.27, 165.87, 168.46. Score joins in cut30/cut15 sit on these phrase starts.",
+  "speech": "One male narrator, off screen, never on camera: low voice (median pitch ~97 Hz), calm, intimate, close-miked and dry, about 3.4 words per second, short pauses between clauses. Rhetoric is second person ('you start with the chip... you add...') ending in a three-part 'than ever' recap and a callback to the opener's question.",
+  "effects": "No separate sound design is audible above the music; any whooshes and hits live inside the music stem.",
+  "mix": "Narration sits ~6 dB above the music (integrated: music stem -18.4 LUFS, narration stem -19.1 LUFS over the whole film, narration only when speaking); music swells only in the gaps between lines. Final mix integrated -16 LUFS."
+ },
+ "look": {
+  "grade": "Cool, desaturated teal-grey with crushed blacks and soft highlights; skin and warm landscapes kept muted; the product's wine colour is the only saturated hue in most frames.",
+  "brightness": "0-255 from bin/dissect: product macros, CG and the hero on black sit at 10-55 (s13 9-54, s53 16-31, s113 35-52, s115 24-39); night and cave 4-35 (s96 23-24, s98 47); the opener photo 39-49; flat-lay and white lab shots 130-200 (s06 156-176, s10 173, s24 109-127); day lifestyle 70-145 (s35 72, s74 99-100, s101 123-144); end card 0-1.",
+  "contrast": "High: pure-black backgrounds with one hard key on product; whites in the lab and flat-lay are soft, shadowless and slightly grey (never clipped except light practicals).",
+  "light": "Product: a single hard or soft key from above/side, edges glowing, no fill. Labs: cool linear practicals. Exteriors: natural sun, low and warm (valley) or hard midday (surf); night: blue hour and starlight only.",
+  "depth_of_field": "Very shallow on macros (only the etch or lens ring sharp); deep on landscapes, flat-lays and labs.",
+  "grain": "Fine film grain throughout, slight halation on bright edges.",
+  "lens": "Macro and long lenses (85-100 mm feel) on product and landscapes; wide 24-28 mm at water level for surf; screen recordings are flat.",
+  "no": "No haze or smoke except vapor inside the vapor-chamber graphics and natural sea spray; no lens-flare streaks beyond the lens-test shot; no Dutch angles."
+ },
+ "text_style": {
+  "typeface": "A neutral neo-grotesque sans (set/font_sans.ttf, Inter, open licence); mixed case, normal tracking (0).",
+  "caption": "Opener only (shot 1): three left-aligned lines at x 15% of W, block 44-53% of H; lines 1-2 SemiBold, line 3 Light; 34 px at 1080p (3.1% of H), line pitch 33 px; white. Fades in 1.45-1.80 s, holds, fades out 4.15-4.50 s (0.35 s linear fades). Words: '{MISSION_LINE}' / 'Shot on {PREVIOUS_PRODUCT_NAME}' / '{DATE}'. Drawn: set/ui_caption_mission.png.",
+  "end_card": "Product name centred (50% x, 50% y), Medium, 46 px (4.3% of H), white on pure black, 12-18% of W wide; two legal lines centred at 91% and 93.5% of H, 15 px Regular, grey #696969, ~45% of W wide. Hard cut in on the picture cut, hard cut out to black after 2.37 s. Drawn: set/ui_end_card.jpg.",
+  "etches": "The chip name is laser-etched on the chip lid ({CHIP_NAME}, default 'C2 PRO'): large geometric sans, light grey on graphite, 'PRO' smaller underneath (product_chip_sheet).",
+  "in_app": "Camera-app screens use the same sans in white and signal yellow #FFD60A for active values (ui_camera_pro_*).",
+  "rule": "No other supers, no claims on screen, no end-line tagline: the narration carries every claim."
+ },
+ "set": {
+  "product_phone": {
+   "files": [
+    "set/product_phone_sheet.jpg",
+    "set/product_phone_finishes.jpg"
+   ],
+   "fixes": "The hero {PRODUCT}: a generic flagship phone, no logo or text anywhere. 71.5 x 150 x 8.8 mm rounded rectangle, anodised aluminium unibody in dusky wine #6b3a45 (measured on screen: #593842 in moderate light, #301c1e in the dark hero), frosted glass back panel slightly lighter #7a4d57. A full-width raised camera plateau covers the top 29% of the back (1 mm step, rounded corners); three large lenses (each ~20% of the phone width, black glass, wine metal rings) in a triangle on its left half: two stacked along the left edge, one to their right between them; a round white flash top right, a small black sensor below it, a pinhole between. Front: edge-to-edge black screen with a pill cutout. Finishes (finishes sheet, left to right): wine #6b3a45, silver #c9cacf with white frosted glass, black #1c2024, mist blue #8ea3bd. The opener's floating phone is the silver finish."
+  },
+  "product_parts": {
+   "files": [
+    "set/product_parts_sheet.jpg"
+   ],
+   "fixes": "The teardown parts for the flat-lay (s06) and the exploded view (s113): graphite midframe with the plateau's three lens holes, frosted back glass, black display, L-shaped black logic board with the square chip, brushed stainless battery slab, three-lens camera module, copper charging coil, speaker, vibration motor, flex cables, screws. Flat-lay paper #c9cdc2. In the exploded view the frame is the product's wine colour."
+  },
+  "product_chip": {
+   "files": [
+    "set/product_chip_sheet.jpg",
+    "set/product_chip_die.jpg"
+   ],
+   "fixes": "The processor: square graphite lid #2a2d2f with chamfered corners, etched '{CHIP_NAME}' (default 'C2 PRO') in large light-grey geometric letters with 'PRO' smaller below, tiny serial lines along the edges. product_chip_die is the glowing cyan (#3fd0ff) die floorplan for the CG shot s13: two large core blocks top left, eight tall blocks top right, a 16-block grid along the bottom, traces running out to a dark board."
+  },
+  "char_surfer": {
+   "files": [
+    "set/char_surfer_sheet.jpg"
+   ],
+   "fixes": "Invented surfer (s74, s101): man ~30, lean swimmer's build, 1.80 m, dark brown skin, short cropped black hair with a low fade, light stubble, calm focus. Plain matte black long-sleeve back-zip wetsuit, no logos; cream-white 6 ft shortboard, three dark fins. Not a likeness of anyone."
+  },
+  "char_hiker": {
+   "files": [
+    "set/char_hiker_sheet.jpg"
+   ],
+   "fixes": "Invented landscape photographer-hiker (s35, tiny in frame): East Asian man ~40, medium build, short thick dark hair with grey at the temples, light stubble. Dark charcoal hooded insulated jacket, olive fleece collar, dark grey trekking trousers, brown boots, black 30 l backpack, black carbon tripod over the right shoulder. Not a likeness of anyone."
+  },
+  "loc_capsule": {
+   "files": [
+    "set/loc_capsule.jpg"
+   ],
+   "fixes": "Spacecraft cabin for the opener (s01-s02): instrument panels with toggle switches and two small blue screens on the left, cream padded panels and cables on the right, a trapezoid window upper right with hard sunlight. Very dark: brightness ~40-49, black shadows."
+  },
+  "loc_lab_window": {
+   "files": [
+    "set/loc_lab_window.jpg"
+   ],
+   "fixes": "s04: near-black viewing room, a wide steel-framed window (17-82% x, 16-82% y) into a white engineering lab hall: long central table, glass partitions, rows of linear ceiling lights converging at 50% x, 42% y."
+  },
+  "loc_lab_corridor": {
+   "files": [
+    "set/loc_lab_corridor.jpg"
+   ],
+   "fixes": "s05: white lab corridor, interior window along the right wall, a grey door at the far end, a tall light strip on the left wall, a duct unit lower left. Cool white, brightness 60-140 as the lights come up."
+  },
+  "loc_dark_office": {
+   "files": [
+    "set/loc_dark_office.jpg"
+   ],
+   "fixes": "Background for the exploded view (s113) and the hero (s115): a dark open-plan studio at night, desks and monitors out of focus, tall mullioned windows, brightness 20-40, a pale table edge glowing along the bottom 4% of the frame."
+  },
+  "loc_valley": {
+   "files": [
+    "set/loc_valley.jpg"
+   ],
+   "fixes": "s35: high mountain valley, golden tussock, huge dark limestone outcrops, a gully to the centre, snow peaks behind, low warm sun from the left; brightness ~72."
+  },
+  "loc_surf_break": {
+   "files": [
+    "set/loc_surf_break.jpg"
+   ],
+   "fixes": "s74, s101: blue-green surf break, steep green headland cliffs with sea caves, dark sand beach, clear sky, hard sun (upper right in s101)."
+  },
+  "loc_night_pinnacle": {
+   "files": [
+    "set/loc_night_pinnacle.jpg"
+   ],
+   "fixes": "The night rock pinnacle (camera-app preview in s96 and the photo in s98): a 15 m skull-like weathered limestone tower on a dark grassy hill, snowy ridges on the horizon, blue-hour sky with a bright planet upper left."
+  },
+  "ui_photo_earthrise": {
+   "files": [
+    "set/ui_photo_earthrise.jpg"
+   ],
+   "fixes": "The opener's photo (s01, 0-5.4 s full frame, then on the phone screen): grey cratered lunar horizon arc peaking at 54% of H, Earth a blue-white dome centred at 51% x, ~20% of W wide, 7% of H tall above the horizon; black space above."
+  },
+  "ui_caption_mission": {
+   "files": [
+    "set/ui_caption_mission.png"
+   ],
+   "fixes": "Transparent 1920x1080 overlay with the opener caption (defaults 'Lunar Flyby Mission' / 'Shot on Lune Pro' / 'Spring 2026'); redraw with the slot values in set/font_sans.ttf at the same position and sizes."
+  },
+  "ui_camera_pro": {
+   "files": [
+    "set/ui_camera_pro_3800.jpg",
+    "set/ui_camera_pro_daylight.jpg",
+    "set/ui.json"
+   ],
+   "fixes": "s96: the phone's pro camera app, full screen, landscape. Left settings column (f/4.0 yellow, histogram, WB 3.8 -> 5.5, 1/22 SHUTTER, 0.0 EV, night mode, AF, RAW 48), 4:3 live preview of loc_night_pinnacle at x 281-1458, y 99-980, zoom ladder 8/4/2/1x/.5, white shutter button, f button, and a rounded white-balance panel on the right (vertical 'WHITE BALANCE', value '3800K' -> 'DAYLIGHT', five preset rows + AWB with radio dots; yellow dot = selected). Generic copy, no app or brand name."
+  },
+  "ui_photo_night_halo": {
+   "files": [
+    "set/ui_photo_night_halo.jpg",
+    "set/ui_photo_night_halo_frame.jpg"
+   ],
+   "fixes": "s98: the night photo shot on the phone: the rock pinnacle under the Milky Way with a thin white ring of light hovering above its top; shown 4:3, pillarboxed (photo at x 12.5-87.5%). Use the _frame version as the full 1920x1080 picture."
+  },
+  "ui_end_card": {
+   "files": [
+    "set/ui_end_card.jpg"
+   ],
+   "fixes": "The end card: '{PRODUCT_NAME}' (default 'Lune 2 Pro') centred on black, two grey legal lines at the bottom. Redraw with the slot values."
+  },
+  "font_sans": {
+   "files": [
+    "set/font_sans.ttf"
+   ],
+   "fixes": "Inter (open font licence): the neutral sans for the caption, end card and in-app copy."
+  },
+  "voice_narrator": {
+   "files": [
+    "set/voice_narrator.wav"
+   ],
+   "fixes": "16.1 s of the narrator alone (source 37.30-53.40: 'But there's a catch. More power creates more heat, so you give the vapor chamber three times more surface area, because a bigger vapor chamber cools the chip. A cooler chip creates a more efficient chip. A more efficient chip uses less battery.'), for timbre and pace."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L07b.wav"
+   ],
+   "fixes": "The kept narration lines, one clip each from the narration stem, with source and new times and word times. Voice-over: place each clip at its cut 'start' (the voice begins 0.06 s into the clip). Never retime."
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "The music (narration removed), and the 30 s / 15 s music cuts made by bin/template score from cut30/cut15.score.segments."
+  }
+ },
+ "slots": {
+  "product": {
+   "default": "{PRODUCT}: the generic wine-coloured flagship phone (product_phone, product_parts, product_chip)",
+   "swap": "any premium phone or compact device; keep: a raised camera module that can carry the macros, one saturated hero colour against a grey/black film, four finishes for the hero swap, an internal 'heart' part for the chip shots."
+  },
+  "product_name": {
+   "default": "{PRODUCT_NAME} = 'Lune 2 Pro'",
+   "swap": "the new product's name: end card only (never spoken)."
+  },
+  "previous_product_name": {
+   "default": "{PREVIOUS_PRODUCT_NAME} = 'Lune Pro'",
+   "swap": "last year's model, which 'went to the moon' in the opener caption."
+  },
+  "mission_caption": {
+   "default": "{MISSION_LINE} = 'Lunar Flyby Mission', {DATE} = 'Spring 2026'",
+   "swap": "the extreme place last year's product was used; keep 3 short lines: place / 'Shot on ...' / date."
+  },
+  "chip_name": {
+   "default": "{CHIP_NAME} = 'C2 PRO'",
+   "swap": "the product's processor or core component name, etched (s10, s24)."
+  },
+  "lines": {
+   "default": "L01-L07 (lines.json): opener question, 'Back to work.', three '... than ever' claims (chip, battery, camera), callback",
+   "swap": "keep the shape and timing: a 2-part question about where to go after an extreme achievement (L01-L02), a 3-word answer on the dip to black (L03), three parallel claims each ending 'than ever' (L04-L06, 2-3 s each), a callback that repeats the question's key image and ends on 'what's next?' landing on the end-card cut (L07)."
+  },
+  "places": {
+   "default": "loc_capsule, loc_lab_window, loc_lab_corridor, loc_dark_office, loc_valley, loc_surf_break, loc_night_pinnacle",
+   "swap": "one extreme 'last mission' place for the opener, a clean white R&D lab, and 2-3 wild outdoor places where the product's camera is used (water, mountains, night sky)."
+  },
+  "cast": {
+   "default": "char_surfer, char_hiker (invented)",
+   "swap": "outdoor users seen small or in action; no presenter, nobody speaks on camera."
+  },
+  "end_card": {
+   "default": "'{PRODUCT_NAME}' centred on black + 2 legal lines",
+   "swap": "name only; no logo animation, no tagline, no URL."
+  },
+  "legal": {
+   "default": "two generic availability / simulated-image lines",
+   "swap": "the brand's own fine print."
+  }
+ },
+ "cut30": {
+  "duration": 30.0,
+  "fps": 24,
+  "shots_count": 17,
+  "average_shot": 1.76,
+  "pace_note": "Source average 1.53 s / median 1.13 s. The cut keeps the source's long opener (8.51 s) and end card (3.43 s); the 15 shots between them average 1.21 s, at the source's median pace. Every shot is the source's own framing; only windows change.",
+  "arc": {
+   "hook": "0.00-9.55: the Earth-rise photo with the mission caption, the pull-back reveals it on a phone floating in a spacecraft cabin ('Once you've been to the moon, where do you go next?'), dip to black on 'Back to work.'",
+   "back_to_work": "9.45-12.10: the music hits on black, the lab lights switch on, the corridor lights up, the teardown flat-lay",
+   "proof": "12.10-21.86: chip (flat-lay chip, glowing die, etch reveal) under L04; battery (exploded battery, hiker in a vast valley) under L05; camera (lens macro, pro camera app) under L06; a surfer carving in the music gap",
+   "payoff": "21.77-26.63: the callback L07 over the night-sky photo, a surfer in whitewater and the still hero with its finish swaps; '... what's next?' lands on the cut to the end card",
+   "end_card": "26.57-30.00: product name on black on the final chord (26.66), black from 28.94, music decays to silence by 28.9"
+  },
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 8.51,
+    "dur": 8.51,
+    "src": [
+     0.0,
+     8.51
+    ],
+    "change": "unchanged: the whole shot, moon photo with caption, pull-back reveal, phone turns in the capsule",
+    "setup": "SPACE_PULLBACK",
+    "board": "boards/s01.jpg"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 8.51,
+    "end": 9.55,
+    "dur": 1.04,
+    "src": [
+     8.51,
+     9.55
+    ],
+    "change": "merged with source shot 3: the capsule shot fades to black and the lab window starts to rise out of black (one dip-to-black transition, 1.04 s)",
+    "setup": "SPACE_PULLBACK",
+    "board": "boards/s02.jpg"
+   },
+   {
+    "n": 3,
+    "from": 4,
+    "start": 9.55,
+    "end": 10.84,
+    "dur": 1.29,
+    "src": [
+     9.55,
+     10.84
+    ],
+    "change": "unchanged",
+    "setup": "LAB_WINDOW",
+    "board": "boards/s04.jpg"
+   },
+   {
+    "n": 4,
+    "from": 5,
+    "start": 10.84,
+    "end": 11.51,
+    "dur": 0.67,
+    "src": [
+     10.84,
+     11.51
+    ],
+    "change": "unchanged",
+    "setup": "LAB_CORRIDOR",
+    "board": "boards/s05.jpg"
+   },
+   {
+    "n": 5,
+    "from": 6,
+    "start": 11.51,
+    "end": 12.1,
+    "dur": 0.59,
+    "src": [
+     11.51,
+     12.1
+    ],
+    "change": "unchanged (includes the stop-motion parts swap at 0.44 s)",
+    "setup": "FLATLAY_WIDE",
+    "board": "boards/s06.jpg"
+   },
+   {
+    "n": 6,
+    "from": 10,
+    "start": 12.1,
+    "end": 13.05,
+    "dur": 0.95,
+    "src": [
+     15.02,
+     15.97
+    ],
+    "change": "unchanged; moved up to sit under 'A chip built for AI'",
+    "setup": "FLATLAY_TIGHT",
+    "board": "boards/s10.jpg"
+   },
+   {
+    "n": 7,
+    "from": 13,
+    "start": 13.05,
+    "end": 14.3,
+    "dur": 1.25,
+    "src": [
+     22.4,
+     23.65
+    ],
+    "change": "shorter: starts 0.46 s in (as the blurred light lines resolve) and ends 0.21 s early; the die snaps into focus 0.18 s into the cut shot",
+    "setup": "CG_DIE",
+    "board": "boards/s13.jpg"
+   },
+   {
+    "n": 8,
+    "from": 24,
+    "start": 14.3,
+    "end": 15.59,
+    "dur": 1.29,
+    "src": [
+     34.12,
+     35.41
+    ],
+    "change": "unchanged: the glint sweeps across and reveals the new chip etch",
+    "setup": "CHIP_MACRO",
+    "board": "boards/s24.jpg"
+   },
+   {
+    "n": 9,
+    "from": 113,
+    "start": 15.59,
+    "end": 17.09,
+    "dur": 1.5,
+    "src": [
+     159.3,
+     160.8
+    ],
+    "change": "shorter: the middle 1.50 s, battery settling into the frame",
+    "setup": "EXPLODED_ORBIT",
+    "board": "boards/s113.jpg"
+   },
+   {
+    "n": 10,
+    "from": 35,
+    "start": 17.09,
+    "end": 18.29,
+    "dur": 1.2,
+    "src": [
+     55.39,
+     56.59
+    ],
+    "change": "shorter: first 1.20 s",
+    "setup": "VALLEY_WIDE",
+    "board": "boards/s35.jpg"
+   },
+   {
+    "n": 11,
+    "from": 53,
+    "start": 18.29,
+    "end": 19.49,
+    "dur": 1.2,
+    "src": [
+     74.87,
+     76.07
+    ],
+    "change": "shorter: only the macro part (first 1.20 s), cut before the X-ray lens graphic",
+    "setup": "LENS_MACRO",
+    "board": "boards/s53.jpg"
+   },
+   {
+    "n": 12,
+    "from": 96,
+    "start": 19.49,
+    "end": 20.66,
+    "dur": 1.17,
+    "src": [
+     139.64,
+     140.81
+    ],
+    "change": "unchanged: white balance switches from 3800 K to DAYLIGHT 0.31 s in",
+    "setup": "SCREEN_UI_FULL",
+    "board": "boards/s96.jpg"
+   },
+   {
+    "n": 13,
+    "from": 74,
+    "start": 20.66,
+    "end": 21.86,
+    "dur": 1.2,
+    "src": [
+     110.61,
+     111.81
+    ],
+    "change": "shorter: first 1.20 s, surfer carving toward camera",
+    "setup": "SURF_FOLLOW",
+    "board": "boards/s74.jpg"
+   },
+   {
+    "n": 14,
+    "from": 98,
+    "start": 21.86,
+    "end": 23.26,
+    "dur": 1.4,
+    "src": [
+     142.31,
+     143.71
+    ],
+    "change": "shorter: first 1.40 s",
+    "setup": "PHOTO_FULL",
+    "board": "boards/s98.jpg"
+   },
+   {
+    "n": 15,
+    "from": 101,
+    "start": 23.26,
+    "end": 24.39,
+    "dur": 1.13,
+    "src": [
+     146.48,
+     147.61
+    ],
+    "change": "unchanged",
+    "setup": "SURF_FRONT",
+    "board": "boards/s101.jpg"
+   },
+   {
+    "n": 16,
+    "from": 115,
+    "start": 24.39,
+    "end": 26.57,
+    "dur": 2.18,
+    "src": [
+     167.73,
+     169.91
+    ],
+    "change": "shorter: only the static hero with the finish swaps (wine, silver, black, mist blue, wine); ends 0.09 s before the source cut so the title lands 0.09 s ahead of the final chord, as in the source",
+    "setup": "HERO_FLOAT",
+    "board": "boards/s115.jpg"
+   },
+   {
+    "n": 17,
+    "from": 116,
+    "start": 26.57,
+    "end": 30.0,
+    "dur": 3.43,
+    "src": [
+     170.0,
+     173.43
+    ],
+    "change": "the title holds 2.37 s (as in the source) then black to the end of the spot",
+    "setup": "END_CARD",
+    "board": "boards/s116.jpg"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Once you've been to the moon,",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L01.wav",
+    "start": 3.35,
+    "end": 4.46,
+    "voice": [
+     3.41,
+     4.36
+    ],
+    "src": [
+     3.41,
+     4.36
+    ],
+    "word_times": [
+     {
+      "w": "Once",
+      "t": 3.41
+     },
+     {
+      "w": "you've",
+      "t": 3.58
+     },
+     {
+      "w": "been",
+      "t": 3.72
+     },
+     {
+      "w": "to",
+      "t": 3.82
+     },
+     {
+      "w": "the",
+      "t": 3.94
+     },
+     {
+      "w": "moon,",
+      "t": 4.06
+     }
+    ]
+   },
+   {
+    "id": "L02",
+    "words": "where do you go next?",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L02.wav",
+    "start": 5.95,
+    "end": 6.94,
+    "voice": [
+     6.01,
+     6.84
+    ],
+    "src": [
+     6.01,
+     6.84
+    ],
+    "word_times": [
+     {
+      "w": "where",
+      "t": 6.01
+     },
+     {
+      "w": "do",
+      "t": 6.14
+     },
+     {
+      "w": "you",
+      "t": 6.24
+     },
+     {
+      "w": "go",
+      "t": 6.3
+     },
+     {
+      "w": "next?",
+      "t": 6.42
+     }
+    ]
+   },
+   {
+    "id": "L03",
+    "words": "Back to work.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L03.wav",
+    "start": 8.68,
+    "end": 9.43,
+    "voice": [
+     8.74,
+     9.33
+    ],
+    "src": [
+     8.74,
+     9.33
+    ],
+    "word_times": [
+     {
+      "w": "Back",
+      "t": 8.74
+     },
+     {
+      "w": "to",
+      "t": 8.9
+     },
+     {
+      "w": "work.",
+      "t": 9.02
+     }
+    ]
+   },
+   {
+    "id": "L04",
+    "words": "A chip built for AI that runs faster than ever.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L04.wav",
+    "start": 11.7,
+    "end": 14.77,
+    "voice": [
+     11.76,
+     14.67
+    ],
+    "src": [
+     155.19,
+     158.1
+    ],
+    "word_times": [
+     {
+      "w": "A",
+      "t": 11.76
+     },
+     {
+      "w": "chip",
+      "t": 11.85
+     },
+     {
+      "w": "built",
+      "t": 12.15
+     },
+     {
+      "w": "for",
+      "t": 12.43
+     },
+     {
+      "w": "AI",
+      "t": 12.67
+     },
+     {
+      "w": "that",
+      "t": 12.95
+     },
+     {
+      "w": "runs",
+      "t": 13.29
+     },
+     {
+      "w": "faster",
+      "t": 13.59
+     },
+     {
+      "w": "than",
+      "t": 14.09
+     },
+     {
+      "w": "ever.",
+      "t": 14.29
+     }
+    ]
+   },
+   {
+    "id": "L05",
+    "words": "A battery that lasts longer than ever.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L05.wav",
+    "start": 15.51,
+    "end": 17.55,
+    "voice": [
+     15.57,
+     17.45
+    ],
+    "src": [
+     159.0,
+     160.88
+    ],
+    "word_times": [
+     {
+      "w": "A",
+      "t": 15.57
+     },
+     {
+      "w": "battery",
+      "t": 15.65
+     },
+     {
+      "w": "that",
+      "t": 15.99
+     },
+     {
+      "w": "lasts",
+      "t": 16.21
+     },
+     {
+      "w": "longer",
+      "t": 16.57
+     },
+     {
+      "w": "than",
+      "t": 16.93
+     },
+     {
+      "w": "ever.",
+      "t": 17.11
+     }
+    ]
+   },
+   {
+    "id": "L06",
+    "words": "The most intelligent pro camera system ever.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L06.wav",
+    "start": 18.06,
+    "end": 20.66,
+    "voice": [
+     18.12,
+     20.56
+    ],
+    "src": [
+     161.55,
+     163.99
+    ],
+    "word_times": [
+     {
+      "w": "The",
+      "t": 18.12
+     },
+     {
+      "w": "most",
+      "t": 18.21
+     },
+     {
+      "w": "intelligent",
+      "t": 18.45
+     },
+     {
+      "w": "pro",
+      "t": 18.99
+     },
+     {
+      "w": "camera",
+      "t": 19.29
+     },
+     {
+      "w": "system",
+      "t": 19.69
+     },
+     {
+      "w": "ever.",
+      "t": 20.09
+     }
+    ]
+   },
+   {
+    "id": "L07",
+    "words": "This is what happens when you go to the moon, come back, and ask, what's next?",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L07.wav",
+    "start": 21.71,
+    "end": 26.73,
+    "voice": [
+     21.77,
+     26.63
+    ],
+    "src": [
+     165.2,
+     170.06
+    ],
+    "word_times": [
+     {
+      "w": "This",
+      "t": 21.77
+     },
+     {
+      "w": "is",
+      "t": 21.89
+     },
+     {
+      "w": "what",
+      "t": 22.05
+     },
+     {
+      "w": "happens",
+      "t": 22.17
+     },
+     {
+      "w": "when",
+      "t": 22.47
+     },
+     {
+      "w": "you",
+      "t": 22.67
+     },
+     {
+      "w": "go",
+      "t": 22.75
+     },
+     {
+      "w": "to",
+      "t": 22.89
+     },
+     {
+      "w": "the",
+      "t": 23.01
+     },
+     {
+      "w": "moon,",
+      "t": 23.13
+     },
+     {
+      "w": "come",
+      "t": 24.12
+     },
+     {
+      "w": "back,",
+      "t": 24.29
+     },
+     {
+      "w": "and",
+      "t": 25.03
+     },
+     {
+      "w": "ask,",
+      "t": 25.11
+     },
+     {
+      "w": "what's",
+      "t": 26.0
+     },
+     {
+      "w": "next?",
+      "t": 26.21
+     }
+    ]
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 12.04
+    },
+    {
+     "src_in": 155.47,
+     "src_out": 173.43
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "join_note": "One join at 12.04: the opener's pulse phrase ends in its gap (next phrase would start at 12.06) and the finale texture starts at its own phrase start (source 155.49), phrase start to phrase start. Bar grid from the music stem (bin/template beats on score.wav shows a phase-shifted grid because the narration was in the mix it was run on before separation; the joins were set by the stem's onsets).",
+   "sections": "0.00-9.45 opener pad; 9.45 hit (on black, 0.10 s before the lab picture); 9.45-12.04 pulse phrases; 12.06-26.66 finale texture under L04-L07; 26.66 final chord (source 170.09), 0.09 s after the cut to the end card; decay to silence by 28.87; silence 28.9-30.0"
+  },
+  "text": [
+   {
+    "words": "{MISSION_LINE} / Shot on {PREVIOUS_PRODUCT_NAME} / {DATE}",
+    "file": "set/ui_caption_mission.png",
+    "in": 1.45,
+    "fade_in": 0.35,
+    "out": 4.15,
+    "fade_out": 0.35,
+    "shot": 1
+   },
+   {
+    "words": "{CHIP_NAME} (etched)",
+    "in": 12.1,
+    "out": 13.05,
+    "shot": 6
+   },
+   {
+    "words": "{CHIP_NAME} (etched, revealed by the glint)",
+    "in": 14.3,
+    "out": 15.59,
+    "shot": 8
+   },
+   {
+    "words": "camera-app copy (ui.json), WB switch at 19.74",
+    "in": 19.49,
+    "out": 20.66,
+    "shot": 12
+   },
+   {
+    "words": "{PRODUCT_NAME} + legal lines",
+    "file": "set/ui_end_card.jpg",
+    "in": 26.57,
+    "out": 28.94,
+    "shot": 17
+   }
+  ],
+  "end_card": {
+   "start": 26.57,
+   "end": 30.0,
+   "title": "{PRODUCT_NAME}",
+   "title_in": 26.57,
+   "title_out": 28.94,
+   "then": "black, silence from ~28.9"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "fps": 24,
+  "shots_count": 8,
+  "average_shot": 1.88,
+  "pace_note": "The 30 s cut tightened: hook (shortened from its head), one proof (camera: lens macro, pro camera app, surfer), payoff (hero finish swaps + 'what's next?'), end card. The 6 shots between the opener and the end card average 1.06 s.",
+  "arc": {
+   "hook": "0.00-7.22: the Earth-rise photo (caption already on, fades out by 2.17), pull-back to the phone in the cabin with 'Once you've been to the moon, where do you go next?', dip to black on 'Back to work.'",
+   "proof": "7.12-10.76: music hit, lab lights on, then 'The most intelligent pro camera system ever.' over the lens macro, the pro camera app and a surfer",
+   "payoff": "10.76-12.57: the still hero swapping finishes; 'what's next?' (the last two words of L07) lands on the cut to the end card",
+   "end_card": "12.57-15.00: product name on black on the final chord (12.66)"
+  },
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 6.18,
+    "dur": 6.18,
+    "src": [
+     2.33,
+     8.51
+    ],
+    "change": "shorter: starts 2.33 s in (caption already on), keeps the pull-back and the turn",
+    "setup": "SPACE_PULLBACK",
+    "board": "boards/s01.jpg"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 6.18,
+    "end": 7.22,
+    "dur": 1.04,
+    "src": [
+     8.51,
+     9.55
+    ],
+    "change": "merged with source shot 3 (dip to black into the lab window)",
+    "setup": "SPACE_PULLBACK",
+    "board": "boards/s02.jpg"
+   },
+   {
+    "n": 3,
+    "from": 4,
+    "start": 7.22,
+    "end": 8.07,
+    "dur": 0.85,
+    "src": [
+     9.55,
+     10.4
+    ],
+    "change": "shorter: first 0.85 s (lights come on)",
+    "setup": "LAB_WINDOW",
+    "board": "boards/s04.jpg"
+   },
+   {
+    "n": 4,
+    "from": 53,
+    "start": 8.07,
+    "end": 8.97,
+    "dur": 0.9,
+    "src": [
+     74.87,
+     75.77
+    ],
+    "change": "shorter: first 0.90 s of the macro",
+    "setup": "LENS_MACRO",
+    "board": "boards/s53.jpg"
+   },
+   {
+    "n": 5,
+    "from": 96,
+    "start": 8.97,
+    "end": 9.87,
+    "dur": 0.9,
+    "src": [
+     139.64,
+     140.54
+    ],
+    "change": "shorter: first 0.90 s; the white-balance switch stays in (0.31 s in)",
+    "setup": "SCREEN_UI_FULL",
+    "board": "boards/s96.jpg"
+   },
+   {
+    "n": 6,
+    "from": 74,
+    "start": 9.87,
+    "end": 10.76,
+    "dur": 0.89,
+    "src": [
+     110.61,
+     111.5
+    ],
+    "change": "shorter: first 0.89 s",
+    "setup": "SURF_FOLLOW",
+    "board": "boards/s74.jpg"
+   },
+   {
+    "n": 7,
+    "from": 115,
+    "start": 10.76,
+    "end": 12.57,
+    "dur": 1.81,
+    "src": [
+     168.1,
+     169.91
+    ],
+    "change": "shorter: the last 1.81 s of the hero: silver, black, mist blue, wine; ends 0.09 s before the source cut so the title lands 0.09 s ahead of the final chord",
+    "setup": "HERO_FLOAT",
+    "board": "boards/s115.jpg"
+   },
+   {
+    "n": 8,
+    "from": 116,
+    "start": 12.57,
+    "end": 15.0,
+    "dur": 2.43,
+    "src": [
+     170.0,
+     172.43
+    ],
+    "change": "title 2.37 s, then 0.06 s of black",
+    "setup": "END_CARD",
+    "board": "boards/s116.jpg"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Once you've been to the moon,",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L01.wav",
+    "start": 1.02,
+    "end": 2.13,
+    "voice": [
+     1.08,
+     2.03
+    ],
+    "src": [
+     3.41,
+     4.36
+    ],
+    "word_times": [
+     {
+      "w": "Once",
+      "t": 1.08
+     },
+     {
+      "w": "you've",
+      "t": 1.25
+     },
+     {
+      "w": "been",
+      "t": 1.39
+     },
+     {
+      "w": "to",
+      "t": 1.49
+     },
+     {
+      "w": "the",
+      "t": 1.61
+     },
+     {
+      "w": "moon,",
+      "t": 1.73
+     }
+    ]
+   },
+   {
+    "id": "L02",
+    "words": "where do you go next?",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L02.wav",
+    "start": 3.62,
+    "end": 4.61,
+    "voice": [
+     3.68,
+     4.51
+    ],
+    "src": [
+     6.01,
+     6.84
+    ],
+    "word_times": [
+     {
+      "w": "where",
+      "t": 3.68
+     },
+     {
+      "w": "do",
+      "t": 3.81
+     },
+     {
+      "w": "you",
+      "t": 3.91
+     },
+     {
+      "w": "go",
+      "t": 3.97
+     },
+     {
+      "w": "next?",
+      "t": 4.09
+     }
+    ]
+   },
+   {
+    "id": "L03",
+    "words": "Back to work.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L03.wav",
+    "start": 6.35,
+    "end": 7.1,
+    "voice": [
+     6.41,
+     7.0
+    ],
+    "src": [
+     8.74,
+     9.33
+    ],
+    "word_times": [
+     {
+      "w": "Back",
+      "t": 6.41
+     },
+     {
+      "w": "to",
+      "t": 6.57
+     },
+     {
+      "w": "work.",
+      "t": 6.69
+     }
+    ]
+   },
+   {
+    "id": "L06",
+    "words": "The most intelligent pro camera system ever.",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L06.wav",
+    "start": 8.24,
+    "end": 10.84,
+    "voice": [
+     8.3,
+     10.74
+    ],
+    "src": [
+     161.55,
+     163.99
+    ],
+    "word_times": [
+     {
+      "w": "The",
+      "t": 8.3
+     },
+     {
+      "w": "most",
+      "t": 8.39
+     },
+     {
+      "w": "intelligent",
+      "t": 8.63
+     },
+     {
+      "w": "pro",
+      "t": 9.17
+     },
+     {
+      "w": "camera",
+      "t": 9.47
+     },
+     {
+      "w": "system",
+      "t": 9.87
+     },
+     {
+      "w": "ever.",
+      "t": 10.27
+     }
+    ]
+   },
+   {
+    "id": "L07b",
+    "words": "what's next?",
+    "delivery": "voice-over (narrator, off screen)",
+    "in_score": false,
+    "clip": "set/lines/L07b.wav",
+    "start": 11.94,
+    "end": 12.73,
+    "voice": [
+     12.0,
+     12.63
+    ],
+    "src": [
+     169.43,
+     170.06
+    ],
+    "word_times": [
+     {
+      "w": "what's",
+      "t": 12.0
+     },
+     {
+      "w": "next?",
+      "t": 12.21
+     }
+    ]
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 2.33,
+     "src_out": 10.75
+    },
+    {
+     "src_in": 165.85,
+     "src_out": 172.43
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0.25,
+   "fade_out": 0.15,
+   "join_note": "Starts on a pad beat (2.33) with a 0.25 s fade in. One join at 8.42: the opener's first pulse phrase ends in its gap (next would start 10.77) and the finale resumes at its bar start 165.87.",
+   "sections": "0.00-7.12 opener pad; 7.12 hit (on black, 0.10 s before the lab picture); 7.12-8.42 pulse phrase; 8.42-12.66 finale texture; 12.66 final chord, 0.09 s after the cut to the end card; decays to near silence by 14.9"
+  },
+  "text": [
+   {
+    "words": "{MISSION_LINE} / Shot on {PREVIOUS_PRODUCT_NAME} / {DATE}",
+    "file": "set/ui_caption_mission.png",
+    "in": 0.0,
+    "out": 1.82,
+    "fade_out": 0.35,
+    "shot": 1,
+    "note": "already on at the first frame"
+   },
+   {
+    "words": "camera-app copy (ui.json), WB switch at 9.22",
+    "in": 8.97,
+    "out": 9.87,
+    "shot": 5
+   },
+   {
+    "words": "{PRODUCT_NAME} + legal lines",
+    "file": "set/ui_end_card.jpg",
+    "in": 12.57,
+    "out": 14.94,
+    "shot": 8
+   }
+  ],
+  "end_card": {
+   "start": 12.57,
+   "end": 15.0,
+   "title": "{PRODUCT_NAME}",
+   "title_in": 12.57,
+   "title_out": 14.94,
+   "then": "black for the last 0.06 s"
+  }
+ }
+}

@@ -1,0 +1,1637 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4 (a 30 s comedic home-furnishing spot)",
+  "duration": 30.03,
+  "size": "1920x1080",
+  "fps": 23.976,
+  "shots": 13,
+  "average_shot": 2.31,
+  "median_shot": 1.46,
+  "note": "bin/dissect found 12 shots; its shot 6 holds a hard cut at 12.39 between two similarly dark frames (two-shot -> wide), split here into shots 6 and 7, so source shots 7-12 are numbered 8-13 in this template."
+ },
+ "acts": [
+  {
+   "name": "Arrival",
+   "shots": [
+    1
+   ],
+   "function": "Hook: an excited mother sees her daughter's new dorm for the first time; the daughter presents it."
+  },
+  {
+   "name": "The bare room",
+   "shots": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "function": "The problem as comedy: a gloomy, empty basement room, polite dismay vs. Gen-Z denial, a dying lamp, a mattress on the floor; ends in dead silence when the lamp and the music die together."
+  },
+  {
+   "name": "The turn",
+   "shots": [
+    8
+   ],
+   "function": "One word, said twice ({BRAND}? / {BRAND}.); the music slams back in; the phone comes out."
+  },
+  {
+   "name": "The order",
+   "shots": [
+    9,
+    10
+   ],
+   "function": "Proof of ease: three taps on the app (product, bag, pick up) under the announcer's promise; whip straight to the result being hung on the wall."
+  },
+  {
+   "name": "The reveal",
+   "shots": [
+    11,
+    12
+   ],
+   "function": "Payoff: the same wide, the same camera, now a warm, colourful, finished room; the embarrassing photo; mother's victory knocks."
+  },
+  {
+   "name": "End card",
+   "shots": [
+    13
+   ],
+   "function": "The finished room holds under the call to action; logo and URL."
+  }
+ ],
+ "look": {
+  "grade": "Naturalistic commercial-comedy grade. BEFORE (shots 1-9): low-key night, cool grey-green with warm practical pools; brightness 32-56 of 255 (two-shots 39-48, wides 52-56, after the lamp dies 32; the phone shot 67-69 because the screen lifts it). AFTER (shots 10-13): warm afternoon sun, pink-cream, saturated primaries (orange, cobalt, red, yellow); brightness 87-112 (wides 87-90, close inserts 96-112). The jump from ~45 to ~88 at the reveal is the film's biggest visual beat: keep it.",
+  "contrast": "medium; blacks lifted slightly, no crushed shadows; highlights on the screen and window roll off softly",
+  "light": "motivated practicals only; no visible film lights; before = lamp pools and darkness, after = window sun",
+  "depth_of_field": "wides deep; two-shots and inserts shallow (50 mm feel)",
+  "grain": "fine, even 35 mm-like grain; no haze, no bloom, no lens flares"
+ },
+ "text_style": {
+  "typeface": "clean humanist sans (Noto Sans / Inter feel), semi-bold for the URL line, regular for legal",
+  "case": "sentence case ('Visit {URL}')",
+  "size": "URL cap height 3.0% of frame height, line 22% of the width; legal cap height 1.3% H in two lines 52% W wide",
+  "tracking": "normal (0)",
+  "position": "URL centred at 79% y; legal centred at 91.3% / 93.6% y; logo lockup centred in a 22.9% W x 16.7% H box at frame centre",
+  "animation": "URL and legal fade in over 2 frames (0.08 s); the logo follows 0.08 s later with a 3D swing around its vertical axis from edge-on to flat over 4 frames (0.17 s, ease-out); everything holds to the last frame; no outro",
+  "colour": "white text, no boxes, a faint soft shadow; the logo is the new brand's own colours"
+ },
+ "sound": {
+  "music": "One light, bouncy comedic underscore at 145.5 bpm (bar 1.649 s), mixed about 7 dB under the voices (-23.5 LUFS integrated for the stem vs -16.9 for dialogue). M1 0.06-13.26 under the arrival and the bare room; it stops dead on the bar at 13.26 (decays 12.9-13.3) when the lamp dies; 1.5 s of silence holds the joke; M2 re-enters 14.75 with a swell and lands on the downbeat 14.91 with the mother's '{BRAND}.'; it carries the order and the reveal (hit at 20.53) and ends on a button 28.1-28.9, gone by 29.15. Instrumentation was not identified by ear: use the stem set/score.wav for timing and feel.",
+  "speech": "Twelve lines (set/lines.json): eight on-camera lines of dialogue in the first 22 s (mother and daughter), and two announcer voice-overs (16.11-20.41 and 24.23-29.44). The spot has no dialogue under the end card other than the announcer.",
+  "effects": "Lamp buzz and ticks on every flicker (6.6, 9.23, 9.75, 9.89, 12.49-12.80); dead room tone in the silence; soft phone taps; hammer: two taps on the frame (20.12, 20.23), knocks 22.36, 22.83, 23.53 (loudest).",
+  "mix": "Dialogue forward and dry (-15 to -19 LUFS momentary), music bed -24, effects small and real. Total integrated -16.6 LUFS."
+ },
+ "lines": "set/lines.json",
+ "setups": {
+  "DOOR_ENTRY": {
+   "shots": [
+    1
+   ],
+   "what": "inside the room facing the door: the two women stepping over the threshold, knees up, handheld drift right"
+  },
+  "ROOM_WIDE": {
+   "shots": [
+    2,
+    5,
+    7,
+    11,
+    13
+   ],
+   "what": "THE key setup: the whole room from the corner opposite the door, eye level, 24 mm feel, locked. Before (2, 5, 7) and after (11, 13) must be the same camera on the same room: build one before plate (set/loc_room_before.jpg) and make the after plate as an edit of it (set/loc_room_after.jpg already is). Only the dressing and the light change."
+  },
+  "TWO_SHOT": {
+   "shots": [
+    3,
+    6,
+    8
+   ],
+   "what": "waist-up two-shot just inside the door, 50 mm feel, daughter left, mother right, door jamb at right"
+  },
+  "LAMP_INSERT": {
+   "shots": [
+    4
+   ],
+   "what": "close-up on the old drum lamp"
+  },
+  "PHONE_INSERT": {
+   "shots": [
+    9
+   ],
+   "what": "over-the-shoulder close-up of the phone in the mother's hand over the dark bed"
+  },
+  "PHOTO_INSERT": {
+   "shots": [
+    10
+   ],
+   "what": "the hung photo on the after wall, whip-in"
+  },
+  "CORNER_MED": {
+   "shots": [
+    12
+   ],
+   "what": "the mother in the after corner by the window, hips up"
+  }
+ },
+ "set": {
+  "char_mom": {
+   "files": [
+    "set/char_mom_sheet.jpg"
+   ],
+   "fixes": "The mother (invented person, not a likeness): about 52, full-figured, fair skin with freckles, long wavy dark-brown hair, bold black thick-rimmed glasses, big expressive grin. Before outfit: black blazer open over a dusty-mauve tee, gold chain, silver bangles, dark jeans."
+  },
+  "char_mom_wardrobe": {
+   "files": [
+    "set/char_mom_wardrobe.jpg"
+   ],
+   "fixes": "Her after outfit (shots 10-13): white shirt with light-blue pinstripes, sleeves rolled, tails knotted at the waist, dark indigo jeans; a steel claw hammer with a black grip in her right hand."
+  },
+  "char_daughter": {
+   "files": [
+    "set/char_daughter_sheet.jpg"
+   ],
+   "fixes": "The daughter (invented person): about 19, slim, fair, long straight dark-brown hair, centre part, no make-up. Before outfit: oversized navy sweatshirt with a mustard-gold laurel crest and the generic word UNIVERSITY, black jeans, white sneakers."
+  },
+  "char_daughter_wardrobe": {
+   "files": [
+    "set/char_daughter_wardrobe.jpg"
+   ],
+   "fixes": "Her after outfit (shots 11, 13): grey/white/slate-blue plaid flannel open over a moss-green tee, light jeans, high ponytail, red string bracelet."
+  },
+  "voice_mom": {
+   "files": [
+    "set/voice_mom.wav"
+   ],
+   "fixes": "The mother's timbre: 7.9 s, all her brand-free lines (the source has no more)."
+  },
+  "voice_daughter": {
+   "files": [
+    "set/voice_daughter.wav"
+   ],
+   "fixes": "The daughter's timbre: 2.7 s (all she says apart from the brand name)."
+  },
+  "voice_announcer": {
+   "files": [
+    "set/voice_announcer.wav"
+   ],
+   "fixes": "The announcer's timbre: 7.6 s of both VO lines without the brand name and URL."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L08.wav",
+    "set/lines/L09.wav",
+    "set/lines/L09s.wav",
+    "set/lines/L10.wav",
+    "set/lines/L11.wav",
+    "set/lines/L12.wav"
+   ],
+   "fixes": "Every spoken line with word times; brand words muted (slots)."
+  },
+  "loc_room_before": {
+   "files": [
+    "set/loc_room_before.jpg"
+   ],
+   "fixes": "The bare basement dorm room, empty, from the ROOM_WIDE camera, at the film's darkness (56): white-painted brick, horizontal window top left, grey water-heater tank far left, mattress on the floor with a dark quilt, old drum lamp on a stool, dark desk, navy crest pennant, doorway at right, boxes and a clothes rail. The master geometry for ROOM_WIDE."
+  },
+  "loc_room_after": {
+   "files": [
+    "set/loc_room_after.jpg"
+   ],
+   "fixes": "The same room from the same camera (made as an edit of loc_room_before), made over: pine bed, striped bedding, red-orange pouf, striped rugs, yellow-white blind and sheer curtains, white desk, pegboard, blue cubby, pink globe lamp, purple heart neon, photo collage, pink door trim, blue armchair; warm sun. The plate renders at 108: grade it down to 87-90 for shots 11 and 13."
+  },
+  "loc_doorway_before": {
+   "files": [
+    "set/loc_doorway_before.jpg"
+   ],
+   "fixes": "Background of DOOR_ENTRY and TWO_SHOT: the door wall at night, white-painted brick, navy pennant corner, steel door frame and lever handle, dim hallway with shelves beyond, warm lamp glow lower left."
+  },
+  "loc_corner_after": {
+   "files": [
+    "set/loc_corner_after.jpg"
+   ],
+   "fixes": "Background of CORNER_MED and PHOTO_INSERT: the window corner of the made-over room, the hung photo on the brick wall, white dresser with the yellow gooseneck lamp, vases and plants on the sill, sheer curtains, pine headboard and striped pillows. Plate at 141: grade to 112."
+  },
+  "prop_old_lamp": {
+   "files": [
+    "set/prop_old_lamp_sheet.jpg"
+   ],
+   "fixes": "The dying lamp: white fabric drum shade on a tall glossy oxblood-red (#5A1E1A) cylindrical base, white cord; lit (warm, uneven) and unlit."
+  },
+  "product_desk_lamp": {
+   "files": [
+    "set/product_desk_lamp_sheet.jpg"
+   ],
+   "fixes": "The ordered desk lamp: round white base, straight white stem, mustard-yellow (#E0A92B) gooseneck in a 180-degree arc, small white cylindrical head, yellow cord. On the app's product page and on the dresser in shot 12."
+  },
+  "product_room_set": {
+   "files": [
+    "set/product_room_set_sheet.jpg"
+   ],
+   "fixes": "The made-over room's range: pine slatted bed, white/pale-blue (#A9C6D8) wide-stripe duvet, burnt-orange (#E2582B)/pink striped sheet set, cushions (white, orange, cobalt #1F4FA8, red #C8202F), grey knit throw with fringe, red-orange tufted pouf, red-and-white striped rug."
+  },
+  "prop_photo": {
+   "files": [
+    "set/prop_photo_sheet.jpg"
+   ],
+   "fixes": "The embarrassing photo: portrait-orientation black frame with a wide white mat, a cheesy studio portrait of mother and daughter back to back in matching light-blue denim jackets on a mottled purple-teal backdrop; and the steel claw hammer with a black rubber grip."
+  },
+  "ui": {
+   "files": [
+    "set/ui.json",
+    "set/ui_product.jpg",
+    "set/ui_bag.jpg",
+    "set/ui_fulfil.jpg",
+    "set/ui_item_mushroom_lamp.jpg"
+   ],
+   "fixes": "The three app screens, flat and full-size with exact copy, generic black-and-white style; events by time in ui.json."
+  },
+  "ui_endcard": {
+   "files": [
+    "set/ui_endcard.png"
+   ],
+   "fixes": "End-card overlay (1920x1080, transparent): logo box, 'Visit {URL}', two legal lines at their exact sizes and positions."
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "Music + effects + room tone, voices removed; cut to 30 s and 15 s on bar starts."
+  }
+ },
+ "slots": {
+  "brand": {
+   "default": "{BRAND}",
+   "swap": "the store/app name: said by the daughter as a question (L06), by the mother as the answer (L07) and muttered (L08), last word of the announcer's L09; the logo on the end card. Two syllables or three at most so it fits the 0.52-0.56 s windows."
+  },
+  "url": {
+   "default": "{URL}",
+   "swap": "the web address: last words of L12 (1.66 s window) and the end-card line 'Visit {URL}'."
+  },
+  "products": {
+   "default": "desk lamp ($21.99), striped duvet set ($44.99), mushroom lamp ($16.99)",
+   "swap": "the new brand's three products on the ui_ screens; keep a lamp first, because the dying lamp (shot 4) is the visual set-up for it and the new lamp sits in the payoff (shot 12)."
+  },
+  "cast": {
+   "default": "char_mom + char_daughter (+ voice_announcer)",
+   "swap": "any parent and grown child moving in; keep the contrast: an over-excited, theatrical parent and a deadpan kid in denial; keep one signature prop for the parent (glasses here, the hammer after)."
+  },
+  "places": {
+   "default": "loc_room_before -> loc_room_after (same camera)",
+   "swap": "any bare first home (dorm, first flat, a new office) and its made-over self; the after MUST be an edit of the before plate."
+  },
+  "lines": {
+   "default": "L01-L12 (set/lines.json)",
+   "swap": "keep the shapes and lengths: excited arrival line (2.8 s), proud 'Ta-da!' (0.75), polite dismay (1.45), the kid's denial (0.8), incredulous question (1.5), brand? / brand. / brand..., the announcer's promise (4.3 s, a pause after the first clause), kid's embarrassed 'Mom,' and the parent's unapologetic comeback (1.1), the call to action (5.2 s)."
+  },
+  "photo": {
+   "default": "matching denim jackets, back to back",
+   "swap": "any cringe-worthy family portrait"
+  },
+  "school": {
+   "default": "generic crest + UNIVERSITY",
+   "swap": "any generic college sweatshirt; never a real school"
+  },
+  "end_card": {
+   "default": "{BRAND} logo + 'Visit {URL}' + {LEGAL_LINE_1}/{LEGAL_LINE_2} over the after wide",
+   "swap": "same layout and timing with the new brand"
+  }
+ },
+ "shots": [
+  {
+   "n": 1,
+   "start": 0.0,
+   "end": 3.84,
+   "dur": 3.84,
+   "in": "start",
+   "brightness": {
+    "start": 46,
+    "mid": 47,
+    "end": 43
+   },
+   "colour": "#2f2b23",
+   "change": 13.01,
+   "sound": "-23.79 LUFS mean, -9.76 max",
+   "setup": "DOOR_ENTRY",
+   "location": "loc_doorway_before (the room's door wall, seen from inside the room; hallway beyond)",
+   "cast": [
+    "char_mom",
+    "char_daughter"
+   ],
+   "wardrobe": "before: char_mom_sheet (black blazer, mauve tee, glasses), char_daughter_sheet (navy crest sweatshirt)",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Two-shot, both from the knees up. Start (s01a): they stand on the threshold, daughter at 33-50% x, mother at 50-72% x, heads at 8-20% y (head height 11% H); the open door edge fills 80-100% x as a pale vertical panel, a light-switch plate at 3% x 55% y, the dim hallway behind them. End (s01b): they have stepped in one pace; daughter 35-52% x, mother 50-74% x (head top 9% y); the room wall with the pennant fills 0-20% x at top left and a desk with a warm lamp glows at 0-18% x, 75-100% y.",
+   "camera": "eye level (about 150 cm), normal lens (35 mm feel), focus on the faces, background soft but readable",
+   "camera_move": "handheld drift right and slightly back as they enter: about 10% of frame width over 3.8 s, ease-in-out; reveals the room wall and the warm desk lamp at left by 2.0 s",
+   "action": "0.00-1.00: daughter (left) leads her mother (right, hand on the daughter's shoulder) to the threshold, both grinning. 0.25-3.03: mother: 'I finally get to see your new place.', the last word stretched while she shakes both fists at chest height in excitement (1.9-3.0). 2.75-3.84: daughter sweeps her right arm out, palm up, presenting the room; 3.35 she starts 'Ta-da!' (runs over the cut).",
+   "light": "Night interior, low-key. Warm 2700K key from a table lamp low at frame left (the old drum lamp, off screen), cool grey-green fill spilling from the hallway behind them, no top light; faces sit at 60-90 of 255, the frame at 43-47. No haze, slight film grain, shallow focus.",
+   "text": [],
+   "out": "hard cut on 'Ta-da!' (0.49 s into the word) to the reverse wide",
+   "audio": "Music M1 (light comedic underscore, 145.5 bpm, about -24 LUFS, about 7 dB under the voices) from 0.06. Speech: 0.25-3.03 'I finally get to see your new place.' (L01, mother, on camera); 3.35- 'Ta-da!' (L02, daughter, on camera, continues into shot 2 to 4.10). Effects: none distinct (music and room tone; the music starts with a low hit at 0.06-0.2).",
+   "lines": [
+    {
+     "line": "L01",
+     "words": "I finally get to see your new place.",
+     "time": "0.25-3.03",
+     "delivery": "on camera"
+    },
+    {
+     "line": "L02",
+     "words": "Ta-da!",
+     "time": "3.35-4.10",
+     "delivery": "on camera, over the cut"
+    }
+   ],
+   "render": "Speaking: first frame = DOOR_ENTRY plate built from boards/s01a.jpg + char_mom_sheet + char_daughter_sheet + loc_doorway_before; guide_audio = a 3.84 s wav with L01 at 0.25 and L02 at 3.35. Prompt the handheld drift right and the step in. If the framing drifts, keep the clip and accept the end framing; do not add a last frame (it fights the guide audio).",
+   "board": "boards/s01.jpg",
+   "board_start": "boards/s01a.jpg",
+   "board_end": "boards/s01b.jpg"
+  },
+  {
+   "n": 2,
+   "start": 3.84,
+   "end": 7.47,
+   "dur": 3.63,
+   "in": "cut",
+   "brightness": {
+    "start": 56,
+    "mid": 55,
+    "end": 52
+   },
+   "colour": "#383430",
+   "change": 2.03,
+   "sound": "-19.89 LUFS mean, -10.24 max",
+   "setup": "ROOM_WIDE",
+   "location": "loc_room_before",
+   "cast": [
+    "char_mom",
+    "char_daughter"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "wide",
+   "subject_in_frame": "The whole bare room from the corner opposite the door. Floor mattress with a dark quilt and two grey pillows lower left-centre (15-62% x, 60-92% y); narrow horizontal window top left (13-31% x, 26-41% y) with dark leaves outside; old drum lamp on a stool at 9-15% x, 45-58% y; desk and chair under the window (24-48% x); navy pennant with a gold crest on the back wall (57-74% x, 20-33% y); the open doorway at right (70-81% x). The two women stand small in the doorway: each about 4% of the width and 30% of the height, heads at 25% y, daughter at 71% x, mother at 75% x.",
+   "camera": "eye level, slightly high (about 160 cm), wide lens (24 mm feel), deep focus",
+   "camera_move": "locked off",
+   "action": "3.84-4.10 'Ta-da!' ends with the daughter's arm still out. 4.3 they take one step into the room and look around. 4.79-6.24 mother: 'Not what I was expecting.' (her hand to her chest). 6.6 the old drum lamp at left flickers off and on (0.15 s). They stand still to the cut.",
+   "light": "Dim, cool, unloved: the only sources are the old drum lamp on a side table at left (warm, flickering), a desk lamp on the desk, and a bare bulb on the back wall; the window shows dark green leaves; concrete floor and corners fall to near black. Brightness 52-56 (the darkest corners at 10-20). No haze.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music M1 continues. Speech: 3.84-4.10 tail of 'Ta-da!' (L02); 4.79-6.24 'Not what I was expecting.' (L03, mother, small in frame). Effects: a small electrical buzz with the lamp flicker at 6.6.",
+   "lines": [
+    {
+     "line": "L03",
+     "words": "Not what I was expecting.",
+     "time": "4.79-6.24",
+     "delivery": "on camera, small in frame"
+    }
+   ],
+   "render": "Speaking but small in frame: first frame = ROOM_WIDE before plate (loc_room_before with both women composited small in the doorway per boards/s02.jpg); guide_audio = 3.63 s wav with L02 at -(3.84-3.35) i.e. its last 0.26 s at 0.0 and L03 at 0.95. Locked-off camera in the prompt. This plate is the master for every ROOM_WIDE shot (2, 5, 7, 11, 13).",
+   "board": "boards/s02.jpg"
+  },
+  {
+   "n": 3,
+   "start": 7.47,
+   "end": 8.88,
+   "dur": 1.41,
+   "in": "cut",
+   "brightness": {
+    "start": 48,
+    "mid": 46,
+    "end": 43
+   },
+   "colour": "#332b26",
+   "change": 18.73,
+   "sound": "-18.86 LUFS mean, -14.59 max",
+   "setup": "TWO_SHOT",
+   "location": "loc_doorway_before",
+   "cast": [
+    "char_daughter",
+    "char_mom"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "medium",
+   "subject_in_frame": "Waist-up two-shot just inside the door. Daughter left: 12-44% x, head 20-36% x, top of head 19% y, head height 17% H. Mother right: 50-90% x, head 52-68% x, top of head 22% y. The steel door jamb with its lever handle at 80-96% x; the navy pennant corner at 0-10% x, 15-35% y; a warm lamp glow at the bottom left corner; the hallway soft between them.",
+   "camera": "eye level, normal-long lens (50 mm feel), shallow depth of field (background soft)",
+   "camera_move": "handheld, gentle bob and a 3% drift left over 1.4 s",
+   "action": "Daughter beams, looking around the room off left; mother grimaces, both hands clasped at her chest, eyes darting. 7.75-8.56 daughter (cheerful, defensive): 'It's a vibe.' Mother holds the grimace.",
+   "light": "Night interior, low-key. Warm 2700K key from a table lamp low at frame left (the old drum lamp, off screen), cool grey-green fill spilling from the hallway behind them, no top light; faces sit at 60-90 of 255, the frame at 43-48. No haze, slight film grain, shallow focus.",
+   "text": [],
+   "out": "hard cut to the lamp insert",
+   "audio": "Music M1. Speech: 7.75-8.56 'It's a vibe.' (L04, daughter, on camera).",
+   "lines": [
+    {
+     "line": "L04",
+     "words": "It's a vibe.",
+     "time": "7.75-8.56",
+     "delivery": "on camera"
+    }
+   ],
+   "render": "Speaking: first frame = TWO_SHOT plate (boards/s03.jpg + both cast sheets + loc_doorway_before); guide_audio = L04 placed at 0.28 s. One TWO_SHOT plate serves shots 3, 6 and 8.",
+   "board": "boards/s03.jpg"
+  },
+  {
+   "n": 4,
+   "start": 8.88,
+   "end": 9.93,
+   "dur": 1.05,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 46,
+    "end": 44
+   },
+   "colour": "#2c2c2b",
+   "change": 7.33,
+   "sound": "-19.24 LUFS mean, -17.09 max",
+   "setup": "LAMP_INSERT",
+   "location": "loc_room_before (side table at left)",
+   "cast": [
+    "prop_old_lamp"
+   ],
+   "wardrobe": "n/a",
+   "shot_size": "close-up",
+   "subject_in_frame": "The old lamp's white drum shade fills 35-72% x, 21-73% y (37% of the width); the oxblood base runs from 48-58% x down out of frame; dark white-painted brick wall behind; a black metal rail crosses the lower right corner (90-100% x).",
+   "camera": "eye level with the shade, 50 mm feel, focus on the shade, wall soft",
+   "camera_move": "locked off (the change value is the flicker, not a move)",
+   "action": "The lamp flickers: on (warm) at 8.88, off (cold blue-grey) 9.05, on 9.35, off 9.45, on 9.65, off 9.85 to the cut. Each 'off' drops the shade from about 200 to 150 luma and the frame from 53 to 44.",
+   "light": "Only the lamp itself when on (warm 2700K glow through the shade); when off, cold ambient from the room (blue-grey). Brightness 53 on, 44-46 off.",
+   "text": [],
+   "out": "hard cut back to the wide",
+   "audio": "Music M1. Effects: electrical buzz and tick on each flicker (9.23, 9.75, 9.89 are the loudest).",
+   "render": "Picture: first frame = lamp-on plate, last frame = lamp-off plate (both from prop_old_lamp_sheet against the before brick wall, framed per boards/s04.jpg); prompt the flicker. If the timing is off, cut between the two plates in post at the measured flicker times (exact and cheap).",
+   "board": "boards/s04.jpg"
+  },
+  {
+   "n": 5,
+   "start": 9.93,
+   "end": 11.05,
+   "dur": 1.12,
+   "in": "cut",
+   "brightness": {
+    "start": 55,
+    "mid": 56,
+    "end": 56
+   },
+   "colour": "#393532",
+   "change": 1.84,
+   "sound": "-20.78 LUFS mean, -17.47 max",
+   "setup": "ROOM_WIDE",
+   "location": "loc_room_before",
+   "cast": [
+    "char_daughter",
+    "char_mom"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "wide",
+   "subject_in_frame": "As shot 2, but the women have moved two paces in from the doorway: daughter at 66% x, mother at 70% x, each about 5% of the width and 35% of the height, heads at 27% y; the mother's hands are raised, mid-gesture.",
+   "camera": "as shot 2 (same plate)",
+   "camera_move": "locked off",
+   "action": "They look at the mattress on the floor. 10.79 mother starts 'And...' (drawn out), gesturing at the bed.",
+   "light": "Dim, cool, unloved: the only sources are the old drum lamp on a side table at left (warm, flickering), a desk lamp on the desk, and a bare bulb on the back wall; the window shows dark green leaves; concrete floor and corners fall to near black. Brightness 55-56. No haze.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music M1. Speech: 10.79- 'And you're sleeping here?' begins (L05, mother; continues over the cut). Effects: lamp buzz tail.",
+   "lines": [
+    {
+     "line": "L05",
+     "words": "And",
+     "time": "10.79-11.05",
+     "delivery": "on camera, small; continues into shot 6"
+    }
+   ],
+   "render": "First frame = the ROOM_WIDE before plate with the women re-placed two paces in; guide_audio = L05 at 0.86 s (only 'And' falls in this shot). Same plate geometry as shot 2.",
+   "board": "boards/s05.jpg"
+  },
+  {
+   "n": 6,
+   "start": 11.05,
+   "end": 12.39,
+   "dur": 1.34,
+   "in": "cut",
+   "brightness": {
+    "start": 40,
+    "mid": 40,
+    "end": 39
+   },
+   "colour": "#2e2622",
+   "change": 5.83,
+   "sound": "-15.95 LUFS mean, -14.67 max (measured on the split)",
+   "setup": "TWO_SHOT",
+   "location": "loc_doorway_before",
+   "cast": [
+    "char_daughter",
+    "char_mom"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "medium",
+   "subject_in_frame": "As shot 3, the daughter slightly left (8-40% x), the mother 45-82% x, facing camera-left toward the bed; her right hand up at chest height mid-gesture.",
+   "camera": "as shot 3",
+   "camera_move": "handheld, near-still",
+   "action": "Mother, incredulous, finishing 'And you're sleeping here?' (to 12.31), hand gesturing toward the bed; daughter looks at her mother, then at the bed.",
+   "light": "Night interior, low-key. Warm 2700K key from a table lamp low at frame left (the old drum lamp, off screen), cool grey-green fill spilling from the hallway behind them, no top light; faces sit at 60-90 of 255, the frame at 39-40. No haze, slight film grain, shallow focus.",
+   "text": [],
+   "out": "hard cut at 12.39 (missed by the shot detector: a cut between two similar dark frames)",
+   "audio": "Music M1. Speech: 11.05-12.31 'you're sleeping here?' (L05 continues, mother, on camera).",
+   "lines": [
+    {
+     "line": "L05",
+     "words": "And you're sleeping here?",
+     "time": "10.79-12.31",
+     "delivery": "on camera"
+    }
+   ],
+   "render": "Speaking: first frame = TWO_SHOT plate; guide_audio = L05 placed at -0.26 s (its first 0.26 s fall in shot 5).",
+   "board": "boards/s06.jpg"
+  },
+  {
+   "n": 7,
+   "start": 12.39,
+   "end": 13.85,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 51,
+    "mid": 32,
+    "end": 32
+   },
+   "colour": "#262422",
+   "change": 16.13,
+   "sound": "-33.34 LUFS mean, -16.94 max (measured on the split)",
+   "setup": "ROOM_WIDE",
+   "location": "loc_room_before",
+   "cast": [
+    "char_daughter",
+    "char_mom"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "wide",
+   "subject_in_frame": "As shot 5 (same positions, both standing still, looking at the bed).",
+   "camera": "as shot 2",
+   "camera_move": "locked off",
+   "action": "12.39-12.79 the old lamp at left buzzes and flickers; 12.79 it dies for good and the room drops from 51 to 32. They stand frozen in the dark. Nobody speaks.",
+   "light": "Dim, cool, unloved: the only sources are the old drum lamp on a side table at left (warm, flickering), a desk lamp on the desk, and a bare bulb on the back wall; the window shows dark green leaves; concrete floor and corners fall to near black. Brightness 51 until the lamp dies at 12.79, then 32 to the end. No haze.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music M1 decays from 12.9 and is gone by 13.30 (the score stops on the bar at 13.26). Effects: a last buzz and pop as the lamp dies (12.49-12.80). Then dead room silence from 13.30 (full-mix silence 13.40-14.30).",
+   "render": "Picture: first frame = ROOM_WIDE before plate (lamp on), last frame = the same plate graded down to 32 with the lamp off; no speech, no music in the clip.",
+   "board": "boards/s07.jpg"
+  },
+  {
+   "n": 8,
+   "start": 13.85,
+   "end": 16.14,
+   "dur": 2.29,
+   "in": "cut",
+   "brightness": {
+    "start": 42,
+    "mid": 41,
+    "end": 41
+   },
+   "colour": "#2e2622",
+   "change": 4.86,
+   "sound": "-25.7 LUFS mean, -14.85 max",
+   "setup": "TWO_SHOT",
+   "location": "loc_doorway_before",
+   "cast": [
+    "char_daughter",
+    "char_mom"
+   ],
+   "wardrobe": "before outfits",
+   "shot_size": "medium",
+   "subject_in_frame": "As shot 3. Daughter 12-48% x turned three-quarter toward her mother; mother 50-85% x looking off into the room, then down at her phone (by 15.6 the phone is in her hands at chest height, 60-70% x, 55-65% y).",
+   "camera": "as shot 3",
+   "camera_move": "handheld, near-still",
+   "action": "13.85-14.25 silence; the daughter turns to her mother. 14.26-14.82 daughter, tentative: '{BRAND}?' 14.96-15.48 mother, decisive: '{BRAND}.' and pulls a phone from her blazer pocket (15.1-15.4). 15.57-16.10 she mutters '{BRAND}...' to herself, already tapping the phone.",
+   "light": "Night interior, low-key. Warm 2700K key from a table lamp low at frame left (the old drum lamp, off screen), cool grey-green fill spilling from the hallway behind them, no top light; faces sit at 60-90 of 255, the frame at 41-42. No haze, slight film grain, shallow focus.",
+   "text": [],
+   "out": "hard cut to the phone insert, on the first word of the voice-over (16.11)",
+   "audio": "Silence until 14.75 apart from the daughter's line. Music M2 enters 14.75 and lands on the downbeat 14.91, 0.05 s before the mother's '{BRAND}.' Speech: 14.26-14.82 '{BRAND}?' (L06, daughter), 14.96-15.48 '{BRAND}.' (L07, mother), 15.57-16.10 '{BRAND}...' (L08, mother, muttered). 16.11 the announcer starts (L09).",
+   "lines": [
+    {
+     "line": "L06",
+     "words": "{BRAND}?",
+     "time": "14.26-14.82",
+     "delivery": "on camera"
+    },
+    {
+     "line": "L07",
+     "words": "{BRAND}.",
+     "time": "14.96-15.48",
+     "delivery": "on camera"
+    },
+    {
+     "line": "L08",
+     "words": "{BRAND}...",
+     "time": "15.57-16.10",
+     "delivery": "on camera, muttered"
+    }
+   ],
+   "render": "Speaking: first frame = TWO_SHOT plate (boards/s08a.jpg pose); guide_audio = a 2.29 s wav with the new film's own reads of L06 at 0.41, L07 at 1.11, L08 at 1.72 (the source clips are silent there: brand slot). End pose per boards/s08b.jpg (phone in hand).",
+   "board": "boards/s08.jpg",
+   "board_start": "boards/s08a.jpg",
+   "board_end": "boards/s08b.jpg"
+  },
+  {
+   "n": 9,
+   "start": 16.14,
+   "end": 19.73,
+   "dur": 3.59,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 68,
+    "end": 67
+   },
+   "colour": "#47413e",
+   "change": 4.31,
+   "sound": "-15.51 LUFS mean, -11.32 max",
+   "setup": "PHONE_INSERT",
+   "location": "the dark bed of loc_room_before, out of focus behind the phone",
+   "cast": [
+    "char_mom (hands only)",
+    "ui_product",
+    "ui_bag",
+    "ui_fulfil"
+   ],
+   "wardrobe": "the mother's hands: dark-red nail polish, silver bangle on the left wrist",
+   "shot_size": "close-up",
+   "subject_in_frame": "The phone held upright in the left hand fills 34-56% x and 0-72% y (its top edge just cut by the frame top), screen bright (about 200 luma) against a dark background; the right index finger enters from the lower left to tap. Behind: the dark quilted mattress and a big soft grey pillow, out of focus, top right.",
+   "camera": "slightly high, looking down at the phone over the mother's shoulder line, 50-85 mm feel, very shallow focus on the screen",
+   "camera_move": "handheld, near-locked (the phone drifts up to 3% as she taps)",
+   "action": "16.14-17.02 product page (desk lamp); 16.88 tap 'Add to bag'. 17.02-18.33 shopping bag (3 items); 18.24 tap 'Continue to checkout'. 18.33-19.73 'Pick up or delivery?' with 'Pick up' selected; 19.39 tap 'Checkout'. Exact events in set/ui.json.",
+   "light": "The screen is the key on her fingers; dim warm room behind (bed at 30-60 luma). Frame 67-69.",
+   "text": [
+    {
+     "words": "screen copy only (see ui.json)",
+     "position": "on the phone screen",
+     "in": 16.14,
+     "out": 19.73
+    }
+   ],
+   "out": "whip pan into shot 10 (a 0.17 s horizontal motion-blur handoff)",
+   "audio": "Music M2. Speech: 16.11-20.41 announcer: 'When you need to get them settled into college, turn to the ease and convenience of {BRAND}.' (L09, voice-over). Effects: none distinct (no audible screen taps in the source; music and room tone only).",
+   "lines": [
+    {
+     "line": "L09",
+     "words": "When you need to get them settled into college, turn to the ease and convenience of {BRAND}.",
+     "time": "16.11-20.41",
+     "delivery": "voice-over"
+    }
+   ],
+   "render": "Screens: render the hand-held phone with a blank (mid-grey) screen as picture (first + last frame from a PHONE_INSERT plate per boards/s09.jpg, prompt three index-finger taps at 0.74, 2.10, 3.25 s), then corner-pin set/ui_product.jpg, ui_bag.jpg, ui_fulfil.jpg onto the screen on the ui.json times. Never let the video model draw the UI.",
+   "board": "boards/s09.jpg"
+  },
+  {
+   "n": 10,
+   "start": 19.73,
+   "end": 20.98,
+   "dur": 1.25,
+   "in": "cut",
+   "brightness": {
+    "start": 87,
+    "mid": 96,
+    "end": 105
+   },
+   "colour": "#6e5d49",
+   "change": 29.75,
+   "sound": "-16.5 LUFS mean, -12.82 max",
+   "setup": "PHOTO_INSERT",
+   "location": "loc_corner_after (the white-painted brick wall)",
+   "cast": [
+    "prop_photo",
+    "char_mom (hand and forearm only, after wardrobe)"
+   ],
+   "wardrobe": "after: striped shirt cuff, silver bangles",
+   "shot_size": "close-up",
+   "subject_in_frame": "The black-framed portrait photo (portrait orientation, wide white mat) hangs at 33-64% x, 12-84% y on white-painted brick; a hand with a steel claw hammer enters from the right (68-80% x, 20-100% y); a copper pipe runs vertically at 15-20% x; the edge of a sheer curtain at 85-100% x.",
+   "camera": "eye level with the frame, 35-50 mm feel, deep enough focus for the brick",
+   "camera_move": "whip pan in from the left that settles in 0.17 s (19.73-19.90, heavy horizontal blur), then a 2% settle/tilt up; locked from 20.0",
+   "action": "19.73-19.90 the whip lands on the newly hung photo of mother and daughter (matching light-blue denim jackets, back to back). 20.0-20.30 the hand taps the frame's right edge twice with the hammer (20.12, 20.23) to straighten it, then swings the hammer away out of frame right (20.4-20.9).",
+   "light": "Bright warm daylight from the window at right through sheer curtains; the brick wall reads cream (frame 87 -> 105 as the whip settles).",
+   "text": [],
+   "out": "hard cut to the made-over wide",
+   "audio": "Music M2 (a hit at 20.53). Speech: the announcer's '{BRAND}.' 19.86-20.41 lands here; 20.72- daughter: 'Mom,' (L10, off screen, over the cut). Effects: two wooden hammer taps at 20.12 and 20.23.",
+   "lines": [
+    {
+     "line": "L10",
+     "words": "Mom,",
+     "time": "20.72-21.20",
+     "delivery": "off screen, then on the wide"
+    }
+   ],
+   "render": "Picture: first frame boards/s10a.jpg (motion-blurred) is better built in post: render a locked clip from a PHOTO_INSERT plate (prop_photo_sheet hung on the after wall, boards/s10b.jpg) with the hammer hand tapping twice, and add the whip-in in post (first 0.17 s: horizontal slide from +40% W to 0 with motion blur, ease-out).",
+   "board": "boards/s10.jpg",
+   "board_start": "boards/s10a.jpg",
+   "board_end": "boards/s10b.jpg"
+  },
+  {
+   "n": 11,
+   "start": 20.98,
+   "end": 23.06,
+   "dur": 2.08,
+   "in": "cut",
+   "brightness": {
+    "start": 87,
+    "mid": 87,
+    "end": 87
+   },
+   "colour": "#685144",
+   "change": 0.61,
+   "sound": "-18.49 LUFS mean, -13.51 max",
+   "setup": "ROOM_WIDE",
+   "location": "loc_room_after",
+   "cast": [
+    "char_mom",
+    "char_daughter"
+   ],
+   "wardrobe": "after: char_mom_wardrobe (pinstripe shirt knotted at the waist, hammer in right hand), char_daughter_wardrobe (plaid flannel, ponytail)",
+   "shot_size": "wide",
+   "subject_in_frame": "THE SAME CAMERA AND ROOM AS SHOT 2, made over. Pine bed with striped bedding centre (25-75% x, 45-88% y), red-orange pouf bottom centre (40-60% x, 85-100% y). Mother stands behind the head of the bed at left (14-26% x, head top 26% y, about 30% of the height), one hand on the headboard; daughter at right by the desk (62-70% x, head top 22% y, 40% of the height), facing her mother. Window with yellow-and-white striped blind and sheer curtains top left; pink-framed door at 82-95% x; purple heart neon at 64% x, 28% y.",
+   "camera": "as shot 2 (same plate geometry; the source's after frames sit about 8% tighter, ignore that and match the before plate)",
+   "camera_move": "locked off",
+   "action": "Hard reveal of the finished room. 20.72-21.20 daughter, embarrassed: 'Mom,' 21.27-22.35 mother, delighted: 'It's a great photo.' She raps the headboard area with the hammer (22.36, 22.83) and grins; the daughter shakes her head.",
+   "light": "Warm late-afternoon sun through the window and sheer curtains (frame left), warm practicals (pink globe lamp, purple heart neon, desk lamp) at right; walls read pink-cream; soft shadows, open shadows on faces. Brightness 87. No haze, no bloom beyond the curtains' natural glow.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music M2. Speech: 'Mom,' (L10, daughter) 20.72-21.20; 'It's a great photo.' (L11, mother) 21.27-22.35. Effects: hammer knocks 22.36 and 22.83.",
+   "lines": [
+    {
+     "line": "L10",
+     "words": "Mom,",
+     "time": "20.72-21.20",
+     "delivery": "on camera, small"
+    },
+    {
+     "line": "L11",
+     "words": "It's a great photo.",
+     "time": "21.27-22.35",
+     "delivery": "on camera, small"
+    }
+   ],
+   "render": "Speaking but small: first frame = ROOM_WIDE AFTER plate = the before plate edited (loc_room_after was made from loc_room_before, so the walls, window and door line up) with both women in after wardrobe placed per boards/s11.jpg; guide_audio = 2.08 s wav with L10 at -0.26 and L11 at 0.29.",
+   "board": "boards/s11.jpg"
+  },
+  {
+   "n": 12,
+   "start": 23.06,
+   "end": 24.15,
+   "dur": 1.09,
+   "in": "cut",
+   "brightness": {
+    "start": 112,
+    "mid": 112,
+    "end": 112
+   },
+   "colour": "#846a53",
+   "change": 2.83,
+   "sound": "-19.31 LUFS mean, -15.38 max",
+   "setup": "CORNER_MED",
+   "location": "loc_corner_after",
+   "cast": [
+    "char_mom",
+    "product_desk_lamp",
+    "prop_photo"
+   ],
+   "wardrobe": "after: char_mom_wardrobe with the claw hammer",
+   "shot_size": "medium",
+   "subject_in_frame": "Mother from the hips up behind the pine headboard rail (rail across 78% y), body 35-72% x, head 46-57% x with top of head at 18% y (head height 14% H), turned three-quarter to camera-right. The hung photo on the brick wall upper left (17-26% x, 10-31% y); the white dresser with the new mustard-yellow gooseneck desk lamp at 27-36% x; window with plants and vases upper right (48-80% x); sheer curtains at 30-45% and 80-100% x; orange-and-pink striped pillows lower right; a clothes rail soft in the lower left foreground.",
+   "camera": "eye level, 50 mm feel, moderate depth of field",
+   "camera_move": "handheld, near-still",
+   "action": "Pleased with herself, she knocks the claw hammer down on the dresser top beside the new lamp (big knock at 23.53, two small ones 23.8-24.0), left hand resting on the headboard, lips pressed in a satisfied smirk, eyes on her daughter off camera right.",
+   "light": "Warm late-afternoon sun through the window and sheer curtains (frame left), warm practicals (pink globe lamp, purple heart neon, desk lamp) at right; walls read pink-cream; soft shadows, open shadows on faces. Brightness 112 (the brightest shot in the film). No haze, no bloom beyond the curtains' natural glow.",
+   "text": [],
+   "out": "hard cut back to the wide for the end card",
+   "audio": "Music M2. Effects: hammer knock 23.53 (loud), two light taps 23.8-24.0. No speech.",
+   "render": "Picture: first + last frame from a CORNER_MED plate (boards/s12.jpg + char_mom_wardrobe + loc_corner_after, graded to 112); prompt the hammer knocks; no speech.",
+   "board": "boards/s12.jpg"
+  },
+  {
+   "n": 13,
+   "start": 24.15,
+   "end": 30.03,
+   "dur": 5.88,
+   "in": "cut",
+   "brightness": {
+    "start": 88,
+    "mid": 90,
+    "end": 90
+   },
+   "colour": "#6b5447",
+   "change": 0.95,
+   "sound": "-19.34 LUFS mean, -13.01 max",
+   "setup": "ROOM_WIDE",
+   "location": "loc_room_after",
+   "cast": [
+    "char_mom",
+    "char_daughter"
+   ],
+   "wardrobe": "after outfits",
+   "shot_size": "wide",
+   "subject_in_frame": "As shot 11 (same plate): mother behind the head of the bed at 17-30% x with the hammer, daughter at 68-76% x by the desk. End-card graphics over the picture (see text).",
+   "camera": "as shot 2",
+   "camera_move": "locked off",
+   "action": "They keep talking silently (mother gestures with the hammer, daughter laughs) under the voice-over. 26.13 the end card comes in over the room and holds to the end.",
+   "light": "Warm late-afternoon sun through the window and sheer curtains (frame left), warm practicals (pink globe lamp, purple heart neon, desk lamp) at right; walls read pink-cream; soft shadows, open shadows on faces. Brightness 88-90. No haze, no bloom beyond the curtains' natural glow.",
+   "text": [
+    {
+     "words": "Visit {URL}",
+     "position": "centred, baseline at 79% y, text 22% of the width wide, cap height 3.0% H",
+     "style": "white, semi-bold humanist sans, sentence case, no box, faint 2 px shadow",
+     "in": 26.13,
+     "fade_in": 0.08,
+     "out": 30.03
+    },
+    {
+     "words": "{LEGAL_LINE_1} / {LEGAL_LINE_2} (default: '(c) {YEAR} {BRAND}. Prices and availability of products are subject to change without notice.' / 'Pricing valid in U.S. only. Some products require assembly. See {URL} or a {BRAND} store for details.')",
+     "position": "two centred lines at 91.3% and 93.6% y, 52% of the width",
+     "style": "white regular sans, cap height 1.3% H",
+     "in": 26.13,
+     "fade_in": 0.08,
+     "out": 30.03
+    },
+    {
+     "words": "{BRAND} logo lockup",
+     "position": "centred box 38.5-61.5% x, 41.7-58.3% y (22.9% W x 16.7% H)",
+     "style": "the new brand's own logo; enters with a 3D swing around its vertical axis from edge-on to flat, 26.21-26.38 (0.17 s, ease-out)",
+     "in": 26.21,
+     "out": 30.03
+    }
+   ],
+   "out": "end of film (no fade to black; the picture holds to 30.03)",
+   "audio": "Music M2 ends with a final button 28.1-28.9 that decays by 29.15; silence 29.54-30.03. Speech: 24.23-29.44 announcer: 'Shop online and choose from thousands of pickup options or delivery at {URL}.' (L12, voice-over; the URL read slowly over 1.66 s).",
+   "lines": [
+    {
+     "line": "L12",
+     "words": "Shop online and choose from thousands of pickup options or delivery at {URL}.",
+     "time": "24.23-29.44",
+     "delivery": "voice-over"
+    }
+   ],
+   "render": "Picture: first + last frame = ROOM_WIDE after plate (two slightly different poses); no speech in the clip (VO laid in post). Motion graphics drawn in code from set/ui_endcard.png at the sizes and times in 'text'.",
+   "board": "boards/s13.jpg",
+   "board_start": "boards/s13a.jpg",
+   "board_end": "boards/s13b.jpg"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "fps": 23.976,
+  "shots_count": 13,
+  "average_shot": 2.31,
+  "median_shot": 1.46,
+  "arc": {
+   "hook": "0.00-3.84: arrival. Mother and daughter at the door, 'I finally get to see your new place.' / 'Ta-da!'",
+   "problem": "3.84-13.85: the bare room. Reverse wide of the gloomy dorm ('Not what I was expecting.'), the daughter's 'It's a vibe.', the flickering lamp, 'And you're sleeping here?', and the lamp dies: the music stops dead on the bar (13.26) for 1.5 s of silence.",
+   "turn": "13.85-16.14: '{BRAND}?' / '{BRAND}.' - the music slams back in on the downbeat (14.91) with the mother's answer; she pulls out her phone.",
+   "proof": "16.14-20.98: the order on the phone (product -> bag -> pick up) under the announcer ('...the ease and convenience of {BRAND}.'), whip into the photo being hung.",
+   "payoff": "20.98-24.15: same wide, same camera, the room is transformed. 'Mom,' / 'It's a great photo.' and the mother's victory knocks with the hammer.",
+   "end_card": "24.15-30.00: the made-over wide holds; the announcer's call to action; logo and URL arrive at 26.13-26.38 and hold."
+  },
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 3.84,
+    "dur": 3.84,
+    "src": [
+     0.0,
+     3.84
+    ],
+    "setup": "DOOR_ENTRY",
+    "board": "boards/s01.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L01",
+     "L02"
+    ]
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 3.84,
+    "end": 7.47,
+    "dur": 3.63,
+    "src": [
+     3.84,
+     7.47
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s02.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L03"
+    ]
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 7.47,
+    "end": 8.88,
+    "dur": 1.41,
+    "src": [
+     7.47,
+     8.88
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s03.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L04"
+    ]
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 8.88,
+    "end": 9.93,
+    "dur": 1.05,
+    "src": [
+     8.88,
+     9.93
+    ],
+    "setup": "LAMP_INSERT",
+    "board": "boards/s04.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 5,
+    "from": 5,
+    "start": 9.93,
+    "end": 11.05,
+    "dur": 1.12,
+    "src": [
+     9.93,
+     11.05
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s05.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L05"
+    ]
+   },
+   {
+    "n": 6,
+    "from": 6,
+    "start": 11.05,
+    "end": 12.39,
+    "dur": 1.34,
+    "src": [
+     11.05,
+     12.39
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s06.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L05"
+    ]
+   },
+   {
+    "n": 7,
+    "from": 7,
+    "start": 12.39,
+    "end": 13.85,
+    "dur": 1.46,
+    "src": [
+     12.39,
+     13.85
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s07.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 8,
+    "from": 8,
+    "start": 13.85,
+    "end": 16.14,
+    "dur": 2.29,
+    "src": [
+     13.85,
+     16.14
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s08.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L06",
+     "L07",
+     "L08"
+    ]
+   },
+   {
+    "n": 9,
+    "from": 9,
+    "start": 16.14,
+    "end": 19.73,
+    "dur": 3.59,
+    "src": [
+     16.14,
+     19.73
+    ],
+    "setup": "PHONE_INSERT",
+    "board": "boards/s09.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L09"
+    ]
+   },
+   {
+    "n": 10,
+    "from": 10,
+    "start": 19.73,
+    "end": 20.98,
+    "dur": 1.25,
+    "src": [
+     19.73,
+     20.98
+    ],
+    "setup": "PHOTO_INSERT",
+    "board": "boards/s10.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L10"
+    ]
+   },
+   {
+    "n": 11,
+    "from": 11,
+    "start": 20.98,
+    "end": 23.06,
+    "dur": 2.08,
+    "src": [
+     20.98,
+     23.06
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s11.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L10",
+     "L11"
+    ]
+   },
+   {
+    "n": 12,
+    "from": 12,
+    "start": 23.06,
+    "end": 24.15,
+    "dur": 1.09,
+    "src": [
+     23.06,
+     24.15
+    ],
+    "setup": "CORNER_MED",
+    "board": "boards/s12.jpg",
+    "change": "unchanged",
+    "lines": []
+   },
+   {
+    "n": 13,
+    "from": 13,
+    "start": 24.15,
+    "end": 30.0,
+    "dur": 5.85,
+    "src": [
+     24.15,
+     30.0
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s13.jpg",
+    "change": "trimmed to 30.0 (the last 0.03 s of silence dropped)",
+    "lines": [
+     "L12"
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "I finally get to see your new place.",
+    "start": 0.25,
+    "end": 3.03,
+    "clip": "set/lines/L01.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera",
+    "src": [
+     0.25,
+     3.03
+    ]
+   },
+   {
+    "id": "L02",
+    "words": "Ta-da!",
+    "start": 3.35,
+    "end": 4.1,
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "on camera, runs over the cut into the wide",
+    "src": [
+     3.35,
+     4.1
+    ]
+   },
+   {
+    "id": "L03",
+    "words": "Not what I was expecting.",
+    "start": 4.79,
+    "end": 6.24,
+    "clip": "set/lines/L03.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera in the wide (small in frame)",
+    "src": [
+     4.79,
+     6.24
+    ]
+   },
+   {
+    "id": "L04",
+    "words": "It's a vibe.",
+    "start": 7.75,
+    "end": 8.56,
+    "clip": "set/lines/L04.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "on camera",
+    "src": [
+     7.75,
+     8.56
+    ]
+   },
+   {
+    "id": "L05",
+    "words": "And you're sleeping here?",
+    "start": 10.79,
+    "end": 12.31,
+    "clip": "set/lines/L05.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "starts off-screen in the wide, ends on camera in the two-shot",
+    "src": [
+     10.79,
+     12.31
+    ]
+   },
+   {
+    "id": "L06",
+    "words": "{BRAND}?",
+    "start": 14.26,
+    "end": 14.82,
+    "clip": "set/lines/L06.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "on camera",
+    "src": [
+     14.26,
+     14.82
+    ]
+   },
+   {
+    "id": "L07",
+    "words": "{BRAND}.",
+    "start": 14.96,
+    "end": 15.48,
+    "clip": "set/lines/L07.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera",
+    "src": [
+     14.96,
+     15.48
+    ]
+   },
+   {
+    "id": "L08",
+    "words": "{BRAND}...",
+    "start": 15.57,
+    "end": 16.1,
+    "clip": "set/lines/L08.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera, muttered while she takes out her phone (speaker uncertain: may be the announcer's lead-in)",
+    "src": [
+     15.57,
+     16.1
+    ]
+   },
+   {
+    "id": "L09",
+    "words": "When you need to get them settled into college, turn to the ease and convenience of {BRAND}.",
+    "start": 16.11,
+    "end": 20.41,
+    "clip": "set/lines/L09.wav",
+    "in_score": false,
+    "speaker": "voice_announcer",
+    "kind": "voice-over",
+    "src": [
+     16.11,
+     20.41
+    ]
+   },
+   {
+    "id": "L10",
+    "words": "Mom,",
+    "start": 20.72,
+    "end": 21.2,
+    "clip": "set/lines/L10.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "off-screen over the photo insert, lands on the wide",
+    "src": [
+     20.72,
+     21.2
+    ]
+   },
+   {
+    "id": "L11",
+    "words": "It's a great photo.",
+    "start": 21.27,
+    "end": 22.35,
+    "clip": "set/lines/L11.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera in the wide (small in frame)",
+    "src": [
+     21.27,
+     22.35
+    ]
+   },
+   {
+    "id": "L12",
+    "words": "Shop online and choose from thousands of pickup options or delivery at {URL}.",
+    "start": 24.23,
+    "end": 29.44,
+    "clip": "set/lines/L12.wav",
+    "in_score": false,
+    "speaker": "voice_announcer",
+    "kind": "voice-over on the end card",
+    "src": [
+     24.23,
+     29.44
+    ]
+   }
+  ],
+  "lines_note": "All twelve lines at their source times (cut30 = the source timeline). The clips start exactly at 'start'. L06, L07, L08 and the last word of L09 / the URL of L12 are brand slots, muted in the clips: record or generate those words for the new brand into exactly those windows.",
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "M1 underscore 0.06-13.26 (decays 12.9-13.3); silence 13.30-14.75; M2 enters 14.75, downbeat 14.91; hammer taps 20.12/20.23; music hit 20.53; knocks 22.36, 22.83, 23.53; final button 28.1-28.9, gone by 29.15; silence to 30.0.",
+   "about": "set/score.wav is the soundtrack minus the voices (a music + effects + room-tone stem, separated from the mix, with every line window removed). Lay the lines on top from set/lines/."
+  },
+  "text": [
+   {
+    "words": "Visit {URL}",
+    "in": 26.13,
+    "out": 30.0
+   },
+   {
+    "words": "{LEGAL_LINE_1} / {LEGAL_LINE_2}",
+    "in": 26.13,
+    "out": 30.0
+   },
+   {
+    "words": "{BRAND} logo",
+    "in": 26.21,
+    "full": 26.38,
+    "out": 30.0
+   }
+  ],
+  "end_card": {
+   "shot": 13,
+   "start": 24.15,
+   "graphics_in": 26.13,
+   "logo_swing": [
+    26.21,
+    26.38
+   ],
+   "end": 30.0,
+   "layout": "set/ui_endcard.png over the ROOM_WIDE after picture; see shot 13 text"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "fps": 23.976,
+  "shots_count": 7,
+  "average_shot": 2.14,
+  "median_shot": 2.22,
+  "pace_note": "7 shots at 2.14 s average (source and cut30 2.31). The bare-room setup survives as door + wide + lamp; the turn and the order survive whole; the reveal is carried by the photo insert and the end-card wide (the after wide doubles as the end card).",
+  "arc": {
+   "hook": "0.00-6.40: arrival and the bare room: 'I finally get to see your new place.' / 'Ta-da!' / 'Not what I was expecting.'",
+   "problem": "6.40-7.32: the flickering lamp; the music dies with it at 6.662 (bar join) - a beat of silence.",
+   "turn": "7.32-9.54: '{BRAND}?' (7.662) / '{BRAND}.' (8.362) - the music slams back on the downbeat at 8.311; phone out, '{BRAND}...' muttered.",
+   "proof": "9.54-11.48: the order on the phone; the announcer's 'turn to the ease and convenience of {BRAND}.' (L09s, 9.70-11.56), the brand name landing on the whip.",
+   "payoff": "11.48-12.73: whip onto the newly hung photo, two hammer taps.",
+   "end_card": "12.73-15.00: the transformed room in the same wide as the bare one; logo and URL in at 12.912-13.08, music button and decay to 15.0."
+  },
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 3.84,
+    "dur": 3.84,
+    "src": [
+     0.0,
+     3.84
+    ],
+    "setup": "DOOR_ENTRY",
+    "board": "boards/s01.jpg",
+    "change": "unchanged",
+    "lines": [
+     "L01",
+     "L02"
+    ]
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 3.84,
+    "end": 6.4,
+    "dur": 2.56,
+    "src": [
+     3.84,
+     6.4
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s02.jpg",
+    "change": "first 2.56 s: cuts 0.16 s after 'expecting.' ends; the in-shot lamp flicker (6.6) falls outside",
+    "lines": [
+     "L02",
+     "L03"
+    ]
+   },
+   {
+    "n": 3,
+    "from": 4,
+    "start": 6.4,
+    "end": 7.32,
+    "dur": 0.92,
+    "src": [
+     8.88,
+     9.8
+    ],
+    "setup": "LAMP_INSERT",
+    "board": "boards/s04.jpg",
+    "change": "first 0.92 s (on - off 9.05 - on 9.35 - off 9.45 - on 9.65): the music cuts out 0.26 s into it (score join 6.662) as if the lamp killed it",
+    "lines": []
+   },
+   {
+    "n": 4,
+    "from": 8,
+    "start": 7.32,
+    "end": 9.542,
+    "dur": 2.222,
+    "src": [
+     13.92,
+     16.142
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s08.jpg",
+    "change": "from 0.07 s in to its end: silence, '{BRAND}?', the music slams back on the downbeat (8.311) with '{BRAND}.', phone out",
+    "lines": [
+     "L06",
+     "L07",
+     "L08"
+    ]
+   },
+   {
+    "n": 5,
+    "from": 9,
+    "start": 9.542,
+    "end": 11.482,
+    "dur": 1.94,
+    "src": [
+     16.142,
+     18.082
+    ],
+    "setup": "PHONE_INSERT",
+    "board": "boards/s09.jpg",
+    "change": "first 1.94 s: product page -> 'Add to bag' tap (10.28) -> bag; the checkout screens are dropped",
+    "lines": [
+     "L09s"
+    ]
+   },
+   {
+    "n": 6,
+    "from": 10,
+    "start": 11.482,
+    "end": 12.732,
+    "dur": 1.25,
+    "src": [
+     19.73,
+     20.98
+    ],
+    "setup": "PHOTO_INSERT",
+    "board": "boards/s10.jpg",
+    "change": "unchanged: whip-in on the hung photo, two hammer taps (11.86, 11.97) in sync with the score",
+    "lines": []
+   },
+   {
+    "n": 7,
+    "from": 13,
+    "start": 12.732,
+    "end": 15.0,
+    "dur": 2.268,
+    "src": [
+     25.95,
+     28.218
+    ],
+    "setup": "ROOM_WIDE",
+    "board": "boards/s13.jpg",
+    "change": "a later window of the end-card wide: the graphics come in 0.18 s after the cut (12.912) instead of 1.98 s",
+    "lines": []
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "I finally get to see your new place.",
+    "start": 0.25,
+    "end": 3.03,
+    "clip": "set/lines/L01.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera",
+    "src": [
+     0.25,
+     3.03
+    ]
+   },
+   {
+    "id": "L02",
+    "words": "Ta-da!",
+    "start": 3.35,
+    "end": 4.1,
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "on camera, runs over the cut into the wide",
+    "src": [
+     3.35,
+     4.1
+    ]
+   },
+   {
+    "id": "L03",
+    "words": "Not what I was expecting.",
+    "start": 4.79,
+    "end": 6.24,
+    "clip": "set/lines/L03.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera in the wide (small in frame)",
+    "src": [
+     4.79,
+     6.24
+    ]
+   },
+   {
+    "id": "L06",
+    "words": "{BRAND}?",
+    "start": 7.662,
+    "end": 8.222,
+    "clip": "set/lines/L06.wav",
+    "in_score": false,
+    "speaker": "char_daughter",
+    "kind": "on camera",
+    "src": [
+     14.26,
+     14.82
+    ]
+   },
+   {
+    "id": "L07",
+    "words": "{BRAND}.",
+    "start": 8.362,
+    "end": 8.882,
+    "clip": "set/lines/L07.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera",
+    "src": [
+     14.96,
+     15.48
+    ]
+   },
+   {
+    "id": "L08",
+    "words": "{BRAND}...",
+    "start": 8.972,
+    "end": 9.502,
+    "clip": "set/lines/L08.wav",
+    "in_score": false,
+    "speaker": "char_mom",
+    "kind": "on camera, muttered while she takes out her phone (speaker uncertain: may be the announcer's lead-in)",
+    "src": [
+     15.57,
+     16.1
+    ]
+   },
+   {
+    "id": "L09s",
+    "words": "turn to the ease and convenience of {BRAND}.",
+    "start": 9.7,
+    "end": 11.56,
+    "clip": "set/lines/L09s.wav",
+    "in_score": false,
+    "speaker": "voice_announcer",
+    "kind": "voice-over (L09 shortened at its phrase boundary, for the 15 s cut)",
+    "src": [
+     18.55,
+     20.41
+    ]
+   }
+  ],
+  "lines_note": "L01-L03 keep their source times. L06-L08 keep their offsets inside shot 4 (source shot 8), so they shift by -6.598 s like the picture and the score segment under them. L09s is L09 cut at its phrase boundary ('turn ... {BRAND}.', 1.86 s, never sped up), placed at 9.70 so the brand name lands on the cut into the photo (11.48). L04, L05, L10, L11 and L12 are dropped; the end card carries the URL as text only.",
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 6.662
+    },
+    {
+     "src_in": 13.26,
+     "src_out": 18.208
+    },
+    {
+     "src_in": 19.858,
+     "src_out": 21.507
+    },
+    {
+     "src_in": 28.105,
+     "src_out": 29.846
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "joins": [
+    6.662,
+    11.61,
+    13.259
+   ],
+   "sections": "M1 0-6.662 (then the cut into the music's own stop: silence); M2 re-entry swell 8.15, downbeat 8.311; hammer taps 11.86/11.97 and music hit 12.28 (src 20.53) in sync with shot 6; final button 13.26-14.0, decay to 14.3, silence to the fade.",
+   "about": "Bars from bin/template beats on the music stem: 145.5 bpm, bar 1.6494 s, bar starts 0.064 + k x 1.6494. Every join sits on a bar start; the last segment ends 0.09 s after bar 29.755 in silence. Shots 4-5 and 6 use the same source offset as the score under them, so the music stop/re-entry and the hammer taps stay in sync with the picture."
+  },
+  "text": [
+   {
+    "words": "Visit {URL}",
+    "in": 12.912,
+    "out": 15.0
+   },
+   {
+    "words": "{LEGAL_LINE_1} / {LEGAL_LINE_2}",
+    "in": 12.912,
+    "out": 15.0
+   },
+   {
+    "words": "{BRAND} logo",
+    "in": 12.99,
+    "full": 13.16,
+    "out": 15.0
+   }
+  ],
+  "end_card": {
+   "shot": 7,
+   "start": 12.732,
+   "graphics_in": 12.912,
+   "logo_swing": [
+    12.99,
+    13.16
+   ],
+   "end": 15.0,
+   "layout": "set/ui_endcard.png over the ROOM_WIDE after picture"
+  }
+ },
+ "uncertain": [
+  "L04: transcribed 'It's a vibe.' (4 of 5 passes) but one pass heard 'It's a lot.'",
+  "L08 (15.57-16.10): a muttered third brand-name read; it may be the announcer's lead-in rather than the mother.",
+  "The music's instrumentation was not identified by ear; only its tempo, bars, stop and re-entry are measured.",
+  "set/score.wav is a separated stem: faint voice residue may remain under the music (no words were detectable)."
+ ]
+}

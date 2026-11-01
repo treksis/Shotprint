@@ -1,0 +1,99 @@
+{
+ "about": "The phone screens of shot 9, drawn flat at full size (1170 x 2532 px, portrait) with their exact copy, in a neutral black-and-white app style with a charcoal (#1F1F1F) pill button: the source store's colours and logo are NOT used. Composite them in post onto the phone screen of shot 9 (corner-pin to the handset; the screen fills the phone face edge to edge, rounded corners 9% of the screen width, a notch at top centre). Screen changes are hard switches (no slide). Taps: an index fingertip from the lower left presses the button; on press the button darkens 15% for 0.10 s.",
+ "screens": {
+  "ui_product": {
+   "file": "set/ui_product.jpg",
+   "copy": [
+    "DESK LAMP",
+    "LED desk lamp",
+    "$21.99",
+    "Add to bag"
+   ],
+   "image": "product_desk_lamp (white base and head, mustard-yellow gooseneck) on #F5F5F5, top 40% of the screen; a 2-part carousel bar under it (first quarter dark)"
+  },
+  "ui_bag": {
+   "file": "set/ui_bag.jpg",
+   "copy": [
+    "Shopping bag",
+    "DESK LAMP / LED desk lamp, yellow/white / Qty. 1 / $21.99",
+    "STRIPED DUVET SET / Duvet cover and pillowcases, Full/Queen / Qty. 1 / $44.99",
+    "MUSHROOM LAMP / LED portable lamp, pink / Qty. 1 / $16.99",
+    "Continue to checkout"
+   ],
+   "images": [
+    "product_desk_lamp",
+    "product_room_set (orange-and-pink striped duvet set)",
+    "set/ui_item_mushroom_lamp.jpg"
+   ]
+  },
+  "ui_fulfil": {
+   "file": "set/ui_fulfil.jpg",
+   "copy": [
+    "Pick up",
+    "or delivery?",
+    "Pick up",
+    "Delivery",
+    "Checkout"
+   ],
+   "state": "'Pick up' card selected (3 px black outline); 'Delivery' card unselected (1 px light grey outline)"
+  }
+ },
+ "timeline": {
+  "shot": 9,
+  "src_shot": [
+   16.14,
+   19.73
+  ],
+  "events_src": [
+   {
+    "t": 16.14,
+    "screen": "ui_product",
+    "note": "phone already up, screen on the product page"
+   },
+   {
+    "t": 16.55,
+    "finger": "index fingertip enters from the lower left, travels to the 'Add to bag' button"
+   },
+   {
+    "t": 16.88,
+    "tap": "Add to bag",
+    "hold": 0.12
+   },
+   {
+    "t": 17.02,
+    "screen": "ui_bag",
+    "note": "hard switch"
+   },
+   {
+    "t": 17.15,
+    "finger": "lifts and drifts left, out of the screen by 17.7"
+   },
+   {
+    "t": 18.05,
+    "finger": "returns from the lower left"
+   },
+   {
+    "t": 18.24,
+    "tap": "Continue to checkout",
+    "hold": 0.08
+   },
+   {
+    "t": 18.33,
+    "screen": "ui_fulfil",
+    "note": "hard switch; 'Pick up' preselected"
+   },
+   {
+    "t": 19.39,
+    "tap": "Checkout",
+    "hold": 0.17
+   },
+   {
+    "t": 19.73,
+    "cut": "whip into shot 10"
+   }
+  ],
+  "cut30": "same times (cut30 = source timeline)",
+  "cut15": "shot 5 of cut15 plays src 16.142-18.082 at 9.542-11.482: product page 9.542-10.42 (tap 'Add to bag' at 10.28), bag 10.42-11.482 (finger out by 11.10); the fulfilment screen is not reached"
+ },
+ "phone": "a generic modern black smartphone, 7.1 x 14.7 cm, thin bezels, small notch, no logos; held upright in the mother's left hand (dark-red nail polish, silver bangle), about 25 cm below and in front of camera"
+}

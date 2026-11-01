@@ -1,0 +1,47 @@
+{
+ "about": "Every graphic in farm-legacy, drawn flat at 1920x1080. Positions are % of the frame (x from the left, y from the top). Times: 'src' = source film; cut30 / cut15 = the cut timelines. Composite these in post; never ask a video model to draw them.",
+ "ui_super": {
+  "file": "set/ui_super.png",
+  "shot": 28,
+  "words": ["Real potatoes grown by generations", "of farmers."],
+  "slot": "{SUPER}",
+  "typeface": "humanist sans, semibold, slightly rounded terminals (stand-in used: Avenir Next Demi Bold)",
+  "colour": "#EDCC0C",
+  "size_px_on_1080": 47,
+  "line_height_pct_h": 4.4,
+  "line_gap_pct_h": 1.3,
+  "block_pct": {"x": [27.7, 72.2], "y": [45.2, 54.8]},
+  "align": "centre",
+  "shadow": "none",
+  "timeline": {
+   "src": {"in": 54.19, "full": 54.86, "out": 57.845},
+   "cut30": {"in": 25.79, "full": 26.46, "out": 27.83},
+   "cut15": {"in": 11.54, "full": 11.54, "out": 13.00, "note": "already full at the cut"},
+   "fade": "opacity 0 -> 0.85 in the first 0.20 s, -> 1.0 by 0.67 s (ease-out); out with the picture cut, no fade"
+  }
+ },
+ "ui_end_card": {
+  "file": "set/ui_end_card.jpg",
+  "shot": 29,
+  "background": "set/loc_endcard_field.jpg, pushed 1.00 -> 1.04 over the card, linear, centred on the vanishing point (x 50%, y 8%)",
+  "layers": [
+   {"id": "badge", "file": "set/ui_end_card_badge.png", "slot": "{BRAND}", "box_pct": {"x": [42.6, 57.4], "y": [30.4, 53.4]}, "in": "with the cut", "note": "default generic mark: cream oval, dark-green rim (#2E6B3A), green sprout, 'POTATO CHIPS' in brown (#543018) rounded capitals"},
+   {"id": "tagline", "slot": "{TAGLINE}", "words": "Grown by families. Made for yours.", "colour": "#FFFFFF", "size_px_on_1080": 46, "box_pct": {"x": [30.7, 69.3], "y": [56.7, 60.6]}, "align": "centre", "in": "with the cut"},
+   {"id": "subline", "slot": "{SUBLINE}", "words": "Made from real potatoes.", "colour": "#EDCC0C", "size_px_on_1080": 21, "box_pct": {"x": [43.6, 56.4], "y": [62.4, 64.3]}, "align": "centre", "in": "fade 0.39 -> 0.79 s after the cut (src 58.30 -> 58.70)"},
+   {"id": "legal", "slot": "{LEGAL}", "colour": "#EBEBEB at 80%", "size_px_on_1080": 12, "box_pct": {"x": [38, 62], "y": [93.0, 95.9]}, "align": "centre", "in": "with the cut"},
+   {"id": "corner", "slot": "{PARENT_LOGO}", "box_pct": {"x": [87.5, 94.7], "y": [5.6, 14.3]}, "default": "none"}
+  ],
+  "timeline": {
+   "src": {"in": 57.845, "out": 60.08},
+   "cut30": {"in": 27.83, "subline": [28.20, 28.60], "out": 30.0},
+   "cut15": {"in": 13.00, "subline": [13.37, 13.77], "out": 15.0}
+  }
+ },
+ "flash_into_memory": {
+  "shot": 7,
+  "what": "the white sun-flash that hides the cut from planting-now into planting-then",
+  "src": {"bloom_start": 16.581, "cut": 16.665, "peak": [16.72, 16.84], "end": 17.14},
+  "cut30": {"bloom_start": 12.795, "cut": 12.87, "peak": [12.93, 13.05], "end": 13.35},
+  "build": "a soft warm-white bloom (#FFF4DC) from the upper right, screen blend: on the last two frames of shot 6 the frame average rises 82 -> 92 -> 112 (16.581, 16.623), hard cut at 16.665 into shot 7 at 144, peak 146 over 16.72-16.84, back to 92 by 17.14 (7 frames); no flare streaks"
+ }
+}

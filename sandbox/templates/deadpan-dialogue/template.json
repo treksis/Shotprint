@@ -1,0 +1,1166 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4 (a 30 s deadpan comedy two-hander for an AI assistant; a 2026 award winner)",
+  "duration": 30.03,
+  "size": "1280x720",
+  "fps": 29.97,
+  "shots": 9,
+  "average_shot": 3.34,
+  "median_shot": 2.7,
+  "aspect": "1280x720 carrying a 2.39:1 letterbox (picture rows 93-627)",
+  "cuts_per_minute": 15.98,
+  "transitions": "hard cuts only; no dissolves, no black frames"
+ },
+ "acts": [
+  {
+   "name": "The ask",
+   "shots": [
+    1,
+    2
+   ],
+   "t": "0.00-5.67",
+   "function": "A skinny teen fails a pull-up, drops and asks a big trainer for a quick six-pack. The request is innocent and a little needy."
+  },
+  {
+   "name": "The friendly answer",
+   "shots": [
+    3,
+    4
+   ],
+   "t": "5.67-12.41",
+   "function": "A 2.38 s deadpan beat, then an assistant-style affirmation ('Perfect. That is a clear and achievable goal.') that turns on 'But confidence isn't just built in the gym' over the teen's silent close."
+  },
+  {
+   "name": "The slide into the ad",
+   "shots": [
+    5,
+    6,
+    7
+   ],
+   "t": "12.41-22.93",
+   "function": "The answer becomes an ad read in the same warm voice: product name, an absurd claim aimed at the teen's insecurity, promo code and discount; intercut with the teen's silent closes."
+  },
+  {
+   "name": "The point",
+   "shots": [
+    7,
+    8
+   ],
+   "t": "22.93-28.23",
+   "function": "Music hits on the trainer's frozen salesman grin with super 1; super 2 over the teen staring flatly with his phone."
+  },
+  {
+   "name": "End card",
+   "shots": [
+    9
+   ],
+   "t": "28.23-30.03",
+   "function": "Brand wordmark and tagline on a warm field, sung hook over it."
+  }
+ ],
+ "shots": [
+  {
+   "action": "0.00-1.20 the skinny teen hangs from a black pull-up bar with his chin at the bar, straining, face scrunched, arms shaking; 1.20-1.60 he gives up and sinks: by 1.58 his head has dropped below the bar and only his curls and white-knuckled hands show at it; 1.50-1.97 his strained grunt (in the score) carries over the cut.",
+   "setup": "HIGH_BAR",
+   "location": "loc_sand_pit_high (ground) + loc_park_rig (the rig)",
+   "cast": [
+    "char_teen"
+   ],
+   "wardrobe": "char_teen: faded heather-grey crew-neck tee (#5a6262 in shade) with one large faded charcoal round badge print centred on the chest (a perched bird inside a double ring, no words), dark charcoal athletic shorts, white socks, plain grey trainers",
+   "shot_size": "medium (waist up, seen from above)",
+   "subject_in_frame": "Teen left of centre: head centre x 40%, y 34% (hair top y 20%), torso x 27-56% (29% of width), chin at the bar. The black bar runs corner to corner from lower left (x 10%, y 87%) to upper right (x 97%, y 13%); one grey galvanised diagonal post on the right from (x 77%, y 87%) to (x 100%, y 17%). Beige sand fills everything behind him. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "high angle about 60 degrees down, from above and in front of the bar (lens about 2.8 m up), normal lens (~35 mm), deep focus: sand texture sharp",
+   "camera_move": "locked off (float under 1% of frame); the measured change 4.81 is the teen's own movement",
+   "light": "hard bright afternoon sun from the upper left behind camera, short crisp shadows on the sand; the brightest shot: 120-129 full frame (about 161 in the picture band); sand #cbbc96",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Score only (set/score.wav): faint outdoor ambience (-51 LUFS mean), a soft metallic creak at 0.00-0.10, the teen's strained grunt 1.50-1.97 (peak -24 dB) over the cut. No words.",
+   "render": "Picture shot, first + last frame: plate s01a (chin at the bar, from boards/s01a.jpg) -> plate s01b (sunk, head below the bar, from boards/s01b.jpg); 2 s clip trimmed to 1.70. No speech, no music in the clip; the grunt is in the score.",
+   "board": "boards/s01.jpg",
+   "n": 1,
+   "start": 0,
+   "end": 1.7,
+   "dur": 1.7,
+   "in": "start",
+   "brightness": {
+    "start": 120,
+    "mid": 121,
+    "end": 129
+   },
+   "colour": "#817860",
+   "change": 4.81,
+   "sound": "-51.18 LUFS mean, -23.67 peak",
+   "voice": "(non-verbal: grunt 1.50-1.97, in the score)",
+   "boards": [
+    "boards/s01a.jpg",
+    "boards/s01b.jpg"
+   ],
+   "brightness_picture_band": 161,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 161"
+  },
+  {
+   "action": "1.70-2.20 the teen hangs from a high bar behind (both arms up, centre right); 2.20-2.60 drops to his feet and steps forward into the gap between the trainer and the navy post; 2.60-3.85 stands facing the trainer, catching his breath; 3.85-5.62 asks 'Hey, can I get a six-pack quickly?' earnest and a little out of breath; 5.62-5.67 waits. The trainer stays still, back to camera, hands on hips, the whole shot.",
+   "setup": "TWO_SHOT",
+   "location": "loc_park_rig",
+   "cast": [
+    "char_trainer",
+    "char_teen"
+   ],
+   "wardrobe": "char_trainer: turquoise-teal racerback stringer tank (reads #347171 in the film's shade, deep armholes, thin straps), black training shorts; char_teen: faded heather-grey crew-neck tee (#5a6262 in shade) with one large faded charcoal round badge print centred on the chest (a perched bird inside a double ring, no words), dark charcoal athletic shorts, white socks, plain grey trainers",
+   "shot_size": "medium wide (two-shot over the trainer's back)",
+   "subject_in_frame": "Trainer from behind in the left foreground: shoulders x 14-53% (40% of width), head top y 27%, cut at mid-back by the lower bar. Teen mid-ground right of centre, facing camera: head centre x 62%, y 57%, head top y 51%, body x 52-73% (21% of width), cut at the waist. Rig: grey vertical post x 30-34%, navy-blue diagonal post from (x 66%, y 13%) to (x 80%, y 87%), grey post x 91-94%, high crossbar y 13-30%. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "eye level (~1.5 m), just behind the trainer's left shoulder, normal-long lens (~50 mm), moderate depth of field: teen sharp, trees soft but readable",
+   "camera_move": "locked off",
+   "light": "sun low behind the trees (backlight from the upper left/back): warm rim on the trainer's shoulders and the teen's hair, faces in open shade; 99-101 full frame (133 picture band); sky pale cyan #b8e5db",
+   "text": [],
+   "out": "hard cut",
+   "audio": "L01 (teen, on camera) 'Hey, can I get a six-pack quickly?' 3.85-5.62 (clip 3.79-5.75); the tail of the grunt 1.70-1.97 and room tone in the score. No music.",
+   "render": "Speaking shot, first frame + guide_audio: first frame = plate s02a (teen hanging, arms up; boards/s02a.jpg); guide_audio = set/dialogue_30.wav trimmed to [1.70, 5.67] (silence, then L01 from 2.09 s); 4 s clip trimmed to 3.97. Only the teen speaks; the trainer's back must not move. If the drop-and-step fails, start on plate s02b (standing) and lose the 0.9 s drop. End pose: lips parted, hands low.",
+   "board": "boards/s02.jpg",
+   "n": 2,
+   "start": 1.7,
+   "end": 5.67,
+   "dur": 3.97,
+   "in": "cut",
+   "brightness": {
+    "start": 101,
+    "mid": 99,
+    "end": 99
+   },
+   "colour": "#5b6556",
+   "change": 1.99,
+   "sound": "-32.51 LUFS mean, -22.13 peak",
+   "voice": "L01 (teen): Hey, can I get a six-pack quickly?",
+   "boards": [
+    "boards/s02a.jpg",
+    "boards/s02b.jpg"
+   ],
+   "brightness_picture_band": 133,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 133"
+  },
+  {
+   "action": "5.67-8.05 a 2.38 s deadpan beat: he looks at the teen (eyeline just right of lens), lips pressed, considering; a slow nod and a polite smile builds; 8.05-8.42 'Perfect.' with a small nod; 8.42-9.03 a beat; 9.03-10.08 'That is a clear and achieva-' in a warm, measured, customer-service voice, small head tilts. Hands stay on his hips throughout.",
+   "setup": "TRAINER_MED",
+   "location": "loc_park_field (behind him: tree left, rig posts right, field and sky)",
+   "cast": [
+    "char_trainer"
+   ],
+   "wardrobe": "char_trainer: turquoise-teal racerback stringer tank (reads #347171 in the film's shade, deep armholes, thin straps), black training shorts",
+   "shot_size": "medium (mid-chest up)",
+   "subject_in_frame": "Trainer centred: face centre x 50%, y 33%, head top y 18%, chin y 47%; shoulders x 15-70% (54% of width); hands on hips at the lower corners, elbows out; cut at mid-chest by the lower bar. Behind: large tree x 0-10%, leaves, two dark rig posts x 73-77% and 83-89%, grass field and sky right of him. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "eye level, near-frontal from just right of the teen's eyeline, normal-long lens (~50-65 mm), medium-shallow depth of field (background soft but readable)",
+   "camera_move": "locked off, faint handheld float",
+   "light": "warm late sun from frame right behind him (three-quarter back): rim on his shoulder and cheek, soft bounce fill on the face; 99-100 full frame (133 picture band)",
+   "text": [],
+   "out": "hard cut (mid-word: 'achievable' and 'goal.' continue over the teen's close)",
+   "audio": "L02 'Perfect.' 8.05-8.42; L03 'That is a clear and achievable goal.' 9.03-10.64 ('goal.' 10.38-10.64 lands over s04). Room tone only, no music.",
+   "render": "Speaking shot, first frame + guide_audio: first frame = the TRAINER_MED plate (boards/s03.jpg composition); guide_audio = set/dialogue_30.wav [5.67, 10.08] (2.38 s silence, 'Perfect.' at 2.38, L03 from 3.36); 5 s clip trimmed to 4.41. Mouth closed and still in the silent beat. Shots 3 and 5 share this plate.",
+   "board": "boards/s03.jpg",
+   "n": 3,
+   "start": 5.67,
+   "end": 10.08,
+   "dur": 4.4,
+   "in": "cut",
+   "brightness": {
+    "start": 99,
+    "mid": 100,
+    "end": 100
+   },
+   "colour": "#5f6549",
+   "change": 1.69,
+   "sound": "-35.81 LUFS mean, -21.92 peak",
+   "voice": "L02 + L03 (trainer): Perfect. / That is a clear and achievable goal.",
+   "brightness_picture_band": 133,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 133"
+  },
+  {
+   "action": "Reaction hold: the teen listens, blank, eyes a little narrowed, one slow blink at about 11.0, lips pressed; a tiny chin lift on 'confidence' (11.4). He does not speak.",
+   "setup": "TEEN_CU",
+   "location": "loc_park_rig (trees behind, melted to bokeh)",
+   "cast": [
+    "char_teen"
+   ],
+   "wardrobe": "char_teen: faded heather-grey crew-neck tee (#5a6262 in shade) with one large faded charcoal round badge print centred on the chest (a perched bird inside a double ring, no words), dark charcoal athletic shorts, white socks, plain grey trainers (only the collar shows)",
+   "shot_size": "close-up",
+   "subject_in_frame": "Teen's head right of centre: face centre x 51%, y 55%, hair top touching the top bar (y 14%), chin y 72%, head with hair x 39-72% (33% of width); face turned three-quarter to frame left, eyeline off left; neck and tee collar at the lower bar. Background: bokeh of sunlit leaves, sky gaps upper left. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "eye level, long lens (~85-100 mm), very shallow depth of field (background fully defocused)",
+   "camera_move": "locked off, faint float",
+   "light": "backlit by the sun upper right: bright rim and halo on the curls and right ear, face in soft shade; the darkest dialogue shots: 76-77 full frame (102 picture band)",
+   "text": [],
+   "out": "hard cut (mid-line: 'built in the gym' continues on the trainer)",
+   "audio": "Off-screen trainer: 'goal.' 10.38-10.64 (end of L03); L04 'But confidence isn't just built' 11.16-12.59, continuing over the cut ('in the gym.' to 13.06). Room tone.",
+   "render": "Reaction shot (no speech): first + last frame both from the TEEN_CU plate (the last with eyes mid-blink is fine); 3 s clip trimmed to 2.33, mouth closed; the trainer's lines are laid over it in the edit. Shots 4 and 6 share this plate.",
+   "board": "boards/s04.jpg",
+   "n": 4,
+   "start": 10.08,
+   "end": 12.41,
+   "dur": 2.34,
+   "in": "cut",
+   "brightness": {
+    "start": 76,
+    "mid": 77,
+    "end": 77
+   },
+   "colour": "#4b4e31",
+   "change": 2.85,
+   "sound": "-27.36 LUFS mean, -21.62 peak",
+   "voice": "(none on camera; trainer off-screen)",
+   "brightness_picture_band": 102,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 102"
+  },
+  {
+   "action": "12.41-13.06 '...in the gym.' (end of L04); 13.06-13.61 a beat with a bright smile; 13.61-14.89 'Try {PITCH_PRODUCT}.' upbeat, upselling; 14.89-15.13 a beat; 15.13-17.05 'The insoles that add one vertical inch of-' with the same warm smile and small head movements. Hands stay on hips.",
+   "setup": "TRAINER_MED",
+   "location": "loc_park_field",
+   "cast": [
+    "char_trainer"
+   ],
+   "wardrobe": "char_trainer: turquoise-teal racerback stringer tank (reads #347171 in the film's shade, deep armholes, thin straps), black training shorts",
+   "shot_size": "medium (mid-chest up)",
+   "subject_in_frame": "Same as shot 3 (same setup and plate): face centre x 50%, y 33%, shoulders x 15-70%, hands on hips at the lower corners. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "as shot 3: eye level, near-frontal, normal-long lens (~50-65 mm)",
+   "camera_move": "locked off, faint handheld float",
+   "light": "as shot 3; 97 full frame (130 picture band)",
+   "text": [],
+   "out": "hard cut (mid-line: 'height' lands on the teen's close)",
+   "audio": "L04 tail 'in the gym.' 12.59-13.06; L05 'Try {PITCH_PRODUCT}.' 13.61-14.89 (product name 13.83-14.89); L06 'The insoles that add one vertical inch of height' 15.13-17.56 ('height' over s06). Room tone.",
+   "render": "Speaking shot, first frame + guide_audio: first frame = the TRAINER_MED plate; guide_audio = set/dialogue_30.wav [12.41, 17.05]; 5 s clip trimmed to 4.64.",
+   "board": "boards/s05.jpg",
+   "n": 5,
+   "start": 12.41,
+   "end": 17.05,
+   "dur": 4.64,
+   "in": "cut",
+   "brightness": {
+    "start": 97,
+    "mid": 97,
+    "end": 97
+   },
+   "colour": "#5b6347",
+   "change": 1.43,
+   "sound": "-26.51 LUFS mean, -22.59 peak",
+   "voice": "L04 tail + L05 + L06 (trainer): ...in the gym. / Try {PITCH_PRODUCT}. / The insoles that add one vertical inch of height",
+   "brightness_picture_band": 130,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 130"
+  },
+  {
+   "action": "Reaction hold: the teen takes in 'height' and 'short kings': eyes drift, a small lip press and swallow at 'short kings' (18.2-18.9), otherwise still. He does not speak.",
+   "setup": "TEEN_CU",
+   "location": "loc_park_rig (bokeh)",
+   "cast": [
+    "char_teen"
+   ],
+   "wardrobe": "char_teen: faded heather-grey crew-neck tee (#5a6262 in shade) with one large faded charcoal round badge print centred on the chest (a perched bird inside a double ring, no words), dark charcoal athletic shorts, white socks, plain grey trainers (only the collar shows)",
+   "shot_size": "close-up",
+   "subject_in_frame": "Same as shot 4 (same setup and plate): face centre x 51%, y 55%, head x 39-72%, three-quarter to frame left. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "as shot 4: eye level, long lens, very shallow depth of field",
+   "camera_move": "locked off, faint float",
+   "light": "as shot 4: backlit halo on the curls; 76-77 full frame (102 picture band)",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Off-screen trainer: 'height' 17.30-17.56 (end of L06); L07 'and help short kings stand tall.' 17.92-19.65. Room tone.",
+   "render": "Reaction shot (no speech): first + last frame from the TEEN_CU plate; 3 s clip trimmed to 2.67, mouth closed.",
+   "board": "boards/s06.jpg",
+   "n": 6,
+   "start": 17.05,
+   "end": 19.72,
+   "dur": 2.67,
+   "in": "cut",
+   "brightness": {
+    "start": 76,
+    "mid": 77,
+    "end": 77
+   },
+   "colour": "#4b4e2f",
+   "change": 2.86,
+   "sound": "-26.16 LUFS mean, -22.01 peak",
+   "voice": "(none on camera; trainer off-screen)",
+   "brightness_picture_band": 102,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 102"
+  },
+  {
+   "action": "19.72-20.10 a smile; 20.10-22.78 'Use code {PROMO_CODE} for big discounts.' with a bright salesman smile, eyes to the teen just off lens; 22.78-25.53 he freezes in a wide, toothy grin and holds it 2.75 s without moving while the music hits (22.97) and super 1 appears (22.93).",
+   "setup": "TRAINER_CU",
+   "location": "loc_park_rig (foliage behind, bokeh)",
+   "cast": [
+    "char_trainer"
+   ],
+   "wardrobe": "char_trainer: turquoise-teal racerback stringer tank (reads #347171 in the film's shade, deep armholes, thin straps), black training shorts (only the straps show)",
+   "shot_size": "close-up (head and top of the shoulders)",
+   "subject_in_frame": "Trainer's face centred: face centre x 50%, y 47%, head top at the top bar (y 13%), chin y 76%, head x 36-64% (28% of width); tank straps at the lower bar. Background: green-yellow leaf bokeh, a pale diagonal rig post soft on the right (x 78-95%). Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "eye level, frontal (a touch to his left), long lens (~85 mm), shallow depth of field",
+   "camera_move": "locked off",
+   "light": "warm sun from behind right: rim on the head and right ear, face evenly lit by bounce; 93 full frame (125 picture band)",
+   "text": [
+    {
+     "id": "super_1",
+     "words": "There is a time and place for {SUPER_TOPIC}.",
+     "default": "There is a time and place for ads.",
+     "file": "set/ui_super_1.png",
+     "in": 22.933,
+     "out": 25.53,
+     "position": "one line centred horizontally, baseline y 372 of 720 (51.7%), x 26-74%",
+     "size": "cap height 30 px (4.1% of frame height); 604 px wide (47% of width)",
+     "animation": "hard on at 22.933 (one frame before the music downbeat), hard off on the cut"
+    }
+   ],
+   "out": "hard cut on the second bar (25.53)",
+   "audio": "L08 'Use code {PROMO_CODE} for big discounts.' 20.10-22.78 (code 20.58-21.47); the music enters on a downbeat hit at 22.97 (-21 dB) and plays on (score, about -26 LUFS).",
+   "render": "Speaking shot, first frame + guide_audio: first frame = the TRAINER_CU plate; guide_audio = set/dialogue_30.wav [19.72, 25.53] (L08 then 2.75 s of silence = the grin hold); 6 s clip trimmed to 5.81. Ask for a still, wide grin after the line (lips parted in a smile, no talking). Super 1 composited in post from set/ui_super_1.png.",
+   "board": "boards/s07.jpg",
+   "n": 7,
+   "start": 19.72,
+   "end": 25.53,
+   "dur": 5.81,
+   "in": "cut",
+   "brightness": {
+    "start": 93,
+    "mid": 93,
+    "end": 93
+   },
+   "colour": "#5e5e39",
+   "change": 2.31,
+   "sound": "-28.04 LUFS mean, -21.23 peak",
+   "voice": "L08 (trainer): Use code {PROMO_CODE} for big discounts.",
+   "brightness_picture_band": 125,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 125"
+  },
+  {
+   "action": "25.53-26.10 the teen looks down at the phone in both hands at his waist, thumb on the screen; 26.10-26.40 lifts his eyes to look ahead, just left of lens; 26.40-28.23 holds a flat, deadpan stare (a slow blink about 27.3), phone lowered. No speech.",
+   "setup": "TEEN_MED",
+   "location": "loc_park_rig (trees, sky, rig posts)",
+   "cast": [
+    "char_teen"
+   ],
+   "wardrobe": "char_teen: faded heather-grey crew-neck tee (#5a6262 in shade) with one large faded charcoal round badge print centred on the chest (a perched bird inside a double ring, no words), dark charcoal athletic shorts, white socks, plain grey trainers; holds a plain black smartphone (no logo)",
+   "shot_size": "medium (waist up)",
+   "subject_in_frame": "Teen centred: head centre x 52%, y 25%, head top y 14%, shoulders x 36-66% (30% of width), cut at the waist by the lower bar; the badge print centred on his chest at y 66%; phone in both hands at the waist (x 57-63%, y 79-82%). Navy post on the left edge (x 0-7%), grey post right (x 70-73%), trees and pale sky behind. Letterboxed 2.39:1: compose inside the 1280x535 picture band (rows 93-627, y 13-87% of the frame); black bars above and below.",
+   "camera": "eye level, frontal, normal lens (~40-50 mm), medium depth of field",
+   "camera_move": "locked off",
+   "light": "sun behind him upper right: rim on hair and shoulders, soft frontal fill; 94-95 full frame (127 picture band)",
+   "text": [
+    {
+     "id": "super_2",
+     "words": "{SUPER_PLACE} should not be one of them.",
+     "default": "Your conversations with AI should not be one of them.",
+     "file": "set/ui_super_2.png",
+     "in": 25.53,
+     "out": 28.23,
+     "position": "one line centred horizontally, baseline y 372 of 720 (51.7%), x 11-89% (crosses his chest)",
+     "size": "cap height 30 px (4.1% of frame height); 996 px wide (78% of width)",
+     "animation": "hard on and off with the shot"
+    }
+   ],
+   "out": "hard cut on the third bar (28.23)",
+   "audio": "Music only (score, about -27 LUFS); no speech, no effects.",
+   "render": "Picture shot, first + last frame: plate s08a (eyes down at the phone; boards/s08a.jpg) -> plate s08b (eyes up, flat stare; boards/s08b.jpg); 3 s clip trimmed to 2.70; no speech. Super 2 composited in post from set/ui_super_2.png.",
+   "board": "boards/s08.jpg",
+   "n": 8,
+   "start": 25.53,
+   "end": 28.23,
+   "dur": 2.7,
+   "in": "cut",
+   "brightness": {
+    "start": 95,
+    "mid": 95,
+    "end": 94
+   },
+   "colour": "#566051",
+   "change": 2.58,
+   "sound": "-26.85 LUFS mean, -21.09 peak",
+   "voice": "(none)",
+   "boards": [
+    "boards/s08a.jpg",
+    "boards/s08b.jpg"
+   ],
+   "brightness_picture_band": 127,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 127"
+  },
+  {
+   "action": "End card holds 1.80 s, static, cut in hard on the third bar.",
+   "setup": "END_CARD",
+   "location": "graphic",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "graphic card (full frame)",
+   "subject_in_frame": "A centred lock-up: {BRAND_MARK} (62-79 px) left of the {BRAND} wordmark, together x 35-65% (30% of width), wordmark cap height 65 px (9% of frame height), baseline y 362 (50.3%); {TAGLINE} below, bold, cap height 30 px, baseline y 422 (58.6%), x 40-63%. The whole block is centred on the frame (x 50%, y 50%). Letterbox bars stay on.",
+   "camera": "none (graphic)",
+   "camera_move": "static, no animation",
+   "light": "warm clay gradient field (slot {BRAND_COLOUR}): darkest at the left edge (#773417), brightest low right of centre (#b8653c), top right #964826; 72 full frame (97 picture band)",
+   "text": [
+    {
+     "id": "end_wordmark",
+     "words": "{BRAND_MARK} {BRAND}",
+     "default": "a cream disc + 'Wren'",
+     "file": "set/ui_end_card.jpg",
+     "in": 28.23,
+     "out": 30.0,
+     "position": "centred, baseline y 50.3%",
+     "size": "cap height 65 px; mark + wordmark 386 px wide (30%)",
+     "animation": "none"
+    },
+    {
+     "id": "end_tagline",
+     "words": "{TAGLINE}",
+     "default": "Think it through.",
+     "file": "set/ui_end_card.jpg",
+     "in": 28.23,
+     "out": 30.0,
+     "position": "centred under the wordmark, baseline y 58.6%",
+     "size": "bold serif, cap height 30 px, about 300 px wide (23%)",
+     "animation": "none"
+    }
+   ],
+   "out": "end of film (hard out at 30.00)",
+   "audio": "Music: a sung male vocal hook 'What's the difference between me and you?' 28.62-29.66 (in the score), the track runs out with the picture.",
+   "render": "Motion graphic drawn in code: set/ui_end_card.jpg at the default slots, or redraw with the brand's wordmark, tagline, mark and colour at the same sizes and places (set/ui.json). No video model.",
+   "board": "boards/s09.jpg",
+   "n": 9,
+   "start": 28.23,
+   "end": 30.03,
+   "dur": 1.8,
+   "in": "cut",
+   "brightness": {
+    "start": 72,
+    "mid": 72,
+    "end": 72
+   },
+   "colour": "#753d23",
+   "change": 0.23,
+   "sound": "-23.66 LUFS mean, -21.22 peak",
+   "voice": "(sung lyric in the score)",
+   "brightness_picture_band": 97,
+   "brightness_note": "start / mid / end on the full 1280x720 frame including the black bars; picture band alone about 97"
+  }
+ ],
+ "sound": {
+  "arc": [
+   {
+    "t": "0.00-1.50",
+    "what": "quiet outdoor ambience (-51 LUFS), a faint metallic creak at 0.00-0.10"
+   },
+   {
+    "t": "1.50-1.97",
+    "what": "the teen's strained grunt as he gives up the pull-up (peak -24 dB), across the cut into shot 2"
+   },
+   {
+    "t": "1.97-22.84",
+    "what": "dialogue over plain room tone (-48 dBFS floor), no music and no effects: the question 3.85-5.62, 2.43 s of silence (5.62-8.05), then the trainer's phrases with 0.3-0.6 s pauses"
+   },
+   {
+    "t": "22.97-30.03",
+    "what": "music enters hard on a downbeat hit at 22.97 (92.25 bpm, beat 0.650 s, bar 2.602 s; downbeats 22.97, 25.58, 28.18): a mid-tempo hip-hop track, sparse plucked sample over drums, about -26 LUFS; a sung male vocal hook 'What's the difference between me and you?' 28.62-29.66 over the end card; it plays out with the picture"
+   }
+  ],
+  "speech": "Two voices, all on-location dialogue (no voice-over): the teen's one line (L01) on camera; the trainer's seven lines (L02-L08), on camera in shots 3, 5, 7 and heard off-screen over the teen's closes in shots 4 and 6, where lines carry across cuts. Delivery: the teen earnest and breathy; the trainer warm, measured, upbeat, a customer-service read that never changes tone as it turns into an ad.",
+  "timing": "The comedy is timing: hold the 2.38 s silence after the question (5.67-8.05) on the trainer; keep every pause between his phrases (see set/lines.json); the reaction closes are silent holds; the music lands exactly when the code line ends (22.97) and the grin freezes.",
+  "mix": "Dialogue up front at about -27 LUFS short-term, room tone under it, no music until 22.97; the music then sits at about -26 LUFS with nothing over it.",
+  "files": "set/score.wav = the soundtrack with the dialogue replaced by room tone (the grunt, ambience and music kept); set/lines/L01-L08 = the dialogue; set/dialogue_30.wav and set/dialogue_15.wav = the lines alone on each cut's timeline (guide audio for speaking shots)."
+ },
+ "look": {
+  "grade": "warm golden-hour exterior, teal-and-amber: foliage yellow-olive (#798655), sky pale cyan (#b8e5db), sand beige (#cbbc96), skin warm (trainer #8c6244, teen #9a715d), the trainer's tank teal (#347171 in shade); slightly lifted blacks, soft filmic contrast, gentle halation on backlit hair and leaves; no haze, no smoke",
+  "aspect": "letterboxed 2.39:1 inside 1280x720 on every shot including the end card: black bars rows 0-92 and 628-719",
+  "brightness": "0-255. On the full frame with bars (bin/dissect): top-down sand 120-129, two-shot and trainer mediums 93-101, trainer close 93, teen medium 94-95, teen closes 76-77 (darkest dialogue shots), end card 72. Inside the picture band alone: 161 / 125-133 / 125 / 127 / 102 / 97. Plates are drawn without bars, so match the picture-band numbers.",
+  "contrast": "soft; nothing clips except small sky patches; shadows open",
+  "light": "one sunny late afternoon; sun low behind the subjects (back or three-quarter back) in every dialogue shot, faces in soft open shade with warm rims on hair and shoulders; shot 1 is the only top-lit shot (hard sun on sand)",
+  "depth_of_field": "two-shot and mediums moderate (trees soft but readable); closes very shallow (leaf bokeh); shot 1 deep",
+  "grain": "fine film-like grain, no sharpening",
+  "camera": "every shot locked off on sticks with at most a faint float; no camera moves. The comedy is in held frames.",
+  "pace": "9 shots, average 3.34 s, median 2.70 s, 15.98 cuts per minute; cuts often fall mid-sentence (the line carries over a reaction close)"
+ },
+ "text_style": {
+  "typeface": "contemporary book serif, moderate contrast, bracketed serifs: set/font_serif.ttf (Source Serif 4, OFL licence in set/font_serif_OFL.txt; variable: supers wght 400 opsz 36, end-card wordmark wght 450 opsz 60, tagline wght 700 opsz 36)",
+  "case": "sentence case with a full stop",
+  "size": "supers: 43 px font, cap height 29-30 px (4.1% of frame height, 5.5% of the picture band); super 1 604 px wide (47%), super 2 996 px (78%). End card: wordmark cap 65 px, tagline cap 30 px.",
+  "tracking": "normal (0)",
+  "colour": "warm cream #EFE8D8 on everything; no shadow, no box, no outline",
+  "position": "supers: one line, centred horizontally, baseline y 372 of 720 (51.7%), the optical centre of the picture band, over the face/chest",
+  "animation": "none: supers cut on and off hard. Super 1 comes on mid-shot at 22.933, one frame before the music's first downbeat (22.974); super 2 cuts on and off with shot 8; the end card cuts in on the third bar.",
+  "layouts": "set/ui_super_1.png, set/ui_super_2.png (transparent overlays at full size), set/ui_end_card.jpg, times in set/ui.json"
+ },
+ "set": {
+  "char_teen": {
+   "files": [
+    "set/char_teen_sheet.jpg"
+   ],
+   "fixes": "The user: an invented skinny teen, about 17, very slim and narrow-shouldered, fair skin, thick tousled curly dark-brown chin-length hair; faded heather-grey tee with one large centred charcoal round badge print (a perched bird in a double ring, no words), charcoal shorts. Earnest, deadpan."
+  },
+  "char_trainer": {
+   "files": [
+    "set/char_trainer_sheet.jpg"
+   ],
+   "fixes": "The expert who personifies the AI: an invented, very muscular man about 28, warm medium-brown skin, short black hair with a skin fade and line-up, short boxed beard; teal racerback stringer tank, black shorts. Big, friendly, practised salesman smile; stands with hands on hips."
+  },
+  "loc_park_rig": {
+   "files": [
+    "set/loc_park_rig.jpg"
+   ],
+   "fixes": "The outdoor calisthenics rig: galvanised grey posts, one navy-blue diagonal post with worn paint, high bars, beige sand, big eucalyptus-like trees, pale cyan sky, a low pale building far right. Late-afternoon backlight; picture brightness 133."
+  },
+  "loc_park_field": {
+   "files": [
+    "set/loc_park_field.jpg"
+   ],
+   "fixes": "The reverse direction (behind the trainer in shots 3 and 5): mown grass field, tree line, far bins and bleachers, faint hills, a big pale-trunked tree left, rig posts right. Picture brightness 130."
+  },
+  "loc_sand_pit_high": {
+   "files": [
+    "set/loc_sand_pit_high.jpg"
+   ],
+   "fixes": "The sand under the rig seen from above (shot 1's ground): beige sand with footprints, black bars, grey posts, long soft shadows. Picture brightness 161."
+  },
+  "voice_teen": {
+   "files": [
+    "set/voice_teen.wav"
+   ],
+   "fixes": "The teen's timbre: all he says (the grunt 1.45-2.00 and L01), 2.5 s; there is no more."
+  },
+  "voice_trainer": {
+   "files": [
+    "set/voice_trainer.wav"
+   ],
+   "fixes": "The trainer's timbre and read: 11.2 s of his lines without the product name or code (source 7.99-13.16, 15.07-19.75, 21.50-22.84)."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L08.wav"
+   ],
+   "fixes": "Every spoken line, one clip each, cut from the source dialogue at phrase boundaries (0.06 s lead-in, 10 ms fades, 48 kHz mono) with word times; the product name in L05 and the code in L08 are muted to room tone (fill those windows). Guide audio and timing target."
+  },
+  "dialogue_30": {
+   "files": [
+    "set/dialogue_30.wav"
+   ],
+   "fixes": "All eight lines placed on the 30 s timeline, nothing else: trim [shot start, shot end] for a speaking shot's guide_audio."
+  },
+  "dialogue_15": {
+   "files": [
+    "set/dialogue_15.wav"
+   ],
+   "fixes": "L01, L02, L04, L05 placed on the 15 s timeline."
+  },
+  "score": {
+   "files": [
+    "set/score.wav"
+   ],
+   "fixes": "The soundtrack, 30.12 s, 48 kHz stereo, with the dialogue (3.80-22.84) replaced by looped room tone; keeps the ambience, the grunt (1.50-1.97) and the music (22.97-30.03)."
+  },
+  "score_30": {
+   "files": [
+    "set/score_30.wav"
+   ],
+   "fixes": "score.wav 0-30.00 (cut30.score)."
+  },
+  "score_15": {
+   "files": [
+    "set/score_15.wav"
+   ],
+   "fixes": "score.wav 15.00-30.00: room tone, then the music from its first downbeat at 7.97, untouched to the end (cut15.score)."
+  },
+  "ui_super_1": {
+   "files": [
+    "set/ui_super_1.png"
+   ],
+   "fixes": "Super 1 at its exact size and place (transparent 1280x720 overlay), default words."
+  },
+  "ui_super_2": {
+   "files": [
+    "set/ui_super_2.png"
+   ],
+   "fixes": "Super 2 at its exact size and place (transparent 1280x720 overlay), default words."
+  },
+  "ui_end_card": {
+   "files": [
+    "set/ui_end_card.jpg"
+   ],
+   "fixes": "The generic end card at full size with bars: gradient field, {BRAND_MARK} + {BRAND} wordmark + {TAGLINE} at the measured sizes (defaults: cream disc, 'Wren', 'Think it through.')."
+  },
+  "ui": {
+   "files": [
+    "set/ui.json"
+   ],
+   "fixes": "Positions, sizes, colours and in/out times of every graphic in both cuts."
+  },
+  "font_serif": {
+   "files": [
+    "set/font_serif.ttf"
+   ],
+   "fixes": "The serif for supers and end card (OFL)."
+  }
+ },
+ "slots": {
+  "BRAND": {
+   "default": "Wren",
+   "where": "end-card wordmark (shot 9); the AI assistant the supers speak for",
+   "swap": "the advertised AI product's name, set in the end-card serif at cap height 65 px"
+  },
+  "BRAND_MARK": {
+   "default": "a plain cream disc, 62 px, 22 px left of the wordmark",
+   "swap": "the brand's own small mark, same size and place, cream"
+  },
+  "TAGLINE": {
+   "default": "Think it through.",
+   "where": "under the wordmark",
+   "swap": "2-3 words, bold serif, cap height 30 px"
+  },
+  "BRAND_COLOUR": {
+   "default": "warm clay gradient (#773417 edge to #b8653c glow, picture brightness 97)",
+   "where": "end-card field",
+   "swap": "the brand's colour as a soft radial gradient, glow low right of centre"
+  },
+  "SUPER_TOPIC": {
+   "default": "ads",
+   "where": "super 1: 'There is a time and place for {SUPER_TOPIC}.'",
+   "swap": "the thing the brand keeps out of your way (1-2 words)"
+  },
+  "SUPER_PLACE": {
+   "default": "Your conversations with AI",
+   "where": "super 2: '{SUPER_PLACE} should not be one of them.'",
+   "swap": "the moment that should stay free of it (3-5 words)"
+  },
+  "QUESTION": {
+   "default": "Hey, can I get a six-pack quickly?",
+   "where": "L01, the teen, 1.77 s",
+   "swap": "the user's innocent request: a goal that wants a shortcut; same length (8-9 syllables)"
+  },
+  "PITCH_PRODUCT": {
+   "default": "LiftUp Max",
+   "where": "L05 'Try {PITCH_PRODUCT}.', window 13.83-14.89 (1.06 s, 3 syllables); muted in set/lines/L05.wav",
+   "swap": "an invented, absurd product that preys on the user's insecurity; 3 syllables"
+  },
+  "PROMO_CODE": {
+   "default": "STANDTALL10",
+   "where": "L08 'Use code {PROMO_CODE} for big discounts.', window 20.58-21.47 (0.89 s, said 'stand-tall-ten'); muted in set/lines/L08.wav",
+   "swap": "a jokey code made of slang + a number, 3-4 syllables"
+  },
+  "pitch_lines": {
+   "default": "L02-L08 (see set/lines.json)",
+   "swap": "keep the shape and the per-line durations: affirm the goal (L02 'Perfect.', L03), pivot with a 'but' that reframes the need (L04), name the product (L05), one absurd claim in two halves across a reaction cut (L06, L07), code + discount (L08)"
+  },
+  "cast": {
+   "default": "char_teen (the user), char_trainer (the AI as a person)",
+   "swap": "a small, earnest user and a big, polished expert who looks like the right person for the question"
+  },
+  "places": {
+   "default": "loc_park_rig, loc_park_field, loc_sand_pit_high",
+   "swap": "any everyday place where you'd ask that expert, shot in one natural light (gym, kitchen, garage, salon)"
+  },
+  "music": {
+   "default": "the source track in set/score.wav",
+   "swap": "a mid-tempo (~92 bpm) track that enters hard on a downbeat when the code line ends, with a vocal hook over the end card"
+  }
+ },
+ "cut30": {
+  "duration": 30.0,
+  "fps": 29.97,
+  "average_shot": 3.33,
+  "median_shot": 2.7,
+  "arc": "Hook (0-5.67): a skinny teen fails a pull-up, drops and asks the trainer 'Hey, can I get a six-pack quickly?'. Middle (5.67-22.93): the trainer's 2.38 s deadpan beat, then a friendly assistant-style answer ('Perfect. That is a clear and achievable goal.') that slides phrase by phrase into an ad read ('But confidence isn't just built in the gym. Try {PITCH_PRODUCT}. The insoles that add one vertical inch of height and help short kings stand tall. Use code {PROMO_CODE} for big discounts.'), intercut with the teen's silent closes. Payoff (22.93-28.23): the music hits on the trainer's frozen salesman grin under super 1; super 2 on the teen staring flatly with his phone. End card (28.23-30.00).",
+  "note": "The source is 30.03 s, so cut30 is the source shot for shot, trimmed 0.03 s at the end.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0,
+    "end": 1.7,
+    "dur": 1.7,
+    "src": [
+     0,
+     1.7
+    ],
+    "setup": "HIGH_BAR",
+    "board": "boards/s01.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 1.7,
+    "end": 5.67,
+    "dur": 3.97,
+    "src": [
+     1.7,
+     5.67
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s02.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 5.67,
+    "end": 10.08,
+    "dur": 4.41,
+    "src": [
+     5.67,
+     10.08
+    ],
+    "setup": "TRAINER_MED",
+    "board": "boards/s03.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 10.08,
+    "end": 12.41,
+    "dur": 2.33,
+    "src": [
+     10.08,
+     12.41
+    ],
+    "setup": "TEEN_CU",
+    "board": "boards/s04.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 5,
+    "from": 5,
+    "start": 12.41,
+    "end": 17.05,
+    "dur": 4.64,
+    "src": [
+     12.41,
+     17.05
+    ],
+    "setup": "TRAINER_MED",
+    "board": "boards/s05.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 6,
+    "from": 6,
+    "start": 17.05,
+    "end": 19.72,
+    "dur": 2.67,
+    "src": [
+     17.05,
+     19.72
+    ],
+    "setup": "TEEN_CU",
+    "board": "boards/s06.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 7,
+    "from": 7,
+    "start": 19.72,
+    "end": 25.53,
+    "dur": 5.81,
+    "src": [
+     19.72,
+     25.53
+    ],
+    "setup": "TRAINER_CU",
+    "board": "boards/s07.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 8,
+    "from": 8,
+    "start": 25.53,
+    "end": 28.23,
+    "dur": 2.7,
+    "src": [
+     25.53,
+     28.23
+    ],
+    "setup": "TEEN_MED",
+    "board": "boards/s08.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 9,
+    "from": 9,
+    "start": 28.23,
+    "end": 30.0,
+    "dur": 1.77,
+    "src": [
+     28.23,
+     30.0
+    ],
+    "setup": "END_CARD",
+    "board": "boards/s09.jpg",
+    "change": "trimmed to end at 30.00 (0.03 s shorter)"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Hey, can I get a six-pack quickly?",
+    "speaker": "teen",
+    "start": 3.79,
+    "end": 5.75,
+    "voice": [
+     3.85,
+     5.62
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": false,
+    "placement": "on camera, s02 (two-shot; the teen faces camera)"
+   },
+   {
+    "id": "L02",
+    "words": "Perfect.",
+    "speaker": "trainer",
+    "start": 7.99,
+    "end": 8.52,
+    "voice": [
+     8.05,
+     8.42
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "placement": "on camera, s03"
+   },
+   {
+    "id": "L03",
+    "words": "That is a clear and achievable goal.",
+    "speaker": "trainer",
+    "start": 8.97,
+    "end": 10.74,
+    "voice": [
+     9.03,
+     10.64
+    ],
+    "clip": "set/lines/L03.wav",
+    "in_score": false,
+    "placement": "on camera s03; the last word 'goal.' runs over the cut into s04 (off-screen)"
+   },
+   {
+    "id": "L04",
+    "words": "But confidence isn't just built in the gym.",
+    "speaker": "trainer",
+    "start": 11.1,
+    "end": 13.16,
+    "voice": [
+     11.16,
+     13.06
+    ],
+    "clip": "set/lines/L04.wav",
+    "in_score": false,
+    "placement": "off-screen over the teen close s04 until 12.41, then on camera s05 ('in the gym.')"
+   },
+   {
+    "id": "L05",
+    "words": "Try {PITCH_PRODUCT}.",
+    "speaker": "trainer",
+    "start": 13.55,
+    "end": 14.99,
+    "voice": [
+     13.61,
+     14.89
+    ],
+    "clip": "set/lines/L05.wav",
+    "in_score": false,
+    "placement": "on camera, s05"
+   },
+   {
+    "id": "L06",
+    "words": "The insoles that add one vertical inch of height",
+    "speaker": "trainer",
+    "start": 15.07,
+    "end": 17.66,
+    "voice": [
+     15.13,
+     17.56
+    ],
+    "clip": "set/lines/L06.wav",
+    "in_score": false,
+    "placement": "on camera s05 to 'of' (17.28); 'height' runs over the cut into the teen close s06 (off-screen)"
+   },
+   {
+    "id": "L07",
+    "words": "and help short kings stand tall.",
+    "speaker": "trainer",
+    "start": 17.86,
+    "end": 19.75,
+    "voice": [
+     17.92,
+     19.65
+    ],
+    "clip": "set/lines/L07.wav",
+    "in_score": false,
+    "placement": "off-screen over the teen close s06"
+   },
+   {
+    "id": "L08",
+    "words": "Use code {PROMO_CODE} for big discounts.",
+    "speaker": "trainer",
+    "start": 20.04,
+    "end": 22.84,
+    "voice": [
+     20.1,
+     22.78
+    ],
+    "clip": "set/lines/L08.wav",
+    "in_score": false,
+    "placement": "on camera, s07 (tight close)"
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "note": "one segment, no joins; music enters at 22.97 (downbeats 22.97, 25.58, 28.18)",
+   "sections": [
+    {
+     "t": "0-22.97",
+     "what": "ambience, grunt 1.50-1.97, room tone under the dialogue"
+    },
+    {
+     "t": "22.97-30.00",
+     "what": "music; sung hook 28.62-29.66"
+    }
+   ]
+  },
+  "text": [
+   {
+    "id": "super_1",
+    "words": "There is a time and place for {SUPER_TOPIC}.",
+    "in": 22.933,
+    "out": 25.53,
+    "file": "set/ui_super_1.png"
+   },
+   {
+    "id": "super_2",
+    "words": "{SUPER_PLACE} should not be one of them.",
+    "in": 25.53,
+    "out": 28.23,
+    "file": "set/ui_super_2.png"
+   }
+  ],
+  "end_card": {
+   "in": 28.23,
+   "out": 30.0,
+   "file": "set/ui_end_card.jpg",
+   "what": "{BRAND_MARK} {BRAND} / {TAGLINE} on {BRAND_COLOUR}"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "fps": 29.97,
+  "average_shot": 2.14,
+  "median_shot": 2.15,
+  "arc": "Hook (0-2.15): the teen's question. Beat (2.15-3.81): the trainer's 1.16 s deadpan pause, then 'Perfect.'. One proof (3.81-7.93): the slide into the pitch: 'But confidence isn't just built in the gym' over the teen's silent close, then on the trainer 'Try {PITCH_PRODUCT}.'. Payoff (7.93-13.23): the music hits on the trainer's frozen grin under super 1, super 2 on the teen. End card (13.23-15.00). The last 7.07 s are the 30 s spot's ending untouched, so the music runs from its first downbeat to the end.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 2,
+    "start": 0.0,
+    "end": 2.15,
+    "dur": 2.15,
+    "src": [
+     3.52,
+     5.67
+    ],
+    "setup": "TWO_SHOT",
+    "board": "boards/s02.jpg",
+    "change": "starts 1.82 s into shot 2, with the teen already standing (first frame = plate s02b); keeps the question whole"
+   },
+   {
+    "n": 2,
+    "from": 3,
+    "start": 2.15,
+    "end": 3.81,
+    "dur": 1.66,
+    "src": [
+     6.89,
+     8.55
+    ],
+    "setup": "TRAINER_MED",
+    "board": "boards/s03.jpg",
+    "change": "the deadpan beat cut from 2.38 s to 1.16 s (starts 1.22 s into shot 3); ends 0.13 s after 'Perfect.'; 'That is a clear and achievable goal.' is dropped"
+   },
+   {
+    "n": 3,
+    "from": 4,
+    "start": 3.81,
+    "end": 5.25,
+    "dur": 1.44,
+    "src": [
+     10.97,
+     12.41
+    ],
+    "setup": "TEEN_CU",
+    "board": "boards/s04.jpg",
+    "change": "starts 0.89 s into shot 4, after 'goal.'; runs to its own cut; 'But confidence isn't just built' heard off-screen"
+   },
+   {
+    "n": 4,
+    "from": 5,
+    "start": 5.25,
+    "end": 7.933,
+    "dur": 2.683,
+    "src": [
+     12.41,
+     15.093
+    ],
+    "setup": "TRAINER_MED",
+    "board": "boards/s05.jpg",
+    "change": "shot 5 from its start to 0.20 s after 'Try {PITCH_PRODUCT}.' (15.093), before 'The insoles...'; L06-L08 are dropped"
+   },
+   {
+    "n": 5,
+    "from": 7,
+    "start": 7.933,
+    "end": 10.53,
+    "dur": 2.597,
+    "src": [
+     22.933,
+     25.53
+    ],
+    "setup": "TRAINER_CU",
+    "board": "boards/s07.jpg",
+    "change": "shot 7 from the super-1 onset only: the frozen grin, silent (render it as a picture shot from the grin plate; no guide audio); the code line is dropped"
+   },
+   {
+    "n": 6,
+    "from": 8,
+    "start": 10.53,
+    "end": 13.23,
+    "dur": 2.7,
+    "src": [
+     25.53,
+     28.23
+    ],
+    "setup": "TEEN_MED",
+    "board": "boards/s08.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 7,
+    "from": 9,
+    "start": 13.23,
+    "end": 15.0,
+    "dur": 1.77,
+    "src": [
+     28.23,
+     30.0
+    ],
+    "setup": "END_CARD",
+    "board": "boards/s09.jpg",
+    "change": "trimmed to end at 30.00 (1.77 s)"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Hey, can I get a six-pack quickly?",
+    "speaker": "teen",
+    "start": 0.27,
+    "end": 2.23,
+    "voice": [
+     0.33,
+     2.1
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": false,
+    "placement": "on camera, shot 1 (from source shot 2)"
+   },
+   {
+    "id": "L02",
+    "words": "Perfect.",
+    "speaker": "trainer",
+    "start": 3.25,
+    "end": 3.78,
+    "voice": [
+     3.31,
+     3.68
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "placement": "on camera, shot 2 (from source shot 3)"
+   },
+   {
+    "id": "L04",
+    "words": "But confidence isn't just built in the gym.",
+    "speaker": "trainer",
+    "start": 3.94,
+    "end": 6.0,
+    "voice": [
+     4.0,
+     5.9
+    ],
+    "clip": "set/lines/L04.wav",
+    "in_score": false,
+    "placement": "off-screen over the teen's close (shot 3) until 5.25, then on camera (shot 4: 'in the gym.')"
+   },
+   {
+    "id": "L05",
+    "words": "Try {PITCH_PRODUCT}.",
+    "speaker": "trainer",
+    "start": 6.39,
+    "end": 7.83,
+    "voice": [
+     6.45,
+     7.73
+    ],
+    "clip": "set/lines/L05.wav",
+    "in_score": false,
+    "placement": "on camera, shot 4 (from source shot 5)"
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 15.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "note": "one segment, no join: 15.0-22.84 of score.wav is room tone, so the head needs no bar; the music enters on its first downbeat at 7.97 and plays out untouched (downbeats 7.97, 10.58, 13.18), matching the picture cuts at 7.93, 10.53, 13.23",
+   "sections": [
+    {
+     "t": "0-7.97",
+     "what": "room tone under the dialogue"
+    },
+    {
+     "t": "7.97-15.00",
+     "what": "music; sung hook 13.62-14.66"
+    }
+   ]
+  },
+  "text": [
+   {
+    "id": "super_1",
+    "words": "There is a time and place for {SUPER_TOPIC}.",
+    "in": 7.933,
+    "out": 10.53,
+    "file": "set/ui_super_1.png"
+   },
+   {
+    "id": "super_2",
+    "words": "{SUPER_PLACE} should not be one of them.",
+    "in": 10.53,
+    "out": 13.23,
+    "file": "set/ui_super_2.png"
+   }
+  ],
+  "end_card": {
+   "in": 13.23,
+   "out": 15.0,
+   "file": "set/ui_end_card.jpg",
+   "what": "{BRAND_MARK} {BRAND} / {TAGLINE} on {BRAND_COLOUR}"
+  }
+ }
+}

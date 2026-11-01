@@ -9,7 +9,8 @@ import { TemplateCard } from './template-card';
 import { TemplateDetailDialog } from './template-detail';
 
 /** A template's prompt for a spot length: the catalog's prompts are written for 30 s. */
-const promptFor = (t: StudioTemplate, seconds = 30) => (seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`));
+const promptFor = (t: StudioTemplate, seconds = 30) =>
+  seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`).replace(/\b30 s\b/, `${seconds} s`);
 
 const SKILLS = [
   { label: 'Remake a video', text: 'Remake this reference video shot for shot with my own subject.' },

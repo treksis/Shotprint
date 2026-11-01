@@ -1,0 +1,78 @@
+{
+ "note": "Flat overlays, 1920x1080 RGBA, already in position for the 2.20:1 letterbox (picture y 103-977). No scrolls, taps or zooms: every item fades in and holds. Times are absolute source seconds; each cut's 'text' lists them in its own timeline.",
+ "font": "classic bold serif (rendered with DejaVu Serif Bold); emblem and legal in the regular weight",
+ "screens": [
+  {
+   "id": "ui_legal",
+   "file": "set/ui_legal.png",
+   "slot": "{LEGAL}",
+   "default": "Please enjoy responsibly. Animals filmed under professional supervision.",
+   "shots": [
+    32,
+    33
+   ],
+   "in": 48.2,
+   "out": 52.09,
+   "animation": "cut in / cut out",
+   "position": "centred, y 95% of the picture (933 px)",
+   "size": "15 px font, white 85%"
+  },
+  {
+   "id": "ui_super",
+   "file": "set/ui_super.png",
+   "slot": "{SUPER_1}",
+   "default": "Made of the land",
+   "shots": [
+    33
+   ],
+   "in": 50.7,
+   "full": 51.0,
+   "out": 52.09,
+   "animation": "linear fade in 0.30 s, hold",
+   "position": "centred x 50%, y 50% of the picture (540 px)",
+   "size": "66 px bold serif, ~36% of frame width"
+  },
+  {
+   "id": "ui_tagline",
+   "file": "set/ui_tagline.png",
+   "slot": "{TAGLINE_1} / {TAGLINE_2}",
+   "default": "Some things / never change.",
+   "shots": [
+    34
+   ],
+   "items": [
+    {
+     "line": 1,
+     "in": 52.2,
+     "full": 52.45,
+     "out": 54.43,
+     "position": "left edge x 960, centre y 488"
+    },
+    {
+     "line": 2,
+     "in": 53.0,
+     "full": 53.25,
+     "out": 54.43,
+     "position": "left edge x 960, centre y 566"
+    }
+   ],
+   "animation": "each line fades in 0.25 s, holds to the cut",
+   "size": "62 px bold serif"
+  },
+  {
+   "id": "ui_endcard",
+   "file": "set/ui_endcard.png",
+   "slot": "{BRAND}",
+   "default": "EST. 1902 / Halvard",
+   "shots": [
+    36
+   ],
+   "in": 57.75,
+   "full": 58.0,
+   "out": 60.06,
+   "animation": "fade in 0.25 s, hold to the end",
+   "position": "centred x 50%; emblem line centre y 514, wordmark centre y 601",
+   "size": "wordmark 118 px bold serif (26% of frame width); emblem line 26 px spaced caps"
+  }
+ ]
+}

@@ -1,0 +1,668 @@
+{
+ "about": "The film's recorded lines: one clip per line (set/lines/Lnn.wav), cut at phrase boundaries from a separated vocal stem of the source (dialogue only where it stands alone; L05 overlaps the singer and carries her underneath), 48 kHz mono, 10 ms fades. Use each as guide_audio for its speaking shot and as the timing target; never retime. Times: 'src' = source film, 'clip' = inside the wav, 'cut30' / 'cut15' = the 30 s / 15 s timelines (a line not in a cut has no times for it). In template.json cut lines, 'start'/'end' are where the clip file is placed and 'speech' is the first-to-last word. Word times come from forced word timestamps on the stem (good to ~0.05 s), first and last word snapped to the measured voice onset/offset.",
+ "lines": [
+  {
+   "id": "L01",
+   "file": "set/lines/L01.wav",
+   "words_text": "So I've been thinking,",
+   "speaker": "char_father",
+   "src": [
+    0.63,
+    1.48
+   ],
+   "clip_src": [
+    0.57,
+    1.58
+   ],
+   "cut30": [
+    0.63,
+    1.48
+   ],
+   "clip_cut30": [
+    0.57,
+    1.58
+   ],
+   "placement_cut30": "voice-over: pre-laps over the aerial as in the source; ends 0.03 s into shot 2",
+   "placement": "voice-over over the aerial",
+   "in_score": false,
+   "words": [
+    {
+     "w": "So",
+     "src": [
+      0.63,
+      0.86
+     ],
+     "clip": [
+      0.06,
+      0.29
+     ],
+     "cut30": [
+      0.63,
+      0.86
+     ]
+    },
+    {
+     "w": "I've",
+     "src": [
+      0.86,
+      1.06
+     ],
+     "clip": [
+      0.29,
+      0.49
+     ],
+     "cut30": [
+      0.86,
+      1.06
+     ]
+    },
+    {
+     "w": "been",
+     "src": [
+      1.06,
+      1.14
+     ],
+     "clip": [
+      0.49,
+      0.57
+     ],
+     "cut30": [
+      1.06,
+      1.14
+     ]
+    },
+    {
+     "w": "thinking,",
+     "src": [
+      1.14,
+      1.48
+     ],
+     "clip": [
+      0.57,
+      0.91
+     ],
+     "cut30": [
+      1.14,
+      1.48
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "file": "set/lines/L02.wav",
+   "words_text": "might be time to hang it up.",
+   "speaker": "char_father",
+   "src": [
+    3.97,
+    5.22
+   ],
+   "clip_src": [
+    3.91,
+    5.32
+   ],
+   "cut30": [
+    2.78,
+    4.03
+   ],
+   "clip_cut30": [
+    2.72,
+    4.13
+   ],
+   "placement_cut30": "off-face: over the porch wide (his face is 2% of the frame) and on over the keys insert, as in the source",
+   "cut15": [
+    0.35,
+    1.6
+   ],
+   "clip_cut15": [
+    0.29,
+    1.7
+   ],
+   "placement_cut15": "off-face over the porch wide, moved 0.70 s earlier than the picture offset so it ends 0.20 s before the cut",
+   "placement": "off-face over the porch wide, ending over the keys",
+   "in_score": false,
+   "words": [
+    {
+     "w": "might",
+     "src": [
+      3.97,
+      4.12
+     ],
+     "clip": [
+      0.06,
+      0.21
+     ],
+     "cut30": [
+      2.78,
+      2.93
+     ],
+     "cut15": [
+      0.35,
+      0.5
+     ]
+    },
+    {
+     "w": "be",
+     "src": [
+      4.12,
+      4.28
+     ],
+     "clip": [
+      0.21,
+      0.37
+     ],
+     "cut30": [
+      2.93,
+      3.09
+     ],
+     "cut15": [
+      0.5,
+      0.66
+     ]
+    },
+    {
+     "w": "time",
+     "src": [
+      4.28,
+      4.46
+     ],
+     "clip": [
+      0.37,
+      0.55
+     ],
+     "cut30": [
+      3.09,
+      3.27
+     ],
+     "cut15": [
+      0.66,
+      0.84
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      4.46,
+      4.6
+     ],
+     "clip": [
+      0.55,
+      0.69
+     ],
+     "cut30": [
+      3.27,
+      3.41
+     ],
+     "cut15": [
+      0.84,
+      0.98
+     ]
+    },
+    {
+     "w": "hang",
+     "src": [
+      4.6,
+      4.74
+     ],
+     "clip": [
+      0.69,
+      0.83
+     ],
+     "cut30": [
+      3.41,
+      3.55
+     ],
+     "cut15": [
+      0.98,
+      1.12
+     ]
+    },
+    {
+     "w": "it",
+     "src": [
+      4.74,
+      4.86
+     ],
+     "clip": [
+      0.83,
+      0.95
+     ],
+     "cut30": [
+      3.55,
+      3.67
+     ],
+     "cut15": [
+      1.12,
+      1.24
+     ]
+    },
+    {
+     "w": "up.",
+     "src": [
+      4.86,
+      5.22
+     ],
+     "clip": [
+      0.95,
+      1.31
+     ],
+     "cut30": [
+      3.67,
+      4.03
+     ],
+     "cut15": [
+      1.24,
+      1.6
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "file": "set/lines/L03.wav",
+   "words_text": "How about one last time? Together.",
+   "speaker": "char_daughter",
+   "src": [
+    8.22,
+    10.48
+   ],
+   "clip_src": [
+    7.81,
+    10.58
+   ],
+   "cut30": [
+    5.53,
+    7.79
+   ],
+   "clip_cut30": [
+    5.12,
+    7.89
+   ],
+   "placement_cut30": "lip-sync with its shot",
+   "cut15": [
+    2.29,
+    4.55
+   ],
+   "clip_cut15": [
+    1.88,
+    4.65
+   ],
+   "placement_cut15": "lip-sync with its shot",
+   "placement": "lip-sync, shot 4",
+   "in_score": false,
+   "words": [
+    {
+     "w": "(breath)",
+     "src": [
+      7.87,
+      8.08
+     ],
+     "clip": [
+      0.06,
+      0.27
+     ],
+     "cut30": [
+      5.18,
+      5.39
+     ],
+     "cut15": [
+      1.94,
+      2.15
+     ]
+    },
+    {
+     "w": "How",
+     "src": [
+      8.22,
+      8.44
+     ],
+     "clip": [
+      0.41,
+      0.63
+     ],
+     "cut30": [
+      5.53,
+      5.75
+     ],
+     "cut15": [
+      2.29,
+      2.51
+     ]
+    },
+    {
+     "w": "about",
+     "src": [
+      8.44,
+      8.6
+     ],
+     "clip": [
+      0.63,
+      0.79
+     ],
+     "cut30": [
+      5.75,
+      5.91
+     ],
+     "cut15": [
+      2.51,
+      2.67
+     ]
+    },
+    {
+     "w": "one",
+     "src": [
+      8.6,
+      8.78
+     ],
+     "clip": [
+      0.79,
+      0.97
+     ],
+     "cut30": [
+      5.91,
+      6.09
+     ],
+     "cut15": [
+      2.67,
+      2.85
+     ]
+    },
+    {
+     "w": "last",
+     "src": [
+      8.78,
+      9.02
+     ],
+     "clip": [
+      0.97,
+      1.21
+     ],
+     "cut30": [
+      6.09,
+      6.33
+     ],
+     "cut15": [
+      2.85,
+      3.09
+     ]
+    },
+    {
+     "w": "time?",
+     "src": [
+      9.02,
+      9.44
+     ],
+     "clip": [
+      1.21,
+      1.63
+     ],
+     "cut30": [
+      6.33,
+      6.75
+     ],
+     "cut15": [
+      3.09,
+      3.51
+     ]
+    },
+    {
+     "w": "Together.",
+     "src": [
+      9.92,
+      10.48
+     ],
+     "clip": [
+      2.11,
+      2.67
+     ],
+     "cut30": [
+      7.23,
+      7.79
+     ],
+     "cut15": [
+      3.99,
+      4.55
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "file": "set/lines/L04.wav",
+   "words_text": "Okay, kiddo.",
+   "speaker": "char_father",
+   "src": [
+    12.56,
+    13.26
+   ],
+   "clip_src": [
+    12.5,
+    13.36
+   ],
+   "cut30": [
+    8.81,
+    9.51
+   ],
+   "clip_cut30": [
+    8.75,
+    9.61
+   ],
+   "placement_cut30": "lip-sync with its shot",
+   "cut15": [
+    5.49,
+    6.19
+   ],
+   "clip_cut15": [
+    5.43,
+    6.29
+   ],
+   "placement_cut15": "lip-sync with its shot",
+   "placement": "lip-sync, shot 5",
+   "in_score": false,
+   "words": [
+    {
+     "w": "Okay,",
+     "src": [
+      12.56,
+      12.88
+     ],
+     "clip": [
+      0.06,
+      0.38
+     ],
+     "cut30": [
+      8.81,
+      9.13
+     ],
+     "cut15": [
+      5.49,
+      5.81
+     ]
+    },
+    {
+     "w": "kiddo.",
+     "src": [
+      12.92,
+      13.26
+     ],
+     "clip": [
+      0.42,
+      0.76
+     ],
+     "cut30": [
+      9.17,
+      9.51
+     ],
+     "cut15": [
+      5.85,
+      6.19
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "file": "set/lines/L05.wav",
+   "words_text": "One more thing.",
+   "speaker": "char_daughter",
+   "src": [
+    38.22,
+    38.92
+   ],
+   "clip_src": [
+    38.14,
+    39.02
+   ],
+   "placement": "lip-sync at the cut 20 -> 21; not used by either cut",
+   "in_score": true,
+   "note": "the source mix carries it under the singer; the clip is for guide_audio only",
+   "words": [
+    {
+     "w": "One",
+     "src": [
+      38.22,
+      38.42
+     ],
+     "clip": [
+      0.08,
+      0.28
+     ]
+    },
+    {
+     "w": "more",
+     "src": [
+      38.42,
+      38.6
+     ],
+     "clip": [
+      0.28,
+      0.46
+     ]
+    },
+    {
+     "w": "thing.",
+     "src": [
+      38.6,
+      38.92
+     ],
+     "clip": [
+      0.46,
+      0.78
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "file": "set/lines/L06.wav",
+   "words_text": "It's your farm now.",
+   "speaker": "char_father",
+   "src": [
+    48.52,
+    49.3
+   ],
+   "clip_src": [
+    48.46,
+    49.4
+   ],
+   "cut30": [
+    22.3,
+    23.08
+   ],
+   "clip_cut30": [
+    22.24,
+    23.18
+   ],
+   "placement_cut30": "lip-sync with its shot",
+   "cut15": [
+    10.41,
+    11.19
+   ],
+   "clip_cut15": [
+    10.35,
+    11.29
+   ],
+   "placement_cut15": "lip-sync with its shot",
+   "placement": "lip-sync, shot 26",
+   "in_score": false,
+   "words": [
+    {
+     "w": "It's",
+     "src": [
+      48.52,
+      48.66
+     ],
+     "clip": [
+      0.06,
+      0.2
+     ],
+     "cut30": [
+      22.3,
+      22.44
+     ],
+     "cut15": [
+      10.41,
+      10.55
+     ]
+    },
+    {
+     "w": "your",
+     "src": [
+      48.66,
+      48.84
+     ],
+     "clip": [
+      0.2,
+      0.38
+     ],
+     "cut30": [
+      22.44,
+      22.62
+     ],
+     "cut15": [
+      10.55,
+      10.73
+     ]
+    },
+    {
+     "w": "farm",
+     "src": [
+      48.84,
+      49.12
+     ],
+     "clip": [
+      0.38,
+      0.66
+     ],
+     "cut30": [
+      22.62,
+      22.9
+     ],
+     "cut15": [
+      10.73,
+      11.01
+     ]
+    },
+    {
+     "w": "now.",
+     "src": [
+      49.12,
+      49.3
+     ],
+     "clip": [
+      0.66,
+      0.84
+     ],
+     "cut30": [
+      22.9,
+      23.08
+     ],
+     "cut15": [
+      11.01,
+      11.19
+     ]
+    }
+   ]
+  }
+ ]
+}

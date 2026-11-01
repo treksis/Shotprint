@@ -1,0 +1,79 @@
+{
+ "note": "The film's two spoken lines, cut from the source mix (music underneath) at phrase boundaries. Times are absolute source seconds; word times are approximate (windowed transcription). Both lines are on-camera speech in shot 35 and are also inside score.wav / score_30.wav / score_15.wav, so a rebuild keeps the score's copy and uses these clips as guide audio and timing target.",
+ "lines": [
+  {
+   "id": "L01",
+   "speaker": "char_friend",
+   "kind": "on-camera speech",
+   "words": "You crying?",
+   "start": 54.45,
+   "end": 55.15,
+   "clip": "set/lines/L01.wav",
+   "clip_src": [
+    54.4,
+    55.22
+   ],
+   "word_times": [
+    {
+     "w": "You",
+     "start": 54.45,
+     "end": 54.62
+    },
+    {
+     "w": "crying?",
+     "start": 54.62,
+     "end": 55.15
+    }
+   ],
+   "delivery": "light, teasing, half-smiling, a little under his breath; rising question"
+  },
+  {
+   "id": "L02",
+   "speaker": "char_rancher",
+   "kind": "on-camera speech",
+   "words": "Sun's in my eyes.",
+   "start": 56.35,
+   "end": 57.2,
+   "clip": "set/lines/L02.wav",
+   "clip_src": [
+    56.28,
+    57.22
+   ],
+   "word_times": [
+    {
+     "w": "Sun's",
+     "start": 56.35,
+     "end": 56.62
+    },
+    {
+     "w": "in",
+     "start": 56.62,
+     "end": 56.8
+    },
+    {
+     "w": "my",
+     "start": 56.8,
+     "end": 56.98
+    },
+    {
+     "w": "eyes.",
+     "start": 56.98,
+     "end": 57.2
+    }
+   ],
+   "delivery": "flat, gruff, deadpan, not turning his head; falling"
+  }
+ ],
+ "takes": [
+  {
+   "id": "S35_take",
+   "clip": "set/lines/S35_take.wav",
+   "src": [
+    54.43,
+    57.22
+   ],
+   "for_shot": 35,
+   "contains": "L01 at 0.02-0.72 s and L02 at 1.92-2.77 s of the clip; use as guide_audio for shot 35 (first frame + guide audio)"
+  }
+ ]
+}

@@ -1,0 +1,514 @@
+{
+ "about": "The narration lines kept in the 30 s and 15 s cuts, one clip per line (set/lines/Lnn.wav) cut from a music-free narration stem (demucs) of the source at phrase boundaries: 0.06 s lead-in, 0.10 s tail, 10 ms fades, 48 kHz mono. All lines are voice-over by one off-screen narrator (no lip sync anywhere). Times: 'src' = the spoken window in the source film; 'clip_window_src' = what the wav contains; in each cut, 'start'/'end' place the clip on the new timeline and 'voice' is the spoken window. Word times come from whisper word timestamps with each phrase's first word snapped to the measured voice onset on the stem (good to ~0.05 s). L07b is L07 shortened to its last two words for the 15 s cut. A new film records or generates its own lines and keeps these windows as timing targets; never speed a line up.",
+ "speaker": "narrator (voice_narrator.wav)",
+ "lines": [
+  {
+   "id": "L01",
+   "words": "Once you've been to the moon,",
+   "delivery": "voice-over, off screen",
+   "src": [
+    3.41,
+    4.36
+   ],
+   "clip": "set/lines/L01.wav",
+   "clip_window_src": [
+    3.35,
+    4.46
+   ],
+   "word_times_src": [
+    {
+     "w": "Once",
+     "start": 3.41,
+     "end": 3.58
+    },
+    {
+     "w": "you've",
+     "start": 3.58,
+     "end": 3.72
+    },
+    {
+     "w": "been",
+     "start": 3.72,
+     "end": 3.82
+    },
+    {
+     "w": "to",
+     "start": 3.82,
+     "end": 3.94
+    },
+    {
+     "w": "the",
+     "start": 3.94,
+     "end": 4.06
+    },
+    {
+     "w": "moon,",
+     "start": 4.06,
+     "end": 4.36
+    }
+   ],
+   "cut30": {
+    "start": 3.35,
+    "end": 4.46,
+    "voice": [
+     3.41,
+     4.36
+    ]
+   },
+   "cut15": {
+    "start": 1.02,
+    "end": 2.13,
+    "voice": [
+     1.08,
+     2.03
+    ]
+   }
+  },
+  {
+   "id": "L02",
+   "words": "where do you go next?",
+   "delivery": "voice-over, off screen",
+   "src": [
+    6.01,
+    6.84
+   ],
+   "clip": "set/lines/L02.wav",
+   "clip_window_src": [
+    5.95,
+    6.94
+   ],
+   "word_times_src": [
+    {
+     "w": "where",
+     "start": 6.01,
+     "end": 6.14
+    },
+    {
+     "w": "do",
+     "start": 6.14,
+     "end": 6.24
+    },
+    {
+     "w": "you",
+     "start": 6.24,
+     "end": 6.3
+    },
+    {
+     "w": "go",
+     "start": 6.3,
+     "end": 6.42
+    },
+    {
+     "w": "next?",
+     "start": 6.42,
+     "end": 6.84
+    }
+   ],
+   "cut30": {
+    "start": 5.95,
+    "end": 6.94,
+    "voice": [
+     6.01,
+     6.84
+    ]
+   },
+   "cut15": {
+    "start": 3.62,
+    "end": 4.61,
+    "voice": [
+     3.68,
+     4.51
+    ]
+   }
+  },
+  {
+   "id": "L03",
+   "words": "Back to work.",
+   "delivery": "voice-over, off screen",
+   "src": [
+    8.74,
+    9.33
+   ],
+   "clip": "set/lines/L03.wav",
+   "clip_window_src": [
+    8.68,
+    9.43
+   ],
+   "word_times_src": [
+    {
+     "w": "Back",
+     "start": 8.74,
+     "end": 8.9
+    },
+    {
+     "w": "to",
+     "start": 8.9,
+     "end": 9.02
+    },
+    {
+     "w": "work.",
+     "start": 9.02,
+     "end": 9.33
+    }
+   ],
+   "cut30": {
+    "start": 8.68,
+    "end": 9.43,
+    "voice": [
+     8.74,
+     9.33
+    ]
+   },
+   "cut15": {
+    "start": 6.35,
+    "end": 7.1,
+    "voice": [
+     6.41,
+     7.0
+    ]
+   }
+  },
+  {
+   "id": "L04",
+   "words": "A chip built for AI that runs faster than ever.",
+   "delivery": "voice-over, off screen",
+   "src": [
+    155.19,
+    158.1
+   ],
+   "clip": "set/lines/L04.wav",
+   "clip_window_src": [
+    155.13,
+    158.2
+   ],
+   "word_times_src": [
+    {
+     "w": "A",
+     "start": 155.19,
+     "end": 155.28
+    },
+    {
+     "w": "chip",
+     "start": 155.28,
+     "end": 155.58
+    },
+    {
+     "w": "built",
+     "start": 155.58,
+     "end": 155.86
+    },
+    {
+     "w": "for",
+     "start": 155.86,
+     "end": 156.1
+    },
+    {
+     "w": "AI",
+     "start": 156.1,
+     "end": 156.38
+    },
+    {
+     "w": "that",
+     "start": 156.38,
+     "end": 156.72
+    },
+    {
+     "w": "runs",
+     "start": 156.72,
+     "end": 157.02
+    },
+    {
+     "w": "faster",
+     "start": 157.02,
+     "end": 157.52
+    },
+    {
+     "w": "than",
+     "start": 157.52,
+     "end": 157.72
+    },
+    {
+     "w": "ever.",
+     "start": 157.72,
+     "end": 158.1
+    }
+   ],
+   "cut30": {
+    "start": 11.7,
+    "end": 14.77,
+    "voice": [
+     11.76,
+     14.67
+    ]
+   },
+   "cut15": null
+  },
+  {
+   "id": "L05",
+   "words": "A battery that lasts longer than ever.",
+   "delivery": "voice-over, off screen",
+   "src": [
+    159.0,
+    160.88
+   ],
+   "clip": "set/lines/L05.wav",
+   "clip_window_src": [
+    158.94,
+    160.98
+   ],
+   "word_times_src": [
+    {
+     "w": "A",
+     "start": 159.0,
+     "end": 159.08
+    },
+    {
+     "w": "battery",
+     "start": 159.08,
+     "end": 159.42
+    },
+    {
+     "w": "that",
+     "start": 159.42,
+     "end": 159.64
+    },
+    {
+     "w": "lasts",
+     "start": 159.64,
+     "end": 160.0
+    },
+    {
+     "w": "longer",
+     "start": 160.0,
+     "end": 160.36
+    },
+    {
+     "w": "than",
+     "start": 160.36,
+     "end": 160.54
+    },
+    {
+     "w": "ever.",
+     "start": 160.54,
+     "end": 160.88
+    }
+   ],
+   "cut30": {
+    "start": 15.51,
+    "end": 17.55,
+    "voice": [
+     15.57,
+     17.45
+    ]
+   },
+   "cut15": null
+  },
+  {
+   "id": "L06",
+   "words": "The most intelligent pro camera system ever.",
+   "delivery": "voice-over, off screen",
+   "src": [
+    161.55,
+    163.99
+   ],
+   "clip": "set/lines/L06.wav",
+   "clip_window_src": [
+    161.49,
+    164.09
+   ],
+   "word_times_src": [
+    {
+     "w": "The",
+     "start": 161.55,
+     "end": 161.64
+    },
+    {
+     "w": "most",
+     "start": 161.64,
+     "end": 161.88
+    },
+    {
+     "w": "intelligent",
+     "start": 161.88,
+     "end": 162.42
+    },
+    {
+     "w": "pro",
+     "start": 162.42,
+     "end": 162.72
+    },
+    {
+     "w": "camera",
+     "start": 162.72,
+     "end": 163.12
+    },
+    {
+     "w": "system",
+     "start": 163.12,
+     "end": 163.52
+    },
+    {
+     "w": "ever.",
+     "start": 163.52,
+     "end": 163.99
+    }
+   ],
+   "cut30": {
+    "start": 18.06,
+    "end": 20.66,
+    "voice": [
+     18.12,
+     20.56
+    ]
+   },
+   "cut15": {
+    "start": 8.24,
+    "end": 10.84,
+    "voice": [
+     8.3,
+     10.74
+    ]
+   }
+  },
+  {
+   "id": "L07",
+   "words": "This is what happens when you go to the moon, come back, and ask, what's next?",
+   "delivery": "voice-over, off screen",
+   "src": [
+    165.2,
+    170.06
+   ],
+   "clip": "set/lines/L07.wav",
+   "clip_window_src": [
+    165.14,
+    170.16
+   ],
+   "word_times_src": [
+    {
+     "w": "This",
+     "start": 165.2,
+     "end": 165.32
+    },
+    {
+     "w": "is",
+     "start": 165.32,
+     "end": 165.48
+    },
+    {
+     "w": "what",
+     "start": 165.48,
+     "end": 165.6
+    },
+    {
+     "w": "happens",
+     "start": 165.6,
+     "end": 165.9
+    },
+    {
+     "w": "when",
+     "start": 165.9,
+     "end": 166.1
+    },
+    {
+     "w": "you",
+     "start": 166.1,
+     "end": 166.18
+    },
+    {
+     "w": "go",
+     "start": 166.18,
+     "end": 166.32
+    },
+    {
+     "w": "to",
+     "start": 166.32,
+     "end": 166.44
+    },
+    {
+     "w": "the",
+     "start": 166.44,
+     "end": 166.56
+    },
+    {
+     "w": "moon,",
+     "start": 166.56,
+     "end": 166.78
+    },
+    {
+     "w": "come",
+     "start": 167.55,
+     "end": 167.72
+    },
+    {
+     "w": "back,",
+     "start": 167.72,
+     "end": 168.02
+    },
+    {
+     "w": "and",
+     "start": 168.46,
+     "end": 168.54
+    },
+    {
+     "w": "ask,",
+     "start": 168.54,
+     "end": 168.84
+    },
+    {
+     "w": "what's",
+     "start": 169.43,
+     "end": 169.64
+    },
+    {
+     "w": "next?",
+     "start": 169.64,
+     "end": 170.06
+    }
+   ],
+   "cut30": {
+    "start": 21.71,
+    "end": 26.73,
+    "voice": [
+     21.77,
+     26.63
+    ]
+   },
+   "cut15": null
+  },
+  {
+   "id": "L07b",
+   "words": "what's next?",
+   "delivery": "voice-over, off screen",
+   "src": [
+    169.43,
+    170.06
+   ],
+   "clip": "set/lines/L07b.wav",
+   "clip_window_src": [
+    169.37,
+    170.16
+   ],
+   "word_times_src": [
+    {
+     "w": "what's",
+     "start": 169.43,
+     "end": 169.64
+    },
+    {
+     "w": "next?",
+     "start": 169.64,
+     "end": 170.06
+    }
+   ],
+   "cut30": null,
+   "cut15": {
+    "start": 11.94,
+    "end": 12.73,
+    "voice": [
+     12.0,
+     12.63
+    ]
+   }
+  }
+ ]
+}
