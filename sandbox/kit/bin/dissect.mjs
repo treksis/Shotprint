@@ -204,6 +204,37 @@ for (const s of shots) {
   s.loudness = { mean: r2(vals.reduce((p, v) => p + v, 0) / vals.length), max: r2(Math.max(...vals)), min: r2(Math.min(...vals)) };
 }
 
+// 5b. Picture per shot, from the 64x36 grey frames: brightness (0-255) at start / middle / end, so
+// fades and low-key looks are numbers, and change: the mean grey difference between frames half a
+// second apart (0 is a locked-off still; about 5+ is visible camera or subject movement). Read the
+// kind of move (pan, push, orbit) from the boards; this resolution can't tell them apart.
+const lumaAt = (i) => { let s = 0; for (let k = 0; k < PX; k++) s += grey[i * PX + k]; return s / PX; };
+const lag = Math.max(1, Math.round(fps / 2));
+for (const s of shots) {
+  const a = Math.min(nGrey - 1, Math.round(s.start * fps) + 1), b = Math.max(a, Math.min(nGrey - 1, Math.round(s.end * fps) - 2));
+  s.brightness = { start: Math.round(lumaAt(a)), mid: Math.round(lumaAt(Math.round((a + b) / 2))), end: Math.round(lumaAt(b)) };
+  const d = [];
+  for (let i = a; i + lag <= b; i += lag) d.push(diff(i + lag, i));
+  s.change = d.length ? r2(d.sort((x, y) => x - y)[Math.floor(d.length / 2)]) : 0;
+}
+// Average colour per shot from a 16x9 RGB decode of the proxy.
+{
+  const rgb = await new Promise((resolve, reject) => {
+    const p = spawn("ffmpeg", ["-v", "error", "-i", proxy, "-vf", "scale=16:9", "-pix_fmt", "rgb24", "-f", "rawvideo", "-"]);
+    const chunks = [];
+    p.stdout.on("data", (d) => chunks.push(d));
+    p.on("close", (c) => (c ? reject(new Error("colour frames failed")) : resolve(Buffer.concat(chunks))));
+  });
+  const F = 16 * 9 * 3, n = Math.floor(rgb.length / F);
+  for (const s of shots) {
+    const a = Math.min(n - 1, Math.round(s.start * fps)), b = Math.max(a + 1, Math.min(n, Math.round(s.end * fps)));
+    const sum = [0, 0, 0];
+    for (let i = a; i < b; i++) for (let k = 0; k < F; k += 3) for (let c = 0; c < 3; c++) sum[c] += rgb[i * F + k + c];
+    const cnt = (b - a) * (F / 3);
+    s.colour = "#" + sum.map((v) => Math.round(v / cnt).toString(16).padStart(2, "0")).join("");
+  }
+}
+
 // 6. Pictures, all in parallel: shot boards and contact sheets from the proxy, key frames from the source.
 const tileDir = path.join(WORK, "tiles");
 fs.rmSync(tileDir, { recursive: true, force: true });
@@ -276,9 +307,11 @@ const md = [
   "",
   `Shot boards (read these): ${result.boards.join(", ")}. Each row is one shot: start, middle, end.`,
   "",
-  "| Shot | Start | End | Dur | In | Loudness (mean / max LUFS) | Speech |",
-  "|---|---|---|---|---|---|---|",
-  ...shots.map((s) => `| ${s.n} | ${s.start} | ${s.end} | ${s.dur} | ${s.in} | ${s.loudness ? `${s.loudness.mean} / ${s.loudness.max}` : ""} | ${s.speech?.join(" ") ?? ""} |`),
+  "Brightness is 0-255 at start / middle / end. Change is how much the picture moves per half second (0 = still, 5+ = visible movement).",
+  "",
+  "| Shot | Start | End | Dur | In | Brightness | Colour | Change | Loudness (mean / max LUFS) | Speech |",
+  "|---|---|---|---|---|---|---|---|---|---|",
+  ...shots.map((s) => `| ${s.n} | ${s.start} | ${s.end} | ${s.dur} | ${s.in} | ${s.brightness ? `${s.brightness.start} / ${s.brightness.mid} / ${s.brightness.end}` : ""} | ${s.colour ?? ""} | ${s.change ?? ""} | ${s.loudness ? `${s.loudness.mean} / ${s.loudness.max}` : ""} | ${s.speech?.join(" ") ?? ""} |`),
   "",
   soft.length ? `Soft cut candidates (check on the boards: dissolve, whip, flash, or nothing): ${soft.map((x) => `${x.t}s (${x.score})`).join(", ")}.` : "No soft cut candidates.",
   black.length ? `Black: ${black.map((b) => `${b.start}-${b.end}s`).join(", ")}.` : "No black frames.",
@@ -317,6 +350,7 @@ if (opt.template) {
         setup: null, framing: null, camera_move: null, light: null, on_screen: null, text: [], out: null,
         ...(same ? old[i] : {}),
         n: s.n, start: s.start, end: s.end, dur: s.dur, in: s.in, frame: fs.existsSync(path.join(dir, frame)) ? frame : null,
+        brightness: s.brightness ?? null, colour: s.colour ?? null, change: s.change ?? null,
         sound: s.loudness ? `${s.loudness.mean} LUFS mean, ${s.loudness.max} peak` : null,
         voice: s.speech ? s.speech.map((id) => turns.find((u) => u.id === id).text).join(" / ") : null,
       };
