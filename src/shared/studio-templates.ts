@@ -23,6 +23,9 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/meta-vr-glasses-launch.jpg',
     preview: '/templates/meta-vr-glasses-launch.mp4',
     proof: { '30': '/templates/proof/meta-vr-glasses-launch-30.mp4', '15': '/templates/proof/meta-vr-glasses-launch-15.mp4' },
+    examples: [
+      { title: 'Meta Ray-Ban Display, 30 s (made from this template by Opus)', video: '/templates/examples/rayban-display.mp4', poster: '/templates/examples/rayban-display.jpg' },
+    ],
     description:
       'A lens wakes in the dark, the hero lands on the beat, then the product lives in a loft, a stadium and a hero orbit before the end card.',
     prompt: 'Make a 30-second launch film for my product from the hardware launch template.',
@@ -174,6 +177,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/room-makeover.jpg',
     preview: '/templates/room-makeover.mp4',
     proof: { '30': '/templates/proof/room-makeover-30.mp4', '15': '/templates/proof/room-makeover-15.mp4' },
+    examples: [{ title: 'Facebook Marketplace, 30 s (made from this template by Opus)', video: '/templates/examples/marketplace-dorm.mp4', poster: '/templates/examples/marketplace-dorm.jpg' }],
     description:
       "A dialogue comedy in one locked wide: a parent sees a bare first room, says the brand's name, orders three things on a phone, and the same camera reveals the made-over room before an end card.",
     prompt: "Make a 30 s comedy spot for our home-goods app: a dad visits his son's bare first apartment, the lamp dies, they say the brand's name, he orders on his phone and the same wide reveals the room made over.",
@@ -193,6 +197,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/deadpan-dialogue.jpg',
     preview: '/templates/deadpan-dialogue.mp4',
     proof: { '30': '/templates/proof/deadpan-dialogue-30.mp4', '15': '/templates/proof/deadpan-dialogue-15.mp4' },
+    examples: [{ title: 'Meta AI, 30 s (made from this template by Opus)', video: '/templates/examples/meta-ai-deadpan.mp4', poster: '/templates/examples/meta-ai-deadpan.jpg' }],
     description:
       "A locked-off deadpan two-hander: a user asks an expert for help, the expert's friendly answer slides into an absurd product pitch, then the music hits under two plain supers and an end card.",
     prompt: "Make a 30 s deadpan spot for our privacy-first email app: a stressed intern asks the office IT guy how to reach inbox zero fast, his friendly answer slides into a pitch for a 'focus crystal' with a promo code, then 'There is a time and place for tracking.' / 'Your inbox should not be one of them.' and our end card.",

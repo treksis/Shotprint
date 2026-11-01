@@ -15,3 +15,4 @@ sandbox/seeds/*/workspace/
 # Template audio comes from the source films (score, voice lines): local only
 sandbox/templates/**/*.wav
 public/templates/proof/
+public/templates/examples/

@@ -29,7 +29,10 @@
    **15 s spot**. Scroll the storyboard strip, the lines and the ingredient set.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
    launch film, rebuilt from their templates with invented cast and brand.
-5. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
+5. **Made from this template** (on the Hardware launch, Room makeover and Deadpan pages): the same recipes
+   used for Meta products, **Meta Ray-Ban Display**, **Facebook Marketplace** and **Meta AI**, 30 s each,
+   made by Opus from the template with new cast, product sheets and lines.
+6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
    canvas.
 
 ## The library (10 templates, each with a 30 s and a 15 s cut)
@@ -73,6 +76,7 @@ of wall time, in parallel, on one G4 GPU. Per-template numbers: `lab/pitch/RUN.m
 
 ## What's local only
 
-Proof videos (`public/templates/proof/`), the source films (`sandbox/references/`) and source audio in
+Proof videos (`public/templates/proof/`), the Meta product examples (`public/templates/examples/`, they
+still use the templates' scores, which must be replaced before public use), the source films (`sandbox/references/`) and source audio in
 templates (score, lines) are not in git: they contain other companies' footage and music. The hook video
 and landing images use Meta's own films only.
