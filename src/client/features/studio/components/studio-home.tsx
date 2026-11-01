@@ -14,7 +14,7 @@ const promptFor = (t: StudioTemplate, seconds = 30) => (seconds === 30 ? t.promp
 const SKILLS = [
   { label: 'Remake a video', text: 'Remake this reference video shot for shot with my own subject.' },
   { label: 'Swap the subject', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
-  { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Shorts.' },
+  { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Stories.' },
   { label: 'Dissect a video', text: 'Dissect this video into a template: cuts, camera moves, lines and sound.' },
 ];
 

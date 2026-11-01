@@ -2,41 +2,26 @@ import React, { useState } from 'react';
 import { STUDIO_TEMPLATES } from '../../../shared/studio-templates';
 
 export function FeatureSection() {
-  const samRegion = {
-    label: 'Primary Subject',
-    confidence: 0.99,
-    x: 0.26,
-    y: 0.22,
-    w: 0.48,
-    h: 0.56,
-  };
-
   const fallbackMedia = [0, 1, 2, 3].map((i) => STUDIO_TEMPLATES[i % STUDIO_TEMPLATES.length].thumbnail);
-
-  const [imgSrcs, setImgSrcs] = useState<string[]>(fallbackMedia);
-
-  const fidelityScore = 96;
-
+  // Real artifacts from the Meta launch template (docs/pitch/make_steps.sh).
+  const media = ['/landing/step-measure.jpg', '/landing/step-ingredients.jpg', '/landing/step-boards.jpg', '/landing/step-proof.jpg'];
+  const [imgSrcs, setImgSrcs] = useState<string[]>(media);
   const rows = [
     {
-      title: '1. Break down the video',
-      body: 'Paste a link. We map every scene, cut length, and camera move.',
-      showFocusBox: false,
+      title: '1. Measure the ad',
+      body: 'Every cut, fade, brightness level, loudness and spoken line, measured in seconds with no model. One board per shot: start, middle, end.',
     },
     {
-      title: '2. Lock product placement',
-      body: 'We track where the product sits so yours lands in the exact same spot.',
-      showFocusBox: true,
+      title: '2. Write the recipe, gather the ingredients',
+      body: 'Framing, camera move, light and timing for every shot, with numbers. Cast, product and places drawn as sheets you swap for your own.',
     },
     {
-      title: '3. Swap in your product',
-      body: 'Upload one product photo to rebuild and animate every scene.',
-      showFocusBox: false,
+      title: '3. Cut it to 30 s and 15 s',
+      body: 'An editor picks the hook, the proof and the payoff, cuts the soundtrack on the bar, and sketches a storyboard for every kept shot.',
     },
     {
-      title: '4. Compare side by side',
-      body: 'Play the original and your new ad together before you download.',
-      showFocusBox: false,
+      title: '4. Prove it with a blind rebuild',
+      body: 'An agent that never saw the ad makes it again from the template alone. Compare it with the real footage, cut the same way.',
     },
   ];
 
@@ -45,7 +30,7 @@ export function FeatureSection() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center max-w-[68ch] mx-auto" data-reveal>
           <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] font-semibold tracking-[-0.02em] leading-[1.08] text-[#111111]">
-            Four steps to a new ad
+            How a template is made
           </h2>
         </div>
 
@@ -91,17 +76,6 @@ export function FeatureSection() {
                     className="w-full h-full object-cover"
                   />
 
-                  {row.showFocusBox && (
-                    <div
-                      style={{
-                        left: `${Math.round(samRegion.x * 100)}%`,
-                        top: `${Math.round(samRegion.y * 100)}%`,
-                        width: `${Math.round(samRegion.w * 100)}%`,
-                        height: `${Math.round(samRegion.h * 100)}%`,
-                      }}
-                      className="pointer-events-none absolute rounded-[8px] border-2 border-[#1a4be0] bg-[#1a4be0]/15"
-                    />
-                  )}
                 </div>
               </div>
             );

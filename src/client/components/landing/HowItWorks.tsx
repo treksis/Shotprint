@@ -8,18 +8,18 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
   const steps = [
     {
       num: '1',
-      title: 'Pick a viral video',
-      desc: 'Choose a template or paste a link.',
+      title: 'Pick a template',
+      desc: 'Real ads, each taken apart and proven with a blind rebuild.',
     },
     {
       num: '2',
       title: 'Add your product',
-      desc: 'Upload one product photo.',
+      desc: 'A product photo, your people, your lines.',
     },
     {
       num: '3',
-      title: 'Export your ad',
-      desc: 'Preview each cut and download.',
+      title: 'Get your 30 s and 15 s spots',
+      desc: 'Same shots, same timing, your product.',
     },
   ];
 

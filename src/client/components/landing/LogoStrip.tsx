@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function LogoStrip() {
-  const items = ['TikTok Ads', 'Instagram Reels', 'YouTube Shorts', 'Product Launches'];
+  const items = ['Instagram Reels', 'Facebook video ads', '30 s and 15 s spots', 'Product launches'];
 
   return (
     <section className="py-8 bg-[#f4f4f4]">

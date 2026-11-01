@@ -1,16 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-// What the hook video should show (note for the user):
-// 3s viral source clip -> split screen scene breakdown
-// -> same cuts remade with the user's product -> "Same cuts. Your product." end card.
+// The hook video (docs/pitch/make_hook.sh): real Meta films next to rebuilds an agent made blind from
+// their templates, ending on "Same shots. Same timing. Your product." 
 const HOOK_VIDEO = {
   mp4: '/hero/hook.mp4',
-  webm: '/hero/hook.webm',
   poster: '/hero/hook-poster.jpg',
 };
 
 const HOOK_FALLBACK = {
-  mp4: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+  mp4: '/templates/meta-vr-glasses-launch.mp4',
 };
 
 export interface HeroSectionProps {
@@ -77,7 +75,7 @@ export function HeroSection({ fallbackPoster, onOpenStudio }: HeroSectionProps) 
         </h1>
 
         <p className="mt-4 text-[18px] leading-[1.55] text-[#111111] max-w-[48ch] mx-auto">
-          Turn any winning short-form video into a shot-by-shot ad for your own product.
+          Turn a winning ad into a 30 s or 15 s spot for your own product: same shots, same timing, same sound.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -112,7 +110,6 @@ export function HeroSection({ fallbackPoster, onOpenStudio }: HeroSectionProps) 
             onError={handleVideoError}
             className="w-full h-full object-cover"
           >
-            {!usedFallback && <source src={HOOK_VIDEO.webm} type="video/webm" />}
             <source src={videoSrc} type="video/mp4" />
           </video>
 
