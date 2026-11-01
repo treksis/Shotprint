@@ -265,6 +265,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/athlete-anthem.jpg',
     preview: '/templates/athlete-anthem.mp4',
     proof: { '30': '/templates/proof/athlete-anthem-30.mp4', '15': '/templates/proof/athlete-anthem-15.mp4' },
+    examples: [{ title: 'Threads, 30 s', video: '/templates/examples/threads-legend.mp4', poster: '/templates/examples/threads-legend.jpg' }, { title: 'Threads, 15 s', video: '/templates/examples/threads-legend-15.mp4', poster: '/templates/examples/threads-legend-15.jpg' }],
     description:
       'A retired star talks deadpan to camera in one slow pull-back, the film slams into a 3-second championship montage, then lands on a quiet sip, a punchline and a bold three-line tagline.',
     prompt: 'Make a 30 s spot for our new trail running shoe: a retired marathon champion, deadpan to camera with a cup of tea, on finally beating her old rival, cut with a 3-second race-win montage and a bold tagline end card.',
