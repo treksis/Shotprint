@@ -28,6 +28,19 @@ came out close shot for shot.
 | Muse intro (motion graphics, drawn in code) | 2 | 12 min |
 | Muse tour (presenter + screens) | 5 | 9 min |
 
+Overnight (2026-11-01, 01:00-07:00) the library grew to 13 seeded templates, then 16 (see
+`docs/pitch/README.md`): nine popular third-party ads (phone reveal, heritage farm story, animal epic,
+soft-drink fan spot, room makeover, deadpan dialogue, holiday story, car launch, athlete monologue; then
+travel comedy, family moment, telenovela parody), each authored by Opus and rebuilt blind at 30 s and 15 s.
+Ten Meta product films were made from the templates as examples (`public/templates/examples/`, local
+only: they still use the templates' scores). Lessons:
+- Rebuild agents sometimes end their turn while `bin/h3` renders are still queued; the clips finish on the
+  box. Recover with `bin/h3 resume` in the workspace, then hand the assembly to a fresh agent (the
+  workspace's notes/ and work/ scripts carry the plan).
+- Check invented cast against the source's real people: a stack of signature traits (hair, cap, glasses,
+  team colours) is a likeness even when the face differs. athlete-anthem was recast and rebuilt for this.
+- Every slot needs a concrete default (spec updated), or a rebuild guesses a brand name.
+
 Open, Studio side: on `turn/foregroundCompleted` the turn keeps running while subagents work (28 min in
 the dissect seed), so "running" is true but reads as stuck: show "working in the background".
 
