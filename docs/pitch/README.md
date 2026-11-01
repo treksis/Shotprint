@@ -31,10 +31,10 @@
    launch film, rebuilt from their templates with invented cast and brand.
 5. **Made from this template**: the same recipes used for seven Meta products, made by Opus from the
    templates with new product sheets, invented cast and new lines: **Meta Ray-Ban Display** (hardware
-   launch, 30 s + 15 s), **Facebook Marketplace** (room makeover, 30 s + 15 s), **Meta AI** (deadpan,
-   30 s + 15 s), **Meta Quest 3S** (phone reveal), **Ray-Ban Meta** at the match (fan moments),
-   **WhatsApp** (farm story) and the **Meta AI app** intro (motion graphics). A 15 s version reuses the
-   30 s clips: 2-3 minutes, no new renders.
+   launch), **Facebook Marketplace** (room makeover), **Meta AI** (deadpan), **Meta Quest 3S** (phone
+   reveal), **Ray-Ban Meta** at the match (fan moments), **WhatsApp** (farm story) and the **Meta AI app**
+   intro (motion graphics), each at 30 s and 15 s. The 15 s versions reuse the 30 s clips: 2-6 minutes,
+   no new renders. A 31 s reel of all seven: `lab/pitch/meta_products_reel.mp4` (local).
 6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
    canvas.
 
