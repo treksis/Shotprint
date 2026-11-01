@@ -29,6 +29,9 @@ FORMAT = {
     'holiday-story': 'Holiday story',
     'car-launch': 'Car launch',
     'athlete-anthem': 'Athlete monologue',
+    'travel-escape': 'Travel comedy',
+    'new-home': 'Family moment',
+    'telenovela-glam': 'Telenovela parody',
 }
 
 
