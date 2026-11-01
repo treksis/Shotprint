@@ -24,7 +24,7 @@
 ## Demo path (3 minutes)
 
 1. Landing page: the hook video plays real Meta films next to their blind rebuilds.
-2. **Templates** (sidebar): ten ready templates, each "Ready · rebuilt blind".
+2. **Templates** (sidebar): thirteen ready templates, each "Ready · rebuilt blind".
 3. Open **Hardware launch film** → **See the proof**: real 30 s cut (left) vs blind rebuild (right). Toggle
    **15 s spot**. Scroll the storyboard strip, the lines and the ingredient set.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
@@ -38,7 +38,7 @@
 6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
    canvas.
 
-## The library (10 templates, each with a 30 s and a 15 s cut)
+## The library (13 templates, each with a 30 s and a 15 s cut)
 
 | Template | Source (described generically in the product) | Format |
 |---|---|---|
@@ -52,6 +52,9 @@
 | Fans Feel the Goal | 2026 tournament soft-drink spot (7.8M views) | Fans + product macro |
 | Parent Visits, Room Transformed | Home-furnishing spot (963k views) | Comedic makeover |
 | Deadpan Helpful-Answer Ad | 2026 Cannes Lions Film Grand Prix | Deadpan dialogue |
+| Gift Unlocks a Memory | 2025 department-store Christmas film | Holiday story |
+| Dark Performance Car Launch | 2025 performance-sedan launch film | Car launch |
+| Deadpan Legend Monologue | 2026 sportswear big-game spot | Athlete monologue |
 
 Third-party templates carry no brand: products and taglines are slots with invented defaults ("Halvard
 Lager", "Lune 2 Pro", "Wren"), and the cast are invented people who fit the roles, never likenesses.
@@ -61,12 +64,13 @@ Lager", "Lune 2 Pro", "Wren"), and the cast are invented people who fit the role
 | Step | Time | Notes |
 |---|---|---|
 | Measure an ad (`bin/dissect`) | ~17 s for 86 s of film | cuts, fades, brightness, loudness, transcript, shot boards; no model |
-| Author a 30 s + 15 s template (Opus) | 30-47 min | recipe, 20-30 sheets, 30-60 storyboards, score cut on the bar; 36-80 stills |
-| Blind 30 s rebuild | 48-62 min | 11-16 clips (MiniMax-H3) + ~25 stills; about 35 min of it is queueing, six films shared one GPU |
-| Blind 15 s rebuild | 15-30 min | 6-10 clips |
+| Author a 30 s + 15 s template (Opus) | 10-47 min | recipe, 20-30 sheets, 30-60 storyboards, score cut on the bar; 36-80 stills |
+| Blind 30 s rebuild | 12-62 min | 11-16 clips (MiniMax-H3) + ~25 stills; 48-62 min when six films shared one GPU, 12-33 min when three did |
+| Blind 15 s rebuild | 10-30 min | 6-10 clips |
 
 Six ads went from a YouTube link to a seeded template with blind 30 s and 15 s proofs in about 2 h 5 min
-of wall time, in parallel, on one G4 GPU. Per-template numbers: `lab/pitch/RUN.md` (local).
+of wall time, in parallel, on one G4 GPU. Three more (holiday story, car launch, athlete monologue)
+followed in about 1 h. Per-template numbers: `lab/pitch/RUN.md` (local).
 
 ## Under the hood
 
