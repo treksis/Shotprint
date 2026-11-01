@@ -28,10 +28,12 @@ came out close shot for shot.
 | Muse intro (motion graphics, drawn in code) | 2 | 12 min |
 | Muse tour (presenter + screens) | 5 | 9 min |
 
-Overnight (2026-11-01, 01:00-07:00) the library grew to 13 seeded templates, then 16 (see
+Overnight (2026-11-01, 01:00-07:00) the library grew to 13 seeded templates (see
 `docs/pitch/README.md`): nine popular third-party ads (phone reveal, heritage farm story, animal epic,
-soft-drink fan spot, room makeover, deadpan dialogue, holiday story, car launch, athlete monologue; then
-travel comedy, family moment, telenovela parody), each authored by Opus and rebuilt blind at 30 s and 15 s.
+soft-drink fan spot, room makeover, deadpan dialogue, holiday story, car launch, athlete monologue), each
+authored by Opus and rebuilt blind at 30 s and 15 s. Three more were authored (travel-escape, new-home,
+telenovela-glam in `lab/replicate/author-*`) but not seeded: the Colab G4 went away at ~06:40, so their
+blind rebuilds are stills only. Re-run their `jobs/*.jsonl` on a new box, rebuild, then publish.
 Ten Meta product films were made from the templates as examples (`public/templates/examples/`, local
 only: they still use the templates' scores). Lessons:
 - Rebuild agents sometimes end their turn while `bin/h3` renders are still queued; the clips finish on the
