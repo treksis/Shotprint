@@ -64,7 +64,10 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/muse-introduction.jpg',
     preview: '/templates/muse-introduction.mp4',
     proof: { '30': '/templates/proof/muse-introduction-30.mp4', '15': '/templates/proof/muse-introduction-15.mp4' },
-    examples: [{ title: 'Meta AI app intro, 30 s', video: '/templates/examples/meta-ai-intro.mp4', poster: '/templates/examples/meta-ai-intro.jpg' }],
+    examples: [
+      { title: 'Meta AI app intro, 30 s', video: '/templates/examples/meta-ai-intro.mp4', poster: '/templates/examples/meta-ai-intro.jpg' },
+      { title: 'Meta AI app intro, 15 s', video: '/templates/examples/meta-ai-intro-15.mp4', poster: '/templates/examples/meta-ai-intro-15.jpg' },
+    ],
     description:
       'Kinetic type and app UI on a soft gradient: an object grid pulls back to the icon, one task is done end to end, a mascot celebrates.',
     prompt: 'Make a 30-second intro film for my app from the agent product intro template.',
@@ -103,7 +106,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/phone-reveal.jpg',
     preview: '/templates/phone-reveal.mp4',
     proof: { '30': '/templates/proof/phone-reveal-30.mp4', '15': '/templates/proof/phone-reveal-15.mp4' },
-    examples: [{ title: 'Meta Quest 3S, 30 s', video: '/templates/examples/quest-reveal.mp4', poster: '/templates/examples/quest-reveal.jpg' }],
+    examples: [{ title: 'Meta Quest 3S, 30 s', video: '/templates/examples/quest-reveal.mp4', poster: '/templates/examples/quest-reveal.jpg' }, { title: 'Meta Quest 3S, 15 s', video: '/templates/examples/quest-reveal-15.mp4', poster: '/templates/examples/quest-reveal-15.jpg' }],
     description:
       'A narrated product reveal: a moon-photo hook, a dip to black, then chip, battery and camera proofs in dark macros, white-lab flat-lays and big outdoor shots, closing on a still hero with beat-cut finish swaps and the name on black.',
     prompt: "Make a 30 s launch film for our new flagship phone in the phone-reveal style: open on a stunning photo from last year's model, then show the chip, battery and camera with one calm narrator, and end on the name.",
@@ -123,7 +126,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/farm-legacy.jpg',
     preview: '/templates/farm-legacy.mp4',
     proof: { '30': '/templates/proof/farm-legacy-30.mp4', '15': '/templates/proof/farm-legacy-15.mp4' },
-    examples: [{ title: 'WhatsApp, 30 s', video: '/templates/examples/whatsapp-farm.mp4', poster: '/templates/examples/whatsapp-farm.jpg' }],
+    examples: [{ title: 'WhatsApp, 30 s', video: '/templates/examples/whatsapp-farm.mp4', poster: '/templates/examples/whatsapp-farm.jpg' }, { title: 'WhatsApp, 15 s', video: '/templates/examples/whatsapp-farm-15.mp4', poster: '/templates/examples/whatsapp-farm-15.jpg' }],
     description:
       'A quiet porch ask opens a song-led last season from planting to harvest, intercut with then/now memories of her childhood on the same land, and lands on a night-time handover of the farm keys, a hug, a generations super and an end card.',
     prompt: 'Make a 30 s film for our new small-batch apple chips from this template: an old orchard keeper tells his grown daughter it may be time to retire, they work one last season together between then/now memories of her childhood in the orchard, and at night on the porch he hands her the orchard keys.',
@@ -162,7 +165,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/fan-moments.jpg',
     preview: '/templates/fan-moments.mp4',
     proof: { '30': '/templates/proof/fan-moments-30.mp4', '15': '/templates/proof/fan-moments-15.mp4' },
-    examples: [{ title: 'Ray-Ban Meta at the match, 30 s', video: '/templates/examples/rayban-fans.mp4', poster: '/templates/examples/rayban-fans.jpg' }],
+    examples: [{ title: 'Ray-Ban Meta at the match, 30 s', video: '/templates/examples/rayban-fans.mp4', poster: '/templates/examples/rayban-fans.jpg' }, { title: 'Ray-Ban Meta at the match, 15 s', video: '/templates/examples/rayban-fans-15.mp4', poster: '/templates/examples/rayban-fans-15.jpg' }],
     description:
       'A commentator-led montage of fans gripping the drink through a tense free kick, a silent macro-fizz held breath, then a slam into goal euphoria and a drink by the sea under a tagline and lockup.',
     prompt: 'Make a 30 s spot for our new sparkling citrus soda in this template: fans across the city live a last-minute goal with the drink in hand.',
