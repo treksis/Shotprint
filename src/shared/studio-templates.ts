@@ -248,4 +248,23 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
       'A wordless, song-driven family story: a gift and a needle drop send the receiver into a vivid memory, then back home into a hug, closing on a soft-focus end card with one super and the brand.',
     prompt: "Make a 30 s holiday film for our new wireless speaker: a teenage daughter's gift sends her mother back to a memory of dancing at her first concert, then they hug.",
   },
+  {
+    id: 'athlete-anthem',
+    title: 'Deadpan Legend Monologue',
+    source: "2026 sportswear spot: retired football star's deadpan revenge monologue",
+    format: 'Athlete monologue',
+    status: 'ready',
+    durationSec: 30.0,
+    shots: 20,
+    shotsMeasured: true,
+    setups: 12,
+    lines: 9,
+    cuts: [30, 15],
+    thumbnail: '/templates/athlete-anthem.jpg',
+    preview: '/templates/athlete-anthem.mp4',
+    proof: { '30': '/templates/proof/athlete-anthem-30.mp4', '15': '/templates/proof/athlete-anthem-15.mp4' },
+    description:
+      'A retired star talks deadpan to camera in one slow pull-back, the film slams into a 3-second championship montage, then lands on a quiet sip, a punchline and a bold three-line tagline.',
+    prompt: 'Make a 30 s spot for our new trail running shoe: a retired marathon champion, deadpan to camera with a cup of tea, on finally beating her old rival, cut with a 3-second race-win montage and a bold tagline end card.',
+  },
 ];

@@ -1,0 +1,466 @@
+{
+ "note": "Recorded lines of the source, one clip per line, cut at phrase boundaries. start/end = absolute source time of the voiced phrase; clip_start/clip_end = what the wav holds (silence padding of 0.12/0.15 s). Word times are spread by syllable inside the measured voiced span (\u00b10.15 s). All lines are the same speaker (char_vet), sync on camera, deadpan, low and slow, slight rasp.",
+ "lines": [
+  {
+   "id": "L01",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, mouth in extreme close-up)",
+   "words": "I ain't even going to hold you.",
+   "start": 0.35,
+   "end": 1.62,
+   "clip": "set/lines/L01.wav",
+   "clip_start": 0.23,
+   "clip_end": 1.77,
+   "word_times": [
+    {
+     "w": "I",
+     "start": 0.35,
+     "end": 0.51
+    },
+    {
+     "w": "ain't",
+     "start": 0.51,
+     "end": 0.67
+    },
+    {
+     "w": "even",
+     "start": 0.67,
+     "end": 0.98
+    },
+    {
+     "w": "going",
+     "start": 0.98,
+     "end": 1.14
+    },
+    {
+     "w": "to",
+     "start": 1.14,
+     "end": 1.3
+    },
+    {
+     "w": "hold",
+     "start": 1.3,
+     "end": 1.46
+    },
+    {
+     "w": "you.",
+     "start": 1.46,
+     "end": 1.62
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "Bitter really is an acquired taste.",
+   "start": 2.69,
+   "end": 4.6,
+   "clip": "set/lines/L02.wav",
+   "clip_start": 2.57,
+   "clip_end": 4.75,
+   "word_times": [
+    {
+     "w": "Bitter",
+     "start": 2.69,
+     "end": 3.07
+    },
+    {
+     "w": "really",
+     "start": 3.07,
+     "end": 3.45
+    },
+    {
+     "w": "is",
+     "start": 3.45,
+     "end": 3.65
+    },
+    {
+     "w": "an",
+     "start": 3.65,
+     "end": 3.84
+    },
+    {
+     "w": "acquired",
+     "start": 3.84,
+     "end": 4.41
+    },
+    {
+     "w": "taste.",
+     "start": 4.41,
+     "end": 4.6
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "That's how you know it's not for everybody.",
+   "start": 5.6,
+   "end": 6.98,
+   "clip": "set/lines/L03.wav",
+   "clip_start": 5.48,
+   "clip_end": 7.13,
+   "word_times": [
+    {
+     "w": "That's",
+     "start": 5.6,
+     "end": 5.71
+    },
+    {
+     "w": "how",
+     "start": 5.71,
+     "end": 5.83
+    },
+    {
+     "w": "you",
+     "start": 5.83,
+     "end": 5.95
+    },
+    {
+     "w": "know",
+     "start": 5.95,
+     "end": 6.06
+    },
+    {
+     "w": "it's",
+     "start": 6.06,
+     "end": 6.18
+    },
+    {
+     "w": "not",
+     "start": 6.18,
+     "end": 6.29
+    },
+    {
+     "w": "for",
+     "start": 6.29,
+     "end": 6.41
+    },
+    {
+     "w": "everybody.",
+     "start": 6.41,
+     "end": 6.98
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "But the real ones know what that flavor is.",
+   "start": 7.4,
+   "end": 10.14,
+   "clip": "set/lines/L04.wav",
+   "clip_start": 7.28,
+   "clip_end": 10.29,
+   "word_times": [
+    {
+     "w": "But",
+     "start": 7.4,
+     "end": 7.65
+    },
+    {
+     "w": "the",
+     "start": 7.65,
+     "end": 7.9
+    },
+    {
+     "w": "real",
+     "start": 7.9,
+     "end": 8.15
+    },
+    {
+     "w": "ones",
+     "start": 8.15,
+     "end": 8.65
+    },
+    {
+     "w": "know",
+     "start": 8.65,
+     "end": 8.89
+    },
+    {
+     "w": "what",
+     "start": 8.89,
+     "end": 9.14
+    },
+    {
+     "w": "that",
+     "start": 9.14,
+     "end": 9.39
+    },
+    {
+     "w": "flavor",
+     "start": 9.39,
+     "end": 9.89
+    },
+    {
+     "w": "is.",
+     "start": 9.89,
+     "end": 10.14
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "When you get to the bottom of that mug,",
+   "start": 10.93,
+   "end": 12.56,
+   "clip": "set/lines/L05.wav",
+   "clip_start": 10.81,
+   "clip_end": 12.71,
+   "word_times": [
+    {
+     "w": "When",
+     "start": 10.93,
+     "end": 11.09
+    },
+    {
+     "w": "you",
+     "start": 11.09,
+     "end": 11.26
+    },
+    {
+     "w": "get",
+     "start": 11.26,
+     "end": 11.42
+    },
+    {
+     "w": "to",
+     "start": 11.42,
+     "end": 11.58
+    },
+    {
+     "w": "the",
+     "start": 11.58,
+     "end": 11.75
+    },
+    {
+     "w": "bottom",
+     "start": 11.75,
+     "end": 12.07
+    },
+    {
+     "w": "of",
+     "start": 12.07,
+     "end": 12.23
+    },
+    {
+     "w": "that",
+     "start": 12.23,
+     "end": 12.4
+    },
+    {
+     "w": "mug,",
+     "start": 12.4,
+     "end": 12.56
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "when ain't nothing left but that grit,",
+   "start": 13.19,
+   "end": 14.67,
+   "clip": "set/lines/L06.wav",
+   "clip_start": 13.07,
+   "clip_end": 14.82,
+   "word_times": [
+    {
+     "w": "when",
+     "start": 13.19,
+     "end": 13.38
+    },
+    {
+     "w": "ain't",
+     "start": 13.38,
+     "end": 13.56
+    },
+    {
+     "w": "nothing",
+     "start": 13.56,
+     "end": 13.93
+    },
+    {
+     "w": "left",
+     "start": 13.93,
+     "end": 14.12
+    },
+    {
+     "w": "but",
+     "start": 14.12,
+     "end": 14.3
+    },
+    {
+     "w": "that",
+     "start": 14.3,
+     "end": 14.49
+    },
+    {
+     "w": "grit,",
+     "start": 14.49,
+     "end": 14.67
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "that's where you really appreciate that grind.",
+   "start": 15.76,
+   "end": 17.4,
+   "clip": "set/lines/L07.wav",
+   "clip_start": 15.64,
+   "clip_end": 17.5,
+   "word_times": [
+    {
+     "w": "that's",
+     "start": 15.76,
+     "end": 15.92
+    },
+    {
+     "w": "where",
+     "start": 15.92,
+     "end": 16.09
+    },
+    {
+     "w": "you",
+     "start": 16.09,
+     "end": 16.25
+    },
+    {
+     "w": "really",
+     "start": 16.25,
+     "end": 16.58
+    },
+    {
+     "w": "appreciate",
+     "start": 16.58,
+     "end": 17.07
+    },
+    {
+     "w": "that",
+     "start": 17.07,
+     "end": 17.24
+    },
+    {
+     "w": "grind.",
+     "start": 17.24,
+     "end": 17.4
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "turn": "T1",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "Because nothing tastes as good as getting your lick back.",
+   "start": 17.99,
+   "end": 21.7,
+   "clip": "set/lines/L08.wav",
+   "clip_start": 17.87,
+   "clip_end": 21.8,
+   "word_times": [
+    {
+     "w": "Because",
+     "start": 17.99,
+     "end": 18.52
+    },
+    {
+     "w": "nothing",
+     "start": 18.52,
+     "end": 19.05
+    },
+    {
+     "w": "tastes",
+     "start": 19.05,
+     "end": 19.58
+    },
+    {
+     "w": "as",
+     "start": 19.58,
+     "end": 19.85
+    },
+    {
+     "w": "good",
+     "start": 19.85,
+     "end": 20.11
+    },
+    {
+     "w": "as",
+     "start": 20.11,
+     "end": 20.38
+    },
+    {
+     "w": "getting",
+     "start": 20.38,
+     "end": 20.91
+    },
+    {
+     "w": "your",
+     "start": 20.91,
+     "end": 21.17
+    },
+    {
+     "w": "lick",
+     "start": 21.17,
+     "end": 21.44
+    },
+    {
+     "w": "back.",
+     "start": 21.44,
+     "end": 21.7
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "turn": "T2",
+   "speaker": "vet",
+   "kind": "on-camera speech (sync, to camera)",
+   "words": "Tastes good, don't it?",
+   "start": 26.53,
+   "end": 27.72,
+   "clip": "set/lines/L09.wav",
+   "clip_start": 26.41,
+   "clip_end": 27.8,
+   "word_times": [
+    {
+     "w": "Tastes",
+     "start": 26.53,
+     "end": 27.01
+    },
+    {
+     "w": "good,",
+     "start": 27.01,
+     "end": 27.24
+    },
+    {
+     "w": "don't",
+     "start": 27.24,
+     "end": 27.48
+    },
+    {
+     "w": "it?",
+     "start": 27.48,
+     "end": 27.72
+    }
+   ]
+  }
+ ]
+}

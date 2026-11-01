@@ -1,0 +1,1667 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 30.03,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 13,
+  "average_shot": 2.31,
+  "median_shot": 0.42,
+  "note": "shot detection at threshold 0.1, then the fan-silhouette shot merged (23.23-23.48) and the celebrate/goalpost pair split at 24.31 by eye"
+ },
+ "acts": [
+  {
+   "name": "Monologue",
+   "shots": [
+    1
+   ],
+   "start": 0.0,
+   "end": 21.48,
+   "function": "hook and setup: a retired star, deadpan, to camera, talks about a bitter taste that only the real ones appreciate; the slow pull-back reveals him piece by piece"
+  },
+  {
+   "name": "The win",
+   "shots": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "start": 21.48,
+   "end": 24.73,
+   "function": "payoff: 'getting your lick back' made literal, a 3.25 s championship montage of 9 cuts (avg 0.36 s) slammed in on the music, with the one firework stadium shot at its peak"
+  },
+  {
+   "name": "The sip",
+   "shots": [
+    11
+   ],
+   "start": 24.73,
+   "end": 27.86,
+   "function": "punchline: back in the quiet room, he sips, grins, 'Tastes good, don't it?'"
+  },
+  {
+   "name": "End card",
+   "shots": [
+    12,
+    13
+   ],
+   "start": 27.86,
+   "end": 30.03,
+   "function": "tagline then brand mark on a teal glitter cloud"
+  }
+ ],
+ "look": {
+  "grade": "two worlds: the room is warm and dark (amber skin, burgundy brick, rust-orange jacket, charcoal beanie and black sunglasses as the dark accents); the montage is cool teal-green with crushed blacks; the end card is black and teal",
+  "contrast": "high, deep blacks in the room; punchy in the montage",
+  "light": "room: one soft warm key from camera left, nothing else; montage: stadium floodlight",
+  "depth_of_field": "shallow in the room (wall soft), shallow long-lens in the montage",
+  "grain": "light film grain throughout",
+  "brightness": "room shots sit at 31-42 (0-255); montage 42-92, the upper-stands shot 103-125; end cards 74-104"
+ },
+ "text_style": {
+  "typeface": "ultra-heavy condensed grotesque, all caps, white, slightly rough inked edges",
+  "case": "upper",
+  "size": "each line ~17% of frame height; block 50% of the width",
+  "tracking": "tight",
+  "position": "centred, stacked three lines, y 22-77%",
+  "animation": "none: cut in, cut out on hard cuts"
+ },
+ "sound": {
+  "arc": "0-21.48 the voice alone, dry and close, deadpan, with low room tone (no music audible); 21.48 hard cut to loud driving music (~146 bpm, drums and brass hits) and crowd roar, peaking 23.5-24.1 (-8 LUFS); 24.73 music decays, 25.2-26.5 near silence; 26.53 'Tastes good, don't it?'; 27.86 the end-card sting, loud, to the end",
+  "speech": "one speaker, on camera, lines L01-L09 in set/lines.json; L08's last word runs 0.22 s over the cut into the montage",
+  "mix": "voice ~-22 LUFS in the monologue, music ~-9 LUFS in the montage: a big level jump is the point",
+  "note": "set/score.wav is the full soundtrack including the voice. A new film keeps the score only where it is music (cut30 21.48-25.2 and 27.80-30.0) and uses its own takes for the speech and room tone under the monologue and the sip."
+ },
+ "set": {
+  "char_vet": {
+   "files": [
+    "set/char_vet_sheet.jpg"
+   ],
+   "fixes": "the presenter: an invented retired defensive lineman, ~46, very broad heavy powerful build, thick neck, shaved head, full close-trimmed salt-and-pepper beard, light-brown olive skin; wardrobe charcoal grey wool knit beanie worn normally with a folded cuff (no logo), black rectangular acetate sunglasses with dark lenses, rust-orange corduroy work jacket #a4522a open, cream henley with a three-button placket, plain gold wedding band on the left ring finger, no other jewellery"
+  },
+  "prop_mug": {
+   "files": [
+    "set/product_mug_sheet.jpg"
+   ],
+   "fixes": "the red cup he holds and sips from: rounded cappuccino cup ~9 cm tall, small ear handle, satin brick-red glaze #a3271d, black coffee"
+  },
+  "char_receiver": {
+   "files": [
+    "set/char_receiver_sheet.jpg"
+   ],
+   "fixes": "home-team star receiver #31, invented kit: matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves"
+  },
+  "char_defender": {
+   "files": [
+    "set/char_defender_sheet.jpg"
+   ],
+   "fixes": "opposing defender #57, invented kit: white jersey with dark red #8c1d24 numbers and shoulder stripes, white pants, dark red helmet with white centre stripe"
+  },
+  "char_coach": {
+   "files": [
+    "set/char_coach_sheet.jpg"
+   ],
+   "fixes": "home head coach on the sideline: ~55, heavyset, short grey hair, clean-shaven, plain charcoal zip jacket with copper piping, black cap worn forward, black headset with boom mic, white card"
+  },
+  "loc_brick_wall": {
+   "files": [
+    "set/loc_brick_wall.jpg"
+   ],
+   "fixes": "the room: one flat old red brick wall, small black-framed abstract blue wave print top right, dark wooden chair; very dark (31-42/255), warm left key"
+  },
+  "loc_stadium_dusk": {
+   "files": [
+    "set/loc_stadium_dusk.jpg"
+   ],
+   "fixes": "generic open-air stadium from the air at dusk, skyline behind (fireworks are added in shot 7)"
+  },
+  "loc_stands_view": {
+   "files": [
+    "set/loc_stands_view.jpg"
+   ],
+   "fixes": "the packed night stadium seen from the upper stands, for shots 2-6 and 9-10"
+  },
+  "ui_champions_banner": {
+   "files": [
+    "set/ui_champions_banner.jpg"
+   ],
+   "fixes": "shot 8: the CHAMPIONS banner through copper/charcoal/white confetti"
+  },
+  "ui_endcard_bg": {
+   "files": [
+    "set/ui_endcard_bg.jpg"
+   ],
+   "fixes": "end-card background: black with a teal glitter cloud from the bottom right"
+  },
+  "ui_endcard_tagline": {
+   "files": [
+    "set/ui_endcard_tagline.jpg"
+   ],
+   "fixes": "shot 12: the tagline card (default words SWEET / LIKE / PAYBACK)"
+  },
+  "ui_endcard_logo": {
+   "files": [
+    "set/ui_endcard_logo.jpg"
+   ],
+   "fixes": "shot 13: brand mark card (default STRIDE wordmark)"
+  },
+  "voice_vet": {
+   "files": [
+    "set/voice_vet.wav"
+   ],
+   "fixes": "14.5 s of the presenter's voice (source 2.6-17.1): low, slow, slightly raspy, deadpan"
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L08.wav",
+    "set/lines/L09.wav"
+   ],
+   "fixes": "the nine recorded lines with absolute and word times; guide audio for every presenter take"
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "the soundtrack and its 30 s and 15 s cuts"
+  }
+ },
+ "slots": {
+  "BRAND": "the brand on the logo card (default: STRIDE, an invented sportswear wordmark)",
+  "TAGLINE": "three-line end-card tagline that turns 'bitter' into 'sweet' (default: SWEET / LIKE / PAYBACK)",
+  "presenter": "a retired star of the sport, deadpan and self-assured, sunglasses on indoors, a cap or beanie, holding a cup (default char_vet)",
+  "prop": "the drink he holds and sips at the punchline (default prop_mug, a red cup of black coffee)",
+  "lines": "an 8-line monologue (~21 s) about a bitter taste only the real ones appreciate, landing on revenge, plus a 3-4 word tag after the sip; keep set/lines.json timings",
+  "place": "one dark room with a textured wall (default loc_brick_wall)",
+  "montage": "9 shots of the presenter's former team winning the big one (catch, break-away run, hug, coach, fans, the stadium firework shot, CHAMPIONS banner, celebration, goalpost dunk) in generic kits",
+  "team_colours": "home kit charcoal #2e3033 with copper #b8733a, confetti copper/charcoal/white; away kit white and dark red; the end card teal is the brand's, not a team's"
+ },
+ "shots": [
+  {
+   "n": 1,
+   "start": 0.0,
+   "end": 21.48,
+   "dur": 21.48,
+   "in": "start",
+   "brightness": {
+    "start": 31,
+    "mid": 39,
+    "end": 35
+   },
+   "colour": "#29201d",
+   "change": 7.52,
+   "sound": "-21.84 LUFS mean, -12.07 peak",
+   "setup": "A_brick_wall_pullback",
+   "location": "loc_brick_wall",
+   "cast": [
+    "char_vet",
+    "prop_mug"
+   ],
+   "wardrobe": "charcoal grey wool knit beanie worn normally with a folded cuff (no logo), black rectangular acetate sunglasses with dark lenses, rust-orange corduroy work jacket #a4522a open, cream henley with a three-button placket, plain gold wedding band on the left ring finger, no other jewellery",
+   "shot_size": "extreme close-up -> medium (one continuous move)",
+   "subject_in_frame": "0.0 s: extreme close-up of mouth and chin only, mouth centred at x 50%, y 45%, lower face fills 75% of the width, frame top cuts just below the sunglasses, saucer rim in the bottom 8%. 2.2 s: sunglasses enter: face 55% of width, eyes at y 22%. 4.85 s: close-up, face 38% of width, beanie top cropped. 7.2 s: face 30%. 10.74 s (board s01): medium close-up, face 25% of width centred at x 48%, sunglasses at y 33%, beanie top touches the top edge, shoulders fill the bottom 40%, brick wall behind. 12.9 s: face 19%, red cup enters bottom left held at chest. 15.3 s: face 15%, black picture frame enters top right. 21.35 s (board s01b): medium shot seated, body 38% of the width centred at x 44%, head top at y 10%, face 12% of the width, cup held at chest height x 40% y 70%, picture frame top right at x 82-93%, y 8-28%.",
+   "camera": "starts at mouth height and ends at chest height looking very slightly up (5 deg low angle), square to the wall; normal-to-long lens feel (~85 mm at the start, ~50 mm equivalent at the end), shallow depth of field: wall soft while close, nearly sharp at the end",
+   "camera_move": "one continuous slow pull-back with a slight rise, 0.0-21.48 s, framing width grows about 6x (scale 1.0 -> 0.17 of the subject), steady and linear with a slightly faster first 2 s (tilts up from mouth to eyes 0-2.2 s). No pan. It reveals in order: mouth (0 s), sunglasses (2 s), beanie (5 s), shoulders (8 s), the red cup (12.5 s), the picture on the wall (14.5 s), the whole seated figure (21 s).",
+   "action": "Sits facing camera, nearly still, delivering a deadpan monologue straight into the lens in a low, unhurried voice: 0.35 'I ain't even going to hold you.' 2.69 'Bitter really is an acquired taste.' 5.60 'That's how you know it's not for everybody.' 7.40 'But the real ones know what that flavor is.' 10.93 'When you get to the bottom of that mug,' 13.19 'when ain't nothing left but that grit,' 15.76 'that's where you really appreciate that grind.' 17.99 'Because nothing tastes as good as getting your lick back.' (ends 21.70, over shot 2). Small head tilts on the stressed words, a slight knowing smirk on 'real ones' and 'lick back'; from ~12 s he holds the red cup in his right hand at chest height without drinking.",
+   "light": "single soft warm key from camera left at 45 deg, warm tungsten ~3200 K, falling off hard to the right; brick wall raked warm, edges near black; measured brightness 31 at the start, 39 mid, 35 end (0-255); dominant colour #29201d",
+   "text": [],
+   "out": "hard cut on the music downbeat to shot 2 while the last word 'back' is still sounding (voice runs 0.22 s over the cut)",
+   "audio": "dry close-miked voice, deadpan, ~-22 LUFS mean, phrases separated by 0.4-1.0 s pauses of low room tone (~-45 dBFS); no music audible. Lines L01-L08 at their absolute times (set/lines.json).",
+   "render": "one locked setup rendered as 8 takes, one per line (cut30 shots 1-8): first frame + guide_audio from that line's clip (set/lines/L01.wav ... L08.wav, placed at the line's offset inside the take). Each take's first frame is a plate of char_vet in loc_brick_wall at that take's start framing (subject_in_frame gives the face width at each take start), and its prompt asks for the same slow pull-back continuing. Cut on the line breaks (the pauses). If a take drifts off the framing or the face changes, re-render it on the same first frame and guide audio; never use reference mode for this setup.",
+   "board": "boards/s01.jpg",
+   "boards": [
+    "boards/s01a.jpg",
+    "boards/s01.jpg",
+    "boards/s01b.jpg"
+   ]
+  },
+  {
+   "n": 2,
+   "start": 21.48,
+   "end": 21.98,
+   "dur": 0.5,
+   "in": "cut",
+   "brightness": {
+    "start": 66,
+    "mid": 76,
+    "end": 82
+   },
+   "colour": "#444b47",
+   "change": 0,
+   "sound": "-15.45 LUFS mean, -12.03 peak",
+   "setup": "M_sideline_long_lens",
+   "location": "loc_stands_view (field level, packed home crowd behind)",
+   "cast": [
+    "char_receiver",
+    "char_defender"
+   ],
+   "wardrobe": "home: matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves; away: white jersey with dark red #8c1d24 numbers and shoulder stripes, white pants, dark red helmet with white stripe",
+   "shot_size": "medium wide",
+   "subject_in_frame": "two players at left-centre, the receiver's back to camera at x 20-35% filling 45% of the height, defender at x 35-45%, ball in the air at x 55%, y 30%; crowd fills the top half, field the bottom 40%",
+   "camera": "field level, eye height, long telephoto lens, compressed crowd, shallow depth of field",
+   "camera_move": "handheld long-lens pan right 10% of frame width over 0.5 s, following the ball",
+   "action": "the home receiver reaches over the defender and catches the ball one-handed (catch at 0.2 s), a third player runs in at right",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 66 -> 82",
+   "text": [],
+   "out": "hard cut",
+   "audio": "music hits in (score, loud, -15 LUFS mean), crowd roar; 'lick back' tail of L08 ends at 21.70",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.5 s of it (frames any 0.5 s window). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s02.jpg"
+  },
+  {
+   "n": 3,
+   "start": 21.98,
+   "end": 22.48,
+   "dur": 0.5,
+   "in": "cut",
+   "brightness": {
+    "start": 62,
+    "mid": 67,
+    "end": 60
+   },
+   "colour": "#364037",
+   "change": 0,
+   "sound": "-11.27 LUFS mean, -10.18 peak",
+   "setup": "M_low_field_level",
+   "location": "loc_stands_view (field level)",
+   "cast": [
+    "char_receiver",
+    "char_defender"
+   ],
+   "wardrobe": "home: matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves; away: white jersey with dark red #8c1d24 numbers and shoulder stripes, white pants, dark red helmet with white stripe",
+   "shot_size": "medium wide",
+   "subject_in_frame": "ball carrier centred at x 50%, 60% of the height, through a pile of diving defenders in the foreground that blur across the bottom third",
+   "camera": "low, knee height, wide-to-normal lens",
+   "camera_move": "fast handheld push right with the runner, heavy motion blur (the measured change is 48+ across 21.48-23.23)",
+   "action": "the home runner breaks through three diving tacklers and keeps going, a defender sprawls on the turf at right",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 62-67",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music + crowd roar, -11 LUFS",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.5 s of it (frames the break-through). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s03.jpg"
+  },
+  {
+   "n": 4,
+   "start": 22.48,
+   "end": 22.9,
+   "dur": 0.42,
+   "in": "cut",
+   "brightness": {
+    "start": 65,
+    "mid": 58,
+    "end": 50
+   },
+   "colour": "#323a3b",
+   "change": 0,
+   "sound": "-9.36 LUFS mean, -9.15 peak",
+   "setup": "M_celebration_tele",
+   "location": "loc_stands_view (field level)",
+   "cast": [
+    "char_receiver"
+   ],
+   "wardrobe": "home: matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves",
+   "shot_size": "medium",
+   "subject_in_frame": "two home players embrace at centre, backs and helmets filling 60% of the height at x 35-65%, crowd blurred behind",
+   "camera": "eye level, long lens, shallow focus",
+   "camera_move": "handheld, slight push in",
+   "action": "team-mates leap into a chest-bump hug, one raises a fist",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 65 -> 50",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music + crowd, -9 LUFS",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.42 s of it (frames the hug). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s04.jpg"
+  },
+  {
+   "n": 5,
+   "start": 22.9,
+   "end": 23.23,
+   "dur": 0.33,
+   "in": "cut",
+   "brightness": {
+    "start": 66,
+    "mid": 60,
+    "end": 59
+   },
+   "colour": "#393d36",
+   "change": 0,
+   "sound": "-9.1 LUFS mean, -9.02 peak",
+   "setup": "M_sideline_coach",
+   "location": "team sideline at field level",
+   "cast": [
+    "char_coach"
+   ],
+   "wardrobe": "plain charcoal zip jacket with copper piping, black cap worn forward, black headset, white play card",
+   "shot_size": "medium",
+   "subject_in_frame": "coach at right, x 72-95%, chest-up 70% of the height; two staff legs and dark coats out of focus at left x 5-55%",
+   "camera": "eye level, long lens",
+   "camera_move": "handheld pan right catching the coach as he strides in",
+   "action": "the coach storms down the sideline shouting into his headset mic, play card in hand, pumping his arm",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 66-59",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music + crowd, -9 LUFS",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.33 s of it (frames the stride-in). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s05.jpg"
+  },
+  {
+   "n": 6,
+   "start": 23.23,
+   "end": 23.48,
+   "dur": 0.25,
+   "in": "cut",
+   "brightness": {
+    "start": 125,
+    "mid": 110,
+    "end": 103
+   },
+   "colour": "#62765f",
+   "change": 0,
+   "sound": "-9.3 LUFS mean, -9.2 peak",
+   "setup": "M_upper_stands",
+   "location": "loc_stands_view",
+   "cast": [
+    "fans (silhouettes)"
+   ],
+   "wardrobe": "dark silhouettes",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "field seen from high in the stands diagonally, far goalposts top left; two fans' raised arms rise as black silhouettes from the bottom edge, filling the lower right 40% by the end",
+   "camera": "high in the upper stands, 30 deg down, normal lens, deep focus",
+   "camera_move": "locked; silhouette arms rise into frame 0.0-0.25 s",
+   "action": "fans in the foreground throw their fists up in silhouette against the bright field",
+   "light": "bright floodlit field, brightness 125 -> 103 as the silhouettes fill the frame",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music + crowd roar, -9 LUFS",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.25 s of it (frames the arms rising). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s06.jpg"
+  },
+  {
+   "n": 7,
+   "start": 23.48,
+   "end": 23.86,
+   "dur": 0.38,
+   "in": "cut",
+   "brightness": {
+    "start": 51,
+    "mid": 61,
+    "end": 74
+   },
+   "colour": "#473938",
+   "change": 0,
+   "sound": "-8.37 LUFS mean, -7.86 peak",
+   "setup": "M_aerial_stadium",
+   "location": "loc_stadium_dusk",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "extreme wide",
+   "subject_in_frame": "whole stadium bowl centred, field a bright vertical strip at x 45-55% from y 55% to the bottom; the stand roofs left and right reach to y 25%; city skyline across the top 25%; fireworks and white smoke erupting from the field centre and the roof edges",
+   "camera": "aerial, high above and behind one end zone, 35 deg down, wide lens, deep focus",
+   "camera_move": "slow drone push forward, ~3% scale over 0.38 s",
+   "action": "the one firework shot: pyrotechnic fountains and white smoke burst up from the field and from both roof edges at 0.1 s and grow to fill the top centre by the end",
+   "light": "dusk: pink-magenta and violet sky, warm orange stadium lights, field bright green; brightness 51 -> 74 as the fireworks flare",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music at its loudest, -8.4 LUFS, crowd roar",
+   "render": "first + last frame: plate of loc_stadium_dusk at the board's framing without fireworks (s07a) -> the same with fireworks at full bloom (s07b); 5 s clip, keep 0.38 s at the peak of the burst",
+   "board": "boards/s07.jpg",
+   "boards": [
+    "boards/s07a.jpg",
+    "boards/s07.jpg",
+    "boards/s07b.jpg"
+   ]
+  },
+  {
+   "n": 8,
+   "start": 23.86,
+   "end": 24.15,
+   "dur": 0.29,
+   "in": "cut",
+   "brightness": {
+    "start": 91,
+    "mid": 92,
+    "end": 91
+   },
+   "colour": "#42624c",
+   "change": 0,
+   "sound": "-8.72 LUFS mean, -8.08 peak",
+   "setup": "M_banner_confetti",
+   "location": "on the field, post-game",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "close-up",
+   "subject_in_frame": "a long banner crosses the frame horizontally at y 35-60%, the word CHAMPIONS fills 85% of the width; dense copper, charcoal and white confetti over everything",
+   "camera": "eye level, normal lens",
+   "camera_move": "drifts left 5% over 0.29 s, confetti falling through frame; a second, slightly offset angle of the same banner at 0.2 s (a jump within the shot)",
+   "action": "confetti blizzard over the CHAMPIONS banner",
+   "light": "bright, flat stadium light, brightness 91; warm copper confetti",
+   "text": [
+    {
+     "words": "CHAMPIONS",
+     "where": "on the banner (diegetic), centred, 85% of the width, y 40-58%",
+     "in": 23.86,
+     "out": 24.15,
+     "style": "bold condensed italic pale-grey letters, distressed"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score music, -8.7 LUFS",
+   "render": "composited: set/ui_champions_banner.jpg with a confetti particle layer falling 40% of the height per second; or a 5 s keyframe clip from that plate",
+   "board": "boards/s08.jpg"
+  },
+  {
+   "n": 9,
+   "start": 24.15,
+   "end": 24.31,
+   "dur": 0.16,
+   "in": "cut",
+   "brightness": {
+    "start": 56,
+    "mid": 55,
+    "end": 54
+   },
+   "colour": "#353126",
+   "change": 0,
+   "sound": "-12 LUFS mean",
+   "setup": "M_endzone_crowd",
+   "location": "end zone in front of the packed stands",
+   "cast": [
+    "char_receiver"
+   ],
+   "wardrobe": "matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves",
+   "shot_size": "medium wide",
+   "subject_in_frame": "receiver at x 35-50%, 75% of the height, arms flung wide, crowd standing behind filling the frame",
+   "camera": "eye level, long lens",
+   "camera_move": "locked",
+   "action": "the receiver spreads his arms to the crowd in celebration",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 55",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score music, crowd",
+   "render": "keyframe mode: a 5 s clip from a first-frame plate (set sheets composited into the board's framing) and a last-frame plate of the same action 1 s later; keep only the most violent 0.16 s of it (frames arms wide). Crowd roar and music come from the score, not from the clip.",
+   "board": "boards/s09.jpg"
+  },
+  {
+   "n": 10,
+   "start": 24.31,
+   "end": 24.73,
+   "dur": 0.42,
+   "in": "cut",
+   "brightness": {
+    "start": 53,
+    "mid": 48,
+    "end": 42
+   },
+   "colour": "#353126",
+   "change": 0,
+   "sound": "-12.1 LUFS mean, -10.3 peak",
+   "setup": "M_goalpost_low",
+   "location": "end zone, yellow goalpost upright, packed crowd behind",
+   "cast": [
+    "char_receiver"
+   ],
+   "wardrobe": "matte charcoal jersey #2e3033 with copper #b8733a number 31 outlined off-white, copper shoulder stripes, charcoal pants, matte charcoal helmet with one copper centre stripe and dark visor, white gloves",
+   "shot_size": "medium",
+   "subject_in_frame": "receiver from behind at x 20-40%, arm stretched up with the ball at y 15%; yellow goalpost arm crossing the top right; by the end the goalpost fills the top 40% and the player is at the bottom left",
+   "camera": "low angle, 20 deg up, normal lens",
+   "camera_move": "tilt up and pan right following the ball toward the goalpost, ~25% of frame height over 0.42 s",
+   "action": "the receiver leaps and dunks the ball over the goalpost crossbar",
+   "light": "night game under stadium floodlights: hard cool-white overhead light, crowd falling to dark blue-green; graded teal-green, crushed blacks; brightness 53 -> 42",
+   "text": [],
+   "out": "hard cut to the sip (shot 11) as the music falls away",
+   "audio": "score music decaying, -12 LUFS",
+   "render": "first + last frame: s10a (player reaching up, goalpost top right) -> s10b (goalpost fills the top); 5 s clip, keep 0.42 s",
+   "board": "boards/s10.jpg",
+   "boards": [
+    "boards/s10a.jpg",
+    "boards/s10.jpg",
+    "boards/s10b.jpg"
+   ]
+  },
+  {
+   "n": 11,
+   "start": 24.73,
+   "end": 27.86,
+   "dur": 3.13,
+   "in": "cut",
+   "brightness": {
+    "start": 42,
+    "mid": 40,
+    "end": 38
+   },
+   "colour": "#2f251f",
+   "change": 8.12,
+   "sound": "-25.53 LUFS mean, -10.57 peak",
+   "setup": "B_brick_wall_close",
+   "location": "loc_brick_wall",
+   "cast": [
+    "char_vet",
+    "prop_mug"
+   ],
+   "wardrobe": "charcoal grey wool knit beanie worn normally with a folded cuff (no logo), black rectangular acetate sunglasses with dark lenses, rust-orange corduroy work jacket #a4522a open, cream henley with a three-button placket, plain gold wedding band on the left ring finger, no other jewellery",
+   "shot_size": "close-up",
+   "subject_in_frame": "head and shoulders centred at x 50%, face 30% of the width, beanie top cut by the frame top, sunglasses at y 28%; at 0 s the red cup covers the mouth (cup 25% of the width, x 35-55%, y 40-65%); after 1.4 s the cup sits at the bottom edge, rim at y 92%",
+   "camera": "eye level, straight on, normal lens (~50 mm), shallow depth of field, wall soft",
+   "camera_move": "locked off with a barely visible push in (~2% over 3.1 s)",
+   "action": "0.0-1.2 s he sips from the red cup held in his right hand, eyes on camera behind the sunglasses; 1.2-1.6 s lowers it below frame; 1.6 s a slow, satisfied grin; 1.80-2.99 s says 'Tastes good, don't it?' (L09, absolute 26.53-27.72); holds the grin to the cut",
+   "light": "same warm left key as shot 1, slightly closer, brightness 42 -> 38, dominant #2f251f",
+   "text": [],
+   "out": "hard cut to the end card on the music sting",
+   "audio": "music tails off 24.73-25.2 s, near silence 25.2-26.5 (a quiet sip), then L09 'Tastes good, don't it?' at 26.53-27.72, dry and close",
+   "render": "first frame + guide_audio: plate s11a (cup at the mouth) and a 3.2 s guide made of 1.80 s silence + set/lines/L09.wav; prompt the sip, lower, grin, line. Same rule as setup A if it drifts.",
+   "board": "boards/s11.jpg",
+   "boards": [
+    "boards/s11a.jpg",
+    "boards/s11.jpg",
+    "boards/s11b.jpg"
+   ]
+  },
+  {
+   "n": 12,
+   "start": 27.86,
+   "end": 29.36,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 104,
+    "mid": 104,
+    "end": 104
+   },
+   "colour": "#516c6d",
+   "change": 7.21,
+   "sound": "-12.1 LUFS mean, -9.63 peak",
+   "setup": "C_endcard",
+   "location": "graphic: black with teal glitter cloud (set/ui_endcard_bg.jpg)",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "graphic",
+   "subject_in_frame": "three stacked lines of the tagline centred, block 50% of the width at its widest line, y 22-77%, each line ~17% of the frame height",
+   "camera": "graphic, flat",
+   "camera_move": "glitter particles drift slowly up and left (~2% of the width per second); the type is static",
+   "action": "tagline card, cut in hard, holds 1.5 s",
+   "light": "brightness 104, dominant teal #516c6d",
+   "text": [
+    {
+     "words": "{TAGLINE} (default: SWEET / LIKE / PAYBACK)",
+     "where": "centre, three lines stacked, y 22-77%, 50% of the width",
+     "in": 27.86,
+     "out": 29.36,
+     "style": "white, ultra-heavy condensed grotesque, all caps, tight tracking, no leading, slightly rough inked edges, no animation"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "end-card music sting, -12 LUFS",
+   "render": "drawn in code: set/ui_endcard_tagline.jpg (or ui_endcard_bg.jpg + the tagline in a heavy condensed face) with a slow particle drift",
+   "board": "boards/s12.jpg"
+  },
+  {
+   "n": 13,
+   "start": 29.36,
+   "end": 30.03,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 73,
+    "mid": 74,
+    "end": 74
+   },
+   "colour": "#2b4f50",
+   "change": 8.19,
+   "sound": "-14.94 LUFS mean, -13.12 peak",
+   "setup": "C_endcard",
+   "location": "graphic: same glitter background",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "graphic",
+   "subject_in_frame": "small white brand mark at the exact centre, 12% of the width",
+   "camera": "graphic, flat",
+   "camera_move": "glitter keeps drifting as in shot 12",
+   "action": "logo card to the end",
+   "light": "brightness 74, teal #2b4f50",
+   "text": [
+    {
+     "words": "{BRAND} logo (default: STRIDE wordmark)",
+     "where": "centre, x 50%, y 50%, 12% of the width",
+     "in": 29.36,
+     "out": 30.03,
+     "style": "white, no animation"
+    }
+   ],
+   "out": "end",
+   "audio": "music sting tail, -15 LUFS",
+   "render": "drawn in code: set/ui_endcard_logo.jpg with the same drift",
+   "board": "boards/s13.jpg"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "arc": "The source is already a 30 s spot, so the 30 s cut is the film: hook (an extreme close-up mouth saying 'I ain't even going to hold you'), the deadpan monologue as the camera pulls back to reveal the man and his cup (0-21.5), the 3.25 s championship montage that slams in on the music (21.5-24.7), the punchline sip and 'Tastes good, don't it?' (24.7-27.9), tagline and logo cards (27.9-30.0).",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 2.2,
+    "dur": 2.2,
+    "src": [
+     0.0,
+     2.2
+    ],
+    "change": "take 1 of 8 of the continuous pull-back, holding line L01 (guide audio set/lines/L01.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 2,
+    "from": 1,
+    "start": 2.2,
+    "end": 4.85,
+    "dur": 2.65,
+    "src": [
+     2.2,
+     4.85
+    ],
+    "change": "take 2 of 8 of the continuous pull-back, holding line L02 (guide audio set/lines/L02.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 3,
+    "from": 1,
+    "start": 4.85,
+    "end": 7.2,
+    "dur": 2.35,
+    "src": [
+     4.85,
+     7.2
+    ],
+    "change": "take 3 of 8 of the continuous pull-back, holding line L03 (guide audio set/lines/L03.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 4,
+    "from": 1,
+    "start": 7.2,
+    "end": 10.75,
+    "dur": 3.55,
+    "src": [
+     7.2,
+     10.75
+    ],
+    "change": "take 4 of 8 of the continuous pull-back, holding line L04 (guide audio set/lines/L04.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 5,
+    "from": 1,
+    "start": 10.75,
+    "end": 12.9,
+    "dur": 2.15,
+    "src": [
+     10.75,
+     12.9
+    ],
+    "change": "take 5 of 8 of the continuous pull-back, holding line L05 (guide audio set/lines/L05.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 6,
+    "from": 1,
+    "start": 12.9,
+    "end": 15.3,
+    "dur": 2.4,
+    "src": [
+     12.9,
+     15.3
+    ],
+    "change": "take 6 of 8 of the continuous pull-back, holding line L06 (guide audio set/lines/L06.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 7,
+    "from": 1,
+    "start": 15.3,
+    "end": 17.5,
+    "dur": 2.2,
+    "src": [
+     15.3,
+     17.5
+    ],
+    "change": "take 7 of 8 of the continuous pull-back, holding line L07 (guide audio set/lines/L07.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 8,
+    "from": 1,
+    "start": 17.5,
+    "end": 21.48,
+    "dur": 3.98,
+    "src": [
+     17.5,
+     21.48
+    ],
+    "change": "take 8 of 8 of the continuous pull-back, holding line L08 (guide audio set/lines/L08.wav); starts where the previous take ended in framing; cut in the pause after the line"
+   },
+   {
+    "n": 9,
+    "from": 2,
+    "start": 21.48,
+    "end": 21.98,
+    "dur": 0.5,
+    "src": [
+     21.48,
+     21.98
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 10,
+    "from": 3,
+    "start": 21.98,
+    "end": 22.48,
+    "dur": 0.5,
+    "src": [
+     21.98,
+     22.48
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 11,
+    "from": 4,
+    "start": 22.48,
+    "end": 22.9,
+    "dur": 0.42,
+    "src": [
+     22.48,
+     22.9
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 12,
+    "from": 5,
+    "start": 22.9,
+    "end": 23.23,
+    "dur": 0.33,
+    "src": [
+     22.9,
+     23.23
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 13,
+    "from": 6,
+    "start": 23.23,
+    "end": 23.48,
+    "dur": 0.25,
+    "src": [
+     23.23,
+     23.48
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 14,
+    "from": 7,
+    "start": 23.48,
+    "end": 23.86,
+    "dur": 0.38,
+    "src": [
+     23.48,
+     23.86
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 15,
+    "from": 8,
+    "start": 23.86,
+    "end": 24.15,
+    "dur": 0.29,
+    "src": [
+     23.86,
+     24.15
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 16,
+    "from": 9,
+    "start": 24.15,
+    "end": 24.31,
+    "dur": 0.16,
+    "src": [
+     24.15,
+     24.31
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 17,
+    "from": 10,
+    "start": 24.31,
+    "end": 24.73,
+    "dur": 0.42,
+    "src": [
+     24.31,
+     24.73
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 18,
+    "from": 11,
+    "start": 24.73,
+    "end": 27.86,
+    "dur": 3.13,
+    "src": [
+     24.73,
+     27.86
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 19,
+    "from": 12,
+    "start": 27.86,
+    "end": 29.36,
+    "dur": 1.5,
+    "src": [
+     27.86,
+     29.36
+    ],
+    "change": "as source"
+   },
+   {
+    "n": 20,
+    "from": 13,
+    "start": 29.36,
+    "end": 30.0,
+    "dur": 0.64,
+    "src": [
+     29.36,
+     30.0
+    ],
+    "change": "trimmed to end at 30.0"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "I ain't even going to hold you.",
+    "start": 0.35,
+    "end": 1.62,
+    "clip": "set/lines/L01.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, mouth in extreme close-up)",
+    "word_times": [
+     {
+      "w": "I",
+      "start": 0.35,
+      "end": 0.51
+     },
+     {
+      "w": "ain't",
+      "start": 0.51,
+      "end": 0.67
+     },
+     {
+      "w": "even",
+      "start": 0.67,
+      "end": 0.98
+     },
+     {
+      "w": "going",
+      "start": 0.98,
+      "end": 1.14
+     },
+     {
+      "w": "to",
+      "start": 1.14,
+      "end": 1.3
+     },
+     {
+      "w": "hold",
+      "start": 1.3,
+      "end": 1.46
+     },
+     {
+      "w": "you.",
+      "start": 1.46,
+      "end": 1.62
+     }
+    ]
+   },
+   {
+    "id": "L02",
+    "words": "Bitter really is an acquired taste.",
+    "start": 2.69,
+    "end": 4.6,
+    "clip": "set/lines/L02.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Bitter",
+      "start": 2.69,
+      "end": 3.07
+     },
+     {
+      "w": "really",
+      "start": 3.07,
+      "end": 3.45
+     },
+     {
+      "w": "is",
+      "start": 3.45,
+      "end": 3.65
+     },
+     {
+      "w": "an",
+      "start": 3.65,
+      "end": 3.84
+     },
+     {
+      "w": "acquired",
+      "start": 3.84,
+      "end": 4.41
+     },
+     {
+      "w": "taste.",
+      "start": 4.41,
+      "end": 4.6
+     }
+    ]
+   },
+   {
+    "id": "L03",
+    "words": "That's how you know it's not for everybody.",
+    "start": 5.6,
+    "end": 6.98,
+    "clip": "set/lines/L03.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "That's",
+      "start": 5.6,
+      "end": 5.71
+     },
+     {
+      "w": "how",
+      "start": 5.71,
+      "end": 5.83
+     },
+     {
+      "w": "you",
+      "start": 5.83,
+      "end": 5.95
+     },
+     {
+      "w": "know",
+      "start": 5.95,
+      "end": 6.06
+     },
+     {
+      "w": "it's",
+      "start": 6.06,
+      "end": 6.18
+     },
+     {
+      "w": "not",
+      "start": 6.18,
+      "end": 6.29
+     },
+     {
+      "w": "for",
+      "start": 6.29,
+      "end": 6.41
+     },
+     {
+      "w": "everybody.",
+      "start": 6.41,
+      "end": 6.98
+     }
+    ]
+   },
+   {
+    "id": "L04",
+    "words": "But the real ones know what that flavor is.",
+    "start": 7.4,
+    "end": 10.14,
+    "clip": "set/lines/L04.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "But",
+      "start": 7.4,
+      "end": 7.65
+     },
+     {
+      "w": "the",
+      "start": 7.65,
+      "end": 7.9
+     },
+     {
+      "w": "real",
+      "start": 7.9,
+      "end": 8.15
+     },
+     {
+      "w": "ones",
+      "start": 8.15,
+      "end": 8.65
+     },
+     {
+      "w": "know",
+      "start": 8.65,
+      "end": 8.89
+     },
+     {
+      "w": "what",
+      "start": 8.89,
+      "end": 9.14
+     },
+     {
+      "w": "that",
+      "start": 9.14,
+      "end": 9.39
+     },
+     {
+      "w": "flavor",
+      "start": 9.39,
+      "end": 9.89
+     },
+     {
+      "w": "is.",
+      "start": 9.89,
+      "end": 10.14
+     }
+    ]
+   },
+   {
+    "id": "L05",
+    "words": "When you get to the bottom of that mug,",
+    "start": 10.93,
+    "end": 12.56,
+    "clip": "set/lines/L05.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "When",
+      "start": 10.93,
+      "end": 11.09
+     },
+     {
+      "w": "you",
+      "start": 11.09,
+      "end": 11.26
+     },
+     {
+      "w": "get",
+      "start": 11.26,
+      "end": 11.42
+     },
+     {
+      "w": "to",
+      "start": 11.42,
+      "end": 11.58
+     },
+     {
+      "w": "the",
+      "start": 11.58,
+      "end": 11.75
+     },
+     {
+      "w": "bottom",
+      "start": 11.75,
+      "end": 12.07
+     },
+     {
+      "w": "of",
+      "start": 12.07,
+      "end": 12.23
+     },
+     {
+      "w": "that",
+      "start": 12.23,
+      "end": 12.4
+     },
+     {
+      "w": "mug,",
+      "start": 12.4,
+      "end": 12.56
+     }
+    ]
+   },
+   {
+    "id": "L06",
+    "words": "when ain't nothing left but that grit,",
+    "start": 13.19,
+    "end": 14.67,
+    "clip": "set/lines/L06.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "when",
+      "start": 13.19,
+      "end": 13.38
+     },
+     {
+      "w": "ain't",
+      "start": 13.38,
+      "end": 13.56
+     },
+     {
+      "w": "nothing",
+      "start": 13.56,
+      "end": 13.93
+     },
+     {
+      "w": "left",
+      "start": 13.93,
+      "end": 14.12
+     },
+     {
+      "w": "but",
+      "start": 14.12,
+      "end": 14.3
+     },
+     {
+      "w": "that",
+      "start": 14.3,
+      "end": 14.49
+     },
+     {
+      "w": "grit,",
+      "start": 14.49,
+      "end": 14.67
+     }
+    ]
+   },
+   {
+    "id": "L07",
+    "words": "that's where you really appreciate that grind.",
+    "start": 15.76,
+    "end": 17.4,
+    "clip": "set/lines/L07.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "that's",
+      "start": 15.76,
+      "end": 15.92
+     },
+     {
+      "w": "where",
+      "start": 15.92,
+      "end": 16.09
+     },
+     {
+      "w": "you",
+      "start": 16.09,
+      "end": 16.25
+     },
+     {
+      "w": "really",
+      "start": 16.25,
+      "end": 16.58
+     },
+     {
+      "w": "appreciate",
+      "start": 16.58,
+      "end": 17.07
+     },
+     {
+      "w": "that",
+      "start": 17.07,
+      "end": 17.24
+     },
+     {
+      "w": "grind.",
+      "start": 17.24,
+      "end": 17.4
+     }
+    ]
+   },
+   {
+    "id": "L08",
+    "words": "Because nothing tastes as good as getting your lick back.",
+    "start": 17.99,
+    "end": 21.7,
+    "clip": "set/lines/L08.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Because",
+      "start": 17.99,
+      "end": 18.52
+     },
+     {
+      "w": "nothing",
+      "start": 18.52,
+      "end": 19.05
+     },
+     {
+      "w": "tastes",
+      "start": 19.05,
+      "end": 19.58
+     },
+     {
+      "w": "as",
+      "start": 19.58,
+      "end": 19.85
+     },
+     {
+      "w": "good",
+      "start": 19.85,
+      "end": 20.11
+     },
+     {
+      "w": "as",
+      "start": 20.11,
+      "end": 20.38
+     },
+     {
+      "w": "getting",
+      "start": 20.38,
+      "end": 20.91
+     },
+     {
+      "w": "your",
+      "start": 20.91,
+      "end": 21.17
+     },
+     {
+      "w": "lick",
+      "start": 21.17,
+      "end": 21.44
+     },
+     {
+      "w": "back.",
+      "start": 21.44,
+      "end": 21.7
+     }
+    ]
+   },
+   {
+    "id": "L09",
+    "words": "Tastes good, don't it?",
+    "start": 26.53,
+    "end": 27.72,
+    "clip": "set/lines/L09.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Tastes",
+      "start": 26.53,
+      "end": 27.01
+     },
+     {
+      "w": "good,",
+      "start": 27.01,
+      "end": 27.24
+     },
+     {
+      "w": "don't",
+      "start": 27.24,
+      "end": 27.48
+     },
+     {
+      "w": "it?",
+      "start": 27.48,
+      "end": 27.72
+     }
+    ]
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-21.48 voice and room tone only; 21.48 music slams in (hit at 21.8), loud to 24.73; decays to near silence 25.2-26.5; L09 26.53-27.72; end-card sting 27.86-30.0"
+  },
+  "text": [
+   {
+    "words": "CHAMPIONS (diegetic banner)",
+    "start": 23.86,
+    "end": 24.15
+   },
+   {
+    "words": "{TAGLINE}",
+    "start": 27.86,
+    "end": 29.36
+   },
+   {
+    "words": "{BRAND} logo",
+    "start": 29.36,
+    "end": 30.0
+   }
+  ],
+  "end_card": {
+   "start": 27.86,
+   "end": 30.0,
+   "cards": [
+    "tagline 27.86-29.36 (set/ui_endcard_tagline.jpg)",
+    "logo 29.36-30.0 (set/ui_endcard_logo.jpg)"
+   ]
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "arc": "The 30 s cut tightened: hook on the theme line 'Bitter really is an acquired taste' in close-up (0-3.6), jump back to the wide end of the pull-back for 'nothing tastes as good as getting your lick back' (3.6-8.1), a 1.6 s montage of four hits (catch, the firework stadium, CHAMPIONS, the goalpost dunk) on the music (8.1-9.7), the sip and 'Tastes good, don't it?' (9.7-12.8), tagline and logo (12.8-15.0).",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 3.616,
+    "src": [
+     1.7,
+     5.316
+    ],
+    "change": "window 1.70-5.32 of the pull-back (from sunglasses entering to close-up), holding only L02; render as one take: first frame + guide audio set/lines/L02.wav at 0.99 s",
+    "dur": 3.616
+   },
+   {
+    "n": 2,
+    "from": 1,
+    "start": 3.616,
+    "end": 8.093,
+    "src": [
+     17.003,
+     21.48
+    ],
+    "change": "window 17.0-21.48: the end of the pull-back (medium, cup at chest, picture frame top right), holding L08; a visible jump in size from shot 1 on the pause; render as take 8 of setup A",
+    "dur": 4.477
+   },
+   {
+    "n": 3,
+    "from": 2,
+    "start": 8.093,
+    "end": 8.593,
+    "src": [
+     21.48,
+     21.98
+    ],
+    "change": "as source",
+    "dur": 0.5
+   },
+   {
+    "n": 4,
+    "from": 7,
+    "start": 8.593,
+    "end": 8.973,
+    "src": [
+     23.48,
+     23.86
+    ],
+    "change": "as source",
+    "dur": 0.38
+   },
+   {
+    "n": 5,
+    "from": 8,
+    "start": 8.973,
+    "end": 9.273,
+    "src": [
+     23.86,
+     24.16
+    ],
+    "change": "as source",
+    "dur": 0.3
+   },
+   {
+    "n": 6,
+    "from": 10,
+    "start": 9.273,
+    "end": 9.702,
+    "src": [
+     24.3,
+     24.73
+    ],
+    "change": "starts 0.01 s early",
+    "dur": 0.429
+   },
+   {
+    "n": 7,
+    "from": 11,
+    "start": 9.702,
+    "end": 12.832,
+    "src": [
+     24.73,
+     27.86
+    ],
+    "change": "as source",
+    "dur": 3.13
+   },
+   {
+    "n": 8,
+    "from": 12,
+    "start": 12.832,
+    "end": 14.332,
+    "src": [
+     27.86,
+     29.36
+    ],
+    "change": "as source",
+    "dur": 1.5
+   },
+   {
+    "n": 9,
+    "from": 13,
+    "start": 14.332,
+    "end": 15.0,
+    "src": [
+     29.36,
+     30.03
+    ],
+    "change": "as source",
+    "dur": 0.668
+   }
+  ],
+  "lines": [
+   {
+    "id": "L02",
+    "words": "Bitter really is an acquired taste.",
+    "start": 0.99,
+    "end": 2.9,
+    "clip": "set/lines/L02.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Bitter",
+      "start": 0.99,
+      "end": 1.37
+     },
+     {
+      "w": "really",
+      "start": 1.37,
+      "end": 1.75
+     },
+     {
+      "w": "is",
+      "start": 1.75,
+      "end": 1.95
+     },
+     {
+      "w": "an",
+      "start": 1.95,
+      "end": 2.14
+     },
+     {
+      "w": "acquired",
+      "start": 2.14,
+      "end": 2.71
+     },
+     {
+      "w": "taste.",
+      "start": 2.71,
+      "end": 2.9
+     }
+    ]
+   },
+   {
+    "id": "L08",
+    "words": "Because nothing tastes as good as getting your lick back.",
+    "start": 4.6,
+    "end": 8.31,
+    "clip": "set/lines/L08.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Because",
+      "start": 4.6,
+      "end": 5.13
+     },
+     {
+      "w": "nothing",
+      "start": 5.13,
+      "end": 5.66
+     },
+     {
+      "w": "tastes",
+      "start": 5.66,
+      "end": 6.19
+     },
+     {
+      "w": "as",
+      "start": 6.19,
+      "end": 6.46
+     },
+     {
+      "w": "good",
+      "start": 6.46,
+      "end": 6.72
+     },
+     {
+      "w": "as",
+      "start": 6.72,
+      "end": 6.99
+     },
+     {
+      "w": "getting",
+      "start": 6.99,
+      "end": 7.52
+     },
+     {
+      "w": "your",
+      "start": 7.52,
+      "end": 7.78
+     },
+     {
+      "w": "lick",
+      "start": 7.78,
+      "end": 8.05
+     },
+     {
+      "w": "back.",
+      "start": 8.05,
+      "end": 8.31
+     }
+    ]
+   },
+   {
+    "id": "L09",
+    "words": "Tastes good, don't it?",
+    "start": 11.5,
+    "end": 12.69,
+    "clip": "set/lines/L09.wav",
+    "in_score": true,
+    "kind": "on-camera speech (sync, to camera)",
+    "word_times": [
+     {
+      "w": "Tastes",
+      "start": 11.5,
+      "end": 11.98
+     },
+     {
+      "w": "good,",
+      "start": 11.98,
+      "end": 12.21
+     },
+     {
+      "w": "don't",
+      "start": 12.21,
+      "end": 12.45
+     },
+     {
+      "w": "it?",
+      "start": 12.45,
+      "end": 12.69
+     }
+    ]
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 1.7,
+     "src_out": 5.316
+    },
+    {
+     "src_in": 17.003,
+     "src_out": 23.013
+    },
+    {
+     "src_in": 24.654,
+     "src_out": 30.03
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-3.62 voice (L02) only; join 1 at 3.62 is pause-to-pause (bar 5.316 -> bar 17.003 of the speech grid); music slams in at 8.093; join 2 at 9.63 is music bar 23.013 -> bar 24.654 (146 bpm grid of the montage music), landing on the decay; L09 11.502-12.692; sting 12.832-15.0"
+  },
+  "text": [
+   {
+    "words": "CHAMPIONS (diegetic banner)",
+    "start": 8.973,
+    "end": 9.273
+   },
+   {
+    "words": "{TAGLINE}",
+    "start": 12.832,
+    "end": 14.332
+   },
+   {
+    "words": "{BRAND} logo",
+    "start": 14.332,
+    "end": 15.0
+   }
+  ],
+  "end_card": {
+   "start": 12.832,
+   "end": 15.0,
+   "cards": [
+    "tagline 12.832-14.332",
+    "logo 14.332-15.0"
+   ]
+  }
+ }
+}
