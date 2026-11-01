@@ -29,9 +29,12 @@
    **15 s spot**. Scroll the storyboard strip, the lines and the ingredient set.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
    launch film, rebuilt from their templates with invented cast and brand.
-5. **Made from this template** (on the Hardware launch, Room makeover and Deadpan pages): the same recipes
-   used for Meta products, **Meta Ray-Ban Display**, **Facebook Marketplace** and **Meta AI**, 30 s each,
-   made by Opus from the template with new cast, product sheets and lines.
+5. **Made from this template**: the same recipes used for seven Meta products, made by Opus from the
+   templates with new product sheets, invented cast and new lines: **Meta Ray-Ban Display** (hardware
+   launch, 30 s + 15 s), **Facebook Marketplace** (room makeover, 30 s + 15 s), **Meta AI** (deadpan,
+   30 s + 15 s), **Meta Quest 3S** (phone reveal), **Ray-Ban Meta** at the match (fan moments),
+   **WhatsApp** (farm story) and the **Meta AI app** intro (motion graphics). A 15 s version reuses the
+   30 s clips: 2-3 minutes, no new renders.
 6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
    canvas.
 
