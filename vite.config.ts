@@ -12,6 +12,8 @@ export default defineConfig({
   },
   server: {
     port: 5180,
+    // Agents write templates, lab runs and workspaces all the time; none of it is client code.
+    watch: { ignored: ['**/sandbox/**', '**/lab/**', '**/.data/**'] },
     proxy: {
       '/api': {
         target: 'http://localhost:8788',

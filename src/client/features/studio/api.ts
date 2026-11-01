@@ -6,6 +6,7 @@ import type {
   StudioProject,
   StudioProjectSummary,
   StudioTemplate,
+  TemplateDetail,
   TurnRequest,
   UpdateStudioProjectRequest,
 } from './types';
@@ -35,6 +36,11 @@ const post = (url: string, body?: unknown, method = 'POST') =>
 
 export const listTemplates = () =>
   fetch('/api/studio/templates').then((r) => json<{ templates: StudioTemplate[] }>(r)).then((d) => d.templates);
+
+export const getTemplate = (id: string) =>
+  fetch(`/api/studio/templates/${encodeURIComponent(id)}`).then((r) => json<{ template: StudioTemplate; detail: TemplateDetail | null }>(r));
+
+export const templateFileUrl = (id: string, rel: string) => `/api/studio/templates/${encodeURIComponent(id)}/files/${rel}`;
 
 export const listProjects = () =>
   fetch('/api/studio/projects').then((r) => json<{ projects: StudioProjectSummary[] }>(r)).then((d) => d.projects);

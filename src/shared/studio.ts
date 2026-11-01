@@ -160,6 +160,23 @@ export interface UpdateStudioProjectRequest {
   state?: StudioState;
 }
 
+export interface TemplateCut {
+  /** 30 or 15. */
+  seconds: number;
+  duration: number;
+  arc: string | null;
+  shots: { n: number; from: number; start: number; end: number; board: string | null; action: string | null; shotSize: string | null }[];
+  lines: { start: number; words: string }[];
+}
+
+/** The template page: what the cuts are made of. File paths are relative to the template folder. */
+export interface TemplateDetail {
+  id: string;
+  summary: string;
+  cuts: TemplateCut[];
+  set: { file: string; kind: 'char' | 'product' | 'loc' | 'ui' | 'other' }[];
+}
+
 /** A dissected (ready) or not-yet-dissected (reference) film the director can rebuild. */
 export interface StudioTemplate {
   id: string;
@@ -175,4 +192,10 @@ export interface StudioTemplate {
   preview: string;
   description: string;
   prompt: string;
+  /** Spot lengths a ready template makes, e.g. [30, 15]. */
+  cuts?: number[];
+  /** What kind of film it is, e.g. "Product reveal". */
+  format?: string;
+  /** Side-by-side proof per cut length: the real footage cut the same way | a blind rebuild from the template. */
+  proof?: Partial<Record<'30' | '15', string>>;
 }

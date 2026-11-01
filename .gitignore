@@ -11,3 +11,7 @@ lab/
 # Full-length reference films (copied from lab/); seeding falls back to public/templates previews
 sandbox/references/
 sandbox/seeds/*/workspace/
+
+# Template audio comes from the source films (score, voice lines): local only
+sandbox/templates/**/*.wav
+public/templates/proof/

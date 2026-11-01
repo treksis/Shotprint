@@ -108,8 +108,9 @@ export default function App() {
             )}
             {route.view === 'templates' && (
               <TemplatesPage
-                onUseTemplate={(templateId) => {
+                onUseTemplate={(templateId, seconds) => {
                   sessionStorage.setItem('studio.template', templateId);
+                  if (seconds) sessionStorage.setItem('studio.template.seconds', String(seconds));
                   navigate({ view: 'home' });
                 }}
               />

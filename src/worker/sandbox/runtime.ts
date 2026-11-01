@@ -12,6 +12,8 @@ import {
   type StudioEvent,
   type StudioProject,
   type TodoEntry,
+  type TemplateCut,
+  type TemplateDetail,
   type TurnRequest,
   type WorkspaceGraph,
 } from '../../shared/studio';
@@ -42,6 +44,25 @@ const MIME: Record<string, string> = {
   '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.m4a': 'audio/mp4', '.md': 'text/markdown; charset=utf-8',
   '.json': 'application/json', '.jsonl': 'application/x-ndjson', '.txt': 'text/plain; charset=utf-8',
 };
+
+/** A local file as a (range-aware) response. */
+function serveLocal(p: string, range?: string | null): Response {
+  if (!fs.existsSync(p) || !fs.statSync(p).isFile()) return new Response('not found', { status: 404 });
+  const size = fs.statSync(p).size;
+  const type = MIME[path.extname(p).toLowerCase()] ?? 'application/octet-stream';
+  const m = range?.match(/bytes=(\d*)-(\d*)/);
+  if (m) {
+    const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
+    const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+    return new Response(Readable.toWeb(fs.createReadStream(p, { start, end })) as any, {
+      status: 206,
+      headers: { 'content-type': type, 'content-length': String(end - start + 1), 'content-range': `bytes ${start}-${end}/${size}`, 'accept-ranges': 'bytes', 'cache-control': 'private, max-age=3600' },
+    });
+  }
+  return new Response(Readable.toWeb(fs.createReadStream(p)) as any, {
+    headers: { 'content-type': type, 'content-length': String(size), 'accept-ranges': 'bytes', 'cache-control': 'private, max-age=3600' },
+  });
+}
 
 interface Saved {
   sessionId?: string;
@@ -127,7 +148,8 @@ class Runtime implements ProjectSession {
   ) {
     this.root = seedWorkspace(project.id, {
       templateId: project.templateId,
-      templateVideo: project.templateId ? referenceFilm(project.templateId) : null,
+      // A ready template carries everything the film needs; only an undissected reference ships its source.
+      templateVideo: project.templateId && !fs.existsSync(path.resolve('sandbox/templates', project.templateId)) ? referenceFilm(project.templateId) : null,
     });
     this.saved = this.readSaved();
     this.model = this.saved.model ?? 'spark';
@@ -495,7 +517,7 @@ class Runtime implements ProjectSession {
     this.save({ briefSent: true });
     const t = this.project.templateId;
     const hint = t && fs.existsSync(path.join(this.root, 'templates', t))
-      ? `\n\n(Template picked: \`templates/${t}/\`.)`
+      ? `\n\n(Template picked: \`templates/${t}/\`. Use the template-fill skill; the template's cut30 and cut15 are the 30 s and 15 s films.)`
       : t && fs.existsSync(path.join(this.root, 'inputs/reference.mp4'))
         ? '\n\n(Reference film: `inputs/reference.mp4`. It has not been dissected into a template yet.)'
         : '';
@@ -524,21 +546,8 @@ class Runtime implements ProjectSession {
 
   async serveFile(rel: string, range?: string | null): Promise<Response> {
     const p = this.resolve(rel);
-    if (!p || /(^|\/)\.(?!studio\/thumbs\/)/.test(rel) || !fs.existsSync(p) || !fs.statSync(p).isFile()) return new Response('not found', { status: 404 });
-    const size = fs.statSync(p).size;
-    const type = MIME[path.extname(p).toLowerCase()] ?? 'application/octet-stream';
-    const m = range?.match(/bytes=(\d*)-(\d*)/);
-    if (m) {
-      const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
-      const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
-      return new Response(Readable.toWeb(fs.createReadStream(p, { start, end })) as any, {
-        status: 206,
-        headers: { 'content-type': type, 'content-length': String(end - start + 1), 'content-range': `bytes ${start}-${end}/${size}`, 'accept-ranges': 'bytes', 'cache-control': 'private, max-age=3600' },
-      });
-    }
-    return new Response(Readable.toWeb(fs.createReadStream(p)) as any, {
-      headers: { 'content-type': type, 'content-length': String(size), 'accept-ranges': 'bytes', 'cache-control': 'private, max-age=3600' },
-    });
+    if (!p || /(^|\/)\.(?!studio\/thumbs\/)/.test(rel)) return new Response('not found', { status: 404 });
+    return serveLocal(p, range);
   }
 
   async upload(name: string, data: ArrayBuffer) {
@@ -625,8 +634,65 @@ class Runtime implements ProjectSession {
 const runtimes = new Map<string, Runtime>();
 
 /** Dev sandbox: one Docker container per project running Muse Code, workspaces under .data/workspaces. */
+const TEMPLATE_DIR = path.resolve('sandbox/templates');
+const text = (v: unknown): string | null =>
+  v == null ? null : typeof v === 'string' ? v : Array.isArray(v) ? v.map(text).filter(Boolean).join(' · ') : typeof v === 'object' ? Object.values(v as object).map(text).filter(Boolean).join(' · ') : String(v);
+
+/** What the template page shows: the two cuts as storyboard strips, the ingredient set, the summary. */
+function readTemplateDetail(id: string): TemplateDetail | null {
+  const dir = path.join(TEMPLATE_DIR, path.basename(id));
+  const file = path.join(dir, 'template.json');
+  if (!fs.existsSync(file)) return null;
+  const t = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const source = new Map<number, any>((t.shots ?? []).map((s: any) => [s.n, s]));
+  const board = (n: number, own?: string) => {
+    for (const b of [own, source.get(n)?.board, `boards/s${String(n).padStart(2, '0')}.jpg`, `boards/s${String(n).padStart(2, '0')}.png`])
+      if (typeof b === 'string' && fs.existsSync(path.join(dir, b))) return b;
+    return null;
+  };
+  const cuts: TemplateCut[] = (['30', '15'] as const)
+    .filter((n) => t[`cut${n}`])
+    .map((n) => {
+      const c = t[`cut${n}`];
+      return {
+        seconds: Number(n),
+        duration: c.duration,
+        arc: text(c.arc),
+        shots: (c.shots ?? []).map((s: any) => ({
+          n: s.n,
+          from: s.from,
+          start: s.start,
+          end: s.end,
+          board: board(s.from, s.board),
+          action: text(source.get(s.from)?.action),
+          shotSize: text(source.get(s.from)?.shot_size),
+        })),
+        lines: (c.lines ?? []).map((l: any) => ({ start: l.start, words: text(l.words ?? l.text) ?? '' })),
+      };
+    });
+  const set = fs.existsSync(path.join(dir, 'set'))
+    ? fs.readdirSync(path.join(dir, 'set'))
+        .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
+        .sort()
+        .map((f) => ({ file: `set/${f}`, kind: (/^(char|product|loc|ui)_/.exec(f)?.[1] ?? 'other') as TemplateDetail['set'][number]['kind'] }))
+    : [];
+  const md = fs.existsSync(path.join(dir, 'TEMPLATE.md')) ? fs.readFileSync(path.join(dir, 'TEMPLATE.md'), 'utf8') : '';
+  const summary = md.split(/\n\s*\n/).map((p) => p.trim()).find((p) => p && !p.startsWith('#') && !p.startsWith('|') && !p.startsWith('-')) ?? '';
+  return { id, summary: summary.replace(/\*\*|`/g, '').replace(/\s+/g, ' ').slice(0, 900), cuts, set };
+}
+
 export const dockerSandbox: StudioSandbox = {
   runnable: () => dockerAvailable(),
+  async templateDetail(id) {
+    return readTemplateDetail(id);
+  },
+  async templateFile(id, rel, range) {
+    const dir = path.join(TEMPLATE_DIR, path.basename(id));
+    const p = path.resolve(dir, rel);
+    // Source audio stays local to the workspace; the page needs pictures only.
+    if (!p.startsWith(dir + path.sep) || !/\.(jpe?g|png|webp)$/i.test(p)) return new Response('not found', { status: 404 });
+    return serveLocal(p, range);
+  },
   async open(project) {
     let r = runtimes.get(project.id);
     if (!r) {

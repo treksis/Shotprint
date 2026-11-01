@@ -6,6 +6,10 @@ import { newProject } from '../lib';
 import type { StudioProjectSummary, StudioTemplate } from '../types';
 import { Composer } from './composer';
 import { TemplateCard } from './template-card';
+import { TemplateDetailDialog } from './template-detail';
+
+/** A template's prompt for a spot length: the catalog's prompts are written for 30 s. */
+const promptFor = (t: StudioTemplate, seconds = 30) => (seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`));
 
 const SKILLS = [
   { label: 'Remake a video', text: 'Remake this reference video shot for shot with my own subject.' },
@@ -26,6 +30,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
   const [templates, setTemplates] = useState<StudioTemplate[] | null>(null);
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
+  const [details, setDetails] = useState<StudioTemplate | null>(null);
   const [busy, setBusy] = useState(false);
   const [model, setModel] = useState<DirectorModel>(() => (localStorage.getItem('museclone.director.model') as DirectorModel) || 'spark');
   const allowed: DirectorModel[] = isLive || import.meta.env.DEV ? ['spark', 'wonder'] : ['spark'];
@@ -37,19 +42,23 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
       .then((ts) => {
         setTemplates(ts);
         const pre = sessionStorage.getItem('studio.template');
+        const seconds = Number(sessionStorage.getItem('studio.template.seconds')) || 30;
         if (pre) {
           sessionStorage.removeItem('studio.template');
+          sessionStorage.removeItem('studio.template.seconds');
           const t = ts.find((x) => x.id === pre);
-          if (t) pick(t);
+          if (t) pick(t, seconds, ts);
         }
       })
       .catch(() => setTemplates([]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const pick = (t: StudioTemplate) => {
-    setTemplate((cur) => (cur?.id === t.id ? null : t));
-    setDraft((d) => (d.trim() && !templates?.some((x) => x.prompt === d) ? d : t.prompt));
+  const pick = (t: StudioTemplate, seconds?: number, all = templates) => {
+    // A length chosen on the template page always applies; a plain click toggles the template.
+    setTemplate((cur) => (cur?.id === t.id && !seconds ? null : t));
+    const isTemplatePrompt = (d: string) => all?.some((x) => d === x.prompt || d === promptFor(x, 15));
+    setDraft((d) => (d.trim() && !isTemplatePrompt(d) ? d : promptFor(t, seconds)));
     top.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -114,7 +123,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
         <section className="mt-16" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 id="tpl-heading" className="text-[18px] font-medium">Start from a template</h2>
-            <p className="text-[13px] text-muted-foreground">Templates are real films, dissected into shots, camera setups and lines.</p>
+            <p className="text-[13px] text-muted-foreground">Real ads taken apart into a recipe, an ingredient set and storyboards. Each makes a 30 s and a 15 s spot.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {templates === null
@@ -127,8 +136,18 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
                     </div>
                   </div>
                 ))
-              : templates.map((t) => <TemplateCard key={t.id} template={t} selected={template?.id === t.id} onSelect={pick} />)}
+              : templates.map((t) => (
+                  <TemplateCard key={t.id} template={t} selected={template?.id === t.id} onSelect={(x) => pick(x)} onDetails={setDetails} />
+                ))}
           </div>
+          <TemplateDetailDialog
+            template={details}
+            onClose={() => setDetails(null)}
+            onUse={(t, seconds) => {
+              setDetails(null);
+              pick(t, seconds);
+            }}
+          />
         </section>
 
         {projects.length > 0 && (

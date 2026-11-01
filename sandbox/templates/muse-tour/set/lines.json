@@ -1,0 +1,817 @@
+{
+ "about": "The film's recorded voice, one clip per kept phrase, cut at the pauses (12 ms fades). Times: clip-relative (start/end), source, cut30 and cut15 absolute (null = not in that cut). Word times are forced from a word-level transcript and snapped to the pauses, accurate to about 0.1 s. Never retime these clips; a take that uses one as guide_audio inherits its pace.",
+ "lines": [
+  {
+   "id": "L01",
+   "file": "set/lines/L01.wav",
+   "words": "And I'm very excited to give you a quick walkthrough of our new app, Muse.",
+   "type": "on-camera (A, shot 1), last word \"Muse\" runs 0.31 s over the cut into shot 2",
+   "source": {
+    "start": 1.24,
+    "end": 5.4
+   },
+   "cut30": {
+    "start": 0.0,
+    "end": 4.16
+   },
+   "dur": 4.16,
+   "word_times": [
+    {
+     "w": "And",
+     "start": 0.06,
+     "end": 0.22,
+     "cut30_start": 0.06,
+     "cut15_start": 0.06
+    },
+    {
+     "w": "I'm",
+     "start": 0.22,
+     "end": 0.37,
+     "cut30_start": 0.22,
+     "cut15_start": 0.22
+    },
+    {
+     "w": "very",
+     "start": 0.37,
+     "end": 0.6,
+     "cut30_start": 0.37,
+     "cut15_start": 0.37
+    },
+    {
+     "w": "excited",
+     "start": 0.6,
+     "end": 1.04,
+     "cut30_start": 0.6,
+     "cut15_start": 0.6
+    },
+    {
+     "w": "to",
+     "start": 1.04,
+     "end": 1.13,
+     "cut30_start": 1.04,
+     "cut15_start": 1.04
+    },
+    {
+     "w": "give",
+     "start": 1.13,
+     "end": 1.32,
+     "cut30_start": 1.13,
+     "cut15_start": 1.13
+    },
+    {
+     "w": "you",
+     "start": 1.32,
+     "end": 1.48,
+     "cut30_start": 1.32,
+     "cut15_start": 1.32
+    },
+    {
+     "w": "a",
+     "start": 1.48,
+     "end": 1.56,
+     "cut30_start": 1.48,
+     "cut15_start": 1.48
+    },
+    {
+     "w": "quick",
+     "start": 1.56,
+     "end": 1.84,
+     "cut30_start": 1.56,
+     "cut15_start": 1.56
+    },
+    {
+     "w": "walkthrough",
+     "start": 1.84,
+     "end": 2.45,
+     "cut30_start": 1.84,
+     "cut15_start": 1.84
+    },
+    {
+     "w": "of",
+     "start": 2.45,
+     "end": 2.52,
+     "cut30_start": 2.45,
+     "cut15_start": 2.45
+    },
+    {
+     "w": "our",
+     "start": 2.52,
+     "end": 2.68,
+     "cut30_start": 2.52,
+     "cut15_start": 2.52
+    },
+    {
+     "w": "new",
+     "start": 2.68,
+     "end": 2.8,
+     "cut30_start": 2.68,
+     "cut15_start": 2.68
+    },
+    {
+     "w": "app,",
+     "start": 2.8,
+     "end": 3.23,
+     "cut30_start": 2.8,
+     "cut15_start": 2.8
+    },
+    {
+     "w": "Muse.",
+     "start": 3.23,
+     "end": 4.06,
+     "cut30_start": 3.23,
+     "cut15_start": 3.23
+    }
+   ],
+   "cut15": {
+    "start": 0.0,
+    "end": 4.16
+   }
+  },
+  {
+   "id": "L02",
+   "file": "set/lines/L02.wav",
+   "words": "Your personal agent who's always working for you.",
+   "type": "voice-over (shot 2)",
+   "source": {
+    "start": 5.4,
+    "end": 8.26
+   },
+   "cut30": {
+    "start": 4.16,
+    "end": 7.02
+   },
+   "dur": 2.86,
+   "word_times": [
+    {
+     "w": "Your",
+     "start": 0.03,
+     "end": 0.26,
+     "cut30_start": 4.19,
+     "cut15_start": 4.19
+    },
+    {
+     "w": "personal",
+     "start": 0.26,
+     "end": 0.71,
+     "cut30_start": 4.42,
+     "cut15_start": 4.42
+    },
+    {
+     "w": "agent",
+     "start": 0.71,
+     "end": 1.16,
+     "cut30_start": 4.87,
+     "cut15_start": 4.87
+    },
+    {
+     "w": "who's",
+     "start": 1.2,
+     "end": 1.46,
+     "cut30_start": 5.36,
+     "cut15_start": 5.36
+    },
+    {
+     "w": "always",
+     "start": 1.48,
+     "end": 1.92,
+     "cut30_start": 5.64,
+     "cut15_start": 5.64
+    },
+    {
+     "w": "working",
+     "start": 1.96,
+     "end": 2.2,
+     "cut30_start": 6.12,
+     "cut15_start": 6.12
+    },
+    {
+     "w": "for",
+     "start": 2.2,
+     "end": 2.4,
+     "cut30_start": 6.36,
+     "cut15_start": 6.36
+    },
+    {
+     "w": "you.",
+     "start": 2.44,
+     "end": 2.82,
+     "cut30_start": 6.6,
+     "cut15_start": 6.6
+    }
+   ],
+   "cut15": {
+    "start": 4.16,
+    "end": 7.02
+   }
+  },
+  {
+   "id": "L03",
+   "file": "set/lines/L03.wav",
+   "words": "So it's useful for me to see what it's doing at any given time,",
+   "type": "on-camera (B, shot 3), \"time,\" runs 0.42 s over the cut into shot 4",
+   "source": {
+    "start": 51.13,
+    "end": 54.22
+   },
+   "cut30": {
+    "start": 7.02,
+    "end": 10.11
+   },
+   "dur": 3.09,
+   "word_times": [
+    {
+     "w": "So",
+     "start": 0.17,
+     "end": 0.28,
+     "cut30_start": 7.19
+    },
+    {
+     "w": "it's",
+     "start": 0.28,
+     "end": 0.5,
+     "cut30_start": 7.3
+    },
+    {
+     "w": "useful",
+     "start": 0.5,
+     "end": 0.83,
+     "cut30_start": 7.52
+    },
+    {
+     "w": "for",
+     "start": 0.83,
+     "end": 0.99,
+     "cut30_start": 7.85
+    },
+    {
+     "w": "me",
+     "start": 0.99,
+     "end": 1.1,
+     "cut30_start": 8.01
+    },
+    {
+     "w": "to",
+     "start": 1.1,
+     "end": 1.23,
+     "cut30_start": 8.12
+    },
+    {
+     "w": "see",
+     "start": 1.23,
+     "end": 1.41,
+     "cut30_start": 8.25
+    },
+    {
+     "w": "what",
+     "start": 1.41,
+     "end": 1.57,
+     "cut30_start": 8.43
+    },
+    {
+     "w": "it's",
+     "start": 1.57,
+     "end": 1.77,
+     "cut30_start": 8.59
+    },
+    {
+     "w": "doing",
+     "start": 1.77,
+     "end": 1.99,
+     "cut30_start": 8.79
+    },
+    {
+     "w": "at",
+     "start": 1.99,
+     "end": 2.12,
+     "cut30_start": 9.01
+    },
+    {
+     "w": "any",
+     "start": 2.12,
+     "end": 2.29,
+     "cut30_start": 9.14
+    },
+    {
+     "w": "given",
+     "start": 2.29,
+     "end": 2.53,
+     "cut30_start": 9.31
+    },
+    {
+     "w": "time,",
+     "start": 2.57,
+     "end": 3.05,
+     "cut30_start": 9.59
+    }
+   ],
+   "cut15": null
+  },
+  {
+   "id": "L04",
+   "file": "set/lines/L04.wav",
+   "words": "If I want more detail, I can tap on it and I'll see what it's doing, what it has done, what it will do,",
+   "type": "voice-over (shot 4)",
+   "source": {
+    "start": 57.36,
+    "end": 62.955
+   },
+   "cut30": {
+    "start": 10.25,
+    "end": 15.845
+   },
+   "dur": 5.595,
+   "word_times": [
+    {
+     "w": "If",
+     "start": 0.08,
+     "end": 0.32,
+     "cut30_start": 10.33
+    },
+    {
+     "w": "I",
+     "start": 0.32,
+     "end": 0.36,
+     "cut30_start": 10.57
+    },
+    {
+     "w": "want",
+     "start": 0.36,
+     "end": 0.6,
+     "cut30_start": 10.61
+    },
+    {
+     "w": "more",
+     "start": 0.6,
+     "end": 0.87,
+     "cut30_start": 10.85
+    },
+    {
+     "w": "detail,",
+     "start": 0.87,
+     "end": 1.34,
+     "cut30_start": 11.12
+    },
+    {
+     "w": "I",
+     "start": 1.4,
+     "end": 1.46,
+     "cut30_start": 11.65
+    },
+    {
+     "w": "can",
+     "start": 1.46,
+     "end": 1.68,
+     "cut30_start": 11.71
+    },
+    {
+     "w": "tap",
+     "start": 1.68,
+     "end": 1.86,
+     "cut30_start": 11.93
+    },
+    {
+     "w": "on",
+     "start": 1.86,
+     "end": 1.99,
+     "cut30_start": 12.11
+    },
+    {
+     "w": "it",
+     "start": 1.99,
+     "end": 2.19,
+     "cut30_start": 12.24
+    },
+    {
+     "w": "and",
+     "start": 2.26,
+     "end": 2.34,
+     "cut30_start": 12.51
+    },
+    {
+     "w": "I'll",
+     "start": 2.34,
+     "end": 2.55,
+     "cut30_start": 12.59
+    },
+    {
+     "w": "see",
+     "start": 2.55,
+     "end": 2.69,
+     "cut30_start": 12.8
+    },
+    {
+     "w": "what",
+     "start": 2.69,
+     "end": 2.89,
+     "cut30_start": 12.94
+    },
+    {
+     "w": "it's",
+     "start": 2.89,
+     "end": 3.1,
+     "cut30_start": 13.14
+    },
+    {
+     "w": "doing,",
+     "start": 3.1,
+     "end": 3.38,
+     "cut30_start": 13.35
+    },
+    {
+     "w": "what",
+     "start": 3.44,
+     "end": 3.68,
+     "cut30_start": 13.69
+    },
+    {
+     "w": "it",
+     "start": 3.68,
+     "end": 3.84,
+     "cut30_start": 13.93
+    },
+    {
+     "w": "has",
+     "start": 3.84,
+     "end": 4.04,
+     "cut30_start": 14.09
+    },
+    {
+     "w": "done,",
+     "start": 4.04,
+     "end": 4.49,
+     "cut30_start": 14.29
+    },
+    {
+     "w": "what",
+     "start": 4.56,
+     "end": 4.8,
+     "cut30_start": 14.81
+    },
+    {
+     "w": "it",
+     "start": 4.8,
+     "end": 4.95,
+     "cut30_start": 15.05
+    },
+    {
+     "w": "will",
+     "start": 4.95,
+     "end": 5.26,
+     "cut30_start": 15.2
+    },
+    {
+     "w": "do,",
+     "start": 5.26,
+     "end": 5.58,
+     "cut30_start": 15.51
+    }
+   ],
+   "cut15": null
+  },
+  {
+   "id": "L04s",
+   "file": "set/lines/L04s.wav",
+   "words": "what it's doing, what it has done, what it will do,",
+   "shortened_from": "L04",
+   "type": "voice-over (cut15 shot 2): the tail of L04, cut at the 20 ms dip before \"what\" (source 59.98)",
+   "source": {
+    "start": 59.98,
+    "end": 62.955
+   },
+   "cut30": null,
+   "cut15": {
+    "start": 7.16,
+    "end": 10.135
+   },
+   "dur": 2.975,
+   "word_times": [
+    {
+     "w": "what",
+     "start": 0.07,
+     "end": 0.27,
+     "cut15_start": 7.23
+    },
+    {
+     "w": "it's",
+     "start": 0.27,
+     "end": 0.48,
+     "cut15_start": 7.43
+    },
+    {
+     "w": "doing,",
+     "start": 0.48,
+     "end": 0.76,
+     "cut15_start": 7.64
+    },
+    {
+     "w": "what",
+     "start": 0.82,
+     "end": 1.06,
+     "cut15_start": 7.98
+    },
+    {
+     "w": "it",
+     "start": 1.06,
+     "end": 1.22,
+     "cut15_start": 8.22
+    },
+    {
+     "w": "has",
+     "start": 1.22,
+     "end": 1.42,
+     "cut15_start": 8.38
+    },
+    {
+     "w": "done,",
+     "start": 1.42,
+     "end": 1.87,
+     "cut15_start": 8.58
+    },
+    {
+     "w": "what",
+     "start": 1.94,
+     "end": 2.18,
+     "cut15_start": 9.1
+    },
+    {
+     "w": "it",
+     "start": 2.18,
+     "end": 2.33,
+     "cut15_start": 9.34
+    },
+    {
+     "w": "will",
+     "start": 2.33,
+     "end": 2.64,
+     "cut15_start": 9.49
+    },
+    {
+     "w": "do,",
+     "start": 2.64,
+     "end": 2.96,
+     "cut15_start": 9.8
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "file": "set/lines/L05.wav",
+   "words": "Ultimately, Muse is designed to help you accomplish your goals, and you'll find them here on the goals tab.",
+   "type": "voice-over lead-in 0.20 s (J-cut), on-camera (B, shot 5), then voice-over (shot 6)",
+   "source": {
+    "start": 107.32,
+    "end": 113.24
+   },
+   "cut30": {
+    "start": 16.045,
+    "end": 21.965
+   },
+   "dur": 5.92,
+   "word_times": [
+    {
+     "w": "Ultimately,",
+     "start": 0.06,
+     "end": 0.53,
+     "cut30_start": 16.11
+    },
+    {
+     "w": "Muse",
+     "start": 0.53,
+     "end": 0.86,
+     "cut30_start": 16.58
+    },
+    {
+     "w": "is",
+     "start": 0.86,
+     "end": 1.0,
+     "cut30_start": 16.91
+    },
+    {
+     "w": "designed",
+     "start": 1.0,
+     "end": 1.57,
+     "cut30_start": 17.05
+    },
+    {
+     "w": "to",
+     "start": 1.57,
+     "end": 1.7,
+     "cut30_start": 17.62
+    },
+    {
+     "w": "help",
+     "start": 1.73,
+     "end": 1.98,
+     "cut30_start": 17.78
+    },
+    {
+     "w": "you",
+     "start": 1.98,
+     "end": 2.23,
+     "cut30_start": 18.03
+    },
+    {
+     "w": "accomplish",
+     "start": 2.28,
+     "end": 2.98,
+     "cut30_start": 18.33
+    },
+    {
+     "w": "your",
+     "start": 3.05,
+     "end": 3.31,
+     "cut30_start": 19.1
+    },
+    {
+     "w": "goals,",
+     "start": 3.31,
+     "end": 3.63,
+     "cut30_start": 19.36
+    },
+    {
+     "w": "and",
+     "start": 3.63,
+     "end": 3.73,
+     "cut30_start": 19.68
+    },
+    {
+     "w": "you'll",
+     "start": 3.73,
+     "end": 4.07,
+     "cut30_start": 19.78
+    },
+    {
+     "w": "find",
+     "start": 4.07,
+     "end": 4.32,
+     "cut30_start": 20.12
+    },
+    {
+     "w": "them",
+     "start": 4.32,
+     "end": 4.6,
+     "cut30_start": 20.37
+    },
+    {
+     "w": "here",
+     "start": 4.6,
+     "end": 4.88,
+     "cut30_start": 20.65
+    },
+    {
+     "w": "on",
+     "start": 4.88,
+     "end": 5.02,
+     "cut30_start": 20.93
+    },
+    {
+     "w": "the",
+     "start": 5.02,
+     "end": 5.13,
+     "cut30_start": 21.06
+    },
+    {
+     "w": "goals",
+     "start": 5.13,
+     "end": 5.48,
+     "cut30_start": 21.18
+    },
+    {
+     "w": "tab.",
+     "start": 5.52,
+     "end": 5.88,
+     "cut30_start": 21.56
+    }
+   ],
+   "cut15": null
+  },
+  {
+   "id": "L06",
+   "file": "set/lines/L06.wav",
+   "words": "We're really excited for you to check it out.",
+   "type": "on-camera (A, shot 7)",
+   "source": {
+    "start": 148.37,
+    "end": 150.22
+   },
+   "cut30": {
+    "start": 22.355,
+    "end": 24.205
+   },
+   "dur": 1.85,
+   "word_times": [
+    {
+     "w": "We're",
+     "start": 0.05,
+     "end": 0.21,
+     "cut30_start": 22.4
+    },
+    {
+     "w": "really",
+     "start": 0.21,
+     "end": 0.43,
+     "cut30_start": 22.56
+    },
+    {
+     "w": "excited",
+     "start": 0.43,
+     "end": 0.97,
+     "cut30_start": 22.78
+    },
+    {
+     "w": "for",
+     "start": 0.97,
+     "end": 1.03,
+     "cut30_start": 23.32
+    },
+    {
+     "w": "you",
+     "start": 1.03,
+     "end": 1.13,
+     "cut30_start": 23.38
+    },
+    {
+     "w": "to",
+     "start": 1.13,
+     "end": 1.21,
+     "cut30_start": 23.48
+    },
+    {
+     "w": "check",
+     "start": 1.21,
+     "end": 1.46,
+     "cut30_start": 23.56
+    },
+    {
+     "w": "it",
+     "start": 1.46,
+     "end": 1.53,
+     "cut30_start": 23.81
+    },
+    {
+     "w": "out.",
+     "start": 1.53,
+     "end": 1.77,
+     "cut30_start": 23.88
+    }
+   ],
+   "cut15": null
+  },
+  {
+   "id": "L07",
+   "file": "set/lines/L07.wav",
+   "words": "You can download Muse today.",
+   "type": "on-camera: \"You\" over the end of shot 7 (A), the rest on shot 8 (B)",
+   "source": {
+    "start": 150.22,
+    "end": 152.03
+   },
+   "cut30": {
+    "start": 24.205,
+    "end": 26.015
+   },
+   "dur": 1.81,
+   "word_times": [
+    {
+     "w": "You",
+     "start": 0.08,
+     "end": 0.4,
+     "cut30_start": 24.28,
+     "cut15_start": 10.27
+    },
+    {
+     "w": "can",
+     "start": 0.44,
+     "end": 0.6,
+     "cut30_start": 24.65,
+     "cut15_start": 10.63
+    },
+    {
+     "w": "download",
+     "start": 0.6,
+     "end": 1.03,
+     "cut30_start": 24.8,
+     "cut15_start": 10.79
+    },
+    {
+     "w": "Muse",
+     "start": 1.03,
+     "end": 1.36,
+     "cut30_start": 25.23,
+     "cut15_start": 11.22
+    },
+    {
+     "w": "today.",
+     "start": 1.38,
+     "end": 1.73,
+     "cut30_start": 25.59,
+     "cut15_start": 11.57
+    }
+   ],
+   "cut15": {
+    "start": 10.19,
+    "end": 12.0
+   }
+  }
+ ]
+}

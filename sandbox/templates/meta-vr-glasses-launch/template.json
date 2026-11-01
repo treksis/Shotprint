@@ -1,0 +1,2283 @@
+{
+ "meta": {
+  "source": "a Meta launch film for VR glasses (86 s)",
+  "duration": 86.04,
+  "size": "1920x1080",
+  "fps": 24,
+  "shots": 29,
+  "average_shot": 2.97,
+  "median_shot": 2.54,
+  "boards": "boards/sNN.jpg per shot; boards/sNNa.jpg / sNNb.jpg = start / end for shots with a move or a big change"
+ },
+ "acts": [
+  {
+   "name": "Tease and reveal",
+   "shots": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "function": "Out of black: three dark product macros (band horizon, puck mesh, a lens waking up), then a slow pull back to the centred hero and the name. 0-20.63 s."
+  },
+  {
+   "name": "Cinema at home",
+   "shots": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "function": "A hand takes the glasses from the table; he puts them on and asks for a film; the loft becomes a giant cinema. 20.63-34.67 s."
+  },
+  {
+   "name": "Design interlude",
+   "shots": [
+    10,
+    11
+   ],
+   "function": "Two studio macros: hinge and puck. 34.67-39.42 s."
+  },
+  {
+   "name": "Work and play in the cafe",
+   "shots": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "function": "Brightest act: virtual keyboard, floating windows, app icons, gaze navigation; he lifts the glasses and greets a friend. 39.42-52.38 s."
+  },
+  {
+   "name": "Sports anywhere",
+   "shots": [
+    20,
+    21,
+    22
+   ],
+   "function": "Airport gate; a passer-by wipe turns the gate into courtside; the gate seats stand on the court. 52.38-62.29 s."
+  },
+  {
+   "name": "Sound and scale",
+   "shots": [
+    23,
+    24,
+    25,
+    26
+   ],
+   "function": "Profile, spatial audio macro, night flight, giant theatre. 62.29-72.58 s."
+  },
+  {
+   "name": "Hero and end card",
+   "shots": [
+    27,
+    28,
+    29
+   ],
+   "function": "Upright puck pulls back to the band, the floating hero with the cable and the name, then the end card over the final lyric and silence. 72.58-86.04 s."
+  }
+ ],
+ "shots": [
+  {
+   "n": 1,
+   "start": 0,
+   "end": 6.38,
+   "dur": 6.38,
+   "in": "fade from black",
+   "brightness": {
+    "start": 2,
+    "mid": 11,
+    "end": 26
+   },
+   "colour": "#0e0905",
+   "change": 2.09,
+   "sound": "-33.25 LUFS mean, -21.06 peak",
+   "setup": "STUDIO-HORIZON",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "Only the glasses' top band, seen head-on from just below the front: the dark band and visor fill the lower 58% of the frame as one black dome whose top edge is a shallow arc spanning the full width (ends leave the frame at about 55% height, peak at about 42% height, centred). Above the arc: black, with a warm glow hugging the arc. Like a planet horizon.",
+   "camera": "Eye level with the top band, square to the front, long lens, very shallow depth of field (only the rim is sharp).",
+   "camera_move": "Very slow push in with a slight rise: the arc sinks about 3% of the frame height over the shot; nothing else moves.",
+   "action": "0-1.25 s pure black (fade from black). 1.25-3 s a faint amber glow appears above the arc at centre and spreads along it. About 3.5 s tiny pinpoint sensor dots along the band catch light near both ends. 5-6.38 s the thin silver top rim of the band lights as a fine bright line and the small Meta infinity logo becomes just readable at top centre of the band.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Measured brightness 2 / 11 / 26: almost black for the whole shot; the only light is the rim and the glow behind the arc.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "0-2.3 s silence. From 2.5 s a low warm synth drone fades up (short-term loudness -32 LUFS at 3 s to -25 at 6 s). No speech. All in score.wav.",
+   "render": "First + last frame: plate A (band arc, glow only, logo invisible) -> plate B (same framing 3% lower, rim lit, logo readable), both made from set/product_glasses_sheet.jpg + set/loc_studio_void.jpg, then darkened to the measured 2-26. Fade from black 0-1.25 s in assembly. Glasses: follow the PRODUCT LOCK in set.product_glasses (sleek shield, ~3 cm deep, never a headset).",
+   "board": "boards/s01.jpg",
+   "boards_start_end": [
+    "boards/s01a.jpg",
+    "boards/s01b.jpg"
+   ]
+  },
+  {
+   "n": 2,
+   "start": 6.38,
+   "end": 8.13,
+   "dur": 1.75,
+   "in": "cut",
+   "brightness": {
+    "start": 19,
+    "mid": 26,
+    "end": 29
+   },
+   "colour": "#1c1715",
+   "change": 8.75,
+   "sound": "-19.83 LUFS mean, -17.72 peak",
+   "setup": "STUDIO-MESH-MACRO",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_puck"
+   ],
+   "wardrobe": null,
+   "shot_size": "macro",
+   "subject_in_frame": "Frame filled by the puck's dark brown-black perforated speaker mesh, curving like a dune from lower left to upper right; a smooth satin rim runs along the bottom-left as a curved band (lower 25% of frame); a raised smooth ring edge at the right third (x 70-100%). Top-right corner falls to black.",
+   "camera": "Close and slightly above, raking along the surface, macro lens, very shallow depth of field (front mesh sharp, far edge soft).",
+   "camera_move": "Slow lateral slide to the left with a slight push: about 5% of the frame width over 1.75 s; the ring edge drifts right.",
+   "action": "Light rakes across the mesh texture as the camera slides. No other change.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Warm raking side light from the upper left. Brightness 19 / 26 / 29.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Drone continues with a soft high shimmer rising (about -21 LUFS short-term). No speech.",
+   "render": "Image to video from one plate (set/product_puck_sheet.jpg mesh detail on set/loc_studio_void.jpg), slow slide.",
+   "board": "boards/s02.jpg"
+  },
+  {
+   "n": 3,
+   "start": 8.13,
+   "end": 11.83,
+   "dur": 3.71,
+   "in": "cut",
+   "brightness": {
+    "start": 6,
+    "mid": 28,
+    "end": 47
+   },
+   "colour": "#201915",
+   "change": 5.85,
+   "sound": "-22.75 LUFS mean, -21.32 peak",
+   "setup": "STUDIO-LENS-MACRO",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses",
+    "product_puck"
+   ],
+   "wardrobe": null,
+   "shot_size": "macro",
+   "subject_in_frame": "One oval lens of the visor with its thin metal rim, left of centre and tilted (about 50% of the frame width, centred at x 45%, y 45%), resting against the dark mesh dome which fills the lower half; a round black nose pad at the upper left of the lens. The right third and the top are black.",
+   "camera": "Close, slightly above and to the right of the lens, macro lens, shallow depth of field.",
+   "camera_move": "Slow push in of about 10% with a slight drift right; the lens grows.",
+   "action": "8.13-9.0 s the lens is dark, only a thin rim highlight. From about 9.0 s a soft iridescent light blooms inside the lens: a pearl-white core with peach, pink and violet-blue edges, like a display waking. It reaches full strength by about 10 s and holds. The bloom stays inside the lens; it is not a rainbow flare.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. The lens glow becomes the key light on the rim. Brightness 6 / 28 / 47.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Shimmer rises; percussion begins to build toward the beat at about 12.5 s. No speech.",
+   "render": "First + last frame: dark lens plate -> glowing lens plate, same framing pushed in 10% (sheets: glasses + puck on studio void). Glasses: follow the PRODUCT LOCK in set.product_glasses (sleek shield, ~3 cm deep, never a headset).",
+   "board": "boards/s03.jpg",
+   "boards_start_end": [
+    "boards/s03a.jpg",
+    "boards/s03b.jpg"
+   ]
+  },
+  {
+   "n": 4,
+   "start": 11.83,
+   "end": 20.63,
+   "dur": 8.79,
+   "in": "cut",
+   "brightness": {
+    "start": 12,
+    "mid": 20,
+    "end": 25
+   },
+   "colour": "#16120f",
+   "change": 3.08,
+   "sound": "-17.47 LUFS mean, -13.23 peak",
+   "setup": "STUDIO-HERO-FRONT",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "Start: extreme close-up silhouette: the top band's upper edge is a thin lit grey arc across the full width at about 30-38% height; below it the visor is a black mass with the nose-bridge cut-out and two nose pads at bottom centre. End: medium product shot, the glasses floating centred, 65% of the frame width (x 17-81%), top of the band at 37% height, the temple arms running down out of the bottom edge; the text sits above in the empty top third.",
+   "camera": "Front-on, slightly above the glasses' eye line looking straight at the visor, normal-to-long lens, deep enough focus to hold the whole glasses at the end.",
+   "camera_move": "Slow continuous pull back (dolly out) with a slight rise for the whole 8.79 s: the glasses go from overfilling the frame to 80% width at about 14.8 s and 65% at the end.",
+   "action": "The glasses float still, centred. The band catches light first; the visor stays glossy black with soft reflections. Text fades in over the top (see text).",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Soft top light grazes the band; faint bronze glow below and behind. Brightness 12 / 20 / 25: the reveal stays dark. The band is warm mid-grey, not white: at the end framing its mean is #5F5954 (luma 85-95); the visor is glossy black #0B0A08 (luma ~10) with soft reflections, never see-through.",
+   "text": [
+    {
+     "words": "INTRODUCING",
+     "position": "top centre, cap height 19 px at 1080p, y 128-146, x 856-1063, light grey #c8c8c8, tracking very wide",
+     "in": 14.55,
+     "fade_in": 0.8,
+     "out": 20.63,
+     "design": "set/text_title_lockup.jpg"
+    },
+    {
+     "words": "[Meta infinity logo] Meta VR Glasses",
+     "position": "centred under INTRODUCING, y 176-212, x 731-1188, white",
+     "in": 16.85,
+     "fade_in": 1.75,
+     "out": 20.63,
+     "design": "set/text_title_lockup.jpg"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "The beat enters about 12.5 s; the song's vocal starts about 15.4 s (sung lyric, female-led pop vocal, words partly unclear). Sung lyric 17.7-20.1 s: 'Don't think about it, I'll be running with you'. All in score.wav.",
+   "render": "First + last frame: silhouette close-up plate -> centred hero plate (set/product_glasses_sheet.jpg FRONT view on set/loc_studio_void.jpg). Titles in post from set/text_title_lockup.jpg. Glasses: follow the PRODUCT LOCK in set.product_glasses (sleek shield, ~3 cm deep, never a headset).",
+   "board": "boards/s04.jpg",
+   "boards_start_end": [
+    "boards/s04a.jpg",
+    "boards/s04b.jpg"
+   ]
+  },
+  {
+   "n": 5,
+   "start": 20.63,
+   "end": 23.17,
+   "dur": 2.54,
+   "in": "cut",
+   "brightness": {
+    "start": 78,
+    "mid": 79,
+    "end": 96
+   },
+   "colour": "#5b4f42",
+   "change": 16.45,
+   "sound": "-19.12 LUFS mean, -17.17 peak",
+   "setup": "LOFT-TABLE",
+   "location": "loc_loft_living_room",
+   "cast": [
+    "product_glasses",
+    "char_man"
+   ],
+   "wardrobe": "HOME",
+   "shot_size": "close-up",
+   "subject_in_frame": "The glasses lie on a pale grey stone coffee table, left of centre in the lower third (x 25-60%, about 35% of the width), their cable trailing; a stack of books at the right edge of the table. The table top fills the lower 45%; behind, out of focus, a sand-tan boucle tufted sofa runs across the upper half.",
+   "camera": "Low, at table-top height, nearly level with the table surface, normal lens, shallow depth of field (glasses sharp, sofa soft).",
+   "camera_move": "Locked off.",
+   "action": "20.63-21.0 s still. About 21.0 s a hand in a cream knit sleeve enters from the top left, reaches down and takes the glasses (about 22.0 s), lifts them up and out of the top of the frame (gone by about 22.9 s). The cable slides after them; the table is left with the books.",
+   "light": "Soft warm daylight from the windows behind and right; bright, gentle shadows. Brightness 78 / 79 / 96. The sofa is muted sand-tan boucle (#5B4C36 in daylight), not cream.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Sung lyric about 21.9-22.7 s: 'I cannot stand it'. Music bed continues. Light room tone.",
+   "render": "Image to video from one plate (table + glasses + sofa from set/loc_loft_living_room.jpg and the glasses sheet); prompt the hand from top left.",
+   "board": "boards/s05.jpg",
+   "boards_start_end": [
+    "boards/s05a.jpg",
+    "boards/s05b.jpg"
+   ]
+  },
+  {
+   "n": 6,
+   "start": 23.17,
+   "end": 26.63,
+   "dur": 3.46,
+   "in": "cut",
+   "brightness": {
+    "start": 84,
+    "mid": 67,
+    "end": 48
+   },
+   "colour": "#4d3f33",
+   "change": 26.56,
+   "sound": "-19.8 LUFS mean, -15.23 peak",
+   "setup": "LOFT-SOFA",
+   "location": "loc_loft_living_room",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "HOME",
+   "shot_size": "medium",
+   "subject_in_frame": "The man seated on the sand-tan sofa, framed from the waist up, slightly left of centre (head at x 35-45%, top of head at 8% height); the sofa back across the bottom 25%; a tall industrial window with warm sun at the upper right, concrete wall and a shelf behind.",
+   "camera": "Front, at seated eye height, slightly low, normal lens, moderate depth of field (background softly out of focus).",
+   "camera_move": "Locked off with a very slight push in.",
+   "action": "23.17-23.9 s he holds the glasses with both hands at his face and slides them on. 24.0-25.4 s he settles them and his hands open at either side, as if starting to talk. 25.9 s, looking slightly up past camera right, he starts the line on camera; the shot cuts mid-line at 26.63.",
+   "light": "Warm window light from behind right, soft fill. The room dims during the shot as the film starts: brightness 84 / 67 / 48. The sofa is muted sand-tan boucle (#5B4C36 in daylight), not cream.",
+   "text": [],
+   "out": "hard cut (the line carries across the cut into shot 7)",
+   "audio": "Sung lyric 23.55-25.4 s: 'I'll find another way'. Spoken line (his own voice, on camera, starts in this shot): 'Hey Meta, play the movie.' from 25.90 s to about 27.9 s, across the 26.63 cut. In the source score the first three words run 25.90-27.10 s and the film title that followed is muted (27.10-27.90 s) in set/score.wav: lay the new title words there.",
+   "render": "Keyframe mode: first_frame = plate of him on the loft sofa (HOME wardrobe) + guide_audio = a wav with set/lines/L01.wav placed at 2.81 s (its 25.90 start minus the 23.17 shot start, lips start 25.98 s). This holds the framing and the lip timing. If his face drifts from char_man, re-render with the same plate and guide audio; do not switch to reference mode (it ignores the first frame). Glasses on his face: match set/char_man_glasses_on.jpg (shield sunglasses size, no headset bulk).",
+   "board": "boards/s06.jpg",
+   "boards_start_end": [
+    "boards/s06a.jpg",
+    "boards/s06b.jpg"
+   ]
+  },
+  {
+   "n": 7,
+   "start": 26.63,
+   "end": 30.25,
+   "dur": 3.63,
+   "in": "cut",
+   "brightness": {
+    "start": 40,
+    "mid": 36,
+    "end": 34
+   },
+   "colour": "#2c221b",
+   "change": 7.4,
+   "sound": "-15.99 LUFS mean, -13.1 peak",
+   "setup": "LOFT-BEHIND-SOFA",
+   "location": "loc_loft_living_room",
+   "cast": [
+    "char_man"
+   ],
+   "wardrobe": "HOME",
+   "shot_size": "wide",
+   "subject_in_frame": "Symmetrical wide from behind the sofa: the long tufted sofa back runs across the bottom 30% of the frame; the man's head and shoulders at exact centre just above it (head about 6% of the width, at x 47-53%, y 57-66%); windows on the left wall, brick and a round art piece on the right wall, a low sideboard with lamps under the far wall. From 28.1 s a floating curved screen panel: x 12-86% of the width; top edge at 18.0% at the corners and 20.0% in the middle (it bows down: the panel wraps toward him); bottom edge 73.5% at the corners, 74.3% in the middle, just above the sofa back; corner radius 1.4% of the width; 2.39:1 film inside. Layer: set/ui_loft_screen_s07.png. The man and the sofa back are in front of the panel (see set/fx_loft_foreground_matte.jpg).",
+   "camera": "Behind the sofa at seated head height, square to the far wall, wide-normal lens, deep focus.",
+   "camera_move": "Locked off.",
+   "action": "26.63-27.79 s dusky warm loft, no screen; the assistant pill (set/ui_assistant_pill.png: 7 capsules, pink #C57CBE and violet #AC7ACB, x 48.4-52.8%, y 31.7-33.6%) pulses with his voice. 27.79-28.10 s the screen pops in: opacity 0->1 linear over 0.31 s (7-8 frames) and scale 0.94->1.00 about the panel centre (x 49%, y 46%), ease-out; the brightest parts (ceiling lamps, visor line) read first; the pill fades out 27.77-27.85. The film: the generic sci-fi film, a helmeted commander on a platform between two loader arms (set/screen_film_scifi.jpg). 3D pop-out: the right loader arm reaches past the panel's right edge to x 97%, the left one to x 10%; the helmet top rises 3% above the top edge. The room goes cool and dim; he sits still. 28.1-30.2 s a slow push in of 3% (linear).",
+   "light": "Before the screen: warm dusk light in the windows, practical lamps on the sideboard. After: the screen is the key light, cool grey with a red accent; the room falls dark. Brightness 40 / 36 / 34. The sofa is muted sand-tan boucle (#5B4C36 in daylight), not cream.",
+   "text": [
+    {
+     "words": "(two short lines of film credit, generic)",
+     "position": "lower left inside the screen, tiny white",
+     "in": 27.9,
+     "out": 30.25
+    },
+    {
+     "words": "(two lines of tiny grey legal text, generic wording)",
+     "position": "bottom centre, y 940-965 at 1080p",
+     "in": 26.63,
+     "out": 30.25,
+     "design": "set/text_captions.jpg"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "End of the line (the title words, 27.10-27.90 s; slot). Music swells to about -15 LUFS short-term by 31 s; faint film sound effects bleed in under it.",
+   "render": "Built from two takes and a layer (see build).",
+   "board": "boards/s07.jpg",
+   "boards_start_end": [
+    "boards/s07a.jpg",
+    "boards/s07b.jpg"
+   ],
+   "build": [
+    "1. Plate A: loc_loft_living_room from behind the sofa (board s07a), warm dusk, brightness 40; the man centred, back to camera, HOME wardrobe.",
+    "2. Take A: keyframe mode, first_frame = plate A, 4 s, locked off, he sits still (his line is heard, his face is not seen).",
+    "3. Plate B: plate A with set/ui_loft_screen_s07.png laid on (as is, full frame), the room graded 25% darker and cooler (brightness 34) except the screen; check the panel edges sit as in subject_in_frame.",
+    "4. Take B: keyframe mode, first_frame = plate B, 3 s, locked off, 'the film plays on the floating screen, he watches'. If the model moves or warps the panel, render plate B without the panel (dark room only) and lay the layer in post.",
+    "5. Pill: over take A lay set/ui_assistant_pill.png from the shot start; scale each capsule's height between 40% and 100% at 6-9 Hz while he speaks (25.98-27.80); fade it out 27.77-27.85.",
+    "6. Pop: dissolve take A -> take B over 27.79-28.10 (0.31 s). Over the same 0.31 s the panel layer scales 0.94 -> 1.00 about (x 49%, y 46%), ease-out, opacity 0 -> 1 linear.",
+    "7. Pop-out: copy each loader arm out of set/screen_film_scifi.jpg and lay it straddling the panel side edge, scaled until the right arm's tip reaches x 97% and the left x 10% (about 1.3x the arm's size inside the panel), from 28.05 s; each arm's part outside the panel is over the dark wall, its part inside covers the panel's own arm.",
+    "8. Depth order, back to front: room -> screen panel -> pop-out arms / helmet -> the man and the sofa. The panel's bottom edge (73.5-74.3%) sits just above the sofa back (top edge 75%), and his head (x 46.6-51.3%, from y 56%) and shoulders (x 43-55%, from y 64%) overlap the panel: they must stay in front of it. Key them from your own plate A (set/fx_loft_foreground_matte.jpg gives the shape and place) and lay the matte over every panel layer.",
+    "9. 28.10 -> end: scale the whole picture 1.00 -> 1.03 linear (slow push)."
+   ]
+  },
+  {
+   "n": 8,
+   "start": 30.25,
+   "end": 32.04,
+   "dur": 1.79,
+   "in": "cut",
+   "brightness": {
+    "start": 40,
+    "mid": 41,
+    "end": 43
+   },
+   "colour": "#36251a",
+   "change": 8.27,
+   "sound": "-15.73 LUFS mean, -12.98 peak",
+   "setup": "LOFT-CU",
+   "location": "loc_loft_living_room",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "HOME",
+   "shot_size": "close-up",
+   "subject_in_frame": "His face wearing the glasses, centred, filling 60% of the width; the visor's top at about 12% height; chin resting on his right fist at the bottom centre, a silver ring on a finger at the lower middle; warm blurred room at the edges.",
+   "camera": "Front, slightly below his eye line, long lens, very shallow depth of field.",
+   "camera_move": "Very slow push in.",
+   "action": "He watches, absorbed, chin on his fist; a tiny head tilt; screen light flickers on his face and in the visor.",
+   "light": "Low key: flickering cool screen light from the front on his face, warm dim room behind. Brightness 40 / 41 / 43. The sofa is muted sand-tan boucle (#5B4C36 in daylight), not cream.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music (about -15 LUFS short-term) with film sound low. No speech.",
+   "render": "Image to video from a plate made from the char sheet, HOME wardrobe and glasses sheet in the dimmed loft. Glasses on his face: match set/char_man_glasses_on.jpg (shield sunglasses size, no headset bulk).",
+   "board": "boards/s08.jpg"
+  },
+  {
+   "n": 9,
+   "start": 32.04,
+   "end": 34.67,
+   "dur": 2.63,
+   "in": "cut",
+   "brightness": {
+    "start": 41,
+    "mid": 40,
+    "end": 43
+   },
+   "colour": "#2c2723",
+   "change": 6.26,
+   "sound": "-16.12 LUFS mean, -12.98 peak",
+   "setup": "LOFT-BEHIND-SOFA",
+   "location": "loc_loft_living_room",
+   "cast": [
+    "char_man"
+   ],
+   "wardrobe": "HOME",
+   "shot_size": "wide",
+   "subject_in_frame": "Same setup as shot 7 but pushed in: the panel spans x 11-91%; top edge 19.8% at the corners and 23.0% in the middle; bottom edge 74.5-75.0%, behind the sofa back. It shows the commander's medium close-up (set/screen_film_scifi_cu.jpg), helmet centred at x 56%, helmet 15% of the frame width. 3D pop-out: the helmet crown breaks the top edge and rises to y 13.4% (6-9% of the frame height above the edge), drawn over the dark wall. The man's head centred just above the sofa back. Layer: set/ui_loft_screen_s09.png. The man and the sofa back are in front of the panel (see set/fx_loft_foreground_matte.jpg).",
+   "camera": "As shot 7.",
+   "camera_move": "Slow push in of about 5%.",
+   "action": "He watches; the figure on screen turns slightly.",
+   "light": "Screen light only, cool grey; the loft walls warm-dark at the edges. Brightness 41 / 40 / 43. The sofa is muted sand-tan boucle (#5B4C36 in daylight), not cream.",
+   "text": [
+    {
+     "words": "3D & VR ENHANCED CINEMA",
+     "position": "upper left, x 236-746, y 160-184 at 1080p, white, small caps-height 24 px, very wide tracking",
+     "in": 32.1,
+     "fade_in": 0.4,
+     "out": 34.67,
+     "design": "set/text_captions.jpg"
+    },
+    {
+     "words": "(two lines of tiny grey legal text, generic wording)",
+     "position": "bottom centre, y 940-965",
+     "in": 32.04,
+     "out": 34.67
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Music at its first peak (about -15 LUFS short-term). No speech.",
+   "render": "One take on a composite plate (see build).",
+   "board": "boards/s09.jpg",
+   "build": [
+    "1. Plate: plate A of shot 7 (back of sofa, dark cool room, brightness 40) with set/ui_loft_screen_s09.png laid on full frame; the pop-out helmet crown is part of that layer.",
+    "2. Take: keyframe mode, first_frame = that plate, 3 s, 'the helmeted figure on the screen turns its head slowly about 10 degrees to the left; the man and the room stay still'.",
+    "3. If the take blurs the crown or moves the panel edge: render the plate without the layer (dark room) and lay the layer in post, animating only a 1.5% horizontal slide of the film inside the panel.",
+    "4. Depth order, back to front: room -> screen panel -> pop-out arms / helmet -> the man and the sofa. The panel's bottom edge (73.5-74.3%) sits just above the sofa back (top edge 75%), and his head (x 46.6-51.3%, from y 56%) and shoulders (x 43-55%, from y 64%) overlap the panel: they must stay in front of it. Key them from your own plate A (set/fx_loft_foreground_matte.jpg gives the shape and place) and lay the matte over every panel layer.",
+    "5. Push in 1.00 -> 1.05 (linear over the shot) on the composite. Caption from set/text_captions.jpg."
+   ]
+  },
+  {
+   "n": 10,
+   "start": 34.67,
+   "end": 37.42,
+   "dur": 2.75,
+   "in": "cut",
+   "brightness": {
+    "start": 32,
+    "mid": 38,
+    "end": 45
+   },
+   "colour": "#2d231b",
+   "change": 10.6,
+   "sound": "-17.14 LUFS mean, -14.8 peak",
+   "setup": "STUDIO-HINGE-MACRO",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "One black glossy lens fills the lower left (x 0-60%, y 30-100%); its frame and the hinge with a small round camera dot and a slot button sit at centre right; the temple arm sweeps up and out of the top right corner. The bronze gradient behind is lighter at top right.",
+   "camera": "Low front three-quarter, looking up at the glasses from below the lens, normal lens, shallow depth of field.",
+   "camera_move": "Slow orbit to the left (the glasses turn slightly clockwise); the lens grows a little.",
+   "action": "Light slides across the curve of the frame.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Brightness 32 / 38 / 45.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music continues (about -16 LUFS short-term). No speech.",
+   "render": "Image to video from a plate (glasses sheet on studio void).",
+   "board": "boards/s10.jpg"
+  },
+  {
+   "n": 11,
+   "start": 37.42,
+   "end": 39.42,
+   "dur": 2,
+   "in": "cut",
+   "brightness": {
+    "start": 40,
+    "mid": 45,
+    "end": 50
+   },
+   "colour": "#322a24",
+   "change": 8.95,
+   "sound": "-20.01 LUFS mean, -16.43 peak",
+   "setup": "STUDIO-PUCK-TOP",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_puck"
+   ],
+   "wardrobe": null,
+   "shot_size": "close-up",
+   "subject_in_frame": "The puck lying flat, three-quarter top view, filling 85% of the width, centred slightly right; the raised glossy pad with the logo at top centre; the braided cable plugged into the near left end and leaving the frame at the bottom left; the mesh band along the near edge; the pill button at right.",
+   "camera": "High three-quarter front, about 40 degrees down, normal lens, moderate depth of field.",
+   "camera_move": "Slow push in with a slight clockwise rotation.",
+   "action": "Static product.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Soft top light on the pad. Brightness 40 / 45 / 50.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music (about -17 LUFS). No speech.",
+   "render": "Image to video from a plate (set/product_puck_sheet.jpg THREE-QUARTER view on studio void).",
+   "board": "boards/s11.jpg"
+  },
+  {
+   "n": 12,
+   "start": 39.42,
+   "end": 41.13,
+   "dur": 1.71,
+   "in": "cut",
+   "brightness": {
+    "start": 125,
+    "mid": 128,
+    "end": 130
+   },
+   "colour": "#8f7c66",
+   "change": 12.29,
+   "sound": "-15.9 LUFS mean, -12.01 peak",
+   "setup": "CAFE-KEYS-MACRO",
+   "location": "loc_cafe",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "macro",
+   "subject_in_frame": "A frosted translucent glass keyboard lying on a light oak table, running diagonally from bottom left to top right and filling the frame edge to edge; the long space bar at the lower right.",
+   "camera": "High angle, about 45 degrees down, close, macro lens, shallow depth of field (front keys sharp).",
+   "camera_move": "Slow slide right with a slight push.",
+   "action": "39.42-40.2 s the keys arrive loose and tumbling, scattered over the wood, and settle into their rows; from about 40.3 s the keyboard is complete and still.",
+   "light": "Soft warm daylight; the keys glow faintly white at their edges. Brightness 125 / 128 / 130: the brightest shot of the film.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music (about -16 LUFS); soft glassy ticks as keys land. No speech.",
+   "render": "First + last frame: scattered keys plate -> assembled keyboard plate (keyboard design from set/ui_kit.jpg on the cafe oak table).",
+   "board": "boards/s12.jpg",
+   "boards_start_end": [
+    "boards/s12a.jpg",
+    "boards/s12b.jpg"
+   ]
+  },
+  {
+   "n": 13,
+   "start": 41.13,
+   "end": 43.79,
+   "dur": 2.67,
+   "in": "cut",
+   "brightness": {
+    "start": 111,
+    "mid": 111,
+    "end": 107
+   },
+   "colour": "#7e6a52",
+   "change": 3.32,
+   "sound": "-19.27 LUFS mean, -15.32 peak",
+   "setup": "CAFE-OTS",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man",
+    "product_puck"
+   ],
+   "wardrobe": "CAFE",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Over his right shoulder, high: his right shoulder and arm enter from the left edge, both hands at the left centre on a flat translucent keyboard and trackpad projected on the oak table (x 30-60%); two small floating pill-shaped control bars to their right; the puck lies flat at the top left of the table; chairs and guests soft at the top.",
+   "camera": "High angle over the right shoulder, about 50 degrees down, normal lens, moderate depth of field.",
+   "camera_move": "Locked off with a gentle drift right.",
+   "action": "He types; at about 43.0 s his right hand slides onto the trackpad.",
+   "light": "Soft daylight from the cafe windows. Brightness 111 / 111 / 107.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music; light cafe ambience; soft taps. No speech.",
+   "render": "Image to video from a plate (char sheet CAFE wardrobe, puck sheet, ui_kit keyboard, loc_cafe).",
+   "board": "boards/s13.jpg"
+  },
+  {
+   "n": 14,
+   "start": 43.79,
+   "end": 45.42,
+   "dur": 1.62,
+   "in": "cut",
+   "brightness": {
+    "start": 106,
+    "mid": 106,
+    "end": 106
+   },
+   "colour": "#736656",
+   "change": 7.01,
+   "sound": "-17.4 LUFS mean, -14.66 peak",
+   "setup": "CAFE-SIDE",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "CAFE",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Side view: the man seated at a table in the left 40% of the frame, facing right, in profile, wearing the glasses and looking slightly up; three translucent floating windows hang in the air to his right at head height (x 30-75%, y 5-45%): a web page with a large warm product photo, a narrow chat panel, a small photo panel. Behind: shelves of jars, a barista at far left, guests and big windows at right.",
+   "camera": "Side-on at seated eye height, normal lens, moderate depth of field.",
+   "camera_move": "Locked off.",
+   "action": "He looks at the windows; 45.1-45.4 s they fade out.",
+   "light": "Bright soft daylight from the windows at right. Brightness 106 / 106 / 106.",
+   "text": [],
+   "out": "UI fade inside the take, then a cut at 45.42 to the same setup slightly tighter (the source reads as a dissolve)",
+   "audio": "Music; cafe ambience. No speech.",
+   "render": "One take for shots 14 and 15: image to video from a plate with the windows (ui_kit WINDOWS) beside him; windows fade, icons fade in.",
+   "board": "boards/s14.jpg",
+   "boards_start_end": [
+    "boards/s14a.jpg",
+    "boards/s14b.jpg"
+   ]
+  },
+  {
+   "n": 15,
+   "start": 45.42,
+   "end": 46.25,
+   "dur": 0.83,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 98,
+    "mid": 84,
+    "end": 84
+   },
+   "colour": "#5f5345",
+   "change": 17.33,
+   "sound": "-15.65 LUFS mean, -14.47 peak",
+   "setup": "CAFE-SIDE",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "CAFE",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Same as shot 14, framed slightly tighter and shifted left; a floating panel of app icons (3 columns by 5 rows) appears at the right window, x 60-75%, y 10-50%.",
+   "camera": "As shot 14.",
+   "camera_move": "Locked off.",
+   "action": "45.6-45.9 s the icon panel fades in beside him; he looks at it.",
+   "light": "As shot 14. Brightness 98 / 84 / 84.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music; a soft UI swish. No speech.",
+   "render": "Continue the shot 14 take (same setup).",
+   "board": "boards/s15.jpg",
+   "boards_start_end": [
+    "boards/s15a.jpg",
+    "boards/s15b.jpg"
+   ]
+  },
+  {
+   "n": 16,
+   "start": 46.25,
+   "end": 47.79,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 93,
+    "mid": 95,
+    "end": 96
+   },
+   "colour": "#745842",
+   "change": 9.33,
+   "sound": "-18.07 LUFS mean, -16.47 peak",
+   "setup": "EYE-MACRO",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man"
+   ],
+   "wardrobe": null,
+   "shot_size": "macro",
+   "subject_in_frame": "One eye fills the frame from x 5% to 95%, the iris centred at x 50%, y 50%; a ring of small app icons is reflected/overlaid in the iris around the pupil; warm skin and lashes above and below.",
+   "camera": "Straight on, macro lens, very shallow depth of field.",
+   "camera_move": "Locked off.",
+   "action": "The eye glances slightly up-left to select; the icons shift.",
+   "light": "Warm soft daylight. Brightness 93 / 95 / 96.",
+   "text": [
+    {
+     "words": "LOOK TO NAVIGATE",
+     "position": "right of the iris, x 1282-1548, y 532-556 at 1080p, white, cap height about 20 px, very wide tracking",
+     "in": 46.3,
+     "fade_in": 0.45,
+     "out": 47.79,
+     "design": "set/text_captions.jpg"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Music; a soft select tone. No speech.",
+   "render": "Image to video from a plate (eye from the char sheet, icons from set/ui_kit.jpg).",
+   "board": "boards/s16.jpg"
+  },
+  {
+   "n": 17,
+   "start": 47.79,
+   "end": 49.42,
+   "dur": 1.63,
+   "in": "cut",
+   "brightness": {
+    "start": 87,
+    "mid": 86,
+    "end": 82
+   },
+   "colour": "#5d514d",
+   "change": 23.75,
+   "sound": "-19.04 LUFS mean, -17.06 peak",
+   "setup": "UI-POV",
+   "location": "loc_cafe",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "close-up",
+   "subject_in_frame": "His point of view: 13 rounded app icons with tiny captions floating in rows of 4, 5 and 4, filling the frame (x 5-95%, y 5-95%), over a warm blurred cafe.",
+   "camera": "POV, eye level, normal lens; background fully out of focus.",
+   "camera_move": "Locked off with a small drift.",
+   "action": "A gaze highlight moves across the icons; the middle-row icon at right lifts and glows when looked at.",
+   "light": "Daylight blur behind, the icons self-lit. Brightness 87 / 86 / 82.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music; soft select tones. No speech.",
+   "render": "Image to video from a plate (set/ui_kit.jpg ICONS over a blurred loc_cafe); generic icons only.",
+   "board": "boards/s17.jpg"
+  },
+  {
+   "n": 18,
+   "start": 49.42,
+   "end": 50.63,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 104,
+    "mid": 104,
+    "end": 102
+   },
+   "colour": "#75634c",
+   "change": 12.29,
+   "sound": "-18.82 LUFS mean, -18.42 peak",
+   "setup": "CAFE-CU",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "CAFE",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "The man in three-quarter front, facing right of frame, head and shoulders at left-centre (head x 40-65%, top at 10%); a wall clock top centre-left behind and a soft counter and barista at right.",
+   "camera": "Eye level, front-left three-quarter, long lens, shallow depth of field.",
+   "camera_move": "Locked off.",
+   "action": "He smiles, looking off right; at about 50.2 s his right hand lifts the glasses up onto his head.",
+   "light": "Soft daylight. Brightness 104 / 104 / 102.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music; second song section begins about 50.5 s (see shot 19). No speech from him.",
+   "render": "First + last frame: glasses on -> glasses pushed up on his head.",
+   "board": "boards/s18.jpg",
+   "boards_start_end": [
+    "boards/s18a.jpg",
+    "boards/s18b.jpg"
+   ]
+  },
+  {
+   "n": 19,
+   "start": 50.63,
+   "end": 52.38,
+   "dur": 1.75,
+   "in": "cut",
+   "brightness": {
+    "start": 73,
+    "mid": 74,
+    "end": 77
+   },
+   "colour": "#534738",
+   "change": 10.5,
+   "sound": "-19.4 LUFS mean, -15.01 peak",
+   "setup": "CAFE-MW",
+   "location": "loc_cafe",
+   "cast": [
+    "char_man",
+    "char_friend"
+   ],
+   "wardrobe": "CAFE",
+   "shot_size": "medium wide",
+   "subject_in_frame": "The man at a table on the right third; the friend (char_friend) stands at the left-centre; a woman seated in the left foreground, soft, three-quarter back; a guest at a table in the background centre; wood panelling behind.",
+   "camera": "Eye level, side-on, normal lens, moderate depth of field.",
+   "camera_move": "Locked off.",
+   "action": "50.63 s he holds the glasses near his face; 51.2-51.8 s he puts them on the table and rises; 52.0-52.38 s he and the friend shake hands at centre right.",
+   "light": "Warm daylight. Brightness 73 / 74 / 77.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Sung lyric 50.54-55.0 s: 'When you're living like that, you can spend the whole time, you know' (unclear; vocal). Music.",
+   "render": "Image to video from a plate (char sheets man + friend, CAFE wardrobe, loc_cafe).",
+   "board": "boards/s19.jpg",
+   "boards_start_end": [
+    "boards/s19a.jpg",
+    "boards/s19b.jpg"
+   ]
+  },
+  {
+   "n": 20,
+   "start": 52.38,
+   "end": 53.71,
+   "dur": 1.33,
+   "in": "cut",
+   "brightness": {
+    "start": 78,
+    "mid": 77,
+    "end": 74
+   },
+   "colour": "#444b48",
+   "change": 54.65,
+   "sound": "-16.07 LUFS mean, -14.37 peak",
+   "setup": "GATE-HANDHELD",
+   "location": "loc_airport_gate",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "medium wide",
+   "subject_in_frame": "Silhouetted travellers with backpacks and a rolling case fill the left and centre foreground walking away from camera; tall windows across the back, the gate sign 'D8' with arrows at centre-left, departure boards top right.",
+   "camera": "Handheld at chest height, wide-normal lens.",
+   "camera_move": "Handheld forward follow with the walkers, quick (change 54.65, the fastest shot).",
+   "action": "Travellers walk past and away; the frame bobs gently.",
+   "light": "Bright window backlight; people in silhouette. Brightness 78 / 77 / 74.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Lyric continues; airport bustle under the music. No speech.",
+   "render": "Image to video from a plate (loc_airport_gate with walkers).",
+   "board": "boards/s20.jpg"
+  },
+  {
+   "n": 21,
+   "start": 53.71,
+   "end": 59.17,
+   "dur": 5.46,
+   "in": "cut",
+   "brightness": {
+    "start": 87,
+    "mid": 29,
+    "end": 76
+   },
+   "colour": "#3d403e",
+   "change": 40.18,
+   "sound": "-14.94 LUFS mean, -11.72 peak",
+   "setup": "GATE-SEAT",
+   "location": "loc_airport_gate",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "TRAVEL",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Before the wipe: the man seated in a row of grey perforated gate seats, right of centre (x 45-70%), glasses in his hands, a silver suitcase beside him; travellers pass soft in the foreground; windows behind. After the wipe: closer, he sits in the same grey seat at the right third (x 55-90%), in profile facing left, wearing the glasses, on the edge of a basketball court; players in white and dark kits play in front of him, the basket upper left, a referee passes.",
+   "camera": "Seated eye height, side-on, normal-long lens, moderate depth of field.",
+   "camera_move": "Locked off; passers-by make the wipes.",
+   "action": "53.71-55.2 s he lifts the glasses. 55.2-55.7 s a passer-by in dark clothes crosses close to the lens and fills the frame. 55.9-56.1 s the gate again: he puts the glasses on. 56.2-56.6 s a second close passer-by crosses right to left; behind them the gate is replaced by the arena (a wipe made by the body). 56.6-59.17 s he sits courtside watching; a player drives past, a referee crosses at about 58.9 s.",
+   "light": "Gate: bright daylight from the windows. Arena: warm court light, dark cool stands. Brightness 87 / 29 (mid-wipe) / 76.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Lyric ends 55.0 s. From about 55.9 s crowd noise and a broadcast play-by-play voice-over (commentator, not on camera): 'That's an opening, almost threw it away, sidestep, floater' 56.2-58.9 s. Clip of that voice: set/voice_commentator.wav.",
+   "render": "Three takes joined by two body wipes in post (see build). Glasses on his face: match set/char_man_glasses_on.jpg (shield sunglasses size, no headset bulk).",
+   "board": "boards/s21.jpg",
+   "boards_start_end": [
+    "boards/s21a.jpg",
+    "boards/s21b.jpg"
+   ],
+   "build": [
+    "Three takes, all seated eye height side-on, locked off; two body wipes made from set/fx_passerby_matte.jpg (black body on white: invert it for the alpha).",
+    "Take A (gate, board s21a): he sits right of centre (x 45-70%), glasses in his hands, lifts them toward his face. Used 53.71-55.52.",
+    "Take B (gate, same plate): he puts the glasses on (first_frame = take A's plate with the glasses at his face). Used 55.60-56.15.",
+    "Take C (court, board s21b): closer, same grey seat at the right third (x 55-90%), profile left, wearing the glasses, play beyond. Used from 56.12.",
+    "Wipe 1 (A -> B): passer-by 1 = the matte scaled to 1.3x the frame height, body colour #0A0A0A, edge feather 2% of the width, motion blur 3%. It crosses right to left: its leading (left) edge runs x 100% -> 0% over 55.27-55.52; the frame is fully dark 55.52-55.60; its trailing edge runs x 100% -> 0% over 55.60-55.85 and uncovers take B behind it.",
+    "Wipe 2 (B -> C): passer-by 2 = the matte at 1.0x frame height, the same colour. Leading edge x 100% -> 0% over 56.02-56.15 (covering take B); trailing edge x 100% -> 70% (56.18) -> 55% (56.27-56.35) -> 30% (56.43) -> 0% (56.50). Right of the trailing edge shows take C, so the court is revealed right to left behind the body.",
+    "Mid-wipe brightness drops to 29 (the measured mid value is the dark body, not a grade target). Grade takes A/B to 87 and take C to 76."
+   ]
+  },
+  {
+   "n": 22,
+   "start": 59.17,
+   "end": 62.29,
+   "dur": 3.13,
+   "in": "cut",
+   "brightness": {
+    "start": 56,
+    "mid": 59,
+    "end": 58
+   },
+   "colour": "#373838",
+   "change": 11.55,
+   "sound": "-13.77 LUFS mean, -11.49 peak",
+   "setup": "ARENA-BEHIND-SEATS",
+   "location": "loc_arena",
+   "cast": [
+    "char_man"
+   ],
+   "wardrobe": "TRAVEL",
+   "shot_size": "wide",
+   "subject_in_frame": "A row of four joined grey perforated gate seats across the lower centre (x 12-80%, y 55-95%), seen from behind; the man in the second seat from the right, back to camera, head at x 52%, y 45%; the court and play beyond, the packed dark crowd in the top 60%.",
+   "camera": "Behind the seats at seat height, normal lens, moderate depth of field.",
+   "camera_move": "Slow push in (about 5%).",
+   "action": "Play runs left to right in front of him.",
+   "light": "Warm court light, stands dark blue-black. Brightness 56 / 59 / 58.",
+   "text": [
+    {
+     "words": "IMMERSIVE SPORTS",
+     "position": "upper right, x 1276-1650, y 296-322 at 1080p, white, cap height about 24 px, wide tracking",
+     "in": 59.4,
+     "fade_in": 0.4,
+     "out": 62.29,
+     "design": "set/text_captions.jpg"
+    },
+    {
+     "words": "(one line of tiny grey legal text, generic wording)",
+     "position": "bottom centre, y 940",
+     "in": 59.17,
+     "out": 62.29
+    }
+   ],
+   "out": "hard cut (the commentary runs on into shot 23)",
+   "audio": "Commentator voice-over: 'Got it.' 59.2-59.8 s; 'That's a great start.' 60.9-62.0 s. Crowd; music at its loudest (-13 LUFS short-term).",
+   "render": "Image to video from a plate (loc_arena, gate seats, man from behind). Glasses on his face: match set/char_man_glasses_on.jpg (shield sunglasses size, no headset bulk).",
+   "board": "boards/s22.jpg",
+   "boards_start_end": [
+    "boards/s22a.jpg",
+    "boards/s22b.jpg"
+   ]
+  },
+  {
+   "n": 23,
+   "start": 62.29,
+   "end": 63.92,
+   "dur": 1.63,
+   "in": "cut",
+   "brightness": {
+    "start": 32,
+    "mid": 31,
+    "end": 29
+   },
+   "colour": "#231c16",
+   "change": 4.72,
+   "sound": "-17.81 LUFS mean, -16.98 peak",
+   "setup": "STUDIO-PROFILE",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "close-up",
+   "subject_in_frame": "The glasses floating in exact side profile: the temple arm enters from the left edge at 30-40% height and runs right to the lens, a tall oval at x 63-85%; the lower half below is bronze gradient.",
+   "camera": "Level, side-on, long lens, deep enough focus for the whole arm.",
+   "camera_move": "Locked off (very slow drift).",
+   "action": "Static product.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Rim light along the top of the arm. Brightness 32 / 31 / 29.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music (about -15 LUFS); crowd tails off. No speech.",
+   "render": "Image to video from a plate (set/product_glasses_sheet.jpg SIDE view on studio void).",
+   "board": "boards/s23.jpg"
+  },
+  {
+   "n": 24,
+   "start": 63.92,
+   "end": 66.25,
+   "dur": 2.33,
+   "in": "cut",
+   "brightness": {
+    "start": 28,
+    "mid": 29,
+    "end": 29
+   },
+   "colour": "#211a14",
+   "change": 4.58,
+   "sound": "-16.63 LUFS mean, -13.5 peak",
+   "setup": "STUDIO-TEMPLE-MACRO",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "macro",
+   "subject_in_frame": "The inner side of one temple arm, diagonal from the top left to the bottom right, filling the frame; the engraving 'META  MENLO PARK, CA' and a speaker slot at the centre; warm golden concentric sound rings ripple out from the speaker toward the lower left.",
+   "camera": "Low and close under the arm, macro lens, shallow depth of field.",
+   "camera_move": "Locked off.",
+   "action": "The rings expand outward continuously, about one ring every 0.4 s.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Brightness 28 / 29 / 29.",
+   "text": [
+    {
+     "words": "Spatial Audio",
+     "position": "left, x 284-608, y 600-650 at 1080p, white, mixed case, larger (cap height about 36 px), as an audio-format badge",
+     "in": 64.1,
+     "fade_in": 0.4,
+     "out": 66.25,
+     "design": "set/text_captions.jpg"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "A bass swell in the music; no speech.",
+   "render": "Image to video from a plate (temple from the glasses sheet; rings from set/ui_kit.jpg SOUND RINGS).",
+   "board": "boards/s24.jpg"
+  },
+  {
+   "n": 25,
+   "start": 66.25,
+   "end": 68.04,
+   "dur": 1.79,
+   "in": "cut",
+   "brightness": {
+    "start": 18,
+    "mid": 18,
+    "end": 18
+   },
+   "colour": "#0e1112",
+   "change": 1.8,
+   "sound": "-16.3 LUFS mean, -13.19 peak",
+   "setup": "PLANE-CU",
+   "location": "loc_plane_cabin",
+   "cast": [
+    "char_man",
+    "product_glasses"
+   ],
+   "wardrobe": "FLIGHT",
+   "shot_size": "close-up",
+   "subject_in_frame": "The man in a window seat at night, three-quarter front facing right, head and shoulders at centre (head x 30-65%, top at 5%); dark seat backs around him.",
+   "camera": "Eye level, front-left three-quarter, long lens, shallow depth of field.",
+   "camera_move": "Locked off.",
+   "action": "He smiles softly, watching something up-right; faint light flickers on him.",
+   "light": "Very dark night cabin, cool blue-grey; faint cool flicker on his face. Brightness 18 / 18 / 18.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Music; low cabin hum. No speech.",
+   "render": "Image to video from a plate (char sheet, FLIGHT wardrobe, glasses, loc_plane_cabin).",
+   "board": "boards/s25.jpg"
+  },
+  {
+   "n": 26,
+   "start": 68.04,
+   "end": 72.58,
+   "dur": 4.54,
+   "in": "cut",
+   "brightness": {
+    "start": 20,
+    "mid": 33,
+    "end": 31
+   },
+   "colour": "#121b1b",
+   "change": 6.61,
+   "sound": "-15.75 LUFS mean, -13.19 peak",
+   "setup": "CINEMA-BACK",
+   "location": "loc_cinema",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "wide",
+   "subject_in_frame": "From the back rows: seat backs and audience heads in silhouette across the bottom 35%; a giant screen fills the upper two-thirds (x 9-86%, y 0-63%) showing a misty jungle with an angular crashed spacecraft in a lagoon (set/screen_film_jungle.jpg).",
+   "camera": "Seated head height in the back rows, wide-normal lens, deep focus.",
+   "camera_move": "Slow push in (about 5%).",
+   "action": "The film plays; at about 71.5 s a huge plume of water bursts up on screen at the centre.",
+   "light": "Screen light only; the auditorium near black, green-grey cast. Brightness 20 / 33 / 31.",
+   "text": [
+    {
+     "words": "THEATER ENHANCED",
+     "position": "on the screen's right, x 1284-1594, y 485-515 at 1080p, white, the first word bold",
+     "in": 68.04,
+     "out": 72.58,
+     "design": "set/text_captions.jpg"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Music with big cinema sound from the screen. No speech.",
+   "render": "Image to video from a plate (loc_cinema with set/screen_film_jungle.jpg on the screen).",
+   "board": "boards/s26.jpg"
+  },
+  {
+   "n": 27,
+   "start": 72.58,
+   "end": 75.96,
+   "dur": 3.38,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 29,
+    "end": 59
+   },
+   "colour": "#24201d",
+   "change": 9.53,
+   "sound": "-17.7 LUFS mean, -15.63 peak",
+   "setup": "STUDIO-PUCK-FRONT",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_puck",
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "close-up",
+   "subject_in_frame": "Start: the puck standing upright, front view, centred, 60% of the width, its top (mesh rim, cable collar) at the top edge, the logo pad in the lower centre; the braided cable rises from the top centre out of frame. End: the puck small (about 25% of the width) and soft in the lower middle; the glasses' top band, pale grey with the Meta logo, fills the lower half in the foreground, sharp, cable rising behind it.",
+   "camera": "Front, level with the puck, long lens, shallow depth of field.",
+   "camera_move": "Slow pull back and rise (crane up and back): the puck shrinks and sinks into the lower frame. At about 75.4 s the glasses' top band rises into the foreground from the bottom edge, out of focus, and focus racks to it (75.6-75.96 s).",
+   "action": "The puck stays still; the move reveals the glasses in front of it. There is no tilt along the cable to the glasses.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. The pale band is lit from above at the end. Brightness 36 / 29 / 59.",
+   "text": [],
+   "out": "near-match soft cut (2-3 frame dissolve) into shot 28's band close-up",
+   "audio": "Music rebuilds (about -17 LUFS). No speech.",
+   "render": "First + last frame: upright puck plate -> band-in-foreground plate (puck soft behind); both on loc_studio_void.",
+   "board": "boards/s27.jpg",
+   "boards_start_end": [
+    "boards/s27a.jpg",
+    "boards/s27b.jpg"
+   ]
+  },
+  {
+   "n": 28,
+   "start": 75.96,
+   "end": 82.29,
+   "dur": 6.33,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 54,
+    "mid": 27,
+    "end": 31
+   },
+   "colour": "#24201c",
+   "change": 14.23,
+   "sound": "-17.4 LUFS mean, -13.89 peak",
+   "setup": "STUDIO-HERO-FRONT",
+   "location": "loc_studio_void",
+   "cast": [
+    "product_glasses"
+   ],
+   "wardrobe": null,
+   "shot_size": "extreme close-up",
+   "subject_in_frame": "Start: the band's pale grey front fills the full width in the top 30% with the Meta logo at centre and two pairs of sensor dots each side; the visor black below; the nose bridge peak at the bottom centre. From about 79 s to the end: the full glasses centred, 62% of the width (x 19-81%), band top at 35% height, the cable leaving the left temple and curving down out of the bottom left; the lockup above.",
+   "camera": "Front, slightly above the eye line, as shot 4.",
+   "camera_move": "Slow pull back with a slight rise, 75.96-79.3 s; then nearly still to the end.",
+   "action": "The hero settles, floating; nothing else moves.",
+   "light": "Low key. One warm amber-bronze light from behind/above the product; a bronze glow sits low in the frame and falls off to near-black at the top and sides; no front fill, no haze, no smoke, no dust, no floor texture. Soft top light makes the band read pale grey. Brightness 54 / 27 / 31. Band numbers: at the start close-up the band face is #9A9590 (luma ~150); on the centred hero (79-82 s) #A4A19B-#B5B4AE (luma 160-185) and never above 200: it is the brightest object in frame but reads pale grey, never white. Visor #0A0909 (luma ~10).",
+   "text": [
+    {
+     "words": "[Meta infinity logo] Meta VR Glasses",
+     "position": "top centre, y 176-212, x 731-1188 at 1080p, white (same lockup as shot 4, without INTRODUCING)",
+     "in": 78.9,
+     "fade_in": 1.5,
+     "out": 82.45,
+     "fade_out": 0.45,
+     "design": "set/text_title_lockup.jpg"
+    }
+   ],
+   "out": "dissolve, about 0.6 s (81.9-82.5 s), into the end card",
+   "audio": "Music resolves; sung lyric 'Keep moving' starts about 82.2 s.",
+   "render": "First + last frame: band close-up plate -> centred hero plate with cable (same plate family as shot 4's end). Lockup in post. Glasses: follow the PRODUCT LOCK in set.product_glasses (sleek shield, ~3 cm deep, never a headset).",
+   "board": "boards/s28.jpg",
+   "boards_start_end": [
+    "boards/s28a.jpg",
+    "boards/s28b.jpg"
+   ]
+  },
+  {
+   "n": 29,
+   "start": 82.29,
+   "end": 86.04,
+   "dur": 3.75,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 42,
+    "mid": 48,
+    "end": 44
+   },
+   "colour": "#3d2b1a",
+   "change": 1.26,
+   "sound": "-33.38 LUFS mean, -13.08 peak",
+   "setup": "END-CARD",
+   "location": "loc_studio_void",
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": "wide",
+   "subject_in_frame": "A warm bronze radial gradient, lighter at the upper left (#5c4026) to dark at the lower right (#160e0a); the hero glasses fade away as a ghost in the upper middle (gone by about 82.6 s); two centred lines of text in the middle.",
+   "camera": "None (graphic).",
+   "camera_move": "Locked off.",
+   "action": "The glasses dissolve away; the text fades in line by line and holds to the end.",
+   "light": "Graphic gradient. Brightness 42 / 48 / 44. End card file: set/text_end_card.jpg is already at the film's level (mean luma 46).",
+   "text": [
+    {
+     "words": "SEE HOW IT FEELS",
+     "position": "centre, y 486-538 at 1080p (cap height about 52 px), x 623-1296, near white #faf8f4, medium weight, wide tracking",
+     "in": 82.55,
+     "fade_in": 0.7,
+     "out": 86.04,
+     "design": "set/text_end_card.jpg"
+    },
+    {
+     "words": "SPRING 2027",
+     "position": "centred under it, y 588-620 (cap height about 33 px), x 816-1103, warm grey #c8baac",
+     "in": 83.2,
+     "fade_in": 0.95,
+     "out": 86.04,
+     "design": "set/text_end_card.jpg"
+    }
+   ],
+   "out": "end (no fade to black)",
+   "audio": "Sung lyric 'Keep moving' about 82.2-84.4 s; the music decays and is silent from 85.26 s to the end.",
+   "render": "A still in assembly: set/text_end_card.jpg gradient, dissolve from shot 28, text in post.",
+   "board": "boards/s29.jpg",
+   "boards_start_end": [
+    "boards/s29a.jpg",
+    "boards/s29b.jpg"
+   ]
+  }
+ ],
+ "sound": {
+  "silences": [
+   {
+    "start": 85.26,
+    "end": 86.1
+   }
+  ],
+  "black": [
+   {
+    "start": 0,
+    "end": 1.25
+   }
+  ],
+  "music_arc": [
+   {
+    "from": 0.0,
+    "to": 2.3,
+    "what": "silence"
+   },
+   {
+    "from": 2.5,
+    "to": 12.5,
+    "what": "low warm drone fading up (-32 to -21 LUFS short-term), soft high shimmer over the macros"
+   },
+   {
+    "from": 12.5,
+    "to": 15.4,
+    "what": "the beat enters; build into the song"
+   },
+   {
+    "from": 15.4,
+    "to": 27.9,
+    "what": "song verse, sung vocal (about -15 to -19 LUFS); his spoken line 25.90-27.90"
+   },
+   {
+    "from": 28.0,
+    "to": 36.0,
+    "what": "swell as the cinema appears (-15 LUFS)"
+   },
+   {
+    "from": 36.0,
+    "to": 50.5,
+    "what": "instrumental groove under the design and cafe shots (-16 to -18 LUFS)"
+   },
+   {
+    "from": 50.5,
+    "to": 55.0,
+    "what": "second sung section"
+   },
+   {
+    "from": 55.9,
+    "to": 62.3,
+    "what": "crowd and play-by-play commentary over the music at its loudest (-13 LUFS)"
+   },
+   {
+    "from": 62.3,
+    "to": 81.0,
+    "what": "music continues, bass swell at shot 24, rebuild under the hero"
+   },
+   {
+    "from": 82.2,
+    "to": 84.4,
+    "what": "final sung lyric 'Keep moving'"
+   },
+   {
+    "from": 84.4,
+    "to": 85.26,
+    "what": "decay"
+   },
+   {
+    "from": 85.26,
+    "to": 86.04,
+    "what": "silence"
+   }
+  ],
+  "speech": [
+   {
+    "start": 25.9,
+    "end": 27.9,
+    "who": "char_man",
+    "kind": "on-camera speech, starts in shot 6 and runs across the 26.63 cut into shot 7 (back to camera)",
+    "words": "Hey Meta, play the movie.",
+    "note": "In the source the words after 'play' were a film title; set/score.wav mutes 27.10-27.90 s. Lay the slot's title there."
+   },
+   {
+    "start": 56.2,
+    "end": 58.9,
+    "who": "commentator",
+    "kind": "voice-over (arena broadcast)",
+    "words": "That's an opening, almost threw it away, sidestep, floater"
+   },
+   {
+    "start": 59.2,
+    "end": 59.8,
+    "who": "commentator",
+    "kind": "voice-over",
+    "words": "Got it."
+   },
+   {
+    "start": 60.9,
+    "end": 62.0,
+    "who": "commentator",
+    "kind": "voice-over",
+    "words": "That's a great start."
+   }
+  ],
+  "lyrics": [
+   {
+    "start": 15.4,
+    "end": 16.0,
+    "words": "(unclear opening line)",
+    "kind": "sung lyric"
+   },
+   {
+    "start": 17.7,
+    "end": 20.1,
+    "words": "Don't think about it, I'll be running with you",
+    "kind": "sung lyric"
+   },
+   {
+    "start": 21.9,
+    "end": 22.7,
+    "words": "I cannot stand it",
+    "kind": "sung lyric"
+   },
+   {
+    "start": 23.55,
+    "end": 25.4,
+    "words": "I'll find another way",
+    "kind": "sung lyric"
+   },
+   {
+    "start": 50.54,
+    "end": 55.0,
+    "words": "When you're living like that, you can spend the whole time, you know",
+    "kind": "sung lyric (words uncertain)"
+   },
+   {
+    "start": 82.2,
+    "end": 84.4,
+    "words": "Keep moving",
+    "kind": "sung lyric"
+   }
+  ],
+  "mix": "set/score.wav is the complete soundtrack (music, lyrics, his line, commentary, crowd) and the cut is timed to it. Lay it from 0.0 s at unity and keep clip sound low (room tone 0.1-0.25) or muted where the score carries speech or crowd (shots 4-7, 21-23, 28-29). No sound effect is needed beyond the score; UI ticks and whooshes, if added, sit 15 dB under the music.",
+  "effects_in_score": "Drone, shimmer, beat, commentary and crowd are all inside score.wav; there are no separate hard effects at the cuts."
+ },
+ "look": {
+  "grade": "Warm, low-saturation filmic grade. Studio shots are near-black with a bronze-brown glow; lifestyle shots warm beige daylight; arena and cinema cool and dark with warm accents.",
+  "brightness": "Measured 0-255 (bin/dissect). Studio shots 1-4, 10-11, 23-24, 27-28 sit at 2-59, mostly 12-45; shot 1 is almost black (2/11/26) and shot 4 stays at 12-25. Loft daylight 48-96 (shots 5-6), loft cinema 34-43 (7-9), cafe 73-130 (12-19; shot 12 is the brightest at 125-130), airport 74-87, arena 56-59, plane 18, cinema 20-33, end card 42-48.",
+  "contrast": "High in the studio (deep blacks, a single rim); soft and low in the lifestyle shots.",
+  "light": "Studio: one warm light from behind/above, no fill, no haze or smoke, seamless black-to-bronze gradient. Lifestyle: soft natural window light; screens are the key light in the cinema scenes.",
+  "depth_of_field": "Shallow everywhere except the wides (7, 9, 22, 26).",
+  "grain": "Fine, clean; no visible grain or halation.",
+  "aspect": "16:9, 1920x1080, 24 fps."
+ },
+ "slots": [
+  {
+   "slot": "product",
+   "default": "Meta VR Glasses + compute puck",
+   "where": "shots 1-4, 10-11, 23-24, 27-28; worn in 6-9, 14-16, 18, 21-22, 25"
+  },
+  {
+   "slot": "presenter",
+   "default": "char_man (and char_friend in 19)",
+   "where": "shots 5-9, 13-16, 18-19, 21-22, 25"
+  },
+  {
+   "slot": "line",
+   "default": "'Hey Meta, play the movie.' 25.90-27.90 s",
+   "where": "shots 6-7"
+  },
+  {
+   "slot": "places",
+   "default": "loft, cafe, airport gate -> arena, plane, cinema",
+   "where": "acts 2, 4, 5, 6"
+  },
+  {
+   "slot": "screen content",
+   "default": "generic sci-fi film, generic jungle adventure film, generic basketball game",
+   "where": "shots 7, 9, 21-22, 26"
+  },
+  {
+   "slot": "feature captions",
+   "default": "3D & VR ENHANCED CINEMA / LOOK TO NAVIGATE / IMMERSIVE SPORTS / Spatial Audio / THEATER ENHANCED",
+   "where": "shots 9, 16, 22, 24, 26"
+  },
+  {
+   "slot": "name lockup",
+   "default": "INTRODUCING + [logo] Meta VR Glasses",
+   "where": "shots 4, 28"
+  },
+  {
+   "slot": "end card",
+   "default": "SEE HOW IT FEELS / SPRING 2027",
+   "where": "shot 29"
+  },
+  {
+   "slot": "music",
+   "default": "set/score.wav",
+   "where": "whole film; keep the arc and the hit points"
+  }
+ ],
+ "text_style": {
+  "typeface": "Clean geometric sans (Meta's brand sans feel; Avenir Next Medium is a close stand-in).",
+  "case": "Feature captions in ALL CAPS with very wide tracking (about 0.35 em); the product lockup in title case beside the Meta infinity logo; the audio badge in mixed case.",
+  "size": "Small: captions cap height 19-24 px at 1080p; lockup 36 px tall; end card line 1 cap height about 52 px, line 2 about 33 px.",
+  "colour": "White or light grey; end card line 2 warm grey.",
+  "position": "Top centre for the title lockup; one caption per feature shot placed in empty space (upper left, right of the subject, upper right, left); end card centred.",
+  "animation": "Plain fades only: captions 0.4-0.45 s, INTRODUCING 0.8 s, lockup 1.5-1.75 s, end card lines 0.7 and 0.95 s, staggered about 0.65 s. Captions cut out with the shot. No slides, no scaling.",
+  "design_files": [
+   "set/text_title_lockup.jpg",
+   "set/text_captions.jpg",
+   "set/text_end_card.jpg"
+  ]
+ },
+ "set": {
+  "char_man": {
+   "files": [
+    "set/char_man_sheet.jpg",
+    "set/char_man_wardrobe.jpg",
+    "set/char_man_glasses_on.jpg"
+   ],
+   "fixes": "The lead: early 30s, curly dark-brown hair, short beard and moustache, olive skin. Outfits: HOME cream ribbed knit polo sweater + light trousers (5-9); CAFE white short-sleeve knit polo (13-19); TRAVEL navy overshirt over a white tee, beige chinos (21-22); FLIGHT black bomber over a white tee (25). set/char_man_glasses_on.jpg: him wearing the glasses (front, three-quarter, profile) at their true size on the face: use it as a reference for every worn shot (6, 8, 14-16, 18, 21-22, 25)."
+  },
+  "char_friend": {
+   "files": [
+    "set/char_friend_sheet.jpg"
+   ],
+   "fixes": "The friend he greets in shot 19: early 30s, short dark hair, grey-green overshirt over a dark tee."
+  },
+  "voice_man": {
+   "files": [
+    "set/voice_man_line.wav"
+   ],
+   "fixes": "His voice saying 'Hey Meta, play' (1.28 s) for the shot 6-7 line."
+  },
+  "voice_commentator": {
+   "files": [
+    "set/voice_commentator.wav"
+   ],
+   "fixes": "The play-by-play commentator voice (55.9-64.75 s of the film, with crowd and music)."
+  },
+  "product_glasses": {
+   "files": [
+    "set/product_glasses_sheet.jpg"
+   ],
+   "fixes": "The glasses: wrap-around black visor, pale warm grey front band with the Meta logo and two pairs of sensor dots, gunmetal frame and thick temples, cable from the left temple. Band colour: warm mid-grey #A29E98 (luma ~158) in even light; in the film #5F5954 (luma 85-95) in shot 4 and #A4A19B-#B5B4AE (luma 160-185, never above 200) in shot 28. Visor #0B0A08, glossy and opaque. Chips on the sheet. PRODUCT LOCK (shots 1-4, 6-9, 14-16, 18, 21-22, 25, 28): sleek shield glasses, not a headset. From the front at eye level one large glossy near-black shield lens with a thin dark rim and a shallow nose notch, the size of oversized wrap-around sunglasses; the pale warm-grey band is the TOP surface of the frame (seen from above in the hero shots, a thin light line at eye level). Front-to-back depth about 3 cm; slim gunmetal-black arms straight back over the ears; a thin black cable from the left arm end. Worn, the shield covers eyes and brows only and stands about 2 cm off the face. NEVER: head strap, face cushion or foam, goggle box, visor brim, rear battery, anything wider than the head, see-through lens. Worn reference: set/char_man_glasses_on.jpg."
+  },
+  "product_puck": {
+   "files": [
+    "set/product_puck_sheet.jpg"
+   ],
+   "fixes": "The compute puck: black rounded rectangle, raised glossy logo pad, perforated mesh edge, side button, braided cable from one end."
+  },
+  "loc_studio_void": {
+   "files": [
+    "set/loc_studio_void.jpg"
+   ],
+   "fixes": "The studio: near-black with a low bronze glow, no haze (brightness about 19)."
+  },
+  "loc_loft_living_room": {
+   "files": [
+    "set/loc_loft_living_room.jpg"
+   ],
+   "fixes": "Brick-and-concrete loft, tall steel windows, long modular tufted sofa in a muted sand-tan boucle (measured #5B4C36, luma ~78 in the daylight of shot 6; deep tan #27180E, luma ~27 on the sofa back in the dim wide of shot 7), pale stone coffee table. Not cream, not orange caramel: the sheet shows the colour in warm dusk light."
+  },
+  "loc_cafe": {
+   "files": [
+    "set/loc_cafe.jpg"
+   ],
+   "fixes": "Light oak cafe, shelves of jars, big street windows."
+  },
+  "loc_airport_gate": {
+   "files": [
+    "set/loc_airport_gate.jpg"
+   ],
+   "fixes": "Gate D8: tall windows, rows of grey perforated seats, departure boards."
+  },
+  "loc_arena": {
+   "files": [
+    "set/loc_arena.jpg"
+   ],
+   "fixes": "Basketball arena: light wood court, packed dark blue-black stands, red and blue ribbon lights (brightness about 55)."
+  },
+  "loc_plane_cabin": {
+   "files": [
+    "set/loc_plane_cabin.jpg"
+   ],
+   "fixes": "Night cabin, dark blue-grey seats (brightness about 19)."
+  },
+  "loc_cinema": {
+   "files": [
+    "set/loc_cinema.jpg"
+   ],
+   "fixes": "Dark cinema, rows of seats, blank giant screen (brightness about 24)."
+  },
+  "screen_film_scifi": {
+   "files": [
+    "set/screen_film_scifi.jpg",
+    "set/screen_film_scifi_cu.jpg"
+   ],
+   "fixes": "The generic sci-fi film on the loft screen, generatable (tested with bin/img): a helmeted commander in gunmetal armour and a slate-blue cloak on a steel platform between two loader arms in a dim hangar (shot 7), and his medium close-up (shot 9). No blade, no robe. Crop to 2.39:1 (centre band) for the panel."
+  },
+  "screen_film_jungle": {
+   "files": [
+    "set/screen_film_jungle.jpg"
+   ],
+   "fixes": "The generic adventure film in the theatre: misty jungle, crashed angular spacecraft in a lagoon (shot 26)."
+  },
+  "ui_kit": {
+   "files": [
+    "set/ui_kit.jpg"
+   ],
+   "fixes": "The glasses' interface: frosted glass keyboard, floating windows, generic icon grid (4/5/4), golden sound rings."
+  },
+  "text_design": {
+   "files": [
+    "set/text_title_lockup.jpg",
+    "set/text_captions.jpg",
+    "set/text_end_card.jpg"
+   ],
+   "fixes": "Exact title, caption and end-card layout at 1920x1080. text_end_card.jpg is graded to the film (mean luma 46; the film measures 42-48): use it as is, no lift."
+  },
+  "score": {
+   "files": [
+    "set/score.wav"
+   ],
+   "fixes": "The full 86.1 s soundtrack the cut is timed to (film title in the line muted at 27.10-27.90 s)."
+  },
+  "ui_loft_screen": {
+   "files": [
+    "set/ui_loft_screen_s07.png",
+    "set/ui_loft_screen_s09.png",
+    "set/ui.json"
+   ],
+   "fixes": "The floating screen panel as full-frame RGBA layers at its measured place in shots 7 and 9 (curve, corners, pop-out helmet, credit copy 'Hangar Nine / Now Streaming', two lines of generic legal text). ui.json gives the pop timing."
+  },
+  "ui_assistant_pill": {
+   "files": [
+    "set/ui_assistant_pill.png"
+   ],
+   "fixes": "The voice-assistant indicator on the far wall in shot 7 (7 capsules, measured colours and place)."
+  },
+  "fx_passerby": {
+   "files": [
+    "set/fx_passerby_matte.jpg"
+   ],
+   "fixes": "Body-wipe matte for shot 21: a close out-of-focus walker with a backpack, black on white."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav"
+   ],
+   "fixes": "The film's recorded lines used by the 30 s and 15 s cuts, one clip per line with absolute times (set/lines.json)."
+  },
+  "score_30": {
+   "files": [
+    "set/score_30.wav"
+   ],
+   "fixes": "The soundtrack cut to the 30 s spot at bar-aligned joins (cut30.score)."
+  },
+  "fx_loft_foreground": {
+   "files": [
+    "set/fx_loft_foreground_matte.jpg"
+   ],
+   "fixes": "Depth order for shots 7 and 9: white = the sofa back (from y 75%) and the man's head and shoulders, which stay IN FRONT of the floating screen and its pop-outs. Shape and place to re-key from your own plate."
+  },
+  "score_15": {
+   "files": [
+    "set/score_15.wav"
+   ],
+   "fixes": "The soundtrack cut to the 15 s spot at bar-aligned joins (cut15.score)."
+  }
+ },
+ "cut30": {
+  "duration": 30.0,
+  "fps": 24,
+  "arc": "Hook (0-5.6): the lens wakes in the dark, the beat drops on the hero, INTRODUCING + name. Middle (5.6-22.5): two payoffs, each a place that turns bigger: the loft (he takes the glasses, 'Hey Meta, play the movie.', the screen pops in, 3D cinema) and the gate (body wipes to courtside, play-by-play, IMMERSIVE SPORTS). Payoff and end card (22.5-30): the floating hero with the name, dissolve to SEE HOW IT FEELS / SPRING 2027 over 'Keep moving'. The cafe, design macros, plane and theatre acts are left out.",
+  "average_shot": 3.0,
+  "source_average_shot": 2.97,
+  "shots": [
+   {
+    "n": 1,
+    "from": 3,
+    "start": 0.0,
+    "end": 2.0,
+    "dur": 2.0,
+    "source_window": [
+     9.85,
+     11.85
+    ],
+    "change": "Hook. The last 2.0 s of the lens waking (bloom from dark to full); fade from black 0-0.4 s. Cut on the hit as the beat drops.",
+    "src": [
+     9.85,
+     11.85
+    ]
+   },
+   {
+    "n": 2,
+    "from": 4,
+    "start": 2.0,
+    "end": 5.575,
+    "dur": 3.575,
+    "source_window": [
+     16.5,
+     20.075
+    ],
+    "change": "The last 3.6 s of the pull back: the hero nearly centred and settling. INTRODUCING already on at the cut; the name fades in under it.",
+    "src": [
+     16.5,
+     20.075
+    ]
+   },
+   {
+    "n": 3,
+    "from": 5,
+    "start": 5.575,
+    "end": 6.875,
+    "dur": 1.3,
+    "source_window": [
+     21.875,
+     23.17
+    ],
+    "change": "Starts late (21.875): the hand is already reaching; it takes the glasses at 5.70 and lifts them out by 6.60.",
+    "src": [
+     21.875,
+     23.17
+    ]
+   },
+   {
+    "n": 4,
+    "from": 6,
+    "start": 6.875,
+    "end": 10.333,
+    "dur": 3.458,
+    "source_window": [
+     23.17,
+     26.63
+    ],
+    "change": "Whole shot: he puts them on, settles, and starts the line on camera at 9.68.",
+    "src": [
+     23.17,
+     26.63
+    ]
+   },
+   {
+    "n": 5,
+    "from": 7,
+    "start": 10.333,
+    "end": 13.917,
+    "dur": 3.584,
+    "source_window": [
+     26.63,
+     30.2
+    ],
+    "change": "Whole shot, cut at the bar (30.20) 0.05 s early: pill, 'the movie.', the screen pop at 11.49-11.80.",
+    "src": [
+     26.63,
+     30.2
+    ]
+   },
+   {
+    "n": 6,
+    "from": 9,
+    "start": 13.917,
+    "end": 16.042,
+    "dur": 2.125,
+    "source_window": [
+     32.355,
+     34.51
+    ],
+    "change": "Starts 0.3 s late: the caption is already fading in at the cut. Shot 8 (his close-up) is dropped.",
+    "src": [
+     32.355,
+     34.51
+    ]
+   },
+   {
+    "n": 7,
+    "from": 21,
+    "start": 16.042,
+    "end": 20.375,
+    "dur": 4.333,
+    "source_window": [
+     53.86,
+     58.18
+    ],
+    "change": "Starts 0.15 s late, ends 1.0 s early at the bar: both body wipes and 1.7 s courtside.",
+    "src": [
+     53.86,
+     58.18
+    ]
+   },
+   {
+    "n": 8,
+    "from": 22,
+    "start": 20.375,
+    "end": 22.542,
+    "dur": 2.167,
+    "source_window": [
+     59.17,
+     61.33
+    ],
+    "change": "First 2.16 s of the shot, laid 1.0 s early against the score (voice-over, nothing to sync): IMMERSIVE SPORTS fades in at 20.605.",
+    "src": [
+     59.17,
+     61.33
+    ]
+   },
+   {
+    "n": 9,
+    "from": 28,
+    "start": 22.542,
+    "end": 26.958,
+    "dur": 4.416,
+    "source_window": [
+     77.87,
+     82.29
+    ],
+    "change": "Starts 1.9 s into the pull back (band already pulling back to the hero); lockup at 23.565; dissolve to the end card 26.565-27.165.",
+    "src": [
+     77.87,
+     82.29
+    ]
+   },
+   {
+    "n": 10,
+    "from": 29,
+    "start": 26.958,
+    "end": 30.0,
+    "dur": 3.042,
+    "source_window": [
+     82.29,
+     85.335
+    ],
+    "change": "The end card through 'Keep moving' and its decay; 0.4 s shorter at the end (stops in the decay, 0.15 s fade).",
+    "src": [
+     82.29,
+     85.335
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Hey Meta, play",
+    "start": 9.68,
+    "end": 10.78,
+    "kind": "on-camera speech (shot 4), runs over the cut into shot 5",
+    "clip": "set/lines/L01.wav",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "the movie.",
+    "start": 10.82,
+    "end": 11.5,
+    "kind": "his voice, back to camera (shot 5)",
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "mix": "lay set/lines/L02.wav at 10.80 s on top of score_30.wav at 0 dB"
+   },
+   {
+    "id": "L03",
+    "words": "That's an opening, almost threw it away, sidestep, floater",
+    "start": 18.145,
+    "end": 21.315,
+    "kind": "voice-over (commentator)",
+    "clip": "set/lines/L03.wav",
+    "in_score": true
+   },
+   {
+    "id": "L04",
+    "words": "Got it.",
+    "start": 21.375,
+    "end": 21.995,
+    "kind": "voice-over (commentator)",
+    "clip": "set/lines/L04.wav",
+    "in_score": true
+   }
+  ],
+  "lyrics": [
+   {
+    "words": "(unclear opening line)",
+    "start": 3.425,
+    "end": 4.0
+   },
+   {
+    "words": "I cannot stand it",
+    "start": 5.6,
+    "end": 6.4
+   },
+   {
+    "words": "I'll find another way",
+    "start": 7.25,
+    "end": 9.1
+   },
+   {
+    "words": "Keep moving",
+    "start": 26.865,
+    "end": 29.065
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "duration": 30.0,
+   "xfade_ms": 30,
+   "fade_in": 0.3,
+   "fade_out": 0.15,
+   "tempo": "111.5 bpm (beat 0.538 s, bar 2.153 s); every join is a whole number of bars and lands on a beat",
+   "segments": [
+    {
+     "id": "A1",
+     "src_in": 9.85,
+     "src_out": 13.275,
+     "start": 0,
+     "end": 3.425
+    },
+    {
+     "id": "A2",
+     "src_in": 15.425,
+     "src_out": 17.575,
+     "start": 3.425,
+     "end": 5.575
+    },
+    {
+     "id": "B",
+     "src_in": 21.875,
+     "src_out": 30.2,
+     "start": 5.575,
+     "end": 13.9
+    },
+    {
+     "id": "C",
+     "src_in": 32.355,
+     "src_out": 34.51,
+     "start": 13.9,
+     "end": 16.055
+    },
+    {
+     "id": "D",
+     "src_in": 53.86,
+     "src_out": 60.34,
+     "start": 16.055,
+     "end": 22.535
+    },
+    {
+     "id": "E",
+     "src_in": 77.87,
+     "src_out": 85.335,
+     "start": 22.535,
+     "end": 30.0
+    }
+   ],
+   "fill": [
+    {
+     "at": 10.8,
+     "src_in": 29.792,
+     "dur": 0.8,
+     "xfade_ms": 40,
+     "gain": 0.6,
+     "why": "score.wav is silent 27.10-27.90 (the title slot). The hole is refilled with 0.8 s of music from 5 beats later (29.79, same beat grid as the music after the hole, no vocal) at -4.4 dB, so the bed runs on under 'the movie.' into the screen-pop hit"
+    }
+   ],
+   "sections": [
+    {
+     "from": 0.0,
+     "to": 2.0,
+     "what": "low drone and shimmer (-31 dB), fading up"
+    },
+    {
+     "from": 2.0,
+     "to": 5.575,
+     "what": "the beat drops on the cut (2.0), build; join at 3.425 (bar) right on the first sung line"
+    },
+    {
+     "from": 5.575,
+     "to": 13.917,
+     "what": "verse: 'I cannot stand it / I'll find another way', his line 9.68-11.50, swell hit with the screen pop at 11.75"
+    },
+    {
+     "from": 13.917,
+     "to": 16.042,
+     "what": "the cinema peak (about -15 LUFS)"
+    },
+    {
+     "from": 16.042,
+     "to": 22.542,
+     "what": "second section; crowd and play-by-play over the music from 18.1 (the loudest part, -13 LUFS)"
+    },
+    {
+     "from": 22.542,
+     "to": 30.0,
+     "what": "rebuild under the hero, 'Keep moving' 26.87-29.07, decay to near silence"
+    }
+   ]
+  },
+  "text": [
+   {
+    "shot": 2,
+    "words": "INTRODUCING",
+    "in": 2.0,
+    "fade_in": 0.0,
+    "out": 5.575,
+    "note": "already fully on at the cut",
+    "design": "set/text_title_lockup.jpg"
+   },
+   {
+    "shot": 2,
+    "words": "[Meta infinity logo] Meta VR Glasses",
+    "in": 2.35,
+    "fade_in": 1.6,
+    "out": 5.575,
+    "design": "set/text_title_lockup.jpg"
+   },
+   {
+    "shot": 5,
+    "words": "Hangar Nine / Now Streaming (film credit inside the screen)",
+    "in": 11.49,
+    "out": 13.917,
+    "design": "set/ui_loft_screen_s07.png"
+   },
+   {
+    "shot": 5,
+    "words": "two lines of generic legal text, bottom centre",
+    "in": 10.333,
+    "out": 13.917,
+    "design": "set/ui_loft_screen_s07.png"
+   },
+   {
+    "shot": 6,
+    "words": "3D & VR ENHANCED CINEMA",
+    "in": 13.917,
+    "fade_in": 0.13,
+    "note": "64% on at the cut, full by 14.05",
+    "out": 16.042,
+    "design": "set/text_captions.jpg"
+   },
+   {
+    "shot": 6,
+    "words": "two lines of generic legal text + film credit",
+    "in": 13.917,
+    "out": 16.042,
+    "design": "set/ui_loft_screen_s09.png"
+   },
+   {
+    "shot": 8,
+    "words": "IMMERSIVE SPORTS",
+    "in": 20.605,
+    "fade_in": 0.4,
+    "out": 22.542,
+    "design": "set/text_captions.jpg"
+   },
+   {
+    "shot": 9,
+    "words": "[Meta infinity logo] Meta VR Glasses",
+    "in": 23.565,
+    "fade_in": 1.5,
+    "out": 27.115,
+    "fade_out": 0.45,
+    "design": "set/text_title_lockup.jpg"
+   }
+  ],
+  "end_card": {
+   "dissolve_in": [
+    26.565,
+    27.165
+   ],
+   "lines": [
+    {
+     "words": "SEE HOW IT FEELS",
+     "in": 27.215,
+     "fade_in": 0.7,
+     "out": 30.0
+    },
+    {
+     "words": "SPRING 2027",
+     "in": 27.865,
+     "fade_in": 0.95,
+     "out": 30.0
+    }
+   ],
+   "design": "set/text_end_card.jpg"
+  },
+  "transitions": {
+   "0.0": "fade from black 0.4 s",
+   "26.565-27.165": "0.6 s dissolve shot 9 -> 10",
+   "others": "hard cuts"
+  },
+  "reference_note": "Times are on the 24 fps grid within 0.01 s; picture windows are source times of the kept shots."
+ },
+ "cut15": {
+  "duration": 15.0,
+  "fps": 24,
+  "arc": "The 30 s cut tightened to hook, one proof, payoff, end card. Hook (0-2.9): the lens wakes in the dark, out of black. Proof (2.9-9.0): the loft only: he puts the glasses on, 'Hey Meta, play the movie.', the giant screen pops in and the loader arms break out of it. Payoff (9.0-11.9): the floating hero settles and the name arrives (the whole product is seen once, here). End card (11.9-15): SEE HOW IT FEELS / SPRING 2027 over 'Keep moving'. Dropped from cut30: INTRODUCING (shot 4), the hand taking the glasses (5), the 3D cinema close (9), the gate and the court (21-22).",
+  "average_shot": 3.0,
+  "source_average_shot": 2.97,
+  "from_cut30": "cut30 shots 1, 4, 5, 9, 10 (tightened); 2, 3, 6, 7, 8 dropped",
+  "shots": [
+   {
+    "n": 1,
+    "start": 0.0,
+    "end": 2.875,
+    "source_window": [
+     8.955,
+     11.83
+    ],
+    "from": 3,
+    "change": "Hook. The whole lens wake inside 2.875 s: dark lens with a rim highlight (8.96-9.0), the iridescent bloom grows 9.0-10.0 and holds full to the cut. Fade from black 0-0.4 s. Picture is free against the music (no sync): under it is the drone before the beat drop. Cut on beat 4, one beat before the vocal pickup, so the song's beat and voice arrive with the loft.",
+    "dur": 2.875,
+    "src": [
+     8.955,
+     11.83
+    ]
+   },
+   {
+    "n": 2,
+    "start": 2.875,
+    "end": 6.0,
+    "source_window": [
+     23.4875,
+     26.6125
+    ],
+    "from": 6,
+    "change": "Starts 0.32 s late: his hands are already at his face sliding the glasses on (ends 3.3 s). He settles (3.4-4.8), hands open, and starts the line on camera at 5.37; cut mid-line at 6.0 as in the source. The hand-takes-the-glasses shot (5) and the hero INTRODUCING shot (4) are dropped.",
+    "dur": 3.125,
+    "src": [
+     23.4875,
+     26.6125
+    ]
+   },
+   {
+    "n": 3,
+    "start": 6.0,
+    "end": 9.042,
+    "source_window": [
+     26.6125,
+     29.654
+    ],
+    "from": 7,
+    "change": "The first 3.04 s of the shot: pill pulses with 'play the movie.', the screen pops in 7.18-7.49, the arms pop out at 7.44, 1.55 s of the full cinema with the slow push. Cut on the beat at 9.042, two beats before the bar; the music runs on under the hero to the bar join at 9.5875.",
+    "dur": 3.042,
+    "src": [
+     26.6125,
+     29.654
+    ]
+   },
+   {
+    "n": 4,
+    "start": 9.042,
+    "end": 11.875,
+    "source_window": [
+     79.452,
+     82.29
+    ],
+    "from": 28,
+    "change": "The last 2.8 s of the pull back to the floating hero, in sync with the music under it (source = new + 70.41): the glasses settle from about 65% to 62% of the width; the name lockup is mid-fade at the cut (in at 8.49 off-screen, 37% on at 9.04, full at 9.99), fades out 11.59-12.04; the hero dissolves into the card 11.49-12.09 (the source's own 0.6 s dissolve).",
+    "dur": 2.833,
+    "src": [
+     79.452,
+     82.29
+    ]
+   },
+   {
+    "n": 5,
+    "start": 11.875,
+    "end": 15.0,
+    "source_window": [
+     82.29,
+     85.415
+    ],
+    "from": 29,
+    "change": "The end card from the source's cut point: SEE HOW IT FEELS 12.14, SPRING 2027 12.79, over 'Keep moving' 11.79-13.99; the music decays to silence at 14.85; 0.15 s fade at the end. 0.625 s shorter than the source's tail.",
+    "dur": 3.125,
+    "src": [
+     82.29,
+     85.415
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Hey Meta, play",
+    "start": 5.3675,
+    "end": 6.4675,
+    "kind": "on-camera speech (shot 2), runs over the 6.0 cut into shot 3",
+    "clip": "set/lines/L01.wav",
+    "in_score": true,
+    "guide": "shot 2 take: guide_audio = a wav with L01.wav at 2.4125 s from the take start (25.90 - 23.4875); lips open 2.49 s"
+   },
+   {
+    "id": "L02",
+    "words": "the movie.",
+    "start": 6.5075,
+    "end": 7.1875,
+    "kind": "his voice, back to camera (shot 3)",
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "mix": "lay set/lines/L02.wav at 6.4875 s on top of score_15.wav at 0 dB"
+   }
+  ],
+  "lyrics": [
+   {
+    "words": "I'll find another way",
+    "start": 2.9375,
+    "end": 4.7875,
+    "kind": "sung lyric (in the score)"
+   },
+   {
+    "words": "Keep moving",
+    "start": 11.7895,
+    "end": 13.9895,
+    "kind": "sung lyric (in the score)"
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "duration": 15.0,
+   "xfade_ms": 30,
+   "fade_in": 0.3,
+   "fade_out": 0.15,
+   "tempo": "111.5 bpm (beat 0.538 s, bar 2.153 s). Both joins keep the beat grid: A->B jumps exactly 6 bars (12.90 s), from the quiet drone (-27 dB) just before the source's beat drop into the breath before the verse pickup (-23 dB), on beat 4; B->E leaves on the downbeat at 30.20 (the cinema swell's bar line) and enters the hero rebuild on the beat (measured: same beat phase either side).",
+   "segments": [
+    {
+     "id": "A",
+     "src_in": 7.7125,
+     "src_out": 10.5875,
+     "start": 0.0,
+     "end": 2.875,
+     "what": "drone and shimmer only (the beat drop at 11.75 is left out)"
+    },
+    {
+     "id": "B",
+     "src_in": 23.4875,
+     "src_out": 30.2,
+     "start": 2.875,
+     "end": 9.5875,
+     "what": "verse pickup 'I'll find another way', his line, the swell hit on the screen pop, the cinema peak"
+    },
+    {
+     "id": "E",
+     "src_in": 79.998,
+     "src_out": 85.4105,
+     "start": 9.5875,
+     "end": 15.0,
+     "what": "rebuild under the hero, 'Keep moving', decay, 0.15 s of silence"
+    }
+   ],
+   "fill": [
+    {
+     "at": 6.4875,
+     "src_in": 29.792,
+     "dur": 0.8,
+     "xfade_ms": 40,
+     "gain": 0.6,
+     "why": "score.wav is silent 27.10-27.90 (the title slot). Refilled exactly as in cut30: 0.8 s of music from 5 beats later (29.79), -4.4 dB, so the bed runs on under 'the movie.' into the screen-pop hit"
+    }
+   ],
+   "sections": [
+    {
+     "from": 0.0,
+     "to": 2.875,
+     "what": "low drone and shimmer (-21 to -28 dB short-term), 0.3 s fade in; no beat yet"
+    },
+    {
+     "from": 2.875,
+     "to": 6.0,
+     "what": "verse: 'I'll find another way' 2.94-4.79; his line starts 5.37"
+    },
+    {
+     "from": 6.0,
+     "to": 7.49,
+     "what": "'play the movie.' to 7.19; swell hit with the screen pop 7.18-7.49, arms 7.44"
+    },
+    {
+     "from": 7.49,
+     "to": 9.5875,
+     "what": "the cinema swell (about -15 LUFS); the picture cuts to the hero on the beat at 9.04, the music joins on the bar at 9.5875"
+    },
+    {
+     "from": 9.5875,
+     "to": 11.79,
+     "what": "rebuild under the hero, softer (about -17 LUFS)"
+    },
+    {
+     "from": 11.79,
+     "to": 13.99,
+     "what": "'Keep moving' over the end card"
+    },
+    {
+     "from": 13.99,
+     "to": 15.0,
+     "what": "decay; silent from 14.85, 0.15 s fade at the end"
+    }
+   ]
+  },
+  "text": [
+   {
+    "shot": 3,
+    "words": "two lines of generic legal text, bottom centre",
+    "in": 6.0,
+    "out": 9.042,
+    "design": "set/ui_loft_screen_s07.png"
+   },
+   {
+    "shot": 3,
+    "words": "Hangar Nine / Now Streaming (film credit inside the screen)",
+    "in": 7.1775,
+    "out": 9.042,
+    "note": "pops in with the panel",
+    "design": "set/ui_loft_screen_s07.png"
+   },
+   {
+    "shot": 4,
+    "words": "[Meta infinity logo] Meta VR Glasses",
+    "in": 8.4895,
+    "fade_in": 1.5,
+    "note": "already 37% faded in at the 9.042 cut, full at 9.99",
+    "out": 12.0395,
+    "fade_out": 0.45,
+    "position": "top centre, y 176-212 / x 731-1188 at 1080p (as shot 28)",
+    "design": "set/text_title_lockup.jpg (without INTRODUCING)"
+   }
+  ],
+  "end_card": {
+   "dissolve_in": [
+    11.4895,
+    12.0895
+   ],
+   "lines": [
+    {
+     "words": "SEE HOW IT FEELS",
+     "in": 12.1395,
+     "fade_in": 0.7,
+     "out": 15.0
+    },
+    {
+     "words": "SPRING 2027",
+     "in": 12.7895,
+     "fade_in": 0.95,
+     "out": 15.0
+    }
+   ],
+   "design": "set/text_end_card.jpg (graded to the film: mean luma 46)",
+   "fade_out": "0.15 s to black at 14.85-15.0 (sound and picture)"
+  },
+  "transitions": {
+   "0.0": "fade from black 0.4 s",
+   "11.49-12.09": "0.6 s dissolve shot 4 -> 5 (as the source)",
+   "14.85-15.0": "fade to black 0.15 s",
+   "others": "hard cuts"
+  },
+  "continuity": "Shots 2 and 3 are one continuous stretch of the source (23.49-29.65) and of the score: his line runs across the 6.0 cut. Shots 4 and 5 are one continuous stretch too (79.45-85.41), in sync with the score from 9.5875. Keep the glasses identical in shots 1, 2 and 4 (set/product_glasses_sheet.jpg, set/char_man_glasses_on.jpg).",
+  "reference_note": "Times are on the 24 fps grid within 0.01 s; source_window values are source-film times. Score joins (2.875, 9.5875) are sample-exact; picture cuts sit on the nearest frame. The 9.5875 join falls inside shot 4 (picture cut 0.55 s earlier, on the beat)."
+ }
+}

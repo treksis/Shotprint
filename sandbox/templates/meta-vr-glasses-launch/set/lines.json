@@ -1,0 +1,141 @@
+{
+ "note": "Recorded lines used by the 30 s and 15 s cuts. start/end and word times are absolute source-film times; cut30 and cut15 give them in their own timelines. Word times are from the speech envelope (+-0.08 s).",
+ "lines": [
+  {
+   "id": "L01",
+   "clip": "set/lines/L01.wav",
+   "clip_start": 25.9,
+   "clip_end": 27.1,
+   "start": 25.98,
+   "end": 27.08,
+   "who": "char_man",
+   "kind": "on-camera speech",
+   "words": "Hey Meta, play",
+   "word_times": [
+    [
+     "Hey",
+     25.98,
+     26.22
+    ],
+    [
+     "Meta,",
+     26.28,
+     26.85
+    ],
+    [
+     "play",
+     26.88,
+     27.08
+    ]
+   ],
+   "source": "cut from the film (music under it, as in score.wav)"
+  },
+  {
+   "id": "L02",
+   "clip": "set/lines/L02.wav",
+   "clip_start": 27.1,
+   "clip_end": 27.85,
+   "start": 27.12,
+   "end": 27.8,
+   "who": "char_man",
+   "kind": "speech, back to camera",
+   "words": "the movie.",
+   "word_times": [
+    [
+     "the",
+     27.12,
+     27.26
+    ],
+    [
+     "movie.",
+     27.28,
+     27.8
+    ]
+   ],
+   "source": "stand-in take in his timbre (the film says a title here, which the template does not carry); dry voice, no music. Not in score.wav: lay it on top."
+  },
+  {
+   "id": "L03",
+   "clip": "set/lines/L03.wav",
+   "clip_start": 55.95,
+   "clip_end": 59.12,
+   "start": 56.0,
+   "end": 59.08,
+   "who": "commentator",
+   "kind": "voice-over",
+   "words": "That's an opening, almost threw it away, sidestep, floater",
+   "word_times": [
+    [
+     "That's",
+     56.0,
+     56.15
+    ],
+    [
+     "an",
+     56.15,
+     56.27
+    ],
+    [
+     "opening,",
+     56.28,
+     56.72
+    ],
+    [
+     "almost",
+     57.0,
+     57.28
+    ],
+    [
+     "threw",
+     57.28,
+     57.45
+    ],
+    [
+     "it",
+     57.45,
+     57.55
+    ],
+    [
+     "away,",
+     57.55,
+     57.92
+    ],
+    [
+     "sidestep,",
+     58.2,
+     58.5
+    ],
+    [
+     "floater",
+     58.55,
+     59.08
+    ]
+   ],
+   "source": "cut from the film (crowd and music under it)"
+  },
+  {
+   "id": "L04",
+   "clip": "set/lines/L04.wav",
+   "clip_start": 59.18,
+   "clip_end": 59.8,
+   "start": 59.22,
+   "end": 59.62,
+   "who": "commentator",
+   "kind": "voice-over",
+   "words": "Got it.",
+   "word_times": [
+    [
+     "Got",
+     59.22,
+     59.4
+    ],
+    [
+     "it.",
+     59.4,
+     59.62
+    ]
+   ],
+   "source": "cut from the film"
+  }
+ ]
+}

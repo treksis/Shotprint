@@ -1,0 +1,1258 @@
+{
+ "about": "The film's recorded lines kept in the 30 s and 15 s cuts: one clip per line (set/lines/Lnn.wav), cut from a separated, music-free vocal stem of the source at phrase boundaries (0.06 s lead-in, 0.10 s tail, 10 ms fades), 48 kHz mono. Use each as guide_audio for its presenter shot and as the timing target; never retime. Times: 'src' = source film, 'clip' = inside the wav, 'cut30' / 'cut15' = the 30 s / 15 s timelines (a line not in a cut has no times for it). Word times come from forced word timestamps on the vocal stem (good to ~0.05 s); the first and last word are snapped to the measured voice onset/offset. A {PRODUCT} slot is muted in the clip (the source's product name); fill exactly that window with the new name.",
+ "speaker": "char_founder",
+ "lines": [
+  {
+   "id": "L01",
+   "file": "set/lines/L01.wav",
+   "src": [
+    1.74,
+    4.72
+   ],
+   "clip_src": [
+    1.68,
+    4.82
+   ],
+   "cut30": [
+    0.94,
+    3.92
+   ],
+   "clip_cut30": [
+    0.88,
+    4.02
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "America",
+     "src": [
+      1.74,
+      2.14
+     ],
+     "clip": [
+      0.06,
+      0.46
+     ],
+     "cut30": [
+      0.94,
+      1.34
+     ]
+    },
+    {
+     "w": "built",
+     "src": [
+      2.14,
+      2.48
+     ],
+     "clip": [
+      0.46,
+      0.8
+     ],
+     "cut30": [
+      1.34,
+      1.68
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      2.48,
+      2.64
+     ],
+     "clip": [
+      0.8,
+      0.96
+     ],
+     "cut30": [
+      1.68,
+      1.84
+     ]
+    },
+    {
+     "w": "first",
+     "src": [
+      2.64,
+      2.84
+     ],
+     "clip": [
+      0.96,
+      1.16
+     ],
+     "cut30": [
+      1.84,
+      2.04
+     ]
+    },
+    {
+     "w": "electronic",
+     "src": [
+      2.84,
+      3.26
+     ],
+     "clip": [
+      1.16,
+      1.58
+     ],
+     "cut30": [
+      2.04,
+      2.46
+     ]
+    },
+    {
+     "w": "computer",
+     "src": [
+      3.26,
+      3.7
+     ],
+     "clip": [
+      1.58,
+      2.02
+     ],
+     "cut30": [
+      2.46,
+      2.9
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      3.7,
+      4.14
+     ],
+     "clip": [
+      2.02,
+      2.46
+     ],
+     "cut30": [
+      2.9,
+      3.34
+     ]
+    },
+    {
+     "w": "win",
+     "src": [
+      4.14,
+      4.3
+     ],
+     "clip": [
+      2.46,
+      2.62
+     ],
+     "cut30": [
+      3.34,
+      3.5
+     ]
+    },
+    {
+     "w": "a",
+     "src": [
+      4.3,
+      4.4
+     ],
+     "clip": [
+      2.62,
+      2.72
+     ],
+     "cut30": [
+      3.5,
+      3.6
+     ]
+    },
+    {
+     "w": "war.",
+     "src": [
+      4.4,
+      4.72
+     ],
+     "clip": [
+      2.72,
+      3.04
+     ],
+     "cut30": [
+      3.6,
+      3.92
+     ]
+    }
+   ],
+   "text": "America built the first electronic computer to win a war."
+  },
+  {
+   "id": "L04",
+   "file": "set/lines/L04.wav",
+   "src": [
+    19.26,
+    20.24
+   ],
+   "clip_src": [
+    19.2,
+    20.34
+   ],
+   "cut30": [
+    4.3,
+    5.28
+   ],
+   "clip_cut30": [
+    4.24,
+    5.38
+   ],
+   "placement": "voice-over, moved",
+   "slot": null,
+   "words": [
+    {
+     "w": "Then",
+     "src": [
+      19.26,
+      19.46
+     ],
+     "clip": [
+      0.06,
+      0.26
+     ],
+     "cut30": [
+      4.3,
+      4.5
+     ]
+    },
+    {
+     "w": "we",
+     "src": [
+      19.46,
+      19.62
+     ],
+     "clip": [
+      0.26,
+      0.42
+     ],
+     "cut30": [
+      4.5,
+      4.66
+     ]
+    },
+    {
+     "w": "gave",
+     "src": [
+      19.62,
+      19.78
+     ],
+     "clip": [
+      0.42,
+      0.58
+     ],
+     "cut30": [
+      4.66,
+      4.82
+     ]
+    },
+    {
+     "w": "it",
+     "src": [
+      19.78,
+      19.88
+     ],
+     "clip": [
+      0.58,
+      0.68
+     ],
+     "cut30": [
+      4.82,
+      4.92
+     ]
+    },
+    {
+     "w": "away.",
+     "src": [
+      19.88,
+      20.24
+     ],
+     "clip": [
+      0.68,
+      1.04
+     ],
+     "cut30": [
+      4.92,
+      5.28
+     ]
+    }
+   ],
+   "text": "Then we gave it away."
+  },
+  {
+   "id": "L10",
+   "file": "set/lines/L10.wav",
+   "src": [
+    39.54,
+    41.28
+   ],
+   "clip_src": [
+    39.48,
+    41.38
+   ],
+   "cut30": [
+    5.79,
+    7.53
+   ],
+   "clip_cut30": [
+    5.73,
+    7.63
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "If",
+     "src": [
+      39.54,
+      39.68
+     ],
+     "clip": [
+      0.06,
+      0.2
+     ],
+     "cut30": [
+      5.79,
+      5.93
+     ],
+     "cut15": [
+      0.14,
+      0.28
+     ]
+    },
+    {
+     "w": "you",
+     "src": [
+      39.68,
+      39.78
+     ],
+     "clip": [
+      0.2,
+      0.3
+     ],
+     "cut30": [
+      5.93,
+      6.03
+     ],
+     "cut15": [
+      0.28,
+      0.38
+     ]
+    },
+    {
+     "w": "don't",
+     "src": [
+      39.78,
+      40.08
+     ],
+     "clip": [
+      0.3,
+      0.6
+     ],
+     "cut30": [
+      6.03,
+      6.33
+     ],
+     "cut15": [
+      0.38,
+      0.68
+     ]
+    },
+    {
+     "w": "control",
+     "src": [
+      40.08,
+      40.44
+     ],
+     "clip": [
+      0.6,
+      0.96
+     ],
+     "cut30": [
+      6.33,
+      6.69
+     ],
+     "cut15": [
+      0.68,
+      1.04
+     ]
+    },
+    {
+     "w": "your",
+     "src": [
+      40.44,
+      40.6
+     ],
+     "clip": [
+      0.96,
+      1.12
+     ],
+     "cut30": [
+      6.69,
+      6.85
+     ],
+     "cut15": [
+      1.04,
+      1.2
+     ]
+    },
+    {
+     "w": "technology,",
+     "src": [
+      40.6,
+      41.28
+     ],
+     "clip": [
+      1.12,
+      1.8
+     ],
+     "cut30": [
+      6.85,
+      7.53
+     ],
+     "cut15": [
+      1.2,
+      1.88
+     ]
+    }
+   ],
+   "text": "If you don't control your technology,",
+   "cut15": [
+    0.14,
+    1.88
+   ],
+   "clip_cut15": [
+    0.08,
+    1.98
+   ],
+   "placement_cut15": "voice-over, pre-lap (moved)"
+  },
+  {
+   "id": "L11",
+   "file": "set/lines/L11.wav",
+   "src": [
+    41.86,
+    43.24
+   ],
+   "clip_src": [
+    41.8,
+    43.34
+   ],
+   "cut30": [
+    8.11,
+    9.49
+   ],
+   "clip_cut30": [
+    8.05,
+    9.59
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "you",
+     "src": [
+      41.86,
+      41.98
+     ],
+     "clip": [
+      0.06,
+      0.18
+     ],
+     "cut30": [
+      8.11,
+      8.23
+     ],
+     "cut15": [
+      2.46,
+      2.58
+     ]
+    },
+    {
+     "w": "can't",
+     "src": [
+      41.98,
+      42.3
+     ],
+     "clip": [
+      0.18,
+      0.5
+     ],
+     "cut30": [
+      8.23,
+      8.55
+     ],
+     "cut15": [
+      2.58,
+      2.9
+     ]
+    },
+    {
+     "w": "control",
+     "src": [
+      42.3,
+      42.64
+     ],
+     "clip": [
+      0.5,
+      0.84
+     ],
+     "cut30": [
+      8.55,
+      8.89
+     ],
+     "cut15": [
+      2.9,
+      3.24
+     ]
+    },
+    {
+     "w": "your",
+     "src": [
+      42.64,
+      42.8
+     ],
+     "clip": [
+      0.84,
+      1.0
+     ],
+     "cut30": [
+      8.89,
+      9.05
+     ],
+     "cut15": [
+      3.24,
+      3.4
+     ]
+    },
+    {
+     "w": "future.",
+     "src": [
+      42.8,
+      43.24
+     ],
+     "clip": [
+      1.0,
+      1.44
+     ],
+     "cut30": [
+      9.05,
+      9.49
+     ],
+     "cut15": [
+      3.4,
+      3.84
+     ]
+    }
+   ],
+   "text": "you can't control your future.",
+   "cut15": [
+    2.46,
+    3.84
+   ],
+   "clip_cut15": [
+    2.4,
+    3.94
+   ],
+   "placement_cut15": "lip-sync with its shot"
+  },
+  {
+   "id": "L13",
+   "file": "set/lines/L13.wav",
+   "src": [
+    48.1,
+    49.52
+   ],
+   "clip_src": [
+    48.04,
+    49.62
+   ],
+   "cut30": [
+    9.98,
+    11.4
+   ],
+   "clip_cut30": [
+    9.92,
+    11.5
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "Now,",
+     "src": [
+      48.1,
+      48.3
+     ],
+     "clip": [
+      0.06,
+      0.26
+     ],
+     "cut30": [
+      9.98,
+      10.18
+     ]
+    },
+    {
+     "w": "we're",
+     "src": [
+      48.48,
+      48.92
+     ],
+     "clip": [
+      0.44,
+      0.88
+     ],
+     "cut30": [
+      10.36,
+      10.8
+     ]
+    },
+    {
+     "w": "bringing",
+     "src": [
+      48.92,
+      49.14
+     ],
+     "clip": [
+      0.88,
+      1.1
+     ],
+     "cut30": [
+      10.8,
+      11.02
+     ]
+    },
+    {
+     "w": "it",
+     "src": [
+      49.14,
+      49.3
+     ],
+     "clip": [
+      1.1,
+      1.26
+     ],
+     "cut30": [
+      11.02,
+      11.18
+     ]
+    },
+    {
+     "w": "home.",
+     "src": [
+      49.3,
+      49.52
+     ],
+     "clip": [
+      1.26,
+      1.48
+     ],
+     "cut30": [
+      11.18,
+      11.4
+     ]
+    }
+   ],
+   "text": "Now, we're bringing it home."
+  },
+  {
+   "id": "L14",
+   "file": "set/lines/L14.wav",
+   "src": [
+    50.14,
+    50.88
+   ],
+   "clip_src": [
+    50.08,
+    50.98
+   ],
+   "cut30": [
+    12.02,
+    12.76
+   ],
+   "clip_cut30": [
+    11.96,
+    12.86
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": {
+    "words": "{PRODUCT}",
+    "src": [
+     50.38,
+     50.88
+    ],
+    "clip": [
+     0.3,
+     0.8
+    ],
+    "note": "muted in the clip: the source's product name. Record or render the new name to fill exactly this window."
+   },
+   "words": [
+    {
+     "w": "This",
+     "src": [
+      50.14,
+      50.26
+     ],
+     "clip": [
+      0.06,
+      0.18
+     ],
+     "cut30": [
+      12.02,
+      12.14
+     ],
+     "cut15": [
+      4.16,
+      4.28
+     ]
+    },
+    {
+     "w": "is",
+     "src": [
+      50.26,
+      50.36
+     ],
+     "clip": [
+      0.18,
+      0.28
+     ],
+     "cut30": [
+      12.14,
+      12.24
+     ],
+     "cut15": [
+      4.28,
+      4.38
+     ]
+    },
+    {
+     "w": "{PRODUCT}.",
+     "src": [
+      50.38,
+      50.88
+     ],
+     "clip": [
+      0.3,
+      0.8
+     ],
+     "cut30": [
+      12.26,
+      12.76
+     ],
+     "slot": true,
+     "cut15": [
+      4.4,
+      4.9
+     ]
+    }
+   ],
+   "text": "This is {PRODUCT}.",
+   "cut15": [
+    4.16,
+    4.9
+   ],
+   "clip_cut15": [
+    4.1,
+    5.0
+   ],
+   "placement_cut15": "lip-sync with its shot"
+  },
+  {
+   "id": "L15",
+   "file": "set/lines/L15.wav",
+   "src": [
+    51.48,
+    53.88
+   ],
+   "clip_src": [
+    51.42,
+    53.98
+   ],
+   "cut30": [
+    13.36,
+    15.76
+   ],
+   "clip_cut30": [
+    13.3,
+    15.86
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "American",
+     "src": [
+      51.48,
+      51.94
+     ],
+     "clip": [
+      0.06,
+      0.52
+     ],
+     "cut30": [
+      13.36,
+      13.82
+     ],
+     "cut15": [
+      5.5,
+      5.96
+     ]
+    },
+    {
+     "w": "designed,",
+     "src": [
+      51.94,
+      52.24
+     ],
+     "clip": [
+      0.52,
+      0.82
+     ],
+     "cut30": [
+      13.82,
+      14.12
+     ],
+     "cut15": [
+      5.96,
+      6.26
+     ]
+    },
+    {
+     "w": "American",
+     "src": [
+      53.04,
+      53.42
+     ],
+     "clip": [
+      1.62,
+      2.0
+     ],
+     "cut30": [
+      14.92,
+      15.3
+     ],
+     "cut15": [
+      7.06,
+      7.44
+     ]
+    },
+    {
+     "w": "built.",
+     "src": [
+      53.42,
+      53.88
+     ],
+     "clip": [
+      2.0,
+      2.46
+     ],
+     "cut30": [
+      15.3,
+      15.76
+     ],
+     "cut15": [
+      7.44,
+      7.9
+     ]
+    }
+   ],
+   "text": "American designed, American built.",
+   "cut15": [
+    5.5,
+    7.9
+   ],
+   "clip_cut15": [
+    5.44,
+    8.0
+   ],
+   "placement_cut15": "lip-sync with its shot"
+  },
+  {
+   "id": "L21",
+   "file": "set/lines/L21.wav",
+   "src": [
+    95.18,
+    96.6
+   ],
+   "clip_src": [
+    95.12,
+    96.7
+   ],
+   "cut30": [
+    16.2,
+    17.62
+   ],
+   "clip_cut30": [
+    16.14,
+    17.72
+   ],
+   "placement": "voice-over, moved",
+   "slot": {
+    "words": "{PRODUCT}",
+    "src": [
+     95.18,
+     95.62
+    ],
+    "clip": [
+     0.06,
+     0.5
+    ],
+    "note": "muted in the clip: the source's product name. Record or render the new name to fill exactly this window."
+   },
+   "words": [
+    {
+     "w": "{PRODUCT}",
+     "src": [
+      95.18,
+      95.62
+     ],
+     "clip": [
+      0.06,
+      0.5
+     ],
+     "cut30": [
+      16.2,
+      16.64
+     ],
+     "slot": true
+    },
+    {
+     "w": "is",
+     "src": [
+      95.65,
+      95.78
+     ],
+     "clip": [
+      0.53,
+      0.66
+     ],
+     "cut30": [
+      16.67,
+      16.8
+     ]
+    },
+    {
+     "w": "America's",
+     "src": [
+      95.78,
+      96.16
+     ],
+     "clip": [
+      0.66,
+      1.04
+     ],
+     "cut30": [
+      16.8,
+      17.18
+     ]
+    },
+    {
+     "w": "comeback.",
+     "src": [
+      96.16,
+      96.6
+     ],
+     "clip": [
+      1.04,
+      1.48
+     ],
+     "cut30": [
+      17.18,
+      17.62
+     ]
+    }
+   ],
+   "text": "{PRODUCT} is America's comeback."
+  },
+  {
+   "id": "L23",
+   "file": "set/lines/L23.wav",
+   "src": [
+    106.88,
+    107.96
+   ],
+   "clip_src": [
+    106.82,
+    108.06
+   ],
+   "cut30": [
+    22.04,
+    23.12
+   ],
+   "clip_cut30": [
+    21.98,
+    23.22
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "This",
+     "src": [
+      106.88,
+      106.96
+     ],
+     "clip": [
+      0.06,
+      0.14
+     ],
+     "cut30": [
+      22.04,
+      22.12
+     ]
+    },
+    {
+     "w": "is",
+     "src": [
+      106.96,
+      107.08
+     ],
+     "clip": [
+      0.14,
+      0.26
+     ],
+     "cut30": [
+      22.12,
+      22.24
+     ]
+    },
+    {
+     "w": "America's",
+     "src": [
+      107.08,
+      107.32
+     ],
+     "clip": [
+      0.26,
+      0.5
+     ],
+     "cut30": [
+      22.24,
+      22.48
+     ]
+    },
+    {
+     "w": "birthright.",
+     "src": [
+      107.32,
+      107.96
+     ],
+     "clip": [
+      0.5,
+      1.14
+     ],
+     "cut30": [
+      22.48,
+      23.12
+     ]
+    }
+   ],
+   "text": "This is America's birthright."
+  },
+  {
+   "id": "L24",
+   "file": "set/lines/L24.wav",
+   "src": [
+    109.9,
+    111.32
+   ],
+   "clip_src": [
+    109.84,
+    111.42
+   ],
+   "cut30": [
+    24.29,
+    25.71
+   ],
+   "clip_cut30": [
+    24.23,
+    25.81
+   ],
+   "placement": "lip-sync with its shot",
+   "slot": null,
+   "words": [
+    {
+     "w": "It's",
+     "src": [
+      109.9,
+      110.0
+     ],
+     "clip": [
+      0.06,
+      0.16
+     ],
+     "cut30": [
+      24.29,
+      24.39
+     ],
+     "cut15": [
+      11.93,
+      12.03
+     ]
+    },
+    {
+     "w": "time",
+     "src": [
+      110.0,
+      110.06
+     ],
+     "clip": [
+      0.16,
+      0.22
+     ],
+     "cut30": [
+      24.39,
+      24.45
+     ],
+     "cut15": [
+      12.03,
+      12.09
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      110.06,
+      110.16
+     ],
+     "clip": [
+      0.22,
+      0.32
+     ],
+     "cut30": [
+      24.45,
+      24.55
+     ],
+     "cut15": [
+      12.09,
+      12.19
+     ]
+    },
+    {
+     "w": "bring",
+     "src": [
+      110.16,
+      110.26
+     ],
+     "clip": [
+      0.32,
+      0.42
+     ],
+     "cut30": [
+      24.55,
+      24.65
+     ],
+     "cut15": [
+      12.19,
+      12.29
+     ]
+    },
+    {
+     "w": "silicon",
+     "src": [
+      110.26,
+      110.54
+     ],
+     "clip": [
+      0.42,
+      0.7
+     ],
+     "cut30": [
+      24.65,
+      24.93
+     ],
+     "cut15": [
+      12.29,
+      12.57
+     ]
+    },
+    {
+     "w": "back",
+     "src": [
+      110.54,
+      110.78
+     ],
+     "clip": [
+      0.7,
+      0.94
+     ],
+     "cut30": [
+      24.93,
+      25.17
+     ],
+     "cut15": [
+      12.57,
+      12.81
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      110.78,
+      110.94
+     ],
+     "clip": [
+      0.94,
+      1.1
+     ],
+     "cut30": [
+      25.17,
+      25.33
+     ],
+     "cut15": [
+      12.81,
+      12.97
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      110.94,
+      111.0
+     ],
+     "clip": [
+      1.1,
+      1.16
+     ],
+     "cut30": [
+      25.33,
+      25.39
+     ],
+     "cut15": [
+      12.97,
+      13.03
+     ]
+    },
+    {
+     "w": "valley.",
+     "src": [
+      111.0,
+      111.32
+     ],
+     "clip": [
+      1.16,
+      1.48
+     ],
+     "cut30": [
+      25.39,
+      25.71
+     ],
+     "cut15": [
+      13.03,
+      13.35
+     ]
+    }
+   ],
+   "text": "It's time to bring silicon back to the valley.",
+   "cut15": [
+    11.93,
+    13.35
+   ],
+   "clip_cut15": [
+    11.87,
+    13.45
+   ],
+   "placement_cut15": "voice-over, at its source offset in its shot"
+  }
+ ]
+}

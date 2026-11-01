@@ -1,0 +1,2326 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 156.99,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 19,
+  "average_shot": 8.26,
+  "median_shot": 4.96,
+  "cuts_per_minute": 6.88,
+  "codec": "av1",
+  "aspect": "16:9",
+  "summary": "A 2.5-minute app walkthrough: one presenter in a warm, dim living-room set, cut against bright full-screen phone recordings on a pale blue gradient, tab by tab, ending on a black end card."
+ },
+ "acts": [
+  {
+   "name": "Intro",
+   "shots": [
+    1
+   ],
+   "start": 0,
+   "end": 5.09,
+   "function": "Presenter introduces himself and the app on the wide; name lower third."
+  },
+  {
+   "name": "Chat",
+   "shots": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "start": 5.09,
+   "end": 45.5,
+   "function": "The chat tab: feels like messaging; the agent at the top; a scroll through real errands (golf, tickets, family doc, chess)."
+  },
+  {
+   "name": "Status and permissions",
+   "shots": [
+    6,
+    7,
+    8
+   ],
+   "start": 45.5,
+   "end": 69.07,
+   "function": "The agent works in the background; status pill -> status sheet -> approval request."
+  },
+  {
+   "name": "Feed",
+   "shots": [
+    9,
+    10
+   ],
+   "start": 69.07,
+   "end": 89.21,
+   "function": "Personalised feed and its editable prompt."
+  },
+  {
+   "name": "Ideas",
+   "shots": [
+    11,
+    12
+   ],
+   "start": 89.21,
+   "end": 107.52,
+   "function": "Proactive suggestions list, read in a slow zoomed scroll."
+  },
+  {
+   "name": "Goals",
+   "shots": [
+    13,
+    14
+   ],
+   "start": 107.52,
+   "end": 131.51,
+   "function": "Goals with lightweight status, a detail timeline, long-term goals."
+  },
+  {
+   "name": "Library",
+   "shots": [
+    15,
+    16
+   ],
+   "start": 131.51,
+   "end": 146.69,
+   "function": "Everything the agent made; opens an interactive dashboard artifact."
+  },
+  {
+   "name": "Sign-off and end card",
+   "shots": [
+    17,
+    18,
+    19
+   ],
+   "start": 146.69,
+   "end": 156.99,
+   "function": "Thanks, call to download, black end card with icon, store badges, Meta."
+  }
+ ],
+ "shots": [
+  {
+   "n": 1,
+   "start": 0,
+   "end": 5.09,
+   "dur": 5.09,
+   "in": "start",
+   "brightness": {
+    "start": 70,
+    "mid": 70,
+    "end": 71
+   },
+   "colour": "#4e4335",
+   "change": 0.99,
+   "sound": "-22.42 LUFS mean, -11.88 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "0.10 starts speaking straight to lens, relaxed and friendly, small nods; hands rest on the table edge, phone in his left hand (frame right); lower third fades up 0.5-1.0 s; he finishes \"...our new app, Muse.\" at 4.95.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [
+    {
+     "words": "{PRESENTER_NAME}",
+     "style": "bold white sans, right-aligned (DejaVu Sans Bold 32 px at 720p, 87% width)",
+     "position": "right edge at x 91.5%, baseline y 78.2%, cap height 3.2% of frame height",
+     "in": 0.5,
+     "out": 5.09
+    },
+    {
+     "words": "Muse Product Design",
+     "style": "regular white sans, same right edge, 71% the cap height of the name (DejaVu Sans 23 px at 720p)",
+     "position": "directly below the name, baseline y 82.2%, line width 18.8% of frame",
+     "in": 0.5,
+     "out": 5.09
+    }
+   ],
+   "lines": [
+    {
+     "words": "Hey, my name is {PRESENTER_NAME} and I'm very excited to give you a quick walkthrough of our new app, Muse.",
+     "start": 0.1,
+     "end": 4.95,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut on the word \"Muse\" (5.09) into the screen as he begins \"Your personal agent\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"Hey, my name is {PRESENTER_NAME} and I'm very excited to give you a quick walkthrough of our new app, Muse.\" (0.1-4.95) - on-camera speech. Film opens on the first word at 0.10 s (no pre-roll; -66 dB before it).",
+   "render": "keyframe mode, no refs: first_frame = plate_A (one plate per camera, reused for every shot of that setup) + guide_audio = this shot's recorded line clip (set/lines, see cut30). Reference mode ignores first_frame, so it is not used for presenter shots.",
+   "board": "boards/s01.jpg",
+   "boards": [
+    "boards/s01.jpg"
+   ]
+  },
+  {
+   "n": 2,
+   "start": 5.09,
+   "end": 17.6,
+   "dur": 12.51,
+   "in": "cut",
+   "brightness": {
+    "start": 216,
+    "mid": 208,
+    "end": 217
+   },
+   "colour": "#c2d9ee",
+   "change": 0.23,
+   "sound": "-17.74 LUFS mean, -10.98 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "SMALL phone centred (x 38-62%, y 4-96%) at start and end; ZOOM (x 32-67%, top of phone cropped, bottom tab bar kept at y 96%) 7.3-14.5.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "5.09-6.8 hold SMALL; 6.8-7.3 push in to ZOOM (anchored on the lower half, top cropped); 7.3-14.5 hold; 14.5-14.8 pull back to SMALL; hold to 17.6.",
+   "action": "Chat tab. 5.09 a messaging-style thread: Muse avatar at top, grey assistant bubbles left, one pale-blue user bubble right (\"Let me check with Dana first, I'll let you know\"), \"+ Message\" field, five-icon tab bar with the speech-bubble tab selected. ~9.6 a long-press on Muse's flight-price message: rest of the screen dims grey, an emoji reaction bar (thumbs up, thumbs down, heart, laugh, wow, pray, +) pops above the bubble and a Reply / Copy / Share menu below it. ~11.3 the heart is pressed (grey touch circle), menu closes ~11.8 and a small red heart badge sits on the bubble's lower right. 14.5 as it pulls back, the thread jumps up to an earlier exchange: a document chip, the user asking how to reach a chess rating goal, and a long Muse coaching reply.",
+   "on_screen": "Chat thread, generic: a flight price-drop offer for a family member, the user's reply, Muse's acknowledgement; then a chess coaching exchange.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "Your personal agent who's always working for you.",
+     "start": 5.09,
+     "end": 7.88,
+     "type": "voice-over"
+    },
+    {
+     "words": "And we'll start out on the chat tab, where you'll notice it feels very similar to a messaging app, and that is intentional.",
+     "start": 7.88,
+     "end": 15.89,
+     "type": "voice-over"
+    },
+    {
+     "words": "Speaking with AI usually",
+     "start": 15.89,
+     "end": 17.6,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut back to presenter (17.6) mid-sentence after \"Speaking with AI usually\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"Your personal agent who's always working for you.\" (5.09-7.88) \"And we'll start out on the chat tab, where you'll notice it feels very similar to a messaging app, and that is intentional.\" (7.88-15.89) \"Speaking with AI usually\" (15.89-17.6) - voice-over (same presenter take, off screen).",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s02.jpg",
+   "boards": [
+    "boards/s02.jpg",
+    "boards/s02a.jpg",
+    "boards/s02b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 3,
+   "start": 17.6,
+   "end": 20.69,
+   "dur": 3.09,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 69,
+    "end": 70
+   },
+   "colour": "#4d4234",
+   "change": 1.18,
+   "sound": "-16.7 LUFS mean, -13.48 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "Continues mid-sentence \"begins with a blank screen...\" to lens; both hands open outward from the table in an explaining gesture (17.8-20.0), then settle.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [],
+   "lines": [
+    {
+     "words": "begins with a blank screen, and we wanted this to feel more like",
+     "start": 17.6,
+     "end": 20.69,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to camera B (20.69) mid-sentence.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"begins with a blank screen, and we wanted this to feel more like\" (17.6-20.69) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe + loc_living_room_set, guide_audio = this shot's slice of the voice track; keep one plate (plate A) as first_frame for every A shot so the set never shifts.",
+   "board": "boards/s03.jpg",
+   "boards": [
+    "boards/s03.jpg"
+   ]
+  },
+  {
+   "n": 4,
+   "start": 20.69,
+   "end": 24.02,
+   "dur": 3.34,
+   "in": "cut",
+   "brightness": {
+    "start": 71,
+    "mid": 71,
+    "end": 72
+   },
+   "colour": "#534331",
+   "change": 3.19,
+   "sound": "-16.84 LUFS mean, -11.96 peak",
+   "setup": "B_close",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+   "camera": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look.",
+   "camera_move": "Locked off on a long lens; the few-pixel drift measured is the presenter's head moving, not the camera.",
+   "action": "\"a conversation between you and your very capable personal agent\" - he speaks warmly, slight head tilts and nods, eyes to frame right of the lens, toward camera A; ends looking toward camera A.",
+   "light": "Same soft key from camera left, face lit warm, right cheek a touch darker; background dark olive and warm brown, no practicals in frame. Measured brightness 68-72 / 255, colour #534331.",
+   "text": [],
+   "lines": [
+    {
+     "words": "a conversation between you and your very capable personal agent,",
+     "start": 20.69,
+     "end": 24.02,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (24.02) on \"Muse\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"a conversation between you and your very capable personal agent,\" (20.69-24.02) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe (+ loc_living_room_set for the blurred background), guide_audio = this shot's slice of the voice track; reuse one plate B as first_frame for every B shot.",
+   "board": "boards/s04.jpg",
+   "boards": [
+    "boards/s04.jpg"
+   ]
+  },
+  {
+   "n": 5,
+   "start": 24.02,
+   "end": 45.5,
+   "dur": 21.48,
+   "in": "cut",
+   "brightness": {
+    "start": 213,
+    "mid": 200,
+    "end": 217
+   },
+   "colour": "#bed5ea",
+   "change": 0.45,
+   "sound": "-17.44 LUFS mean, -11.6 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "Starts ZOOM (x 32-67%, top of phone visible at y 5%, bottom cropped); SMALL centred 28.75-34.0 and 41.5-45.5; ZOOM with top and bottom cropped 34.5-41.0.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "24.02-28.25 hold ZOOM; 28.25-28.75 pull back to SMALL; 28.75-34.0 hold; 34.0-34.5 push in to ZOOM; 34.5-41.0 hold; 41.0-41.5 pull back to SMALL; hold to 45.5. Content scrolls inside the phone the whole time (quick scroll jumps at 35.95-36.24 and 38.66-38.75).",
+   "action": "A scroll through the chat history that illustrates each item he lists, landing each topic on its words: 24.0-28.5 golf - Muse's tee-time reminder, the user asking about the hardest hole, Muse's hole-by-hole answer with a golf-course photo (\"it's usually golf\" 27.1-31.2); 29-34 movie night - the user asking for two tickets, Muse finding a showing, \"Grab those\", \"Done - 2 tickets confirmed\" with a dark purple cinema seat-map card (\"buy movie tickets\" ~33); 35-38.5 family - the user asking for a move-in weekend doc, Muse replying with an aerial campus image card titled \"Move-in Weekend\" and a PDF chip (\"weekend away with my family\" 34.9-38.0); 38.7-41 chess - Muse reporting last night's games (5-3, rating up to 1718) and a Blitz Session stats card (\"chess account\" ~39); 42-45.5 small: a \"Chess Analysis\" document chip and the coaching reply, then back to the latest flight message with its red heart (\"send me an analysis in the morning\" 43.1-45.3).",
+   "on_screen": "Chat history: golf reminder + course photo, cinema tickets + seat map, move-in weekend doc card, chess results + stats card, chess analysis doc.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "Muse, who you can see at the top of the screen.",
+     "start": 24.02,
+     "end": 26.7,
+     "type": "voice-over"
+    },
+    {
+     "words": "Now, I talk to mine about all kinds of topics, it's usually golf,",
+     "start": 27.1,
+     "end": 31.2,
+     "type": "voice-over"
+    },
+    {
+     "words": "but I also have it do things for me, like buy movie tickets,",
+     "start": 31.2,
+     "end": 34.88,
+     "type": "voice-over"
+    },
+    {
+     "words": "help me plan a very complex weekend away with my family,",
+     "start": 34.88,
+     "end": 37.99,
+     "type": "voice-over"
+    },
+    {
+     "words": "or I have given it access to my chess account so it can monitor my very frequent losses",
+     "start": 37.99,
+     "end": 43.08,
+     "type": "voice-over"
+    },
+    {
+     "words": "and send me an analysis in the morning.",
+     "start": 43.08,
+     "end": 45.34,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to presenter wide (45.5) just before \"And it can do all these things\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"Muse, who you can see at the top of the screen.\" (24.02-26.7) \"Now, I talk to mine about all kinds of topics, it's usually golf,\" (27.1-31.2) \"but I also have it do things for me, like buy movie tickets,\" (31.2-34.88) \"help me plan a very complex weekend away with my family,\" (34.88-37.99) \"or I have given it access to my chess account so it can monitor my very frequent losses\" (37.99-43.08) \"and send me an analysis in the morning.\" (43.08-45.34) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s05.jpg",
+   "boards": [
+    "boards/s05.jpg",
+    "boards/s05a.jpg",
+    "boards/s05b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 6,
+   "start": 45.5,
+   "end": 51.13,
+   "dur": 5.63,
+   "in": "cut",
+   "brightness": {
+    "start": 70,
+    "mid": 70,
+    "end": 70
+   },
+   "colour": "#4d4234",
+   "change": 1.05,
+   "sound": "-17.95 LUFS mean, -12.33 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "\"And it can do all these things because it has its own computer...\" - to lens, hands together at the table, small open-hand gesture mid-line.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [],
+   "lines": [
+    {
+     "words": "And it can do all these things because it has its own computer and it's always working in the background.",
+     "start": 45.66,
+     "end": 51.13,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to B (51.13) between sentences.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"And it can do all these things because it has its own computer and it's always working in the background.\" (45.66-51.13) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe + loc_living_room_set, guide_audio = this shot's slice of the voice track; keep one plate (plate A) as first_frame for every A shot so the set never shifts.",
+   "board": "boards/s06.jpg",
+   "boards": [
+    "boards/s06.jpg"
+   ]
+  },
+  {
+   "n": 7,
+   "start": 51.13,
+   "end": 53.8,
+   "dur": 2.67,
+   "in": "cut",
+   "brightness": {
+    "start": 70,
+    "mid": 72,
+    "end": 71
+   },
+   "colour": "#544331",
+   "change": 2.92,
+   "sound": "-16.11 LUFS mean, -13.22 peak",
+   "setup": "B_close",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+   "camera": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look.",
+   "camera_move": "Locked off on a long lens; the few-pixel drift measured is the presenter's head moving, not the camera.",
+   "action": "\"So it's useful for me to see what it's doing at any given time,\" - engaged, slight lean and head turn, eyes to frame right of the lens, toward camera A.",
+   "light": "Same soft key from camera left, face lit warm, right cheek a touch darker; background dark olive and warm brown, no practicals in frame. Measured brightness 68-72 / 255, colour #534331.",
+   "text": [],
+   "lines": [
+    {
+     "words": "So it's useful for me to see what it's doing at any given time,",
+     "start": 51.13,
+     "end": 53.8,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (53.8) mid-sentence before \"and I can see that\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"So it's useful for me to see what it's doing at any given time,\" (51.13-53.8) - on-camera speech.",
+   "render": "keyframe mode, no refs: first_frame = plate_B (one plate per camera, reused for every shot of that setup) + guide_audio = this shot's recorded line clip (set/lines, see cut30). Reference mode ignores first_frame, so it is not used for presenter shots.",
+   "board": "boards/s07.jpg",
+   "boards": [
+    "boards/s07.jpg"
+   ]
+  },
+  {
+   "n": 8,
+   "start": 53.8,
+   "end": 69.07,
+   "dur": 15.27,
+   "in": "cut",
+   "brightness": {
+    "start": 215,
+    "mid": 219,
+    "end": 218
+   },
+   "colour": "#c4dbf1",
+   "change": 0.1,
+   "sound": "-17.53 LUFS mean, -11.43 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "Starts ZOOM (x 32-67%, top visible at y 4%, bottom cropped) on the chat header; SMALL centred from 58.5.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "53.8-58.0 hold ZOOM on the top of the screen; 58.0-58.5 pull back to SMALL as the status sheet opens; hold to 69.07.",
+   "action": "53.8 chat header: the Muse avatar floats top centre with a small live status pill under its name (\"researching courses\"). ~57.3 a grey touch circle taps the pill (\"If I want more detail, I can tap on it\" 57.7) and a status sheet slides up: close X, share icon, avatar, \"Muse\", a grey status line \"finding tee times\", a pill of four icon tabs (list, shield, clock, fingerprint), then \"Wednesday\" and a list of finished tasks each with icon, bold title, grey detail and time (58.5-61: \"what it has done\"); 61-64 the status line changes and the list scrolls to more items; ~65.5 the shield tab is tapped: \"Approvals history\" (66); ~67 a \"Needs review\" card appears at the top - a permission question with a blue \"Allow once\" button, \"Allow for this task\" and \"Deny\" - and the status turns green \"Connected\" (\"I can grant that here\" 66-69).",
+   "on_screen": "Muse status sheet: activity log of completed errands (shipping email, organised move-in docs, purchased golf gear, emailed a teacher, booked movie tickets), approvals history, a permission request card.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "and I can see that at the status display in the top of the screen.",
+     "start": 53.8,
+     "end": 57.58,
+     "type": "voice-over"
+    },
+    {
+     "words": "If I want more detail, I can tap on it and I'll see what it's doing, what it has done, what it will do,",
+     "start": 57.74,
+     "end": 64.48,
+     "type": "voice-over"
+    },
+    {
+     "words": "and if any of these actions require my permission, I can grant that here or in chat.",
+     "start": 64.48,
+     "end": 69.07,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to B (69.07) after \"or in chat.\"",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"and I can see that at the status display in the top of the screen.\" (53.8-57.58) \"If I want more detail, I can tap on it and I'll see what it's doing, what it has done, what it will do,\" (57.74-64.48) \"and if any of these actions require my permission, I can grant that here or in chat.\" (64.48-69.07) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s08.jpg",
+   "boards": [
+    "boards/s08.jpg",
+    "boards/s08a.jpg",
+    "boards/s08b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 9,
+   "start": 69.07,
+   "end": 70.74,
+   "dur": 1.67,
+   "in": "cut",
+   "brightness": {
+    "start": 70,
+    "mid": 71,
+    "end": 68
+   },
+   "colour": "#524230",
+   "change": 3.64,
+   "sound": "-16.88 LUFS mean, -11.66 peak",
+   "setup": "B_close",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+   "camera": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look.",
+   "camera_move": "Locked off on a long lens; the few-pixel drift measured is the presenter's head moving, not the camera.",
+   "action": "\"The next tab is the feed,\" - says it to camera A, then at ~70.3 his eyes and head drop to the phone in his hands, motivating the cut to the screen.",
+   "light": "Same soft key from camera left, face lit warm, right cheek a touch darker; background dark olive and warm brown, no practicals in frame. Measured brightness 68-72 / 255, colour #534331.",
+   "text": [],
+   "lines": [
+    {
+     "words": "The next tab is the feed,",
+     "start": 69.07,
+     "end": 70.74,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (70.74) on his downward look.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"The next tab is the feed,\" (69.07-70.74) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe (+ loc_living_room_set for the blurred background), guide_audio = this shot's slice of the voice track; reuse one plate B as first_frame for every B shot.",
+   "board": "boards/s09.jpg",
+   "boards": [
+    "boards/s09.jpg",
+    "boards/s09b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 10,
+   "start": 70.74,
+   "end": 89.21,
+   "dur": 18.48,
+   "in": "cut",
+   "brightness": {
+    "start": 216,
+    "mid": 182,
+    "end": 208
+   },
+   "colour": "#afc7db",
+   "change": 0.18,
+   "sound": "-17.2 LUFS mean, -11.48 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "SMALL centred (x 38-62%) except ZOOM-L 80.75-83.75 (phone x 30-69%, 39% width, top visible, bottom cropped).",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "70.74-80.25 hold SMALL; 80.25-80.75 push in to 39% width; 80.75-83.75 hold on the instruction text; 83.75-84.25 pull back to SMALL; hold to 89.21.",
+   "action": "70.8 chat screen; ~71.0 grey touch circle taps the newspaper (feed) tab; 72.5 the feed: heading \"Wednesday afternoon\", a post (small icon, bold headline, grey paragraph) with a golf-course clubhouse photo, heart and \"Discuss\" row (\"content ... you'll find interesting\" 70.7-74.8); 75-78.5 scroll: a travel-idea post with waterfall and mountain photos; ~79.0 a tap on the filter icon of a post image and a dark charcoal \"Feed instructions\" sheet slides up over the dimmed feed (79.3) (\"using the prompt in the top of the screen\" 75.3-79.5); zoom holds on its prompt \"I want finance news in the morning, golf updates in the afternoon, and nonfiction book reviews in the evening.\" while he says the same idea (81.0-86.1); ~84.3 Cancel, the sheet drops away; 84.5-89.2 the feed scrolls on: a garden-day-trip post with a lush garden photo, a golf-statistics post (\"Each one of these posts will be written just for you\" 86.1-89.2).",
+   "on_screen": "Feed of personalised posts with photos (golf clubhouse, waterfall, mountains, garden); dark Feed instructions sheet with Cancel / Save.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "and this is where Muse will find content for you that it thinks you'll find interesting.",
+     "start": 70.74,
+     "end": 74.78,
+     "type": "voice-over"
+    },
+    {
+     "words": "And you can help define what that is using the prompt in the top of the screen.",
+     "start": 75.26,
+     "end": 79.47,
+     "type": "voice-over"
+    },
+    {
+     "words": "And you can be very specific.",
+     "start": 79.47,
+     "end": 80.96,
+     "type": "voice-over"
+    },
+    {
+     "words": "So if you want to see finance news in the morning and non-fiction book recommendations in the evening, you can do that.",
+     "start": 80.96,
+     "end": 86.14,
+     "type": "voice-over"
+    },
+    {
+     "words": "Each one of these posts will be written just for you.",
+     "start": 86.14,
+     "end": 89.21,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to presenter wide (89.21) on \"The next tab is\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"and this is where Muse will find content for you that it thinks you'll find interesting.\" (70.74-74.78) \"And you can help define what that is using the prompt in the top of the screen.\" (75.26-79.47) \"And you can be very specific.\" (79.47-80.96) \"So if you want to see finance news in the morning and non-fiction book recommendations in the evening, you can do that.\" (80.96-86.14) \"Each one of these posts will be written just for you.\" (86.14-89.21) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s10.jpg",
+   "boards": [
+    "boards/s10.jpg",
+    "boards/s10a.jpg",
+    "boards/s10b.jpg",
+    "boards/s10c.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end, c = the zoomed state."
+  },
+  {
+   "n": 11,
+   "start": 89.21,
+   "end": 90.63,
+   "dur": 1.42,
+   "in": "cut",
+   "brightness": {
+    "start": 70,
+    "mid": 69,
+    "end": 70
+   },
+   "colour": "#4d4234",
+   "change": 1.83,
+   "sound": "-15.88 LUFS mean, -12.46 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "\"The next tab is\" - to lens, small lift of the hands, a quick glance toward the phone at the end.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [],
+   "lines": [
+    {
+     "words": "The next tab is",
+     "start": 89.21,
+     "end": 90.63,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (90.63) mid-sentence, the word \"ideas\" lands on the screen.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"The next tab is\" (89.21-90.63) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe + loc_living_room_set, guide_audio = this shot's slice of the voice track; keep one plate (plate A) as first_frame for every A shot so the set never shifts.",
+   "board": "boards/s11.jpg",
+   "boards": [
+    "boards/s11.jpg"
+   ]
+  },
+  {
+   "n": 12,
+   "start": 90.63,
+   "end": 107.52,
+   "dur": 16.89,
+   "in": "cut",
+   "brightness": {
+    "start": 208,
+    "mid": 221,
+    "end": 221
+   },
+   "colour": "#c8ddef",
+   "change": 0.04,
+   "sound": "-17.72 LUFS mean, -12.22 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "SMALL centred 90.63-93.75; then ZOOM (x 31-68%, 37% width, both top and bottom cropped) to the end, the list text large and readable.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "90.63-93.75 hold SMALL; 93.75-94.0 quick push in to 37% width; 94.0-107.52 hold ZOOM while the list scrolls up steadily (~one idea every 2 s; small scroll jumps at 103.19 and 106.77).",
+   "action": "90.7 feed screen; ~91.2 tap on the light-bulb (ideas) tab; 91.7 the \"Ideas\" list: each row a small soft 3D clay emoji icon (calendar, crescent moon, golf ball on a tee, checklist, wine glass, photo book, palm tree, pill, plane, dumbbell), a bold title and three grey lines, grouped under headings (top group, Family ~98, Travel ~101, Health ~104.5, Golf ~107) - e.g. \"Plan Theo's first visit home\", \"Correlate your sleep scores with round performance\", \"Build a kindergarten prep checklist for Ivy\", \"Build a lower back recovery protocol\". The scroll keeps going through his list of examples (96.9-107.0).",
+   "on_screen": "Ideas list of proactive suggestions in groups Family / Travel / Health / Golf, clay-emoji icons.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "ideas, and this is where I'll find a list of proactive suggestions from my Muse based on our conversations.",
+     "start": 90.63,
+     "end": 96.96,
+     "type": "voice-over"
+    },
+    {
+     "words": "So I'll see a list of things like lower back recovery regimen, kindergarten coordination, permit applications,",
+     "start": 96.96,
+     "end": 102.28,
+     "type": "voice-over"
+    },
+    {
+     "words": "lots of different examples of ways that Muse thinks it can help me better.",
+     "start": 102.28,
+     "end": 106.95,
+     "type": "voice-over"
+    },
+    {
+     "words": "And",
+     "start": 107.26,
+     "end": 107.34,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to B (107.52) right after \"And\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"ideas, and this is where I'll find a list of proactive suggestions from my Muse based on our conversations.\" (90.63-96.96) \"So I'll see a list of things like lower back recovery regimen, kindergarten coordination, permit applications,\" (96.96-102.28) \"lots of different examples of ways that Muse thinks it can help me better.\" (102.28-106.95) \"And\" (107.26-107.34) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s12.jpg",
+   "boards": [
+    "boards/s12.jpg",
+    "boards/s12a.jpg",
+    "boards/s12b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 13,
+   "start": 107.52,
+   "end": 110.36,
+   "dur": 2.84,
+   "in": "cut",
+   "brightness": {
+    "start": 71,
+    "mid": 70,
+    "end": 68
+   },
+   "colour": "#52422f",
+   "change": 2.4,
+   "sound": "-16.46 LUFS mean, -13.39 peak",
+   "setup": "B_close",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+   "camera": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look.",
+   "camera_move": "Locked off on a long lens; the few-pixel drift measured is the presenter's head moving, not the camera.",
+   "action": "\"ultimately, Muse is designed to help you accomplish\" - sincere, then at ~109.9 he looks down to the phone; cut on the look.",
+   "light": "Same soft key from camera left, face lit warm, right cheek a touch darker; background dark olive and warm brown, no practicals in frame. Measured brightness 68-72 / 255, colour #534331.",
+   "text": [],
+   "lines": [
+    {
+     "words": "ultimately, Muse is designed to help you accomplish",
+     "start": 107.52,
+     "end": 110.36,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (110.36) mid-sentence before \"your goals\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"ultimately, Muse is designed to help you accomplish\" (107.52-110.36) - on-camera speech.",
+   "render": "keyframe mode, no refs: first_frame = plate_B (one plate per camera, reused for every shot of that setup) + guide_audio = this shot's recorded line clip (set/lines, see cut30). Reference mode ignores first_frame, so it is not used for presenter shots.",
+   "board": "boards/s13.jpg",
+   "boards": [
+    "boards/s13.jpg",
+    "boards/s13b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 14,
+   "start": 110.36,
+   "end": 131.51,
+   "dur": 21.15,
+   "in": "cut",
+   "brightness": {
+    "start": 218,
+    "mid": 219,
+    "end": 219
+   },
+   "colour": "#c5ddf3",
+   "change": 0.08,
+   "sound": "-17.58 LUFS mean, -12.3 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "SMALL centred (x 38-62%, y 4-96%) the whole shot; no zoom.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "Locked SMALL for 21 s; all movement is inside the screen (taps, scrolls, push/pop of a detail page).",
+   "action": "110.4 Ideas list (Health/Golf); ~110.9 tap on the checkbox (goals) tab; 111.2 \"Goals\": a green-dot \"Tracking\" section with four checkbox goals, each with two grey status lines (a college move-in, a pre-round golf brief, cinema tickets, a holiday trip plan) and \"Show 2 more\", then a blue-dot \"Goals\" section (\"you'll find them here on the goals tab\" 110.4-113.2); 113.5-115.5 scroll down: an expandable \"Ship the App\" goal with nested sub-tasks, \"Single Digit Handicap\", \"Create a goal\", category rows; 116.5-118 back up; 118-121.5 hold on the tracking rows (\"lightweight status\" 118.3-122.7); ~121.5 tap the first goal -> 122 detail page: title, one-line description, \"Artifacts\" row, \"Activity\" timeline of dated steps with grey dots (\"a full timeline\" 122.7-125.4); ~126.5 back; 129-131.5 scroll down to the long-term Goals section with nested sub-tasks (\"down below\" ~130.5).",
+   "on_screen": "Goals tab: tracked goals with status lines, a goal detail timeline, long-term goals with sub-tasks.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "your goals, and you'll find them here on the goals tab.",
+     "start": 110.36,
+     "end": 113.16,
+     "type": "voice-over"
+    },
+    {
+     "words": "These will appear based on your conversation with Muse; as it learns what you care about, you'll see them appear.",
+     "start": 113.16,
+     "end": 118.26,
+     "type": "voice-over"
+    },
+    {
+     "words": "And you can see a lightweight status based on what Muse has been doing in the background.",
+     "start": 118.26,
+     "end": 122.7,
+     "type": "voice-over"
+    },
+    {
+     "words": "You can also tap for more detail and a full timeline.",
+     "start": 122.7,
+     "end": 125.39,
+     "type": "voice-over"
+    },
+    {
+     "words": "And if there are things that you want to tackle on a longer timeline, you can do that as well, down below.",
+     "start": 125.39,
+     "end": 131.0,
+     "type": "voice-over"
+    },
+    {
+     "words": "Now, anything",
+     "start": 131.0,
+     "end": 131.51,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to presenter wide (131.51) after \"Now, anything\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"your goals, and you'll find them here on the goals tab.\" (110.36-113.16) \"These will appear based on your conversation with Muse; as it learns what you care about, you'll see them appear.\" (113.16-118.26) \"And you can see a lightweight status based on what Muse has been doing in the background.\" (118.26-122.7) \"You can also tap for more detail and a full timeline.\" (122.7-125.39) \"And if there are things that you want to tackle on a longer timeline, you can do that as well, down below.\" (125.39-131.0) \"Now, anything\" (131.0-131.51) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s14.jpg",
+   "boards": [
+    "boards/s14.jpg",
+    "boards/s14a.jpg",
+    "boards/s14b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 15,
+   "start": 131.51,
+   "end": 133.63,
+   "dur": 2.13,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 70,
+    "end": 70
+   },
+   "colour": "#4e4234",
+   "change": 0.92,
+   "sound": "-16.64 LUFS mean, -12.2 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "\"you create with Muse, you can find on\" - to lens, hands together holding the phone low at the table.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [],
+   "lines": [
+    {
+     "words": "you create with Muse, you can find on",
+     "start": 131.51,
+     "end": 133.63,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to screen (133.63) mid-sentence, \"the library tab\" lands on the screen.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"you create with Muse, you can find on\" (131.51-133.63) - on-camera speech.",
+   "render": "reference + voice: char_presenter_sheet + char_presenter_wardrobe + loc_living_room_set, guide_audio = this shot's slice of the voice track; keep one plate (plate A) as first_frame for every A shot so the set never shifts.",
+   "board": "boards/s15.jpg",
+   "boards": [
+    "boards/s15.jpg"
+   ]
+  },
+  {
+   "n": 16,
+   "start": 133.63,
+   "end": 146.69,
+   "dur": 13.05,
+   "in": "cut",
+   "brightness": {
+    "start": 219,
+    "mid": 218,
+    "end": 214
+   },
+   "colour": "#c3dcf1",
+   "change": 0.22,
+   "sound": "-18.75 LUFS mean, -10.89 peak",
+   "setup": "SCR_phone",
+   "location": "loc_screen_backdrop",
+   "cast": [
+    "product_muse_phone",
+    "char_muse_avatar"
+   ],
+   "wardrobe": "none (screen recording)",
+   "shot_size": "medium",
+   "subject_in_frame": "SMALL centred (x 38-62%, y 4-96%) the whole shot; no zoom.",
+   "camera": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+   "camera_move": "Locked SMALL; motion is in-screen only.",
+   "action": "133.7 goals list; ~134.6 tap on the four-shapes (library) tab; 135 library: avatar, segmented control \"Artifacts | Media\", list of saved items each with a small square 3D icon, bold title and \"Category - Type\" line (Design - Document, Golf - Study, Games - Report, Travel - Guide, Tech - Briefing) (\"Simple documents, PDFs, Markdown files\" 135.2-138); 137-139 scroll; ~139.6 grey touch circle taps the chess analysis row; 140 blank page with a loading spinner; 140.8 an interactive dashboard: bold title \"3+2 Blitz\", four stat tiles (1718, 6-1-1, 73%, +43), a \"Rating Timeline\" green line chart (\"my chess analysis dashboard right here\" ~141-142.4); 142.5-144 scroll: \"Pattern 1 - King Safety - Walking Into Danger\" with a red tag, a paragraph and a chessboard diagram; 144.5-146.7 the chessboard diagram centred, a highlighted move (\"really interesting things with these\" 142.4-146.3).",
+   "on_screen": "Library of artifacts; a chess-analysis dashboard with stat tiles, a line chart and a chessboard diagram.",
+   "light": "Flat, graphic: bright gradient backdrop (near-white upper-left to sky blue #8fc3f3 lower-right), white app UI. Measured brightness 200-221 / 255 (dark sheets dip to 182), colour #c2d9ee.",
+   "text": [],
+   "lines": [
+    {
+     "words": "the library tab.",
+     "start": 133.63,
+     "end": 135.18,
+     "type": "voice-over"
+    },
+    {
+     "words": "Simple documents, PDFs, Markdown files, but also really rich and interactive artifacts, like my chess analysis dashboard right here.",
+     "start": 135.18,
+     "end": 142.44,
+     "type": "voice-over"
+    },
+    {
+     "words": "And you can do some really interesting things with these.",
+     "start": 142.44,
+     "end": 146.3,
+     "type": "voice-over"
+    }
+   ],
+   "out": "hard cut to presenter wide (146.69) at the start of \"And that's a quick walkthrough\".",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"the library tab.\" (133.63-135.18) \"Simple documents, PDFs, Markdown files, but also really rich and interactive artifacts, like my chess analysis dashboard right here.\" (135.18-142.44) \"And you can do some really interesting things with these.\" (142.44-146.3) - voice-over.",
+   "render": "motion graphic, not H3: build the app screens as UI plates (product_muse_ui_* sheets as style), place the phone (product_muse_phone_sheet) on loc_screen_backdrop and animate scale, scrolls and taps with the keyframes in camera_move/action (e.g. HyperFrames or ffmpeg zoompan).",
+   "board": "boards/s16.jpg",
+   "boards": [
+    "boards/s16.jpg",
+    "boards/s16a.jpg",
+    "boards/s16b.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  },
+  {
+   "n": 17,
+   "start": 146.69,
+   "end": 150.32,
+   "dur": 3.63,
+   "in": "cut",
+   "brightness": {
+    "start": 69,
+    "mid": 70,
+    "end": 70
+   },
+   "colour": "#4d4234",
+   "change": 0.73,
+   "sound": "-16.42 LUFS mean, -12.23 peak",
+   "setup": "A_wide",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+   "camera": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly.",
+   "camera_move": "Locked off on a tripod: measured zero frame shift across every A shot. Only the presenter moves (change 0.7-1.8).",
+   "action": "\"And that's a quick walkthrough of Muse. We're really excited for you to check it out.\" - to lens, warmer, slight smile, hands at the table holding the phone.",
+   "light": "Soft large key from front-left (camera left), wrapping; gentle fill; face and shirt the brightest area. Room low-key: sage wall falls off to darker corners (natural vignette), warm practical floor lamp glowing at right (~2700K), shelves lit softly from the left. Warm, slightly desaturated grade. Measured brightness 69-72 / 255 (mid-dark), colour #4d4234.",
+   "text": [],
+   "lines": [
+    {
+     "words": "And that's a quick walkthrough of Muse.",
+     "start": 146.54,
+     "end": 148.28,
+     "type": "on-camera speech"
+    },
+    {
+     "words": "We're really excited for you to check it out.",
+     "start": 148.28,
+     "end": 150.1,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to B (150.32) between sentences.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"And that's a quick walkthrough of Muse.\" (146.54-148.28) \"We're really excited for you to check it out.\" (148.28-150.1) - on-camera speech.",
+   "render": "keyframe mode, no refs: first_frame = plate_A (one plate per camera, reused for every shot of that setup) + guide_audio = this shot's recorded line clip (set/lines, see cut30). Reference mode ignores first_frame, so it is not used for presenter shots.",
+   "board": "boards/s17.jpg",
+   "boards": [
+    "boards/s17.jpg"
+   ]
+  },
+  {
+   "n": 18,
+   "start": 150.32,
+   "end": 152.03,
+   "dur": 1.71,
+   "in": "cut",
+   "brightness": {
+    "start": 70,
+    "mid": 70,
+    "end": 71
+   },
+   "colour": "#524230",
+   "change": 2.61,
+   "sound": "-17.7 LUFS mean, -12.32 peak",
+   "setup": "B_close",
+   "location": "loc_living_room_set",
+   "cast": [
+    "char_presenter"
+   ],
+   "wardrobe": "Burnt-orange / rust (#a8622c in light, reads #8a5530 on camera) textured boucle-knit short-sleeve polo, soft knit collar, three cream round buttons (top one open), ribbed cuffs; silver bracelet watch on his left wrist; a silver-white phone held loosely in his left hand (frame right) resting on the table. Same outfit in every shot.",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+   "camera": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look.",
+   "camera_move": "Locked off on a long lens; the few-pixel drift measured is the presenter's head moving, not the camera.",
+   "action": "\"You can download Muse today.\" - small smile and nod, eyes to frame right of the lens, toward camera A; holds for a beat as the line ends ~151.9.",
+   "light": "Same soft key from camera left, face lit warm, right cheek a touch darker; background dark olive and warm brown, no practicals in frame. Measured brightness 68-72 / 255, colour #534331.",
+   "text": [],
+   "lines": [
+    {
+     "words": "You can download Muse today.",
+     "start": 150.4,
+     "end": 151.9,
+     "type": "on-camera speech"
+    }
+   ],
+   "out": "hard cut to black (152.03); 0.25 s of pure black before the end card fades up.",
+   "audio": "Music: soft ambient keys/pad bed (A minor) continues under the voice. Speech: \"You can download Muse today.\" (150.4-151.9) - on-camera speech.",
+   "render": "keyframe mode, no refs: first_frame = plate_B (one plate per camera, reused for every shot of that setup) + guide_audio = this shot's recorded line clip (set/lines, see cut30). Reference mode ignores first_frame, so it is not used for presenter shots.",
+   "board": "boards/s18.jpg",
+   "boards": [
+    "boards/s18.jpg"
+   ]
+  },
+  {
+   "n": 19,
+   "start": 152.03,
+   "end": 156.99,
+   "dur": 4.96,
+   "in": "cut",
+   "brightness": {
+    "start": 0,
+    "mid": 11,
+    "end": 11
+   },
+   "colour": "#0a0b0c",
+   "change": 0,
+   "sound": "-45.09 LUFS mean, -19.61 peak",
+   "setup": "END_card",
+   "location": "none (black)",
+   "cast": [
+    "product_muse_icon"
+   ],
+   "wardrobe": "none",
+   "shot_size": "wide",
+   "subject_in_frame": "Centred vertical stack on pure black: app icon x 42-58% / y 17-45%; \"Muse\" wordmark x 44-56% / y 49-56%; two dark app-store download badges side by side x 38-62% / y 68-74%; Meta wordmark (infinity mark + \"Meta\", blue mark) x 44-55% / y 86-90%.",
+   "camera": "Flat 2D graphic, no camera.",
+   "camera_move": "None; fade-in only.",
+   "action": "152.03-152.28 pure black; 152.28-152.9 icon and \"Muse\" fade up (icon starts grey and blooms into its blue colour); badges and Meta wordmark fade up just after, fully on by ~153.0; hold to 156.99.",
+   "on_screen": "End card: white rounded-square icon with a blue looping hand-drawn \"m\"; \"Muse\" in light white sans; two generic store download badges; Meta wordmark.",
+   "light": "Black card; measured brightness 0 rising to 11 / 255, colour #0a0b0c.",
+   "text": [
+    {
+     "words": "Muse",
+     "style": "white light-weight sans, centred, ~7% of frame height",
+     "position": "under the icon, y 49-56%",
+     "in": 152.28,
+     "out": 156.99
+    },
+    {
+     "words": "[two store download badges]",
+     "style": "small black badges with thin grey outline, white type",
+     "position": "centred pair, y 68-74%",
+     "in": 152.6,
+     "out": 156.99
+    },
+    {
+     "words": "Meta",
+     "style": "Meta wordmark, blue infinity mark + white word",
+     "position": "centred, y 86-90%",
+     "in": 152.6,
+     "out": 156.99
+    }
+   ],
+   "lines": [],
+   "out": "end of film (156.99).",
+   "audio": "No speech. Music: the score resolves to a held A minor 7 chord (A2, G3, C4, E4, A4) blooming 152.2-154.6, fading to digital silence by 155.2; silence 155.21-157.0.",
+   "render": "motion graphic: build in HyperFrames/ffmpeg from product_muse_icon_sheet; badges drawn generically.",
+   "board": "boards/s19.jpg",
+   "boards": [
+    "boards/s19.jpg",
+    "boards/s19a.jpg"
+   ],
+   "board_note": "main board = middle frame; a = start, b = end."
+  }
+ ],
+ "sound": {
+  "silences": [
+   {
+    "start": 155.21,
+    "end": 157.06
+   }
+  ],
+  "black": [
+   {
+    "start": 152.03,
+    "end": 152.28
+   }
+  ],
+  "music": "A very soft ambient keys/pad bed in A minor (pitches A2, C4, E4, A4 and G3 measured in speech pauses: an Am7 colour), sustained chords, no drums, no beat, no hits on the cuts. It sits about 15-20 dB under the voice: speech-pause floor -33 to -43 dBFS RMS against voice windows of -12 to -17 dBFS. It starts with the first word (nothing before 0.10 s) and resolves on a held Am7 under the end card 152.2-154.6, fading to digital silence by 155.2.",
+  "speech": "One continuous presenter take from 0.10 to ~151.9 s, a single male voice, relaxed and conversational, ~2.7 words per second. The voice never pauses for a cut: cuts land mid-sentence, the same take running on-camera (A/B shots) and as voice-over (screen shots). Close, dry, studio-clean; little room.",
+  "effects": "None audible: taps and scrolls are silent.",
+  "mix": "Shot loudness -15.9 to -18.8 LUFS mean, peaks -10.9 to -13.5; first shot -22.4 (the bed has not yet arrived); end card -45.",
+  "voice_track": [
+   {
+    "shot": 1,
+    "words": "Hey, my name is {PRESENTER_NAME} and I'm very excited to give you a quick walkthrough of our new app, Muse.",
+    "start": 0.1,
+    "end": 4.95
+   },
+   {
+    "shot": 2,
+    "words": "Your personal agent who's always working for you.",
+    "start": 5.09,
+    "end": 7.88
+   },
+   {
+    "shot": 2,
+    "words": "And we'll start out on the chat tab, where you'll notice it feels very similar to a messaging app, and that is intentional.",
+    "start": 7.88,
+    "end": 15.89
+   },
+   {
+    "shot": 2,
+    "words": "Speaking with AI usually",
+    "start": 15.89,
+    "end": 17.6
+   },
+   {
+    "shot": 3,
+    "words": "begins with a blank screen, and we wanted this to feel more like",
+    "start": 17.6,
+    "end": 20.69
+   },
+   {
+    "shot": 4,
+    "words": "a conversation between you and your very capable personal agent,",
+    "start": 20.69,
+    "end": 24.02
+   },
+   {
+    "shot": 5,
+    "words": "Muse, who you can see at the top of the screen.",
+    "start": 24.02,
+    "end": 26.7
+   },
+   {
+    "shot": 5,
+    "words": "Now, I talk to mine about all kinds of topics, it's usually golf,",
+    "start": 27.1,
+    "end": 31.2
+   },
+   {
+    "shot": 5,
+    "words": "but I also have it do things for me, like buy movie tickets,",
+    "start": 31.2,
+    "end": 34.88
+   },
+   {
+    "shot": 5,
+    "words": "help me plan a very complex weekend away with my family,",
+    "start": 34.88,
+    "end": 37.99
+   },
+   {
+    "shot": 5,
+    "words": "or I have given it access to my chess account so it can monitor my very frequent losses",
+    "start": 37.99,
+    "end": 43.08
+   },
+   {
+    "shot": 5,
+    "words": "and send me an analysis in the morning.",
+    "start": 43.08,
+    "end": 45.34
+   },
+   {
+    "shot": 6,
+    "words": "And it can do all these things because it has its own computer and it's always working in the background.",
+    "start": 45.66,
+    "end": 51.13
+   },
+   {
+    "shot": 7,
+    "words": "So it's useful for me to see what it's doing at any given time,",
+    "start": 51.13,
+    "end": 53.8
+   },
+   {
+    "shot": 8,
+    "words": "and I can see that at the status display in the top of the screen.",
+    "start": 53.8,
+    "end": 57.58
+   },
+   {
+    "shot": 8,
+    "words": "If I want more detail, I can tap on it and I'll see what it's doing, what it has done, what it will do,",
+    "start": 57.74,
+    "end": 64.48
+   },
+   {
+    "shot": 8,
+    "words": "and if any of these actions require my permission, I can grant that here or in chat.",
+    "start": 64.48,
+    "end": 69.07
+   },
+   {
+    "shot": 9,
+    "words": "The next tab is the feed,",
+    "start": 69.07,
+    "end": 70.74
+   },
+   {
+    "shot": 10,
+    "words": "and this is where Muse will find content for you that it thinks you'll find interesting.",
+    "start": 70.74,
+    "end": 74.78
+   },
+   {
+    "shot": 10,
+    "words": "And you can help define what that is using the prompt in the top of the screen.",
+    "start": 75.26,
+    "end": 79.47
+   },
+   {
+    "shot": 10,
+    "words": "And you can be very specific.",
+    "start": 79.47,
+    "end": 80.96
+   },
+   {
+    "shot": 10,
+    "words": "So if you want to see finance news in the morning and non-fiction book recommendations in the evening, you can do that.",
+    "start": 80.96,
+    "end": 86.14
+   },
+   {
+    "shot": 10,
+    "words": "Each one of these posts will be written just for you.",
+    "start": 86.14,
+    "end": 89.21
+   },
+   {
+    "shot": 11,
+    "words": "The next tab is",
+    "start": 89.21,
+    "end": 90.63
+   },
+   {
+    "shot": 12,
+    "words": "ideas, and this is where I'll find a list of proactive suggestions from my Muse based on our conversations.",
+    "start": 90.63,
+    "end": 96.96
+   },
+   {
+    "shot": 12,
+    "words": "So I'll see a list of things like lower back recovery regimen, kindergarten coordination, permit applications,",
+    "start": 96.96,
+    "end": 102.28
+   },
+   {
+    "shot": 12,
+    "words": "lots of different examples of ways that Muse thinks it can help me better.",
+    "start": 102.28,
+    "end": 106.95
+   },
+   {
+    "shot": 12,
+    "words": "And",
+    "start": 107.26,
+    "end": 107.34
+   },
+   {
+    "shot": 13,
+    "words": "ultimately, Muse is designed to help you accomplish",
+    "start": 107.52,
+    "end": 110.36
+   },
+   {
+    "shot": 14,
+    "words": "your goals, and you'll find them here on the goals tab.",
+    "start": 110.36,
+    "end": 113.16
+   },
+   {
+    "shot": 14,
+    "words": "These will appear based on your conversation with Muse; as it learns what you care about, you'll see them appear.",
+    "start": 113.16,
+    "end": 118.26
+   },
+   {
+    "shot": 14,
+    "words": "And you can see a lightweight status based on what Muse has been doing in the background.",
+    "start": 118.26,
+    "end": 122.7
+   },
+   {
+    "shot": 14,
+    "words": "You can also tap for more detail and a full timeline.",
+    "start": 122.7,
+    "end": 125.39
+   },
+   {
+    "shot": 14,
+    "words": "And if there are things that you want to tackle on a longer timeline, you can do that as well, down below.",
+    "start": 125.39,
+    "end": 131.0
+   },
+   {
+    "shot": 14,
+    "words": "Now, anything",
+    "start": 131.0,
+    "end": 131.51
+   },
+   {
+    "shot": 15,
+    "words": "you create with Muse, you can find on",
+    "start": 131.51,
+    "end": 133.63
+   },
+   {
+    "shot": 16,
+    "words": "the library tab.",
+    "start": 133.63,
+    "end": 135.18
+   },
+   {
+    "shot": 16,
+    "words": "Simple documents, PDFs, Markdown files, but also really rich and interactive artifacts, like my chess analysis dashboard right here.",
+    "start": 135.18,
+    "end": 142.44
+   },
+   {
+    "shot": 16,
+    "words": "And you can do some really interesting things with these.",
+    "start": 142.44,
+    "end": 146.3
+   },
+   {
+    "shot": 17,
+    "words": "And that's a quick walkthrough of Muse.",
+    "start": 146.54,
+    "end": 148.28
+   },
+   {
+    "shot": 17,
+    "words": "We're really excited for you to check it out.",
+    "start": 148.28,
+    "end": 150.1
+   },
+   {
+    "shot": 18,
+    "words": "You can download Muse today.",
+    "start": 150.4,
+    "end": 151.9
+   }
+  ]
+ },
+ "look": {
+  "two_worlds": "Presenter shots are dim and warm (brightness 68-72 / 255, colour ~#4d4234); screen shots are bright and cool (200-221 / 255, colour ~#c2d9ee; dark feed-instruction sheet dips the mid to 182). The cut between them is a deliberate jump from dark-warm to bright-cool, about 140 brightness steps, every time.",
+  "grade": "Presenter: warm, gently desaturated, soft contrast, slightly lifted blacks, olive-sage wall, orange shirt as the one saturated colour. Screens: clean digital, no grade.",
+  "contrast": "Low-to-medium on the presenter (no hard shadows, darker vignette corners); high-key flat on the screens.",
+  "light": "One large soft key from camera left, warm practical floor lamp in the wide, dim room around a brighter face.",
+  "depth_of_field": "A: moderate (background slightly soft but readable); B: shallow (background fully blurred); screens: none.",
+  "grain": "Fine digital, effectively clean; no film grain, no haze.",
+  "brightness_range": "Presenter A and B: 68-72; screens: 182-221; end card: 0-11 (black 152.03-152.28).",
+  "cadence": "19 shots, average 8.26 s, median 4.96 s: short presenter bridges (1.42-5.63 s) alternate with long screen holds (12.5-21.5 s). Hard cuts only."
+ },
+ "slots": [
+  {
+   "slot": "product",
+   "what": "App name, icon, avatar, and one UI screen set per tab (5 tabs + status sheet + one rich artifact). Keep the tab order chat -> status -> feed -> ideas -> goals -> library.",
+   "set_ids": [
+    "product_muse_ui",
+    "product_muse_phone",
+    "product_muse_icon",
+    "char_muse_avatar"
+   ]
+  },
+  {
+   "slot": "presenter",
+   "what": "One person who works on the product, in one warm-coloured knit top; lower third {PRESENTER_NAME} / \"Muse Product Design\". The intro line names them: \"Hey, my name is {PRESENTER_NAME} and ...\" (the 30 s cut starts after the name).",
+   "set_ids": [
+    "char_presenter",
+    "char_presenter_eyelines",
+    "char_presenter_wardrobe",
+    "voice_presenter",
+    "lines"
+   ]
+  },
+  {
+   "slot": "lines",
+   "what": "One continuous take; keep the pattern \"The next tab is | <name>\" with the cut between, and the closing \"You can download <app> today.\"",
+   "set_ids": [
+    "lines"
+   ]
+  },
+  {
+   "slot": "places",
+   "what": "Presenter set (dim, warm, styled shelves, practical lamp, plant) and the screen backdrop gradient.",
+   "set_ids": [
+    "loc_living_room_set",
+    "loc_screen_backdrop"
+   ]
+  },
+  {
+   "slot": "text",
+   "what": "Lower third (name / role) 0.5-5.09."
+  },
+  {
+   "slot": "end_card",
+   "what": "Icon, wordmark, store badges, parent-brand mark on black.",
+   "set_ids": [
+    "product_muse_icon"
+   ]
+  }
+ ],
+ "text_style": {
+  "typeface": "Clean grotesque sans with a system-UI feel (bold and regular). Measured: name cap height 3.2% / title 2.3% of frame height (title is 71% the size of the name, not 80%). Only DejaVu Sans is guaranteed on the build machine: use the sizes in lower_third.",
+  "lower_third": "Name over title, right-aligned at x 91.5%, no box, bar or shadow, sentence case. {PRESENTER_NAME}: bold white grotesque, right edge x 91.5%, baseline y 78.2%, cap height 3.2% of frame height (23 px at 720p). With DejaVu Sans Bold: 32 px at 720p (48 at 1080p), condensed to 87% width (or 28 px uncondensed); no tracking. \"Muse Product Design\": regular white, cap height 2.3% (16.6 px at 720p), right edge x 91.5%, baseline y 82.2%, the line 18.8% of frame width. With DejaVu Sans: 23 px at 720p (34.5 at 1080p), no condensing: that matches the width exactly. Fades up 0.5-1.0 s in the full film (already on at frame 1 of both cuts); hard off with the cut.",
+  "end_card": "Centred stack on black: icon, \"Muse\" in light white sans, store badges, Meta wordmark; fades up 152.28-153.0.",
+  "other": "No captions, no supers on the screens: the app UI itself carries all words."
+ },
+ "set": {
+  "char_presenter": {
+   "files": [
+    "set/char_presenter_sheet.jpg"
+   ],
+   "fixes": "The presenter: early 40s, slim, short dark curly hair greying at the temples, dark moustache and short chin goatee, hazel eyes."
+  },
+  "char_presenter_wardrobe": {
+   "files": [
+    "set/char_presenter_wardrobe.jpg"
+   ],
+   "fixes": "Rust/burnt-orange boucle-knit short-sleeve polo with three cream buttons, silver bracelet watch. (On camera the knit reads a touch more camel-brown than the sheet.)"
+  },
+  "voice_presenter": {
+   "files": [
+    "set/voice_presenter.wav"
+   ],
+   "fixes": "Timbre only (10.6 s, 16.15-26.8 of the source). For takes use the line clips (set: lines), not this."
+  },
+  "loc_living_room_set": {
+   "files": [
+    "set/loc_living_room_set.jpg"
+   ],
+   "fixes": "The presenter set: sage-grey wall, light-oak ladder shelving left with decor, warm linen floor lamp, olive tree in black planter right, pale grey stone table across the foreground; dim warm look at brightness ~70."
+  },
+  "loc_screen_backdrop": {
+   "files": [
+    "set/loc_screen_backdrop.jpg"
+   ],
+   "fixes": "The screen-shot backdrop: flat diagonal gradient near-white upper-left to sky blue #8fc3f3 lower-right."
+  },
+  "product_muse_phone": {
+   "files": [
+    "set/product_muse_phone_sheet.jpg"
+   ],
+   "fixes": "The unbranded black-bezel phone mockup the UI sits in."
+  },
+  "product_muse_ui": {
+   "files": [
+    "set/product_muse_ui_chat_status.jpg",
+    "set/product_muse_ui_feed_ideas.jpg",
+    "set/product_muse_ui_goals_library.jpg"
+   ],
+   "fixes": "App UI style per tab: chat, status sheet + permission card, feed + dark feed-instructions sheet, ideas list, goals, library, dashboard. Five-icon bottom tab bar: speech bubble, newspaper, light bulb, checkbox, four shapes."
+  },
+  "char_muse_avatar": {
+   "files": [
+    "set/char_muse_avatar_sheet.jpg"
+   ],
+   "fixes": "The agent's avatar: a small soft 3D clay figurine head with a pale blonde bob, shown top centre of every screen with the name Muse."
+  },
+  "product_muse_icon": {
+   "files": [
+    "set/product_muse_icon_sheet.jpg"
+   ],
+   "fixes": "App icon (white rounded square, blue looping hand-drawn m) and the Muse wordmark for the end card."
+  },
+  "score": {
+   "files": [
+    "set/score.wav"
+   ],
+   "fixes": "Soft A-minor pad bed at the film's level (-33 dBFS RMS), 0-157 s, Am7 bloom at 152.2 and silence from 155.2. Rebuilt from the measured pitches and levels, not lifted from the source."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L04s.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav"
+   ],
+   "fixes": "The film's recorded voice for the 30 s cut: one clip per kept phrase (L01-L07), cut from the source at the pauses, with word times in lines.json. Use each as guide_audio for the presenter take that contains it and as the voice-over on the screens. Never retime. A new film swaps in its own recorded lines and keeps lines.json as the timing target (each new line may be shorter, never sped up). L04s is the tail of L04 (\"what it's doing, what it has done, what it will do,\") for the 15 s cut."
+  },
+  "score_30": {
+   "files": [
+    "set/score_30.wav"
+   ],
+   "fixes": "The score cut to 30.0 s: score.wav 0-20.5 s, then 146.5-156.0 s, joined on the 2 s bar grid inside the same chord block with a 0.25 s equal-gain crossfade; the Am7 bloom lands at 26.0 (end card), silence from 29.2. -30.8 LUFS integrated, about -33 dBFS RMS, no level step at the join (within 0.8 dB)."
+  },
+  "ui": {
+   "files": [
+    "set/ui.json",
+    "set/ui_chat_s2.jpg",
+    "set/ui_chat_s8_researching.jpg",
+    "set/ui_chat_s8_teetimes.jpg",
+    "set/ui_chat_thread_tall.jpg",
+    "set/ui_status_sheet.jpg",
+    "set/ui_status_sheet_scrolled.jpg",
+    "set/ui_status_list_tall.jpg",
+    "set/ui_ideas_health.jpg",
+    "set/ui_goals.jpg",
+    "set/ui_end_card.jpg",
+    "set/ui_phone_frame.png"
+   ],
+   "fixes": "Every screen the 30 s cut shows, drawn flat at 1170x2532 (390x844 pt at 3x) with its exact copy and layout: chat (end of thread / top of thread with the live status pill), the status sheet (top and scrolled), the ideas list tail, the goals tab; the tall *_tall.png pages are the scroll content; ui_end_card.jpg is the 1920x1080 end card. ui.json gives the scroll positions, taps, zooms and swaps by cut30 time. Copy is the source's with third-party names made generic. set/ui_phone_frame.png is the drawn bezel (geometry in ui.json phone); ui.json layers gives how the status sheet is built and grows out of the pill."
+  },
+  "char_presenter_eyelines": {
+   "files": [
+    "set/char_presenter_eyelines.jpg"
+   ],
+   "fixes": "Where he looks, on light grey. Left: camera A, square-on, eyes into the lens. Right: camera B, head turned about 20 deg to frame right, eyes about 25 deg right of the lens (toward camera A). Use the right panel with the boards when making plate_B; the head angle and gaze must match it."
+  },
+  "score_15": {
+   "files": [
+    "set/score_15.wav"
+   ],
+   "fixes": "The score cut to 15.0 s: score.wav 0-6.5 (Am7) joined on the bar line at 6.5 to 146.5-155.0 (C, then the Am7 bloom at 12.0 under the end card), 0.4 s equal-power crossfade, no level step (within 1 dB); closes to digital zero at 15.0."
+  }
+ },
+ "setups": {
+  "A_wide": "Eye level, square-on frontal, lens at chest height (table edge horizontal, no tilt); normal lens (~40-50 mm full-frame feel); moderate depth of field: presenter sharp, shelves slightly soft but readable. Presenter addresses this lens directly. Presenter centred, body spans x 35-66% (about 30% of frame width); top of hair at 14% height, eyes at 30% (upper third), hands and phone resting on the grey stone table whose front edge runs flat across the frame at 90% height. Shelving unit fills the left third (x 7-58%, behind him), warm floor lamp at x 65-75% / y 43-55%, olive tree at x 72-100% on the right. Plain sage-grey wall above.",
+  "B_close": "Second camera ~25 deg to camera-right of A, eye level, long lens (~85-100 mm feel), shallow depth of field (background fully defocused). His eyeline passes about 25 deg to frame right of this lens, toward camera A just off frame right (head turned about 20 deg to frame right: nose right of the eye midpoint, far cheek still visible beyond the nose, irises toward the right corners of the eyes; set/char_presenter_eyelines.jpg, right panel), giving an interview-angle look. Head and shoulders, face slightly left of centre (head x 34-59%, face centre ~47%); top of hair at 8%, eyes at 37% height, chin at 62%; shoulders and polo collar fill the bottom 40% edge to edge (x 16-73%). Background is soft blur: edge of the oak shelving at the far left, dark olive-tree leaves filling the right half.",
+  "SCR_phone": "Flat 2D screen-capture composite, straight-on, no perspective, no depth of field, a faint soft shadow all round (black 18%, blur ~3% of frame height, no offset). A virtual camera scales the phone between two sizes: SMALL = whole phone visible, centred, outer x 37.6-62.4% (24.9% of frame width), y 3.8-96.1% (set/ui_phone_frame.png, geometry in set/ui.json phone); ZOOM = phone scaled 1.40x to x 32.5-67.3% (34.9% width), cropped by the frame top and/or bottom. Each size change is a 0.5 s eased scale (ease-in-out) centred on the phone's vertical axis; no pans, no rotation.",
+  "END_card": "Black graphic card, centred stack."
+ },
+ "cut30": {
+  "duration": 30.0,
+  "size": "1280x720 or 1920x1080, 24 fps",
+  "arc": "Hook (0-7.02): the presenter on the wide says why we are here, and the first screen names the product's promise, \"your personal agent who's always working for you\". Middle (7.02-16.25): the proof, B close then the status pill and status sheet: you can see what it's doing, has done, will do. Payoff (16.25-22.36): \"Muse is designed to help you accomplish your goals\", landing on the goals tab. Sign-off (22.36-26.02): A wide then B close, \"We're really excited for you to check it out. You can download Muse today.\" End card (26.02-30.0).",
+  "pace": "9 shots, average 3.33 s, median 3.17 s (source: 8.26 / 4.96). The presenter bridges keep their source lengths (1.71-3.85 s, source 1.42-5.63), the A/B pattern and the two-worlds hard cuts; the screens carry one spoken beat each (3.17-6.56 s instead of 12.5-21.5 s), which is what a 30 s spot can hold. Hard cuts only; the only black is 26.02-26.27.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0.0,
+    "end": 3.85,
+    "dur": 3.85,
+    "source_window": [
+     1.24,
+     5.09
+    ],
+    "setup": "A_wide",
+    "change": "Starts 1.24 s into source shot 1, after the presenter says his name, so the film opens on \"And I'm very excited...\"; ends on the source cut (mid \"Muse\").",
+    "lines": [
+     "L01"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_A",
+     "guide_audio": "set/lines/L01.wav",
+     "seconds": 5,
+     "use_window": [
+      0.0,
+      3.85
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s01.jpg",
+    "src": [
+     1.24,
+     5.09
+    ]
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 3.85,
+    "end": 7.02,
+    "dur": 3.17,
+    "source_window": [
+     5.09,
+     8.26
+    ],
+    "setup": "SCR_phone",
+    "change": "First 3.17 s of source shot 2: thread at its end, SMALL, then the 0.5 s push-in to ZOOM (lower half) at 1.71 s; cut out after \"for you.\" before \"And we'll start out\".",
+    "lines": [
+     "L01",
+     "L02"
+    ],
+    "render": "motion graphic from ui sheets (ui.json shot 2)",
+    "board": "boards/s02.jpg",
+    "src": [
+     5.09,
+     8.26
+    ]
+   },
+   {
+    "n": 3,
+    "from": 7,
+    "start": 7.02,
+    "end": 9.69,
+    "dur": 2.67,
+    "source_window": [
+     51.13,
+     53.8
+    ],
+    "setup": "B_close",
+    "change": "All of source shot 7 (B close).",
+    "lines": [
+     "L03"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_B",
+     "guide_audio": "set/lines/L03.wav",
+     "seconds": 4,
+     "use_window": [
+      0.0,
+      2.67
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A (eyes about 25 deg to frame right of the lens, toward camera A; head turned about 20 deg to frame right (set/char_presenter_eyelines.jpg, right panel))",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s07.jpg",
+    "src": [
+     51.13,
+     53.8
+    ]
+   },
+   {
+    "n": 4,
+    "from": 8,
+    "start": 9.69,
+    "end": 16.245,
+    "dur": 6.555,
+    "source_window": [
+     56.8,
+     63.355
+    ],
+    "setup": "SCR_phone",
+    "change": "Source shot 8 from 56.80 to 63.355 (its 3.0-9.6 s): ZOOM on the status pill, pull back, tap, the status sheet opens and scrolls. The voice jumps over \"and I can see that at the status display...\" (source 54.22-57.36).",
+    "lines": [
+     "L03",
+     "L04"
+    ],
+    "render": "motion graphic from ui sheets (ui.json shot 4)",
+    "board": "boards/s08.jpg",
+    "src": [
+     56.8,
+     63.355
+    ]
+   },
+   {
+    "n": 5,
+    "from": 13,
+    "start": 16.245,
+    "end": 19.085,
+    "dur": 2.84,
+    "source_window": [
+     107.52,
+     110.36
+    ],
+    "setup": "B_close",
+    "change": "All of source shot 13 (B close); the line starts 0.20 s before the cut (J-cut), as in the source.",
+    "lines": [
+     "L05"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_B",
+     "guide_audio": "set/lines/L05.wav",
+     "seconds": 6,
+     "use_window": [
+      0.2,
+      3.04
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A (eyes about 25 deg to frame right of the lens, toward camera A; head turned about 20 deg to frame right (set/char_presenter_eyelines.jpg, right panel))",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s13.jpg",
+    "src": [
+     107.52,
+     110.36
+    ]
+   },
+   {
+    "n": 6,
+    "from": 14,
+    "start": 19.085,
+    "end": 22.355,
+    "dur": 3.27,
+    "source_window": [
+     110.36,
+     113.63
+    ],
+    "setup": "SCR_phone",
+    "change": "First 3.27 s of source shot 14: tap on the goals tab, the goals list.",
+    "lines": [
+     "L05"
+    ],
+    "render": "motion graphic from ui sheets (ui.json shot 6)",
+    "board": "boards/s14.jpg",
+    "src": [
+     110.36,
+     113.63
+    ]
+   },
+   {
+    "n": 7,
+    "from": 17,
+    "start": 22.355,
+    "end": 24.305,
+    "dur": 1.95,
+    "source_window": [
+     148.37,
+     150.32
+    ],
+    "setup": "A_wide",
+    "change": "Source shot 17 from 148.37 (drops \"And that's a quick walkthrough of Muse.\").",
+    "lines": [
+     "L06",
+     "L07"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_A",
+     "guide_audio": "set/lines/L06.wav + set/lines/L07.wav joined (contiguous in the source; 3.66 s)",
+     "seconds": 4,
+     "use_window": [
+      0.0,
+      1.95
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s17.jpg",
+    "src": [
+     148.37,
+     150.32
+    ]
+   },
+   {
+    "n": 8,
+    "from": 18,
+    "start": 24.305,
+    "end": 26.015,
+    "dur": 1.71,
+    "source_window": [
+     150.32,
+     152.03
+    ],
+    "setup": "B_close",
+    "change": "All of source shot 18 (B close).",
+    "lines": [
+     "L07"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_B",
+     "guide_audio": "set/lines/L06.wav + set/lines/L07.wav joined (3.66 s)",
+     "seconds": 4,
+     "use_window": [
+      1.95,
+      3.66
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A (eyes about 25 deg to frame right of the lens, toward camera A; head turned about 20 deg to frame right (set/char_presenter_eyelines.jpg, right panel))",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s18.jpg",
+    "src": [
+     150.32,
+     152.03
+    ]
+   },
+   {
+    "n": 9,
+    "from": 19,
+    "start": 26.015,
+    "end": 30.0,
+    "dur": 3.985,
+    "source_window": [
+     152.03,
+     156.015
+    ],
+    "setup": "END_card",
+    "change": "Source shot 19 shortened from 4.96 to 3.99 s: same 0.25 s black and fade-up, shorter hold.",
+    "lines": [],
+    "render": "motion graphic: set/ui_end_card.jpg (ui.json shot 9)",
+    "board": "boards/s19.jpg",
+    "src": [
+     152.03,
+     156.015
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "start": 0.0,
+    "end": 4.16,
+    "words": "And I'm very excited to give you a quick walkthrough of our new app, Muse.",
+    "type": "on-camera (A, shot 1), last word \"Muse\" runs 0.31 s over the cut into shot 2",
+    "clip": "set/lines/L01.wav"
+   },
+   {
+    "id": "L02",
+    "start": 4.16,
+    "end": 7.02,
+    "words": "Your personal agent who's always working for you.",
+    "type": "voice-over (shot 2)",
+    "clip": "set/lines/L02.wav"
+   },
+   {
+    "id": "L03",
+    "start": 7.02,
+    "end": 10.11,
+    "words": "So it's useful for me to see what it's doing at any given time,",
+    "type": "on-camera (B, shot 3), \"time,\" runs 0.42 s over the cut into shot 4",
+    "clip": "set/lines/L03.wav"
+   },
+   {
+    "id": "L04",
+    "start": 10.25,
+    "end": 15.845,
+    "words": "If I want more detail, I can tap on it and I'll see what it's doing, what it has done, what it will do,",
+    "type": "voice-over (shot 4)",
+    "clip": "set/lines/L04.wav"
+   },
+   {
+    "id": "L05",
+    "start": 16.045,
+    "end": 21.965,
+    "words": "Ultimately, Muse is designed to help you accomplish your goals, and you'll find them here on the goals tab.",
+    "type": "voice-over lead-in 0.20 s (J-cut), on-camera (B, shot 5), then voice-over (shot 6)",
+    "clip": "set/lines/L05.wav"
+   },
+   {
+    "id": "L06",
+    "start": 22.355,
+    "end": 24.205,
+    "words": "We're really excited for you to check it out.",
+    "type": "on-camera (A, shot 7)",
+    "clip": "set/lines/L06.wav"
+   },
+   {
+    "id": "L07",
+    "start": 24.205,
+    "end": 26.015,
+    "words": "You can download Muse today.",
+    "type": "on-camera: \"You\" over the end of shot 7 (A), the rest on shot 8 (B)",
+    "clip": "set/lines/L07.wav"
+   }
+  ],
+  "voice_gaps": "Between phrases the voice is silent for: 0.14 s (10.11-10.25), 0.20 s (15.85-16.05), 0.39 s (21.97-22.36). Everywhere else the line clips butt-join exactly as cut.",
+  "score": {
+   "file": "set/score_30.wav",
+   "level": "native (about -33 dBFS RMS, -30.8 LUFS), no ducking: the lines were recorded over the same kind of bed",
+   "sections": [
+    {
+     "t": [
+      0.0,
+      20.5
+     ],
+     "from_score": [
+      0.0,
+      20.5
+     ],
+     "what": "pad from the top: Am7 colour, chord blocks change every 8 s at 0.5, 8.5, 16.5"
+    },
+    {
+     "t": [
+      20.5,
+      26.0
+     ],
+     "from_score": [
+      146.5,
+      152.0
+     ],
+     "what": "joined on the bar line at 20.5 (0.25 s equal-gain crossfade) inside the same chord block, so no chord step"
+    },
+    {
+     "t": [
+      26.0,
+      29.2
+     ],
+     "from_score": [
+      152.0,
+      155.2
+     ],
+     "what": "Am7 bloom under the end card, fading out"
+    },
+    {
+     "t": [
+      29.2,
+      30.0
+     ],
+     "what": "digital silence"
+    }
+   ],
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 20.5
+    },
+    {
+     "src_in": 146.5,
+     "src_out": 152.0
+    },
+    {
+     "src_in": 152.0,
+     "src_out": 155.2
+    }
+   ]
+  },
+  "text": [
+   {
+    "words": "{PRESENTER_NAME}",
+    "style": "bold white sans (grotesque, system-UI feel): DejaVu Sans Bold 32 px at 720p condensed to 87% width (or 28 px), no box or shadow",
+    "position": "right edge x 91.5%, baseline y 78.2%, cap height 3.2% of frame height",
+    "in": 0.0,
+    "out": 3.85,
+    "animation": "already fully on at the first frame (the cut starts after its 0.5-1.0 s fade); hard off with the cut"
+   },
+   {
+    "words": "Muse Product Design",
+    "style": "regular white sans, cap height 2.3% (DejaVu Sans 23 px at 720p), line width 18.8% of frame",
+    "position": "right edge x 91.5%, baseline y 82.2%",
+    "in": 0.0,
+    "out": 3.85
+   }
+  ],
+  "end_card": {
+   "file": "set/ui_end_card.jpg",
+   "black": [
+    26.015,
+    26.265
+   ],
+   "items": [
+    {
+     "what": "app icon (white rounded square, blue looping \"m\")",
+     "position": "centred, y 17-45%, 15.7% of frame width",
+     "in": [
+      26.265,
+      26.885
+     ],
+     "animation": "fades up from grey into colour, ease-out"
+    },
+    {
+     "what": "\"Muse\", light-to-medium white sans",
+     "position": "centred, y 49-56%",
+     "in": [
+      26.265,
+      26.885
+     ]
+    },
+    {
+     "what": "two generic store badges (\"GET IT ON / Mobile Store\", \"Download on the / App Market\")",
+     "position": "centred pair, y 68-74%",
+     "in": [
+      26.585,
+      26.985
+     ]
+    },
+    {
+     "what": "Meta wordmark (blue infinity + white \"Meta\")",
+     "position": "centred, y 86-90%",
+     "in": [
+      26.585,
+      26.985
+     ]
+    }
+   ],
+   "hold": [
+    26.985,
+    30.0
+   ]
+  },
+  "h3_takes": "5 takes: plate_A x2 (shots 1, 7), plate_B x3 (shots 3, 5, 8). Screens and end card are motion graphics."
+ },
+ "cut15": {
+  "duration": 15.0,
+  "size": "1280x720 or 1920x1080, 24 fps",
+  "arc": "The 30 s cut tightened to four beats. Hook (0-7.02): the presenter on the A wide, \"And I'm very excited to give you a quick walkthrough of our new app, Muse.\", then the promise \"Your personal agent who's always working for you.\" over the live status pill as it changes from \"researching courses\" to \"finding tee times\". One proof (7.02-10.29): the tap on the pill, the status sheet grows out of it: \"what it's doing, what it has done, what it will do,\" with the list scrolling on \"done\". Payoff (10.29-12.0): B close, \"You can download Muse today.\" End card (12.0-15.0). Dropped from the 30: the chat screen, the B close \"So it's useful...\", the goals beat (B close + goals tab) and the A wide thanks.",
+  "pace": "4 shots, average 3.75 s, median 3.42 s (cut30: 3.33 / 3.17; source: 8.26 / 4.96). Presenter shots keep their source lengths (A 3.85, B 1.71); the one screen carries two spoken beats (6.44 s, the 30 s cut gave it 6.56). Same pattern as the source: A wide -> screen -> B close -> black -> end card, hard cuts only, every cut between the dim set (68-72) and the bright screen (200-221).",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "cut30_shot": 1,
+    "start": 0.0,
+    "end": 3.85,
+    "dur": 3.85,
+    "source_window": [
+     1.24,
+     5.09
+    ],
+    "setup": "A_wide",
+    "change": "Same as cut30 shot 1 (source 1.24-5.09): opens on \"And I'm very excited...\", lower third already on, cut mid \"Muse\".",
+    "lines": [
+     "L01"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_A",
+     "guide_audio": "set/lines/L01.wav",
+     "seconds": 5,
+     "use_window": [
+      0.0,
+      3.85
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s01.jpg",
+    "src": [
+     1.24,
+     5.09
+    ]
+   },
+   {
+    "n": 2,
+    "from": 8,
+    "cut30_shot": 4,
+    "start": 3.85,
+    "end": 10.29,
+    "dur": 6.44,
+    "source_window": [
+     56.8,
+     63.24
+    ],
+    "setup": "SCR_phone",
+    "change": "cut30 shot 4 (source shot 8, 56.80-63.24) minus its last 0.115 s: ZOOM top on the live status pill (\"researching courses\" -> \"finding tee times\"), pull back, tap on the pill, the status sheet grows out of it, the list scrolls on \"done\". The voice changes: L02 \"Your personal agent who's always working for you.\" now plays over the status pill (the chat screen it had in cut30 is dropped), then L04s, the tail of L04.",
+    "lines": [
+     "L01",
+     "L02",
+     "L04s"
+    ],
+    "render": "motion graphic from ui sheets (ui.json cut15_shots n 2 = cut30 shot 4 shifted by -5.84 s)",
+    "board": "boards/s08.jpg",
+    "src": [
+     56.8,
+     63.24
+    ]
+   },
+   {
+    "n": 3,
+    "from": 18,
+    "cut30_shot": 8,
+    "start": 10.29,
+    "end": 12.0,
+    "dur": 1.71,
+    "source_window": [
+     150.32,
+     152.03
+    ],
+    "setup": "B_close",
+    "change": "Same as cut30 shot 8 (all of source shot 18, B close), but its guide is L07 alone.",
+    "lines": [
+     "L07"
+    ],
+    "render": {
+     "mode": "keyframe (no refs): first_frame + guide_audio",
+     "first_frame": "plate_B",
+     "guide_audio": "set/lines/L07.wav",
+     "seconds": 3,
+     "use_window": [
+      0.1,
+      1.81
+     ],
+     "prompt_rule": "locked-off tripod, no zoom, no camera movement; he speaks the guide line to camera A (eyes about 25 deg to frame right of the lens, toward camera A; head turned about 20 deg to frame right (set/char_presenter_eyelines.jpg, right panel))",
+     "if_it_drifts": "If framing scales or slides by more than 3% between first and last frame, re-render with the same first_frame and guide_audio (never switch to reference mode, which ignores first_frame). If lips drift, keep the picture and re-render with the same guide."
+    },
+    "board": "boards/s18.jpg",
+    "src": [
+     150.32,
+     152.03
+    ]
+   },
+   {
+    "n": 4,
+    "from": 19,
+    "cut30_shot": 9,
+    "start": 12.0,
+    "end": 15.0,
+    "dur": 3.0,
+    "source_window": [
+     152.03,
+     155.03
+    ],
+    "setup": "END_card",
+    "change": "Source shot 19 cut to 3.0 s (cut30: 3.99): same 0.25 s black and fade-up, 2.03 s hold.",
+    "lines": [],
+    "render": "motion graphic: set/ui_end_card.jpg (ui.json cut15_shots n 4)",
+    "board": "boards/s19.jpg",
+    "src": [
+     152.03,
+     155.03
+    ]
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "start": 0.0,
+    "end": 4.16,
+    "words": "And I'm very excited to give you a quick walkthrough of our new app, Muse.",
+    "type": "on-camera (A, shot 1); \"Muse.\" runs 0.31 s over the cut into shot 2",
+    "clip": "set/lines/L01.wav"
+   },
+   {
+    "id": "L02",
+    "start": 4.16,
+    "end": 7.02,
+    "words": "Your personal agent who's always working for you.",
+    "type": "voice-over (shot 2, over the ZOOM on the status pill)",
+    "clip": "set/lines/L02.wav"
+   },
+   {
+    "id": "L04s",
+    "start": 7.16,
+    "end": 10.135,
+    "words": "what it's doing, what it has done, what it will do,",
+    "type": "voice-over (shot 2, over the status sheet); shortened from L04, never sped up",
+    "clip": "set/lines/L04s.wav"
+   },
+   {
+    "id": "L07",
+    "start": 10.19,
+    "end": 12.0,
+    "words": "You can download Muse today.",
+    "type": "on-camera (B, shot 3); starts 0.10 s before the cut (\"You\" at 10.27)",
+    "clip": "set/lines/L07.wav"
+   }
+  ],
+  "voice_gaps": "Clips butt-join except 7.02-7.16 (0.14 s) and 10.135-10.19 (0.055 s). Audible pauses: 0.21 s after \"for you.\" (6.98-7.19) and 0.15 s after \"will do,\" (10.12-10.27).",
+  "score": {
+   "file": "set/score_15.wav",
+   "level": "native (about -33 dBFS RMS), no ducking, as in cut30",
+   "sections": [
+    {
+     "t": [
+      0.0,
+      6.5
+     ],
+     "from_score": [
+      0.0,
+      6.5
+     ],
+     "what": "pad from the top, Am7 block (bars 1-3 of the 2 s grid from 0.5)"
+    },
+    {
+     "t": [
+      6.5,
+      12.0
+     ],
+     "from_score": [
+      146.5,
+      152.0
+     ],
+     "what": "joined on the bar line at 6.5 (0.4 s equal-power crossfade) into the C block at its bar 2: Am7 -> C, a common-tone change (C, E, G held), as if the F block were skipped"
+    },
+    {
+     "t": [
+      12.0,
+      14.6
+     ],
+     "from_score": [
+      152.0,
+      154.6
+     ],
+     "what": "Am7 bloom under the black and the end card (the musical end)"
+    },
+    {
+     "t": [
+      14.6,
+      15.0
+     ],
+     "from_score": [
+      154.6,
+      155.0
+     ],
+     "what": "the bloom fading; last 0.25 s closed to digital zero"
+    }
+   ],
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 6.5
+    },
+    {
+     "src_in": 146.5,
+     "src_out": 152.0
+    },
+    {
+     "src_in": 152.0,
+     "src_out": 154.6
+    },
+    {
+     "src_in": 154.6,
+     "src_out": 155.0
+    }
+   ]
+  },
+  "text": [
+   {
+    "words": "{PRESENTER_NAME}",
+    "style": "bold white sans (grotesque, system-UI feel): DejaVu Sans Bold 32 px at 720p condensed to 87% width (or 28 px), no box or shadow",
+    "position": "right edge x 91.5%, baseline y 78.2%, cap height 3.2% of frame height",
+    "in": 0.0,
+    "out": 3.85,
+    "animation": "already fully on at the first frame (the cut starts after its 0.5-1.0 s fade); hard off with the cut"
+   },
+   {
+    "words": "Muse Product Design",
+    "style": "regular white sans, cap height 2.3% (DejaVu Sans 23 px at 720p), line width 18.8% of frame",
+    "position": "right edge x 91.5%, baseline y 82.2%",
+    "in": 0.0,
+    "out": 3.85
+   }
+  ],
+  "end_card": {
+   "file": "set/ui_end_card.jpg",
+   "black": [
+    12.0,
+    12.25
+   ],
+   "items": [
+    {
+     "what": "app icon (white rounded square, blue looping \"m\")",
+     "position": "centred, y 17-45%, 15.7% of frame width",
+     "in": [
+      12.25,
+      12.87
+     ],
+     "animation": "fades up from grey into colour, ease-out"
+    },
+    {
+     "what": "\"Muse\", light-to-medium white sans",
+     "position": "centred, y 49-56%",
+     "in": [
+      12.25,
+      12.87
+     ]
+    },
+    {
+     "what": "two generic store badges (\"GET IT ON / Mobile Store\", \"Download on the / App Market\")",
+     "position": "centred pair, y 68-74%",
+     "in": [
+      12.57,
+      12.97
+     ]
+    },
+    {
+     "what": "Meta wordmark (blue infinity + white \"Meta\")",
+     "position": "centred, y 86-90%",
+     "in": [
+      12.57,
+      12.97
+     ]
+    }
+   ],
+   "hold": [
+    12.97,
+    15.0
+   ]
+  },
+  "h3_takes": "2 takes: plate_A + L01 (shot 1; the same take as cut30 shot 1, reuse it if made), plate_B + L07 (shot 3). The screen and end card are motion graphics."
+ }
+}

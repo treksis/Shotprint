@@ -18,6 +18,20 @@ const MAX_STATE_BYTES = 500_000;
 
 studioRoutes.get('/templates', (c) => c.json({ templates: STUDIO_TEMPLATES }));
 
+studioRoutes.get('/templates/:id', async (c) => {
+  const template = STUDIO_TEMPLATES.find((t) => t.id === c.req.param('id'));
+  if (!template) return c.json({ error: 'not_found' }, 404);
+  const detail = (await studioSandbox()?.templateDetail?.(template.id)) ?? null;
+  return c.json({ template, detail });
+});
+
+studioRoutes.get('/templates/:id/files/*', async (c) => {
+  const id = c.req.param('id');
+  const rel = decodeURIComponent(c.req.path.split(`/templates/${id}/files/`)[1] ?? '');
+  const res = await studioSandbox()?.templateFile?.(id, rel, c.req.header('range'));
+  return res ?? c.json({ error: 'not_found' }, 404);
+});
+
 studioRoutes.get('/projects', async (c) => c.json({ projects: await studioStore(c.env).list() }));
 
 studioRoutes.get('/projects/:id', async (c) => {

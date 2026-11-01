@@ -1,0 +1,414 @@
+{
+ "ui_etch_diagonal": {
+  "shot": 50,
+  "file": "set/ui_etch_diagonal.jpg",
+  "state": "finished lines 1-2 (as at 106.6 s / cut30 T 21.76)",
+  "surface": "dark slate shell, #1F2C31, fine speckle; measured brightness 47-53",
+  "typeface": "Share Tech Mono (set/font_etch.ttf): square, slightly rounded monospaced capitals, uniform stroke thickened by 3.5% of the cap height (bold, stroke ~12% of the cap); etched colour #B8C6CA, no glow except the spark",
+  "rotation_deg": 32.0,
+  "rotation_note": "the whole block is rotated 32 degrees clockwise (baselines run DOWN to the right at 32 degrees below horizontal); pivot = top-left corner of the first 'D'",
+  "pivot_pct": [
+   32.0,
+   28.0
+  ],
+  "cap_height_pct_of_frame_height": 6.6,
+  "letter_pitch_pct_of_frame_width": 4.0,
+  "lines": [
+   {
+    "words": "DESIGNED",
+    "offset_perp_pct_h": 0.0
+   },
+   {
+    "words": "IN CALIFORNIA",
+    "offset_perp_pct_h": 9.0,
+    "note": "left-aligned under line 1, measured perpendicular to the baseline"
+   }
+  ],
+  "extent_pct": {
+   "DESIGNED": {
+    "x": [
+     30.5,
+     58
+    ],
+    "y": [
+     28,
+     60
+    ]
+   },
+   "IN CALIFORNIA": {
+    "x": [
+     26,
+     70
+    ],
+    "y": [
+     36,
+     85
+    ]
+   }
+  },
+  "timeline": {
+   "cut30_shot": 12,
+   "map": "cut30 T = source - 84.84",
+   "camera": "slow push in, scale 1.00 -> 1.06 over the shot, linear, centred on the text block",
+   "events": [
+    {
+     "src": 104.15,
+     "T": 19.31,
+     "what": "cut in: 'DESIGNE' already etched, spark on the 8th letter (the final D)"
+    },
+    {
+     "src": 104.3,
+     "T": 19.46,
+     "what": "'DESIGNED' complete; spark jumps to the start of line 2"
+    },
+    {
+     "src": 104.45,
+     "T": 19.61,
+     "what": "line 2 starts; 8.5 letters per second, spark rides the leading edge of the newest letter"
+    },
+    {
+     "src": 105.6,
+     "T": 20.76,
+     "what": "'IN CALIFOR' written"
+    },
+    {
+     "src": 105.95,
+     "T": 21.11,
+     "what": "'IN CALIFORNIA' complete; spark off"
+    },
+    {
+     "src": 107.9,
+     "T": 23.06,
+     "what": "spark reappears lower left at (19.5%, 59%) starting the next line (BUILT, mostly outside the frame)"
+    }
+   ],
+   "spark": "white core ~1.1% W, a horizontal blue-white streak ~6% W, faint warm halo ~10% W; the only glow in the film",
+   "cut15": {
+    "shot": 6,
+    "map": "cut15 T = source - 94.82",
+    "window": [
+     104.15,
+     106.15
+    ]
+   }
+  },
+  "texture": "see template.json look.etch_texture (surface, letters, spark, focus); spark look set/fx_etch_spark.jpg (left)"
+ },
+ "ui_etch_flat": {
+  "shot": 51,
+  "file": "set/ui_etch_flat.jpg",
+  "state": "all text written, flag complete (as at 111.1 s)",
+  "typeface": "same as s50",
+  "cap_height_pct_of_frame_height": 8.0,
+  "letter_pitch_pct_of_frame_width": 3.95,
+  "perspective": "near straight-on; the measured boxes already include the slight perspective (lines on the right sit ~2% lower, letters there ~10% larger); draw flat at these positions",
+  "items_pct": {
+   "DESIGNED": {
+    "x": [
+     12.5,
+     44
+    ],
+    "y": [
+     27.8,
+     39.4
+    ]
+   },
+   "IN CALIFORNIA": {
+    "x": [
+     11.4,
+     62.8
+    ],
+    "y": [
+     39,
+     53
+    ]
+   },
+   "BUILT": {
+    "x": [
+     9,
+     29
+    ],
+    "y": [
+     57,
+     67.5
+    ]
+   },
+   "IN": {
+    "x": [
+     8,
+     16
+    ],
+    "y": [
+     67.5,
+     75.5
+    ]
+   },
+   "AMERICA": {
+    "x": [
+     63,
+     92.5
+    ],
+    "y": [
+     76,
+     88
+    ]
+   },
+   "flag": {
+    "x": [
+     81,
+     95
+    ],
+    "y": [
+     39,
+     50
+    ],
+    "form": "7 etched stripes; the top 4 start at 42% of the flag width; a 4x5 dot field in the canton"
+   }
+  },
+  "relation": "s51 is the label's claim block (ui_label s52) magnified ~2.8x horizontally and ~3.4x vertically: same words, same relative layout",
+  "timeline": {
+   "cut30_shot": 13,
+   "map": "cut30 T = source - 85.61",
+   "camera": "locked off",
+   "events": [
+    {
+     "src": 108.82,
+     "T": 23.21,
+     "what": "cut in: DESIGNED / IN CALIFORNIA / BUILT present; spark writing 'IN' under BUILT"
+    },
+    {
+     "src": 109.15,
+     "T": 23.54,
+     "what": "'IN' done; spark jumps to the lower right"
+    },
+    {
+     "src": 109.25,
+     "T": 23.64,
+     "what": "AMERICA starts, ~6.5 letters per second"
+    },
+    {
+     "src": 110.35,
+     "T": 24.74,
+     "what": "AMERICA complete"
+    },
+    {
+     "src": 110.45,
+     "T": 24.84,
+     "what": "flag: stripes etched left to right, top to bottom, then the dot field"
+    },
+    {
+     "src": 111.15,
+     "T": 25.54,
+     "what": "cut to the label with the spark still on the flag"
+    }
+   ],
+   "cut15": {
+    "shot": 7,
+    "map": "cut15 T = source - 97.97",
+    "window": [
+     109.3,
+     111.15
+    ]
+   }
+  },
+  "texture": "see template.json look.etch_texture; two or three spark heads often lit at once (set/fx_etch_spark.jpg, right)"
+ },
+ "ui_label": {
+  "shot": 52,
+  "file": "set/ui_label.jpg",
+  "state": "the finished label, held",
+  "items_pct": {
+   "{PRODUCT} wordmark": {
+    "x": [
+     13.6,
+     31.3
+    ],
+    "y": [
+     26,
+     32.5
+    ],
+    "font": "bold geometric sans, mixed case, cap height 4.7% H, #BEC8CC (drawn here as 'Product')"
+   },
+   "{COMPANY} INDUSTRIES": {
+    "x": [
+     13.6,
+     36.9
+    ],
+    "y": [
+     37.5,
+     40.3
+    ]
+   },
+   "EST.-{YEAR}": {
+    "x": [
+     13.6,
+     25
+    ],
+    "y": [
+     41,
+     44
+    ]
+   },
+   "DESIGNED": {
+    "x": [
+     42.3,
+     52.7
+    ],
+    "y": [
+     26.7,
+     29.4
+    ]
+   },
+   "IN CALIFORNIA": {
+    "x": [
+     42.3,
+     59
+    ],
+    "y": [
+     30,
+     33
+    ]
+   },
+   "flag": {
+    "x": [
+     62.3,
+     68.8
+    ],
+    "y": [
+     26.7,
+     32.8
+    ]
+   },
+   "BUILT": {
+    "x": [
+     42.3,
+     48.6
+    ],
+    "y": [
+     37.5,
+     40.3
+    ]
+   },
+   "IN": {
+    "x": [
+     42.3,
+     45.2
+    ],
+    "y": [
+     41,
+     44
+    ]
+   },
+   "AMERICA": {
+    "x": [
+     60.6,
+     69
+    ],
+    "y": [
+     41,
+     44
+    ]
+   }
+  },
+  "small_text": "etch mono caps, cap height 2.6% H, pitch 1.28% W, #96A5AA",
+  "plate": "hazard stripes on the left edge (0-10% x, 27-70% y); a raised panel edge from (8%,75%) to (14%,66%) then straight right at 66% y; a rubber foot top right (90-100% x, 20-35% y); the bottom 40% fades to black",
+  "timeline": {
+   "cut30_shot": 14,
+   "map": "cut30 T = source - 85.61",
+   "camera": "locked off",
+   "events": [
+    {
+     "src": 111.15,
+     "T": 25.54,
+     "what": "cut in; a last spark finishes the flag's top stripe at the flag's right end"
+    },
+    {
+     "src": 111.65,
+     "T": 26.04,
+     "what": "spark off; the label holds to the cut"
+    }
+   ]
+  }
+ },
+ "ui_end_card": {
+  "shot": 53,
+  "file": "set/ui_end_card.jpg",
+  "background": "pure black (measured brightness 1)",
+  "items_pct": {
+   "{BRAND_MARK} icon": {
+    "x": [
+     4.5,
+     8.6
+    ],
+    "y": [
+     46,
+     53
+    ],
+    "form": "white line-art emblem, ~7% H tall, stroke ~0.6% H (placeholder box here)"
+   },
+   "{COMPANY} wordmark": {
+    "x": [
+     9.4,
+     25.8
+    ],
+    "y": [
+     46.8,
+     51.9
+    ],
+    "font": "bold geometric sans, ALL CAPS, white, cap height 5.1% H"
+   },
+   "{FINE_PRINT}": {
+    "x": [
+     67.2,
+     75.4
+    ],
+    "y": [
+     7.2,
+     10.7
+    ],
+    "words": [
+     "{COMPANY}—PROPRIETARY",
+     "COPYRIGHT © {YEAR}",
+     "ALL RIGHTS RESERVED"
+    ],
+    "font": "regular sans caps, cap height ~0.95% H, line pitch 1.4% H, light grey #CDCDCD"
+   },
+   "{DOMAIN}": {
+    "x": [
+     90.7,
+     95.4
+    ],
+    "y": [
+     7.1,
+     8.0
+    ],
+    "words": "{COMPANY}.COM",
+    "align": "right edge at 95.4%"
+   }
+  },
+  "animation": "cuts in on the cut, no animation; holds to the end",
+  "timeline": {
+   "cut30_shot": 15,
+   "events": [
+    {
+     "T": 27.5,
+     "what": "cut in, all items at once, holds to 30.00"
+    }
+   ],
+   "cut15": {
+    "shot": 8,
+    "events": [
+     {
+      "T": 13.18,
+      "what": "cut in, all items at once, holds to 15.00"
+     }
+    ]
+   }
+  }
+ },
+ "fonts": {
+  "set/font_etch.ttf": "Share Tech Mono (SIL Open Font License): the etch and the label's small caps, drawn bold (stroke +3.5% of cap height)",
+  "set/font_sans.ttf": "Inter variable (SIL OFL): the {PRODUCT} wordmark (Bold), the end-card wordmark (Bold) and fine print (Regular)"
+ },
+ "note": "Positions are % of frame width (x) and height (y), measured on the source frames. Each ui_*.png is the exact layout at full size with neutral placeholders for the slots ({PRODUCT}, {COMPANY}, {YEAR}, {BRAND_MARK}); swap the words, keep the boxes."
+}

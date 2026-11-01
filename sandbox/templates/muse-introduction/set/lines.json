@@ -1,0 +1,109 @@
+{
+ "note": "The film has no speech. Its only heard words are the sung lyrics of the score. These clips are cut from set/score.wav at phrase boundaries and serve as the timing target; a new film replaces the score (and these) together.",
+ "lines": [
+  {
+   "id": "L01",
+   "clip": "set/lines/L01.wav",
+   "start": 0.46,
+   "end": 6.14,
+   "clip_start": 0.38,
+   "clip_end": 6.26,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "Game for the game with a brand new sauce Get, get ready, got the brand brand brand new",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L02",
+   "clip": "set/lines/L02.wav",
+   "start": 15.74,
+   "end": 18.78,
+   "clip_start": 15.66,
+   "clip_end": 18.9,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "Got the sauce to make you go",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L03",
+   "clip": "set/lines/L03.wav",
+   "start": 21.42,
+   "end": 25.98,
+   "clip_start": 21.34,
+   "clip_end": 26.1,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "Game for the game with a brand new sauce Get get ready got the brand brand brand brand new",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L04",
+   "clip": "set/lines/L04.wav",
+   "start": 30.46,
+   "end": 39.82,
+   "clip_start": 30.38,
+   "clip_end": 39.94,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "Are you ready for this? this? It's nothing better than this If you're ready for this go one two three move it",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L05",
+   "clip": "set/lines/L05.wav",
+   "start": 40.14,
+   "end": 55.82,
+   "clip_start": 40.06,
+   "clip_end": 55.94,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "I got the sauce to make you go I got the sauce to make you go I got the sauce to make you go One two three move it I got the sauce to make you go I got the sauce to make you go I got the sauce to make you go",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L06",
+   "clip": "set/lines/L06.wav",
+   "start": 56.78,
+   "end": 64.38,
+   "clip_start": 56.7,
+   "clip_end": 64.5,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "I got the sauce to make you go I got the sauce to make you go I got the sauce to make you go",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L07",
+   "clip": "set/lines/L07.wav",
+   "start": 65.5,
+   "end": 73.18,
+   "clip_start": 65.42,
+   "clip_end": 73.3,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "I got the sauce to make you go I got the sauce to make you go I got the sauce to make you go",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  },
+  {
+   "id": "L08",
+   "clip": "set/lines/L08.wav",
+   "start": 73.42,
+   "end": 81.1,
+   "clip_start": 73.34,
+   "clip_end": 81.22,
+   "kind": "sung lyric (lead vocal inside score.wav; not dialogue, not voice-over; never lay a clip separately over the score)",
+   "speaker": "singer",
+   "text": "I got the sauce to make you go I got the sauce to make you go I got the sauce to make you go",
+   "words": null,
+   "words_note": "Sung over the full band: the transcriber returns phrase times only, so no word times are given. Phrases repeat once per bar (2.083 s)."
+  }
+ ]
+}

@@ -1,4 +1,4 @@
-import type { DirectorModel, SessionView, StudioEdge, StudioEvent, StudioProject, TurnRequest } from '../../shared/studio';
+import type { DirectorModel, SessionView, StudioEdge, StudioEvent, StudioProject, TemplateDetail, TurnRequest } from '../../shared/studio';
 
 /** A project's live Muse Code session and its workspace, wherever the sandbox runs. */
 export interface ProjectSession {
@@ -21,6 +21,9 @@ export interface StudioSandbox {
   runnable(): Promise<boolean>;
   open(project: StudioProject): Promise<ProjectSession>;
   remove(projectId: string): Promise<void>;
+  /** A ready template's cuts, storyboards and ingredient set (sandbox/templates/<id>). */
+  templateDetail?(id: string): Promise<TemplateDetail | null>;
+  templateFile?(id: string, rel: string, range?: string | null): Promise<Response>;
 }
 
 let impl: StudioSandbox | null = null;

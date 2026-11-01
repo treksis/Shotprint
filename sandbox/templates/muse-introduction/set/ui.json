@@ -1,0 +1,407 @@
+{
+ "coords": "% of a 1920x1080 frame, [left, top, right, bottom]; times are source seconds and cut30 seconds",
+ "font": "friendly geometric sans (Avenir Next / Figtree / Inter as stand-ins): demi for names and buttons, regular for chat and fields",
+ "colours": {
+  "canvas": "#F7F8FA",
+  "assistant_bubble": "#E9EAEC",
+  "user_bubble": "#CFE4FB",
+  "ink": "#1C1E21",
+  "muted": "#787C82",
+  "action_blue": "#1A6CF0",
+  "card_grey": "#ECEEF1",
+  "field": "#F2F3F5",
+  "helper_text": "#96A5C8"
+ },
+ "screens": [
+  {
+   "id": "ui_chat_signup",
+   "file": "set/ui_chat_signup.jpg",
+   "shot": 19,
+   "state_src": 40.3,
+   "state_cut30": 13.18,
+   "states": [
+    {
+     "src": 37.71,
+     "cut30": 10.58,
+     "cut15": 8.54,
+     "bubble1": [
+      16.2,
+      32.1,
+      46.0,
+      47.0
+     ],
+     "dots": [
+      16.2,
+      48.8,
+      29.5,
+      59.9
+     ]
+    },
+    {
+     "src": 39.4,
+     "cut30": 12.28,
+     "cut15": 10.23,
+     "bubble1": [
+      16.2,
+      32.1,
+      46.0,
+      47.0
+     ],
+     "bubble2": [
+      16.2,
+      49.0,
+      49.7,
+      63.8
+     ]
+    },
+    {
+     "src": 40.25,
+     "cut30": 13.13,
+     "cut15": null,
+     "bubble1": [
+      16.2,
+      15.4,
+      46.0,
+      30.3
+     ],
+     "bubble2": [
+      16.2,
+      32.4,
+      49.7,
+      47.2
+     ],
+     "user": [
+      64.5,
+      48.9,
+      83.6,
+      60.1
+     ]
+    }
+   ],
+   "avatar": {
+    "centre_x": 50,
+    "top": 7.8,
+    "diameter_h": 15.6
+   },
+   "label": [
+    45.6,
+    22.0,
+    54.6,
+    29.0
+   ],
+   "scroll": "39.50-40.25 up 16.7% H ease-in-out (the earlier 21% figure was wrong)",
+   "taps": [],
+   "typing": [
+    {
+     "text": "I found a local 10k in November.",
+     "src": [
+      38.375,
+      38.708
+     ]
+    },
+    {
+     "text": "Should I sign you up?",
+     "src": [
+      39.25,
+      39.333
+     ]
+    }
+   ],
+   "note": "Boxes in states are measured on frames and win over the drawn sheet where they differ; both two-line grey bubbles are 14.8% H tall."
+  },
+  {
+   "id": "ui_task_card",
+   "file": "set/ui_task_card.jpg",
+   "shot": 20,
+   "state_src": 41.0,
+   "state_cut30": 13.88,
+   "card": [
+    16.25,
+    43.3,
+    51.25,
+    90.0
+   ],
+   "moves": [
+    {
+     "src": [
+      40.57,
+      41.11
+     ],
+     "cut30": [
+      13.45,
+      13.99
+     ],
+     "what": "rise from below to top 43.3% H, ease-out"
+    },
+    {
+     "src": [
+      41.36,
+      41.86
+     ],
+     "cut30": [
+      14.24,
+      14.74
+     ],
+     "what": "scroll up 33% H, scale 1.0->1.2 about top-left"
+    },
+    {
+     "src": [
+      42.02,
+      42.4
+     ],
+     "cut30": [
+      14.9,
+      15.28
+     ],
+     "what": "expand into the phone browser (ui_browser_form)"
+    }
+   ],
+   "status_pill": {
+    "box": [
+     39.4,
+     21.8,
+     61.3,
+     33.8
+    ],
+    "text": "Muse / Building your plan"
+   }
+  },
+  {
+   "id": "ui_browser_form",
+   "file": "set/ui_browser_form.jpg",
+   "full_content": "set/ui_form_full.jpg",
+   "shot": 21,
+   "state_src": 43.0,
+   "state_cut30": 15.88,
+   "bezel": [
+    10.4,
+    9.1,
+    55.3,
+    130
+   ],
+   "screen_x": [
+    16.6,
+    48.1
+   ],
+   "status_pill": {
+    "avatar_centre": [
+     77.5,
+     36.7
+    ],
+    "pill": [
+     66.5,
+     45.5,
+     88.5,
+     60.0
+    ],
+    "text": "Muse / Signing you up"
+   },
+   "typing": [
+    {
+     "field": "Full Name",
+     "value": "Rachel Smith",
+     "src": [
+      42.25,
+      42.55
+     ]
+    },
+    {
+     "field": "Email",
+     "value": "rachelsmith@mail.com",
+     "src": [
+      42.55,
+      42.85
+     ]
+    },
+    {
+     "field": "Age on Race Day",
+     "value": "27",
+     "src": [
+      42.9,
+      42.95
+     ]
+    },
+    {
+     "field": "Phone",
+     "value": "212-555-0173",
+     "src": [
+      43.0,
+      43.2
+     ]
+    },
+    {
+     "field": "Choose your event",
+     "value": "10k Run (menu 5k Run / ticked 10k Run open 43.70-44.10)",
+     "src": [
+      43.7,
+      44.1
+     ]
+    },
+    {
+     "field": "Predicted Time",
+     "value": "10:45",
+     "src": [
+      43.9,
+      44.1
+     ]
+    }
+   ],
+   "scroll": [
+    {
+     "src": [
+      43.25,
+      44.4
+     ],
+     "what": "content up 60% H, linear"
+    },
+    {
+     "src": [
+      44.4,
+      45.0
+     ],
+     "what": "whole browser rises 45% H revealing the two buttons"
+    }
+   ],
+   "buttons": [
+    "Take control of the browser (blue)",
+    "Stop the task (white)"
+   ],
+   "helper": "Just for fun — helps with start wave and bragging rights."
+  },
+  {
+   "id": "ui_submit_closeup",
+   "file": "set/ui_submit_closeup.jpg",
+   "shot": 22,
+   "state_src": 45.4,
+   "state_cut30": 18.28,
+   "button": [
+    8.75,
+    51.0,
+    84.4,
+    72.0
+   ],
+   "zooms": [
+    {
+     "src": [
+      45.0,
+      45.27
+     ],
+     "button_w": [
+      38,
+      52
+     ],
+     "ease": "ease-in"
+    },
+    {
+     "src": [
+      45.27,
+      45.4
+     ],
+     "button_w": [
+      52,
+      75.6
+     ],
+     "ease": "ease-in, 3 frames"
+    },
+    {
+     "src": [
+      45.4,
+      45.69
+     ],
+     "button_w": [
+      75.6,
+      86.9
+     ],
+     "ease": "ease-out"
+    }
+   ],
+   "taps": [
+    {
+     "src": 45.73,
+     "cut30": 18.61,
+     "what": "press: 93% scale, 10% darker, release 45.94"
+    }
+   ],
+   "wash": {
+    "src": [
+     46.0,
+     46.3
+    ],
+    "to": "#CFE0F8 button, white card"
+   }
+  },
+  {
+   "id": "ui_chat_youre_in",
+   "file": "set/ui_chat_youre_in.jpg",
+   "shot": 23,
+   "state_src": 47.3,
+   "state_cut30": 20.18,
+   "grey": [
+    25.6,
+    24.7,
+    53.4,
+    42.9
+   ],
+   "blue": [
+    46.5,
+    50.5,
+    74.0,
+    69.0
+   ],
+   "blue_enters_from": [
+    46.5,
+    63.0,
+    74.0,
+    82.0
+   ],
+   "enter_src": [
+    46.9,
+    47.3
+   ]
+  },
+  {
+   "id": "ui_end_card",
+   "file": "set/ui_end_card.jpg",
+   "shot": 37,
+   "state_src": 82.3,
+   "state_cut30": 30.18,
+   "icon": [
+    43.75,
+    27.8,
+    56.25,
+    50.0
+   ],
+   "name": "Muse, white, centred at 55.6% H",
+   "badges": [
+    [
+     40.25,
+     66.0,
+     49.4,
+     71.6
+    ],
+    [
+     50.1,
+     66.0,
+     59.1,
+     71.6
+    ]
+   ],
+   "badge_copy": [
+    "DOWNLOAD / on mobile",
+    "GET THE APP / on tablet"
+   ],
+   "logo": [
+    44.1,
+    87.0,
+    55.6,
+    91.8
+   ],
+   "logo_file": "set/ui_meta_logo.jpg"
+  }
+ ],
+ "assets": {
+  "file": "set/ui_assets_30.jpg",
+  "source_sheet": "set/ui_emoji_sheet.jpg",
+  "order": "row 1: sneaker (task-card / form thumbnail), jogger (You're in.), pie chart (tracks your goals); row 2: girl runner (builds plans), sleep mask (analyzes sleep), pen (fills out forms); row 3: app icon tile, idle avatar, working avatar"
+ }
+}

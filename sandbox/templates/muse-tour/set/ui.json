@@ -1,0 +1,486 @@
+{
+ "about": "Screen builds: shots = the 30 s cut (cut30 seconds), cut15_shots = the 15 s cut (cut15 seconds). Times are cut seconds (src = source seconds). Sheets are 390x844 pt drawn at 3x. scroll_pt = how far the tall page is scrolled (pt, 0 = top). Positions are % of the phone screen (x from left, y from top) unless they say frame. Phone on set/loc_screen_backdrop.jpg. SMALL = whole phone visible, centred, outer x 37.6-62.4% of frame, y 3.8-96.1%. ZOOM = 1.40x SMALL (phone 34.9% of frame width, x 32.5-67.3%), cropped by the frame: ZOOM top keeps the phone top at y 4.1%, ZOOM low keeps its bottom at y 94%. Phone geometry and the bezel PNG: see phone. Every scale change is ease-in-out. Taps are a soft grey touch circle (56 pt, 35% grey, 0.25 s fade in/out); taps and scrolls are silent.",
+ "offsets_pt": {
+  "chat_thread_tall": {
+   "m_q": 40,
+   "m_coach": 125,
+   "m_stamp": 467,
+   "m_flight": 500,
+   "m_reply": 702,
+   "m_muse2": 787,
+   "m_end": 919
+  },
+  "status_list_tall": {
+   "a_day": 0,
+   "a1": 30,
+   "a2": 101,
+   "a3": 190,
+   "a4": 261,
+   "a5": 349,
+   "a6": 438,
+   "a7": 509,
+   "a8": 580
+  }
+ },
+ "shots": [
+  {
+   "n": 2,
+   "t": [
+    3.85,
+    7.02
+   ],
+   "src": [
+    5.09,
+    8.26
+   ],
+   "sheet": "ui_chat_s2.jpg",
+   "page": "ui_chat_thread_tall.jpg",
+   "scroll_pt": 225,
+   "notes": "Thread at its end: the flight-price message (no reaction yet), the user reply, Muse's reply above \"+ Message\"; chat tab selected. Nothing in the screen moves.",
+   "camera": [
+    {
+     "t": [
+      3.85,
+      5.56
+     ],
+     "size": "SMALL"
+    },
+    {
+     "t": [
+      5.56,
+      6.06
+     ],
+     "move": "push in SMALL -> ZOOM, anchored low: phone bottom edge ends at frame y 94%, top cropped"
+    },
+    {
+     "t": [
+      6.06,
+      7.02
+     ],
+     "size": "ZOOM low"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "t": [
+    9.69,
+    16.245
+   ],
+   "src": [
+    56.8,
+    63.355
+   ],
+   "page": [
+    "ui_chat_thread_tall.jpg",
+    "ui_status_list_tall.jpg"
+   ],
+   "events": [
+    {
+     "t": 9.69,
+     "src": 56.8,
+     "sheet": "ui_chat_s8_researching.jpg",
+     "scroll_pt": -3,
+     "what": "top of the thread: the user's chess question under the header, the coaching reply with a fire reaction, the flight message with a red heart; header pill \"Muse / researching courses\" with a small golf-flag icon"
+    },
+    {
+     "t": 10.19,
+     "src": 57.3,
+     "tap": {
+      "x": 78,
+      "y": 44,
+      "dur": 0.3
+     },
+     "what": "a touch circle blinks on the right of the coaching reply; nothing changes"
+    },
+    {
+     "t": 10.39,
+     "src": 57.5,
+     "sheet": "ui_chat_s8_teetimes.jpg",
+     "what": "status pill text changes to \"finding tee times\" (clock icon), 0.15 s crossfade"
+    },
+    {
+     "t": 11.89,
+     "src": 59.0,
+     "tap": {
+      "x": 50,
+      "y": 12,
+      "dur": 0.25
+     },
+     "what": "tap on the status pill, on the word \"tap\" (11.93)"
+    },
+    {
+     "t": [
+      11.99,
+      12.34
+     ],
+     "src": [
+      59.1,
+      59.45
+     ],
+     "sheet": "ui_status_sheet.jpg",
+     "what": "the status sheet grows out of the pill: a white card grows from the pill box to full screen in 0.35 s, ease-out, corners 38 pt; the chat behind blurs and darkens to 78% (exact boxes: ui.json layers.sheet_grow)"
+    },
+    {
+     "t": [
+      12.34,
+      14.79
+     ],
+     "src": [
+      59.45,
+      61.9
+     ],
+     "sheet": "ui_status_sheet.jpg",
+     "scroll_pt": 0,
+     "what": "sheet holds at the top: \"Wednesday\" and the first five finished tasks"
+    },
+    {
+     "t": 14.79,
+     "src": 61.9,
+     "sheet": "ui_status_sheet_scrolled.jpg",
+     "what": "status line changes to \"drafting email\" (writing-hand icon)"
+    },
+    {
+     "t": [
+      14.79,
+      15.29
+     ],
+     "src": [
+      61.9,
+      62.4
+     ],
+     "scroll_pt": [
+      0,
+      186
+     ],
+     "what": "list scrolls up, ease-out (\"what it has done\")"
+    },
+    {
+     "t": [
+      15.69,
+      16.19
+     ],
+     "src": [
+      62.8,
+      63.3
+     ],
+     "scroll_pt": [
+      186,
+      147
+     ],
+     "what": "small settle back down; holds to the cut"
+    }
+   ],
+   "camera": [
+    {
+     "t": [
+      9.69,
+      10.89
+     ],
+     "size": "ZOOM top: 1.40x, phone top edge at frame y 4.1%, x 32.5-67.3%, bottom cropped"
+    },
+    {
+     "t": [
+      10.89,
+      11.34
+     ],
+     "move": "pull back ZOOM -> SMALL"
+    },
+    {
+     "t": [
+      11.34,
+      16.245
+     ],
+     "size": "SMALL"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "t": [
+    19.085,
+    22.355
+   ],
+   "src": [
+    110.36,
+    113.63
+   ],
+   "page": null,
+   "events": [
+    {
+     "t": 19.085,
+     "src": 110.36,
+     "sheet": "ui_ideas_health.jpg",
+     "tap": {
+      "x": 62,
+      "y": 94,
+      "dur": 0.64,
+      "path": "appears between the ideas and goals tabs and slides onto the goals (checkbox) tab by 19.33"
+     },
+     "what": "ideas list tail: the trip idea, Health (three ideas), Golf"
+    },
+    {
+     "t": 19.525,
+     "src": 110.8,
+     "what": "the grey selected-tab highlight moves to the goals tab"
+    },
+    {
+     "t": 20.025,
+     "src": 111.3,
+     "sheet": "ui_goals.jpg",
+     "what": "goals tab replaces ideas (0.15 s crossfade): \"Goals\", green \"Tracking\" with four goals, \"Show 2 more\", blue \"Goals\" with \"Ship the App\"; holds to the cut (\"goals tab\" at 21.17)"
+    }
+   ],
+   "camera": [
+    {
+     "t": [
+      19.085,
+      22.355
+     ],
+     "size": "SMALL, locked"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "t": [
+    26.015,
+    30.0
+   ],
+   "src": [
+    152.03,
+    156.015
+   ],
+   "sheet": "ui_end_card.jpg",
+   "what": "full-frame card, see template.json cut30.end_card for the fade times"
+  }
+ ],
+ "phone": {
+  "file": "set/ui_phone_frame.png",
+  "what": "Drawn bezel, measured on the source: 1254x2616 px RGBA at 3x (418x872 pt), #181818 bezel, transparent screen. Clip a 1170x2532 ui_*.png sheet to a rounded rectangle with 155 px (51.6 pt) corners (the sheets are square-cornered and would poke out past the bezel), lay it in the screen hole at (42, 42) px under the bezel, then scale the pair as one.",
+  "outer_pt": [
+   418,
+   872
+  ],
+  "bezel_pt": 14,
+  "outer_corner_radius_pt": 65.6,
+  "screen_pt": [
+   390,
+   844
+  ],
+  "screen_offset_pt": [
+   14,
+   14
+  ],
+  "screen_corner_radius_pt": 51.6,
+  "bezel_colour": "#181818",
+  "screen_background": "#fdfdfd",
+  "small_1280x720": {
+   "outer_px": [
+    481,
+    27,
+    319,
+    665
+   ],
+   "note": "x, y, w, h: phone outer box at SMALL (scale 0.763 px per pt at 720p; 1.144 at 1080p)"
+  },
+  "zoom_scale": 1.4,
+  "shadow": "soft shadow all round, no offset: black at 18% opacity, gaussian blur about 20 px at 720p (30 px at 1080p); it darkens the backdrop about 10% right at the bezel and fades out within 40 px",
+  "tap": "grey touch circle 56 pt (#8c8c8c at 35%), 0.25 s fade in and out, silent"
+ },
+ "layers": {
+  "ui_status_sheet.jpg / ui_status_sheet_scrolled.jpg": {
+   "fixed_header_pt": [
+    0,
+    236
+   ],
+   "header": "status bar, X (left) and share (right) buttons at y 56-92, avatar 64 pt at y 54, \"Muse\" at y 126, status line at y 152, four-icon segmented pill at y 184-224 (list tab selected)",
+   "list_viewport_pt": [
+    236,
+    844
+   ],
+   "list_page": "ui_status_list_tall.jpg",
+   "list_rule": "the tall page sits at y = 236 - scroll_pt inside the viewport and is clipped to it; the sheet PNGs already show it at scroll 0 and 186",
+   "status_line_swap": "the scrolled sheet has \"drafting email\"; swap the whole sheet at the event time with a 0.15 s crossfade"
+  },
+  "sheet_grow": {
+   "from_box_pt": {
+    "x": [
+     133.7,
+     256.3
+    ],
+    "y": [
+     90,
+     129
+    ],
+    "what": "the white status pill in ui_chat_s8_teetimes.jpg"
+   },
+   "to_box_pt": {
+    "x": [
+     0,
+     390
+    ],
+    "y": [
+     0,
+     844
+    ]
+   },
+   "dur": 0.35,
+   "easing": "ease-out (quadratic) on every edge",
+   "measured_mid_frame": "at 0.20 s the card spans screen x 8-92% and y 40-676 pt, corners about 38 pt",
+   "corner_radius_pt": "38 while growing, 51.6 (the screen corners) when full",
+   "behind": "the chat stays in place, blurred (gaussian ~6 pt) and darkened to 78% (white 253 -> 198); it is fully covered at the end"
+  },
+  "ui_chat_s8_researching.jpg -> ui_chat_s8_teetimes.jpg": "swap only the pill text with a 0.15 s crossfade; nothing else changes"
+ },
+ "cut15_shots": [
+  {
+   "n": 2,
+   "t": [
+    3.85,
+    10.29
+   ],
+   "src": [
+    56.8,
+    63.24
+   ],
+   "page": [
+    "ui_chat_thread_tall.jpg",
+    "ui_status_list_tall.jpg"
+   ],
+   "events": [
+    {
+     "t": 3.85,
+     "src": 56.8,
+     "sheet": "ui_chat_s8_researching.jpg",
+     "scroll_pt": -3,
+     "what": "top of the thread: the user's chess question under the header, the coaching reply with a fire reaction, the flight message with a red heart; header pill \"Muse / researching courses\" with a small golf-flag icon"
+    },
+    {
+     "t": 4.35,
+     "src": 57.3,
+     "tap": {
+      "x": 78,
+      "y": 44,
+      "dur": 0.3
+     },
+     "what": "a touch circle blinks on the right of the coaching reply; nothing changes"
+    },
+    {
+     "t": 4.55,
+     "src": 57.5,
+     "sheet": "ui_chat_s8_teetimes.jpg",
+     "what": "status pill text changes to \"finding tee times\" (clock icon), 0.15 s crossfade"
+    },
+    {
+     "t": 6.05,
+     "src": 59.0,
+     "tap": {
+      "x": 50,
+      "y": 12,
+      "dur": 0.25
+     },
+     "what": "tap on the status pill (on \"working\", 6.12), 0.10 s before the sheet starts to grow"
+    },
+    {
+     "t": [
+      6.15,
+      6.5
+     ],
+     "src": [
+      59.1,
+      59.45
+     ],
+     "sheet": "ui_status_sheet.jpg",
+     "what": "the status sheet grows out of the pill: a white card grows from the pill box to full screen in 0.35 s, ease-out, corners 38 pt; the chat behind blurs and darkens to 78% (exact boxes: ui.json layers.sheet_grow)"
+    },
+    {
+     "t": [
+      6.5,
+      8.95
+     ],
+     "src": [
+      59.45,
+      61.9
+     ],
+     "sheet": "ui_status_sheet.jpg",
+     "scroll_pt": 0,
+     "what": "sheet holds at the top: \"Wednesday\" and the first five finished tasks"
+    },
+    {
+     "t": 8.95,
+     "src": 61.9,
+     "sheet": "ui_status_sheet_scrolled.jpg",
+     "what": "status line changes to \"drafting email\" (writing-hand icon)"
+    },
+    {
+     "t": [
+      8.95,
+      9.45
+     ],
+     "src": [
+      61.9,
+      62.4
+     ],
+     "scroll_pt": [
+      0,
+      186
+     ],
+     "what": "list scrolls up, ease-out (\"what it has done\")"
+    },
+    {
+     "t": [
+      9.85,
+      10.35
+     ],
+     "src": [
+      62.8,
+      63.3
+     ],
+     "scroll_pt": [
+      186,
+      147
+     ],
+     "what": "small settle back down (scroll 186 -> 147, ease-out); the cut at 10.29 lands 88% through it (scroll about 152)"
+    }
+   ],
+   "camera": [
+    {
+     "t": [
+      3.85,
+      5.05
+     ],
+     "size": "ZOOM top: 1.40x, phone top edge at frame y 4.1%, x 32.5-67.3%, bottom cropped"
+    },
+    {
+     "t": [
+      5.05,
+      5.5
+     ],
+     "move": "pull back ZOOM -> SMALL"
+    },
+    {
+     "t": [
+      5.5,
+      10.29
+     ],
+     "size": "SMALL"
+    }
+   ],
+   "what_changes": "cut30 shot 4 shifted by -5.84 s and ended 0.115 s earlier; the voice over it is L02 then L04s (cut15 times in set/lines.json)"
+  },
+  {
+   "n": 4,
+   "t": [
+    12.0,
+    15.0
+   ],
+   "src": [
+    152.03,
+    155.03
+   ],
+   "sheet": "ui_end_card.jpg",
+   "what": "full-frame card, see template.json cut15.end_card for the fade times"
+  }
+ ]
+}
