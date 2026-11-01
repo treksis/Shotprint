@@ -225,6 +225,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/car-launch.jpg',
     preview: '/templates/car-launch.mp4',
     proof: { '30': '/templates/proof/car-launch-30.mp4', '15': '/templates/proof/car-launch-15.mp4' },
+    examples: [{ title: 'Meta Quest 3, 30 s', video: '/templates/examples/quest3-dark.mp4', poster: '/templates/examples/quest3-dark.jpg' }, { title: 'Meta Quest 3, 15 s', video: '/templates/examples/quest3-dark-15.mp4', poster: '/templates/examples/quest3-dark-15.jpg' }],
     description:
       'A moody black-and-white launch spot that reveals a car in fragments of light from a black studio, proves its details in close-ups, then opens into night-city and misty-mountain driving before a tagline and end card.',
     prompt: "Make a 30 s launch film for our new matte-black electric sports coupe with the tagline 'Built in the dark.'",
