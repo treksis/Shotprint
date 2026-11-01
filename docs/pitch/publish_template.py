@@ -26,6 +26,9 @@ FORMAT = {
     'fan-moments': 'Fans + product macro',
     'room-makeover': 'Comedic makeover',
     'deadpan-dialogue': 'Deadpan dialogue',
+    'holiday-story': 'Holiday story',
+    'car-launch': 'Car launch',
+    'athlete-anthem': 'Athlete monologue',
 }
 
 
