@@ -9,7 +9,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 TS = REPO / 'src/shared/studio-templates.ts'
 ORDER = ['id', 'title', 'source', 'format', 'status', 'durationSec', 'shots', 'shotsMeasured', 'setups', 'lines', 'cuts',
-         'thumbnail', 'preview', 'proof', 'description', 'prompt']
+         'thumbnail', 'preview', 'proof', 'examples', 'description', 'prompt']
 
 
 def lit(v):
@@ -22,7 +22,7 @@ def lit(v):
     if isinstance(v, list):
         return '[' + ', '.join(lit(x) for x in v) + ']'
     if isinstance(v, dict):
-        return '{ ' + ', '.join(f"'{k}': {lit(x)}" for k, x in v.items()) + ' }'
+        return '{ ' + ', '.join(f"{k if re.fullmatch(r'[a-z]\w*', k) else repr(k)}: {lit(x)}" for k, x in v.items()) + ' }'
     return json.dumps(v)
 
 

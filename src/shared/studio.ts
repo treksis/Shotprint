@@ -198,4 +198,6 @@ export interface StudioTemplate {
   format?: string;
   /** Side-by-side proof per cut length: the real footage cut the same way | a blind rebuild from the template. */
   proof?: Partial<Record<'30' | '15', string>>;
+  /** Films made from the template for a new product (not the source's), e.g. the demos for the pitch. */
+  examples?: { title: string; video: string; poster?: string }[];
 }

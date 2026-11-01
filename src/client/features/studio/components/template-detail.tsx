@@ -153,6 +153,19 @@ export function TemplateDetailDialog({
                     </ul>
                   </>
                 )}
+                {t.examples && t.examples.length > 0 && (
+                  <>
+                    <h3 className="mt-5 text-[15px] font-medium">Made from this template</h3>
+                    <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                      {t.examples.map((x) => (
+                        <figure key={x.video}>
+                          <video src={x.video} poster={x.poster} controls playsInline preload="metadata" className="aspect-video w-full rounded-[10px] bg-black" />
+                          <figcaption className="mt-1 text-[12px] text-muted-foreground">{x.title}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  </>
+                )}
                 {detail?.summary && <p className="mt-5 text-[13px] leading-relaxed text-muted-foreground">{detail.summary}</p>}
               </div>
 
