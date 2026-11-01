@@ -1,0 +1,105 @@
+{
+ "note": "No spoken line survives in either cut: mum's two lines (0.3-8.1, 11.7-17.3) are dropped. Every line here is a sung lyric already inside score_30/score_15; clips are cut from the score for timing reference only.",
+ "lines": [
+  {
+   "id": "L01",
+   "words": "Why don't you take my hand",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 83.26,
+   "src_end": 85.327,
+   "clip": "set/lines/L01.wav",
+   "in_score": true,
+   "cuts": {
+    "cut30": [
+     15.661,
+     17.728
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  },
+  {
+   "id": "L02",
+   "words": "...come out of the blue",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 89.877,
+   "src_end": 90.62,
+   "clip": "set/lines/L02.wav",
+   "in_score": true,
+   "cuts": {
+    "cut30": [
+     17.728,
+     18.471
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  },
+  {
+   "id": "L03",
+   "words": "Everything you give... (transcription uncertain)",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 91.26,
+   "src_end": 94.427,
+   "clip": "set/lines/L03.wav",
+   "in_score": true,
+   "cuts": {
+    "cut30": [
+     19.111,
+     22.278
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  },
+  {
+   "id": "L04",
+   "words": "...deep down where the love lives",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 103.264,
+   "src_end": 105.517,
+   "clip": "set/lines/L04.wav",
+   "in_score": true,
+   "cuts": {
+    "cut30": [
+     22.278,
+     24.531
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  },
+  {
+   "id": "L05",
+   "words": "...where the love lives",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 114.531,
+   "src_end": 116.54,
+   "clip": "set/lines/L05.wav",
+   "in_score": true,
+   "cuts": {
+    "cut30": [
+     24.531,
+     26.54
+    ],
+    "cut15": [
+     9.531,
+     11.54
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  },
+  {
+   "id": "L06",
+   "words": "...something to do... (transcription uncertain)",
+   "kind": "sung lyric (female vocal, part of the song; in the score, not a voice-over)",
+   "src_start": 94.427,
+   "src_end": 96.702,
+   "clip": "set/lines/L06.wav",
+   "in_score": true,
+   "cuts": {
+    "cut15": [
+     7.256,
+     9.531
+    ]
+   },
+   "word_times": "not measured (sung, transcription unreliable); the phrase starts at src_start"
+  }
+ ]
+}

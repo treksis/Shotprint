@@ -1,0 +1,2273 @@
+{
+ "meta": {
+  "source": "120 s holiday film, 2025 department-store Christmas campaign (brand removed: {BRAND})",
+  "duration": 120,
+  "size": "1920x1080",
+  "fps": 25,
+  "shots": 47,
+  "average_shot": 2.55,
+  "median_shot": 1.96,
+  "genre": "family drama told without dialogue after 17 s, carried by one famous song cover",
+  "id": "holiday-story"
+ },
+ "acts": [
+  {
+   "name": "Distance",
+   "shots": [
+    1,
+    10
+   ],
+   "function": "Christmas morning in a warm family house; the teenage son is shut away in over-ear headphones; mum and sister bustle; dad, kneeling at the tree, finds a flat red gift with a yellow note 'DAD'. Dialogue only here (mum, off-hand), then room tone."
+  },
+  {
+   "name": "The gift",
+   "shots": [
+    11,
+    16
+   ],
+   "function": "Dad tears the paper: a vinyl record. He lowers the needle; the song's soft piano/vocal intro starts at 30.6 s. The son hears it from the stairs. Dad starts to nod."
+  },
+  {
+   "name": "The memory",
+   "shots": [
+    17,
+    37
+   ],
+   "function": "Hard cut to a dark blue club: dad, same clothes, dances among young people (dance version of the song, loudest part, -10 LUFS). The crowd falls away (top-down), dad alone in one warm spotlight; then his son at every age in the dark: teen, toddler, baby in his arms. Shots fade to and from black (0.4-1.1 s blacks)."
+  },
+  {
+   "name": "Together",
+   "shots": [
+    38,
+    46
+   ],
+   "function": "Back home at the shelf, eyes wet. The son comes down the stairs, headphones round his neck now, and walks to him; the hug; the son smiles; both laugh."
+  },
+  {
+   "name": "End card",
+   "shots": [
+    47,
+    47
+   ],
+   "function": "Soft-focus wide of the living room with the tree; two thin white supers, then the {BRAND} wordmark."
+  }
+ ],
+ "shots": [
+  {
+   "action": "Kitchen, handheld: mum (dark wavy bob, black jacket) clears a fruit bowl and glances back over her shoulder, talking to the kids.",
+   "setup": "kitchen_handheld",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 1,
+   "start": 0,
+   "end": 1.88,
+   "dur": 1.88,
+   "in": "start",
+   "brightness": {
+    "start": 86,
+    "mid": 93,
+    "end": 107
+   },
+   "colour": "#64594b",
+   "change": 39.47,
+   "sound": "-41.62 LUFS mean, -24.93 peak",
+   "voice": "Alright kids, um, let's clear all these prezzies off the table. Oh, yep, yep, that one too. Thank you."
+  },
+  {
+   "action": "Living room: the son, blue sweater and black over-ear headphones, sits at a table under an arc lamp, then lifts his head and looks right.",
+   "setup": "son_table_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 2,
+   "start": 1.88,
+   "end": 4.44,
+   "dur": 2.56,
+   "in": "cut",
+   "brightness": {
+    "start": 112,
+    "mid": 109,
+    "end": 111
+   },
+   "colour": "#746c5e",
+   "change": 7.2,
+   "sound": "-31.47 LUFS mean, -22.51 peak",
+   "voice": "Alright kids, um, let's clear all these prezzies off the table. Oh, yep, yep, that one too. Thank you."
+  },
+  {
+   "action": "Over the son's headphone (foreground right): across the room dad kneels at the lit tree sorting presents.",
+   "setup": "ots_son_to_tree",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 3,
+   "start": 4.44,
+   "end": 6.4,
+   "dur": 1.96,
+   "in": "cut",
+   "brightness": {
+    "start": 68,
+    "mid": 68,
+    "end": 70
+   },
+   "colour": "#4e4137",
+   "change": 8.56,
+   "sound": "-36.55 LUFS mean, -31.43 peak",
+   "voice": "Alright kids, um, let's clear all these prezzies off the table. Oh, yep, yep, that one too. Thank you."
+  },
+  {
+   "action": "He sits still, knuckles to his lips, eyes down and away to the right; a slow blink at about 0.8 s. Nothing else moves.",
+   "setup": "son_window_cu",
+   "location": "loc_window_desk",
+   "cast": [
+    "char_son"
+   ],
+   "wardrobe": "teal-blue mohair sweater, headphones ON his ears",
+   "shot_size": "close-up",
+   "subject_in_frame": "Son in three-quarter profile facing right; head and hand fill 55% of the width (x 25-80%), eyes at 38% height, headphone cup at 40% x; bright window bars behind him left; shoulders cut by the lower edge.",
+   "camera": "Eye level, slightly behind his sightline, long lens (85 mm feel), focus on his eye, window soft.",
+   "camera_move": "Very slow drift right with a slight push in (about 3% of frame over the 1.6 s used); in the full shot it keeps drifting until the back of his head fills the frame (11.4 s).",
+   "light": "Soft overcast daylight from the window behind and left (window ~180), soft flat fill on the face; cool-neutral. Brightness 107 mid (137 at the shot's start).",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Room tone only (cut30: score src 21.0-22.6; the source shot's mum line is not used).",
+   "render": "Emotional close-up, picture only: first + last frame from plates (A: hand at lips, eyes down; B: same, 3% tighter, eyes lowered further); no dialogue.",
+   "board": "boards/s04.jpg",
+   "n": 4,
+   "start": 6.4,
+   "end": 11.48,
+   "dur": 5.08,
+   "in": "cut",
+   "brightness": {
+    "start": 137,
+    "mid": 107,
+    "end": 138
+   },
+   "colour": "#6f6f68",
+   "change": 22.15,
+   "sound": "-39.1 LUFS mean, -24.02 peak",
+   "voice": "Alright kids, um, let's clear all these prezzies off the table. Oh, yep, yep, that one too. Thank you."
+  },
+  {
+   "action": "Son leans over the table to pick something up; someone passes soft in the foreground.",
+   "setup": "son_table_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 5,
+   "start": 11.48,
+   "end": 12.8,
+   "dur": 1.32,
+   "in": "cut",
+   "brightness": {
+    "start": 102,
+    "mid": 101,
+    "end": 102
+   },
+   "colour": "#67635a",
+   "change": 28,
+   "sound": "-34.66 LUFS mean, -26.71 peak",
+   "voice": "Did I grab enough glasses? glasses? Six."
+  },
+  {
+   "action": "From black: the teenage sister (long dark curls, pink knit) stares flatly while mum turns away behind her.",
+   "setup": "sister_mcu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 6,
+   "start": 12.8,
+   "end": 14.4,
+   "dur": 1.6,
+   "in": "cut",
+   "brightness": {
+    "start": 38,
+    "mid": 92,
+    "end": 98
+   },
+   "colour": "#474440",
+   "change": 84.75,
+   "sound": "-37.78 LUFS mean, -34.93 peak",
+   "voice": "Did I grab enough glasses? glasses? Six."
+  },
+  {
+   "action": "Dad's hands rummage in paper under the tree and lift a flat red gift; tilt up to his face looking down at it.",
+   "setup": "tree_floor_tilt",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 7,
+   "start": 14.4,
+   "end": 17.8,
+   "dur": 3.4,
+   "in": "cut",
+   "brightness": {
+    "start": 42,
+    "mid": 39,
+    "end": 55
+   },
+   "colour": "#37281c",
+   "change": 27.53,
+   "sound": "-38.74 LUFS mean, -31.57 peak",
+   "voice": "Did I grab enough glasses? glasses? Six."
+  },
+  {
+   "action": "He holds the parcel; at 0.4 s his fingertips touch the 'DAD' note (wedding band visible) and rest there.",
+   "setup": "gift_insert",
+   "location": "loc_living_room",
+   "cast": [
+    "char_father",
+    "product_gift_record"
+   ],
+   "wardrobe": "dad's olive overshirt sleeve and gold wedding band",
+   "shot_size": "close-up",
+   "subject_in_frame": "Insert: the square red parcel fills 55% of the width (x 33-88%), tilted about 15 degrees clockwise; the yellow note sits at 47% x, 52% y and is 9% of the width; dad's left hand enters lower centre, his right hand holds the right edge; tree bokeh and a glass bauble soft on the left 30%.",
+   "camera": "High angle over dad's right shoulder looking down 50 degrees, normal lens, focus on the note.",
+   "camera_move": "Locked off with slight handheld breathing; the parcel tilts 3 degrees as he handles it.",
+   "light": "Warm low practicals (tree lights) from the left, red paper glints; brightness 51-52.",
+   "text": [
+    {
+     "words": "DAD (with a smiley)",
+     "kind": "hand-written on the sticky note in black marker, part of the prop",
+     "position": "47% x, 52% y",
+     "in": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Room tone, faint paper crinkle.",
+   "render": "first + last frame from plates (A: parcel, hand entering; B: fingers on the note), product sheet as the reference for the paper and the note.",
+   "board": "boards/s08.jpg",
+   "n": 8,
+   "start": 17.8,
+   "end": 19.24,
+   "dur": 1.44,
+   "in": "cut",
+   "brightness": {
+    "start": 51,
+    "mid": 52,
+    "end": 52
+   },
+   "colour": "#642616",
+   "change": 13.19,
+   "sound": "-41 LUFS mean, -38.46 peak",
+   "voice": null
+  },
+  {
+   "action": "Wide living room: dad, kneeling by the tree with the gift, gets up and walks right; the son crosses the back of the room.",
+   "setup": "living_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 9,
+   "start": 19.24,
+   "end": 20.98,
+   "dur": 1.74,
+   "in": "cut",
+   "brightness": {
+    "start": 74,
+    "mid": 79,
+    "end": 82
+   },
+   "colour": "#5a4b3c",
+   "change": 23.23,
+   "sound": "-35.4 LUFS mean, -32.27 peak",
+   "voice": null
+  },
+  {
+   "action": "Same wide, a beat later: dad walks toward the window, turns back, glancing at the gift.",
+   "setup": "living_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 10,
+   "start": 20.98,
+   "end": 22.92,
+   "dur": 1.94,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 82,
+    "mid": 75,
+    "end": 70
+   },
+   "colour": "#5a4838",
+   "change": 26.7,
+   "sound": "-39.37 LUFS mean, -33.55 peak",
+   "voice": null
+  },
+  {
+   "action": "0.0 he grips the top flap; 0.4-1.6 he rips the red paper down and away in two tugs; by 2.2 the purple-orange sleeve with large white letters shows through the torn paper, tilted toward him.",
+   "setup": "unwrap_ots",
+   "location": "loc_record_corner",
+   "cast": [
+    "char_father",
+    "product_gift_record"
+   ],
+   "wardrobe": "olive overshirt",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Over dad's right shoulder from behind: his dark head and shoulder fill the right 45% and the lower edge; the parcel, held up at chest height, sits left of centre (x 25-70%); behind it a white patterned radiator cover, soft.",
+   "camera": "Eye level just behind his right shoulder, normal lens, focus on the parcel.",
+   "camera_move": "Handheld, slight drift left (about 4% of frame).",
+   "light": "Warm room light from the left and above; the red paper catches a hot highlight as it tears. Brightness 57-63.",
+   "text": [
+    {
+     "words": "sleeve title ({RECORD_TITLE}), partly visible through the torn paper",
+     "kind": "prop print",
+     "position": "left of centre",
+     "in": "last 0.8 s"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Paper tearing (in the score file at this point).",
+   "render": "first + last frame from plates (A: wrapped parcel held up from behind; B: torn paper, sleeve showing), product sheet as reference.",
+   "board": "boards/s11.jpg (start boards/s11a.jpg, end boards/s11b.jpg)",
+   "n": 11,
+   "start": 22.92,
+   "end": 25.48,
+   "dur": 2.56,
+   "in": "cut",
+   "brightness": {
+    "start": 63,
+    "mid": 60,
+    "end": 57
+   },
+   "colour": "#54362a",
+   "change": 16.33,
+   "sound": "-27.99 LUFS mean, -21.12 peak",
+   "voice": null
+  },
+  {
+   "action": "He studies the sleeve, lowers it a few centimetres, mouth softening into a half smile at about 1.2 s.",
+   "setup": "sleeve_low",
+   "location": "loc_record_corner",
+   "cast": [
+    "char_father",
+    "product_gift_record"
+   ],
+   "wardrobe": "olive overshirt, grey tee",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Dad's face right of centre (x 55-85%, eyes at 35% height), looking down at the sleeve; the sleeve fills the left 45% of the frame in the foreground, corner pointing up, soft; warm cream ceiling and wall behind.",
+   "camera": "Low angle from about chest height looking up 25 degrees, normal-wide lens, focus on his eyes.",
+   "camera_move": "Slow tilt down/left following the sleeve as he lowers it a little (about 5% of frame over 2 s).",
+   "light": "Warm overhead and window light from the right, soft; brightness 68-83 (the sleeve's colours brighten the left).",
+   "text": [
+    {
+     "words": "sleeve title ({RECORD_TITLE}) in large white letters, partly cropped",
+     "kind": "prop print",
+     "position": "left foreground",
+     "in": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Room tone, paper settling.",
+   "render": "Emotional close-up: first + last frame from plates (A: sleeve high, face half hidden; B: sleeve lowered, half smile).",
+   "board": "boards/s12.jpg",
+   "n": 12,
+   "start": 25.48,
+   "end": 27.64,
+   "dur": 2.16,
+   "in": "cut",
+   "brightness": {
+    "start": 74,
+    "mid": 68,
+    "end": 83
+   },
+   "colour": "#674633",
+   "change": 23.26,
+   "sound": "-39.18 LUFS mean, -26.31 peak",
+   "voice": null
+  },
+  {
+   "action": "0.0 fingertips on the tonearm lift, arm raised; 0.8 he lowers the stylus; 0.8-0.9 needle touches (the click in the score); 0.9-2.0 hand withdraws left, record turning.",
+   "setup": "turntable_macro",
+   "location": "loc_record_corner",
+   "cast": [
+    "char_father",
+    "product_turntable"
+   ],
+   "wardrobe": "dad's hand, olive sleeve",
+   "shot_size": "macro",
+   "subject_in_frame": "Side-on at platter height: the silver platter rim and black record fill the lower 40% (y 60-100%); dad's hand enters from the left and fills x 0-50%; the tonearm and headshell at centre (x 45-60%); white wall and one warm bulb bokeh top right.",
+   "camera": "Level with the platter, 10 cm away, macro lens, 2 cm of focus on the stylus.",
+   "camera_move": "Locked off.",
+   "light": "Soft warm window light from the right, cool white wall; brightness 76-80.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Needle click at 29.1 s source (cut30 8.08 s, cut15 3.79 s), then vinyl crackle.",
+   "render": "first + last frame from plates (A: hand on tonearm, stylus up; B: stylus in the groove, hand pulling away). The click must land at the touch: keep src timing.",
+   "board": "boards/s13.jpg (start boards/s13a.jpg, end boards/s13b.jpg)",
+   "n": 13,
+   "start": 27.64,
+   "end": 30.32,
+   "dur": 2.68,
+   "in": "cut",
+   "brightness": {
+    "start": 80,
+    "mid": 79,
+    "end": 76
+   },
+   "colour": "#5f4a39",
+   "change": 5.85,
+   "sound": "-44.45 LUFS mean, -34.25 peak",
+   "voice": null
+  },
+  {
+   "action": "He stands still, head bowed, listening as the first chords come in; a small breath at about 1.2 s.",
+   "setup": "record_corner_orbit",
+   "location": "loc_record_corner",
+   "cast": [
+    "char_father"
+   ],
+   "wardrobe": "olive overshirt",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "From behind dad's left shoulder: his shoulder and back of head fill the left 55% at the start, head bowed toward the shelf; white shelf with fairy lights, framed photos and a dark photo frame right; by the end his head is at 45-80% x in near profile with the speaker top right.",
+   "camera": "Eye level, close behind him, normal lens, shallow focus on his ear/cheek.",
+   "camera_move": "Slow arc right around him, about 15 degrees in the 2.25 s used (30 degrees over the full 6 s), ending on his three-quarter rear profile.",
+   "light": "Warm practicals on the shelf (fairy lights, candles) in front of him, soft daylight from behind; brightness 75-91.",
+   "text": [],
+   "out": "hard cut (on the bar: the club drop)",
+   "audio": "The song enters soft: piano chords and voice from 30.6 s source (cut30 9.60 s).",
+   "render": "Emotional close-up: first + last frame from plates (A: back of head over shoulder; B: arced to rear profile).",
+   "board": "boards/s14.jpg (start boards/s14a.jpg, end boards/s14b.jpg)",
+   "n": 14,
+   "start": 30.32,
+   "end": 36.48,
+   "dur": 6.16,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 91,
+    "end": 93
+   },
+   "colour": "#635646",
+   "change": 13.94,
+   "sound": "-20.41 LUFS mean, -13.6 peak",
+   "voice": "Why don't you drink my away"
+  },
+  {
+   "action": "Low angle up the stairs: the son on the landing, headphones round his neck now, hears the music and looks down, hand on the garland banister.",
+   "setup": "stairs_low",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 15,
+   "start": 36.48,
+   "end": 40.56,
+   "dur": 4.08,
+   "in": "cut",
+   "brightness": {
+    "start": 57,
+    "mid": 72,
+    "end": 77
+   },
+   "colour": "#524032",
+   "change": 16.16,
+   "sound": "-15.82 LUFS mean, -13.4 peak",
+   "voice": "Why don't you drink my away"
+  },
+  {
+   "action": "Dad at the shelf, eyes closed, starts to nod and move to the beat.",
+   "setup": "record_corner_mcu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 16,
+   "start": 40.56,
+   "end": 42.4,
+   "dur": 1.84,
+   "in": "cut",
+   "brightness": {
+    "start": 84,
+    "mid": 84,
+    "end": 84
+   },
+   "colour": "#5d5042",
+   "change": 20.19,
+   "sound": "-15.11 LUFS mean, -12.76 peak",
+   "voice": null
+  },
+  {
+   "action": "He dances with a fist pump on the downbeats, grins up at the lights at about 1.2 s, then looks down, nodding; dancers jostle around him.",
+   "setup": "club_floor_handheld",
+   "location": "loc_club_floor",
+   "cast": [
+    "char_father"
+   ],
+   "wardrobe": "the same olive overshirt open over the grey tee (memory, unchanged clothes)",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Dad's head and shoulders left of centre (x 10-60%, head at 25-55% y), turned up and right; young dancers (early 20s, one in a bucket hat, one with round sunglasses) soft at right and behind; his hand raised in a thumbs-up/fist at 50% x lower edge.",
+   "camera": "Low angle looking up 15 degrees, wide-normal lens, inside the crowd, focus on dad.",
+   "camera_move": "Handheld follow, bobbing with the beat; 10% drift right over 2.4 s; motion blur on hands.",
+   "light": "Blue-cyan top light from above left, green beam flashes, cyan rim on his hair; no fill. Brightness 31-40, colour #0c1724.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Club version of the song at full level (-10 LUFS), four-on-the-floor kick, from the bar join.",
+   "render": "first + last frame from plates in the club grade (A: dad among dancers, face up; B: looking down, nodding). The club is its own location and grade: build its plates from loc_club_floor, never from home plates.",
+   "board": "boards/s17.jpg (start boards/s17a.jpg, end boards/s17b.jpg)",
+   "n": 17,
+   "start": 42.4,
+   "end": 57.6,
+   "dur": 15.2,
+   "in": "cut",
+   "brightness": {
+    "start": 31,
+    "mid": 40,
+    "end": 25
+   },
+   "colour": "#0c1724",
+   "change": 15.48,
+   "sound": "-11.17 LUFS mean, -8.85 peak",
+   "voice": "Down love you / Why don't you take my hand come away"
+  },
+  {
+   "action": "Very dark crowd wide: the teenage son stands among dancers, lit blue.",
+   "setup": "club_crowd_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 18,
+   "start": 57.6,
+   "end": 59.36,
+   "dur": 1.76,
+   "in": "cut",
+   "brightness": {
+    "start": 13,
+    "mid": 12,
+    "end": 11
+   },
+   "colour": "#080b10",
+   "change": 3.75,
+   "sound": "-12.63 LUFS mean, -10.96 peak",
+   "voice": "Why don't you take my hand come away"
+  },
+  {
+   "action": "Same dark crowd, the son at centre back; to black.",
+   "setup": "club_crowd_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 19,
+   "start": 59.36,
+   "end": 59.8,
+   "dur": 0.44,
+   "in": "to black",
+   "brightness": {
+    "start": 11,
+    "mid": 11,
+    "end": 11
+   },
+   "colour": "#06090e",
+   "change": 0,
+   "sound": "-13.53 LUFS mean, -13.18 peak",
+   "voice": "Why don't you take my hand come away"
+  },
+  {
+   "action": "From black: dark crowd, blue edge-light on faces and arms.",
+   "setup": "club_crowd_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 20,
+   "start": 59.8,
+   "end": 61.44,
+   "dur": 1.64,
+   "in": "from black",
+   "brightness": {
+    "start": 11,
+    "mid": 12,
+    "end": 11
+   },
+   "colour": "#050a11",
+   "change": 3.25,
+   "sound": "-12.62 LUFS mean, -12.03 peak",
+   "voice": "Why don't you take my hand come away"
+  },
+  {
+   "action": "Dark crowd, almost black; to black.",
+   "setup": "club_crowd_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 21,
+   "start": 61.44,
+   "end": 62,
+   "dur": 0.56,
+   "in": "to black",
+   "brightness": {
+    "start": 10,
+    "mid": 10,
+    "end": 10
+   },
+   "colour": "#04080f",
+   "change": 0,
+   "sound": "-14.43 LUFS mean, -13.46 peak",
+   "voice": "Why don't you take my hand come away"
+  },
+  {
+   "action": "Top-down: a packed dance floor of young dancers fades up, dad in the centre; the crowd darkens away.",
+   "setup": "club_topdown",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 22,
+   "start": 62,
+   "end": 64.68,
+   "dur": 2.68,
+   "in": "from black",
+   "brightness": {
+    "start": 10,
+    "mid": 34,
+    "end": 7
+   },
+   "colour": "#191515",
+   "change": 18.17,
+   "sound": "-17.49 LUFS mean, -16.07 peak",
+   "voice": "Why don't you take my hand come away"
+  },
+  {
+   "action": "To black; dad alone appears in a pool of light far below.",
+   "setup": "club_topdown",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 23,
+   "start": 64.68,
+   "end": 65.44,
+   "dur": 0.76,
+   "in": "to black",
+   "brightness": {
+    "start": 5,
+    "mid": 1,
+    "end": 4
+   },
+   "colour": "#020202",
+   "change": 3.39,
+   "sound": "-17.39 LUFS mean, -16.35 peak",
+   "voice": null
+  },
+  {
+   "action": "He sways alone with loose arms, weight shifting left-right on the beat, head tilted down.",
+   "setup": "club_topdown",
+   "location": "loc_club_spotlight",
+   "cast": [
+    "char_father"
+   ],
+   "wardrobe": "olive overshirt open, grey tee, jeans, boots",
+   "shot_size": "wide",
+   "subject_in_frame": "Top-down: dad alone at the exact centre (x 47-53%, y 38-72%), his figure 34% of the frame height; the spotlight pool is a soft oval 45% of the width; everything outside it black.",
+   "camera": "High, about 6 m up, looking down about 70 degrees, normal lens, deep focus.",
+   "camera_move": "Locked off.",
+   "light": "One warm-white overhead spotlight; pool about 110, the rest 0-5. Brightness 7-21 overall.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Club music continues (cut30), a thinner part of the mix.",
+   "render": "first + last frame from one plate (dad in the pool, arms out; the same with arms in) on loc_club_spotlight.",
+   "board": "boards/s24.jpg",
+   "n": 24,
+   "start": 65.44,
+   "end": 66.92,
+   "dur": 1.48,
+   "in": "from black",
+   "brightness": {
+    "start": 7,
+    "mid": 21,
+    "end": 9
+   },
+   "colour": "#13100f",
+   "change": 12.9,
+   "sound": "-17.06 LUFS mean, -14.64 peak",
+   "voice": null
+  },
+  {
+   "action": "Black; a figure emerges.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 25,
+   "start": 66.92,
+   "end": 67.52,
+   "dur": 0.6,
+   "in": "to black",
+   "brightness": {
+    "start": 2,
+    "mid": 0,
+    "end": 1
+   },
+   "colour": "#000001",
+   "change": 0,
+   "sound": "-20.75 LUFS mean, -20.1 peak",
+   "voice": null
+  },
+  {
+   "action": "From black: the teenage son alone in a dim spotlight, blue sweater, looking into the lens.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 26,
+   "start": 67.52,
+   "end": 69.48,
+   "dur": 1.96,
+   "in": "from black",
+   "brightness": {
+    "start": 6,
+    "mid": 12,
+    "end": 11
+   },
+   "colour": "#07090c",
+   "change": 5.15,
+   "sound": "-19.89 LUFS mean, -18.48 peak",
+   "voice": null
+  },
+  {
+   "action": "The son fades out; dad's figure fades in.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 27,
+   "start": 69.48,
+   "end": 70.6,
+   "dur": 1.12,
+   "in": "to black",
+   "brightness": {
+    "start": 9,
+    "mid": 2,
+    "end": 2
+   },
+   "colour": "#020203",
+   "change": 7.24,
+   "sound": "-22.04 LUFS mean, -20.18 peak",
+   "voice": null
+  },
+  {
+   "action": "From black: dad alone in the dark facing the lens; a blurred hand reaches in foreground left.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 28,
+   "start": 70.6,
+   "end": 72.56,
+   "dur": 1.96,
+   "in": "from black",
+   "brightness": {
+    "start": 7,
+    "mid": 12,
+    "end": 9
+   },
+   "colour": "#08090a",
+   "change": 7.22,
+   "sound": "-24.79 LUFS mean, -23.57 peak",
+   "voice": null
+  },
+  {
+   "action": "Fade to black.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 29,
+   "start": 72.56,
+   "end": 73.36,
+   "dur": 0.8,
+   "in": "to black",
+   "brightness": {
+    "start": 8,
+    "mid": 5,
+    "end": 2
+   },
+   "colour": "#030305",
+   "change": 7,
+   "sound": "-25.66 LUFS mean, -25.13 peak",
+   "voice": null
+  },
+  {
+   "action": "From black: dad's face close in darkness, emotional, looking ahead; fades.",
+   "setup": "memory_cu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 30,
+   "start": 73.36,
+   "end": 75.4,
+   "dur": 2.04,
+   "in": "from black",
+   "brightness": {
+    "start": 10,
+    "mid": 21,
+    "end": 5
+   },
+   "colour": "#130e0d",
+   "change": 11.22,
+   "sound": "-22.12 LUFS mean, -20.27 peak",
+   "voice": null
+  },
+  {
+   "action": "Black, a small figure emerging.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 31,
+   "start": 75.4,
+   "end": 76.32,
+   "dur": 0.92,
+   "in": "to black",
+   "brightness": {
+    "start": 4,
+    "mid": 1,
+    "end": 3
+   },
+   "colour": "#010102",
+   "change": 3.02,
+   "sound": "-18.46 LUFS mean, -17.41 peak",
+   "voice": null
+  },
+  {
+   "action": "From black: a blond toddler in a teal-blue knit sweater toddles toward the lens, smiling.",
+   "setup": "memory_void_wide",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 32,
+   "start": 76.32,
+   "end": 78.32,
+   "dur": 2,
+   "in": "from black",
+   "brightness": {
+    "start": 8,
+    "mid": 15,
+    "end": 4
+   },
+   "colour": "#0a0a0c",
+   "change": 12.34,
+   "sound": "-21.06 LUFS mean, -18.63 peak",
+   "voice": null
+  },
+  {
+   "action": "Black.",
+   "setup": "memory_cu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 33,
+   "start": 78.32,
+   "end": 78.96,
+   "dur": 0.64,
+   "in": "to black",
+   "brightness": {
+    "start": 2,
+    "mid": 0,
+    "end": 1
+   },
+   "colour": "#000001",
+   "change": 1.82,
+   "sound": "-23.77 LUFS mean, -22.6 peak",
+   "voice": null
+  },
+  {
+   "action": "From black: dad nuzzles the toddler cheek to cheek, warm low light; fades.",
+   "setup": "memory_cu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 34,
+   "start": 78.96,
+   "end": 81.12,
+   "dur": 2.16,
+   "in": "from black",
+   "brightness": {
+    "start": 10,
+    "mid": 25,
+    "end": 7
+   },
+   "colour": "#16120f",
+   "change": 16.73,
+   "sound": "-27.52 LUFS mean, -24.46 peak",
+   "voice": null
+  },
+  {
+   "action": "Black.",
+   "setup": "memory_cu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 35,
+   "start": 81.12,
+   "end": 81.6,
+   "dur": 0.48,
+   "in": "to black",
+   "brightness": {
+    "start": 5,
+    "mid": 2,
+    "end": 1
+   },
+   "colour": "#020202",
+   "change": 0,
+   "sound": "-30.29 LUFS mean, -29.83 peak",
+   "voice": null
+  },
+  {
+   "action": "The baby laughs and reaches up to grab dad's chin; dad leans in.",
+   "setup": "memory_baby",
+   "location": "black void, no place plate (memory)",
+   "cast": [
+    "char_father",
+    "char_baby"
+   ],
+   "wardrobe": "dad's olive overshirt; baby's teal-blue knit romper",
+   "shot_size": "close-up",
+   "subject_in_frame": "Over dad's right shoulder: his jaw, cheek and shoulder fill the upper right 50%; the laughing baby lies in his arms lower left (x 15-60%, y 45-100%), face at 30% x, 60% y, one hand reaching up to dad's face; black background.",
+   "camera": "Just behind dad's shoulder at his eye level looking down 30 degrees, normal lens, focus on the baby's face.",
+   "camera_move": "Slow handheld drift down-right (5%), with the image fading toward black over the last 0.6 s.",
+   "light": "Warm soft key from the left at low level, black void elsewhere; brightness 35 falling to 12.",
+   "text": [],
+   "out": "fade to black over the last 0.6 s, then hard cut",
+   "audio": "Ballad vocal returns: 'Why don't you take my hand' (cut30 15.66-17.73).",
+   "render": "Emotional close-up: first + last frame from plates (A: baby laughing, hand reaching; B: darker, dad leaning in) on black.",
+   "board": "boards/s36.jpg",
+   "n": 36,
+   "start": 81.6,
+   "end": 84.44,
+   "dur": 2.84,
+   "in": "cut",
+   "brightness": {
+    "start": 19,
+    "mid": 35,
+    "end": 12
+   },
+   "colour": "#221c18",
+   "change": 14.3,
+   "sound": "-25.25 LUFS mean, -15.82 peak",
+   "voice": "why don't you take my hand hand come away come out of the blue"
+  },
+  {
+   "action": "From black: dad's face very close, tearful, cheek against the child; to black.",
+   "setup": "memory_cu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 37,
+   "start": 84.44,
+   "end": 87.52,
+   "dur": 3.08,
+   "in": "to black",
+   "brightness": {
+    "start": 1,
+    "mid": 43,
+    "end": 1
+   },
+   "colour": "#271a14",
+   "change": 21.59,
+   "sound": "-19.46 LUFS mean, -17.64 peak",
+   "voice": "why don't you take my hand hand come away come out of the blue"
+  },
+  {
+   "action": "Home: dad at the record shelf looks up toward the stairs, eyes wet.",
+   "setup": "record_corner_mcu",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 38,
+   "start": 87.52,
+   "end": 89.8,
+   "dur": 2.28,
+   "in": "cut",
+   "brightness": {
+    "start": 73,
+    "mid": 72,
+    "end": 75
+   },
+   "colour": "#524538",
+   "change": 9.05,
+   "sound": "-20.26 LUFS mean, -16.7 peak",
+   "voice": "why don't you take my hand hand come away come out of the blue"
+  },
+  {
+   "action": "Hand on the garland banister, he looks at dad (off camera, lens-left), lets go at 0.6 s and steps toward the lens; by 2.0 he is mid-stride, 15% larger.",
+   "setup": "hall_stairs_wide",
+   "location": "loc_hallway_stairs",
+   "cast": [
+    "char_son"
+   ],
+   "wardrobe": "teal-blue sweater, headphones round his NECK",
+   "shot_size": "medium wide",
+   "subject_in_frame": "Son full figure centre-right (x 40-60%, head at 28% y, feet at 100%), 72% of the frame height; staircase with garland on the left third; orange-sun print above him left; pale framed print right; star lantern top right.",
+   "camera": "Eye level from the hallway, normal lens, focus on him.",
+   "camera_move": "Slow push in about 6% over 2 s.",
+   "light": "Soft daylight from the left, warm practicals on the garland; brightness 101-105.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Ballad vocal: '...come out of the blue', then 'Everything you give...' starts (cut30 19.11).",
+   "render": "first + last frame from plates (A: hand on banister; B: mid-stride toward the lens).",
+   "board": "boards/s39.jpg (start boards/s39a.jpg, end boards/s39b.jpg)",
+   "n": 39,
+   "start": 89.8,
+   "end": 92.68,
+   "dur": 2.88,
+   "in": "cut",
+   "brightness": {
+    "start": 105,
+    "mid": 104,
+    "end": 101
+   },
+   "colour": "#726353",
+   "change": 11.87,
+   "sound": "-23.03 LUFS mean, -14.02 peak",
+   "voice": "why don't you take my hand hand come away come out of the blue / Boy everything you give so I give something to do"
+  },
+  {
+   "action": "Over the son's shoulder: dad walks up and pulls him into a hug.",
+   "setup": "hall_ots_son",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 40,
+   "start": 92.68,
+   "end": 94.96,
+   "dur": 2.28,
+   "in": "cut",
+   "brightness": {
+    "start": 67,
+    "mid": 61,
+    "end": 59
+   },
+   "colour": "#453d35",
+   "change": 23.34,
+   "sound": "-18.42 LUFS mean, -15.37 peak",
+   "voice": "Boy everything you give so I give something to do"
+  },
+  {
+   "action": "They hold the hug; dad's right hand pats the son's back twice (0.6 s, 1.4 s) then rests; the son's eyes stay closed and his face softens.",
+   "setup": "hall_hug",
+   "location": "loc_hallway_stairs",
+   "cast": [
+    "char_father",
+    "char_son"
+   ],
+   "wardrobe": "dad's olive overshirt; son's teal sweater",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Over dad's back: his olive back and curly head fill the lower-left 60% (x 5-65%); the son's face rests on dad's right shoulder at centre (x 45-62%, y 20-45%), eyes closed; garland banister left, framed print right.",
+   "camera": "Eye level behind dad, normal lens, focus on the son's face.",
+   "camera_move": "Slow push in about 8% over 2.5 s.",
+   "light": "Soft daylight from the left, warm practicals; brightness 74-80.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Ballad: 'Everything you give...' (sung lyric, in the score).",
+   "render": "Emotional close-up: first + last frame from plates (A: hug, son's eyes closed; B: tighter, dad's hand resting).",
+   "board": "boards/s41.jpg",
+   "n": 41,
+   "start": 94.96,
+   "end": 98.68,
+   "dur": 3.72,
+   "in": "cut",
+   "brightness": {
+    "start": 80,
+    "mid": 74,
+    "end": 79
+   },
+   "colour": "#594b3c",
+   "change": 29.17,
+   "sound": "-22.3 LUFS mean, -15.18 peak",
+   "voice": "Boy everything you give so I give something to do"
+  },
+  {
+   "action": "Tight on dad's face buried at the son's shoulder, eyes shut, hand on his head.",
+   "setup": "hall_hug_tight",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 42,
+   "start": 98.68,
+   "end": 101.08,
+   "dur": 2.4,
+   "in": "cut",
+   "brightness": {
+    "start": 55,
+    "mid": 62,
+    "end": 50
+   },
+   "colour": "#453327",
+   "change": 28.52,
+   "sound": "-23.4 LUFS mean, -18.88 peak",
+   "voice": "Boy everything you give so I give something to do / I'll take take you down deep deep down where the love lives"
+  },
+  {
+   "action": "Just out of the hug, he looks at dad and his shy smile grows into a wide grin, eyes crinkling (biggest at about 1.8 s).",
+   "setup": "hall_son_mcu",
+   "location": "loc_hallway_stairs",
+   "cast": [
+    "char_son"
+   ],
+   "wardrobe": "teal sweater, headphones round his neck",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Son's head and chest centre-left (x 25-60%, eyes at 30% y), turned toward dad off right; orange-sun print upper left; garland banister lower left; dad's soft shoulder edge at the far right.",
+   "camera": "Eye level, normal lens, focus on his eyes.",
+   "camera_move": "Slow drift right about 4%.",
+   "light": "Soft daylight from the left; brightness 90.",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Ballad chorus: '...deep down where the love lives' (sung, in the score).",
+   "render": "Emotional close-up: first + last frame from plates (A: small smile; B: wide grin).",
+   "board": "boards/s43.jpg",
+   "n": 43,
+   "start": 101.08,
+   "end": 105.52,
+   "dur": 4.44,
+   "in": "cut",
+   "brightness": {
+    "start": 67,
+    "mid": 90,
+    "end": 91
+   },
+   "colour": "#5c4f41",
+   "change": 31.68,
+   "sound": "-23.11 LUFS mean, -17.23 peak",
+   "voice": "I'll take take you down deep deep down where the love lives"
+  },
+  {
+   "action": "Dad close in profile against the bright window, laughing and looking down.",
+   "setup": "hall_dad_profile",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 44,
+   "start": 105.52,
+   "end": 108,
+   "dur": 2.48,
+   "in": "cut",
+   "brightness": {
+    "start": 117,
+    "mid": 115,
+    "end": 106
+   },
+   "colour": "#736c60",
+   "change": 59.12,
+   "sound": "-32.92 LUFS mean, -26.01 peak",
+   "voice": "I'll take take you down deep deep down where the love lives / follow me down deep down where the love lives"
+  },
+  {
+   "action": "Two-shot by the stairs: dad pats the son's chest; both laugh.",
+   "setup": "hall_two_shot",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 45,
+   "start": 108,
+   "end": 109.3,
+   "dur": 1.3,
+   "in": "cut",
+   "brightness": {
+    "start": 85,
+    "mid": 78,
+    "end": 87
+   },
+   "colour": "#5c4e40",
+   "change": 33.31,
+   "sound": "-21.58 LUFS mean, -19.46 peak",
+   "voice": "follow me down deep down where the love lives"
+  },
+  {
+   "action": "Same two-shot: dad grins, the son laughs and looks down.",
+   "setup": "hall_two_shot",
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 46,
+   "start": 109.3,
+   "end": 111,
+   "dur": 1.7,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 90,
+    "mid": 90,
+    "end": 85
+   },
+   "colour": "#605448",
+   "change": 21.42,
+   "sound": "-22.89 LUFS mean, -17.29 peak",
+   "voice": "follow me down deep down where the love lives"
+  },
+  {
+   "action": "Background figures tidy and move slowly; nothing in focus. Supers then wordmark appear centre.",
+   "setup": "living_room_endcard",
+   "location": "loc_living_room",
+   "cast": [],
+   "wardrobe": "background family figures soft (mum in a pink jumper, dad)",
+   "shot_size": "wide",
+   "subject_in_frame": "Whole living room, completely out of focus: tree with warm lights in the left third (x 5-25%), tall window at centre, bookshelves wrapped in fairy lights right third, globe pendant lamp at 50% x, 25% y; two soft figures move at the back centre.",
+   "camera": "Eye level from the hallway door, long lens, focus set far in front so everything is bokeh.",
+   "camera_move": "Locked off (a very slight drift left, 1%).",
+   "light": "Warm practicals (tree, shelf lights) and soft window daylight; brightness 80-95.",
+   "text": [
+    {
+     "words": "FIND THE GIFT THAT SAYS IT ({TAGLINE})",
+     "position": "centre 50% x, 50% y; cap height 3.7% of frame height; thin sans, wide tracking",
+     "source_in": 114.4,
+     "source_out": 116.9,
+     "animation": "0.4 s dissolve out"
+    },
+    {
+     "words": "{BRAND}",
+     "position": "centre 50% x, 50% y; cap height 8.3%; spans 60% of width",
+     "source_in": 117.0,
+     "source_out": 120.0,
+     "animation": "0.5 s dissolve in, holds"
+    }
+   ],
+   "out": "end",
+   "audio": "Outro: last '...where the love lives' ends at 116.5 source, then a sustained piano chord fading under the wordmark.",
+   "render": "One plate (loc_living_room blurred heavily), first + last frame of the same plate with the figures moved; the supers and wordmark drawn in post (code), never in the plate.",
+   "board": "boards/s47.jpg",
+   "n": 47,
+   "start": 111,
+   "end": 120,
+   "dur": 9,
+   "in": "cut",
+   "brightness": {
+    "start": 80,
+    "mid": 95,
+    "end": 93
+   },
+   "colour": "#6e5741",
+   "change": 8.12,
+   "sound": "-33.86 LUFS mean, -21.87 peak",
+   "voice": "follow me down deep down where the love lives"
+  }
+ ],
+ "sound": {
+  "silences": [],
+  "black": [
+   {
+    "start": 12.96,
+    "end": 13.2
+   },
+   {
+    "start": 59.36,
+    "end": 59.8
+   },
+   {
+    "start": 61.44,
+    "end": 62
+   },
+   {
+    "start": 62.16,
+    "end": 62.32
+   },
+   {
+    "start": 64.68,
+    "end": 65.44
+   },
+   {
+    "start": 66.92,
+    "end": 67.52
+   },
+   {
+    "start": 69.48,
+    "end": 70.6
+   },
+   {
+    "start": 72.56,
+    "end": 73.36
+   },
+   {
+    "start": 75.4,
+    "end": 76.32
+   },
+   {
+    "start": 78.32,
+    "end": 78.96
+   },
+   {
+    "start": 81.12,
+    "end": 81.6
+   },
+   {
+    "start": 84.44,
+    "end": 84.64
+   },
+   {
+    "start": 87.28,
+    "end": 87.52
+   }
+  ],
+  "music_arc": [
+   {
+    "src": [
+     0.0,
+     29.1
+    ],
+    "what": "No score: room tone of a busy house, paper rustle (loudest 23.5-26.3 as the paper tears), mum's off-hand lines 0.3-8.1 and 11.7-17.3 (about -25 to -40 LUFS)."
+   },
+   {
+    "src": [
+     29.1,
+     30.6
+    ],
+    "what": "Needle drop: click at 29.1, then vinyl crackle."
+   },
+   {
+    "src": [
+     30.6,
+     42.4
+    ],
+    "what": "The song (a famous 1990s house track, here as a slow, intimate female-vocal cover) enters soft: piano chords and voice, -20 to -15 LUFS, 123 bpm grid (bars every 1.951 s from 30.616)."
+   },
+   {
+    "src": [
+     42.4,
+     62.0
+    ],
+    "what": "Hard switch on the picture cut into the club: full dance arrangement, four-on-the-floor kick, loudest part of the film (-10 to -12 LUFS); vocal 'Why don't you take my hand, come away' 57.1-62.5. Bars every 1.95 s from 42.398."
+   },
+   {
+    "src": [
+     62.0,
+     83.0
+    ],
+    "what": "Arrangement thins and fades with the crowd: pads and kick decay to -25/-31 LUFS through the memory blacks."
+   },
+   {
+    "src": [
+     83.0,
+     111.0
+    ],
+    "what": "Slow ballad cover returns (~105.5 bpm, bars every 2.275 s from 83.052; ~106.5 bpm, bars every 2.254 s from 101.01): 'Why don't you take my hand... come out of the blue' over the baby and the return home; chorus 'deep down where the love lives' over the hug and laugh (-15 to -25 LUFS)."
+   },
+   {
+    "src": [
+     111.0,
+     120.0
+    ],
+    "what": "Outro: last 'where the love lives' ends 116.5, a sustained piano chord rings out under the wordmark, -27 to -45 LUFS."
+   }
+  ],
+  "speech": "On-camera speech only in the first 17 s (mum, off-hand, not kept in either cut). Everything else is the song's vocal (sung lyric, in the score).",
+  "mix": "Music is the whole soundtrack after the needle drop; no sound effects over the club or memory; in the home scenes after 30 s the music sits alone (no dialogue, no foley except the hug). The score cut files carry everything.",
+  "score_files": {
+   "full": "set/score.wav",
+   "cut30": "set/score_30.wav",
+   "cut15": "set/score_15.wav"
+  }
+ },
+ "look": {
+  "grade": "Warm naturalistic film grade at home: amber-cream walls, olive green, teal-blue knit and red paper as the only saturated colours; skin warm. The club is its own grade: deep blue-teal (#0c1724), crushed blacks, cyan and green accents. The memory void is black with one warm key.",
+  "contrast": "Soft at home (lifted blacks, no clipped whites except windows); hard in the club and the memory (true black around a lit subject).",
+  "light": "Home: soft overcast daylight through large windows plus warm practicals (fairy lights, lamps, candles). Club: coloured top light and edge light, no fill. Memory: single warm overhead spotlight or soft warm key from the left, everything else black.",
+  "depth_of_field": "Shallow throughout (long lens feel, 50-85 mm): backgrounds melt to bokeh of fairy lights; inserts and close-ups have 2-10 cm of focus. The end card is entirely out of focus.",
+  "grain": "Fine 35 mm-like grain, slight halation on practicals.",
+  "brightness": "Measured 0-255: home daylight shots sit at 90-140 (son by the window 107-137, stairs/hallway 100-117), home evening/shelf shots at 55-95 (gift insert 52, unwrap 57-63, sleeve 68-83, turntable 76-80, shelf 75-93), the club at 25-40, the crowd-to-black and memory shots at 0-35 (spotlight floor 7-21, baby 12-35), the end card at 80-95.",
+  "camera": "Mostly handheld-steady or slow dolly; no whips, no zooms. Inserts on hands and the gift. Low angles on dad with the record; top-down for the spotlight."
+ },
+ "text_style": {
+  "typeface": "Thin humanist sans-serif (light weight), all capitals, very wide tracking (about +200 for the supers, about +400 for the wordmark).",
+  "colour": "White #FFFFFF, no shadow, no box.",
+  "supers": "Centred at 50% x, 50% y; cap height 3.7% of frame height; 'FIND THE GIFT' spans 27% of frame width (36.6%-63.5%). One line each, two supers in sequence, 0.4 s dissolve in and out, crossfading into each other.",
+  "wordmark": "{BRAND} wordmark centred at 50% x, 50% y; cap height 8.3% of frame height; spans 60% of frame width (20%-80%); same thin sans, widest tracking; 0.5 s dissolve in, holds to the end, no fade out.",
+  "elsewhere": "No other on-screen text; the only in-picture writing is the hand-drawn 'DAD' note and the sleeve title."
+ },
+ "set": {
+  "char_father": {
+   "file": "set/char_father_sheet.jpg",
+   "fixes": "The father, an invented man about 48: medium build, light olive skin, dark-brown curly tousled hair greying at the temples, salt-and-pepper stubble; dark olive-green overshirt worn open over a heather-grey tee, indigo jeans, brown boots, gold wedding band. Same outfit at home and in the club memory."
+  },
+  "char_son": {
+   "file": "set/char_son_sheet.jpg",
+   "fixes": "The son, an invented boy about 17: slim, fair, dark-brown shaggy hair with a fringe; teal-blue (#1d5f86) fluffy mohair sweater, white tee hem, black trousers; matte navy over-ear headphones with no logo (on his ears in act 1, round his neck from S15)."
+  },
+  "char_baby": {
+   "file": "set/char_baby_sheet.jpg",
+   "fixes": "The son as a baby (memory, S36): about 6 months, wispy light-brown hair, laughing, in a teal-blue knit romper (the same blue as the teen's sweater: the colour that links the ages)."
+  },
+  "product_gift_record": {
+   "file": "set/product_gift_record_sheet.jpg",
+   "fixes": "The gift: flat square 31 cm parcel in glossy red (#c0141c) paper with darker red (#8a0f14) tree print, yellow (#f2e45a) sticky note 'DAD' + smiley in black marker; inside, a sleeve with a blurred club-light photo grading magenta-purple (#7a2a8c) to red (#d2302a) to orange-gold (#f0902a), white bold condensed title 'DEEP DOWN' lower left; black vinyl, plain cream label."
+  },
+  "product_turntable": {
+   "file": "set/product_turntable_sheet.jpg",
+   "fixes": "Record player on the shelf: matte white plinth, brushed silver platter with polished rim, black mat, slim straight silver tonearm, black headshell, cueing lever back right."
+  },
+  "loc_living_room": {
+   "file": "set/loc_living_room.jpg",
+   "fixes": "Living room: tall lit fir tree, tan leather sofa, patterned rug with torn paper, tall window with sheer curtains, bookshelves wrapped in fairy lights, globe pendant. Daylight + warm practicals, brightness 70-110."
+  },
+  "loc_window_desk": {
+   "file": "set/loc_window_desk.jpg",
+   "fixes": "Sitting-room corner where the son sits: table by a tall black-framed window, overcast daylight, arc floor lamp, fiddle-leaf fig, white walls. Brightness 100-140."
+  },
+  "loc_record_corner": {
+   "file": "set/loc_record_corner.jpg",
+   "fixes": "Dad's record shelf: white built-in shelves with vinyl, black speakers, the white turntable, framed photos, fairy lights, candles. Evening-warm, brightness 60-95."
+  },
+  "loc_hallway_stairs": {
+   "file": "set/loc_hallway_stairs.jpg",
+   "fixes": "Hallway: white staircase, handrail wrapped in pine garland with tiny warm lights, cream walls, orange-sun print, paper star lantern. Daylight, brightness 90-117."
+  },
+  "loc_club_floor": {
+   "file": "set/loc_club_floor.jpg",
+   "fixes": "Memory club: black room, blue-cyan top lights, green beams, dark reflective floor. Brightness 25-40, its own blue grade."
+  },
+  "loc_club_spotlight": {
+   "file": "set/loc_club_spotlight.jpg",
+   "fixes": "Memory void: worn dark wooden dance floor, one warm overhead spotlight pool, pure black around. Brightness 5-21 (pool ~110)."
+  },
+  "score": {
+   "file": "set/score.wav",
+   "fixes": "The full soundtrack (room tone, needle drop, the song); cut versions set/score_30.wav and set/score_15.wav."
+  },
+  "lines": {
+   "file": "set/lines.json",
+   "fixes": "Sung lyrics heard in each cut (all in the score) with clips set/lines/L01.wav to L06.wav."
+  }
+ },
+ "slots": [
+  {
+   "slot": "{BRAND}",
+   "default": "the store's wordmark in thin wide-tracked capitals",
+   "where": "end card wordmark"
+  },
+  {
+   "slot": "{TAGLINE}",
+   "default": "FIND THE GIFT THAT SAYS IT",
+   "where": "end card super (cut30 24.53-26.90, cut15 9.53-11.90)"
+  },
+  {
+   "slot": "{TAGLINE_LEAD}",
+   "default": "WHEN THE WORDS WON'T COME",
+   "where": "first super, source only (not in the cuts)"
+  },
+  {
+   "slot": "{GIFT}",
+   "default": "a 12-inch vinyl record wrapped in red tree-print paper (set/product_gift_record_sheet.jpg)",
+   "where": "S08, S11, S12, S13: the product the film sells; any gift that unlocks a shared memory works (a camera, a jersey, a book)"
+  },
+  {
+   "slot": "{GIFT_NOTE}",
+   "default": "DAD",
+   "where": "hand-written on the yellow sticky note"
+  },
+  {
+   "slot": "{RECORD_TITLE}",
+   "default": "DEEP DOWN",
+   "where": "sleeve title, white bold condensed capitals"
+  },
+  {
+   "slot": "{SONG}",
+   "default": "set/score.wav (a slow cover of a famous house song)",
+   "where": "the whole soundtrack; a new film keeps the needle-drop-then-club structure and the cut points"
+  },
+  {
+   "slot": "{GIVER}",
+   "default": "the teenage son (set/char_son_sheet.jpg)",
+   "where": "S04, S39, S41, S43"
+  },
+  {
+   "slot": "{RECEIVER}",
+   "default": "the father (set/char_father_sheet.jpg)",
+   "where": "S08-S14, S17, S24, S36, S41"
+  },
+  {
+   "slot": "{MEMORY_PLACE}",
+   "default": "a dark club (set/loc_club_floor.jpg, set/loc_club_spotlight.jpg)",
+   "where": "S17, S24: the place the gift sends the receiver back to"
+  },
+  {
+   "slot": "home places",
+   "default": "set/loc_living_room.jpg, set/loc_window_desk.jpg, set/loc_record_corner.jpg, set/loc_hallway_stairs.jpg",
+   "where": "all home shots"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "arc": "Hook 0-2.9 (the son shut away in headphones; a gift marked DAD). Middle 2.9-11.55 (unwrap, the record, the needle drop at 8.08, dad listening as the song starts at 9.60). Turn 11.55-17.73 (hard cut on the bar into the blue club, dad dancing; alone in the spotlight; his son as a baby in his arms). Payoff 17.73-24.53 (back home the son walks to him, the hug, the son's grin). End card 24.53-30.0.",
+  "average_shot": 2.31,
+  "shots": [
+   {
+    "n": 1,
+    "from": 4,
+    "start": 0.0,
+    "end": 1.6,
+    "dur": 1.6,
+    "src": [
+     8.0,
+     9.6
+    ],
+    "change": "1.6 s window from the middle of the 5.1 s shot: hand at lips, before the drift reaches the back of his head."
+   },
+   {
+    "n": 2,
+    "from": 8,
+    "start": 1.6,
+    "end": 2.9,
+    "dur": 1.3,
+    "src": [
+     17.84,
+     19.14
+    ],
+    "change": "1.3 s of the insert (whole action)."
+   },
+   {
+    "n": 3,
+    "from": 11,
+    "start": 2.9,
+    "end": 5.3,
+    "dur": 2.4,
+    "src": [
+     23.0,
+     25.4
+    ],
+    "change": "2.4 s: from the first tug to the sleeve showing."
+   },
+   {
+    "n": 4,
+    "from": 12,
+    "start": 5.3,
+    "end": 7.3,
+    "dur": 2.0,
+    "src": [
+     25.6,
+     27.6
+    ],
+    "change": "2.0 s, almost the whole shot."
+   },
+   {
+    "n": 5,
+    "from": 13,
+    "start": 7.3,
+    "end": 9.304,
+    "dur": 2.004,
+    "src": [
+     28.316,
+     30.32
+    ],
+    "change": "last 2.0 s: needle touch at 0.78 s (score click at 8.08)."
+   },
+   {
+    "n": 6,
+    "from": 14,
+    "start": 9.304,
+    "end": 11.551,
+    "dur": 2.247,
+    "src": [
+     30.32,
+     32.567
+    ],
+    "change": "first 2.25 s of the 6.2 s arc; ends on the bar where the club drops."
+   },
+   {
+    "n": 7,
+    "from": 17,
+    "start": 11.551,
+    "end": 13.951,
+    "dur": 2.4,
+    "src": [
+     42.398,
+     44.798
+    ],
+    "change": "first 2.4 s of the 15.2 s club shot, from the drop."
+   },
+   {
+    "n": 8,
+    "from": 24,
+    "start": 13.951,
+    "end": 15.453,
+    "dur": 1.502,
+    "src": [
+     65.44,
+     66.942
+    ],
+    "change": "1.5 s, the whole shot; no blacks around it."
+   },
+   {
+    "n": 9,
+    "from": 36,
+    "start": 15.453,
+    "end": 17.728,
+    "dur": 2.275,
+    "src": [
+     81.9,
+     84.175
+    ],
+    "change": "2.3 s, ending as it fades toward black."
+   },
+   {
+    "n": 10,
+    "from": 39,
+    "start": 17.728,
+    "end": 19.728,
+    "dur": 2.0,
+    "src": [
+     89.877,
+     91.877
+    ],
+    "change": "first 2.0 s: lets go of the banister, steps forward."
+   },
+   {
+    "n": 11,
+    "from": 41,
+    "start": 19.728,
+    "end": 22.278,
+    "dur": 2.55,
+    "src": [
+     95.08,
+     97.63
+    ],
+    "change": "2.55 s from the middle of the hug (S40, dad walking up, is dropped)."
+   },
+   {
+    "n": 12,
+    "from": 43,
+    "start": 22.278,
+    "end": 24.531,
+    "dur": 2.253,
+    "src": [
+     103.264,
+     105.517
+    ],
+    "change": "last 2.25 s: the smile, after dad's back has cleared."
+   },
+   {
+    "n": 13,
+    "from": 47,
+    "start": 24.531,
+    "end": 30.0,
+    "dur": 5.469,
+    "src": [
+     114.531,
+     120.0
+    ],
+    "change": "last 5.47 s: tagline super already up, then the wordmark."
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Why don't you take my hand",
+    "kind": "sung lyric",
+    "start": 15.661,
+    "end": 17.728,
+    "src": [
+     83.26,
+     85.327
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": true
+   },
+   {
+    "id": "L02",
+    "words": "...come out of the blue",
+    "kind": "sung lyric",
+    "start": 17.728,
+    "end": 18.471,
+    "src": [
+     89.877,
+     90.62
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": true
+   },
+   {
+    "id": "L03",
+    "words": "Everything you give... (transcription uncertain)",
+    "kind": "sung lyric",
+    "start": 19.111,
+    "end": 22.278,
+    "src": [
+     91.26,
+     94.427
+    ],
+    "clip": "set/lines/L03.wav",
+    "in_score": true
+   },
+   {
+    "id": "L04",
+    "words": "...deep down where the love lives",
+    "kind": "sung lyric",
+    "start": 22.278,
+    "end": 24.531,
+    "src": [
+     103.264,
+     105.517
+    ],
+    "clip": "set/lines/L04.wav",
+    "in_score": true
+   },
+   {
+    "id": "L05",
+    "words": "...where the love lives",
+    "kind": "sung lyric",
+    "start": 24.531,
+    "end": 26.54,
+    "src": [
+     114.531,
+     116.54
+    ],
+    "clip": "set/lines/L05.wav",
+    "in_score": true
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 21.016,
+     "src_out": 32.567,
+     "what": "room tone, paper, needle click (29.1 -> 8.08), the song's soft intro from 30.616 (-> 9.60); src_in sits in the beatless pre-music room tone, chosen so the cut is exactly 30.0 s"
+    },
+    {
+     "src_in": 42.398,
+     "src_out": 46.3,
+     "what": "club drop, 2 bars"
+    },
+    {
+     "src_in": 83.052,
+     "src_out": 85.327,
+     "what": "ballad returns: 'Why don't you take my hand', 1 bar"
+    },
+    {
+     "src_in": 89.877,
+     "src_out": 94.427,
+     "what": "'...come out of the blue / Everything you give', 2 bars"
+    },
+    {
+     "src_in": 103.264,
+     "src_out": 105.517,
+     "what": "chorus '...where the love lives', 1 bar"
+    },
+    {
+     "src_in": 114.531,
+     "src_out": 120.0,
+     "what": "outro to the end of the track"
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-9.60 no music (room tone, tearing paper at ~2.5-5.3, needle click 8.08); 9.60-11.55 soft intro; 11.55-15.45 club dance version (loudest); 15.45-24.53 ballad vocal; 24.53-30.0 outro, last word 26.54, piano chord under the wordmark."
+  },
+  "text": [
+   {
+    "words": "FIND THE GIFT THAT SAYS IT ({TAGLINE})",
+    "start": 24.531,
+    "end": 26.9,
+    "position": "centre, cap height 3.7% of frame height",
+    "animation": "already on at the cut (or a 0.2 s dissolve in), 0.4 s dissolve out"
+   },
+   {
+    "words": "{BRAND}",
+    "start": 27.0,
+    "end": 30.0,
+    "position": "centre, cap height 8.3%, 60% of width",
+    "animation": "0.5 s dissolve in, holds"
+   }
+  ],
+  "end_card": {
+   "start": 24.531,
+   "end": 30.0,
+   "picture": "S47: soft-focus living room, tree left",
+   "super": "FIND THE GIFT THAT SAYS IT",
+   "wordmark": "{BRAND}"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "arc": "Hook 0-2.6 (son in headphones; the gift marked DAD). Proof 2.6-7.26 (needle drop, then hard into the club: dad dancing). Payoff 7.26-9.53 (the hug). End card 9.53-15.0.",
+  "average_shot": 2.5,
+  "shots": [
+   {
+    "n": 1,
+    "from": 4,
+    "start": 0.0,
+    "end": 1.5,
+    "dur": 1.5,
+    "src": [
+     8.0,
+     9.5
+    ],
+    "change": "1.5 s of the cut30 window: hand at lips."
+   },
+   {
+    "n": 2,
+    "from": 8,
+    "start": 1.5,
+    "end": 2.6,
+    "dur": 1.1,
+    "src": [
+     17.94,
+     19.04
+    ],
+    "change": "1.1 s: fingers on the 'DAD' note."
+   },
+   {
+    "n": 3,
+    "from": 13,
+    "start": 2.6,
+    "end": 5.009,
+    "dur": 2.409,
+    "src": [
+     27.911,
+     30.32
+    ],
+    "change": "2.4 s: needle touch at 1.19 s (score click at 3.79)."
+   },
+   {
+    "n": 4,
+    "from": 17,
+    "start": 5.009,
+    "end": 7.256,
+    "dur": 2.247,
+    "src": [
+     42.398,
+     44.645
+    ],
+    "change": "2.25 s from the drop; the picture cuts 0.3 s before the score's club bar (5.305), over the needle crackle."
+   },
+   {
+    "n": 5,
+    "from": 41,
+    "start": 7.256,
+    "end": 9.531,
+    "dur": 2.275,
+    "src": [
+     95.08,
+     97.355
+    ],
+    "change": "2.3 s of the hug (straight from the club: the stairs, the baby and the spotlight are dropped)."
+   },
+   {
+    "n": 6,
+    "from": 47,
+    "start": 9.531,
+    "end": 15.0,
+    "dur": 5.469,
+    "src": [
+     114.531,
+     120.0
+    ],
+    "change": "the same 5.47 s end card as cut30."
+   }
+  ],
+  "lines": [
+   {
+    "id": "L06",
+    "words": "...something to do... (transcription uncertain)",
+    "kind": "sung lyric",
+    "start": 7.256,
+    "end": 9.531,
+    "src": [
+     94.427,
+     96.702
+    ],
+    "clip": "set/lines/L06.wav",
+    "in_score": true
+   },
+   {
+    "id": "L05",
+    "words": "...where the love lives",
+    "kind": "sung lyric",
+    "start": 9.531,
+    "end": 11.54,
+    "src": [
+     114.531,
+     116.54
+    ],
+    "clip": "set/lines/L05.wav",
+    "in_score": true
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 25.311,
+     "src_out": 30.616,
+     "what": "room tone, needle click (29.1 -> 3.79), crackle; ends on the song's first downbeat; src_in sits in the beatless room tone, chosen so the cut is exactly 15.0 s"
+    },
+    {
+     "src_in": 42.398,
+     "src_out": 44.349,
+     "what": "club drop, 1 bar"
+    },
+    {
+     "src_in": 94.427,
+     "src_out": 96.702,
+     "what": "ballad, 1 bar under the hug"
+    },
+    {
+     "src_in": 114.531,
+     "src_out": 120.0,
+     "what": "outro"
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-5.31 no music (room tone, needle click 3.79, crackle); 5.31-7.26 club dance version; 7.26-9.53 ballad vocal; 9.53-15.0 outro, last word 11.54, piano chord under the wordmark."
+  },
+  "text": [
+   {
+    "words": "FIND THE GIFT THAT SAYS IT ({TAGLINE})",
+    "start": 9.531,
+    "end": 11.9,
+    "position": "centre, cap height 3.7%",
+    "animation": "on at the cut, 0.4 s dissolve out"
+   },
+   {
+    "words": "{BRAND}",
+    "start": 12.0,
+    "end": 15.0,
+    "position": "centre, cap height 8.3%, 60% of width",
+    "animation": "0.5 s dissolve in, holds"
+   }
+  ],
+  "end_card": {
+   "start": 9.531,
+   "end": 15.0,
+   "picture": "S47",
+   "super": "FIND THE GIFT THAT SAYS IT",
+   "wordmark": "{BRAND}"
+  }
+ }
+}

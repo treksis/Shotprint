@@ -229,4 +229,23 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
       'A moody black-and-white launch spot that reveals a car in fragments of light from a black studio, proves its details in close-ups, then opens into night-city and misty-mountain driving before a tagline and end card.',
     prompt: "Make a 30 s launch film for our new matte-black electric sports coupe with the tagline 'Built in the dark.'",
   },
+  {
+    id: 'holiday-story',
+    title: 'Gift Unlocks a Memory',
+    source: '2025 department-store Christmas film: father and teenage son reunited by a gift',
+    format: 'Holiday story',
+    status: 'ready',
+    durationSec: 120,
+    shots: 13,
+    shotsMeasured: true,
+    setups: 13,
+    lines: 5,
+    cuts: [30, 15],
+    thumbnail: '/templates/holiday-story.jpg',
+    preview: '/templates/holiday-story.mp4',
+    proof: { '30': '/templates/proof/holiday-story-30.mp4', '15': '/templates/proof/holiday-story-15.mp4' },
+    description:
+      'A wordless, song-driven family story: a gift and a needle drop send the receiver into a vivid memory, then back home into a hug, closing on a soft-focus end card with one super and the brand.',
+    prompt: "Make a 30 s holiday film for our new wireless speaker: a teenage daughter's gift sends her mother back to a memory of dancing at her first concert, then they hug.",
+  },
 ];
