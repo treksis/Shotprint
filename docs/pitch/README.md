@@ -55,11 +55,12 @@ Lager", "Lune 2 Pro", "Wren"), and the cast are invented people who fit the role
 | Step | Time | Notes |
 |---|---|---|
 | Measure an ad (`bin/dissect`) | ~17 s for 86 s of film | cuts, fades, brightness, loudness, transcript, shot boards; no model |
-| Author a 30 s + 15 s template (Opus) | ~40-60 min | recipe, ~30 sheets, ~40 storyboards, score cut on the bar |
-| Blind 30 s rebuild | 9-25 min | 2-16 clips (MiniMax-H3 on one GPU) + ~25 stills |
-| Blind 15 s rebuild | 6-20 min | 0-10 clips |
+| Author a 30 s + 15 s template (Opus) | 30-47 min | recipe, 20-30 sheets, 30-60 storyboards, score cut on the bar; 36-80 stills |
+| Blind 30 s rebuild | 48-62 min | 11-16 clips (MiniMax-H3) + ~25 stills; about 35 min of it is queueing, six films shared one GPU |
+| Blind 15 s rebuild | 15-30 min | 6-10 clips |
 
-Fill in from the latest run: `lab/pitch/RUN.md`.
+Six ads went from a YouTube link to a seeded template with blind 30 s and 15 s proofs in about 2 h 5 min
+of wall time, in parallel, on one G4 GPU. Per-template numbers: `lab/pitch/RUN.md` (local).
 
 ## Under the hood
 
