@@ -2,6 +2,33 @@
 
 Read with `SPEC.md` §0 (architecture). Everything below was verified on a live run unless it says otherwise.
 
+## Pick up here (stopped 2026-11-01 15:00, token budget)
+
+Done:
+- 13 templates seeded in the Studio, each with blind 30 s + 15 s proofs: 4 Meta/own + 9 third-party ads.
+  athlete-anthem was recast (invented presenter) and rebuilt.
+- 10 Meta product films as template examples (30 s + 15 s): Ray-Ban Display, Quest 3S, Ray-Ban Meta fans,
+  Marketplace, WhatsApp, Meta AI, Meta AI app, Ray-Ban Meta gift, Quest 3, Threads.
+  Reel: `lab/pitch/meta_products_reel.mp4` (43 s, local).
+- Pitch deck (private artifact https://claude.ai/artifact/8A9xeZLANTcsS6cBgEKeBN), `docs/pitch/README.md`,
+  `lab/pitch/RUN.md` updated. Everything committed locally, nothing pushed.
+- No GPU running: the Colab G4 went away at ~06:40; `colab sessions` shows none, 539.78 units left.
+  Dev server stopped.
+
+Next:
+1. Finish travel-escape, new-home, telenovela-glam (templates authored, `bin/template check` OK, in
+   `lab/replicate/author-<id>`). Their blind rebuilds in `replica30-<id>` / `replica15-<id>` are stills
+   only. Start a G4 (`colab-gpu` skill, `h3_bootstrap.sh G4 h3 --keep`), clear each replica's
+   `.h3_ledger.jsonl`, re-run its `jobs/*.jsonl` with `bin/h3`, rebuild `final/final.mp4` with the
+   workspace's own build script (named in its notes/replication_report.md), then
+   `compare/sbs.sh` -> review -> `python3 docs/pitch/publish_template.py <id>` ->
+   `python3 docs/pitch/add_to_catalog.py lab/pitch/catalog/<id>.json` -> commit. travel-escape's line
+   clips have the default names muted; check the rebuild voiced them.
+2. Before any public use: replace the template scores in the Meta product films; change fan-moments' red
+   can default.
+3. Studio open item below (show "working in the background" after `turn/foregroundCompleted`).
+4. Muse later, once the Opus flow is the reference.
+
 ## 2026-11-01: templates make 30 s and 15 s spots
 
 Templates are now **short-spot recipes**: a real ad is measured whole, but only a 30 s and a 15 s cut are
