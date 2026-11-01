@@ -1,6 +1,35 @@
-# Studio: state and next steps (written 2026-10-31, 01:45)
+# Studio: state and next steps (written 2026-10-31, 01:45; updated 2026-11-01)
 
 Read with `SPEC.md` §0 (architecture). Everything below was verified on a live run unless it says otherwise.
+
+## 2026-11-01: templates make 30 s and 15 s spots
+
+Templates are now **short-spot recipes**: a real ad is measured whole, but only a 30 s and a 15 s cut are
+made (`cut30`, `cut15`). Video models hold a shot for 2-10 s and stay consistent across 10-15 shots, not
+across a long film; full-length blind rebuilds broke on voice pace and continuity, 30 s and 15 s rebuilds
+came out close shot for shot.
+
+- Format: `sandbox/kit/docs/template_spec.md` (recipe, ingredient set, storyboards, cuts, lines/ + ui_
+  sheets, numbers not adjectives). Authoring: `make-template` skill + `bin/template` (beats, score,
+  reference, check). Filling: `template-fill` skill (cut30 by default, cut15 on request).
+- Library: `sandbox/templates/<id>`, seeded with `sandbox/host/seed_template.py` (normalizes the cut
+  schema, PNG -> JPEG, runs `bin/template check`). Source audio (score, lines) is gitignored.
+- Proof: every seeded template was rebuilt **blind** (an Opus agent with only the template) at 30 s and
+  15 s; `public/templates/proof/<id>-{30,15}.mp4` (local only) is the real footage cut the same way next
+  to the rebuild. The Studio's template page plays it, with the cut as a storyboard strip, its lines and
+  the ingredient set (`/api/studio/templates/:id`, `/files/*`).
+- Authoring and rebuilding were done by Opus in `lab/replicate/` (author-*, replica30-*, replica15-*,
+  compare30/, compare15/). Muse comes later, once the Opus flow is the reference.
+
+| Template (30 s blind rebuild) | Clips | Time |
+|---|---|---|
+| Meta launch film | 11 | 25 min |
+| BlueChip founder story | 11 | 16 min |
+| Muse intro (motion graphics, drawn in code) | 2 | 12 min |
+| Muse tour (presenter + screens) | 5 | 9 min |
+
+Open, Studio side: on `turn/foregroundCompleted` the turn keeps running while subagents work (28 min in
+the dissect seed), so "running" is true but reads as stuck: show "working in the background".
 
 ## Where we are
 
@@ -91,9 +120,10 @@ Open:
 
 ## Running costs to watch
 
-- **One Colab G4 is still up** (`[?] gpu-g4-s-use5c0-…`, ~10 compute units/h; 715 units left at 01:50).
-  It lost its CLI name, so `colab stop` can't reach it: close it at colab.research.google.com →
-  Runtime → Manage sessions. Next render session: `colab sessions` first, then bootstrap a fresh `h3`
-  (never ssh to a name `sessions` doesn't list; that silently starts a billed CPU box).
+- **Colab G4 `h3`** (`gpu-g4-s-euw4a0-3ih6pku5onwf0`, ~10 compute units/h) renders every H3 clip for the
+  lab runs; kept up per the standing policy. A second, unnamed G4 (`[?] gpu-g4-s-euw4a2-…`) shows up in
+  `colab sessions` with a new id each time it is checked; nothing in this repo starts it. If it isn't
+  yours elsewhere, close it at colab.research.google.com → Runtime → Manage sessions. Before any ssh:
+  `colab sessions` (ssh to a name it doesn't list silently starts a billed CPU box).
 - Project containers (`museclone-*`) idle on `sleep`; harmless, removed when a project is deleted.
 - `.dev.vars` has `H3_ENABLED=1` and `STUDIO_USD_CAP=25` for these runs.
