@@ -84,7 +84,13 @@ followed in about 1 h. Per-template numbers: `lab/pitch/RUN.md` (local).
 
 ## What's local only
 
-Proof videos (`public/templates/proof/`), the Meta product examples (`public/templates/examples/`, they
-still use the templates' scores, which must be replaced before public use), the source films (`sandbox/references/`) and source audio in
+Proof videos (`public/templates/proof/`), the source films (`sandbox/references/`) and source audio in
 templates (score, lines) are not in git: they contain other companies' footage and music. The hook video
 and landing images use Meta's own films only.
+
+The Meta product examples (`public/templates/examples/`, local only for size) and
+`lab/pitch/meta_products_reel.mp4` carry original music: `docs/pitch/own_score.py` synthesizes a score
+(no samples, no source melody) on the old score's tempo and bar grid and follows its loudness envelope,
+so every cut still lands on a bar. Each film's original build was re-run with it; the picture is
+bit-identical. The template-score versions are kept next to them as `final/*.orig.mp4` in each
+`lab/replicate/fill-*` workspace. The proof videos still show the real ads, so show them live only.

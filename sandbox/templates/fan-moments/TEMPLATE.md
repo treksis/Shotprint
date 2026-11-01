@@ -2,7 +2,7 @@
 
 **The film.** A 30-second soft-drink spot for a 2026 football tournament, 25 shots (average 1.20 s), letterboxed 1.85:1. A veteran commentator in a booth says "This is quite a game." Fans everywhere grip the drink and wait: an older man at home, green-nailed hands in a bar, two old men at a terrace table, a young man praying over his can. A whistle blows: "It'll be a free kick." The can is open, goosebumps rise, and then time stops inside the drink. A bubble drifts away in the dark, fizz rises, a single drop falls into a glass, and the sound drains to near silence for four seconds. The drop lands and everything slams back at once. A pupil snaps shut, and "Oh, what a goal!" plays over screams, roars, toasts, a bottle spraying foam, a can poured over a head, and bottles clinking at sunset ("Ecstasy, euphoria!"). Then the emotion overflows: a droplet running down the bottle cuts to a tear running down a cheek ("And emotion overflows."), a woman by the sea drinks with her eyes closed, the tagline comes up, and the can sinks under the brand lockup.
 
-The drink is a **generic soft drink** ({BRAND}, default "SODA"): a deep red can (#B5121B) and a straight-walled clear glass bottle with a red label band, each carrying a plain white bold sans wordmark. All cast are invented people (`set/char_*_sheet.png`).
+The drink is a **generic soft drink** ({BRAND}, default "SODA"): a tangerine-orange can (#D46D28) and a straight-walled clear glass bottle with an orange label band, each carrying a plain white bold sans wordmark. All cast are invented people (`set/char_*_sheet.png`).
 
 ## Arc (source = cut30)
 | Act | Time | Shots | What it does |
@@ -18,7 +18,7 @@ The drink is a **generic soft drink** ({BRAND}, default "SODA"): a deep red can 
 2. **Every person is touching the drink.** Before the goal, every fan shot shows a can or bottle held, gripped or prayed over, and nobody drinks. The drinking happens only at the end (s23-s24).
 3. **Bodies react like the drink.** Goosebumps match the fizz, a pupil snaps as the drop lands, and a tear matches the condensation droplet (s21 cut to s22). Match the textures.
 4. **The held breath is the film.** For 4 s (s09-s11) the sound drains to near silence over macro shots in near-black (11-17 of 255). The drop lands at 14.00 and the full mix slams in at 14.04. Keep that sync in every cut.
-5. **Dark before, light after.** Before the goal: interiors at 30-64 of 255, warm practicals, teal shadows. After it: sun, street and sunset at 66-149. The only saturated colour is the product red.
+5. **Dark before, light after.** Before the goal: interiors at 30-64 of 255, warm practicals, teal shadows. After it: sun, street and sunset at 66-149. The only saturated colour is the product orange.
 6. **Fast and short.** Shots run 0.46-2.38 s with hard cuts only: no dissolves, no speed ramps (the slow motion is in camera), and no supers until the tagline.
 7. **Close and shallow.** Mostly close-ups and macros on long lenses. Only s14, s19 and s20 open up to medium wide, and those are handheld.
 

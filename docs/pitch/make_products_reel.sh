@@ -1,5 +1,5 @@
 #!/bin/sh
-# Pitch reel (local only: the films still use template scores): ten Meta product films made from templates.
+# Pitch reel: ten Meta product films made from templates.
 set -e
 F=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf; RG=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
 seg() { # ws start dur title from out

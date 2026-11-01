@@ -78,7 +78,7 @@
   }
  ],
  "look": {
-  "grade": "Warm, naturalistic and filmic. Tension shots are low-key with teal-green shadows and warm skin; the only saturated colour is the product red. Product macros sit in near-black voids. The goal section opens up into daylight: warm sun at the sea, soft overcast in the street, golden sunset.",
+  "grade": "Warm, naturalistic and filmic. Tension shots are low-key with teal-green shadows and warm skin; the only saturated colour is the product orange. Product macros sit in near-black voids. The goal section opens up into daylight: warm sun at the sea, soft overcast in the street, golden sunset.",
   "contrast": "Medium-high: deep but not crushed blacks, highlights only on practicals, glass and sun.",
   "light": "Motivated practicals inside (lamp, TV glow, fairy lights, window strips), hard sun outside, rim and backlight on every product macro.",
   "depth_of_field": "Shallow everywhere (85-100 mm close-ups and macros, f/1.4-2.8 feel); only s19 and s20 hold some depth.",
@@ -335,15 +335,15 @@
   },
   "product_can": {
    "file": "set/product_can_sheet.jpg",
-   "fixes": "330 ml can, deep red body #B5121B ({BRAND_COLOUR}), plain white bold sans {BRAND} wordmark across the front (~60% of the can width), silver lid, ring-pull and base rim, condensation beads"
+   "fixes": "330 ml can, tangerine-orange body #D46D28 ({BRAND_COLOUR}), plain white bold sans {BRAND} wordmark across the front (~60% of the can width), silver lid, ring-pull and base rim, condensation beads"
   },
   "product_bottle": {
    "file": "set/product_bottle_sheet.jpg",
-   "fixes": "330 ml clear straight-walled glass bottle (no waist, no flutes), long straight neck, silver crown cap, dark amber-brown cola, red #B5121B label band across the middle third with the white {BRAND} wordmark"
+   "fixes": "330 ml clear straight-walled glass bottle (no waist, no flutes), long straight neck, silver crown cap, dark amber-brown cola, orange #D46D28 label band across the middle third with the white {BRAND} wordmark"
   },
   "product_macro": {
    "file": "set/product_macro_sheet.jpg",
-   "fixes": "the drink's macro looks: 1 glass from above, 2 amber bubble, 3 crown splash, 4 condensation on red metal"
+   "fixes": "the drink's macro looks: 1 glass from above, 2 amber bubble, 3 crown splash, 4 condensation on orange metal"
   },
   "loc_booth": {
    "file": "set/loc_booth.jpg",
@@ -422,7 +422,7 @@
    "swap": "the new drink's name; it appears on the can, the bottle label, the tagline and the lockup tile. Redraw graphics: python3 templates/fan-moments/draw_ui.py templates/fan-moments/set <BRAND> <TAGLINE> <PARTNER_LINE> <BRAND_COLOUR>"
   },
   "brand_colour": {
-   "default": "{BRAND_COLOUR} = #B5121B deep red",
+   "default": "{BRAND_COLOUR} = #D46D28 tangerine orange",
    "swap": "the can body, label band and lockup tile; keep it the only saturated colour in the tension shots"
   },
   "product": {
@@ -552,7 +552,7 @@
    ],
    "wardrobe": "pale aqua shirt over a black top; emerald-green almond nails; gold ring",
    "shot_size": "close-up",
-   "subject_in_frame": "Two hands grip a red can at x 45-85% (can 18% of the width, y 25-80%): the right hand's green-nailed fingers curl over the lid, the left hand cups the base. Her chin and mouth are soft and out of focus at the top left (x 0-40%, y 0-35%); another fan's pale shirt is blurred at the left edge.",
+   "subject_in_frame": "Two hands grip an orange can at x 45-85% (can 18% of the width, y 25-80%): the right hand's green-nailed fingers curl over the lid, the left hand cups the base. Her chin and mouth are soft and out of focus at the top left (x 0-40%, y 0-35%); another fan's pale shirt is blurred at the left edge.",
    "camera": "eye level, close, ~85 mm, very shallow depth of field (nails and can sharp)",
    "camera_move": "slow handheld push in, about 3% over 1.38 s",
    "action": "She squeezes the can and drums her green nails on the lid, waiting.",
@@ -587,7 +587,7 @@
    ],
    "wardrobe": "bearded fan: cream pleated short-sleeve shirt; scarf fan: beige jacket, sky-blue and white striped scarf",
    "shot_size": "medium",
-   "subject_in_frame": "The bearded fan's torso fills x 0-60% (head cropped above the beard; beard at the top, x 35-55%); his two open hands rub together around a red can held at x 45-65%, y 50-80%. The scarf fan sits to his left at x 60-100%, face cropped, his striped scarf visible; a second red can stands on the table at the right edge.",
+   "subject_in_frame": "The bearded fan's torso fills x 0-60% (head cropped above the beard; beard at the top, x 35-55%); his two open hands rub together around a orange can held at x 45-65%, y 50-80%. The scarf fan sits to his left at x 60-100%, face cropped, his striped scarf visible; a second orange can stands on the table at the right edge.",
    "camera": "eye level at seated height, ~50 mm, moderate depth of field",
    "camera_move": "handheld, slight drift left (about 3%)",
    "action": "The bearded fan rolls the can between his palms as if warming his hands, then claps them together once around it (0.6-1.2 s into the shot).",
@@ -621,7 +621,7 @@
    ],
    "wardrobe": "white t-shirt under an open light grey overshirt",
    "shot_size": "close-up",
-   "subject_in_frame": "The young fan in three-quarter left profile at x 40-90%, eyes half closed; his clasped hands rest on top of a red can that stands at x 30-48%, y 45-100% (17% of the width); a bright window strip at the top left (x 20-45%, y 0-10%).",
+   "subject_in_frame": "The young fan in three-quarter left profile at x 40-90%, eyes half closed; his clasped hands rest on top of a orange can that stands at x 30-48%, y 45-100% (17% of the width); a bright window strip at the top left (x 20-45%, y 0-10%).",
    "camera": "eye level, ~85 mm, shallow depth of field",
    "camera_move": "locked off, very slow push (about 2%)",
    "action": "He presses his clasped hands down on the can's lid and touches his lips to his knuckles, praying.",
@@ -657,7 +657,7 @@
    ],
    "wardrobe": "as s05",
    "shot_size": "close-up",
-   "subject_in_frame": "The red can is held up in the foreground at x 20-55%, y 25-100% (30% of the width), sharp; his face is soft behind it at x 50-90%, y 0-80%, looking up and right at a screen off-frame.",
+   "subject_in_frame": "The orange can is held up in the foreground at x 20-55%, y 25-100% (30% of the width), sharp; his face is soft behind it at x 50-90%, y 0-80%, looking up and right at a screen off-frame.",
    "camera": "slightly low, just below the can, ~85 mm, shallow depth of field (can sharp, face soft)",
    "camera_move": "slow push in, about 4% over 1.21 s, ease-in",
    "action": "He holds the can at his chest and stares up at the screen, motionless, lips parted.",
@@ -692,7 +692,7 @@
    ],
    "wardrobe": "bare hands",
    "shot_size": "macro",
-   "subject_in_frame": "Looking down at about 60 degrees onto an open red can on a warm wooden table: the silver lid, raised ring-pull and black drinking hole fill x 55-100% (lid 45% of the width), the red body running off the top right, beaded with condensation; his two fists and twisting fingers at the lower left (x 0-35%, y 45-100%); brown wood fills the rest.",
+   "subject_in_frame": "Looking down at about 60 degrees onto an open orange can on a warm wooden table: the silver lid, raised ring-pull and black drinking hole fill x 55-100% (lid 45% of the width), the red body running off the top right, beaded with condensation; his two fists and twisting fingers at the lower left (x 0-35%, y 45-100%); brown wood fills the rest.",
    "camera": "high angle, near top-down, ~100 mm macro, shallow depth of field (lid sharp, fingers soft)",
    "camera_move": "locked off",
    "action": "His knuckles twist and fidget; the condensation glistens; the can does not move.",
@@ -936,7 +936,7 @@
    ],
    "wardrobe": "charcoal long-sleeve shirt, sleeves pushed up",
    "shot_size": "medium wide",
-   "subject_in_frame": "The bar fan at the centre (x 25-55%, head at y 35-55%) shouting, his right arm raised with a red can high at x 70-75%, y 0-15%; a fan's back at the lower right (x 55-90%); the TV at the top (x 25-65%, y 0-15%) showing the green pitch; red fairy lights along the shelves and a green glass lamp at x 85-92%, y 15-30%.",
+   "subject_in_frame": "The bar fan at the centre (x 25-55%, head at y 35-55%) shouting, his right arm raised with a orange can high at x 70-75%, y 0-15%; a fan's back at the lower right (x 55-90%); the TV at the top (x 25-65%, y 0-15%) showing the green pitch; red fairy lights along the shelves and a green glass lamp at x 85-92%, y 15-30%.",
    "camera": "slightly low, ~35 mm, moderate depth of field",
    "camera_move": "handheld, slight push in",
    "action": "He roars with his can aloft, foam spilling over its rim.",
@@ -975,7 +975,7 @@
    ],
    "wardrobe": "striped scarf, beige jacket; extras in the crowd wardrobe",
    "shot_size": "close-up",
-   "subject_in_frame": "A red can thrust toward camera at the centre-left (x 35-55%, y 25-75%), foam spurting from its top; the scarf fan laughs behind it at x 60-90% (face y 0-35%); the bearded fan's shoulder at the left; hands clapping at the right; sunny crowd behind.",
+   "subject_in_frame": "A orange can thrust toward camera at the centre-left (x 35-55%, y 25-75%), foam spurting from its top; the scarf fan laughs behind it at x 60-90% (face y 0-35%); the bearded fan's shoulder at the left; hands clapping at the right; sunny crowd behind.",
    "camera": "eye level, ~35 mm, handheld",
    "camera_move": "handheld jolt forward",
    "action": "The cans clash in a toast; foam erupts from the can.",
@@ -1011,7 +1011,7 @@
    ],
    "wardrobe": "crisp white stand-collar shirt",
    "shot_size": "medium close-up",
-   "subject_in_frame": "His head thrown back, shouting, at x 45-80%, y 0-50%; his arm stretched across the frame with a red can in his fist at x 15-25%, y 35-60%, cola leaping out of it in an arc; a second man in white behind at x 35-50%.",
+   "subject_in_frame": "His head thrown back, shouting, at x 45-80%, y 0-50%; his arm stretched across the frame with a orange can in his fist at x 15-25%, y 35-60%, cola leaping out of it in an arc; a second man in white behind at x 35-50%.",
    "camera": "eye level, ~50 mm, shallow depth of field",
    "camera_move": "locked off (slow motion, about 50%)",
    "action": "He shouts at the ceiling and the jerk of his fist throws an arc of cola out of the can.",
@@ -1122,7 +1122,7 @@
    ],
    "wardrobe": "street woman: lilac shirt; curly fan: black vest over a patterned shirt; extras: yellow t-shirt, yellow polo with blue and green stripes",
    "shot_size": "medium",
-   "subject_in_frame": "Low angle up at a tight group: the street woman at x 15-50% raises a red can over her head and pours it; the curly fan at x 50-85% laughs and points at her; a fan in a yellow t-shirt at the left edge, one in a striped yellow polo at the right; red cans raised; pale apartment facades and white sky in the top 30%.",
+   "subject_in_frame": "Low angle up at a tight group: the street woman at x 15-50% raises a orange can over her head and pours it; the curly fan at x 50-85% laughs and points at her; a fan in a yellow t-shirt at the left edge, one in a striped yellow polo at the right; orange cans raised; pale apartment facades and white sky in the top 30%.",
    "camera": "low angle (~1 m), ~28 mm wide, deep-ish depth of field",
    "camera_move": "handheld arc right about 10% with a slight tilt up",
    "action": "She pours the can over her head, cola splashing; they cheer and point.",
@@ -1344,7 +1344,7 @@
    ],
    "wardrobe": "none",
    "shot_size": "macro",
-   "subject_in_frame": "Low-angle macro of the red can's curved shoulder beaded with condensation: at the start it fills the lower 80% (top edge an arc peaking at y 20%), the white {BRAND} wordmark partly visible on its side; over 3.6 s it sinks until only the silver rim lies along the bottom 12%. Amber drops fly past at the left. Background slate blue-grey at the top, turning to pink bokeh from about 28.0.",
+   "subject_in_frame": "Low-angle macro of the orange can's curved shoulder beaded with condensation: at the start it fills the lower 80% (top edge an arc peaking at y 20%), the white {BRAND} wordmark partly visible on its side; over 3.6 s it sinks until only the silver rim lies along the bottom 12%. Amber drops fly past at the left. Background slate blue-grey at the top, turning to pink bokeh from about 28.0.",
    "camera": "low angle, ~100 mm macro",
    "camera_move": "the can sinks out of frame (equivalently a slow crane up), linear, about 60% of the height over 3.63 s",
    "action": "The can slides down out of frame while the lockup holds.",

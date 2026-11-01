@@ -24,8 +24,9 @@ Next:
    `compare/sbs.sh` -> review -> `python3 docs/pitch/publish_template.py <id>` ->
    `python3 docs/pitch/add_to_catalog.py lab/pitch/catalog/<id>.json` -> commit. travel-escape's line
    clips have the default names muted; check the rebuild voiced them.
-2. Before any public use: replace the template scores in the Meta product films; change fan-moments' red
-   can default.
+2. Done 2026-11-01 evening: the Meta product films and the reel carry original synthesized music
+   (`docs/pitch/own_score.py`, see docs/pitch/README.md); fan-moments' default drink is now a tangerine
+   can (#D46D28, product sheets hue-shifted, end card redrawn). Its proof video still shows the red can.
 3. Studio open item below (show "working in the background" after `turn/foregroundCompleted`).
 4. Muse later, once the Opus flow is the reference.
 
@@ -62,7 +63,7 @@ authored by Opus and rebuilt blind at 30 s and 15 s. Three more were authored (t
 telenovela-glam in `lab/replicate/author-*`) but not seeded: the Colab G4 went away at ~06:40, so their
 blind rebuilds are stills only. Re-run their `jobs/*.jsonl` on a new box, rebuild, then publish.
 Ten Meta product films were made from the templates as examples (`public/templates/examples/`, local
-only: they still use the templates' scores). Lessons:
+only; original synthesized music since 2026-11-01 evening). Lessons:
 - Rebuild agents sometimes end their turn while `bin/h3` renders are still queued; the clips finish on the
   box. Recover with `bin/h3 resume` in the workspace, then hand the assembly to a fresh agent (the
   workspace's notes/ and work/ scripts carry the plan).

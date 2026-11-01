@@ -6,7 +6,7 @@ d = sys.argv[1]
 BRAND = sys.argv[2] if len(sys.argv) > 2 else "SODA"
 TAG = sys.argv[3] if len(sys.argv) > 3 else "Feel the rush with"
 PARTNER = sys.argv[4] if len(sys.argv) > 4 else "FOR EVERY FAN"
-COL = sys.argv[5] if len(sys.argv) > 5 else "#B5121B"
+COL = sys.argv[5] if len(sys.argv) > 5 else "#D46D28"
 serif, sans = f"{d}/font_serif.ttf", f"{d}/font_sans.ttf"
 W, H = 1920, 1080
 
