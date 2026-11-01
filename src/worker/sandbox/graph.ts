@@ -90,7 +90,8 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
   const nodes = new Map<string, GraphNode>();
   const edges: StudioEdge[] = [];
   const edge = (from: unknown, to: unknown, role: string, user = false) => {
-    const f = norm(from);
+    // A template's sheets, boards and voice clips are not nodes of their own: they wire to the template.
+    const f = norm(from)?.replace(/^(templates\/[^/]+)\/(?!TEMPLATE\.md$).+$/, '$1/TEMPLATE.md') ?? null;
     const t = norm(to);
     if (f && t && f !== t && !edges.some((e) => e.from === f && e.to === t)) edges.push(user ? { from: f, to: t, role, user } : { from: f, to: t, role });
   };
@@ -117,14 +118,18 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
     nodes.set(f.rel, node);
   }
 
-  // Templates: one node each, with the reference frame as its picture.
+  // Templates: one node each, pictured by its first storyboard (or a set sheet, or an old-style frame).
   const tdir = path.join(root, 'templates');
   for (const t of fs.existsSync(tdir) ? fs.readdirSync(tdir) : []) {
     const md = path.join(tdir, t, 'TEMPLATE.md');
     if (!fs.existsSync(md)) continue;
     const text = fs.readFileSync(md, 'utf8');
-    const frames = path.join(tdir, t, 'frames');
-    const first = fs.existsSync(frames) ? fs.readdirSync(frames).filter((x) => IMAGE.test(x)).sort()[0] : undefined;
+    const firstIn = (dir: string, re = IMAGE) => {
+      const d = path.join(tdir, t, dir);
+      const f = fs.existsSync(d) ? fs.readdirSync(d).filter((x) => re.test(x)).sort()[0] : undefined;
+      return f ? `${dir}/${f}` : undefined;
+    };
+    const first = firstIn('boards') ?? firstIn('set', /^loc_.+\.(jpe?g|png|webp)$/i) ?? firstIn('frames');
     const id = `templates/${t}/TEMPLATE.md`;
     nodes.set(id, {
       id,
@@ -134,7 +139,7 @@ export async function scanWorkspace(root: string, projectId: string, activity: A
       sub: `templates/${t}`,
       status: 'done',
       text: text.slice(0, 4000),
-      media: first ? { type: 'image', src: fileUrl(`templates/${t}/frames/${first}`, 0) } : undefined,
+      media: first ? { type: 'image', src: fileUrl(`templates/${t}/${first}`, 0) } : undefined,
     });
   }
 
