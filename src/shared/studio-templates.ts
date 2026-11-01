@@ -97,7 +97,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/phone-reveal.jpg',
     preview: '/templates/phone-reveal.mp4',
-    proof: { '30': '/templates/proof/phone-reveal-30.mp4' },
+    proof: { '30': '/templates/proof/phone-reveal-30.mp4', '15': '/templates/proof/phone-reveal-15.mp4' },
     description:
       'A narrated product reveal: a moon-photo hook, a dip to black, then chip, battery and camera proofs in dark macros, white-lab flat-lays and big outdoor shots, closing on a still hero with beat-cut finish swaps and the name on black.',
     prompt: "Make a 30 s launch film for our new flagship phone in the phone-reveal style: open on a stunning photo from last year's model, then show the chip, battery and camera with one calm narrator, and end on the name.",
@@ -116,7 +116,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/farm-legacy.jpg',
     preview: '/templates/farm-legacy.mp4',
-    proof: { '30': '/templates/proof/farm-legacy-30.mp4' },
+    proof: { '30': '/templates/proof/farm-legacy-30.mp4', '15': '/templates/proof/farm-legacy-15.mp4' },
     description:
       'A quiet porch ask opens a song-led last season from planting to harvest, intercut with then/now memories of her childhood on the same land, and lands on a night-time handover of the farm keys, a hug, a generations super and an end card.',
     prompt: 'Make a 30 s film for our new small-batch apple chips from this template: an old orchard keeper tells his grown daughter it may be time to retire, they work one last season together between then/now memories of her childhood in the orchard, and at night on the porch he hands her the orchard keys.',
@@ -135,7 +135,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/animal-icons.jpg',
     preview: '/templates/animal-icons.mp4',
-    proof: { '30': '/templates/proof/animal-icons-30.mp4' },
+    proof: { '30': '/templates/proof/animal-icons-30.mp4', '15': '/templates/proof/animal-icons-15.mp4' },
     description:
       'An animal friendship told through the seasons with no voice-over, carried by one rock ballad, building to a winged-horse image and landing on the product on a fence rail at sunset with a deadpan two-line tag.',
     prompt: 'Make a 30 s film for our new small-batch apple cider from this template: a foal and an eaglet grow up on an orchard ranch, and it ends on a glass of cider and the bottle on the porch rail at sunset.',
@@ -154,7 +154,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/fan-moments.jpg',
     preview: '/templates/fan-moments.mp4',
-    proof: { '30': '/templates/proof/fan-moments-30.mp4' },
+    proof: { '30': '/templates/proof/fan-moments-30.mp4', '15': '/templates/proof/fan-moments-15.mp4' },
     description:
       'A commentator-led montage of fans gripping the drink through a tense free kick, a silent macro-fizz held breath, then a slam into goal euphoria and a drink by the sea under a tagline and lockup.',
     prompt: 'Make a 30 s spot for our new sparkling citrus soda in this template: fans across the city live a last-minute goal with the drink in hand.',
@@ -173,7 +173,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/room-makeover.jpg',
     preview: '/templates/room-makeover.mp4',
-    proof: { '30': '/templates/proof/room-makeover-30.mp4' },
+    proof: { '30': '/templates/proof/room-makeover-30.mp4', '15': '/templates/proof/room-makeover-15.mp4' },
     description:
       "A dialogue comedy in one locked wide: a parent sees a bare first room, says the brand's name, orders three things on a phone, and the same camera reveals the made-over room before an end card.",
     prompt: "Make a 30 s comedy spot for our home-goods app: a dad visits his son's bare first apartment, the lamp dies, they say the brand's name, he orders on his phone and the same wide reveals the room made over.",
@@ -192,7 +192,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     cuts: [30, 15],
     thumbnail: '/templates/deadpan-dialogue.jpg',
     preview: '/templates/deadpan-dialogue.mp4',
-    proof: { '30': '/templates/proof/deadpan-dialogue-30.mp4' },
+    proof: { '30': '/templates/proof/deadpan-dialogue-30.mp4', '15': '/templates/proof/deadpan-dialogue-15.mp4' },
     description:
       "A locked-off deadpan two-hander: a user asks an expert for help, the expert's friendly answer slides into an absurd product pitch, then the music hits under two plain supers and an end card.",
     prompt: "Make a 30 s deadpan spot for our privacy-first email app: a stressed intern asks the office IT guy how to reach inbox zero fast, his friendly answer slides into a pitch for a 'focus crystal' with a promo code, then 'There is a time and place for tracking.' / 'Your inbox should not be one of them.' and our end card.",
