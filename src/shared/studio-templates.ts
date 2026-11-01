@@ -210,4 +210,23 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
       "A locked-off deadpan two-hander: a user asks an expert for help, the expert's friendly answer slides into an absurd product pitch, then the music hits under two plain supers and an end card.",
     prompt: "Make a 30 s deadpan spot for our privacy-first email app: a stressed intern asks the office IT guy how to reach inbox zero fast, his friendly answer slides into a pitch for a 'focus crystal' with a promo code, then 'There is a time and place for tracking.' / 'Your inbox should not be one of them.' and our end card.",
   },
+  {
+    id: 'car-launch',
+    title: 'Dark Performance Car Launch',
+    source: '2025 performance-sedan launch film: monochrome nature, black-studio reveal, night and mountain drives',
+    format: 'Car launch',
+    status: 'ready',
+    durationSec: 105.5,
+    shots: 15,
+    shotsMeasured: true,
+    setups: 15,
+    lines: 3,
+    cuts: [30, 15],
+    thumbnail: '/templates/car-launch.jpg',
+    preview: '/templates/car-launch.mp4',
+    proof: { '30': '/templates/proof/car-launch-30.mp4', '15': '/templates/proof/car-launch-15.mp4' },
+    description:
+      'A moody black-and-white launch spot that reveals a car in fragments of light from a black studio, proves its details in close-ups, then opens into night-city and misty-mountain driving before a tagline and end card.',
+    prompt: "Make a 30 s launch film for our new matte-black electric sports coupe with the tagline 'Built in the dark.'",
+  },
 ];

@@ -1,0 +1,29 @@
+{
+ "note": "Narrator voice-over cut from the source with the score under it; words are spaced with echo repeats. Word times are approximate (transcript turns only).",
+ "lines": [
+  {
+   "id": "L01",
+   "words": "Discipline. Discipline.",
+   "kind": "voice-over",
+   "clip": "set/lines/L01.wav",
+   "src_start": 5.26,
+   "src_end": 7.85
+  },
+  {
+   "id": "L02",
+   "words": "Driven by resolute focus",
+   "kind": "voice-over",
+   "clip": "set/lines/L02.wav",
+   "src_start": 28.46,
+   "src_end": 32.14
+  },
+  {
+   "id": "L03",
+   "words": "Refinement reveals precision",
+   "kind": "voice-over",
+   "clip": "set/lines/L03.wav",
+   "src_start": 38.7,
+   "src_end": 42.73
+  }
+ ]
+}

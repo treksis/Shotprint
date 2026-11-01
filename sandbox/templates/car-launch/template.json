@@ -1,0 +1,2056 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 105.52,
+  "size": "1920x1080",
+  "fps": 23.98,
+  "shots": 40,
+  "average_shot": 2.64,
+  "median_shot": 2.13,
+  "note": "Source is a 106 s performance-sedan launch film; only the 30 s and 15 s cuts are built."
+ },
+ "acts": [
+  {
+   "name": "Elements",
+   "shots": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "function": "Nature in monochrome: stone, sea, wave, cave. Sets the mood and the word 'Discipline'."
+  },
+  {
+   "name": "Reveal",
+   "shots": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "function": "The car emerges from black in fragments of light: silhouette, city, light bar and rising wing, smoke, gauge, exhaust."
+  },
+  {
+   "name": "Focus",
+   "shots": [
+    14,
+    15,
+    16,
+    17
+   ],
+   "function": "Headlight POV down an empty street dissolves to an eye; the car passes; the driver stands before it."
+  },
+  {
+   "name": "Refinement",
+   "shots": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+   ],
+   "function": "Aero parts in studio close-ups: wing, mirror, headlight, wheel."
+  },
+  {
+   "name": "Release",
+   "shots": [
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "function": "Night city driving at full score."
+  },
+  {
+   "name": "Monochrome",
+   "shots": [
+    30,
+    31,
+    32,
+    33
+   ],
+   "function": "Back to the black studio for the name line."
+  },
+  {
+   "name": "Mountain",
+   "shots": [
+    34,
+    35,
+    36,
+    37,
+    38
+   ],
+   "function": "Misty mountain road at dusk, colour returns, 'Understated yet undeniable'."
+  },
+  {
+   "name": "End",
+   "shots": [
+    39,
+    40
+   ],
+   "function": "Product title, tagline, emblem over a valley; brand end card."
+  }
+ ],
+ "shots": [
+  {
+   "action": "Monochrome aerial-low view of wind-carved striped sandstone swirls; the edition title fades in centred at 1.0 s and holds.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 1,
+   "start": 0,
+   "end": 4.38,
+   "dur": 4.38,
+   "in": "start",
+   "brightness": {
+    "start": 114,
+    "mid": 116,
+    "end": 114
+   },
+   "colour": "#727272",
+   "change": 12.34,
+   "sound": "-23.99 LUFS mean, -9.07 peak",
+   "voice": null
+  },
+  {
+   "action": "Low view just above an open sea swell rolling slowly toward camera; small caption 'Discipline.' fades in bottom-centre at 0.6 s.",
+   "setup": "ocean_low",
+   "location": "loc_ocean (set/loc_ocean.jpg)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "water fills 100% of the frame, no horizon, swell lines horizontal across the frame",
+   "camera": "low, 1-2 m above the water, slightly downward (10 deg), normal-to-long lens, deep focus",
+   "camera_move": "slow drift forward over the water at about 0.5 m/s, linear, no tilt",
+   "light": "flat overcast top light, mono; brightness 76-77/255; crushed blacks in the troughs",
+   "text": [
+    {
+     "words": "Discipline.",
+     "pos": "bottom-centre, baseline at 88% height",
+     "size": "1.4% of frame height, light sans, white 85%",
+     "in": 0.6,
+     "out": 2.17
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score: low drone and pulse; VO (in score) 'Discipline. Discipline.' from 1.07 s",
+   "render": "first + last frame: two plates made from set/loc_ocean.jpg (same framing, last frame 3% closer); no product",
+   "board": "boards/s02.jpg",
+   "n": 2,
+   "start": 4.38,
+   "end": 6.55,
+   "dur": 2.17,
+   "in": "cut",
+   "brightness": {
+    "start": 77,
+    "mid": 76,
+    "end": 77
+   },
+   "colour": "#4a4a4a",
+   "change": 16.1,
+   "sound": "-14.49 LUFS mean, -8.99 peak",
+   "voice": "Discipline. Discipline. The essence forged through relentless pursuit"
+  },
+  {
+   "action": "A large wave breaks right-to-left into backlit spray against a white sky, slow-motion feel.",
+   "setup": "wave_long",
+   "location": "loc_wave (set/loc_wave.jpg)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "wide",
+   "subject_in_frame": "the breaking crest spans 90% of the width, its peak at the upper third, white sky top 25%",
+   "camera": "water level, long lens (about 200 mm feel), shallow-ish depth, slow-motion 50% feel",
+   "camera_move": "locked off; the wave moves right to left and collapses into spray",
+   "light": "hard backlight from a bright white sky; brightness 106-116/255, high contrast mono",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score swell; VO echo of 'Discipline'",
+   "render": "first + last frame from two plates of set/loc_wave.jpg (crest rising -> crest collapsed into spray)",
+   "board": "boards/s03.jpg",
+   "n": 3,
+   "start": 6.55,
+   "end": 8.17,
+   "dur": 1.63,
+   "in": "cut",
+   "brightness": {
+    "start": 106,
+    "mid": 108,
+    "end": 116
+   },
+   "colour": "#6b6b6b",
+   "change": 20.16,
+   "sound": "-17.07 LUFS mean, -13.28 peak",
+   "voice": "Discipline. Discipline. The essence forged through relentless pursuit"
+  },
+  {
+   "action": "From inside a black wind-carved cave, looking out through the opening to a sunlit dune ridge; caption 'The essence forged through relentless pursuit' appears at 1.6 s.",
+   "setup": "cave_out",
+   "location": "loc_canyon_arch (set/loc_canyon_arch.jpg)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "black cave walls frame 70% of the picture; the bright opening sits centre-left, 50% wide, lower 60%; a dark dune peak centred in the opening",
+   "camera": "eye level from inside the cave, wide lens, deep focus",
+   "camera_move": "very slow push in, scale 1.00 -> 1.03 over the shot, linear",
+   "light": "the cave is near black; daylight from the opening only; brightness 27-28/255 mean, opening clips white",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score: pulse continues; no VO in the kept window",
+   "render": "still with slow push: set/loc_canyon_arch.jpg, 1.00 -> 1.03 scale",
+   "board": "boards/s04.jpg",
+   "n": 4,
+   "start": 8.17,
+   "end": 12.14,
+   "dur": 3.96,
+   "in": "cut",
+   "brightness": {
+    "start": 27,
+    "mid": 28,
+    "end": 34
+   },
+   "colour": "#1c1c1c",
+   "change": 3.83,
+   "sound": "-10.47 LUFS mean, -7.43 peak",
+   "voice": "Discipline. Discipline. The essence forged through relentless pursuit"
+  },
+  {
+   "action": "Black studio: a thin rim light sweeps along the car's roofline and headlight from the left, revealing the side silhouette, then vertical light shafts flare on at the end.",
+   "setup": "studio_side",
+   "location": "loc_studio_black (set/loc_studio_black.jpg)",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "wide",
+   "subject_in_frame": "car in full side profile facing left, centred, 85% of the width, wheels on the lower 20% line",
+   "camera": "eye level at 0.8 m, side-on, normal lens (50 mm feel), deep focus",
+   "camera_move": "locked off with a very slow push in (scale 1.00 -> 1.02); the light moves, not the camera",
+   "light": "black studio; a soft top-back rim light rises from 0 to full in 1.0 s, tracing roofline and the headlight blade; at the last 0.2 s vertical white light shafts flare up behind; brightness 12 -> 25 -> 11/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score rising pulse; a low whoosh as the light sweeps",
+   "render": "still with slow push: plate of {PRODUCT} side profile in set/loc_studio_black.jpg lit only by a roofline rim light; first frame darker (rim 20%), last frame full rim; light shafts added in post",
+   "board": "boards/s05.jpg (start s05a.jpg, end s05b.jpg)",
+   "n": 5,
+   "start": 12.14,
+   "end": 14.31,
+   "dur": 2.17,
+   "in": "cut",
+   "brightness": {
+    "start": 12,
+    "mid": 25,
+    "end": 11
+   },
+   "colour": "#111111",
+   "change": 8.19,
+   "sound": "-9.13 LUFS mean, -6.45 peak",
+   "voice": "Discipline. Discipline. The essence forged through relentless pursuit"
+  },
+  {
+   "action": "Worm's-eye view straight up between night skyscrapers with fog in the gap.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 6,
+   "start": 14.31,
+   "end": 15.68,
+   "dur": 1.38,
+   "in": "cut",
+   "brightness": {
+    "start": 47,
+    "mid": 48,
+    "end": 48
+   },
+   "colour": "#2e2e2e",
+   "change": 8.37,
+   "sound": "-7.75 LUFS mean, -6.01 peak",
+   "voice": null
+  },
+  {
+   "action": "Low upward tilt past dark glass towers with lit windows.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 7,
+   "start": 15.68,
+   "end": 16.81,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 15,
+    "mid": 18,
+    "end": 26
+   },
+   "colour": "#121212",
+   "change": 18.79,
+   "sound": "-9.01 LUFS mean, -6.17 peak",
+   "voice": null
+  },
+  {
+   "action": "Black frame; only the full-width rear light bar glows, low and centred, a soft halo starting to rise above it.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 8,
+   "start": 16.81,
+   "end": 18.81,
+   "dur": 2,
+   "in": "to black",
+   "brightness": {
+    "start": 2,
+    "mid": 2,
+    "end": 5
+   },
+   "colour": "#020202",
+   "change": 0.65,
+   "sound": "-11.99 LUFS mean, -10.9 peak",
+   "voice": null
+  },
+  {
+   "action": "Rear view in black studio: a backlight halo fades up behind the car, revealing the boot, wing uprights and the rear wing over the lit light bar.",
+   "setup": "studio_rear_low",
+   "location": "loc_studio_black",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "medium wide",
+   "subject_in_frame": "car rear centred, 70% of the width, light bar at 72% height across 60% of the width; wing tips reach 64% of the width; the roof and antenna top at 50% height",
+   "camera": "low, 0.6 m, dead-on rear, normal lens, deep focus",
+   "camera_move": "slow rise of the halo, camera locked; 0-0.8 s only the light bar; 0.8-2.8 s a backlight halo fades up behind the car (brightness 6 -> 45/255), revealing body and rear wing",
+   "light": "single large soft backlight behind and above the car, fading up; light bar glows white (studio scenes are mono)",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score build; low synth swell into a hit at the cut",
+   "render": "first + last frame: plate A = black frame with only the glowing light bar; plate B = same framing with the backlight halo full and the car + wing silhouetted (from set/product_sedan_sheet.jpg rear view in set/loc_studio_black.jpg)",
+   "board": "boards/s09.jpg (start s09a.jpg, end s09b.jpg)",
+   "n": 9,
+   "start": 18.81,
+   "end": 22.02,
+   "dur": 3.21,
+   "in": "from black",
+   "brightness": {
+    "start": 6,
+    "mid": 29,
+    "end": 45
+   },
+   "colour": "#1a1a1a",
+   "change": 8.05,
+   "sound": "-12.59 LUFS mean, -11.3 peak",
+   "voice": null
+  },
+  {
+   "action": "Tyre smoke swirling inside a dark wheel arch, then a white flash.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 10,
+   "start": 22.02,
+   "end": 22.86,
+   "dur": 0.83,
+   "in": "cut",
+   "brightness": {
+    "start": 38,
+    "mid": 42,
+    "end": 119
+   },
+   "colour": "#3d3d3d",
+   "change": 66.23,
+   "sound": "-7.61 LUFS mean, -5.65 peak",
+   "voice": null
+  },
+  {
+   "action": "Blurred smoke and a dark car body moving past light columns.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 11,
+   "start": 22.86,
+   "end": 23.52,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 27,
+    "mid": 20,
+    "end": 52
+   },
+   "colour": "#252526",
+   "change": 29.6,
+   "sound": "-6.58 LUFS mean, -6.33 peak",
+   "voice": null
+  },
+  {
+   "action": "Tachometer needle sweeps across white numerals (0.3 s), cut inside the shot to a large round exhaust tip in macro, slow push.",
+   "setup": "macro_gauge_exhaust",
+   "location": "loc_studio_black",
+   "cast": [
+    "product_details"
+   ],
+   "wardrobe": "none",
+   "shot_size": "macro",
+   "subject_in_frame": "0-0.3 s: tachometer dial fills 90% of the frame, needle at the right; 0.3-0.86 s: round exhaust tip ring 40% of the width, right of centre",
+   "camera": "macro, slightly oblique (30 deg), very shallow depth of field",
+   "camera_move": "gauge: needle sweeps clockwise; exhaust: slow push in 1.00 -> 1.05",
+   "light": "dark studio, one hard edge light; brightness 16-29/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score hit; engine blip on the gauge sweep",
+   "render": "two stills drawn from set/product_details_sheet.jpg (gauge, exhaust tip) joined by a hard cut at 0.3 s, each with a slow push",
+   "board": "boards/s12.jpg (gauge s12a.jpg, exhaust s12b.jpg)",
+   "n": 12,
+   "start": 23.52,
+   "end": 24.44,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 16,
+    "mid": 28,
+    "end": 29
+   },
+   "colour": "#191919",
+   "change": 20.91,
+   "sound": "-6.64 LUFS mean, -6.36 peak",
+   "voice": null
+  },
+  {
+   "action": "Blurred car flank, then a black silk flag rippling with a printed sub-brand emblem.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 13,
+   "start": 24.44,
+   "end": 26.4,
+   "dur": 1.96,
+   "in": "cut",
+   "brightness": {
+    "start": 62,
+    "mid": 33,
+    "end": 36
+   },
+   "colour": "#232424",
+   "change": 34.41,
+   "sound": "-11.19 LUFS mean, -7.05 peak",
+   "voice": null
+  },
+  {
+   "action": "White flash clears into a car-POV run down an empty night street lit white by headlights; dissolves (0.4 s) into an extreme macro of a man's eye, which holds; caption 'Driven by resolute focus' bottom-centre.",
+   "setup": "street_pov_eye",
+   "location": "loc_city_street (set/loc_city_street.jpg) then macro of char_eye",
+   "cast": [
+    "char_eye"
+   ],
+   "wardrobe": "black crew-neck sweater (not visible)",
+   "shot_size": "extreme wide -> macro",
+   "subject_in_frame": "street: vanishing point at frame centre, road fills the lower 45%, towers both sides; eye: the iris centred at 45% width, 40% height, eye spans 70% of the width",
+   "camera": "street: car-bumper POV at 0.5 m, wide lens, deep focus; eye: macro, frontal, shallow focus on the iris",
+   "camera_move": "street: steady forward travel at speed (headlight POV), 0-3.0 s; 2.9-3.4 s cross-dissolve into the eye; eye: locked off with a slow push 1.00 -> 1.03",
+   "light": "street: headlights blow the road almost white (brightness 82/255 mean); eye: soft frontal light, mono, brightness 53/255",
+   "text": [
+    {
+     "words": "Driven by resolute focus",
+     "pos": "bottom-centre, baseline at 88% height",
+     "size": "1.4% of frame height, light sans, white 85%",
+     "in": 11.6,
+     "out": 16.52
+    }
+   ],
+   "out": "hard cut",
+   "audio": "score drops to a low pulse; VO (in score) 'Driven by resolute focus' 11.42-15.10",
+   "render": "street: first + last frame from set/loc_city_street.jpg (start further back, end closer to the vanishing point); eye: still of char_eye macro with a slow push; dissolve in the edit",
+   "board": "boards/s14.jpg (street s14a.jpg, eye s14b.jpg)",
+   "n": 14,
+   "start": 26.4,
+   "end": 32.82,
+   "dur": 6.42,
+   "in": "cut",
+   "brightness": {
+    "start": 220,
+    "mid": 82,
+    "end": 53
+   },
+   "colour": "#5f5f5f",
+   "change": 20.96,
+   "sound": "-14.24 LUFS mean, -7.25 peak",
+   "voice": "driven by resolute focus"
+  },
+  {
+   "action": "The car passes left-to-right at speed along a lit city underpass, camera pans with it, then whip-pans into blur.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 15,
+   "start": 32.82,
+   "end": 34.03,
+   "dur": 1.21,
+   "in": "cut",
+   "brightness": {
+    "start": 50,
+    "mid": 71,
+    "end": 99
+   },
+   "colour": "#494949",
+   "change": 82.43,
+   "sound": "-9.72 LUFS mean, -6.39 peak",
+   "voice": null
+  },
+  {
+   "action": "Long dark tunnel with a bright ring of light at its end, then a whip of light.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 16,
+   "start": 34.03,
+   "end": 34.78,
+   "dur": 0.75,
+   "in": "cut",
+   "brightness": {
+    "start": 10,
+    "mid": 16,
+    "end": 70
+   },
+   "colour": "#1c1c1c",
+   "change": 33.07,
+   "sound": "-7.34 LUFS mean, -6.6 peak",
+   "voice": null
+  },
+  {
+   "action": "A man stands silhouetted in front of the car in a smoky black studio; the rear light bar glows behind him.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 17,
+   "start": 34.78,
+   "end": 37.7,
+   "dur": 2.92,
+   "in": "cut",
+   "brightness": {
+    "start": 12,
+    "mid": 22,
+    "end": 51
+   },
+   "colour": "#191919",
+   "change": 6.58,
+   "sound": "-11.47 LUFS mean, -6.93 peak",
+   "voice": null
+  },
+  {
+   "action": "Quick studio inserts: two vertical light bars, a drive-mode button, the rear lamp flicking on, then a slow slide along the carbon-fibre rear wing; caption 'Refinement reveals precision'.",
+   "setup": "studio_aero_detail",
+   "location": "loc_studio_black",
+   "cast": [
+    "product_details"
+   ],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "0-0.45 s: rear lamp corner flicks on, lower centre, 40% of the width; 0.45-2.0 s: carbon wing spans from the upper-left corner to 85% of the width, diagonal",
+   "camera": "low, three-quarter rear, normal lens, shallow depth of field",
+   "camera_move": "slow lateral slide right along the wing, about 5% of the frame width per second, linear",
+   "light": "dark studio, a long soft top light reflects along the carbon weave; brightness 30-37/255",
+   "text": [
+    {
+     "words": "Refinement reveals precision",
+     "pos": "bottom-centre, baseline at 88% height",
+     "size": "1.4% of frame height, light sans, white 85%",
+     "in": 16.52,
+     "out": 18.53
+    }
+   ],
+   "out": "hard cut",
+   "audio": "VO (in score) 'Refinement reveals precision' 17.99-22.03; score pulse",
+   "render": "first + last frame from two wing plates drawn from set/product_details_sheet.jpg panel 1 and set/product_sedan_top.jpg, dark studio",
+   "board": "boards/s18.jpg (start s18a.jpg, end s18b.jpg)",
+   "n": 18,
+   "start": 37.7,
+   "end": 40.71,
+   "dur": 3,
+   "in": "cut",
+   "brightness": {
+    "start": 8,
+    "mid": 36,
+    "end": 37
+   },
+   "colour": "#1e1e1e",
+   "change": 20.21,
+   "sound": "-8.71 LUFS mean, -5.68 peak",
+   "voice": "Refinement refinement reveals precision,"
+  },
+  {
+   "action": "Low close-up of the rear wing end plate and uprights against a pale grey backdrop, slow slide right.",
+   "setup": "grey_studio_detail",
+   "location": "loc_studio_grey (set/loc_studio_grey.jpg)",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "rear wing end plate and upright fill the right 70% of the frame, the wing curves from the top edge; pale grey backdrop in the upper-right 30%",
+   "camera": "low, rear three-quarter, normal lens, shallow focus",
+   "camera_move": "slow slide right, about 3% of the width per second",
+   "light": "bright pale grey backdrop (brightness 90-98/255), matte car body near black",
+   "text": [],
+   "out": "hard cut",
+   "audio": "VO continues; score pulse",
+   "render": "first + last frame from two plates of {PRODUCT}'s rear corner in set/loc_studio_grey.jpg",
+   "board": "boards/s19.jpg",
+   "n": 19,
+   "start": 40.71,
+   "end": 41.83,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 90,
+    "mid": 95,
+    "end": 98
+   },
+   "colour": "#5d5d5d",
+   "change": 11.82,
+   "sound": "-11.95 LUFS mean, -8.03 peak",
+   "voice": "Refinement refinement reveals precision,"
+  },
+  {
+   "action": "Close-up of the carbon-fibre mirror cap on the door, slow lateral slide.",
+   "setup": "mirror_detail",
+   "location": "loc_studio_black",
+   "cast": [
+    "product_details"
+   ],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "mirror cap centred at 50% width, 40% height, 30% of the width; A-pillar line diagonal from lower-left",
+   "camera": "eye level at mirror height, front three-quarter, normal lens, shallow focus",
+   "camera_move": "slow lateral slide left, 3% of width per second",
+   "light": "dark studio, soft top light; brightness 35-48/255",
+   "text": [],
+   "out": "hard cut",
+   "audio": "VO 'precision'; score",
+   "render": "first + last frame from two plates drawn from set/product_details_sheet.jpg panel 2",
+   "board": "boards/s20.jpg",
+   "n": 20,
+   "start": 41.83,
+   "end": 42.96,
+   "dur": 1.13,
+   "in": "cut",
+   "brightness": {
+    "start": 35,
+    "mid": 48,
+    "end": 40
+   },
+   "colour": "#292929",
+   "change": 25.97,
+   "sound": "-11.25 LUFS mean, -10.88 peak",
+   "voice": "Refinement refinement reveals precision,"
+  },
+  {
+   "action": "Mirror cap in profile against a pale grey sky-like backdrop, near static.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 21,
+   "start": 42.96,
+   "end": 44.04,
+   "dur": 1.08,
+   "in": "cut",
+   "brightness": {
+    "start": 124,
+    "mid": 124,
+    "end": 125
+   },
+   "colour": "#7a7a7a",
+   "change": 11.49,
+   "sound": "-11.1 LUFS mean, -10.24 peak",
+   "voice": null
+  },
+  {
+   "action": "Headlight blade flicks on in a dark studio, slow push.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 22,
+   "start": 44.04,
+   "end": 44.96,
+   "dur": 0.92,
+   "in": "cut",
+   "brightness": {
+    "start": 57,
+    "mid": 68,
+    "end": 71
+   },
+   "colour": "#404040",
+   "change": 20.59,
+   "sound": "-11.26 LUFS mean, -10.2 peak",
+   "voice": null
+  },
+  {
+   "action": "Side-on close-up of the black multi-spoke wheel, static.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 23,
+   "start": 44.96,
+   "end": 45.96,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 22,
+    "mid": 22,
+    "end": 22
+   },
+   "colour": "#151515",
+   "change": 4.87,
+   "sound": "-9.8 LUFS mean, -9.13 peak",
+   "voice": null
+  },
+  {
+   "action": "Black frame: a sub-brand emblem animates in with a light sweep.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 24,
+   "start": 45.96,
+   "end": 47.01,
+   "dur": 1.04,
+   "in": "cut",
+   "brightness": {
+    "start": 3,
+    "mid": 5,
+    "end": 18
+   },
+   "colour": "#050605",
+   "change": 2.49,
+   "sound": "-13.49 LUFS mean, -11.8 peak",
+   "voice": null
+  },
+  {
+   "action": "Tracking shot: the car drives past on a night city road, a white light flash wipes the frame; caption 'Limits fall away'.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 25,
+   "start": 47.01,
+   "end": 48.01,
+   "dur": 1,
+   "in": "cut",
+   "brightness": {
+    "start": 119,
+    "mid": 215,
+    "end": 36
+   },
+   "colour": "#7d909f",
+   "change": 117.92,
+   "sound": "-10.1 LUFS mean, -7.4 peak",
+   "voice": "limits fall away"
+  },
+  {
+   "action": "White flash, a spinning wheel close-up at speed, then the car seen from behind crossing an elevated road against a lit skyline.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 26,
+   "start": 48.01,
+   "end": 53.64,
+   "dur": 5.63,
+   "in": "cut",
+   "brightness": {
+    "start": 191,
+    "mid": 21,
+    "end": 31
+   },
+   "colour": "#1c202a",
+   "change": 17.84,
+   "sound": "-7.16 LUFS mean, -5.68 peak",
+   "voice": "limits fall away"
+  },
+  {
+   "action": "Tracking close-up alongside the moving car: the camera slides forward from the dark front wheel arch to the lit headlight blade; cool blue night, road lights streak behind.",
+   "setup": "bridge_tracking_headlight",
+   "location": "loc_city_bridge (set/loc_city_bridge.jpg)",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "front corner of the car: headlight blade from 45% to 95% of the width at 40% height; wheel arch dark in the lower-left",
+   "camera": "tracking car alongside at 0.7 m height, front three-quarter, long lens, shallow depth",
+   "camera_move": "moving with the car; slow push forward along the body from wheel arch to headlight (0 -> 2.5 s), linear",
+   "light": "blue-hour city, cool teal; headlight blade the brightest element; brightness 19 -> 40 -> 61/255; road lights streak",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score at full drive (loud section), road rush",
+   "render": "first + last frame: car plates on the bridge, first frame dark wheel arch close-up, last frame the lit headlight blade",
+   "board": "boards/s27.jpg",
+   "n": 27,
+   "start": 53.64,
+   "end": 56.14,
+   "dur": 2.5,
+   "in": "cut",
+   "brightness": {
+    "start": 19,
+    "mid": 40,
+    "end": 61
+   },
+   "colour": "#1e2731",
+   "change": 18.67,
+   "sound": "-6.07 LUFS mean, -5.07 peak",
+   "voice": null
+  },
+  {
+   "action": "Front three-quarter low tracking shot of the car on an elevated city highway, a lit glass skyline behind; the car holds frame position, slight drift right.",
+   "setup": "bridge_front34",
+   "location": "loc_city_bridge",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "medium wide",
+   "subject_in_frame": "car front three-quarter facing left, centred low, 45% of the width, roof at 55% height; skyline fills the upper half",
+   "camera": "low tracking at 0.5 m, front three-quarter, normal lens",
+   "camera_move": "tracking with the car; the car holds frame with a slight drift right (2%)",
+   "light": "night blue (brightness 29-31/255), headlights on, skyline windows lit",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score drive continues",
+   "render": "first + last frame: two car plates on set/loc_city_bridge.jpg from the same angle, the car 2% further right in the last",
+   "board": "boards/s28.jpg",
+   "n": 28,
+   "start": 56.14,
+   "end": 58.77,
+   "dur": 2.63,
+   "in": "cut",
+   "brightness": {
+    "start": 30,
+    "mid": 31,
+    "end": 29
+   },
+   "colour": "#161d27",
+   "change": 5.75,
+   "sound": "-5.5 LUFS mean, -5.14 peak",
+   "voice": null
+  },
+  {
+   "action": "Car passes close to a low camera on a city street; motion blur, tail lights streak away.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 29,
+   "start": 58.77,
+   "end": 61.77,
+   "dur": 3,
+   "in": "cut",
+   "brightness": {
+    "start": 59,
+    "mid": 43,
+    "end": 41
+   },
+   "colour": "#292a2d",
+   "change": 30.6,
+   "sound": "-7.42 LUFS mean, -5.27 peak",
+   "voice": null
+  },
+  {
+   "action": "Black, then a single thin headlight line appears low left.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 30,
+   "start": 61.77,
+   "end": 65.32,
+   "dur": 3.55,
+   "in": "to black",
+   "brightness": {
+    "start": 0,
+    "mid": 0,
+    "end": 3
+   },
+   "colour": "#000001",
+   "change": 0.32,
+   "sound": "-10.84 LUFS mean, -5.45 peak",
+   "voice": null
+  },
+  {
+   "action": "Side silhouette of the car slowly lit from black by a raking light; caption 'Until what remains is,'.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 31,
+   "start": 65.32,
+   "end": 67.61,
+   "dur": 2.29,
+   "in": "from black",
+   "brightness": {
+    "start": 4,
+    "mid": 10,
+    "end": 12
+   },
+   "colour": "#05070f",
+   "change": 4.46,
+   "sound": "-8.76 LUFS mean, -7.44 peak",
+   "voice": "until what remains is monochrome."
+  },
+  {
+   "action": "Rim light slides along the roofline and rear wing; caption completes 'Monochrome'.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 32,
+   "start": 67.61,
+   "end": 69.32,
+   "dur": 1.71,
+   "in": "to black",
+   "brightness": {
+    "start": 1,
+    "mid": 4,
+    "end": 11
+   },
+   "colour": "#040407",
+   "change": 5.98,
+   "sound": "-10.27 LUFS mean, -8.17 peak",
+   "voice": "until what remains is monochrome."
+  },
+  {
+   "action": "Headlight close-up with a green lens flare.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 33,
+   "start": 69.32,
+   "end": 70.28,
+   "dur": 0.96,
+   "in": "cut",
+   "brightness": {
+    "start": 34,
+    "mid": 39,
+    "end": 38
+   },
+   "colour": "#1c252c",
+   "change": 9.07,
+   "sound": "-7.42 LUFS mean, -6.88 peak",
+   "voice": null
+  },
+  {
+   "action": "Sub-cuts: oncoming headlights in mist, front three-quarter on a wet mountain road, rear three-quarter chase (72.45-74.2), then a misty aerial of a winding road.",
+   "setup": "mountain_chase_rear",
+   "location": "loc_mountain_road (set/loc_mountain_road.jpg)",
+   "cast": [
+    "product_sedan"
+   ],
+   "wardrobe": "none",
+   "shot_size": "medium wide",
+   "subject_in_frame": "car rear three-quarter, right of centre, 40% of the width growing to 55%; red light bar lit across 25% of the width",
+   "camera": "chase car, 1.2 m, rear three-quarter from the left, normal lens",
+   "camera_move": "chase push in: the camera gains on the car, scale 1.0 -> 1.25 over 1.35 s",
+   "light": "dusk in light rain, cold blue-teal, brightness about 25-35/255; red light bar the only warm colour",
+   "text": [],
+   "out": "hard cut",
+   "audio": "score held; tyre hiss on wet road",
+   "render": "first + last frame: two car plates on set/loc_mountain_road.jpg (rear three-quarter, far -> nearer)",
+   "board": "boards/s34.jpg",
+   "n": 34,
+   "start": 70.28,
+   "end": 76.66,
+   "dur": 6.38,
+   "in": "to black",
+   "brightness": {
+    "start": 2,
+    "mid": 23,
+    "end": 35
+   },
+   "colour": "#0f1f2b",
+   "change": 10.9,
+   "sound": "-6.85 LUFS mean, -5.71 peak",
+   "voice": null
+  },
+  {
+   "action": "Hand on the steering wheel, then aerial of the car on a mountain hairpin, then the car on a curve under cloud.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 35,
+   "start": 76.66,
+   "end": 86.38,
+   "dur": 9.72,
+   "in": "cut",
+   "brightness": {
+    "start": 12,
+    "mid": 33,
+    "end": 94
+   },
+   "colour": "#1c252e",
+   "change": 17.68,
+   "sound": "-6.99 LUFS mean, -4.82 peak",
+   "voice": null
+  },
+  {
+   "action": "Low front: two cars of the same model drive toward camera on a mountain road at dusk.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 36,
+   "start": 86.38,
+   "end": 90.88,
+   "dur": 4.5,
+   "in": "cut",
+   "brightness": {
+    "start": 19,
+    "mid": 60,
+    "end": 63
+   },
+   "colour": "#26303c",
+   "change": 18,
+   "sound": "-6.9 LUFS mean, -6.14 peak",
+   "voice": null
+  },
+  {
+   "action": "Wide mountain valley at dusk, cars small far right; title 'Understated yet undeniable'.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 37,
+   "start": 90.88,
+   "end": 93.8,
+   "dur": 2.92,
+   "in": "cut",
+   "brightness": {
+    "start": 59,
+    "mid": 58,
+    "end": 60
+   },
+   "colour": "#313a43",
+   "change": 1.88,
+   "sound": "-8.93 LUFS mean, -5.99 peak",
+   "voice": "Understated yet undeniable,"
+  },
+  {
+   "action": "Low side: the car passes close to camera, a second car behind.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 38,
+   "start": 93.8,
+   "end": 95.89,
+   "dur": 2.09,
+   "in": "cut",
+   "brightness": {
+    "start": 72,
+    "mid": 63,
+    "end": 64
+   },
+   "colour": "#304353",
+   "change": 10.22,
+   "sound": "-11.04 LUFS mean, -8.87 peak",
+   "voice": "Understated yet undeniable,"
+  },
+  {
+   "action": "Aerial down a misty valley at dusk: product title (96.0-98.4), tagline (98.4-100.4), sub-brand emblem (100.4-102.2).",
+   "setup": "valley_aerial_card",
+   "location": "loc_mountain_valley (set/loc_mountain_valley.jpg)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "valley floor centred, ridges both sides, warm horizon band at 25-30% height; tagline centred",
+   "camera": "aerial, high, looking down the valley, wide lens",
+   "camera_move": "very slow drone push forward, scale 1.00 -> 1.02",
+   "light": "dusk, blue-green, warm peach band on the horizon; brightness 33-52/255",
+   "text": [
+    {
+     "words": "{TAGLINE} (default 'Quiet power.')",
+     "pos": "centre, 50% height",
+     "size": "cap height 4.5% of frame height, text about 40% of the width, semibold geometric sans, white, tracking 0",
+     "in": 27.048,
+     "out": 28.251
+    }
+   ],
+   "out": "hard cut to black end card",
+   "audio": "score drops to a quiet held pad",
+   "render": "still with slow push: set/loc_mountain_valley.jpg; tagline drawn in code per set/ui_tagline.jpg",
+   "board": "boards/s39.jpg",
+   "n": 39,
+   "start": 95.89,
+   "end": 102.19,
+   "dur": 6.3,
+   "in": "cut",
+   "brightness": {
+    "start": 52,
+    "mid": 33,
+    "end": 31
+   },
+   "colour": "#152630",
+   "change": 3.04,
+   "sound": "-21.54 LUFS mean, -7.48 peak",
+   "voice": "Understated yet undeniable, / {PRODUCT_NAME} (spoken product name)."
+  },
+  {
+   "action": "Black end card with the brand wordmark, centred, fading in over 0.3 s.",
+   "setup": "end_card",
+   "location": "black",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "brand mark + wordmark centred, 29% of the width, 4% of the height",
+   "camera": "graphic, none",
+   "camera_move": "none; logo fades in 0 -> 100% over 0.3 s",
+   "light": "pure black (brightness 0-2/255)",
+   "text": [
+    {
+     "words": "{BRAND} wordmark",
+     "pos": "centre",
+     "size": "29% of frame width",
+     "in": 28.251,
+     "out": 30.0
+    }
+   ],
+   "out": "end",
+   "audio": "score: soft sting at 28.06, then fade out over the last 0.15 s",
+   "render": "motion graphic drawn in code from set/ui_end_card.jpg",
+   "board": "boards/s40.jpg",
+   "n": 40,
+   "start": 102.19,
+   "end": 105.52,
+   "dur": 3.34,
+   "in": "cut",
+   "brightness": {
+    "start": 0,
+    "mid": 2,
+    "end": 2
+   },
+   "colour": "#020202",
+   "change": 0,
+   "sound": "-26.16 LUFS mean, -12.94 peak",
+   "voice": null
+  }
+ ],
+ "sound": {
+  "silences": [
+   {
+    "start": 105,
+    "end": 105.58
+   }
+  ],
+  "black": [
+   {
+    "start": 12.14,
+    "end": 12.43
+   },
+   {
+    "start": 16.81,
+    "end": 18.81
+   },
+   {
+    "start": 45.96,
+    "end": 46.71
+   },
+   {
+    "start": 61.77,
+    "end": 65.32
+   },
+   {
+    "start": 67.61,
+    "end": 67.98
+   },
+   {
+    "start": 70.28,
+    "end": 70.45
+   },
+   {
+    "start": 102.19,
+    "end": 105.48
+   }
+  ],
+  "music": "one cinematic electronic track (about 131 bpm, bar 1.836 s, bars from 0.517 s): sparse pulse 1-22 s, hits and build 22-25, drop 26-32, pulse 33-47, full drive 48-62, quiet break 62-66, full drive 70-91, quiet pad 98.5-101.5, final sting 102.0, out at 105",
+  "speech": "one male narrator, low, slow, intimate, voice-over only, words spaced with echo repeats; all VO is mixed into the score (set/score.wav)",
+  "mix": "music forward, VO above it by about 3 dB, a few whooshes on light reveals; no dialogue"
+ },
+ "look": {
+  "grade": "first 33 s pure black-and-white; from 47 s a cold blue-teal night/dusk grade with only the red light bar and peach horizon warm",
+  "contrast": "high; deep crushed blacks, clipped highlights on light edges",
+  "brightness": "studio silhouettes sit at 2-30/255, aero studio inserts 30-50 (grey-backdrop inserts 90-125), nature shots 75-116, night city 19-61, mountain dusk 25-60, end card 0-2",
+  "light": "single soft rim/back lights in a black studio; headlights as key at night; overcast dusk outdoors",
+  "depth_of_field": "shallow on details and macros, deep on wides",
+  "grain": "fine film grain, light"
+ },
+ "text_style": {
+  "captions": "VO captions: tiny light geometric sans, sentence case, 1.4% of frame height, white 85%, bottom-centre at 88% height, cut on/off with the line (no animation)",
+  "titles": "tagline and product title: semibold geometric sans, white, centred at 50% height, tagline about 40% of the width, product title in caps about 58% wide with a small model line above; hard on/off or 6-frame fade",
+  "end_card": "brand wordmark centred on black, 29% of the width, 0.3 s fade-in",
+  "legal": "a one-line disclaimer, 0.8% of height, white 50%, bottom-left at 96% height, on all driving shots"
+ },
+ "set": {
+  "product_sedan": {
+   "files": [
+    "set/product_sedan_sheet.jpg",
+    "set/product_sedan_top.jpg"
+   ],
+   "fixes": "{PRODUCT}: generic unbadged four-door fastback performance sedan, matte dark grey #3c3d3f, gloss-black trim, full-width front light blade #f2f4f6, full-width rear light bar (red #d0202a on road, white glow in mono studio), carbon swan-neck rear wing on two uprights, carbon mirror caps, shark-fin antenna, black multi-spoke wheels with plain caps, round exhaust tips. No badge or plate text."
+  },
+  "product_details": {
+   "files": [
+    "set/product_details_sheet.jpg"
+   ],
+   "fixes": "close-up parts: carbon wing, carbon mirror cap, headlight blade, rear light bar, wheel, exhaust tip (gauge drawn in the same style: white numerals on black)"
+  },
+  "char_eye": {
+   "files": [
+    "set/char_eye_sheet.jpg"
+   ],
+   "fixes": "invented man, mid-40s, lean, light olive skin, short dark hair, straight dark brows, pale grey-blue eyes with a dark limbal ring, light stubble, black crew-neck; only his eye is seen (macro, mono)"
+  },
+  "loc_ocean": {
+   "files": [
+    "set/loc_ocean.jpg"
+   ],
+   "fixes": "open sea swell, overcast, mono, brightness ~76"
+  },
+  "loc_wave": {
+   "files": [
+    "set/loc_wave.jpg"
+   ],
+   "fixes": "backlit breaking wave, mono"
+  },
+  "loc_canyon_arch": {
+   "files": [
+    "set/loc_canyon_arch.jpg"
+   ],
+   "fixes": "black wind-carved cave opening onto a dune ridge, mono"
+  },
+  "loc_studio_black": {
+   "files": [
+    "set/loc_studio_black.jpg"
+   ],
+   "fixes": "black infinity studio, brightness 5-15"
+  },
+  "loc_studio_grey": {
+   "files": [
+    "set/loc_studio_grey.jpg"
+   ],
+   "fixes": "pale grey cyc for aero inserts"
+  },
+  "loc_city_street": {
+   "files": [
+    "set/loc_city_street.jpg"
+   ],
+   "fixes": "empty night street between towers, mono, headlit road"
+  },
+  "loc_city_bridge": {
+   "files": [
+    "set/loc_city_bridge.jpg"
+   ],
+   "fixes": "elevated highway with a lit skyline, blue hour"
+  },
+  "loc_mountain_road": {
+   "files": [
+    "set/loc_mountain_road.jpg"
+   ],
+   "fixes": "wet mountain road with guardrail, mist, blue dusk"
+  },
+  "loc_mountain_valley": {
+   "files": [
+    "set/loc_mountain_valley.jpg"
+   ],
+   "fixes": "valley aerial with a peach horizon band, tagline background"
+  },
+  "ui": {
+   "files": [
+    "set/ui_tagline.jpg",
+    "set/ui_end_card.jpg"
+   ],
+   "fixes": "tagline layout and end card layout (placeholder BRAND wordmark)"
+  },
+  "voice": {
+   "files": [
+    "set/voice_narrator.wav",
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav"
+   ],
+   "fixes": "narrator timbre and line timing (music underneath, cut from the score)"
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "soundtrack with VO mixed in; cut to 30 and 15 s on bars"
+  }
+ },
+ "slots": [
+  {
+   "slot": "PRODUCT",
+   "default": "generic matte dark grey unbadged performance sedan with carbon rear wing (set/product_sedan_sheet.jpg)",
+   "swaps": "every car shot"
+  },
+  {
+   "slot": "TAGLINE",
+   "default": "Quiet power.",
+   "where": "tagline card"
+  },
+  {
+   "slot": "BRAND",
+   "default": "placeholder wordmark (set/ui_end_card.jpg)",
+   "where": "end card"
+  },
+  {
+   "slot": "PRODUCT_NAME",
+   "default": "NOCTURNE",
+   "where": "product title card (not in the 30/15 cuts)"
+  },
+  {
+   "slot": "LINES",
+   "default": "L01 'Discipline. Discipline.', L02 'Driven by resolute focus', L03 'Refinement reveals precision'",
+   "where": "VO and captions"
+  },
+  {
+   "slot": "DISCLAIMER",
+   "default": "Vehicle shown with optional equipment. Professional driver, closed road.",
+   "where": "legal line on driving shots"
+  },
+  {
+   "slot": "PLACES",
+   "default": "sea, cave, black studio, night city bridge, misty mountain road, valley",
+   "where": "loc_* sheets"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "shots": [
+   {
+    "n": 1,
+    "from": 2,
+    "start": 0,
+    "end": 2.17,
+    "dur": 2.17,
+    "src": [
+     4.38,
+     6.55
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 2,
+    "from": 3,
+    "start": 2.17,
+    "end": 3.671,
+    "dur": 1.501,
+    "src": [
+     6.55,
+     8.051
+    ],
+    "change": "first 1.50 s"
+   },
+   {
+    "n": 3,
+    "from": 4,
+    "start": 3.671,
+    "end": 5.471,
+    "dur": 1.8,
+    "src": [
+     8.17,
+     9.97
+    ],
+    "change": "first 1.80 s, before the caption"
+   },
+   {
+    "n": 4,
+    "from": 5,
+    "start": 5.471,
+    "end": 7.331,
+    "dur": 1.86,
+    "src": [
+     12.45,
+     14.31
+    ],
+    "change": "skips the first 0.31 s of black"
+   },
+   {
+    "n": 5,
+    "from": 9,
+    "start": 7.331,
+    "end": 10.154,
+    "dur": 2.823,
+    "src": [
+     19.197,
+     22.02
+    ],
+    "change": "last 2.79 s: light bar already lit, the body and wing rise out of the dark"
+   },
+   {
+    "n": 6,
+    "from": 12,
+    "start": 10.154,
+    "end": 11.013,
+    "dur": 0.859,
+    "src": [
+     23.52,
+     24.379
+    ],
+    "change": "whole shot (gauge flash then exhaust tip)"
+   },
+   {
+    "n": 7,
+    "from": 14,
+    "start": 11.013,
+    "end": 16.52,
+    "dur": 5.507,
+    "src": [
+     27.313,
+     32.82
+    ],
+    "change": "from where the white flash clears into the street, through the dissolve to the eye"
+   },
+   {
+    "n": 8,
+    "from": 18,
+    "start": 16.52,
+    "end": 18.53,
+    "dur": 2.01,
+    "src": [
+     38.7,
+     40.71
+    ],
+    "change": "last 2.01 s: tail-lamp flick, then the carbon wing"
+   },
+   {
+    "n": 9,
+    "from": 19,
+    "start": 18.53,
+    "end": 19.65,
+    "dur": 1.12,
+    "src": [
+     40.71,
+     41.83
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 10,
+    "from": 20,
+    "start": 19.65,
+    "end": 20.78,
+    "dur": 1.13,
+    "src": [
+     41.83,
+     42.96
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 11,
+    "from": 27,
+    "start": 20.78,
+    "end": 23.28,
+    "dur": 2.5,
+    "src": [
+     53.64,
+     56.14
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 12,
+    "from": 28,
+    "start": 23.28,
+    "end": 25.698,
+    "dur": 2.418,
+    "src": [
+     56.14,
+     58.558
+    ],
+    "change": "first 2.42 s"
+   },
+   {
+    "n": 13,
+    "from": 34,
+    "start": 25.698,
+    "end": 27.048,
+    "dur": 1.35,
+    "src": [
+     72.45,
+     73.8
+    ],
+    "change": "only the rear three-quarter window of the shot (72.45-73.80)"
+   },
+   {
+    "n": 14,
+    "from": 39,
+    "start": 27.048,
+    "end": 28.251,
+    "dur": 1.203,
+    "src": [
+     99.0,
+     100.203
+    ],
+    "change": "only the tagline window"
+   },
+   {
+    "n": 15,
+    "from": 40,
+    "start": 28.251,
+    "end": 30.0,
+    "dur": 1.749,
+    "src": [
+     102.19,
+     103.939
+    ],
+    "change": "first 1.75 s of the end card"
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 4.188,
+     "src_out": 7.859
+    },
+    {
+     "src_in": 17.037,
+     "src_out": 24.379
+    },
+    {
+     "src_in": 28.05,
+     "src_out": 33.557
+    },
+    {
+     "src_in": 37.228,
+     "src_out": 42.735
+    },
+    {
+     "src_in": 53.748,
+     "src_out": 57.419
+    },
+    {
+     "src_in": 99.637,
+     "src_out": 103.939
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-3.67 sea pulse with VO; 3.67-11.01 studio build into hits (gauge hit at 10.15); 11.01-16.52 drop with VO; 16.52-22.03 pulse with VO; 22.03-25.70 full drive; 25.70-30 quiet pad, sting at 28.06, fade 0.15 s"
+  },
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Discipline. Discipline.",
+    "start": 1.072,
+    "end": 3.671,
+    "clip": "set/lines/L01.wav",
+    "in_score": true,
+    "kind": "voice-over"
+   },
+   {
+    "id": "L02",
+    "words": "Driven by resolute focus",
+    "start": 11.423,
+    "end": 15.103,
+    "clip": "set/lines/L02.wav",
+    "in_score": true,
+    "kind": "voice-over"
+   },
+   {
+    "id": "L03",
+    "words": "Refinement reveals precision",
+    "start": 17.992,
+    "end": 22.027,
+    "clip": "set/lines/L03.wav",
+    "in_score": true,
+    "kind": "voice-over"
+   }
+  ],
+  "arc": "Hook: sea, wave, cave in mono with 'Discipline' (0-5.5). Reveal: the car's side silhouette in a rim light, the rear light bar and wing rising from black, gauge/exhaust hit (5.5-11.0). Focus: headlight POV down an empty street dissolving into an eye, 'Driven by resolute focus' (11.0-16.5). Proof: carbon wing, rear wing end, mirror, 'Refinement reveals precision' (16.5-20.8). Release: night city drive, headlight and skyline, mountain chase (20.8-27.0). Payoff: tagline over a valley (27.0-28.3); end card (28.3-30).",
+  "text": [
+   {
+    "words": "Discipline.",
+    "start": 0.6,
+    "end": 2.17,
+    "style": "caption"
+   },
+   {
+    "words": "Driven by resolute focus",
+    "start": 11.6,
+    "end": 16.52,
+    "style": "caption"
+   },
+   {
+    "words": "Refinement reveals precision",
+    "start": 16.52,
+    "end": 18.53,
+    "style": "caption"
+   },
+   {
+    "words": "{DISCLAIMER}",
+    "start": 16.52,
+    "end": 27.048,
+    "style": "legal"
+   },
+   {
+    "words": "{TAGLINE}",
+    "start": 27.048,
+    "end": 28.251,
+    "style": "tagline"
+   }
+  ],
+  "end_card": {
+   "start": 28.251,
+   "end": 30.0,
+   "what": "{BRAND} wordmark centred on black, 0.3 s fade-in (set/ui_end_card.jpg)"
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "shots": [
+   {
+    "n": 1,
+    "from": 2,
+    "start": 0,
+    "end": 2.17,
+    "dur": 2.17,
+    "src": [
+     4.38,
+     6.55
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 2,
+    "from": 3,
+    "start": 2.17,
+    "end": 3.671,
+    "dur": 1.501,
+    "src": [
+     6.55,
+     8.051
+    ],
+    "change": "first 1.50 s"
+   },
+   {
+    "n": 3,
+    "from": 9,
+    "start": 3.671,
+    "end": 6.483,
+    "dur": 2.812,
+    "src": [
+     19.208,
+     22.02
+    ],
+    "change": "last 2.81 s"
+   },
+   {
+    "n": 4,
+    "from": 12,
+    "start": 6.483,
+    "end": 7.342,
+    "dur": 0.859,
+    "src": [
+     23.52,
+     24.379
+    ],
+    "change": "whole shot"
+   },
+   {
+    "n": 5,
+    "from": 18,
+    "start": 7.342,
+    "end": 8.852,
+    "dur": 1.51,
+    "src": [
+     39.2,
+     40.71
+    ],
+    "change": "only the carbon-wing window"
+   },
+   {
+    "n": 6,
+    "from": 27,
+    "start": 8.852,
+    "end": 11.013,
+    "dur": 2.161,
+    "src": [
+     53.979,
+     56.14
+    ],
+    "change": "last 2.16 s"
+   },
+   {
+    "n": 7,
+    "from": 34,
+    "start": 11.013,
+    "end": 12.213,
+    "dur": 1.2,
+    "src": [
+     72.45,
+     73.65
+    ],
+    "change": "rear three-quarter window, 1.2 s"
+   },
+   {
+    "n": 8,
+    "from": 39,
+    "start": 12.213,
+    "end": 13.566,
+    "dur": 1.353,
+    "src": [
+     99.0,
+     100.353
+    ],
+    "change": "tagline window"
+   },
+   {
+    "n": 9,
+    "from": 40,
+    "start": 13.566,
+    "end": 15.0,
+    "dur": 1.434,
+    "src": [
+     102.19,
+     103.624
+    ],
+    "change": "first 1.43 s"
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 4.188,
+     "src_out": 7.859
+    },
+    {
+     "src_in": 20.708,
+     "src_out": 24.379
+    },
+    {
+     "src_in": 53.748,
+     "src_out": 57.419
+    },
+    {
+     "src_in": 99.637,
+     "src_out": 103.624
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "0-3.67 sea pulse with VO; 3.67-7.34 build into the gauge/exhaust hit at 6.48; 7.34-11.01 full drive; 11.01-15 quiet pad, sting at 13.37, fade 0.15 s"
+  },
+  "lines": [
+   {
+    "id": "L01",
+    "words": "Discipline. Discipline.",
+    "start": 1.072,
+    "end": 3.671,
+    "clip": "set/lines/L01.wav",
+    "in_score": true,
+    "kind": "voice-over"
+   }
+  ],
+  "arc": "Hook: sea and breaking wave with 'Discipline' (0-3.7). Reveal: rear light bar and wing rise from black, exhaust hit (3.7-7.3). One proof: carbon wing, then the headlight tracking shot on the night bridge (7.3-11.0). Payoff: mountain chase, tagline (11.0-13.6); end card (13.6-15).",
+  "text": [
+   {
+    "words": "Discipline.",
+    "start": 0.6,
+    "end": 2.17,
+    "style": "caption"
+   },
+   {
+    "words": "{DISCLAIMER}",
+    "start": 7.342,
+    "end": 12.213,
+    "style": "legal"
+   },
+   {
+    "words": "{TAGLINE}",
+    "start": 12.213,
+    "end": 13.566,
+    "style": "tagline"
+   }
+  ],
+  "end_card": {
+   "start": 13.566,
+   "end": 15.0,
+   "what": "{BRAND} wordmark centred on black, 0.3 s fade-in (set/ui_end_card.jpg)"
+  }
+ }
+}
