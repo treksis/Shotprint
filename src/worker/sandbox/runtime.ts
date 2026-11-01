@@ -684,7 +684,12 @@ function readTemplateDetail(id: string): TemplateDetail | null {
 export const dockerSandbox: StudioSandbox = {
   runnable: () => dockerAvailable(),
   async templateDetail(id) {
-    return readTemplateDetail(id);
+    try {
+      return readTemplateDetail(id);
+    } catch (e) {
+      console.warn(`[studio] template ${id}: ${(e as Error).message}`);
+      return null;
+    }
   },
   async templateFile(id, rel, range) {
     const dir = path.join(TEMPLATE_DIR, path.basename(id));
