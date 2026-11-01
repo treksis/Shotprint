@@ -8,7 +8,7 @@
 //   dissection/<stem>.md              the same as a readable table
 //   dissection/frames/<stem>_sNN.jpg  a 1280 px middle frame per shot
 // With --template <name>: templates/<name>/template.json pre-filled with the measured fields of every
-// shot, and the frames copied to templates/<name>/frames/shotNN.jpg. Describe the rest by looking.
+// shot (docs/template_spec.md); describe the rest by looking. Source frames stay in dissection/.
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -331,25 +331,23 @@ fs.writeFileSync(path.join(OUT, `${stem}.md`), md);
 // 9. Optional template skeleton: the measured fields, ready for the descriptive ones.
 if (opt.template) {
   const dir = path.join("templates", opt.template);
-  fs.mkdirSync(path.join(dir, "frames"), { recursive: true });
+  fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, "template.json");
   const existing = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
   // Descriptions written on an earlier run carry over only when the shots are the same shots;
   // otherwise they are kept aside in stale_shots so nothing is lost or attached to the wrong shot.
   const old = existing.shots ?? [];
   const same = old.length === shots.length && old.every((o, i) => Math.abs((o.start ?? -1) - shots[i].start) <= 0.1);
-  for (const f of fs.readdirSync(path.join(dir, "frames"))) if (/^shot\d+\.jpg$/.test(f)) fs.rmSync(path.join(dir, "frames", f));
   const t = {
     ...existing,
     meta: { ...existing.meta, source: video, duration: summary.duration, size: summary.size, fps: summary.fps, shots: totalShots, average_shot: summary.average_shot, median_shot: summary.median_shot },
     acts: same ? existing.acts ?? [] : [],
     shots: shots.map((s, i) => {
-      const frame = `frames/shot${pad2(s.n)}.jpg`;
-      if (fs.existsSync(s.frame)) fs.copyFileSync(s.frame, path.join(dir, frame));
       return {
-        setup: null, framing: null, camera_move: null, light: null, on_screen: null, text: [], out: null,
+        action: null, setup: null, location: null, cast: [], wardrobe: null, shot_size: null, subject_in_frame: null,
+        camera: null, camera_move: null, light: null, text: [], out: null, audio: null, render: null, board: null,
         ...(same ? old[i] : {}),
-        n: s.n, start: s.start, end: s.end, dur: s.dur, in: s.in, frame: fs.existsSync(path.join(dir, frame)) ? frame : null,
+        n: s.n, start: s.start, end: s.end, dur: s.dur, in: s.in,
         brightness: s.brightness ?? null, colour: s.colour ?? null, change: s.change ?? null,
         sound: s.loudness ? `${s.loudness.mean} LUFS mean, ${s.loudness.max} peak` : null,
         voice: s.speech ? s.speech.map((id) => turns.find((u) => u.id === id).text).join(" / ") : null,
@@ -357,7 +355,11 @@ if (opt.template) {
     }),
     sound: { ...existing.sound, silences, black },
     look: existing.look ?? null,
+    text_style: existing.text_style ?? null,
+    set: existing.set ?? {},
     slots: existing.slots ?? [],
+    cut30: existing.cut30 ?? null,
+    cut15: existing.cut15 ?? null,
   };
   if (old.length && !same) t.stale_shots = old;
   else delete t.stale_shots;
@@ -367,7 +369,7 @@ if (opt.template) {
 timings.total = +((Date.now() - T0) / 1000).toFixed(2);
 console.log(md);
 console.log(`Done in ${timings.total}s (${Object.entries(timings).map(([k, v]) => `${k} ${v}s`).join(", ")}).`);
-if (opt.template) console.log(`Template skeleton: templates/${opt.template}/template.json (null fields are yours to fill), frames in templates/${opt.template}/frames/.`);
+if (opt.template) console.log(`Template skeleton: templates/${opt.template}/template.json (null fields are yours to fill; see docs/template_spec.md).`);
 
 async function transcribeWav(file) {
   const t = Date.now();

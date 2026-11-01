@@ -1,109 +1,80 @@
 ---
 name: template-fill
-description: Make an ad by filling a dissected director's template (templates/<name>/TEMPLATE.md + template.json) with a new product, presenter and lines, instead of inventing the film's structure. Use whenever a templates/ folder is present and the task is to produce a commercial "in the style of" its source film. Covers plates per camera setup, voice-first presenter takes, first-frame continuity, the guide-audio repair, continuity checks, and sync-safe assembly from a cut list.
+description: Make a film by filling a director's template (templates/<id>/ with TEMPLATE.md, template.json, set/, boards/) with a new subject, instead of inventing the film's structure. Use whenever a templates/ folder is present and the task is a film "in the style of" its source, a cutdown of it, or a close rebuild of it. Covers the fill sheet, swapping the ingredient set, plates from boards, render modes per shot (first/last frame, guide audio, reference + voice, composited screens), timing to the recorded lines, and assembly from a cut list.
 ---
 
 # Template fill
 
-A template is a professional film's decisions, measured: its arc, shot list, fixed camera setups,
-measured camera moves, line functions with syllable budgets, sound plan, look and product rules. Your
-job is to **fill the slots, not to redesign the film.** Where the template says "keep", keep. Where
-you have latitude (which optional shot, the exact words of a line), use it for the new product.
+A template is a real film taken apart: **the recipe** (`template.json` + `TEMPLATE.md`: every shot's
+timing, framing, move, light, text and sound, with measured numbers) and **the ingredient set**
+(`set/`: character, product and location sheets, voice, recorded lines, UI screens, score), plus a
+storyboard sketch per shot (`boards/sNN.png`). The format is `docs/template_spec.md`.
 
-Read in this order: `TEMPLATE.md` (all of it), `template.json`, the frames in `frames/` for every
-setup you will use, and `master_shots.md` when you need to know how the source handled a moment.
+The film you make is one of the template's cuts: `cut30` (the default) or `cut15` when the brief asks
+for 15 s. Each cut lists its shots in the new timeline; every shot inherits the fields of the source
+shot it comes `from`. Your job is to **keep the recipe and swap the ingredients**. Where the template gives a number (time,
+brightness, size in frame, move speed), hit the number. Where it has a slot (`slots`, `{PRODUCT}`,
+`{PRESENTER_NAME}`...), fill it for the new film.
 
-## 1. Fill sheet first (no GPU yet)
+Read in this order: `TEMPLATE.md`, `template.json` (top level, then every shot), the boards, then
+the set sheets you will use.
 
-Write `fill.md` before generating anything:
-- every `{SLOT}` with its value: product name, product **must** list (shape, material, colour,
-  distinctive parts) and **never** list (3-6 things it must not turn into), claim lines, brand mark;
-- the six lines L1-L6 in the template's rhetorical pattern, each counted against its syllable budget;
-- for each of the 15 shots: setup chosen (where the template offers alternatives), what we see, which
-  line is heard, and the render unit that supplies it.
-Check the fill sheet against `template.json` (durations, budgets, rules) and fix it before moving on.
+## 1. Fill sheet (no GPU yet)
 
-## 2. Plates (stills; cheap, iterate here)
+Write `notes/fill.md` before generating anything:
+- every slot and its value; for the product, a **must** list (shape, material, colour, distinctive
+  parts) and a **never** list;
+- the new ingredient set: which sheet replaces which set id (`char_*`, `product_*`, `loc_*`, `ui_*`),
+  and what is kept as is;
+- the lines: for each entry in `lines.json`, the new words, fitted to the same duration (count
+  syllables against the source line; a generated read runs 10-20% slower, so write shorter);
+- for a cutdown, which shots survive and the new timeline;
+- per shot: what we see and the render unit that supplies it (from the shot's `render` field).
 
-One plate per camera setup and per B-roll unit you use, each made by **editing that setup's reference
-frame**: keep camera position, lens, height, light and set; replace the presenter (use the presenter
-photos), the product (use the product photos), and rewrite or remove signage so no other brand
-remains. Prompt with what to **make**, not what to avoid ("the man from image 2 stands where the
-founder stands, waist-up, left third, same light"), and list the product must/never words in every
-plate that shows it.
+## 2. Ingredients
 
-Look at every plate next to the presenter and product photos. Redo a plate if the face, the product's
-shape, or the setup's framing is wrong. A plate that is wrong costs one image; a clip from it costs a
-render and a retake.
+Make the new sheets with `bin/img` in the template's own sheet format (same views, same neutral
+background) so they slot in. Locations must match `look`: same brightness numbers, no added haze.
+Lines: record or generate each line as its own clip, `lines/Lnn.wav`, and measure its length; a line
+that runs long gets rewritten shorter, not sped up.
 
-For 9:16 editions use the template's 9:16 framing column and make vertical plates.
+## 3. Plates from boards
 
-## 3. Hybrid H3 modes (read TEMPLATE.md section 11 and follow its table)
+One plate per shot (two for a moving shot: start and end), made by `bin/img` with the board as the
+composition image and the set sheets as identity images: "Keep the exact composition of the sketch
+(image 1): ... The person is the one in image 2, the place is image 3 ...". Put the shot's
+`shot_size`, `subject_in_frame`, `camera` and `light` into the prompt, and the measured brightness.
+Look at every plate next to its board and sheets; redo it if the framing, face, product or darkness is
+off. A wrong plate costs one image; a clip from it costs a render.
 
-Reference path (Ref2V) for **voice and identity**, keyframe path (FL2V: `first_frame` + `last_frame`)
-for **every picture that reaches the cut**. `first_frame` is ignored on the reference path, and a
-first-frame-only clip drifts; anchor both ends.
+Shots of one `setup` share a plate, so a cut back to that camera matches.
 
-Presenter on camera, per line:
-1. **Voice take (Ref2V)**: `refs` = [setup plate, presenter photo], `ref_audios` = [voice reference],
-   the line in `<d>[English] ...</d>`, no music. Check the words (transcribe). Redo only if the voice is
-   wrong. Keep its audio as `takes/<line>.wav`.
-2. **Picture (FL2V + guide)**: `first_frame` = setup plate, `last_frame` = that setup's end-pose plate,
-   `guide_audio` = the take audio, no `refs`. The clip reproduces the take verbatim, lip-synced, and
-   starts and ends on the setup. If the Ref2V take's own picture already opens and stays on the plate
-   (continuity says adherence ≥ 0.9 at both ends), you may keep it and skip step 2.
+## 4. Render, per the shot's `render` field
 
-End plates: make them by editing the start plate ("same camera, same light, a moment later: ...").
-**Speaking shots get a neutral end plate** (same relaxed expression, lips slightly parted, hands low):
-a smiling or closed-mouth end plate stops the lips from following the guide audio.
+- **Picture shots (product, B-roll, places):** first + last frame from the shot's start/end plates.
+  No speech, no readable text, no music (the score comes in at assembly).
+- **Speaking on camera:** first frame = the setup plate, `guide_audio` = that line's clip. This holds
+  the framing and the lip-sync. Reference + voice mode ignores the first frame, so the framing
+  drifts; use it only to generate a voice when there is no line clip. Speaking shots get a neutral
+  end pose (lips parted, hands low).
+- **Screens and UI:** composite them in post from the `ui_*` sheets and `ui.json` (scrolls, taps,
+  zooms by time) onto a plate or clip of the device. Don't ask a video model to draw readable UI.
+- **Motion graphics:** draw them in code at the sizes and timings the template gives.
 
-Before writing any prompt, read TEMPLATE.md section 9 (Restraint): describe behaviour plainly, keep
-moves at the measured size, no glow/sparkle/hype words. The audience must not be able to tell the
-film was generated.
-For product shots the end plate is the end of the template's measured move for that unit.
+`seconds` is 2-10 per clip; a longer shot is two clips chained (the first clip's last frame is the
+second's `first_frame`).
 
-## 4. Product shots and B-roll
+## 5. Cut and assemble
 
-FL2V with start and end plates. Use the supplied product sheet (`assets/product_sheet.png`), never a
-sheet you assemble from other footage, and paste the template's `product lock` line into every product
-prompt. Check the product against the product sheet **part by part, including colour and finish**, on both
-plates (shield shape, temples, puck shape, cable) before rendering; a wrong part in a plate is in the
-film. A small product must fill at least a third of the frame. For an action continuing across a cut,
-chain: the previous clip's last frame is the next clip's `first_frame`. No speech, no lip movement, no
-readable text, `non_diegetic_music: none`.
+Write `cut.json` with the template's shot times, then assemble (`tools/assemble.py cut.json
+final/final.mp4`, or ffmpeg). Place each line clip once, at its `lines.json` time; picture cuts follow
+the template, and a line may run over a cut exactly where the template says it does. Never retime
+generated audio or picture (no atempo, no setpts speed changes): trim instead. Score: `set/score.wav`
+(or its replacement) from 0 s under the whole film, the mix as in `sound`. Text and end card: as in
+`text_style` and each shot's `text`, with exact sizes and positions.
 
-## 5. Continuity and repair (before assembly)
+## 6. Check against the template
 
-Write the cut list `cut.json` (format in `tools/assemble.py`) and a `plates.json` mapping each take to
-its plate and setup, then run:
-
-    tools/.venv/bin/python tools/continuity.py cut.json plates.json --template templates/<name>/template.json
-
-Fix every FIX and look at every check:
-- **plate adherence low** → the clip did not open on its plate: repair (presenter) or re-render (B-roll).
-- **held head / morph spike** → move the cut so the picture starts after it (trim, never retime).
-- **jump cut** → the template forbids same-setup cuts; swap one shot to another setup.
-- **grade jump between interview setups** → `tools/grade_match.py clip ref_plate out` (audio kept).
-- **camera move mismatch** → re-render with the move stated more strongly, or pick another window.
-- **speech windows** → place cuts in the pauses; on-camera shots must start after the take's speech
-  has started and the line must finish before a cut to another on-camera setup.
-
-## 6. Assemble (sync-safe)
-
-`tools/assemble.py cut.json final/final.mp4`. Each take is placed **once** (`at`), and both its
-picture windows and its sound windows derive from that placement: this is how a line can run on
-under B-roll (L-cut) or start under the establishing shot (J-cut) and still be in sync when we see
-the face. Never use atempo, setpts speed changes, or `-shortest` on a take.
-
-Score: one bed under the whole film (the template's sound section). If you can only get short music
-pieces, join them at bar-aligned points with crossfades, then let `assemble.py` duck it under speech
-and hard-cut it where the template says.
-
-Post graphics: `tools/post_text.py etch ...` for the claim overlay, `tools/post_text.py endcard ...`
-for the end card.
-
-## 7. Review against the template, then fix the worst shot
-
-Watch the cut (extract frames at every cut point and the middle of every shot) next to the template's
-frames. Score yourself on the template's own terms: arc, setups held, product shape everywhere, lines
-clear, cuts on phrase breaks. Retake the single worst shot first, re-run continuity, re-assemble.
+Extract the middle frame of every shot and set it beside its board; measure each shot's brightness
+against the template's numbers. Listen to every line at its time. Fix the worst shot first, then
+reassemble.

@@ -81,8 +81,10 @@ ffmpeg, ffprobe, python3 and node are installed.
 
 ## Director templates
 
-`templates/<name>/TEMPLATE.md` (+ `template.json`, `master_shots.*`, `frames/`) is a professional film
-dissected shot by shot: camera setups, moves, timings, lines, light, grade. When the person picks a
+`templates/<name>/` is a professional film taken apart (format: `docs/template_spec.md`): the recipe
+(`TEMPLATE.md`, `template.json`: every shot's timing, framing, move, light, text and sound), the
+ingredient set (`set/`) and a storyboard per shot (`boards/`). Templates make 30 s and 15 s spots
+(`cut30`, `cut15`). To make one from a film, use the `make-template` skill. When the person picks a
 template, or the brief asks for a film "in the style of" one, use the `template-fill` skill: fill the
 template with the new subject instead of inventing the structure. The `effects` skill has motion
 graphics and title treatments for when the brief needs them.

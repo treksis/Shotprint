@@ -8,14 +8,26 @@ yourself with your file-reading tool (extract frames with ffmpeg first).
 
 ```bash
 bin/dissect inputs/film.mp4                          # dissection/film.md, film.json, film_shots_NN.jpg, film_contact_NN.jpg
-bin/dissect inputs/film.mp4 --template film-style    # also templates/film-style/template.json + frames/shotNN.jpg
+bin/dissect inputs/film.mp4 --template film-style    # also a templates/film-style/template.json skeleton
 ```
 
 `film.md` is the shot table (times, transition in, loudness, speech turns) plus soft-cut candidates,
 black, silences and the transcript. The shot boards show every shot's start, middle and end. With
-`--template`, `template.json` already holds every measured field; fill the `null` ones (setup,
-framing, camera_move, light, on_screen, text, out) and the acts from the boards, then write
-`TEMPLATE.md`. `--threshold` (default 0.3) and `--min-shot` (default 0.4 s) tune cut detection.
+`--template`, `template.json` already holds every measured field; the `null` ones are yours (see
+`docs/template_spec.md` and the `make-template` skill). `--threshold` (default 0.3) and `--min-shot`
+(default 0.4 s) tune cut detection.
+
+## Template cuts: `bin/template` (seconds, no model calls)
+
+```bash
+bin/template beats templates/x/set/score.wav               # tempo and bar starts: cut the score on these
+bin/template score templates/x 30                          # set/score_30.wav from cut30.score.segments
+bin/template reference templates/x 30 inputs/film.mp4 notes/ref30.mp4   # the real film cut to cut30
+bin/template check templates/x                             # everything the spec requires; fix every FAIL
+```
+
+The reference is how you check a cut: extract frames from it and listen to its joins. It is for
+checking only and never goes into the template.
 
 ## Stills: `bin/img` (Muse Image, $0.01 per image, 1280x720 PNG)
 

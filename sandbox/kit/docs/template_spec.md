@@ -55,6 +55,27 @@ Per shot:
 - `render`: the suggested build, e.g. "first + last frame: plate A -> plate B" or "reference + voice".
 - `board`: `boards/sNN.png`.
 
+## The 30- and 15-second cuts
+
+A template makes **short films: a 30-second and a 15-second spot.** Video models hold a shot for
+2-10 s and stay consistent across 10-15 shots, not across a long film, so long films are measured
+whole but only cut down are made. The full shot list above is the source, studied; `cut30` and
+`cut15` are what gets made. Each is a top-level object in template.json, with a section in TEMPLATE.md:
+- `duration` (30.0 or 15.0, ±0.5), `arc`: how the film's arc survives in 30 s (hook, middle, payoff, end card).
+- `shots`: in order, each with `n` (1..), `from` (the source shot number it is built from), `start`,
+  `end`, `dur` in the new timeline, and what changes from the source shot (shorter, a different
+  window of the move, merged with another). Every other field is inherited from the source shot.
+- `lines`: the lines kept, with their new absolute times (a line may be shortened, never sped up).
+- `score`: `set/score_30.wav` / `set/score_15.wav`, the soundtrack cut to length at bar-aligned points with short
+  crossfades, and where its sections now fall.
+- `text` and `end_card` in the new timeline.
+Cut like an editor making the official spots: keep the hook, the product's best moments and the
+payoff; keep the source's pace (the average shot length should stay close to the measured one). The
+15 s cut is the 30 s cut tightened (hook, one proof, payoff, end card), not a separate film.
+
+Only the shots the cuts use need the full per-shot fields, set sheets and boards. Other source shots
+keep their measured fields and a one-line `action`.
+
 ## Ingredient set
 
 Sheets are made with `bin/img` from source frames, but the subject is shown **off the shot framings**:
@@ -66,8 +87,31 @@ place, not composition. Composition comes from the boards.
   distinctive part named in the prompt.
 - `loc_<name>.png`: each place empty and wide. **Match the film's look:** same light, same darkness,
   and no haze, smoke or grade the film doesn't have.
-- `voice_<name>.wav`: a clean clip of each speaking voice (from `bin/dissect`'s turns).
+- `voice_<name>.wav`: a clean 10-20 s clip of each speaking voice, for timbre (from `bin/dissect`'s turns).
+- `lines/Lnn.wav` + `lines.json`: the film's recorded lines, one clip per line, cut from the source at
+  phrase boundaries, with absolute start/end and word times. This is the film's voice recording, like
+  the score: a presenter take uses its line as `guide_audio`, so the pace and the cut points hold.
+  Generated speech runs 10-20% slower than a real read and breaks the line times. A new film swaps
+  these for its own recorded or generated lines and keeps `lines.json` as the timing target.
+- `ui_<screen>.png`: every screen, card and panel shown in the film, drawn flat and full-size with its
+  exact copy and layout, plus the product images, app icons and logo it uses. Screens described only in
+  words get redesigned from scratch. `ui.json` gives each screen's scroll positions, taps and zooms by time.
 - `score.wav`: the film's soundtrack. Real productions cut to a track, so the score is an ingredient.
+
+## Numbers, not adjectives
+
+- **Sizes come from the boards.** Measure `subject_in_frame` and text size on the board itself, as % of
+  frame width and height, so words and board never disagree.
+- **Motion has numbers:** start and end scale or position, duration, easing (linear, ease-out, spring)
+  for every push, pan, morph, flip, pop and wipe. Say how to build a compound move from takes (e.g.
+  "two takes joined by a 6-frame whip; a dark foreground pass hides the join").
+- **Post graphics are exact:** typeface feel and weight, size, tracking, angle, position in %, and the
+  words of every label, etch, lower third and end card.
+- **One render mode per shot that actually works.** First-frame plates and reference-plus-voice don't
+  combine (reference mode ignores the first frame). For a locked presenter setup, say which mode holds
+  the framing (first frame + guide audio) and what to do if it drifts.
+- **No refusable references.** If a screen or prop evokes a franchise, the sheet must already be a
+  generic, generatable version of it; test it with `bin/img` before shipping.
 
 ## Storyboards
 
@@ -91,5 +135,5 @@ photographic detail, redo it rougher.
 - Lines: exact words and absolute times from the transcript. Say whether each is on-camera speech,
   voice-over or a sung lyric.
 - Use the measured numbers. Words like "dark" or "fast" go next to the number that pins them down.
-- Check before finishing: every shot has every field, every set id exists in `set/`, and every board
-  exists.
+- Check before finishing: every shot has every field, every set id exists in `set/`, every board
+  exists, and every line in `lines.json` has its clip.
