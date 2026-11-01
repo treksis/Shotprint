@@ -244,6 +244,7 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     thumbnail: '/templates/holiday-story.jpg',
     preview: '/templates/holiday-story.mp4',
     proof: { '30': '/templates/proof/holiday-story-30.mp4', '15': '/templates/proof/holiday-story-15.mp4' },
+    examples: [{ title: 'Ray-Ban Meta gift, 30 s', video: '/templates/examples/rayban-gift.mp4', poster: '/templates/examples/rayban-gift.jpg' }, { title: 'Ray-Ban Meta gift, 15 s', video: '/templates/examples/rayban-gift-15.mp4', poster: '/templates/examples/rayban-gift-15.jpg' }],
     description:
       'A wordless, song-driven family story: a gift and a needle drop send the receiver into a vivid memory, then back home into a hug, closing on a soft-focus end card with one super and the brand.',
     prompt: "Make a 30 s holiday film for our new wireless speaker: a teenage daughter's gift sends her mother back to a memory of dancing at her first concert, then they hug.",
