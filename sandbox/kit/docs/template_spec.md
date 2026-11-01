@@ -32,7 +32,9 @@ Top level:
 - `text_style`: typeface feel, case, size, tracking, position, how it animates.
 - `sound`: the music arc with times, where speech sits, the mix.
 - `set`: ingredient id -> file(s) and what it fixes.
-- `slots`: what a new film swaps (product, presenter, lines, places, text, end card).
+- `slots`: what a new film swaps (product, presenter, lines, places, text, end card). Every slot has a
+  concrete default (an invented brand name and wordmark, a tagline), so a film made from the template's
+  defaults never has to guess one.
 
 Per shot:
 - **Measured:** `n`, `start`, `end`, `dur`, `in` (transition), `brightness` {start, mid, end}, `colour`,
