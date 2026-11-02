@@ -1,3 +1,4 @@
+import { ShotprintMark } from '../ShotprintMark';
 import React from 'react';
 
 export interface SiteHeaderProps {
@@ -13,10 +14,7 @@ export function SiteHeader({ onOpenStudio, onOpenVault }: SiteHeaderProps) {
           href="#"
           className="flex items-center gap-2.5 text-[#111111] no-underline"
         >
-          <span
-            aria-hidden="true"
-            className="w-4 h-4 rounded-[3px] bg-[#1a4be0] inline-block shrink-0"
-          />
+          <ShotprintMark className="w-6 h-6 shrink-0" />
           <span className="text-[18px] font-semibold tracking-[-0.02em] text-[#111111]">
             Shotprint
           </span>

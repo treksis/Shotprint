@@ -1,5 +1,6 @@
+import { ShotprintMark } from './ShotprintMark';
 import * as React from 'react';
-import { Clapperboard, LayoutGrid, Loader2, PenLine } from 'lucide-react';
+import { LayoutGrid, Loader2, PenLine } from 'lucide-react';
 import type { Route } from '../App';
 import type { StudioProjectSummary } from '../../shared/studio';
 import {
@@ -29,9 +30,7 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'home' })} tooltip="Shotprint Studio">
-              <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-[6px] bg-[#0866ff] text-[#ffffff]">
-                <Clapperboard className="size-4" />
-              </div>
+              <ShotprintMark className="size-8 shrink-0" />
               <div className="grid flex-1 text-left text-[14px] leading-tight">
                 <span className="truncate font-semibold">Shotprint</span>
                 <span className="truncate text-[13px] text-muted-foreground">Agent video studio</span>
