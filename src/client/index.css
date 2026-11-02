@@ -215,14 +215,18 @@
   background: #0d1117 !important;
   border-color: #30363d !important;
 }
-.cli-surface textarea { font-family: inherit; font-size: 13px !important; min-height: 40px !important; padding-left: 2.25rem !important; }
+.cli-surface textarea { font-family: inherit; font-size: 13px !important; min-height: 30px !important; padding-top: 0.5rem !important; padding-bottom: 0.25rem !important; padding-left: 2.25rem !important; }
+.cli-surface [data-slot='input-group'] { border-color: #484f58 !important; }
+.cli-surface [data-slot='input-group']:focus-within { border-color: var(--cli-prompt) !important; }
+.cli-surface button[data-slot='button'], .cli-surface [data-slot='select-trigger'] { border-radius: 4px; }
+.cli-surface * { scrollbar-width: thin; scrollbar-color: #30363d transparent; }
 .cli-surface textarea::placeholder { color: #6e7681; }
 .cli-surface .cli-input { position: relative; }
 .cli-surface .cli-input::before {
   content: '❯';
   position: absolute;
   left: 0.9rem;
-  top: 0.62rem;
+  top: 0.5rem;
   z-index: 1;
   color: var(--cli-prompt);
   font-weight: 700;

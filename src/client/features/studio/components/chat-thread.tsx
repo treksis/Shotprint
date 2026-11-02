@@ -63,13 +63,51 @@ function NodeChip({ node, onClick }: { node: StudioNode; onClick: () => void }) 
   );
 }
 
-const ToolRow = memo(function ToolRow({ it, chips, onFocusNode }: { it: SessionItem; chips: StudioNode[]; onFocusNode: (id: string) => void }) {
+const ToolRow = memo(function ToolRow({ it, chips, onFocusNode, cli = false }: { it: SessionItem; chips: StudioNode[]; onFocusNode: (id: string) => void; cli?: boolean }) {
   const [open, setOpen] = useState(false);
   const d = describe(it);
   const Icon = d.icon;
   const running = it.status === 'inProgress';
   const failed = it.status === 'failed' || (typeof it.exitCode === 'number' && it.exitCode !== 0);
   const hasBody = !!(it.output?.trim() || d.detail);
+  if (cli) {
+    const out = it.output?.trim() ?? '';
+    const lines = out ? out.split('\n') : [];
+    const summary = failed ? lines.find((l) => /error|fail|traceback/i.test(l)) ?? lines[lines.length - 1] : lines.length ? (lines.length > 1 ? `${lines[0].slice(0, 120)} … +${lines.length - 1} lines` : lines[0].slice(0, 140)) : '';
+    return (
+      <div className="leading-relaxed">
+        <button type="button" onClick={() => hasBody && setOpen((o) => !o)} className={cn('flex w-full items-baseline gap-2 text-left', hasBody && 'cursor-pointer')}>
+          <span className={cn('shrink-0', running ? 'animate-pulse text-[var(--accent)]' : failed ? 'text-[var(--negative)]' : 'text-[var(--cli-ok)]')}>⏺</span>
+          <span className="min-w-0 flex-1 truncate">
+            <span className="font-bold text-foreground">{d.title}</span>
+            {d.detail && <span className="text-muted-foreground">({d.detail.split('\n')[0].slice(0, 120)})</span>}
+          </span>
+          {typeof it.durationMs === 'number' && !running && <span className="shrink-0 text-[11px] tabular-nums text-muted-foreground">{(it.durationMs / 1000).toFixed(1)}s</span>}
+        </button>
+        {running && <p className="pl-4 text-muted-foreground">⎿&nbsp; Running…</p>}
+        {!running && summary && !open && <p className={cn('truncate pl-4', failed ? 'text-[var(--negative)]' : 'text-muted-foreground')}>⎿&nbsp; {summary}</p>}
+        {open && (
+          <pre className="max-h-72 overflow-auto pl-4 text-[12px] leading-relaxed whitespace-pre-wrap text-muted-foreground">
+            {d.detail ? `$ ${d.detail}\n` : ''}
+            {out}
+          </pre>
+        )}
+        {chips.length > 0 && (
+          <p className="pl-4 text-muted-foreground">
+            ⎿&nbsp; wrote{' '}
+            {chips.map((n, i) => (
+              <span key={n.id}>
+                {i > 0 && ', '}
+                <button type="button" onClick={() => onFocusNode(n.id)} className="cursor-pointer text-[var(--accent)] underline-offset-2 hover:underline">
+                  {n.id}
+                </button>
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
+    );
+  }
   return (
     <div className="group">
       <button
@@ -164,10 +202,10 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode, vari
 
   return (
     <Conversation className="min-h-0 flex-1">
-      <ConversationContent className={cn('mx-auto w-full', cli ? 'max-w-[1100px] gap-3 px-4 pt-3 pb-4 text-[13px]' : 'max-w-[720px] gap-6 px-5 pt-6 pb-10')}>
+      <ConversationContent className={cn('mx-auto w-full', cli ? 'max-w-none gap-2.5 px-4 pt-3 pb-3 text-[13px]' : 'max-w-[720px] gap-6 px-5 pt-6 pb-10')}>
         {blocks.map((b, i) =>
           b.user && cli ? (
-            <div key={b.user.id} className="flex gap-2 leading-relaxed">
+            <div key={b.user.id} className="-mx-2 flex gap-2 rounded-[4px] bg-[#161b22] px-2 py-1 leading-relaxed">
               <span className="shrink-0 font-bold text-[var(--cli-prompt)]">❯</span>
               <span className="min-w-0 whitespace-pre-wrap text-foreground">
                 {b.user.text?.replace(/\n\n\(Template picked:[^)]*\)\s*$/, '').replace(/\n\n\(Reference film:[^)]*\)\s*$/, '')}
@@ -214,7 +252,7 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode, vari
                         {tidyLinks(it.text)}
                       </MessageResponse>
                     ) : null;
-                  if (it.kind === 'toolCall' || it.kind === 'userShell') return <ToolRow key={it.id} it={it} chips={it.status === 'completed' ? touched(it, byId) : []} onFocusNode={onFocusNode} />;
+                  if (it.kind === 'toolCall' || it.kind === 'userShell') return <ToolRow key={it.id} it={it} chips={it.status === 'completed' ? touched(it, byId) : []} onFocusNode={onFocusNode} cli={cli} />;
                   if (it.kind === 'notice') return <p key={it.id} className="px-2 text-[13px] text-muted-foreground">{it.text}</p>;
                   if (it.kind === 'error')
                     return (
@@ -250,7 +288,17 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode, vari
           </p>
         )}
 
-        {!running && suggestions.length > 0 && (
+        {!running && suggestions.length > 0 && cli && (
+          <p className="flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
+            <span>Try:</span>
+            {suggestions.map((s) => (
+              <button key={s} type="button" onClick={() => onSuggestion(s)} className="cursor-pointer text-[var(--accent)] underline-offset-2 hover:underline">
+                "{s}"
+              </button>
+            ))}
+          </p>
+        )}
+        {!running && suggestions.length > 0 && !cli && (
           <Suggestions>
             {suggestions.map((s) => (
               <Suggestion key={s} suggestion={s} onClick={onSuggestion} className={cn('text-[13px]', cli ? 'rounded-[6px] border-border font-mono' : 'rounded-full')} />
