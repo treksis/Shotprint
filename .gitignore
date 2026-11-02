@@ -17,3 +17,5 @@ sandbox/templates/**/*.wav
 public/templates/proof/
 public/templates/examples/
 !.env.example
+.agents/
+.taste-skill/

@@ -6,6 +6,27 @@ own product from it, with an AI agent doing the production work in a private san
 Built for the Meta hackathon on Meta's stack: **Muse Code** is the agent, **Muse Spark / Muse Wonder** are its
 models, **Muse Image** draws stills, and MiniMax-H3 (open weights, our own GPU) renders video.
 
+## Hackathon submission
+
+- **Event:** Meta Global AI Developer Hackathon, **Startups track**. Problem statement: **Build for Your World**:
+  short-form ad production is slow and expensive for small brands; a template proven on a top-performing ad,
+  run by an agent, gets them a 30 s and a 15 s spot from a product photo and a brief.
+- **Meta models used:**
+  - **Muse Code** is the production agent itself: one `muse serve` session per project, driven over its
+    protocol (send, steer, queue, interrupt, resume, subagents).
+  - **Muse Spark** (Demo mode) and **Muse Wonder** (Live mode) are its models.
+  - **Muse Image** draws every plate, cast sheet, product sheet and storyboard (`sandbox/kit/bin/img.mjs`).
+  - **Muse Voice Transcribe** measures the spoken lines when an ad is measured (`sandbox/kit/bin/dissect.mjs`).
+- **Built during the hackathon (Oct 26 – Nov 4, 2026):** everything in this repository. Planning notes date
+  from Oct 24 and code from Oct 27; the git history starts with a snapshot on Oct 30 and covers the rest. That
+  includes the Studio (UI and API), the per-project Muse Code sandbox and relay, the workspace-to-canvas graph,
+  the measuring and template tools, the template format, all 16 templates and their benchmarks, and the ten
+  example productions.
+- **Existing work we built on:** the GPU video stack behind `sandbox/host/h3` (MiniMax-H3, an open-weights
+  video model from another provider, running in ComfyUI on a Google Colab GPU, with our setup scripts) was
+  set up before the event and is not part of this repository; the H3 bridge script that calls it is. Open-source
+  libraries are listed in `package.json`.
+
 ---
 
 ## For reviewers: what to look at (5 minutes)
