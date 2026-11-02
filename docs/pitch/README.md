@@ -24,19 +24,19 @@
 ## Demo path (3 minutes)
 
 1. Landing page: the hook video plays real Meta films next to their blind rebuilds.
-2. **Templates** (sidebar): sixteen ready templates, each "Ready · rebuilt blind".
-3. Open **Hardware launch film** → **See the proof**: real 30 s cut (left) vs blind rebuild (right). Toggle
-   **15 s spot**. Scroll the storyboard strip, the lines and the ingredient set.
+2. **Templates** (sidebar): sixteen ready templates, each marked "Benchmarked".
+3. Open **Hardware launch film** → **Compare**: real 30 s cut (left) vs blind rebuild (right). Toggle
+   **15 s spot**. Scroll the storyboard strip, the script and the assets.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
    launch film, rebuilt from their templates with invented cast and brand.
-5. **Made from this template**: the same recipes used for ten Meta products, made by Opus from the
+5. **Example productions**: the same recipes used for ten Meta products, made by Opus from the
    templates with new product sheets, invented cast and new lines: **Meta Ray-Ban Display** (hardware
    launch), **Facebook Marketplace** (room makeover), **Meta AI** (deadpan), **Meta Quest 3S** (phone
    reveal), **Ray-Ban Meta** at the match (fan moments), **WhatsApp** (farm story), the **Meta AI app**
    intro (motion graphics), **Ray-Ban Meta** as a holiday gift (holiday story), **Meta Quest 3** (car
    launch) and **Threads** (athlete monologue), each at 30 s and 15 s. The 15 s versions reuse the 30 s
    clips: 2-6 minutes, no new renders. A 43 s reel of all ten: `lab/pitch/meta_products_reel.mp4` (local).
-6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
+6. **Create a 30 s spot** → the brief is prefilled → a project opens with the template on its
    canvas.
 
 ## The library (16 templates, each with a 30 s and a 15 s cut)
