@@ -201,8 +201,10 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
     window.addEventListener('pointerup', up);
   };
 
+  const docked = showCanvas && layout === 'dock';
   const thread = (
     <ChatThread
+      variant={docked ? 'cli' : 'chat'}
       nodes={nodes}
       suggestions={suggestions}
       onSuggestion={setDraft}
@@ -215,7 +217,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   );
 
   const chatBottom = (
-    <div className={cn('mx-auto w-full px-4 pb-4', (!showCanvas || layout === 'dock') && 'max-w-[760px]')}>
+    <div className={cn('mx-auto w-full px-4 pb-4', !showCanvas && 'max-w-[760px]', docked && 'max-w-[1100px] pb-3')}>
       {todos.length > 0 && openTodos.length > 0 && (
         <div className="mb-2 rounded-[18px] border border-border bg-background px-3 py-2">
           <p className="mb-1 flex items-center gap-1.5 text-[12px] font-medium text-muted-foreground">
@@ -255,6 +257,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
       {!runnable && connected && (
         <p className="mb-2 rounded-[14px] bg-muted px-4 py-2.5 text-[13px] text-muted-foreground">This server can't start sandboxes (Docker isn't available), so this session is read-only.</p>
       )}
+      <div className={cn(docked && 'cli-input')}>
       <Composer
         value={draft}
         onChange={setDraft}
@@ -270,6 +273,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
         allowedModels={isLive || import.meta.env.DEV ? ['spark', 'wonder'] : ['spark']}
         footnote={sendError ? <span className="text-[var(--negative)]">{sendError}</span> : `Muse Code in a private sandbox · $${usd.toFixed(usd < 1 ? 3 : 2)} spent on this project`}
       />
+      </div>
     </div>
   );
 
@@ -319,13 +323,13 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
           data-chat-drop
           aria-label="Muse Code session"
           style={dockState === 'open' ? { height: dockHeight } : undefined}
-          className={cn('relative flex shrink-0 flex-col border-t border-border bg-background shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.25)]', dockState === 'max' && 'absolute inset-x-0 top-0 bottom-0 z-20', dockState === 'min' && 'h-10')}
+          className={cn('cli-surface relative flex shrink-0 flex-col border-t border-border bg-background shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.25)]', dockState === 'max' && 'absolute inset-x-0 top-0 bottom-0 z-20', dockState === 'min' && 'h-10')}
         >
           {dockState === 'open' && <div role="separator" aria-orientation="horizontal" aria-label="Resize chat" onPointerDown={startResize} className="absolute inset-x-0 -top-1 z-10 h-2 cursor-row-resize hover:bg-[var(--accent)]/30" />}
           <header className="flex h-10 shrink-0 items-center gap-2 border-b border-border bg-[var(--chrome)] px-3 text-[13px]">
-            <SquareTerminal className="size-4 text-muted-foreground" />
-            <span className="font-medium">Muse Code</span>
-            <span className="truncate text-muted-foreground">· {project.name}</span>
+            <SquareTerminal className="size-4 text-[var(--cli-ok)]" />
+            <span className="font-medium">muse-code</span>
+            <span className="truncate text-muted-foreground">~/{project.name}</span>
             {running ? (
               <span className="inline-flex items-center gap-1.5 rounded-[6px] bg-muted px-2 py-0.5 text-[12px] text-muted-foreground">
                 <Loader2 className="size-3 animate-spin" />

@@ -181,3 +181,53 @@
   background: rgba(8, 102, 255, 0.06); border: 1px solid rgba(8, 102, 255, 0.4);
 }
 .studio-flow .react-flow__connectionline path { stroke: var(--accent); stroke-width: 1.6; }
+
+/* Studio chat docked under the canvas, drawn like a terminal (Cloud Shell / CLI surface). */
+.cli-surface {
+  --background: #0d1117;
+  --foreground: #e6edf3;
+  --card: #0d1117;
+  --card-foreground: #e6edf3;
+  --popover: #161b22;
+  --popover-foreground: #e6edf3;
+  --muted-bg: #161b22;
+  --muted-foreground: #8b949e;
+  --accent-bg: #161b22;
+  --accent-foreground: #e6edf3;
+  --border: #30363d;
+  --input: #30363d;
+  --chrome: #161b22;
+  --control: #484f58;
+  --accent: #58a6ff;
+  --positive: #3fb950;
+  --negative: #f85149;
+  --cli-prompt: #d2a8ff;
+  --cli-ok: #3fb950;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+.cli-surface ::selection { background: rgba(88, 166, 255, 0.3); }
+.cli-surface [data-slot='input-group'] {
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  background: #0d1117 !important;
+  border-color: #30363d !important;
+}
+.cli-surface textarea { font-family: inherit; font-size: 13px !important; min-height: 40px !important; padding-left: 2.25rem !important; }
+.cli-surface textarea::placeholder { color: #6e7681; }
+.cli-surface .cli-input { position: relative; }
+.cli-surface .cli-input::before {
+  content: '❯';
+  position: absolute;
+  left: 0.9rem;
+  top: 0.62rem;
+  z-index: 1;
+  color: var(--cli-prompt);
+  font-weight: 700;
+  pointer-events: none;
+}
+.cli-surface pre, .cli-surface code { font-family: inherit; }
+.cli-caret { display: inline-block; width: 0.55em; height: 1.05em; vertical-align: -0.15em; background: var(--foreground); animation: cli-blink 1s steps(1) infinite; }
+@keyframes cli-blink { 50% { opacity: 0; } }

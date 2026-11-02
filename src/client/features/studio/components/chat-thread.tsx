@@ -15,6 +15,8 @@ export interface ChatThreadProps {
   suggestions: string[];
   onSuggestion: (s: string) => void;
   onFocusNode: (id: string) => void;
+  /** 'cli' draws the thread like a terminal session (docked chat). */
+  variant?: 'chat' | 'cli';
 }
 
 const ws = (p?: string) => (p ? p.replace(/^\/run\/host_virtiofs/, '').replace(/^.*\/\.data\/workspaces\/[^/]+\//, '') : '');
@@ -134,7 +136,8 @@ function FollowOnSend({ lastUserId }: { lastUserId?: string }) {
 }
 
 /** Muse Code's transcript (AI Elements): your messages, its thinking, replies and every command it runs. */
-export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: ChatThreadProps) {
+export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode, variant = 'chat' }: ChatThreadProps) {
+  const cli = variant === 'cli';
   const order = useSession((s) => s.order);
   const items = useSession((s) => s.byId);
   const status = useSession((s) => s.status);
@@ -161,9 +164,17 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
 
   return (
     <Conversation className="min-h-0 flex-1">
-      <ConversationContent className="mx-auto w-full max-w-[720px] gap-6 px-5 pt-6 pb-10">
+      <ConversationContent className={cn('mx-auto w-full', cli ? 'max-w-[1100px] gap-3 px-4 pt-3 pb-4 text-[13px]' : 'max-w-[720px] gap-6 px-5 pt-6 pb-10')}>
         {blocks.map((b, i) =>
-          b.user ? (
+          b.user && cli ? (
+            <div key={b.user.id} className="flex gap-2 leading-relaxed">
+              <span className="shrink-0 font-bold text-[var(--cli-prompt)]">❯</span>
+              <span className="min-w-0 whitespace-pre-wrap text-foreground">
+                {b.user.text?.replace(/\n\n\(Template picked:[^)]*\)\s*$/, '').replace(/\n\n\(Reference film:[^)]*\)\s*$/, '')}
+                {b.user.steered && <span className="ml-2 text-muted-foreground">(steer)</span>}
+              </span>
+            </div>
+          ) : b.user ? (
             <Message key={b.user.id} from="user">
               {b.user.steered && <p className="ml-auto text-[12px] font-medium text-[var(--accent)]">Steered · sent while Muse was working</p>}
               <MessageContent className={cn('rounded-[20px] px-4 py-2.5 text-[15px] leading-relaxed whitespace-pre-wrap', b.user.steered ? 'bg-[rgba(8,102,255,0.08)]' : 'bg-[rgba(0,0,0,0.05)]')}>
@@ -171,12 +182,14 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
               </MessageContent>
             </Message>
           ) : (
-            <div key={`a${i}`} className="flex gap-3">
-              <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
-                <Clapperboard className="size-3.5" />
-              </span>
-              <div className="min-w-0 flex-1 space-y-1.5">
-                <p className="text-[13px] font-medium text-muted-foreground">Muse Code</p>
+            <div key={`a${i}`} className={cn('flex', cli ? 'gap-0' : 'gap-3')}>
+              {!cli && (
+                <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
+                  <Clapperboard className="size-3.5" />
+                </span>
+              )}
+              <div className={cn('min-w-0 flex-1', cli ? 'space-y-0.5' : 'space-y-1.5')}>
+                {!cli && <p className="text-[13px] font-medium text-muted-foreground">Muse Code</p>}
                 {b.agent!.map((it) => {
                   if (it.kind === 'reasoning') {
                     const text = (it.summary ?? []).filter(Boolean).join('\n\n') || it.text || '';
@@ -188,6 +201,13 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
                       </Reasoning>
                     );
                   }
+                  if (it.kind === 'agentMessage' && cli)
+                    return it.text ? (
+                      <div key={it.id} className="flex gap-2 py-1">
+                        <span className="shrink-0 text-foreground">⏺</span>
+                        <MessageResponse className="min-w-0 flex-1 text-[13px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5">{tidyLinks(it.text)}</MessageResponse>
+                      </div>
+                    ) : null;
                   if (it.kind === 'agentMessage')
                     return it.text ? (
                       <MessageResponse key={it.id} className="py-0.5 text-[15px] leading-relaxed [&_ol]:list-decimal [&_ol]:pl-5 [&_ul]:list-disc [&_ul]:pl-5">
@@ -213,10 +233,14 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
 
         {(busyTail || status === 'starting') && (
           <div className="flex items-center gap-3">
-            <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
-              <Clapperboard className="size-3.5" />
-            </span>
-            <Shimmer className="text-[14px]">{status === 'starting' ? 'Starting the sandbox…' : `Working · ${model === 'wonder' ? 'Muse Wonder' : 'Muse Spark'}`}</Shimmer>
+            {cli ? (
+              <span className="text-[var(--cli-prompt)]">✻</span>
+            ) : (
+              <span className="grid size-7 shrink-0 place-items-center rounded-full bg-[#0866ff] text-[#ffffff]">
+                <Clapperboard className="size-3.5" />
+              </span>
+            )}
+            <Shimmer className={cli ? 'text-[13px]' : 'text-[14px]'}>{status === 'starting' ? 'Starting the sandbox…' : `Working · ${model === 'wonder' ? 'Muse Wonder' : 'Muse Spark'}`}</Shimmer>
           </div>
         )}
         {status === 'error' && error && (
@@ -229,7 +253,7 @@ export function ChatThread({ nodes, suggestions, onSuggestion, onFocusNode }: Ch
         {!running && suggestions.length > 0 && (
           <Suggestions>
             {suggestions.map((s) => (
-              <Suggestion key={s} suggestion={s} onClick={onSuggestion} className="rounded-full text-[13px]" />
+              <Suggestion key={s} suggestion={s} onClick={onSuggestion} className={cn('text-[13px]', cli ? 'rounded-[6px] border-border font-mono' : 'rounded-full')} />
             ))}
           </Suggestions>
         )}
