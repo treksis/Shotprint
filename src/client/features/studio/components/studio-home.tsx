@@ -85,8 +85,8 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
         <div className="mx-auto max-w-[760px] text-center">
           <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What are we making?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Describe the spot you need. Muse Code plans it, generates every shot in a private workspace and lays each asset
-            out on a live canvas you can review and direct.
+            Describe the video you need. Muse Code plans it, generates every shot in a private workspace and lays each
+            asset out on a live canvas you can review and direct.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
         <section className="mt-16" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 id="tpl-heading" className="text-[18px] font-medium">Start from a template</h2>
-            <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing ads, each delivering a 30 s and a 15 s cut.</p>
+            <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing videos, each delivering a 30 s and a 15 s cut.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {templates === null
