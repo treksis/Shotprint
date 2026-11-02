@@ -38,8 +38,8 @@ to 75% in 18 months. Video is the next craft to go agent-native.
 3. **Muse Code directs**: in a private cloud sandbox it plans the film, draws every still with Muse Image,
    renders the shots, checks continuity and lip sync, re-renders takes that drift, and cuts the 30 s and
    15 s versions on the beat. Every file lands on a live canvas; you can steer or queue changes mid-run.
-4. **Verified playbooks**: each playbook is checked by having the agent rebuild the original without seeing
-   it, then comparing the two side by side. Only playbooks that match ship.
+4. **Benchmarked templates**: turn your own reference video into a private template; the agent remakes the
+   reference from the template alone and shows the two side by side.
 
 Agent-native production brings a top-tier 30-second spot to under $200.
 
@@ -60,7 +60,7 @@ Agent-native production brings a top-tier 30-second spot to under $200.
 - **Sandbox runtime**: one container per project running Muse Code, with spend caps and Demo/Live modes.
 - **Measuring kit**: turns a reference video into shot boards, cuts, loudness and lines in about 17 seconds.
 - **Playbook format**: 30 s and 15 s cuts, storyboards, assets and measured shot data.
-- **Verification loop**: blind rebuild, side-by-side comparison, ship only what matches.
+- **Benchmark**: remake from the template alone, side-by-side comparison.
 
 ## Challenges
 
@@ -82,7 +82,7 @@ same playbook format: each new format adds playbooks, not a new product.
 ## Built during the hackathon
 
 Everything in this repository was built during the event: the Studio, the Muse Code sandbox runtime and
-protocol driver, the canvas, the measuring kit, the playbook format, the verification loop, and the example
+protocol driver, the canvas, the measuring kit, the playbook format, the benchmark, and the example
 playbooks and films. Pre-existing: the GPU setup that renders video clips.
 
 ## Notes before publishing
