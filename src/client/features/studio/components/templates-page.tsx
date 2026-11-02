@@ -16,11 +16,11 @@ export function TemplatesPage({ onUseTemplate }: { onUseTemplate: (id: string, s
       <div className="mx-auto w-full max-w-[1120px] px-6 pt-10 pb-24">
         <h1 className="text-[32px] leading-tight">Templates</h1>
         <p className="mt-2 max-w-[680px] text-[15px] text-muted-foreground">
-          A template is a real ad taken apart so it can be made again: the recipe (every shot's timing, framing, move,
-          light, text and sound, measured), the ingredient set (cast, product, places, screens, voice, score) and a
-          storyboard per shot. Each one makes a <span className="text-foreground">30 s and a 15 s spot</span>, the lengths
-          today's video models hold together. <span className="text-foreground">Rebuilt blind</span> means an agent that
-          never saw the film made it again from the template alone; open a template to compare.
+          Production-ready formats built from top-performing ads: measured timing, framing, camera, lighting, text and
+          sound for every shot, a storyboard per shot, and swappable assets for cast, product, locations, screens, voice
+          and music. Each delivers a <span className="text-foreground">30 s and a 15 s cut</span>.{' '}
+          <span className="text-foreground">Benchmarked</span> templates were regenerated end to end from the template
+          alone and compared side by side with the original.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {(templates ?? []).map((t) => (

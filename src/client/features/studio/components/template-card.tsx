@@ -1,4 +1,4 @@
-import { Check, Film } from 'lucide-react';
+import { BadgeCheck, Check, Columns2 } from 'lucide-react';
 import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 import type { StudioTemplate } from '../types';
@@ -13,7 +13,7 @@ export function TemplateCard({
   template: StudioTemplate;
   selected?: boolean;
   onSelect: (t: StudioTemplate) => void;
-  /** Opens the template page (proof, storyboard, ingredient set). */
+  /** Opens the template page (benchmark, storyboard, assets). */
   onDetails?: (t: StudioTemplate) => void;
 }) {
   const video = useRef<HTMLVideoElement | null>(null);
@@ -23,6 +23,7 @@ export function TemplateCard({
       <button
         type="button"
         aria-pressed={selected}
+        title={t.proof ? 'Benchmarked: regenerated from this template alone and compared with the original' : undefined}
         onClick={() => onSelect(t)}
         onMouseEnter={() => video.current?.play().catch(() => undefined)}
         onMouseLeave={() => {
@@ -57,27 +58,21 @@ export function TemplateCard({
         <span className="flex flex-1 flex-col gap-1 p-3.5">
           <span className="text-[15px] font-medium leading-snug">{t.title}</span>
           <span className="line-clamp-1 text-[13px] text-muted-foreground">{t.source}</span>
-          <span className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] text-muted-foreground">
-            <span className="tabular-nums">{t.cuts?.length ? `${t.cuts.join(' s · ')} s spots` : `${Math.round(t.durationSec)} s`}</span>
-            <span aria-hidden="true">·</span>
-            <span className="tabular-nums">
-              {t.shotsMeasured ? `${t.shots} shots` : `~${t.shots} cuts detected`}
-            </span>
-            {t.setups && (
-              <>
-                <span aria-hidden="true">·</span>
-                <span>{t.setups} camera setups</span>
-              </>
-            )}
+          <span className="mt-1.5 truncate text-[12px] text-muted-foreground tabular-nums">
+            {t.cuts?.length ? t.cuts.map((c) => `${c} s`).join(' / ') : `${Math.round(t.durationSec)} s`}
+            {' · '}
+            {t.shotsMeasured ? `${t.shots} shots` : `~${t.shots} shots`}
+            {t.setups ? ` · ${t.setups} setups` : ''}
           </span>
-          <span className="mt-2.5">
+          <span className="mt-auto flex h-7 items-center pt-3 pr-24">
             {t.status === 'ready' ? (
-              <span className="inline-flex h-6 items-center rounded-[6px] bg-[var(--pill-positive-bg)] px-2 text-[12px] font-medium text-[var(--pill-positive-ink)]">
-                {t.proof ? 'Ready · rebuilt blind' : 'Ready · dissected shot by shot'}
+              <span className="inline-flex h-6 items-center gap-1 rounded-[6px] bg-[var(--pill-positive-bg)] px-2 text-[12px] font-medium whitespace-nowrap text-[var(--pill-positive-ink)]">
+                {t.proof && <BadgeCheck className="size-3.5" />}
+                {t.proof ? 'Benchmarked' : 'Ready'}
               </span>
             ) : (
-              <span className="inline-flex h-6 items-center rounded-[6px] bg-muted px-2 text-[12px] font-medium text-muted-foreground">
-                Reference · needs dissection
+              <span className="inline-flex h-6 items-center rounded-[6px] bg-muted px-2 text-[12px] font-medium whitespace-nowrap text-muted-foreground">
+                In preparation
               </span>
             )}
           </span>
@@ -89,8 +84,8 @@ export function TemplateCard({
           onClick={() => onDetails(t)}
           className="absolute right-3 bottom-3 inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-full border border-border bg-background px-2.5 text-[12px] font-medium text-foreground transition-colors hover:bg-[var(--chrome)]"
         >
-          <Film className="size-3.5" />
-          {t.proof ? 'See the proof' : 'Details'}
+          <Columns2 className="size-3.5" />
+          {t.proof ? 'Compare' : 'Details'}
         </button>
       )}
     </div>

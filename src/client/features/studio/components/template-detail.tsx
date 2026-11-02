@@ -93,8 +93,8 @@ export function TemplateDetailDialog({
                     className="aspect-[32/9] w-full rounded-[12px] bg-black"
                   />
                   <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                    Left: the real film, cut to {seconds} s. Right: rebuilt by an agent that only had this template (recipe,
-                    ingredient set, storyboards) and never saw the film.
+                    Benchmark. Left: the original, cut to {seconds} s. Right: generated from this template alone, without
+                    access to the original footage.
                   </figcaption>
                 </figure>
               ) : (
@@ -113,7 +113,7 @@ export function TemplateDetailDialog({
             <div className="grid gap-6 px-6 pt-6 pb-6 lg:grid-cols-[1fr_300px]">
               <div className="min-w-0">
                 <h3 className="text-[15px] font-medium">
-                  The {seconds} s cut{cut ? `: ${cut.shots.length} shots` : ''}
+                  {seconds} s cut{cut ? ` · ${cut.shots.length} shots` : ''}
                 </h3>
                 {cut?.arc && <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{cut.arc}</p>}
                 {loading && <div className="mt-3 h-28 animate-pulse rounded-[12px] bg-muted" />}
@@ -142,7 +142,7 @@ export function TemplateDetailDialog({
                 )}
                 {cut && cut.lines.length > 0 && (
                   <>
-                    <h3 className="mt-4 text-[15px] font-medium">Lines</h3>
+                    <h3 className="mt-4 text-[15px] font-medium">Script</h3>
                     <ul className="mt-2 space-y-1">
                       {cut.lines.map((l, i) => (
                         <li key={i} className="flex gap-3 text-[13px]">
@@ -155,7 +155,7 @@ export function TemplateDetailDialog({
                 )}
                 {t.examples && t.examples.length > 0 && (
                   <>
-                    <h3 className="mt-5 text-[15px] font-medium">Made from this template</h3>
+                    <h3 className="mt-5 text-[15px] font-medium">Example productions</h3>
                     <div className="mt-2 grid gap-3 sm:grid-cols-2">
                       {t.examples.map((x) => (
                         <figure key={x.video}>
@@ -170,9 +170,9 @@ export function TemplateDetailDialog({
               </div>
 
               <aside>
-                <h3 className="text-[15px] font-medium">Ingredient set</h3>
+                <h3 className="text-[15px] font-medium">Assets</h3>
                 <p className="mt-1 text-[12px] text-muted-foreground">
-                  Swap these for your own product, people and places; the recipe stays.
+                  Replace with your own product, talent and locations. Shot structure and timing stay locked.
                 </p>
                 {groups.map((g) => (
                   <div key={g.k} className="mt-3">
@@ -196,7 +196,7 @@ export function TemplateDetailDialog({
                   onClick={() => onUse(t, seconds)}
                   className="mt-6 flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-foreground text-[14px] font-medium text-background transition-opacity hover:opacity-90"
                 >
-                  Make a {seconds} s film from this
+                  Create a {seconds} s spot
                   <ArrowRight className="size-4" />
                 </button>
               </aside>

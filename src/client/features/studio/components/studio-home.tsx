@@ -13,10 +13,10 @@ const promptFor = (t: StudioTemplate, seconds = 30) =>
   seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`).replace(/\b30 s\b/, `${seconds} s`);
 
 const SKILLS = [
-  { label: 'Remake a video', text: 'Remake this reference video shot for shot with my own subject.' },
-  { label: 'Swap the subject', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
+  { label: 'Recreate a reference', text: 'Remake this reference video shot for shot with my own subject.' },
+  { label: 'Feature your product', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
   { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Stories.' },
-  { label: 'Dissect a video', text: 'Dissect this video into a template: cuts, camera moves, lines and sound.' },
+  { label: 'Turn a video into a template', text: 'Dissect this video into a template: cuts, camera moves, lines and sound.' },
 ];
 
 export interface StudioHomeProps {
@@ -85,8 +85,8 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
         <div className="mx-auto max-w-[760px] text-center">
           <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What are we making?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Brief Muse Code. It works in its own sandbox, writing plans, making stills and rendering shots, and every
-            file it makes lands on a canvas you can inspect, rewire and steer while it works.
+            Describe the spot you need. Muse Code plans it, generates every shot in a private workspace and lays each asset
+            out on a live canvas you can review and direct.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
         <section className="mt-16" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 id="tpl-heading" className="text-[18px] font-medium">Start from a template</h2>
-            <p className="text-[13px] text-muted-foreground">Real ads taken apart into a recipe, an ingredient set and storyboards. Each makes a 30 s and a 15 s spot.</p>
+            <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing ads, each delivering a 30 s and a 15 s cut.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {templates === null

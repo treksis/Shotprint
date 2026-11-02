@@ -9,7 +9,7 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
     {
       num: '1',
       title: 'Pick a template',
-      desc: 'Real ads, each taken apart and proven with a blind rebuild.',
+      desc: 'Formats from top-performing ads, each benchmarked against the original.',
     },
     {
       num: '2',

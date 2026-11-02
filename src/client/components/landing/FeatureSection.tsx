@@ -12,7 +12,7 @@ export function FeatureSection() {
       body: 'Every cut, fade, brightness level, loudness and spoken line, measured in seconds with no model. One board per shot: start, middle, end.',
     },
     {
-      title: '2. Write the recipe, gather the ingredients',
+      title: '2. Build the template and its assets',
       body: 'Framing, camera move, light and timing for every shot, with numbers. Cast, product and places drawn as sheets you swap for your own.',
     },
     {
@@ -20,8 +20,8 @@ export function FeatureSection() {
       body: 'An editor picks the hook, the proof and the payoff, cuts the soundtrack on the bar, and sketches a storyboard for every kept shot.',
     },
     {
-      title: '4. Prove it with a blind rebuild',
-      body: 'An agent that never saw the ad makes it again from the template alone. Compare it with the real footage, cut the same way.',
+      title: '4. Benchmark against the original',
+      body: 'The spot is regenerated from the template alone, with no access to the original, and reviewed side by side with the original cut.',
     },
   ];
 
