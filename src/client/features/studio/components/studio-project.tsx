@@ -217,7 +217,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   );
 
   const chatBottom = (
-    <div className={cn('mx-auto w-full px-4 pb-4', !showCanvas && 'max-w-[760px]', docked && 'max-w-none pb-2')}>
+    <div className={cn('mx-auto w-full px-4 pb-4', !showCanvas && 'max-w-[760px]', docked && 'max-w-[1100px] pb-3')}>
       {todos.length > 0 && openTodos.length > 0 && (
         <div className="mb-2 rounded-[18px] border border-border bg-background px-3 py-2">
           <p className="mb-1 flex items-center gap-1.5 text-[12px] font-medium text-muted-foreground">
@@ -271,7 +271,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
         model={model}
         onModelChange={(m) => void changeModel(m)}
         allowedModels={isLive || import.meta.env.DEV ? ['spark', 'wonder'] : ['spark']}
-        footnote={sendError ? <span className="text-[var(--negative)]">{sendError}</span> : docked ? `  ⏵ ${model === 'wonder' ? 'Muse Wonder' : 'Muse Spark'} · private sandbox · $${usd.toFixed(usd < 1 ? 3 : 2)} spent · Enter to send${running ? ' · ■ to stop' : ''}` : `Muse Code in a private sandbox · $${usd.toFixed(usd < 1 ? 3 : 2)} spent on this project`}
+        footnote={sendError ? <span className="text-[var(--negative)]">{sendError}</span> : `Muse Code in a private sandbox · $${usd.toFixed(usd < 1 ? 3 : 2)} spent on this project`}
       />
       </div>
     </div>
