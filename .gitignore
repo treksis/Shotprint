@@ -19,3 +19,6 @@ public/templates/examples/
 !.env.example
 .agents/
 .taste-skill/
+docs/archive/
+docs/research/
+docs/studio/

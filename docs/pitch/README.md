@@ -29,7 +29,7 @@
    **15 s spot**. Scroll the storyboard strip, the script and the assets.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
    launch film, rebuilt from their templates with invented cast and brand.
-5. **Example productions**: the same recipes used for ten Meta products, made by Opus from the
+5. **Example productions**: the same recipes used for ten Meta products, made from the
    templates with new product sheets, invented cast and new lines: **Meta Ray-Ban Display** (hardware
    launch), **Facebook Marketplace** (room makeover), **Meta AI** (deadpan), **Meta Quest 3S** (phone
    reveal), **Ray-Ban Meta** at the match (fan moments), **WhatsApp** (farm story), the **Meta AI app**
@@ -68,7 +68,7 @@ Lager", "Lune 2 Pro", "Wren"), and the cast are invented people who fit the role
 | Step | Time | Notes |
 |---|---|---|
 | Measure an ad (`bin/dissect`) | ~17 s for 86 s of film | cuts, fades, brightness, loudness, transcript, shot boards; no model |
-| Author a 30 s + 15 s template (Opus) | 10-47 min | recipe, 20-30 sheets, 30-60 storyboards, score cut on the bar; 36-80 stills |
+| Author a 30 s + 15 s template | 10-47 min | recipe, 20-30 sheets, 30-60 storyboards, score cut on the bar; 36-80 stills |
 | Blind 30 s rebuild | 12-62 min | 11-16 clips (MiniMax-H3) + ~25 stills; 48-62 min when six films shared one GPU, 12-33 min when three did |
 | Blind 15 s rebuild | 10-30 min | 6-10 clips |
 
