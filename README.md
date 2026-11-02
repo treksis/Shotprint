@@ -17,6 +17,11 @@ models, **Muse Image** draws stills, and MiniMax-H3 (open weights, our own GPU) 
   - **Muse Spark** (Demo mode) and **Muse Wonder** (Live mode) are its models.
   - **Muse Image** draws every plate, cast sheet, product sheet and storyboard (`sandbox/kit/bin/img.mjs`).
   - **Muse Voice Transcribe** measures the spoken lines when an ad is measured (`sandbox/kit/bin/dissect.mjs`).
+- **Which agent did what (stated plainly):** every project in the Studio is a **Muse Code** session; the
+  recorded sample projects are real Muse Code runs (Muse Spark and Muse Wonder). The template library itself
+  (the 16 templates, their benchmarks and the ten example productions) was produced as a reference run by
+  **Claude Opus** agents (Anthropic) using the same kit and tools, Muse Image included, to establish what the
+  pipeline should produce before handing it to Muse Code. The application code was written with Claude Code.
 - **Built during the hackathon (Oct 26 – Nov 4, 2026):** everything in this repository. Planning notes date
   from Oct 24 and code from Oct 27; the git history starts with a snapshot on Oct 30 and covers the rest. That
   includes the Studio (UI and API), the per-project Muse Code sandbox and relay, the workspace-to-canvas graph,
@@ -55,7 +60,7 @@ models, **Muse Image** draws stills, and MiniMax-H3 (open weights, our own GPU) 
   is measured in seconds with no model (`bin/dissect`, ~17 s for a 90 s ad). The agent then writes each shot's
   framing, camera move, light, text and sound as numbers, draws the swappable assets (cast, product, places,
   screens) and a storyboard per shot, and cuts the 30 s and 15 s versions on the music's bars.
-- **Every template is benchmarked.** A second agent that never sees the ad regenerates it from the template
+- **Every template is benchmarked.** A second agent run that never sees the ad regenerates it from the template
   alone, and we review it side by side with the original. A template that can't be regenerated isn't shipped.
 
 | Step | Time (one shared GPU) |
