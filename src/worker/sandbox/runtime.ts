@@ -37,7 +37,7 @@ const PRICE: Record<string, { in: number; out: number }> = {
   'muse-spark-1.3-contributor': { in: 0.1, out: 0.2 },
   'muse-wonder-1.0': { in: 4, out: 20 },
 };
-const h3Tool = () => path.resolve(process.env.H3_TOOL || 'lab/arena/kit/bin/h3');
+const h3Tool = () => path.resolve(process.env.H3_TOOL || 'sandbox/host/h3');
 const MIME: Record<string, string> = {
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.gif': 'image/gif',
   '.mp4': 'video/mp4', '.mov': 'video/quicktime', '.webm': 'video/webm', '.m4v': 'video/mp4',

@@ -16,3 +16,4 @@ sandbox/seeds/*/workspace/
 sandbox/templates/**/*.wav
 public/templates/proof/
 public/templates/examples/
+!.env.example

@@ -1,0 +1,172 @@
+#!/usr/bin/env python3
+"""Render MiniMax-H3 clips on the shared GPU box. The only way an arm reaches the GPU.
+
+    bin/h3 jobs.jsonl            # render every job in the file, wait, download to renders/<id>.mp4
+    bin/h3 status                # clips used / cap, and what the box queue looks like
+    bin/h3 resume                # wait for and download any of your clips still on the box (free, no cap)
+
+One JSON object per line. Keys (only id + prompt required):
+    id          your clip name, [a-z0-9_-]
+    prompt      the generation prompt (see TOOLS.md)
+    seconds     clip length, 2..10 (default 5)
+    width/height  default 1280x704 (must be multiples of 32)
+    seed        int
+    refs        list of local image paths -> <Picture 1>, <Picture 2>... in the prompt
+    ref_audios  list of local audio paths -> <Audio 1>... (voice timbre)
+    ref_videos  list of local video paths -> <Video 1>...
+    first_frame / last_frame   local image path the clip starts / ends on (keyframe mode only:
+                ignored when refs/ref_audios are present)
+    guide_audio local wav/mp3: the exact speech the clip must lip-sync to (MiniMaxH3AddGuide). The model
+                reproduces this take verbatim and in sync; use it with first_frame to re-render a take
+                on its setup plate. Clip length should cover the audio.
+
+Paths are relative to the workspace root. The box is shared with other runs: jobs queue behind
+a GPU lock, so a batch can wait a while before it starts. Re-rendering an id keeps the previous
+file in renders/_prev/. Every rendered clip counts against the clip cap.
+"""
+import json, os, re, subprocess, sys, time, shutil, pathlib
+
+HOST = os.environ.get("H3_HOST", "colab-h3")
+BOX = "/content/h3"
+ROOT = pathlib.Path(os.environ.get("ARM_ROOT", pathlib.Path(__file__).resolve().parent.parent))
+ARM = (ROOT / ".arm").read_text().strip()
+CAP = int((ROOT / ".clip_cap").read_text().strip()) if (ROOT / ".clip_cap").exists() else 16
+LEDGER = ROOT / ".h3_ledger.jsonl"
+FILE_KEYS_LIST = ("refs", "ref_audios", "ref_videos")
+FILE_KEYS_ONE = ("first_frame", "last_frame", "guide_audio")
+ALLOWED = {"id", "prompt", "seconds", "width", "height", "seed", *FILE_KEYS_LIST, *FILE_KEYS_ONE}
+
+
+def sh(cmd, check=True, timeout=None):
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    if check and r.returncode != 0:
+        raise SystemExit(f"h3: {' '.join(cmd[:3])}... failed: {r.stderr.strip()[-400:]}")
+    return r
+
+
+def ssh(cmd, **kw):
+    return sh(["ssh", HOST, cmd], **kw)
+
+
+def used():
+    return sum(1 for _ in LEDGER.open()) if LEDGER.exists() else 0
+
+
+def main():
+    if len(sys.argv) < 2:
+        print(__doc__); sys.exit(2)
+    if sys.argv[1] == "resume":
+        return resume()
+    if sys.argv[1] == "status":
+        q = ssh(f"ls {BOX}/arena_logs 2>/dev/null | tail -20; pgrep -fa h3_run.py | grep -v pgrep | wc -l", check=False)
+        print(f"arm {ARM}: {used()}/{CAP} clips used\nbox: {q.stdout.strip() or q.stderr.strip()}")
+        return
+    jobs = [json.loads(l) for l in pathlib.Path(sys.argv[1]).read_text().splitlines() if l.strip()]
+    if used() + len(jobs) > CAP:
+        raise SystemExit(f"h3: clip cap reached ({used()} used + {len(jobs)} asked > {CAP}). Cut with what you have.")
+    ts = time.strftime("%H%M%S")
+    box_jobs, uploads, names = [], {}, {}
+    for j in jobs:
+        bad = set(j) - ALLOWED
+        if bad: raise SystemExit(f"h3: job {j.get('id')}: unknown keys {sorted(bad)}")
+        if not re.fullmatch(r"[a-z0-9_-]{1,60}", j.get("id", "")): raise SystemExit(f"h3: bad id {j.get('id')!r}")
+        if not j.get("prompt"): raise SystemExit(f"h3: job {j['id']}: prompt missing")
+        s = float(j.get("seconds", 5))
+        if not 2 <= s <= 10: raise SystemExit(f"h3: job {j['id']}: seconds must be 2..10")
+        b = {"id": f"{ARM}--{j['id']}--{ts}", "prompt": j["prompt"], "seconds": s,
+             "width": int(j.get("width", 1280)), "height": int(j.get("height", 704)), "steps": 8,
+             "seed": int(j.get("seed", int(time.time() * 1000) % 100000))}
+        for k in (*FILE_KEYS_LIST, *FILE_KEYS_ONE):
+            if k not in j: continue
+            vals = j[k] if k in FILE_KEYS_LIST else [j[k]]
+            out = []
+            for v in vals:
+                p = (ROOT / v).resolve()
+                if not p.is_file(): raise SystemExit(f"h3: job {j['id']}: {k} file not found: {v}")
+                name = f"{ARM}__{re.sub(r'[^A-Za-z0-9._-]', '_', str(p.relative_to(ROOT)))}"
+                uploads[name] = p; out.append(name)
+            b[k] = out if k in FILE_KEYS_LIST else out[0]
+        box_jobs.append(b); names[b["id"]] = j["id"]
+
+    ssh(f"mkdir -p {BOX}/refs {BOX}/arena_jobs {BOX}/arena_logs", timeout=60)
+    for n, p in uploads.items():
+        sh(["scp", "-q", str(p), f"{HOST}:{BOX}/refs/{n}"], timeout=600)
+    tag = f"{ARM}_{ts}"
+    local_jobs = ROOT / ".h3_last_jobs.jsonl"
+    local_jobs.write_text("".join(json.dumps(b) + "\n" for b in box_jobs))
+    sh(["scp", "-q", str(local_jobs), f"{HOST}:{BOX}/arena_jobs/{tag}.jsonl"], timeout=120)
+    log = f"{BOX}/arena_logs/{tag}.log"
+    cmd = (f"cd {BOX} && flock {BOX}/gpu.lock ComfyUI/.venv/bin/python h3_run.py --jobs arena_jobs/{tag}.jsonl;"
+           f" echo __EXIT $?")
+    sh(["perl", "-e", "alarm shift; exec @ARGV", "20", "ssh", HOST,
+        f"setsid nohup bash -c '{cmd}' < /dev/null > {log} 2>&1 &"], check=False)
+    with LEDGER.open("a") as f:
+        for b in box_jobs: f.write(json.dumps({"id": names[b["id"]], "box_id": b["id"], "seconds": b["seconds"], "t": time.time()}) + "\n")
+    print(f"h3: {len(box_jobs)} job(s) queued as {tag} ({used()}/{CAP} clips used). Waiting...", flush=True)
+
+    t0, last, fails = time.time(), "", 0
+    while True:
+        time.sleep(30)
+        r = ssh(f"tail -c 600 {log}", check=False, timeout=60)
+        if r.returncode != 0:
+            fails += 1
+            if fails >= 60: raise SystemExit("h3: lost contact with the box for 30 min. The batch keeps rendering on the box: run `bin/h3 resume` later to download it (no clip cap charged). Don't resubmit.")
+            continue
+        fails = 0
+        tail = r.stdout.strip().splitlines()[-1:] or [""]
+        if tail[0] != last:
+            last = tail[0]; print(f"  [{int(time.time()-t0)}s] {last[:160]}", flush=True)
+        if "__EXIT" in r.stdout: break
+
+    missing = download([b["id"] for b in box_jobs])
+    if missing:
+        err = ssh(f"grep -iE 'error|traceback|exception' {log} | tail -5", check=False).stdout
+        raise SystemExit(f"h3: no output for {missing}. Box log:\n{err}")
+
+
+def fetched():
+    f = ROOT / ".h3_fetched"
+    return set(f.read_text().split()) if f.exists() else set()
+
+
+def download(box_ids):
+    """Fetch box outputs into renders/<id>.mp4; returns ids with no output. Never deletes a clip."""
+    out_dir = ROOT / "renders"; (out_dir / "_prev").mkdir(parents=True, exist_ok=True)
+    names = {b: b[len(ARM) + 2:].rsplit("--", 1)[0] for b in box_ids}
+    missing = []
+    for bid in box_ids:
+        b = {"id": bid}
+        dst = out_dir / f"{names[b['id']]}.mp4"
+        tmp = out_dir / f".{names[b['id']]}.part.mp4"
+        r = sh(["scp", "-q", f"{HOST}:{BOX}/ComfyUI/output/video/{b['id']}_00001_.mp4", str(tmp)], check=False, timeout=300)
+        if r.returncode != 0 or not tmp.exists():
+            missing.append(names[b["id"]]); continue
+        if dst.exists():
+            n = len(list((out_dir / "_prev").glob(f"{dst.stem}.*.mp4"))) + 1
+            shutil.move(str(dst), out_dir / "_prev" / f"{dst.stem}.{n}.mp4")
+        tmp.rename(dst); print(f"  -> renders/{dst.name}")
+        with (ROOT / ".h3_fetched").open("a") as f: f.write(bid + "\n")
+    return missing
+
+
+def resume():
+    """Download every ledger clip not fetched yet; for each id only its newest render counts."""
+    led = [json.loads(l) for l in LEDGER.read_text().splitlines()] if LEDGER.exists() else []
+    newest = {}
+    for e in led: newest[e["id"]] = e["box_id"]
+    todo = [b for b in newest.values() if b not in fetched()]
+    if not todo: print("h3: nothing pending; every clip is in renders/"); return
+    print(f"h3: {len(todo)} clip(s) pending on the box; waiting for them...", flush=True)
+    t0 = time.time()
+    while todo and time.time() - t0 < 3600:
+        r = ssh("ls " + " ".join(f"{BOX}/ComfyUI/output/video/{b}_00001_.mp4" for b in todo) + " 2>/dev/null; pgrep -f arena_jobs/" + ARM + "_ >/dev/null && echo __RUNNING", check=False, timeout=60)
+        if r.returncode == 0:
+            ready = [b for b in todo if f"{b}_00001_.mp4" in r.stdout]
+            if ready: download(ready); todo = [b for b in todo if b not in ready]
+            if todo and "__RUNNING" not in r.stdout:
+                print(f"h3: no output and no batch running for {[b[len(ARM) + 2:].rsplit('--', 1)[0] for b in todo]}; those renders failed."); return
+        if todo: time.sleep(30)
+
+
+if __name__ == "__main__":
+    main()
