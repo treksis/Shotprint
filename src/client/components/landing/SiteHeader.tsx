@@ -18,7 +18,7 @@ export function SiteHeader({ onOpenStudio, onOpenVault }: SiteHeaderProps) {
             className="w-4 h-4 rounded-[3px] bg-[#1a4be0] inline-block shrink-0"
           />
           <span className="text-[18px] font-semibold tracking-[-0.02em] text-[#111111]">
-            MuseClone
+            Shotprint
           </span>
         </a>
 

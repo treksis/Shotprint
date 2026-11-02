@@ -52,7 +52,7 @@ app.use(
 );
 
 app.onError((err, c) => {
-  console.error('[MuseClone]', err);
+  console.error('[Shotprint]', err);
   return c.json({ error: err.message || 'Internal Server Error' }, 500);
 });
 
@@ -88,7 +88,7 @@ app.all('*', async (c) => {
   }
   return c.json(
     {
-      error: `Route ${c.req.method} ${c.req.path} not found on MuseClone API`,
+      error: `Route ${c.req.method} ${c.req.path} not found on Shotprint API`,
     },
     404
   );

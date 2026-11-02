@@ -1,4 +1,4 @@
-# Pitch: MuseClone Studio
+# Pitch: Shotprint Studio
 
 ## The one-liner
 

@@ -1,4 +1,4 @@
-# Interface & Frontend Design System — MuseClone
+# Interface & Frontend Design System — Shotprint
 
 > Grounded in local project skills: `frontend-design`, `design-taste-frontend` (Seed `1173446171` — *The printed annual* + App Seed `283019769` — *Framed sheet*), `interface-design`, and `emil-design-eng`.
 
@@ -13,7 +13,7 @@
 
 ## 2. Rejecting AI Slop Defaults
 
-| Rejected Default | Replacement in MuseClone |
+| Rejected Default | Replacement in Shotprint |
 | :--- | :--- |
 | `Inter` / generic system font on `#07090E` slate dark mode | **Literata** (optical size `7..72`, weights `400/500/600`) on `#ffffff` paper & `#f6f6f4` stone frame |
 | Purple/indigo/blue gradients (`bg-gradient-to-*`, `bg-clip-text`) | Flat solid fills only (`#ffffff`, `#f4f4f4`, `#111111`, and `#1a4be0` biro blue under 3% share) |

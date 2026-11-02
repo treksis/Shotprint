@@ -392,7 +392,7 @@ class Runtime implements ProjectSession {
             this.setStatus('offline');
           }
         });
-        await msp.request('initialize', { clientInfo: { name: 'museclone_studio', title: 'MuseClone Studio', version: '0.2.0' }, capabilities: { experimentalApi: true } });
+        await msp.request('initialize', { clientInfo: { name: 'museclone_studio', title: 'Shotprint Studio', version: '0.2.0' }, capabilities: { experimentalApi: true } });
         msp.notify('initialized');
         let session: any;
         if (warm && this.saved.sessionId) session = { sessionId: this.saved.sessionId, activeTurnId: this.activeTurnId, status: this.activeTurnId ? 'running' : 'idle' };

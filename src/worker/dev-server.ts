@@ -58,7 +58,7 @@ process.env.STUDIO_OPEN ??= '1';
 
 const port = Number(process.env.PORT || 8788);
 
-console.log(`MuseClone Hono Worker API listening on http://localhost:${port}`);
+console.log(`Shotprint Hono Worker API listening on http://localhost:${port}`);
 
 serve({
   fetch: (req) => app.fetch(req, process.env as any),

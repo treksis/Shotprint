@@ -1,4 +1,4 @@
--- MuseClone Viral Video Reverse-Engineering & Remix Engine
+-- Shotprint Viral Video Reverse-Engineering & Remix Engine
 -- Cloudflare D1 (SQLite) Database Schema
 
 PRAGMA foreign_keys = ON;

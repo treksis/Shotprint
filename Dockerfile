@@ -1,4 +1,4 @@
-# Cloudflare Sandbox SDK 1.0 MicroVM Image for MuseClone Video Studio
+# Cloudflare Sandbox SDK 1.0 MicroVM Image for Shotprint Video Studio
 FROM debian:bookworm-slim
 
 # Copy the official @cloudflare/sandbox 1.0.3 runtime shim

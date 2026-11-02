@@ -1,6 +1,6 @@
-# MuseClone Studio
+# Shotprint Studio
 
-Great videos follow a formula. MuseClone measures it, turns it into a template, and an agent makes it again for
+Great videos follow a formula. Shotprint measures it, turns it into a template, and an agent makes it again for
 your product. Today: 30 s and 15 s spots from top-performing ads. Next: any format, any length.
 
 Meta Global AI Developer Hackathon · Startups track · Build for Your World

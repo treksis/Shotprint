@@ -28,12 +28,12 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'home' })} tooltip="MuseClone Studio">
+            <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'home' })} tooltip="Shotprint Studio">
               <div className="flex aspect-square size-8 shrink-0 items-center justify-center rounded-[6px] bg-[#0866ff] text-[#ffffff]">
                 <Clapperboard className="size-4" />
               </div>
               <div className="grid flex-1 text-left text-[14px] leading-tight">
-                <span className="truncate font-semibold">MuseClone</span>
+                <span className="truncate font-semibold">Shotprint</span>
                 <span className="truncate text-[13px] text-muted-foreground">Agent video studio</span>
               </div>
             </SidebarMenuButton>
