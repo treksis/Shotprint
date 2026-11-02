@@ -1,0 +1,548 @@
+{
+ "source": "inputs/reference.mp4 (score.wav: music and voice are one mixed track)",
+ "note": "Clips are cut from the mixed soundtrack, so the music bed is under every line. Times are absolute in the source.",
+ "lines": [
+  {
+   "id": "L01",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Uh, that's my room.",
+   "start": 9.95,
+   "end": 12.3,
+   "clip": "set/lines/L01.wav",
+   "word_times": [
+    {
+     "w": "Uh,",
+     "start": 10.0,
+     "end": 10.41
+    },
+    {
+     "w": "that's",
+     "start": 10.45,
+     "end": 11.17
+    },
+    {
+     "w": "my",
+     "start": 11.24,
+     "end": 11.55
+    },
+    {
+     "w": "room.",
+     "start": 11.57,
+     "end": 12.2
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L02",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Yeah, it's next to mine. And watch.",
+   "start": 12.32,
+   "end": 17.45,
+   "clip": "set/lines/L02.wav",
+   "word_times": [
+    {
+     "w": "Yeah,",
+     "start": 12.32,
+     "end": 12.78
+    },
+    {
+     "w": "it's",
+     "start": 12.82,
+     "end": 13.2
+    },
+    {
+     "w": "next",
+     "start": 13.24,
+     "end": 13.62
+    },
+    {
+     "w": "to",
+     "start": 13.65,
+     "end": 13.88
+    },
+    {
+     "w": "mine.",
+     "start": 13.9,
+     "end": 14.36
+    },
+    {
+     "w": "And",
+     "start": 16.4,
+     "end": 16.73
+    },
+    {
+     "w": "watch.",
+     "start": 16.76,
+     "end": 17.35
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L03",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Wow, can it be blue?",
+   "start": 19.3,
+   "end": 21.25,
+   "clip": "set/lines/L03.wav",
+   "word_times": [
+    {
+     "w": "Wow,",
+     "start": 19.45,
+     "end": 19.86
+    },
+    {
+     "w": "can",
+     "start": 20.3,
+     "end": 20.51
+    },
+    {
+     "w": "it",
+     "start": 20.52,
+     "end": 20.68
+    },
+    {
+     "w": "be",
+     "start": 20.69,
+     "end": 20.85
+    },
+    {
+     "w": "blue?",
+     "start": 20.86,
+     "end": 21.17
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L04",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Yeah,",
+   "start": 22.0,
+   "end": 23.4,
+   "clip": "set/lines/L04.wav",
+   "word_times": [
+    {
+     "w": "Yeah,",
+     "start": 22.3,
+     "end": 22.85
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L05",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "and Charlie's bed can go right there",
+   "start": 23.5,
+   "end": 26.1,
+   "clip": "set/lines/L05.wav",
+   "word_times": [
+    {
+     "w": "and",
+     "start": 23.55,
+     "end": 23.8
+    },
+    {
+     "w": "Charlie's",
+     "start": 23.82,
+     "end": 24.44
+    },
+    {
+     "w": "bed",
+     "start": 24.5,
+     "end": 24.74
+    },
+    {
+     "w": "can",
+     "start": 24.77,
+     "end": 25.01
+    },
+    {
+     "w": "go",
+     "start": 25.04,
+     "end": 25.22
+    },
+    {
+     "w": "right",
+     "start": 25.24,
+     "end": 25.61
+    },
+    {
+     "w": "there",
+     "start": 25.64,
+     "end": 26.02
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L06",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Here? Here.",
+   "start": 26.1,
+   "end": 27.1,
+   "clip": "set/lines/L06.wav",
+   "word_times": [
+    {
+     "w": "Here?",
+     "start": 26.15,
+     "end": 26.56
+    },
+    {
+     "w": "Here.",
+     "start": 26.6,
+     "end": 27.01
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L07",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Yeah, cool.",
+   "start": 27.4,
+   "end": 29.35,
+   "clip": "set/lines/L07.wav",
+   "word_times": [
+    {
+     "w": "Yeah,",
+     "start": 27.9,
+     "end": 28.45
+    },
+    {
+     "w": "cool.",
+     "start": 28.5,
+     "end": 29.05
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L08",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "And look, here's the yard.",
+   "start": 29.4,
+   "end": 30.85,
+   "clip": "set/lines/L08.wav",
+   "word_times": [
+    {
+     "w": "And",
+     "start": 29.45,
+     "end": 29.63
+    },
+    {
+     "w": "look,",
+     "start": 29.65,
+     "end": 29.93
+    },
+    {
+     "w": "here's",
+     "start": 29.95,
+     "end": 30.27
+    },
+    {
+     "w": "the",
+     "start": 30.3,
+     "end": 30.48
+    },
+    {
+     "w": "yard.",
+     "start": 30.5,
+     "end": 30.78
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L09",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Oh, we could have a trampoline!",
+   "start": 30.85,
+   "end": 34.1,
+   "clip": "set/lines/L09.wav",
+   "word_times": [
+    {
+     "w": "Oh,",
+     "start": 31.0,
+     "end": 31.37
+    },
+    {
+     "w": "we",
+     "start": 31.9,
+     "end": 32.1
+    },
+    {
+     "w": "could",
+     "start": 32.11,
+     "end": 32.51
+    },
+    {
+     "w": "have",
+     "start": 32.54,
+     "end": 32.87
+    },
+    {
+     "w": "a",
+     "start": 32.9,
+     "end": 33.03
+    },
+    {
+     "w": "trampoline!",
+     "start": 33.04,
+     "end": 33.83
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L10",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Uh, still no.",
+   "start": 34.15,
+   "end": 36.3,
+   "clip": "set/lines/L10.wav",
+   "word_times": [
+    {
+     "w": "Uh,",
+     "start": 34.2,
+     "end": 34.57
+    },
+    {
+     "w": "still",
+     "start": 35.3,
+     "end": 35.69
+    },
+    {
+     "w": "no.",
+     "start": 35.72,
+     "end": 35.98
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L11",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Oh, Mom, Mom, what about your garden?",
+   "start": 36.3,
+   "end": 39.1,
+   "clip": "set/lines/L11.wav",
+   "word_times": [
+    {
+     "w": "Oh,",
+     "start": 36.35,
+     "end": 36.61
+    },
+    {
+     "w": "Mom,",
+     "start": 36.63,
+     "end": 36.96
+    },
+    {
+     "w": "Mom,",
+     "start": 36.99,
+     "end": 37.32
+    },
+    {
+     "w": "what",
+     "start": 37.34,
+     "end": 37.67
+    },
+    {
+     "w": "about",
+     "start": 37.7,
+     "end": 38.09
+    },
+    {
+     "w": "your",
+     "start": 38.13,
+     "end": 38.45
+    },
+    {
+     "w": "garden?",
+     "start": 38.48,
+     "end": 39.0
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L12",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "Oh, we'll plant it together, just like before.",
+   "start": 39.4,
+   "end": 45.3,
+   "clip": "set/lines/L12.wav",
+   "word_times": [
+    {
+     "w": "Oh,",
+     "start": 39.4,
+     "end": 39.72
+    },
+    {
+     "w": "we'll",
+     "start": 40.6,
+     "end": 41.18
+    },
+    {
+     "w": "plant",
+     "start": 41.23,
+     "end": 41.81
+    },
+    {
+     "w": "it",
+     "start": 41.86,
+     "end": 42.14
+    },
+    {
+     "w": "together,",
+     "start": 42.17,
+     "end": 43.13
+    },
+    {
+     "w": "just",
+     "start": 43.22,
+     "end": 43.7
+    },
+    {
+     "w": "like",
+     "start": 43.74,
+     "end": 44.22
+    },
+    {
+     "w": "before.",
+     "start": 44.26,
+     "end": 45.03
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L13",
+   "speaker": "child",
+   "voice": "set/voice_child.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "So it'll be like our old house?",
+   "start": 46.08,
+   "end": 49.65,
+   "clip": "set/lines/L13.wav",
+   "word_times": [
+    {
+     "w": "So",
+     "start": 46.15,
+     "end": 46.43
+    },
+    {
+     "w": "it'll",
+     "start": 46.45,
+     "end": 47.02
+    },
+    {
+     "w": "be",
+     "start": 47.06,
+     "end": 47.34
+    },
+    {
+     "w": "like",
+     "start": 47.37,
+     "end": 47.84
+    },
+    {
+     "w": "our",
+     "start": 47.88,
+     "end": 48.25
+    },
+    {
+     "w": "old",
+     "start": 48.28,
+     "end": 48.66
+    },
+    {
+     "w": "house?",
+     "start": 48.69,
+     "end": 49.34
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  },
+  {
+   "id": "L14",
+   "speaker": "mom",
+   "voice": "set/voice_mom.wav",
+   "delivery": "voice-over (off-screen, conversational, recorded over the score)",
+   "words": "It'll be whatever we want it to be.",
+   "start": 49.92,
+   "end": 54.3,
+   "clip": "set/lines/L14.wav",
+   "word_times": [
+    {
+     "w": "It'll",
+     "start": 50.0,
+     "end": 50.63
+    },
+    {
+     "w": "be",
+     "start": 50.68,
+     "end": 51.0
+    },
+    {
+     "w": "whatever",
+     "start": 51.03,
+     "end": 51.97
+    },
+    {
+     "w": "we",
+     "start": 52.05,
+     "end": 52.36
+    },
+    {
+     "w": "want",
+     "start": 52.39,
+     "end": 52.92
+    },
+    {
+     "w": "it",
+     "start": 52.96,
+     "end": 53.28
+    },
+    {
+     "w": "to",
+     "start": 53.3,
+     "end": 53.62
+    },
+    {
+     "w": "be.",
+     "start": 53.64,
+     "end": 54.06
+    }
+   ],
+   "word_times_note": "estimated from speech energy and phrase timing, \u00b10.15 s"
+  }
+ ]
+}

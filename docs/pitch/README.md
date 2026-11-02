@@ -24,7 +24,7 @@
 ## Demo path (3 minutes)
 
 1. Landing page: the hook video plays real Meta films next to their blind rebuilds.
-2. **Templates** (sidebar): thirteen ready templates, each "Ready · rebuilt blind".
+2. **Templates** (sidebar): sixteen ready templates, each "Ready · rebuilt blind".
 3. Open **Hardware launch film** → **See the proof**: real 30 s cut (left) vs blind rebuild (right). Toggle
    **15 s spot**. Scroll the storyboard strip, the lines and the ingredient set.
 4. Open **Deadpan dialogue** or **Flagship phone reveal**: a 2026 Cannes Film Grand Prix spot and a 24M-view
@@ -39,7 +39,7 @@
 6. **Make a 30 s film from this** → the brief is prefilled → a project opens with the template on its
    canvas.
 
-## The library (13 templates, each with a 30 s and a 15 s cut)
+## The library (16 templates, each with a 30 s and a 15 s cut)
 
 | Template | Source (described generically in the product) | Format |
 |---|---|---|
@@ -56,6 +56,9 @@
 | Gift Unlocks a Memory | 2025 department-store Christmas film | Holiday story |
 | Dark Performance Car Launch | 2025 performance-sedan launch film | Car launch |
 | Deadpan Legend Monologue | 2026 sportswear big-game spot | Athlete monologue |
+| Toy-Doll Travel Escape | 2026 travel-booking spot | Travel comedy |
+| Moving Into Home | 2026 AI-assistant family spot | Family moment |
+| Telenovela Beauty Parody | 2026 cosmetics big-game spot | Telenovela parody |
 
 Third-party templates carry no brand: products and taglines are slots with invented defaults ("Halvard
 Lager", "Lune 2 Pro", "Wren"), and the cast are invented people who fit the roles, never likenesses.

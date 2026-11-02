@@ -1,0 +1,350 @@
+{
+ "canvas": "1920x1080, background #08090a; positions are % of frame; times are absolute source seconds (subtract a cut shot's src in and add its start for the cut timeline)",
+ "fonts": "geometric friendly sans (Avenir Next Regular/Medium or similar)",
+ "screens": [
+  {
+   "id": "ui_prompt_empty",
+   "file": "set/ui_prompt_empty.jpg",
+   "shots": [
+    1
+   ],
+   "copy": [
+    "Ask {BRAND} {PRODUCT}",
+    "+",
+    "Tools"
+   ],
+   "events": [
+    {
+     "t": [
+      0.0,
+      2.4
+     ],
+     "what": "caret blinks 0.5 s on/off at the start of the line"
+    },
+    {
+     "t": [
+      0.0,
+      4.63
+     ],
+     "what": "push scale 1.00->1.04 linear"
+    }
+   ]
+  },
+  {
+   "id": "ui_prompt_typed",
+   "file": "set/ui_prompt_typed.jpg",
+   "shots": [
+    1
+   ],
+   "copy": [
+    "pull up photos of our n"
+   ],
+   "events": [
+    {
+     "t": [
+      2.4,
+      4.6
+     ],
+     "what": "type-on 'pull up photos of our n', ~11 chars/s, caret #4a7fe0 follows"
+    }
+   ]
+  },
+  {
+   "id": "ui_prompt_large",
+   "file": "set/ui_prompt_large.jpg",
+   "shots": [
+    2
+   ],
+   "copy": [
+    "new house in {TOWN}"
+   ],
+   "events": [
+    {
+     "t": [
+      4.63,
+      7.3
+     ],
+     "what": "type-on continues '…ur new house in {TOWN}' ~6 chars/s; line scrolls left keeping the caret at 60-95% x"
+    },
+    {
+     "t": [
+      7.0,
+      7.59
+     ],
+     "what": "settle scale 1.03->1.00 ease-out"
+    }
+   ]
+  },
+  {
+   "id": "ui_status_searching",
+   "file": "set/ui_status_searching.jpg",
+   "shots": [
+    3
+   ],
+   "copy": [
+    "Searching your photos…"
+   ],
+   "events": [
+    {
+     "t": [
+      7.59,
+      8.76
+     ],
+     "what": "amber arc spins 1 rev / 0.8 s around the mark; layer drifts right 2%"
+    }
+   ]
+  },
+  {
+   "id": "ui_results_house",
+   "file": "set/ui_results_house.jpg",
+   "shots": [
+    4,
+    5
+   ],
+   "copy": [
+    "Here are some photos of the house you visited in {TOWN}.",
+    "Photos"
+   ],
+   "events": [
+    {
+     "t": [
+      8.76,
+      9.16
+     ],
+     "what": "fade up from black"
+    },
+    {
+     "t": [
+      9.16,
+      10.55
+     ],
+     "what": "push toward the lower-left cell (empty room) scale 1.00->1.15 ease-in"
+    },
+    {
+     "t": [
+      10.55,
+      12.47
+     ],
+     "what": "cut to the empty-room photo filling 2-77% x, 3-93% y; push 1.00->1.03"
+    }
+   ]
+  },
+  {
+   "id": "ui_prompt_attach",
+   "file": "set/ui_prompt_attach.jpg",
+   "shots": [
+    6,
+    7
+   ],
+   "copy": [
+    "Ask {BRAND} {PRODUCT}",
+    "fill this empty room with {CHILD}'s stuff.",
+    "Image ×"
+   ],
+   "events": [
+    {
+     "t": [
+      12.47,
+      12.87
+     ],
+     "what": "empty-room thumbnail's loading arc completes (13-31% x)"
+    },
+    {
+     "t": [
+      13.07,
+      15.18
+     ],
+     "what": "set/ui_photo_old_room.jpg slides in from (70% x, 130% y) to centre (50%, 44%), scale 0.6->1.0 (56% of width), ease-out; box behind dims 15%"
+    },
+    {
+     "t": [
+      15.18,
+      15.58
+     ],
+     "what": "old-room photo shrinks into the second thumbnail slot (34-52.5% x, 15-48% y), ease-out"
+    },
+    {
+     "t": [
+      15.6,
+      17.65
+     ],
+     "what": "type-on 'fill this empty room with {CHILD}'s stuff.' ~20 chars/s"
+    }
+   ]
+  },
+  {
+   "id": "ui_status_generating",
+   "file": "set/ui_status_generating.jpg",
+   "shots": [
+    8
+   ],
+   "copy": [
+    "Generating image…"
+   ],
+   "events": [
+    {
+     "t": [
+      17.77,
+      18.81
+     ],
+     "what": "spinner"
+    }
+   ]
+  },
+  {
+   "id": "ui_result_filled",
+   "file": "set/ui_result_filled.jpg",
+   "shots": [
+    9
+   ],
+   "copy": [],
+   "events": [
+    {
+     "t": [
+      18.81,
+      19.16
+     ],
+     "what": "fade up from black"
+    },
+    {
+     "t": [
+      19.16,
+      20.6
+     ],
+     "what": "push 1.00->1.03 linear"
+    }
+   ]
+  },
+  {
+   "id": "ui_prompt_blue",
+   "file": "set/ui_prompt_blue.jpg",
+   "shots": [
+    10
+   ],
+   "copy": [
+    "make the walls blue",
+    "Image ×"
+   ],
+   "events": [
+    {
+     "t": [
+      20.7,
+      22.5
+     ],
+     "what": "type-on ~10 chars/s; caret blinks after"
+    }
+   ]
+  },
+  {
+   "id": "ui_room_blue",
+   "file": "set/ui_room_blue.jpg",
+   "shots": [
+    11,
+    12
+   ],
+   "copy": [],
+   "events": [
+    {
+     "t": [
+      22.65,
+      27.61
+     ],
+     "what": "full frame, push 1.00->1.02"
+    },
+    {
+     "t": [
+      27.0,
+      27.5
+     ],
+     "what": "(not in cuts) light-green ellipse drawn on the floor left of the rug"
+    }
+   ]
+  },
+  {
+   "id": "ui_status_visualizing",
+   "file": "set/ui_status_visualizing.jpg",
+   "shots": [
+    25
+   ],
+   "copy": [
+    "Visualizing your new garden…"
+   ],
+   "events": [
+    {
+     "t": [
+      51.13,
+      52.05
+     ],
+     "what": "spinner"
+    }
+   ]
+  },
+  {
+   "id": "ui_result_garden",
+   "file": "set/ui_result_garden.jpg",
+   "shots": [
+    26,
+    27
+   ],
+   "copy": [],
+   "events": [
+    {
+     "t": [
+      52.05,
+      52.35
+     ],
+     "what": "fade up"
+    },
+    {
+     "t": [
+      52.35,
+      53.6
+     ],
+     "what": "push 1.00->1.10 ease-in"
+    },
+    {
+     "t": [
+      53.6,
+      54.2
+     ],
+     "what": "card scales 1.00->1.37 to fill the frame while dissolving to the live yard plate"
+    }
+   ]
+  },
+  {
+   "id": "ui_endcard",
+   "file": "set/ui_endcard.jpg",
+   "shots": [
+    28,
+    29
+   ],
+   "copy": [
+    "{BRAND} {PRODUCT}",
+    "Get {BRAND}'s AI app"
+   ],
+   "events": [
+    {
+     "t": [
+      58.1,
+      58.3
+     ],
+     "what": "mark pops in (scale 0.6->1.0)"
+    },
+    {
+     "t": [
+      58.3,
+      58.8
+     ],
+     "what": "wordmark wipes on left to right; small line fades up"
+    },
+    {
+     "t": [
+      58.8,
+      60.06
+     ],
+     "what": "hold"
+    }
+   ]
+  }
+ ]
+}

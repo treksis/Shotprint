@@ -5,7 +5,7 @@ Read with `SPEC.md` §0 (architecture). Everything below was verified on a live 
 ## Pick up here (stopped 2026-11-01 15:00, token budget)
 
 Done:
-- 13 templates seeded in the Studio, each with blind 30 s + 15 s proofs: 4 Meta/own + 9 third-party ads.
+- 16 templates seeded in the Studio, each with blind 30 s + 15 s proofs: 4 Meta/own + 12 third-party ads.
   athlete-anthem was recast (invented presenter) and rebuilt.
 - 10 Meta product films as template examples (30 s + 15 s): Ray-Ban Display, Quest 3S, Ray-Ban Meta fans,
   Marketplace, WhatsApp, Meta AI, Meta AI app, Ray-Ban Meta gift, Quest 3, Threads.
@@ -16,8 +16,9 @@ Done:
   Dev server stopped.
 
 Next:
-1. Finish travel-escape, new-home, telenovela-glam (templates authored, `bin/template check` OK, in
-   `lab/replicate/author-<id>`). Their blind rebuilds in `replica30-<id>` / `replica15-<id>` are stills
+1. Done 2026-11-01 evening: travel-escape, new-home, telenovela-glam rendered on a new G4 (48 clips), rebuilt,
+   reviewed and seeded (16 templates). travel-escape's muted names are filled from its VO take (see its
+   replication reports). Old notes for this step: Their blind rebuilds in `replica30-<id>` / `replica15-<id>` are stills
    only. Start a G4 (`colab-gpu` skill, `h3_bootstrap.sh G4 h3 --keep`), clear each replica's
    `.h3_ledger.jsonl`, re-run its `jobs/*.jsonl` with `bin/h3`, rebuild `final/final.mp4` with the
    workspace's own build script (named in its notes/replication_report.md), then

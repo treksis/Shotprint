@@ -1,0 +1,2511 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4",
+  "duration": 123.46,
+  "size": "1920x1080",
+  "fps": 29.97,
+  "shots": 52,
+  "average_shot": 2.37,
+  "median_shot": 1.94,
+  "note": "Source is a 2026 big-game cosmetics spot (124 s) parodying a telenovela; brand, star and product names are slots. Spanish dialogue is given in English."
+ },
+ "acts": [
+  {
+   "name": "Cold open: the drive",
+   "shots": [
+    1,
+    4
+   ],
+   "start": 0,
+   "end": 10.34,
+   "function": "Ident, then the setup in one radio line (tonight is the biggest show) against her confession (she doesn't speak the language), and a crash."
+  },
+  {
+   "name": "Opening titles",
+   "shots": [
+    5,
+    6
+   ],
+   "start": 10.34,
+   "end": 18.45,
+   "function": "Soap-opera credits on crimson satin: star super, then the heroine's name as the show's script title."
+  },
+  {
+   "name": "The hospital",
+   "shots": [
+    7,
+    17
+   ],
+   "start": 18.45,
+   "end": 45.48,
+   "function": "She wakes, the show is tonight, she can't speak; the heartthrob doctor prescribes the lip gloss (the plot twist)."
+  },
+  {
+   "name": "Training montage",
+   "shots": [
+    18,
+    41
+   ],
+   "start": 45.48,
+   "end": 86.49,
+   "function": "Speech therapy as melodrama: practice words, swoons, a jealous rival, failure."
+  },
+  {
+   "name": "Transformation and party",
+   "shots": [
+    42,
+    48
+   ],
+   "start": 86.49,
+   "end": 109.38,
+   "function": "One more coat of gloss: she nails the words, turns diva in gold and the whole hospital dances."
+  },
+  {
+   "name": "Title and cliffhanger",
+   "shots": [
+    49,
+    51
+   ],
+   "start": 109.38,
+   "end": 121.25,
+   "function": "Product title card (she kisses the gloss under her own script name); the rival steals it: 'To be continued...'"
+  },
+  {
+   "name": "End card",
+   "shots": [
+    52,
+    52
+   ],
+   "start": 121.25,
+   "end": 123.46,
+   "function": "The brand's TV-badge ident."
+  }
+ ],
+ "shots": [
+  {
+   "action": "Opening ident: on black, two striped TV-screen shapes slide together into one white TV-shaped badge with the {BRAND} wordmark and 'PRESENTS'; a crimson glow blooms behind it. Announcer VO: '{BRAND} presents.'",
+   "setup": "CARD_IDENT",
+   "location": "black field (motion graphics)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide (flat graphic card)",
+   "subject_in_frame": "0.35-0.55 s: two striped TV-screen shapes, each 25% of frame width and 38% of height, side by side centred (left one x 25-50%, right x 50-75%, y 31-69%), overlapping by about 3% in the middle. From 0.55 s one white TV-shaped badge (rounded square, slightly bulging sides, big rounded corners) centred at x 50%, y 50%, 25% of width, 37% of height; a white 4-point star glint at its top-right corner from 1.0 s.",
+   "camera": "flat 2D graphic, no camera",
+   "camera_move": "graphic animation: 0.00-0.35 black; 0.35-0.55 the two striped shapes slide toward each other (ease-in-out) and merge; 0.55-0.80 the stripes wipe away from the centre to reveal the white badge; 0.80-1.20 a crimson radial glow (#b0123c at centre, black by 30% of the frame width out) blooms from 0 to 100% opacity; 1.00 star glint twinkles (scale 0->1->0.6 over 0.3 s); holds to 2.27.",
+   "light": "flat graphic on pure black; measured brightness 0 / 31 / 40",
+   "text": [
+    {
+     "words": "{BRAND}",
+     "where": "on the badge, centred, x 50% y 46%",
+     "size": "wordmark 15% of frame width, thin high-contrast Didone serif, lowercase, deep crimson #8c1030",
+     "in": 0.55,
+     "out": 2.27
+    },
+    {
+     "words": "PRESENTS",
+     "where": "under the wordmark, x 50% y 56%",
+     "size": "cap height 2% of frame height, bold sans, tracking +300, crimson #8c1030",
+     "in": 0.55,
+     "out": 2.27
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Announcer VO (in set/score.wav and set/lines/L01.wav): '{BRAND} presents.' 0.35-1.90 (brand word 0.35-1.05, muted in the shipped audio: record the new brand name there); a soft whoosh on the merge 0.40-0.60 and a sparkle tick at 1.00.",
+   "render": "Motion graphics drawn in code from set/ui_shutter.jpg (two striped TV shapes) and set/ui_presents_card.jpg (badge, wordmark, glow); no video model.",
+   "board": "boards/s01.jpg",
+   "n": 1,
+   "start": 0,
+   "end": 2.27,
+   "dur": 2.27,
+   "in": "start",
+   "brightness": {
+    "start": 0,
+    "mid": 31,
+    "end": 40
+   },
+   "colour": "#29181a",
+   "change": 14.54,
+   "sound": "-31.7 LUFS mean, -8.81 peak",
+   "voice": "Announcer VO: '{BRAND} presents.' (Spanish in the source; brand word muted in set/score.wav)",
+   "boards": [
+    "boards/s01a.jpg",
+    "boards/s01.jpg"
+   ]
+  },
+  {
+   "action": "2.27-3.6 she drives, both hands on the wheel, eyes ahead, mouth relaxed, listening; 3.6-4.6 a slow dreamy smile spreads, eyes half-lidded; 4.6-5.41 she glances down-right and smirks, pleased with herself.",
+   "setup": "CAR_FRONT",
+   "location": "loc_car_night (driver seat seen through the windshield)",
+   "cast": [
+    "char_heroine"
+   ],
+   "wardrobe": "char_heroine look 1 (set/char_heroine_wardrobe.jpg panel 1): dusty-pink chunky knit cardigan over a cream high-neck blouse with small multicolour floral embroidery at the collar",
+   "shot_size": "medium wide (through the windshield, waist up)",
+   "subject_in_frame": "Heroine left of centre: head centre x 36%, y 32%, head 9% of frame width, torso x 22-52%; steering wheel lower centre (x 35-62%, y 55-70%); the windshield's top frame crosses y 10%, the A-pillar runs diagonally from x 70% y 10% to x 95% y 75%; dark hood across the bottom 20% with a thin chrome glint at lower right.",
+   "camera": "eye level, straight on from the hood (camera outside the car looking in through the windshield), normal lens (~40 mm), moderate depth of field: her face sharp, the far window soft",
+   "camera_move": "locked off on a hood mount with a gentle 1% drift and the faint bounce of a moving car; dark street lights slide past the side windows",
+   "light": "night low key: soft warm-grey dashboard/practical key from below front, cool dark-teal ambience, far street lights through the rear windows; very dark: brightness 32 / 30 / 33 (colour #1f1c1c)",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Radio announcer VO from the car radio (slightly band-limited), in the score: 'Get ready for the world's biggest reggaeton show.' 2.55-5.58, 'It's going to be a...' starts 5.85 (into shot 3). Quiet road hum under; score bed -20 LUFS.",
+   "render": "Picture shot, first + last frame: plate s02 (from boards/s02.jpg + char_heroine_sheet + wardrobe look 1 + loc_car_night) -> same plate with the smile; 4 s clip trimmed to 3.14; no speech in the clip (the VO is in the score).",
+   "board": "boards/s02.jpg",
+   "n": 2,
+   "start": 2.27,
+   "end": 5.41,
+   "dur": 3.14,
+   "in": "cut",
+   "brightness": {
+    "start": 32,
+    "mid": 30,
+    "end": 33
+   },
+   "colour": "#1f1c1c",
+   "change": 4.26,
+   "sound": "-20.09 LUFS mean, -13.86 peak",
+   "voice": "Radio announcer VO: 'Get ready for the world's biggest reggaeton show. It's going to be a...'"
+  },
+  {
+   "action": "5.41-6.4 she drives, listening, eyes ahead; 6.52-7.72 she blurts, alarmed and fast, 'I don't speak Spanish!' (head tilts a little toward camera); 7.72-8.78 eyes wide, lips parted, rising panic as the radio says '...unforgettable.'",
+   "setup": "CAR_SIDE",
+   "location": "loc_car_night (interior, from the passenger seat)",
+   "cast": [
+    "char_heroine"
+   ],
+   "wardrobe": "char_heroine look 1: dusty-pink knit cardigan, cream high-neck floral blouse",
+   "shot_size": "medium (waist up, profile three-quarter)",
+   "subject_in_frame": "Heroine faces frame right in three-quarter profile: head centre x 33%, y 24%, head 10% of width; her shoulder and pink sleeve fill x 15-60%, y 35-100%; both hands on the wheel at right x 78-95%, y 35-55%; grey headrest at left edge x 2-12%; the dark windshield and night behind her.",
+   "camera": "eye level from the passenger seat, looking left across the cab at her, normal lens (~35 mm), shallow-ish depth of field",
+   "camera_move": "locked off, slight handheld float under 1%",
+   "light": "night low key: soft warm key from the dashboard front-right, cool dark ambience; brightness 30 / 30 / 37",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Radio VO tail 'It's going to be a...' 5.85-6.48; heroine on camera L03 'I don't speak Spanish!' 6.62-7.72; radio 'unforgettable.' 8.05-9.00 (L04, runs over the cut). All in the score.",
+   "render": "Speaking shot: first frame (plate s03 from boards/s03.jpg + char sheets + loc_car_night) + guide_audio = a 3.37 s wav with set/lines/L03.wav placed at 1.09 s (clip starts 6.50) (room tone around it). Keyframe mode only; if the framing drifts, re-render on the same plate.",
+   "board": "boards/s03.jpg",
+   "n": 3,
+   "start": 5.41,
+   "end": 8.78,
+   "dur": 3.37,
+   "in": "cut",
+   "brightness": {
+    "start": 30,
+    "mid": 30,
+    "end": 37
+   },
+   "colour": "#221b19",
+   "change": 3.31,
+   "sound": "-14.59 LUFS mean, -8.67 peak",
+   "voice": "Radio: '...going to be a...' / heroine: 'I don't speak Spanish!' / radio: '...unforgettable.'"
+  },
+  {
+   "action": "8.78-9.0 she stares ahead, worried; 9.0 oncoming headlights flood the cab; 9.05-10.05 she screams, mouth wide, eyes squeezed, hands flying up off the wheel (crash).",
+   "setup": "CAR_FRONT",
+   "location": "loc_car_night (through the windshield)",
+   "cast": [
+    "char_heroine"
+   ],
+   "wardrobe": "char_heroine look 1: dusty-pink knit cardigan, cream high-neck floral blouse",
+   "shot_size": "medium wide snapping to close-up",
+   "subject_in_frame": "Start (s04a): same as setup CAR_FRONT but centred: head x 48%, y 36%, 9% of width, hands on the wheel x 38-62%. End (s04b, 10.0): head x 46%, y 35%, head 28% of width, mouth wide open, both hands up at x 20-80%, the wheel cut by the bottom edge.",
+   "camera": "eye level, straight on through the windshield, normal lens; the zoom makes it long",
+   "camera_move": "snap zoom in: 8.78-8.90 hold; 8.90-9.70 fast push 100% -> 300% scale toward her face (ease-out, the fastest 0.3 s first), with a jolting 2-3% handheld shake; 9.70-10.05 holds tight, shaking.",
+   "light": "night, then hard white-warm headlights from front flooding her face and the cab: brightness rises 36 -> 42 -> 73 (colour #332c28)",
+   "text": [],
+   "out": "hard cut (in the source a 0.37 s black flash follows at 10.34; the cuts cut away at 10.05 before it)",
+   "audio": "Radio 'unforgettable.' 8.05-9.00 (L04); heroine scream 9.00 onward (L05), peak -5.5 dB; tyre screech under. In the score.",
+   "render": "Speaking shot (scream): first frame plate s04a + guide_audio set/lines/L05.wav at 0.22 s in a 1.6 s take, locked off; build the snap zoom in post as a push on the take (scale 1.0 -> 3.0 between 0.12 and 0.92 s, ease-out, plus a 2-3% shake) and lift exposure to the headlight flash, or ask H3 for 'a sudden fast crash zoom in' in the same first-frame job.",
+   "board": "boards/s04a.jpg",
+   "n": 4,
+   "start": 8.78,
+   "end": 10.34,
+   "dur": 1.57,
+   "in": "cut",
+   "brightness": {
+    "start": 36,
+    "mid": 42,
+    "end": 73
+   },
+   "colour": "#332c28",
+   "change": 20.42,
+   "sound": "-9.37 LUFS mean, -5.48 peak",
+   "voice": "Radio: '...unforgettable.' / heroine screams",
+   "boards": [
+    "boards/s04a.jpg",
+    "boards/s04b.jpg"
+   ]
+  },
+  {
+   "action": "Black, then the opening credits: on crimson satin she gasps in a blush ruffled blouse beside a silver small-caps name super ('{ACTRESS} ES').",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 5,
+   "start": 10.34,
+   "end": 12.98,
+   "dur": 2.64,
+   "in": "cut",
+   "brightness": {
+    "start": 10,
+    "mid": 54,
+    "end": 55
+   },
+   "colour": "#571e19",
+   "change": 19.57,
+   "sound": "-11.85 LUFS mean, -6.99 peak",
+   "voice": "Heroine scream tail; announcer: '{ACTRESS} is...' (name muted)"
+  },
+  {
+   "action": "Credits montage: dissolving close-ups of her on crimson satin; the silver script title '{HEROINE}' writes on.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 6,
+   "start": 12.98,
+   "end": 18.45,
+   "dur": 5.47,
+   "in": "cut",
+   "brightness": {
+    "start": 37,
+    "mid": 61,
+    "end": 51
+   },
+   "colour": "#6b241e",
+   "change": 24.89,
+   "sound": "-15.72 LUFS mean, -9.51 peak",
+   "voice": "Announcer: '...{HEROINE} in {HEROINE}.' (names muted)"
+  },
+  {
+   "action": "Blurred close-up racks into focus: she wakes in a hospital bed in a patterned gown, dazed.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 7,
+   "start": 18.45,
+   "end": 23.49,
+   "dur": 5.04,
+   "in": "cut",
+   "brightness": {
+    "start": 10,
+    "mid": 114,
+    "end": 116
+   },
+   "colour": "#7a644d",
+   "change": 20.54,
+   "sound": "-24.7 LUFS mean, -13.67 peak",
+   "voice": "(none)"
+  },
+  {
+   "action": "Wide hospital room: the heartthrob doctor in a white coat turns from the x-ray light box; she asks 'Doctor, what day is it?'",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 8,
+   "start": 23.49,
+   "end": 25.76,
+   "dur": 2.27,
+   "in": "cut",
+   "brightness": {
+    "start": 109,
+    "mid": 111,
+    "end": 129
+   },
+   "colour": "#7f6f5d",
+   "change": 32.61,
+   "sound": "-18.19 LUFS mean, -11.06 peak",
+   "voice": "Heroine: 'Doctor, what day is it?'"
+  },
+  {
+   "action": "Her in bed, medium, slow push: the doctor says '{HEROINE}, the big show is tonight'; she gasps.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 9,
+   "start": 25.76,
+   "end": 28.53,
+   "dur": 2.77,
+   "in": "cut",
+   "brightness": {
+    "start": 115,
+    "mid": 111,
+    "end": 107
+   },
+   "colour": "#7d6c56",
+   "change": 5.68,
+   "sound": "-18.91 LUFS mean, -11.69 peak",
+   "voice": "Doctor: '{HEROINE}, the big show is tonight.' (name muted)"
+  },
+  {
+   "action": "Doctor close-up: 'How is your Spanish?'",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 10,
+   "start": 28.53,
+   "end": 29.73,
+   "dur": 1.2,
+   "in": "cut",
+   "brightness": {
+    "start": 122,
+    "mid": 121,
+    "end": 121
+   },
+   "colour": "#847565",
+   "change": 8.91,
+   "sound": "-19.73 LUFS mean, -12.78 peak",
+   "voice": "Doctor: 'How is your Spanish?'"
+  },
+  {
+   "action": "Her medium close-up, trying: 'Goodbye, I am a... I am a...' (Spanish).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 11,
+   "start": 29.73,
+   "end": 32.7,
+   "dur": 2.97,
+   "in": "cut",
+   "brightness": {
+    "start": 103,
+    "mid": 104,
+    "end": 102
+   },
+   "colour": "#79624b",
+   "change": 6.63,
+   "sound": "-22.16 LUFS mean, -8.75 peak",
+   "voice": "Heroine: 'Goodbye, I am a...' (Spanish)"
+  },
+  {
+   "action": "Doctor close-up, reacting with grave concern.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 12,
+   "start": 32.7,
+   "end": 34.67,
+   "dur": 1.97,
+   "in": "cut",
+   "brightness": {
+    "start": 119,
+    "mid": 119,
+    "end": 118
+   },
+   "colour": "#827363",
+   "change": 3.41,
+   "sound": "-19.34 LUFS mean, -9.33 peak",
+   "voice": "(none)"
+  },
+  {
+   "action": "Her close-up, struggling with the words.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 13,
+   "start": 34.67,
+   "end": 36.6,
+   "dur": 1.94,
+   "in": "cut",
+   "brightness": {
+    "start": 104,
+    "mid": 102,
+    "end": 105
+   },
+   "colour": "#79624b",
+   "change": 12.02,
+   "sound": "-17.7 LUFS mean, -5.72 peak",
+   "voice": "Heroine: 'I am a...' (Spanish)"
+  },
+  {
+   "action": "36.6-37.6 his hands present the closed gloss; 37.6-38.4 he pulls the cap straight up, the doe-foot wand rising out glistening pink; 38.4-39.64 his arm swings away to the right with the wand (toward her), the open bottle held still.",
+   "setup": "GLOSS_INSERT",
+   "location": "loc_hospital_room (the doctor's chest as background)",
+   "cast": [
+    "char_doctor",
+    "product_gloss"
+   ],
+   "wardrobe": "char_doctor: white lab coat open, pale-blue dress shirt, steel wristwatch, plain navy name badge with a white caduceus icon (no text)",
+   "shot_size": "insert / extreme close-up of hands and product",
+   "subject_in_frame": "The gloss bottle centre-left at x 40%, y 50%, 9% of frame width (bottle 25% of frame height), held by his left hand from below-left; his right hand grips the black cap at x 50%, y 25%; the navy badge top-left at x 22-42%, y 5-15%; his white coat and pale-blue shirt fill the background. At 38.0 the cap and wand are lifted to the top edge (wand tip x 45%, y 30%); by 39.5 his right arm swings out to the right and only the open bottle remains at x 40%, y 55%.",
+   "camera": "eye level at chest height, close, slightly from the left, normal-to-long lens (~65 mm), shallow depth of field: bottle sharp, coat soft",
+   "camera_move": "locked off with a slight 2% drift up following the cap",
+   "light": "bright warm soft daylight from the left window, creamy highlights on the coat: brightness 129 / 125 / 142",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Doctor (VO over the insert; his voice is in the score and L06): 'Normally, I wouldn't do this,' 36.74-39.20 ('Normally' is Spanish in the source); soft romantic music bed.",
+   "render": "Picture shot, first + last frame: plate s14a (cap on, from boards/s14a.jpg + product_gloss_sheet + char_doctor_sheet) -> plate s14b (cap off, wand gone); 4 s clip trimmed to the window; no speech in the clip.",
+   "board": "boards/s14a.jpg",
+   "n": 14,
+   "start": 36.6,
+   "end": 39.64,
+   "dur": 3.04,
+   "in": "cut",
+   "brightness": {
+    "start": 129,
+    "mid": 125,
+    "end": 142
+   },
+   "colour": "#917a67",
+   "change": 14.85,
+   "sound": "-15.67 LUFS mean, -9.39 peak",
+   "voice": "Doctor: 'Normally, I wouldn't do this,'",
+   "boards": [
+    "boards/s14a.jpg",
+    "boards/s14b.jpg"
+   ]
+  },
+  {
+   "action": "39.64-40.1 she eyes the wand sideways, unsure; 40.1-40.6 she purses her lips into an exaggerated pucker; 40.6-41.01 the wand reaches her lips.",
+   "setup": "BED_OTS",
+   "location": "loc_hospital_room (bed, white pillows, wood headboard, peach wall)",
+   "cast": [
+    "char_heroine",
+    "char_doctor",
+    "product_gloss"
+   ],
+   "wardrobe": "char_heroine look 2: pale-blue hospital gown with small pink and navy diamond print, crossover V-neck; char_doctor: white coat (back of head and shoulder only)",
+   "shot_size": "medium close-up over the shoulder",
+   "subject_in_frame": "Doctor's dark-haired head and white shoulder at frame left, x 0-22%, y 0-70%, soft. Heroine centre-right sitting up in bed: face x 58%, y 40%, head 18% of width, hair falling to y 75%; gown across the bottom. His hand holds the black cap and wand at x 30-40%, y 62%, rising to her lips (x 50%, y 50%) by 40.9.",
+   "camera": "eye level, over his right shoulder, normal lens (~50 mm), shallow depth of field",
+   "camera_move": "locked off",
+   "light": "warm soft key from the window at right, white pillows glowing; brightness 105 / 96 / 94",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Doctor (off camera, in the score): 'but you need' 40.48-40.82.",
+   "render": "Picture shot, first + last frame: plate s15 (from boards/s15.jpg + char sheets + wardrobe look 2 + loc_hospital_room) -> same plate with the pucker and the wand at her lips; no speech from her.",
+   "board": "boards/s15.jpg",
+   "n": 15,
+   "start": 39.64,
+   "end": 41.01,
+   "dur": 1.37,
+   "in": "cut",
+   "brightness": {
+    "start": 105,
+    "mid": 96,
+    "end": 94
+   },
+   "colour": "#745c46",
+   "change": 20.02,
+   "sound": "-21.42 LUFS mean, -14.97 peak",
+   "voice": "Doctor: 'but you need'"
+  },
+  {
+   "action": "41.01-43.68 he looks down at her lips with smouldering concentration and says, slow and seductive, 'juicy lips so you can roll' (41.12-43.50), a small knowing nod at 'juicy'.",
+   "setup": "DOCTOR_MCU",
+   "location": "loc_hospital_room (x-ray light box, rust drapes, white sheers)",
+   "cast": [
+    "char_doctor"
+   ],
+   "wardrobe": "char_doctor: white lab coat open, pale-blue shirt open at the collar, thin gold chain",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Doctor centred, slightly right: head centre x 52%, y 30%, head 20% of width, shoulders x 22-85% filling the bottom half; the x-ray light box with two blue films (skull, hand) top-left x 0-28%, y 0-35%; rust drapes behind his head; white sheer curtain at right x 85-100%.",
+   "camera": "eye level, slightly to his left (he looks down-left toward her), normal-long lens (~65 mm), shallow depth of field",
+   "camera_move": "locked off",
+   "light": "warm soft key from screen right, cool blue glow of the light box at left; brightness 117 / 117 / 116",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Doctor on camera (L06): 'juicy lips' 41.12-41.85, 'so you can roll' 42.48-43.50; music bed.",
+   "render": "Speaking shot: first frame (plate s16 from boards/s16.jpg + char_doctor_sheet + loc_hospital_room) + guide_audio = set/lines/L06.wav from 4.33 s to 7.00 s in the clip (source 41.01-43.68), keyframe mode.",
+   "board": "boards/s16.jpg",
+   "n": 16,
+   "start": 41.01,
+   "end": 43.68,
+   "dur": 2.67,
+   "in": "cut",
+   "brightness": {
+    "start": 117,
+    "mid": 117,
+    "end": 116
+   },
+   "colour": "#7f7060",
+   "change": 6.01,
+   "sound": "-15.33 LUFS mean, -10.16 peak",
+   "voice": "Doctor: 'juicy lips so you can roll'"
+  },
+  {
+   "action": "43.68-45.48 the wand glides gloss from the centre of the lower lip to the right corner; the lips turn wet, glossy raspberry-pink; she presses them slightly at the end.",
+   "setup": "LIPS_MACRO",
+   "location": "none (her face fills the frame)",
+   "cast": [
+    "char_heroine",
+    "product_gloss"
+   ],
+   "wardrobe": "none visible",
+   "shot_size": "macro (lips fill the frame)",
+   "subject_in_frame": "Her lips centred at x 55%, y 45%, 50% of frame width; nose base at top edge x 55%, y 0-12%; the black square cap at lower left x 0-30%, y 65-100%, the white stem rising diagonally to the doe-foot tip at the right corner of her mouth (x 72%, y 42%).",
+   "camera": "eye level, straight on, macro lens, very shallow depth of field: lips and gloss sharp, skin edges soft",
+   "camera_move": "locked off; the wand moves from the left corner to the right corner of the lower lip",
+   "light": "warm soft frontal key, a broad specular highlight on the gloss; brightness 84 / 88 / 90 (#764e3b)",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Doctor (VO, in the score): 'those R's.' 44.18-44.80; music bed.",
+   "render": "Picture shot, first + last frame: plate s17 (from boards/s17.jpg + product_gloss_sheet; lips of char_heroine) -> same plate with the wand at the right corner; 2 s clip.",
+   "board": "boards/s17.jpg",
+   "n": 17,
+   "start": 43.68,
+   "end": 45.48,
+   "dur": 1.8,
+   "in": "cut",
+   "brightness": {
+    "start": 84,
+    "mid": 88,
+    "end": 90
+   },
+   "colour": "#764e3b",
+   "change": 13.28,
+   "sound": "-19.2 LUFS mean, -14.09 peak",
+   "voice": "Doctor: 'those R's.'"
+  },
+  {
+   "action": "Doctor close-up, then a whip pan to the physiotherapy room: doctor, a male nurse and the heroine in blue loungewear. 'We have a lot of work to do.'",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 18,
+   "start": 45.48,
+   "end": 50.72,
+   "dur": 5.24,
+   "in": "cut",
+   "brightness": {
+    "start": 121,
+    "mid": 89,
+    "end": 127
+   },
+   "colour": "#796c5d",
+   "change": 31.03,
+   "sound": "-18.23 LUFS mean, -8.53 peak",
+   "voice": "Doctor: 'We have a lot of work to do.'"
+  },
+  {
+   "action": "Fast montage: the male nurse winces, a gloss macro on her lips, then she lifts two pink jugs like weights.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 19,
+   "start": 50.72,
+   "end": 54.99,
+   "dur": 4.27,
+   "in": "cut",
+   "brightness": {
+    "start": 137,
+    "mid": 88,
+    "end": 125
+   },
+   "colour": "#7e6e5e",
+   "change": 24.94,
+   "sound": "-13.09 LUFS mean, -9.55 peak",
+   "voice": "(effort grunts)"
+  },
+  {
+   "action": "Doctor close-up, leaning in, dissolving out.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 20,
+   "start": 54.99,
+   "end": 56.14,
+   "dur": 1.15,
+   "in": "cut",
+   "brightness": {
+    "start": 104,
+    "mid": 105,
+    "end": 101
+   },
+   "colour": "#7f614d",
+   "change": 25.66,
+   "sound": "-14.2 LUFS mean, -12.1 peak",
+   "voice": "Doctor: 'Let's go!' (Spanish)"
+  },
+  {
+   "action": "Macro of her open glossy mouth: 'Let's go!' (Spanish).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 21,
+   "start": 56.14,
+   "end": 56.99,
+   "dur": 0.85,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 90,
+    "mid": 70,
+    "end": 72
+   },
+   "colour": "#6c4634",
+   "change": 27.3,
+   "sound": "-13.17 LUFS mean, -12.82 peak",
+   "voice": "Doctor: 'Let's go!' (Spanish)"
+  },
+  {
+   "action": "Wide physio room: the doctor offers a straw hat, the nurse watches, she sits on the treatment table.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 22,
+   "start": 56.99,
+   "end": 57.66,
+   "dur": 0.67,
+   "in": "cut",
+   "brightness": {
+    "start": 116,
+    "mid": 116,
+    "end": 117
+   },
+   "colour": "#737368",
+   "change": 9.38,
+   "sound": "-14.21 LUFS mean, -13.34 peak",
+   "voice": "Heroine: 'Hat.' (Spanish)"
+  },
+  {
+   "action": "Her medium shot: 'Sombrero' (Spanish practice word); dissolve.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 23,
+   "start": 57.66,
+   "end": 58.71,
+   "dur": 1.05,
+   "in": "cut",
+   "brightness": {
+    "start": 115,
+    "mid": 116,
+    "end": 122
+   },
+   "colour": "#7e7360",
+   "change": 6.75,
+   "sound": "-11.76 LUFS mean, -9.52 peak",
+   "voice": "Heroine: 'Hat.' (Spanish)"
+  },
+  {
+   "action": "She lifts the pink jugs as weights while the doctor coaches.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 24,
+   "start": 58.71,
+   "end": 59.59,
+   "dur": 0.88,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 121,
+    "mid": 112,
+    "end": 107
+   },
+   "colour": "#726f61",
+   "change": 26.22,
+   "sound": "-8.66 LUFS mean, -8.09 peak",
+   "voice": "(grunts)"
+  },
+  {
+   "action": "Profile lips macro as gloss goes on.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 25,
+   "start": 59.59,
+   "end": 60.89,
+   "dur": 1.3,
+   "in": "cut",
+   "brightness": {
+    "start": 97,
+    "mid": 101,
+    "end": 101
+   },
+   "colour": "#835e43",
+   "change": 14.99,
+   "sound": "-10.54 LUFS mean, -8.8 peak",
+   "voice": "(none)"
+  },
+  {
+   "action": "Doctor holds up a flip-flop as the next word.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 26,
+   "start": 60.89,
+   "end": 61.49,
+   "dur": 0.6,
+   "in": "cut",
+   "brightness": {
+    "start": 130,
+    "mid": 127,
+    "end": 127
+   },
+   "colour": "#7f7f71",
+   "change": 6.52,
+   "sound": "-14.76 LUFS mean, -14.21 peak",
+   "voice": "Heroine: 'Flip-flop.' (Spanish)"
+  },
+  {
+   "action": "Her, blindfolded, guessing the word ('chancla', Spanish for flip-flop).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 27,
+   "start": 61.49,
+   "end": 62.26,
+   "dur": 0.77,
+   "in": "cut",
+   "brightness": {
+    "start": 116,
+    "mid": 115,
+    "end": 114
+   },
+   "colour": "#7d705d",
+   "change": 16.75,
+   "sound": "-11.43 LUFS mean, -9.88 peak",
+   "voice": "Heroine: 'Flip-flop.' (Spanish)"
+  },
+  {
+   "action": "Open-mouth macro, then a face-to-face two-shot with the doctor.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 28,
+   "start": 62.26,
+   "end": 63.96,
+   "dur": 1.7,
+   "in": "cut",
+   "brightness": {
+    "start": 83,
+    "mid": 71,
+    "end": 117
+   },
+   "colour": "#785444",
+   "change": 22.39,
+   "sound": "-8.81 LUFS mean, -7.11 peak",
+   "voice": "Heroine: 'Kiss. Kiss.' (Spanish)"
+  },
+  {
+   "action": "Her close-up facing him: 'Kiss' (Spanish).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 29,
+   "start": 63.96,
+   "end": 64.76,
+   "dur": 0.8,
+   "in": "cut",
+   "brightness": {
+    "start": 131,
+    "mid": 127,
+    "end": 122
+   },
+   "colour": "#8c7b69",
+   "change": 18.06,
+   "sound": "-13.3 LUFS mean, -11.98 peak",
+   "voice": "Heroine: 'Kiss.' (Spanish)"
+  },
+  {
+   "action": "Two-shot: the doctor answers, intense.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 30,
+   "start": 64.76,
+   "end": 65.97,
+   "dur": 1.2,
+   "in": "cut",
+   "brightness": {
+    "start": 120,
+    "mid": 120,
+    "end": 118
+   },
+   "colour": "#7e7561",
+   "change": 6.03,
+   "sound": "-14.8 LUFS mean, -13.49 peak",
+   "voice": "Heroine: 'Mathematics.' (Spanish)"
+  },
+  {
+   "action": "Her close-up: 'Mathematics' (Spanish), straining.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 31,
+   "start": 65.97,
+   "end": 67.3,
+   "dur": 1.33,
+   "in": "cut",
+   "brightness": {
+    "start": 93,
+    "mid": 86,
+    "end": 90
+   },
+   "colour": "#6b5242",
+   "change": 19.91,
+   "sound": "-15.08 LUFS mean, -14.41 peak",
+   "voice": "Heroine: 'Mathematics.' (Spanish)"
+  },
+  {
+   "action": "Two-shot, foreheads close.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 32,
+   "start": 67.3,
+   "end": 69.2,
+   "dur": 1.9,
+   "in": "cut",
+   "brightness": {
+    "start": 118,
+    "mid": 116,
+    "end": 112
+   },
+   "colour": "#7c715d",
+   "change": 10.14,
+   "sound": "-13.19 LUFS mean, -7.51 peak",
+   "voice": "Heroine: 'Silly.' (Spanish)"
+  },
+  {
+   "action": "Her extreme close-up, eyes sliding to him.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 33,
+   "start": 69.2,
+   "end": 70.7,
+   "dur": 1.5,
+   "in": "cut",
+   "brightness": {
+    "start": 75,
+    "mid": 80,
+    "end": 77
+   },
+   "colour": "#6b4533",
+   "change": 10.49,
+   "sound": "-9.9 LUFS mean, -5.95 peak",
+   "voice": "Heroine: 'Silly.' (Spanish)"
+  },
+  {
+   "action": "Two-shot: 'I love you' (Spanish); she swoons backwards in his arms.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 34,
+   "start": 70.7,
+   "end": 73.24,
+   "dur": 2.54,
+   "in": "cut",
+   "brightness": {
+    "start": 100,
+    "mid": 87,
+    "end": 121
+   },
+   "colour": "#725f4d",
+   "change": 27.76,
+   "sound": "-16.28 LUFS mean, -11.83 peak",
+   "voice": "Heroine: 'I love you. I love you.' (Spanish)"
+  },
+  {
+   "action": "A rival lady doctor (white coat, huge bob, stethoscope) in the doorway gasps.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 35,
+   "start": 73.24,
+   "end": 75.14,
+   "dur": 1.9,
+   "in": "cut",
+   "brightness": {
+    "start": 152,
+    "mid": 115,
+    "end": 115
+   },
+   "colour": "#8f7962",
+   "change": 33.65,
+   "sound": "-13.65 LUFS mean, -9.85 peak",
+   "voice": "(gasp)"
+  },
+  {
+   "action": "Doctor close-up, angry: 'Now try this.'",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 36,
+   "start": 75.14,
+   "end": 76.19,
+   "dur": 1.05,
+   "in": "cut",
+   "brightness": {
+    "start": 142,
+    "mid": 140,
+    "end": 140
+   },
+   "colour": "#928a78",
+   "change": 34.05,
+   "sound": "-17.59 LUFS mean, -14.56 peak",
+   "voice": "Doctor: 'Now try this.'"
+  },
+  {
+   "action": "Doctor close-up: 'Cheese, fire, fire, cheese' (Spanish practice words).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 37,
+   "start": 76.19,
+   "end": 78.55,
+   "dur": 2.35,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 140,
+    "mid": 141,
+    "end": 140
+   },
+   "colour": "#908b79",
+   "change": 8.71,
+   "sound": "-15.7 LUFS mean, -12.11 peak",
+   "voice": "Doctor: 'Cheese, fire, fire, cheese.' (Spanish)"
+  },
+  {
+   "action": "At the practice stair, the doctor behind: 'It's too hard, my lips can't do it.'",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 38,
+   "start": 78.55,
+   "end": 80.61,
+   "dur": 2.07,
+   "in": "cut",
+   "brightness": {
+    "start": 130,
+    "mid": 129,
+    "end": 131
+   },
+   "colour": "#87806e",
+   "change": 10.81,
+   "sound": "-15.19 LUFS mean, -8.34 peak",
+   "voice": "Heroine: 'It's too hard.'"
+  },
+  {
+   "action": "She slumps over the handrail, eyes shut.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 39,
+   "start": 80.61,
+   "end": 82.05,
+   "dur": 1.43,
+   "in": "cut",
+   "brightness": {
+    "start": 119,
+    "mid": 129,
+    "end": 125
+   },
+   "colour": "#7e7d6e",
+   "change": 34.9,
+   "sound": "-12.99 LUFS mean, -10.33 peak",
+   "voice": "Heroine: 'My lips can't do it.'"
+  },
+  {
+   "action": "The rival doctor laughs in the doorway.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 40,
+   "start": 82.05,
+   "end": 83.85,
+   "dur": 1.8,
+   "in": "cut",
+   "brightness": {
+    "start": 147,
+    "mid": 145,
+    "end": 143
+   },
+   "colour": "#9a8f79",
+   "change": 8.11,
+   "sound": "-10.72 LUFS mean, -8.8 peak",
+   "voice": "(rival laughs)"
+  },
+  {
+   "action": "She weeps on the handrail; the gloss bottle is pushed into frame.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 41,
+   "start": 83.85,
+   "end": 86.49,
+   "dur": 2.64,
+   "in": "cut",
+   "brightness": {
+    "start": 123,
+    "mid": 121,
+    "end": 124
+   },
+   "colour": "#827767",
+   "change": 10.58,
+   "sound": "-18.2 LUFS mean, -10.71 peak",
+   "voice": "(sobs)"
+  },
+  {
+   "action": "The doctor leans in: 'You're better than this'; she takes the gloss, applies it and whips her hair.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 42,
+   "start": 86.49,
+   "end": 93.78,
+   "dur": 7.29,
+   "in": "cut",
+   "brightness": {
+    "start": 115,
+    "mid": 124,
+    "end": 102
+   },
+   "colour": "#7a796b",
+   "change": 14.87,
+   "sound": "-18.78 LUFS mean, -9.59 peak",
+   "voice": "Doctor: 'You're better than this.'"
+  },
+  {
+   "action": "93.5-94.1 hair-flip whip: she spins round into frame, hair flying; 94.1-95.1 settles facing camera, a diva half-smile, chin up; 95.15-96.80 sings out perfectly, rolling it, 'Cheese, fire, cheese, fire!' (Spanish practice words), shoulders swaying; 96.8-97.7 tilts head to the right, triumphant.",
+   "setup": "PHYSIO_MCU",
+   "location": "loc_physio_room (mint wall, teal ball on a grey ball on a stand, seascape print, medicine-ball rack)",
+   "cast": [
+    "char_heroine"
+   ],
+   "wardrobe": "char_heroine look 3: liquid gold lame wrap gown with big puffed shoulders and a plunging V, chunky gold collar necklace, big gold door-knocker earrings; hair teased twice as big",
+   "shot_size": "medium close-up",
+   "subject_in_frame": "Start (s43a, first 0.3 s): back of her head and a mass of hair blurring through lower right x 45-100%, y 40-100%, the grey exercise ball at x 30-55%, y 10-60%. From 94.2: she faces camera, head centre x 50%, y 30%, head 16% of width, hair spreading x 25-80%, gold shoulders across the bottom 40%; teal ball top-left x 30-45%, framed print top-right x 75-95%, y 5-35%, medicine-ball rack lower right.",
+   "camera": "eye level, normal lens (~50 mm), moderate depth of field (background soft but readable)",
+   "camera_move": "locked off; the move is hers: a whip turn into frame (hair flying) then a slow sway",
+   "light": "soft even warm-neutral daylight, gold lame shining; brightness 106 / 118 / 115",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Heroine on camera (L07): 'Cheese, fire, cheese, fire!' 95.15-96.80 (Spanish words in the source); the dance track kicks in at 97.4.",
+   "render": "Speaking shot: first frame plate s43a/s43b (from the boards + char_heroine_sheet + wardrobe look 3 + loc_physio_room) + guide_audio = a 4.2 s wav with set/lines/L07.wav placed at 1.57 s; ask for 'she whips her hair and turns to camera' in the first 0.6 s.",
+   "board": "boards/s43a.jpg",
+   "n": 43,
+   "start": 93.78,
+   "end": 98.7,
+   "dur": 4.92,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 106,
+    "mid": 118,
+    "end": 115
+   },
+   "colour": "#79735e",
+   "change": 14.53,
+   "sound": "-15.13 LUFS mean, -9.71 peak",
+   "voice": "Heroine: 'Cheese, fire, cheese, fire!' (Spanish)",
+   "boards": [
+    "boards/s43a.jpg",
+    "boards/s43b.jpg"
+   ]
+  },
+  {
+   "action": "99.79-100.93 she spins and shakes her hair, laughing, arms up, the gold sleeves flashing; the guard and a nurse dance in beside her.",
+   "setup": "LOBBY_HANDHELD",
+   "location": "loc_hospital_lobby (cream walls, pink arrow signs)",
+   "cast": [
+    "char_heroine",
+    "char_extras"
+   ],
+   "wardrobe": "char_heroine look 3 (gold lame gown, gold coil cuffs); extras: security guard in grey uniform shirt and black tie, nurses in light-blue scrubs",
+   "shot_size": "medium (handheld, in the dance)",
+   "subject_in_frame": "Heroine centre x 50%, y 40%, her hair a flying mass x 30-75%, arms up; security guard at left edge x 0-20%; male nurse in scrubs at right x 75-100% laughing; dancing arms in the background; pink arrow sign top centre-right.",
+   "camera": "eye level, handheld, slightly wide-normal lens (~32 mm), deep enough focus",
+   "camera_move": "handheld follow, energetic bob and sway (3-5% motion), slight orbit left",
+   "light": "warm golden soft overhead light; brightness 105 / 116 / 102",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Upbeat reggaeton dance track (score), crowd whoops.",
+   "render": "Picture shot, first + last frame: plate s44 (boards/s44.jpg + char_heroine wardrobe look 3 + char_extras_sheet + loc_hospital_lobby) -> plate with her turned; H3 'handheld energetic'; no speech.",
+   "board": "boards/s44.jpg",
+   "n": 44,
+   "start": 98.7,
+   "end": 100.93,
+   "dur": 2.24,
+   "in": "cut",
+   "brightness": {
+    "start": 105,
+    "mid": 116,
+    "end": 102
+   },
+   "colour": "#7d644b",
+   "change": 46.57,
+   "sound": "-10.44 LUFS mean, -8.87 peak",
+   "voice": "(dance music)"
+  },
+  {
+   "action": "100.93-101.88 everyone dances in sync around her: arms up, hips swinging; she shimmies centre with her arms out.",
+   "setup": "LOBBY_WIDE",
+   "location": "loc_hospital_lobby (curved reception counter, wheelchairs, IV pole)",
+   "cast": [
+    "char_heroine",
+    "char_extras"
+   ],
+   "wardrobe": "char_heroine look 3 (full-length gold lame gown, belted); extras in light-blue scrubs, guard in grey",
+   "shot_size": "wide (full bodies)",
+   "subject_in_frame": "Heroine centred x 50%, full body y 15-100%, about 14% of width; 8-10 dancers around her: guard (grey) left x 22-35%, nurses in light-blue scrubs at x 35-45% and x 55-90%; a patient in a wheelchair lower left x 0-12%; the reception counter across y 40-60% behind.",
+   "camera": "eye level, normal lens (~35 mm), deep focus",
+   "camera_move": "locked off with slight handheld float",
+   "light": "warm golden even light; brightness 117 / 113 / 111",
+   "text": [],
+   "out": "hard cut",
+   "audio": "Dance track (score).",
+   "render": "Picture shot, first + last frame: plate s45 (boards/s45.jpg + sheets + loc_hospital_lobby); no speech.",
+   "board": "boards/s45.jpg",
+   "n": 45,
+   "start": 100.93,
+   "end": 102.87,
+   "dur": 1.94,
+   "in": "cut",
+   "brightness": {
+    "start": 117,
+    "mid": 113,
+    "end": 111
+   },
+   "colour": "#826d56",
+   "change": 25.68,
+   "sound": "-10.55 LUFS mean, -8.89 peak",
+   "voice": "(dance music)"
+  },
+  {
+   "action": "The doctor in the lobby glances back and smiles.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 46,
+   "start": 102.87,
+   "end": 104.2,
+   "dur": 1.33,
+   "in": "cut",
+   "brightness": {
+    "start": 141,
+    "mid": 140,
+    "end": 140
+   },
+   "colour": "#a58668",
+   "change": 8.58,
+   "sound": "-10.08 LUFS mean, -8.89 peak",
+   "voice": "(dance music)"
+  },
+  {
+   "action": "Her close, dancing, blowing a kiss: 'Thank you, doctor' (Spanish).",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 47,
+   "start": 104.2,
+   "end": 107.84,
+   "dur": 3.64,
+   "in": "cut",
+   "brightness": {
+    "start": 105,
+    "mid": 87,
+    "end": 71
+   },
+   "colour": "#6e543d",
+   "change": 34.05,
+   "sound": "-10.23 LUFS mean, -8.29 peak",
+   "voice": "Heroine: 'Thank you, doctor.' (Spanish)"
+  },
+  {
+   "action": "The rival doctor by the elevators screams.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 48,
+   "start": 107.84,
+   "end": 109.38,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 134,
+    "mid": 129,
+    "end": 125
+   },
+   "colour": "#917e5f",
+   "change": 24.34,
+   "sound": "-7.49 LUFS mean, -5.36 peak",
+   "voice": "(rival screams)"
+  },
+  {
+   "action": "110.23-112.84 eyes closed, she presses a slow loving kiss to the gloss bottle and holds it there; a dreamy smile at the end.",
+   "setup": "TITLE_CARD",
+   "location": "loc_title_backdrop (crimson satin)",
+   "cast": [
+    "char_heroine",
+    "product_gloss"
+   ],
+   "wardrobe": "char_heroine look 4: blush-pink satin blouse with a big ruffled jabot collar, gold rings, long chestnut waves",
+   "shot_size": "close-up",
+   "subject_in_frame": "Her face in profile three-quarter facing left at the right edge: face x 62-90%, y 5-70%, eyes closed; hair falls off the right edge; both hands at lower right x 55-80%, y 60-100% hold the gloss bottle to her lips (bottle x 66%, y 40-62%). The left 55% is crimson satin where the script title sits.",
+   "camera": "eye level, normal-long lens (~85 mm), shallow depth of field on her; backdrop soft",
+   "camera_move": "slow push in about 104% over the shot and a slight drift right",
+   "light": "soft warm beauty light from front-left, pink bloom on the satin upper left; brightness 56 / 71 / 67 (#78332d)",
+   "text": [
+    {
+     "words": "{HEROINE}",
+     "where": "left of centre, x 5-58%, baseline y 62%",
+     "size": "script 53% of frame width, flowing copperplate with a big looping capital, silver chrome with bevel and a glint, slanted 15 degrees",
+     "in": "write-on left to right 0.00-1.30 s into the shot (cut30 25.18-26.48), holds",
+     "out": "shot end"
+    }
+   ],
+   "out": "hard cut (cut30 / cut15: straight to the end card)",
+   "audio": "Announcer sings the title name '{HEROINE}!' 110.25-111.65 (muted in the shipped audio; record the new name there); title theme music.",
+   "render": "Picture shot: first frame plate s49 (boards/s49b.jpg composition + char_heroine_sheet + wardrobe look 4 + product_gloss_sheet + loc_title_backdrop) with a slow push; the script title composited in post as a write-on mask over set/ui_title_script.jpg lettering.",
+   "board": "boards/s49a.jpg",
+   "n": 49,
+   "start": 109.38,
+   "end": 115.58,
+   "dur": 6.21,
+   "in": "cut",
+   "brightness": {
+    "start": 56,
+    "mid": 71,
+    "end": 67
+   },
+   "colour": "#78332d",
+   "change": 15.8,
+   "sound": "-17.9 LUFS mean, -7.67 peak",
+   "voice": "Announcer sings: '{HEROINE}!' (name muted)",
+   "boards": [
+    "boards/s49a.jpg",
+    "boards/s49b.jpg"
+   ]
+  },
+  {
+   "action": "The rival grabs the gloss at the reception desk: 'It's mine! It's mine!'; italic super 'To be continued...'.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 50,
+   "start": 115.58,
+   "end": 120.47,
+   "dur": 4.89,
+   "in": "cut",
+   "brightness": {
+    "start": 134,
+    "mid": 123,
+    "end": 105
+   },
+   "colour": "#8f795c",
+   "change": 29.97,
+   "sound": "-16.66 LUFS mean, -6.47 peak",
+   "voice": "Rival: 'It's mine! It's mine! It's mine!'"
+  },
+  {
+   "action": "The picture and super fade to black.",
+   "setup": null,
+   "location": null,
+   "cast": [],
+   "wardrobe": null,
+   "shot_size": null,
+   "subject_in_frame": null,
+   "camera": null,
+   "camera_move": null,
+   "light": null,
+   "text": [],
+   "out": null,
+   "audio": null,
+   "render": null,
+   "board": null,
+   "n": 51,
+   "start": 120.47,
+   "end": 121.25,
+   "dur": 0.78,
+   "in": "gradual (dissolve or fade, check)",
+   "brightness": {
+    "start": 95,
+    "mid": 0,
+    "end": 0
+   },
+   "colour": "#1f1b15",
+   "change": 94.6,
+   "sound": "-34.74 LUFS mean, -29.13 peak",
+   "voice": "(none)"
+  },
+  {
+   "action": "End card: the striped TV shapes slide together into the white {BRAND} badge with a crimson glow.",
+   "setup": "CARD_IDENT",
+   "location": "black field (motion graphics)",
+   "cast": [],
+   "wardrobe": "none",
+   "shot_size": "extreme wide (flat graphic card)",
+   "subject_in_frame": "As shot 1: 0.10-0.65 s two striped TV shapes, each 25% of width, centred side by side; from 0.65 s the white TV-shaped badge centred x 50%, y 50%, 25% of width, 37% of height, star glint at its top-right corner.",
+   "camera": "flat 2D graphic",
+   "camera_move": "graphic animation: 0.00-0.10 black; 0.10-0.45 striped shapes slide together; 0.45-0.65 stripes wipe out to reveal the badge; 0.65-1.10 crimson glow blooms; star glint at 1.10; holds to the end.",
+   "light": "flat graphic on black; brightness 8 / 32 / 41",
+   "text": [
+    {
+     "words": "{BRAND}",
+     "where": "on the badge, centred x 50%, y 50%",
+     "size": "wordmark 15% of frame width, thin Didone serif, lowercase, crimson #8c1030",
+     "in": 0.55,
+     "out": "end"
+    }
+   ],
+   "out": "end of film",
+   "audio": "Logo sting: a whoosh and a soft chime as the badge lands (score), then silence.",
+   "render": "Motion graphics drawn in code from set/ui_shutter.jpg and set/ui_endcard.jpg.",
+   "board": "boards/s52.jpg",
+   "n": 52,
+   "start": 121.25,
+   "end": 123.46,
+   "dur": 2.21,
+   "in": "from black",
+   "brightness": {
+    "start": 8,
+    "mid": 32,
+    "end": 41
+   },
+   "colour": "#2b191b",
+   "change": 13.37,
+   "sound": "-28.71 LUFS mean, -25.16 peak",
+   "voice": "(logo sting)",
+   "boards": [
+    "boards/s52a.jpg",
+    "boards/s52.jpg"
+   ]
+  }
+ ],
+ "sound": {
+  "silences": [],
+  "black": [
+   {
+    "start": 10.34,
+    "end": 10.71
+   },
+   {
+    "start": 120.75,
+    "end": 121.25
+   }
+  ],
+  "music": "Telenovela score throughout: a dramatic theme under the titles and the title card (10.4-18.4, 109.4-115.6), a soft romantic bed under the hospital dialogue, a reggaeton dance track from 97.4 to about 109 (party), a logo sting at 121.3. Tempo detected 115 bpm (bar 2.087 s).",
+  "speech": "Spoken on camera and as VO, mixed in the soundtrack: the announcer (ident, radio, title name), the heroine (comic panic, failed then perfect Spanish practice words), the doctor (slow, seductive, mock-grave). Spanish words in the source are given in English in the line text.",
+  "mix": "Dialogue forward (-15 to -20 LUFS mean per shot), music under; the crash scream peaks at -5.5 dB; the dance section is loudest (-7 to -11 LUFS).",
+  "name_mutes": "The shipped set/score.wav and lines have the brand word (0.30-1.05) and every spoken name of the heroine/star (11.35-12.65, 13.75-15.75, 16.20-17.20, 24.95-25.64, 110.22-111.68) muted to silence with 20 ms ramps; a new film records its own brand and heroine name in those windows."
+ },
+ "look": {
+  "grade": "Glossy soap-opera video look: warm, creamy, slightly high-key interiors with soft pastel sets (peach hospital room, mint physio room, cream-and-blush lobby); saturated crimson for the title cards; the night drive is cool dark teal-grey.",
+  "brightness": "Night car shots sit at 30-37 (headlight flash to 73); hospital and physio interiors 85-145 (macros 84-90, wide rooms 105-130); lobby 100-140; title cards on crimson satin 54-71; ident cards black with a crimson glow at 31-41.",
+  "contrast": "Medium-low; soft rolled highlights, open shadows (TV drama lighting).",
+  "light": "Big soft window-style keys, flattering beauty light on the heroine, practical warm lamps; no hard shadows except the headlight flash.",
+  "depth_of_field": "Shallow on close-ups and inserts (normal-long lenses), deep on the wides.",
+  "grain": "Clean digital, no visible grain; a light glow/bloom on the title cards.",
+  "colour": "Heroine's pinks and gold against mint, peach and cream sets; the product is the hottest pink in every frame."
+ },
+ "text_style": {
+  "ident": "Lowercase thin high-contrast Didone wordmark in deep crimson (#8c1030) on a white TV-screen-shaped badge, 'PRESENTS' in small bold spaced caps; badge centred, 25% of frame width; crimson radial glow on black.",
+  "title": "Soap-opera script title: flowing copperplate with a big looping capital, polished silver chrome with bevel and glint, slanted ~15 degrees, about 53% of frame width, left of centre, writing on left to right in about 1.3 s.",
+  "credit_super": "(not in the cuts) silver small-caps serif name super with a drop shadow, left third ('{ACTRESS} ES').",
+  "cliffhanger": "(not in the cuts) light italic script 'To be continued...' lower right, fading with the picture.",
+  "case": "lowercase wordmark; script title in title case"
+ },
+ "set": {
+  "char_heroine": {
+   "files": [
+    "set/char_heroine_sheet.jpg",
+    "set/char_heroine_wardrobe.jpg"
+   ],
+   "fixes": "The comedic leading lady, an invented woman: early 50s, curvy full figure, light olive skin, oval face with high cheekbones, dark brown almond eyes, strong arched brows, a small beauty mark above the left corner of her upper lip, long voluminous chestnut-brown glamour waves with a deep side part; soap-opera makeup, glossy rose lips. Big comic eyes, diva poise. Four looks (wardrobe sheet panels 1-4): 1 car: dusty-pink chunky cardigan + cream high-neck floral-embroidered blouse; 2 hospital: pale-blue gown with pink/navy diamond print; 3 transformed: liquid gold lame gown, puffed shoulders, gold coil cuffs, gold collar, door-knocker earrings, hair teased huge; 4 title card: blush satin blouse with ruffled jabot."
+  },
+  "char_doctor": {
+   "files": [
+    "set/char_doctor_sheet.jpg"
+   ],
+   "fixes": "The heartthrob doctor, an invented man: early 40s, tall, slim-athletic, warm tan skin, thick black wavy hair swept back with silver temples, dark brooding eyes, short neat black stubble beard; white lab coat open over a pale-blue shirt open two buttons, thin gold chain, steel watch, plain navy badge with a white caduceus icon and no text."
+  },
+  "char_extras": {
+   "files": [
+    "set/char_extras_sheet.jpg"
+   ],
+   "fixes": "Lobby dancers: nurses in light-blue scrubs (a young woman with a curly high puff, a slim young man with a stethoscope, a tall bald older man, a middle-aged woman with gold hoops) and a burly moustached security guard in a grey uniform shirt, black tie, plain red shoulder patch."
+  },
+  "product_gloss": {
+   "files": [
+    "set/product_gloss_sheet.jpg"
+   ],
+   "fixes": "The {PRODUCT}: a generic liquid lip gloss, small square clear thick-walled glass vial about 5 cm tall with a thick clear base, filled with glossy raspberry-pink gloss (#e0245e; reads deeper red #c8102e on the crimson title card), matte black square cap about 2.5 cm tall, white stem, slanted doe-foot applicator. No label, no print (the sheet's view captions are not on the product)."
+  },
+  "loc_car_night": {
+   "files": [
+    "set/loc_car_night.jpg"
+   ],
+   "fixes": "An older dark grey SUV at night on a dark suburban street, beige-grey cloth seats; very dark (picture brightness about 30)."
+  },
+  "loc_hospital_room": {
+   "files": [
+    "set/loc_hospital_room.jpg"
+   ],
+   "fixes": "Soap-opera private hospital room: bed with plump white pillows, peach walls, rust-brown drapes over white sheers, wall light box with two blue x-rays (skull, hand), monitor, pink-rose bouquet, gold swan ornament; bright warm (110-140)."
+  },
+  "loc_physio_room": {
+   "files": [
+    "set/loc_physio_room.jpg"
+   ],
+   "fixes": "Physiotherapy room: mint-green walls, teal curtains, wooden wall bars, a teal exercise ball on a silver-grey ball on a black stand, dark-green medicine-ball rack, grey treatment table, wooden practice stair, pastel seascape prints; soft daylight (about 115)."
+  },
+  "loc_hospital_lobby": {
+   "files": [
+    "set/loc_hospital_lobby.jpg"
+   ],
+   "fixes": "Warm hospital lobby: curved cream reception counter with pink trim, blush/cream walls, small pink arrow signs (no words), table lamps, plants, wheelchairs, IV pole; golden light (about 115)."
+  },
+  "loc_title_backdrop": {
+   "files": [
+    "set/loc_title_backdrop.jpg"
+   ],
+   "fixes": "Crimson satin backdrop for the title card, soft folds, pink bloom upper left (#6b1a20 to #c23a4a)."
+  },
+  "ui_ident": {
+   "files": [
+    "set/ui_shutter.jpg",
+    "set/ui_presents_card.jpg",
+    "set/ui_endcard.jpg"
+   ],
+   "fixes": "The ident: two striped TV-screen shapes (shutter), then the white TV-shaped badge with the lowercase Didone wordmark (default 'rosabel') + 'PRESENTS' (opening) or wordmark only (end card), crimson radial glow on black."
+  },
+  "ui_title": {
+   "files": [
+    "set/ui_title_script.jpg"
+   ],
+   "fixes": "The script title lettering: '{HEROINE}' (default 'Marisol') in silver chrome copperplate on crimson satin."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L08.wav"
+   ],
+   "fixes": "Every kept spoken line, cut from the soundtrack (music under), with word times; the guide audio for speaking shots and the timing target."
+  },
+  "voices": {
+   "files": [
+    "set/voice_heroine.wav",
+    "set/voice_doctor.wav",
+    "set/voice_announcer.wav"
+   ],
+   "fixes": "Timbre: heroine 9.9 s (comic, bright, mid-low, a little breathless), doctor 12.4 s (slow, warm baritone, seductive, mild accent), announcer 4.8 s (radio-promo energy; there is no more clean announcer speech in the film)."
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "The full soundtrack (music + dialogue + effects, names muted) and the two cut scores."
+  }
+ },
+ "slots": {
+  "BRAND": {
+   "default": "rosabel",
+   "where": "ident wordmark (shots 1 and 52), announcer VO L01 '{BRAND} presents.' (0.35-1.05 window)",
+   "swap": "the new brand's name, lowercase thin Didone serif, crimson, on the white TV badge"
+  },
+  "BRAND_MARK": {
+   "default": "white TV-screen-shaped badge with a star glint, crimson radial glow on black",
+   "swap": "keep the TV-badge shape (the telenovela-channel joke) in the brand's colour"
+  },
+  "BRAND_COLOUR": {
+   "default": "crimson #b0123c glow, wordmark #8c1030",
+   "swap": "the brand's colour for the glow and wordmark"
+  },
+  "PRODUCT": {
+   "default": "a liquid lip gloss: square clear glass vial, raspberry-pink gloss #e0245e, matte black square cap, doe-foot wand",
+   "where": "shots 14, 15, 17, 49 (and implied in 43)",
+   "swap": "another small beauty product that can be 'prescribed', applied on camera and kissed on the title card (gloss, lip oil, balm); keep its hottest-pink-in-frame role"
+  },
+  "HEROINE": {
+   "default": "Marisol",
+   "where": "the script title (shot 49, set/ui_title_script.jpg), the sung title VO L08, the doctor's line in shot 9",
+   "swap": "an invented first name with soap-opera flair, 2-3 syllables"
+  },
+  "SHOW": {
+   "default": "the world's biggest reggaeton show",
+   "where": "radio VO L02",
+   "swap": "the big event she must perform at tonight (keep 'Get ready for ...' and the length, 3.0 s)"
+  },
+  "PROBLEM": {
+   "default": "I don't speak Spanish!",
+   "where": "L03 (1.2 s)",
+   "swap": "the skill she lacks for the show, one panicked line of the same length"
+  },
+  "PRESCRIPTION": {
+   "default": "Normally, I wouldn't do this, but you need juicy lips so you can roll those R's.",
+   "where": "L06, the doctor, 8.1 s",
+   "swap": "why the product fixes the problem, same rhythm: a confiding opener, a pause, then the benefit"
+  },
+  "PROOF_LINE": {
+   "default": "Cheese, fire, cheese, fire! (spoken in Spanish in the source: 'Queso, fuego, queso, fuego')",
+   "where": "L07, the heroine, 1.65 s, shot 43",
+   "swap": "the practice words she now nails, 4 quick two-syllable words"
+  }
+ },
+ "cut30": {
+  "duration": 30.0,
+  "arc": "Hook (0-10.05): the ident ('{BRAND} presents'), then night in the car: the radio promises tonight's world's biggest reggaeton show, she blurts 'I don't speak Spanish!', the radio says 'unforgettable', headlights, snap zoom, scream. Middle (10.05-18.92): smash cut to the plot twist: the heartthrob doctor uncaps a lip gloss, 'Normally, I wouldn't do this, but you need juicy lips so you can roll those R's,' and glides it onto her lips. Payoff (18.92-25.18): transformed in gold she nails 'Cheese, fire, cheese, fire!' and the whole hospital lobby dances. Title + end card (25.18-30.0): she kisses the gloss under her own script title, then the {BRAND} TV-badge ident.",
+  "note": "Score joins: 10.052, 18.922, 23.096, 25.183, 27.792 (timeline). Joins sit on bar starts except 36.661 and 121.183 (src), which are on the beat before a bar (pickup beats) so the doctor's first word and the end card start clean; the segments sum to 30.069 s and the score is trimmed to 30.0 with a 0.15 s fade.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0,
+    "end": 2.27,
+    "dur": 2.27,
+    "src": [
+     0.0,
+     2.27
+    ],
+    "setup": "CARD_IDENT",
+    "board": "boards/s01.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 2.27,
+    "end": 5.41,
+    "dur": 3.14,
+    "src": [
+     2.27,
+     5.41
+    ],
+    "setup": "CAR_FRONT",
+    "board": "boards/s02.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 5.41,
+    "end": 8.78,
+    "dur": 3.37,
+    "src": [
+     5.41,
+     8.78
+    ],
+    "setup": "CAR_SIDE",
+    "board": "boards/s03.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 8.78,
+    "end": 10.052,
+    "dur": 1.272,
+    "src": [
+     8.78,
+     10.052
+    ],
+    "setup": "CAR_FRONT",
+    "board": "boards/s04a.jpg",
+    "change": "cut 0.29 s early at 10.052, on the scream, before the source's black flash"
+   },
+   {
+    "n": 5,
+    "from": 14,
+    "start": 10.052,
+    "end": 13.031,
+    "dur": 2.979,
+    "src": [
+     36.661,
+     39.64
+    ],
+    "setup": "GLOSS_INSERT",
+    "board": "boards/s14a.jpg",
+    "change": "starts 0.06 s in"
+   },
+   {
+    "n": 6,
+    "from": 15,
+    "start": 13.031,
+    "end": 14.401,
+    "dur": 1.37,
+    "src": [
+     39.64,
+     41.01
+    ],
+    "setup": "BED_OTS",
+    "board": "boards/s15.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 7,
+    "from": 16,
+    "start": 14.401,
+    "end": 17.071,
+    "dur": 2.67,
+    "src": [
+     41.01,
+     43.68
+    ],
+    "setup": "DOCTOR_MCU",
+    "board": "boards/s16.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 8,
+    "from": 17,
+    "start": 17.071,
+    "end": 18.871,
+    "dur": 1.8,
+    "src": [
+     43.68,
+     45.48
+    ],
+    "setup": "LIPS_MACRO",
+    "board": "boards/s17.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 9,
+    "from": 43,
+    "start": 18.871,
+    "end": 23.096,
+    "dur": 4.225,
+    "src": [
+     93.48,
+     97.705
+    ],
+    "setup": "PHYSIO_MCU",
+    "board": "boards/s43a.jpg",
+    "change": "opens on the last 0.30 s of source shot 42 (her hair whip, the same motion) and ends 1.0 s early; the picture leads the score join by 0.05 s"
+   },
+   {
+    "n": 10,
+    "from": 44,
+    "start": 23.096,
+    "end": 24.235,
+    "dur": 1.139,
+    "src": [
+     99.791,
+     100.93
+    ],
+    "setup": "LOBBY_HANDHELD",
+    "board": "boards/s44.jpg",
+    "change": "only its last 1.14 s"
+   },
+   {
+    "n": 11,
+    "from": 45,
+    "start": 24.235,
+    "end": 25.183,
+    "dur": 0.948,
+    "src": [
+     100.93,
+     101.878
+    ],
+    "setup": "LOBBY_WIDE",
+    "board": "boards/s45.jpg",
+    "change": "only its first 0.95 s"
+   },
+   {
+    "n": 12,
+    "from": 49,
+    "start": 25.183,
+    "end": 27.792,
+    "dur": 2.609,
+    "src": [
+     110.226,
+     112.835
+    ],
+    "setup": "TITLE_CARD",
+    "board": "boards/s49a.jpg",
+    "change": "a 2.61 s window from 0.85 s in: the title writes on and she kisses the gloss"
+   },
+   {
+    "n": 13,
+    "from": 52,
+    "start": 27.792,
+    "end": 30.0,
+    "dur": 2.208,
+    "src": [
+     121.183,
+     123.391
+    ],
+    "setup": "CARD_IDENT",
+    "board": "boards/s52.jpg",
+    "change": "starts 0.07 s early on black; trimmed 0.07 s at the end"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "{BRAND} presents.",
+    "speaker": "announcer (VO)",
+    "start": 0.35,
+    "end": 1.9,
+    "clip": "set/lines/L01.wav",
+    "in_score": true,
+    "placement": "VO over shot 1; brand word muted 0.35-1.05"
+   },
+   {
+    "id": "L02",
+    "words": "Get ready for the world's biggest reggaeton show. It's going to be a...",
+    "speaker": "announcer (car radio VO)",
+    "start": 2.55,
+    "end": 6.48,
+    "clip": "set/lines/L02.wav",
+    "in_score": true,
+    "placement": "radio VO over shots 2-3"
+   },
+   {
+    "id": "L03",
+    "words": "I don't speak Spanish!",
+    "speaker": "heroine",
+    "start": 6.62,
+    "end": 7.72,
+    "clip": "set/lines/L03.wav",
+    "in_score": true,
+    "placement": "on camera, shot 3"
+   },
+   {
+    "id": "L04",
+    "words": "...unforgettable.",
+    "speaker": "announcer (car radio VO)",
+    "start": 8.05,
+    "end": 9.0,
+    "clip": "set/lines/L04.wav",
+    "in_score": true,
+    "placement": "radio VO over the cut 3->4"
+   },
+   {
+    "id": "L05",
+    "words": "(scream)",
+    "speaker": "heroine",
+    "start": 9.0,
+    "end": 10.052,
+    "clip": "set/lines/L05.wav",
+    "in_score": true,
+    "placement": "on camera, shot 4; shortened by the cut"
+   },
+   {
+    "id": "L06",
+    "words": "Normally, I wouldn't do this, but you need juicy lips so you can roll those R's.",
+    "speaker": "doctor",
+    "start": 10.131,
+    "end": 18.191,
+    "clip": "set/lines/L06.wav",
+    "in_score": true,
+    "placement": "VO over shots 5-6 and 8, on camera in shot 7 (14.40-17.07)"
+   },
+   {
+    "id": "L07",
+    "words": "Cheese, fire, cheese, fire!",
+    "speaker": "heroine",
+    "start": 20.541,
+    "end": 22.191,
+    "clip": "set/lines/L07.wav",
+    "in_score": true,
+    "placement": "on camera, shot 9 (spoken in Spanish in the source)"
+   },
+   {
+    "id": "L08",
+    "words": "{HEROINE}!",
+    "speaker": "announcer (sung, VO)",
+    "start": 25.207,
+    "end": 26.607,
+    "clip": "set/lines/L08.wav",
+    "in_score": true,
+    "placement": "VO over shot 12; the name is muted in the shipped audio"
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 10.052
+    },
+    {
+     "src_in": 36.661,
+     "src_out": 45.531
+    },
+    {
+     "src_in": 93.531,
+     "src_out": 97.705
+    },
+    {
+     "src_in": 99.791,
+     "src_out": 101.878
+    },
+    {
+     "src_in": 110.226,
+     "src_out": 112.835
+    },
+    {
+     "src_in": 121.183,
+     "src_out": 123.46
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15
+  },
+  "text": [
+   {
+    "words": "{BRAND} / PRESENTS",
+    "shot": 1,
+    "in": 0.55,
+    "out": 2.27
+   },
+   {
+    "words": "{HEROINE} (script title, write-on)",
+    "shot": 12,
+    "in": 25.183,
+    "out": 27.792
+   },
+   {
+    "words": "{BRAND}",
+    "shot": 13,
+    "in": 28.35,
+    "out": 30.0
+   }
+  ],
+  "end_card": {
+   "shot": 13,
+   "start": 27.792,
+   "end": 30.0,
+   "content": "black -> striped TV shapes slide together (27.89-28.25) -> white TV badge with the {BRAND} wordmark and crimson glow (from 28.45) -> holds to 30.0"
+  },
+  "average_shot": 2.31
+ },
+ "cut15": {
+  "duration": 15.0,
+  "arc": "Hook (0-4.38): in the car at night she blurts 'I don't speak Spanish!' as the radio promises an 'unforgettable' show; headlights, snap zoom, scream. Proof (4.38-6.98): the doctor uncaps the lip gloss: 'Normally, I wouldn't do this...'. Payoff (6.98-10.64): transformed in gold she nails 'Cheese, fire, cheese, fire!'. Title + end card (10.64-15.0): she kisses the gloss under her script title; the {BRAND} TV-badge ident.",
+  "note": "The 30 s cut tightened: no ident opener, the car starts on the radio's last words, the gloss proof is the uncapping insert only, no dance party. Score joins at 4.375, 6.984, 10.636, 12.723; 36.661 and 121.183 are pickup beats (see cut30). Segments sum to exactly 15.0.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 3,
+    "start": 0,
+    "end": 3.103,
+    "dur": 3.103,
+    "src": [
+     5.677,
+     8.78
+    ],
+    "setup": "CAR_SIDE",
+    "board": "boards/s03.jpg",
+    "change": "starts 0.27 s in, on 'It's going to be a...'"
+   },
+   {
+    "n": 2,
+    "from": 4,
+    "start": 3.103,
+    "end": 4.375,
+    "dur": 1.272,
+    "src": [
+     8.78,
+     10.052
+    ],
+    "setup": "CAR_FRONT",
+    "board": "boards/s04a.jpg",
+    "change": "cut at 10.052 on the scream"
+   },
+   {
+    "n": 3,
+    "from": 14,
+    "start": 4.375,
+    "end": 6.984,
+    "dur": 2.609,
+    "src": [
+     36.661,
+     39.27
+    ],
+    "setup": "GLOSS_INSERT",
+    "board": "boards/s14a.jpg",
+    "change": "ends 0.37 s early, right after 'I wouldn't do this'"
+   },
+   {
+    "n": 4,
+    "from": 43,
+    "start": 6.984,
+    "end": 10.636,
+    "dur": 3.652,
+    "src": [
+     93.531,
+     97.183
+    ],
+    "setup": "PHYSIO_MCU",
+    "board": "boards/s43a.jpg",
+    "change": "opens on the last 0.25 s of shot 42's hair whip, ends 1.5 s early after the line"
+   },
+   {
+    "n": 5,
+    "from": 49,
+    "start": 10.636,
+    "end": 12.723,
+    "dur": 2.087,
+    "src": [
+     110.226,
+     112.313
+    ],
+    "setup": "TITLE_CARD",
+    "board": "boards/s49a.jpg",
+    "change": "2.09 s: the title writes on and she kisses the gloss"
+   },
+   {
+    "n": 6,
+    "from": 52,
+    "start": 12.723,
+    "end": 15.0,
+    "dur": 2.277,
+    "src": [
+     121.183,
+     123.46
+    ],
+    "setup": "CARD_IDENT",
+    "board": "boards/s52.jpg",
+    "change": "full end card"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L02",
+    "words": "It's going to be a...",
+    "speaker": "announcer (car radio VO)",
+    "start": 0.173,
+    "end": 0.803,
+    "clip": "set/lines/L02.wav",
+    "in_score": true,
+    "clip_window": [
+     3.4,
+     4.03
+    ],
+    "placement": "radio VO, tail of L02 only"
+   },
+   {
+    "id": "L03",
+    "words": "I don't speak Spanish!",
+    "speaker": "heroine",
+    "start": 0.943,
+    "end": 2.043,
+    "clip": "set/lines/L03.wav",
+    "in_score": true,
+    "placement": "on camera, shot 1"
+   },
+   {
+    "id": "L04",
+    "words": "...unforgettable.",
+    "speaker": "announcer (car radio VO)",
+    "start": 2.373,
+    "end": 3.323,
+    "clip": "set/lines/L04.wav",
+    "in_score": true,
+    "placement": "radio VO over the cut 1->2"
+   },
+   {
+    "id": "L05",
+    "words": "(scream)",
+    "speaker": "heroine",
+    "start": 3.323,
+    "end": 4.375,
+    "clip": "set/lines/L05.wav",
+    "in_score": true,
+    "placement": "on camera, shot 2"
+   },
+   {
+    "id": "L06",
+    "words": "Normally, I wouldn't do this...",
+    "speaker": "doctor",
+    "start": 4.454,
+    "end": 6.914,
+    "clip": "set/lines/L06.wav",
+    "in_score": true,
+    "clip_window": [
+     0.06,
+     2.52
+    ],
+    "placement": "VO over shot 3 (first 2.5 s of L06 only)"
+   },
+   {
+    "id": "L07",
+    "words": "Cheese, fire, cheese, fire!",
+    "speaker": "heroine",
+    "start": 8.603,
+    "end": 10.253,
+    "clip": "set/lines/L07.wav",
+    "in_score": true,
+    "placement": "on camera, shot 4 (Spanish in the source)"
+   },
+   {
+    "id": "L08",
+    "words": "{HEROINE}!",
+    "speaker": "announcer (sung, VO)",
+    "start": 10.66,
+    "end": 12.06,
+    "clip": "set/lines/L08.wav",
+    "in_score": true,
+    "placement": "VO over shot 5; name muted"
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 5.677,
+     "src_out": 10.052
+    },
+    {
+     "src_in": 36.661,
+     "src_out": 39.27
+    },
+    {
+     "src_in": 93.531,
+     "src_out": 97.183
+    },
+    {
+     "src_in": 110.226,
+     "src_out": 112.313
+    },
+    {
+     "src_in": 121.183,
+     "src_out": 123.46
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15
+  },
+  "text": [
+   {
+    "words": "{HEROINE} (script title, write-on)",
+    "shot": 5,
+    "in": 10.636,
+    "out": 12.723
+   },
+   {
+    "words": "{BRAND}",
+    "shot": 6,
+    "in": 13.28,
+    "out": 15.0
+   }
+  ],
+  "end_card": {
+   "shot": 6,
+   "start": 12.723,
+   "end": 15.0,
+   "content": "black -> striped TV shapes slide together -> white TV badge with the {BRAND} wordmark and crimson glow from 13.38, holds to 15.0"
+  },
+  "average_shot": 2.5
+ }
+}

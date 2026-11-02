@@ -1,0 +1,1702 @@
+{
+ "about": "The film's recorded lines: one clip per line (set/lines/Lnn.wav), cut at phrase boundaries from a separated vocal stem of the source, 48 kHz mono, 10 ms fades. Use each as guide_audio for its speaking shot and as the timing target; never retime. Times: 'src' = first-to-last word in the source (= cut30); 'clip_src' = the clip's extent; 'clip' = word times inside the wav; 'cut15' = the 15 s timeline (null when not in that cut). Word times are forced word timestamps on the stem (good to about 0.05-0.1 s), first and last word snapped to the voice envelope. 'muted' windows are silenced in the clip (the source's brand name, hero name and tagline): record exactly those windows with the slot words in the same voice.",
+ "speakers": {
+  "narrator": "voice-over, warm wry deadpan male narrator (voice_narrator.wav)",
+  "hero": "the doll hero, bright earnest male voice; on camera but the doll's mouth never moves (voice_hero.wav)"
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "file": "set/lines/L01.wav",
+   "speaker": "narrator",
+   "words_text": "When every day feels the same, one man wants more.",
+   "src": [
+    0.12,
+    3.06
+   ],
+   "clip_src": [
+    0.06,
+    3.1
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "When",
+     "src": [
+      0.12,
+      0.24
+     ],
+     "clip": [
+      0.06,
+      0.18
+     ]
+    },
+    {
+     "w": "When",
+     "src": [
+      0.0,
+      0.24
+     ],
+     "clip": [
+      -0.06,
+      0.18
+     ]
+    },
+    {
+     "w": "every",
+     "src": [
+      0.24,
+      0.52
+     ],
+     "clip": [
+      0.18,
+      0.46
+     ]
+    },
+    {
+     "w": "day",
+     "src": [
+      0.52,
+      0.74
+     ],
+     "clip": [
+      0.46,
+      0.68
+     ]
+    },
+    {
+     "w": "feels",
+     "src": [
+      0.74,
+      1.08
+     ],
+     "clip": [
+      0.68,
+      1.02
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      1.08,
+      1.32
+     ],
+     "clip": [
+      1.02,
+      1.26
+     ]
+    },
+    {
+     "w": "same,",
+     "src": [
+      1.32,
+      1.66
+     ],
+     "clip": [
+      1.26,
+      1.6
+     ]
+    },
+    {
+     "w": "one",
+     "src": [
+      1.92,
+      2.04
+     ],
+     "clip": [
+      1.86,
+      1.98
+     ]
+    },
+    {
+     "w": "man",
+     "src": [
+      2.04,
+      2.3
+     ],
+     "clip": [
+      1.98,
+      2.24
+     ]
+    },
+    {
+     "w": "wants",
+     "src": [
+      2.3,
+      2.68
+     ],
+     "clip": [
+      2.24,
+      2.62
+     ]
+    },
+    {
+     "w": "more.",
+     "src": [
+      2.68,
+      3.06
+     ],
+     "clip": [
+      2.62,
+      3.0
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    0.12,
+    3.06
+   ],
+   "clip_cut30": [
+    0.06,
+    3.1
+   ],
+   "cut15": null,
+   "placement": "voice-over over shots 1-2"
+  },
+  {
+   "id": "L02",
+   "file": "set/lines/L02.wav",
+   "speaker": "hero",
+   "words_text": "I need an adventure.",
+   "src": [
+    3.14,
+    4.12
+   ],
+   "clip_src": [
+    3.1,
+    4.3
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "I",
+     "src": [
+      3.14,
+      3.18
+     ],
+     "clip": [
+      0.04,
+      0.08
+     ]
+    },
+    {
+     "w": "need",
+     "src": [
+      3.18,
+      3.4
+     ],
+     "clip": [
+      0.08,
+      0.3
+     ]
+    },
+    {
+     "w": "an",
+     "src": [
+      3.4,
+      3.58
+     ],
+     "clip": [
+      0.3,
+      0.48
+     ]
+    },
+    {
+     "w": "adventure.",
+     "src": [
+      3.58,
+      4.12
+     ],
+     "clip": [
+      0.48,
+      1.02
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    3.14,
+    4.12
+   ],
+   "clip_cut30": [
+    3.1,
+    4.3
+   ],
+   "cut15": [
+    0.18,
+    1.16
+   ],
+   "clip_cut15": [
+    0.14,
+    1.34
+   ],
+   "placement": "on camera, shot 3"
+  },
+  {
+   "id": "L03",
+   "file": "set/lines/L03.wav",
+   "speaker": "narrator",
+   "words_text": "So {HERO} goes to {BRAND}.",
+   "src": [
+    4.48,
+    6.02
+   ],
+   "clip_src": [
+    4.4,
+    6.16
+   ],
+   "muted": [
+    {
+     "slot": "{HERO}",
+     "src": [
+      4.7,
+      4.95
+     ],
+     "clip": [
+      0.3,
+      0.55
+     ],
+     "dur": 0.25
+    },
+    {
+     "slot": "{BRAND}.",
+     "src": [
+      5.42,
+      6.06
+     ],
+     "clip": [
+      1.02,
+      1.66
+     ],
+     "dur": 0.64
+    }
+   ],
+   "words": [
+    {
+     "w": "So",
+     "src": [
+      4.48,
+      4.72
+     ],
+     "clip": [
+      0.08,
+      0.32
+     ]
+    },
+    {
+     "w": "{HERO} (muted; source word: name)",
+     "src": [
+      4.72,
+      4.94
+     ],
+     "clip": [
+      0.32,
+      0.54
+     ]
+    },
+    {
+     "w": "goes",
+     "src": [
+      4.94,
+      5.24
+     ],
+     "clip": [
+      0.54,
+      0.84
+     ]
+    },
+    {
+     "w": "to",
+     "src": [
+      5.24,
+      5.44
+     ],
+     "clip": [
+      0.84,
+      1.04
+     ]
+    },
+    {
+     "w": "{BRAND}. (muted; source word: brand)",
+     "src": [
+      5.44,
+      6.02
+     ],
+     "clip": [
+      1.04,
+      1.62
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    4.48,
+    6.02
+   ],
+   "clip_cut30": [
+    4.4,
+    6.16
+   ],
+   "cut15": [
+    1.52,
+    3.06
+   ],
+   "clip_cut15": [
+    1.44,
+    3.2
+   ],
+   "placement": "voice-over, shots 3-4"
+  },
+  {
+   "id": "L04",
+   "file": "set/lines/L04.wav",
+   "speaker": "narrator",
+   "words_text": "{TAGLINE}",
+   "src": [
+    6.34,
+    8.06
+   ],
+   "clip_src": [
+    6.24,
+    8.16
+   ],
+   "muted": [
+    {
+     "slot": "{TAGLINE}",
+     "src": [
+      6.26,
+      8.12
+     ],
+     "clip": [
+      0.02,
+      1.88
+     ],
+     "dur": 1.86
+    }
+   ],
+   "words": [
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      6.34,
+      6.46
+     ],
+     "clip": [
+      0.1,
+      0.22
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      6.46,
+      6.64
+     ],
+     "clip": [
+      0.22,
+      0.4
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      6.64,
+      6.84
+     ],
+     "clip": [
+      0.4,
+      0.6
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      6.84,
+      7.0
+     ],
+     "clip": [
+      0.6,
+      0.76
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      7.0,
+      7.2
+     ],
+     "clip": [
+      0.76,
+      0.96
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      7.2,
+      7.4
+     ],
+     "clip": [
+      0.96,
+      1.16
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      7.4,
+      7.56
+     ],
+     "clip": [
+      1.16,
+      1.32
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      7.56,
+      8.06
+     ],
+     "clip": [
+      1.32,
+      1.82
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    6.34,
+    8.06
+   ],
+   "clip_cut30": [
+    6.24,
+    8.16
+   ],
+   "cut15": null,
+   "placement": "voice-over, shot 4 (tagline slot, muted clip)"
+  },
+  {
+   "id": "L05",
+   "file": "set/lines/L05.wav",
+   "speaker": "hero",
+   "words_text": "So if I book my flight now but my stay later?",
+   "src": [
+    8.35,
+    10.65
+   ],
+   "clip_src": [
+    8.25,
+    10.7
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "So",
+     "src": [
+      8.35,
+      8.54
+     ],
+     "clip": [
+      0.1,
+      0.29
+     ]
+    },
+    {
+     "w": "if",
+     "src": [
+      8.54,
+      8.66
+     ],
+     "clip": [
+      0.29,
+      0.41
+     ]
+    },
+    {
+     "w": "I",
+     "src": [
+      8.66,
+      8.78
+     ],
+     "clip": [
+      0.41,
+      0.53
+     ]
+    },
+    {
+     "w": "book",
+     "src": [
+      8.78,
+      8.92
+     ],
+     "clip": [
+      0.53,
+      0.67
+     ]
+    },
+    {
+     "w": "my",
+     "src": [
+      8.92,
+      9.14
+     ],
+     "clip": [
+      0.67,
+      0.89
+     ]
+    },
+    {
+     "w": "flight",
+     "src": [
+      9.14,
+      9.38
+     ],
+     "clip": [
+      0.89,
+      1.13
+     ]
+    },
+    {
+     "w": "now",
+     "src": [
+      9.38,
+      9.66
+     ],
+     "clip": [
+      1.13,
+      1.41
+     ]
+    },
+    {
+     "w": "but",
+     "src": [
+      9.66,
+      9.82
+     ],
+     "clip": [
+      1.41,
+      1.57
+     ]
+    },
+    {
+     "w": "my",
+     "src": [
+      9.82,
+      9.98
+     ],
+     "clip": [
+      1.57,
+      1.73
+     ]
+    },
+    {
+     "w": "stay",
+     "src": [
+      9.98,
+      10.22
+     ],
+     "clip": [
+      1.73,
+      1.97
+     ]
+    },
+    {
+     "w": "later.",
+     "src": [
+      10.22,
+      10.65
+     ],
+     "clip": [
+      1.97,
+      2.4
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    8.35,
+    10.65
+   ],
+   "clip_cut30": [
+    8.25,
+    10.7
+   ],
+   "cut15": null,
+   "placement": "on camera (wide), shot 5"
+  },
+  {
+   "id": "L06",
+   "file": "set/lines/L06.wav",
+   "speaker": "narrator",
+   "words_text": "Book now or add later. You still save.",
+   "src": [
+    10.76,
+    13.26
+   ],
+   "clip_src": [
+    10.7,
+    13.4
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "Book",
+     "src": [
+      10.76,
+      10.94
+     ],
+     "clip": [
+      0.06,
+      0.24
+     ]
+    },
+    {
+     "w": "now",
+     "src": [
+      10.94,
+      11.26
+     ],
+     "clip": [
+      0.24,
+      0.56
+     ]
+    },
+    {
+     "w": "or",
+     "src": [
+      11.26,
+      11.56
+     ],
+     "clip": [
+      0.56,
+      0.86
+     ]
+    },
+    {
+     "w": "add",
+     "src": [
+      11.56,
+      11.82
+     ],
+     "clip": [
+      0.86,
+      1.12
+     ]
+    },
+    {
+     "w": "later.",
+     "src": [
+      11.82,
+      12.14
+     ],
+     "clip": [
+      1.12,
+      1.44
+     ]
+    },
+    {
+     "w": "You",
+     "src": [
+      12.38,
+      12.48
+     ],
+     "clip": [
+      1.68,
+      1.78
+     ]
+    },
+    {
+     "w": "still",
+     "src": [
+      12.48,
+      12.7
+     ],
+     "clip": [
+      1.78,
+      2.0
+     ]
+    },
+    {
+     "w": "save.",
+     "src": [
+      12.7,
+      13.26
+     ],
+     "clip": [
+      2.0,
+      2.56
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    10.76,
+    13.26
+   ],
+   "clip_cut30": [
+    10.7,
+    13.4
+   ],
+   "cut15": [
+    3.48,
+    5.98
+   ],
+   "clip_cut15": [
+    3.42,
+    6.12
+   ],
+   "placement": "voice-over, shots 6-7"
+  },
+  {
+   "id": "L07",
+   "file": "set/lines/L07.wav",
+   "speaker": "hero",
+   "words_text": "Thanks, voice in the sky.",
+   "src": [
+    13.82,
+    14.86
+   ],
+   "clip_src": [
+    13.7,
+    15.1
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "Thanks,",
+     "src": [
+      13.82,
+      14.08
+     ],
+     "clip": [
+      0.12,
+      0.38
+     ]
+    },
+    {
+     "w": "voice",
+     "src": [
+      14.16,
+      14.26
+     ],
+     "clip": [
+      0.46,
+      0.56
+     ]
+    },
+    {
+     "w": "in",
+     "src": [
+      14.26,
+      14.44
+     ],
+     "clip": [
+      0.56,
+      0.74
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      14.44,
+      14.56
+     ],
+     "clip": [
+      0.74,
+      0.86
+     ]
+    },
+    {
+     "w": "sky.",
+     "src": [
+      14.56,
+      14.86
+     ],
+     "clip": [
+      0.86,
+      1.16
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    13.82,
+    14.86
+   ],
+   "clip_cut30": [
+    13.7,
+    15.1
+   ],
+   "cut15": [
+    6.54,
+    7.58
+   ],
+   "clip_cut15": [
+    6.42,
+    7.82
+   ],
+   "placement": "on camera, shot 7"
+  },
+  {
+   "id": "L08",
+   "file": "set/lines/L08.wav",
+   "speaker": "narrator",
+   "words_text": "The more {HERO} travels, the more he saves.",
+   "src": [
+    15.18,
+    17.48
+   ],
+   "clip_src": [
+    15.1,
+    17.52
+   ],
+   "muted": [
+    {
+     "slot": "{HERO}",
+     "src": [
+      15.46,
+      15.71
+     ],
+     "clip": [
+      0.36,
+      0.61
+     ],
+     "dur": 0.25
+    }
+   ],
+   "words": [
+    {
+     "w": "The",
+     "src": [
+      15.18,
+      15.32
+     ],
+     "clip": [
+      0.08,
+      0.22
+     ]
+    },
+    {
+     "w": "more",
+     "src": [
+      15.32,
+      15.48
+     ],
+     "clip": [
+      0.22,
+      0.38
+     ]
+    },
+    {
+     "w": "{HERO} (muted; source word: name)",
+     "src": [
+      15.48,
+      15.7
+     ],
+     "clip": [
+      0.38,
+      0.6
+     ]
+    },
+    {
+     "w": "travels,",
+     "src": [
+      15.7,
+      16.16
+     ],
+     "clip": [
+      0.6,
+      1.06
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      16.42,
+      16.56
+     ],
+     "clip": [
+      1.32,
+      1.46
+     ]
+    },
+    {
+     "w": "more",
+     "src": [
+      16.56,
+      16.74
+     ],
+     "clip": [
+      1.46,
+      1.64
+     ]
+    },
+    {
+     "w": "he",
+     "src": [
+      16.74,
+      16.94
+     ],
+     "clip": [
+      1.64,
+      1.84
+     ]
+    },
+    {
+     "w": "saves.",
+     "src": [
+      16.94,
+      17.48
+     ],
+     "clip": [
+      1.84,
+      2.38
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    15.18,
+    17.48
+   ],
+   "clip_cut30": [
+    15.1,
+    17.52
+   ],
+   "cut15": null,
+   "placement": "voice-over, shot 8"
+  },
+  {
+   "id": "L09",
+   "file": "set/lines/L09.wav",
+   "speaker": "narrator",
+   "words_text": "Bundling flights, stays and cars.",
+   "src": [
+    17.61,
+    19.56
+   ],
+   "clip_src": [
+    17.52,
+    19.9
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "Bundling",
+     "src": [
+      17.61,
+      18.0
+     ],
+     "clip": [
+      0.09,
+      0.48
+     ]
+    },
+    {
+     "w": "flights,",
+     "src": [
+      18.0,
+      18.36
+     ],
+     "clip": [
+      0.48,
+      0.84
+     ]
+    },
+    {
+     "w": "stays,",
+     "src": [
+      18.8,
+      18.9
+     ],
+     "clip": [
+      1.28,
+      1.38
+     ]
+    },
+    {
+     "w": "and",
+     "src": [
+      19.12,
+      19.22
+     ],
+     "clip": [
+      1.6,
+      1.7
+     ]
+    },
+    {
+     "w": "cars.",
+     "src": [
+      19.22,
+      19.56
+     ],
+     "clip": [
+      1.7,
+      2.04
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    17.61,
+    19.56
+   ],
+   "clip_cut30": [
+    17.52,
+    19.9
+   ],
+   "cut15": null,
+   "placement": "voice-over, shots 9-10"
+  },
+  {
+   "id": "L10",
+   "file": "set/lines/L10.wav",
+   "speaker": "hero",
+   "words_text": "Good horsey.",
+   "src": [
+    19.98,
+    20.58
+   ],
+   "clip_src": [
+    19.9,
+    20.62
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "Good",
+     "src": [
+      19.98,
+      20.1
+     ],
+     "clip": [
+      0.08,
+      0.2
+     ]
+    },
+    {
+     "w": "horsey.",
+     "src": [
+      20.1,
+      20.58
+     ],
+     "clip": [
+      0.2,
+      0.68
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    19.98,
+    20.58
+   ],
+   "clip_cut30": [
+    19.9,
+    20.62
+   ],
+   "cut15": null,
+   "placement": "on camera (extreme wide), shot 10"
+  },
+  {
+   "id": "L11",
+   "file": "set/lines/L11.wav",
+   "speaker": "narrator",
+   "words_text": "He even got this rental with his rewards.",
+   "src": [
+    20.72,
+    22.58
+   ],
+   "clip_src": [
+    20.62,
+    22.61
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "He",
+     "src": [
+      20.72,
+      20.8
+     ],
+     "clip": [
+      0.1,
+      0.18
+     ]
+    },
+    {
+     "w": "even",
+     "src": [
+      20.8,
+      21.02
+     ],
+     "clip": [
+      0.18,
+      0.4
+     ]
+    },
+    {
+     "w": "got",
+     "src": [
+      21.02,
+      21.18
+     ],
+     "clip": [
+      0.4,
+      0.56
+     ]
+    },
+    {
+     "w": "this",
+     "src": [
+      21.18,
+      21.36
+     ],
+     "clip": [
+      0.56,
+      0.74
+     ]
+    },
+    {
+     "w": "rental",
+     "src": [
+      21.36,
+      21.64
+     ],
+     "clip": [
+      0.74,
+      1.02
+     ]
+    },
+    {
+     "w": "with",
+     "src": [
+      21.64,
+      21.9
+     ],
+     "clip": [
+      1.02,
+      1.28
+     ]
+    },
+    {
+     "w": "his",
+     "src": [
+      21.9,
+      22.04
+     ],
+     "clip": [
+      1.28,
+      1.42
+     ]
+    },
+    {
+     "w": "rewards.",
+     "src": [
+      22.04,
+      22.58
+     ],
+     "clip": [
+      1.42,
+      1.96
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    20.72,
+    22.58
+   ],
+   "clip_cut30": [
+    20.62,
+    22.61
+   ],
+   "cut15": [
+    9.22,
+    11.08
+   ],
+   "clip_cut15": [
+    9.12,
+    11.11
+   ],
+   "placement": "voice-over, shots 11-12"
+  },
+  {
+   "id": "L12",
+   "file": "set/lines/L12.wav",
+   "speaker": "hero",
+   "words_text": "In {HERO} math, it was free.",
+   "src": [
+    22.66,
+    24.05
+   ],
+   "clip_src": [
+    22.61,
+    24.12
+   ],
+   "muted": [
+    {
+     "slot": "{HERO}",
+     "src": [
+      22.8,
+      23.05
+     ],
+     "clip": [
+      0.19,
+      0.44
+     ],
+     "dur": 0.25
+    }
+   ],
+   "words": [
+    {
+     "w": "In",
+     "src": [
+      22.66,
+      22.82
+     ],
+     "clip": [
+      0.05,
+      0.21
+     ]
+    },
+    {
+     "w": "{HERO} (muted; source word: name)",
+     "src": [
+      22.82,
+      23.04
+     ],
+     "clip": [
+      0.21,
+      0.43
+     ]
+    },
+    {
+     "w": "math,",
+     "src": [
+      23.04,
+      23.28
+     ],
+     "clip": [
+      0.43,
+      0.67
+     ]
+    },
+    {
+     "w": "it",
+     "src": [
+      23.44,
+      23.56
+     ],
+     "clip": [
+      0.83,
+      0.95
+     ]
+    },
+    {
+     "w": "was",
+     "src": [
+      23.56,
+      23.68
+     ],
+     "clip": [
+      0.95,
+      1.07
+     ]
+    },
+    {
+     "w": "free.",
+     "src": [
+      23.68,
+      24.05
+     ],
+     "clip": [
+      1.07,
+      1.44
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    22.66,
+    24.05
+   ],
+   "clip_cut30": [
+    22.61,
+    24.12
+   ],
+   "cut15": [
+    11.16,
+    12.55
+   ],
+   "clip_cut15": [
+    11.11,
+    12.62
+   ],
+   "placement": "on camera, shot 12"
+  },
+  {
+   "id": "L13",
+   "file": "set/lines/L13.wav",
+   "speaker": "narrator",
+   "words_text": "{HERO}, in Italy, they also drive on the right.",
+   "src": [
+    24.24,
+    26.34
+   ],
+   "clip_src": [
+    24.12,
+    26.38
+   ],
+   "muted": [
+    {
+     "slot": "{HERO},",
+     "src": [
+      24.16,
+      24.52
+     ],
+     "clip": [
+      0.04,
+      0.4
+     ],
+     "dur": 0.36
+    }
+   ],
+   "words": [
+    {
+     "w": "{HERO}, (muted; source word: name)",
+     "src": [
+      24.24,
+      24.48
+     ],
+     "clip": [
+      0.12,
+      0.36
+     ]
+    },
+    {
+     "w": "in",
+     "src": [
+      24.7,
+      24.86
+     ],
+     "clip": [
+      0.58,
+      0.74
+     ]
+    },
+    {
+     "w": "Italy,",
+     "src": [
+      24.86,
+      25.1
+     ],
+     "clip": [
+      0.74,
+      0.98
+     ]
+    },
+    {
+     "w": "they",
+     "src": [
+      25.14,
+      25.38
+     ],
+     "clip": [
+      1.02,
+      1.26
+     ]
+    },
+    {
+     "w": "also",
+     "src": [
+      25.38,
+      25.58
+     ],
+     "clip": [
+      1.26,
+      1.46
+     ]
+    },
+    {
+     "w": "drive",
+     "src": [
+      25.58,
+      25.78
+     ],
+     "clip": [
+      1.46,
+      1.66
+     ]
+    },
+    {
+     "w": "on",
+     "src": [
+      25.78,
+      25.92
+     ],
+     "clip": [
+      1.66,
+      1.8
+     ]
+    },
+    {
+     "w": "the",
+     "src": [
+      25.92,
+      26.02
+     ],
+     "clip": [
+      1.8,
+      1.9
+     ]
+    },
+    {
+     "w": "right.",
+     "src": [
+      26.02,
+      26.34
+     ],
+     "clip": [
+      1.9,
+      2.22
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    24.24,
+    26.34
+   ],
+   "clip_cut30": [
+    24.12,
+    26.38
+   ],
+   "cut15": null,
+   "placement": "voice-over, shots 13-14"
+  },
+  {
+   "id": "L14",
+   "file": "set/lines/L14.wav",
+   "speaker": "hero",
+   "words_text": "Oh, mi scusi.",
+   "src": [
+    26.42,
+    27.66
+   ],
+   "clip_src": [
+    26.38,
+    27.69
+   ],
+   "muted": [],
+   "words": [
+    {
+     "w": "Oh,",
+     "src": [
+      26.42,
+      26.6
+     ],
+     "clip": [
+      0.04,
+      0.22
+     ]
+    },
+    {
+     "w": "mi",
+     "src": [
+      26.8,
+      26.94
+     ],
+     "clip": [
+      0.42,
+      0.56
+     ]
+    },
+    {
+     "w": "scusi.",
+     "src": [
+      26.94,
+      27.66
+     ],
+     "clip": [
+      0.56,
+      1.28
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    26.42,
+    27.66
+   ],
+   "clip_cut30": [
+    26.38,
+    27.69
+   ],
+   "cut15": null,
+   "placement": "on camera, shot 14"
+  },
+  {
+   "id": "L15",
+   "file": "set/lines/L15.wav",
+   "speaker": "narrator",
+   "words_text": "{BRAND}. {TAGLINE}",
+   "src": [
+    27.72,
+    29.93
+   ],
+   "clip_src": [
+    27.69,
+    30.05
+   ],
+   "muted": [
+    {
+     "slot": "{BRAND}.",
+     "src": [
+      27.7,
+      28.16
+     ],
+     "clip": [
+      0.01,
+      0.47
+     ],
+     "dur": 0.46
+    },
+    {
+     "slot": "{TAGLINE}",
+     "src": [
+      28.16,
+      30.0
+     ],
+     "clip": [
+      0.47,
+      2.31
+     ],
+     "dur": 1.84
+    }
+   ],
+   "words": [
+    {
+     "w": "{BRAND}. (muted; source word: brand)",
+     "src": [
+      27.72,
+      27.9
+     ],
+     "clip": [
+      0.03,
+      0.21
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      28.24,
+      28.3
+     ],
+     "clip": [
+      0.55,
+      0.61
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      28.3,
+      28.5
+     ],
+     "clip": [
+      0.61,
+      0.81
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      28.5,
+      28.72
+     ],
+     "clip": [
+      0.81,
+      1.03
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      28.72,
+      28.86
+     ],
+     "clip": [
+      1.03,
+      1.17
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      28.86,
+      29.08
+     ],
+     "clip": [
+      1.17,
+      1.39
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      29.08,
+      29.26
+     ],
+     "clip": [
+      1.39,
+      1.57
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      29.26,
+      29.42
+     ],
+     "clip": [
+      1.57,
+      1.73
+     ]
+    },
+    {
+     "w": "{TAGLINE} (muted; source word: tagline word)",
+     "src": [
+      29.42,
+      29.93
+     ],
+     "clip": [
+      1.73,
+      2.24
+     ]
+    }
+   ],
+   "in_score": false,
+   "cut30": [
+    27.72,
+    29.93
+   ],
+   "clip_cut30": [
+    27.69,
+    30.05
+   ],
+   "cut15": [
+    12.72,
+    14.93
+   ],
+   "clip_cut15": [
+    12.69,
+    15.0
+   ],
+   "placement": "voice-over over the end card (brand + tagline slots, muted clip)"
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "frame": [
+  1280,
+  720
+ ],
+ "brand": "Voyalo (invented)",
+ "colours": {
+  "brand": "#F58220",
+  "text": "#1D2B4F",
+  "rating_green": "#2E7D52"
+ },
+ "fonts": "geometric sans (demi/medium) for UI and wordmark; tall condensed bold sans + a handwritten script for the tagline",
+ "ui_bug": {
+  "file": "set/ui_bug.png",
+  "what": "corner bug: {BRAND_MARK} + {BRAND} wordmark, white, top-left; mark 34 px, box x 38-186, y 37-79 of 1280x720 (x 3.0-14.5%, y 5.1-11.0%)",
+  "cut30": [
+   0.0,
+   27.25
+  ],
+  "animation": "none: on from the first frame, off at the cut to the end card"
+ },
+ "ui_sky_logo": {
+  "file": "set/ui_sky_logo.png",
+  "what": "large translucent wordmark (32% white) hanging in the sky of shot 1 at x 18-42%, y 16-28%, like faint sky lettering",
+  "cut30": [
+   0.0,
+   1.42
+  ],
+  "animation": "static, cut off with the shot"
+ },
+ "ui_legal_app": {
+  "file": "set/ui_legal_app.png",
+  "words": "Modified app screens.",
+  "font": "geometric sans medium, 15 px cap-to-descender at 1280x720 (about 2.1% of height), white 92%, centred, baseline about y 95%"
+ },
+ "ui_legal_savings": {
+  "file": "set/ui_legal_savings.png",
+  "words": "Members only. Savings vary. See site for details.",
+  "font": "geometric sans medium, 15 px cap-to-descender at 1280x720 (about 2.1% of height), white 92%, centred, baseline about y 95%"
+ },
+ "ui_legal_driving": {
+  "file": "set/ui_legal_driving.png",
+  "words": "No one was using a phone while driving in this ad. Trip Cash is not redeemable for cash.",
+  "font": "geometric sans medium, 15 px cap-to-descender at 1280x720 (about 2.1% of height), white 92%, centred, baseline about y 95%"
+ },
+ "ui_legal_endcard": {
+  "file": "set/ui_legal_endcard.png",
+  "words": "\u00a9 2026 {BRAND}. All rights reserved. / All characters, places and products shown are fictional miniatures.",
+  "font": "geometric sans medium, 15 px cap-to-descender at 1280x720 (about 2.1% of height), white 92%, centred, baseline about y 95%"
+ },
+ "ui_app_list": {
+  "file": "set/ui_app_list.jpg",
+  "size": [
+   780,
+   3000
+  ],
+  "viewport": [
+   780,
+   1688
+  ],
+  "what": "hotel search results in the {BRAND} app (light theme): status bar 3:41, back chevron, centred mark + wordmark, 'Tokyo, Japan', 'Feb 2 - Feb 20 \u00b7 1 traveler', segmented tabs Any | Hotels | Homes, then cards (photo left 1/3, name, score chip + 'Exceptional', review link, {BRAND_COLOUR} 'Bundle & Save' tag, green % OFF chip, nightly price)",
+  "scroll_y_px": {
+   "5.21": 0,
+   "6.10": 0,
+   "6.30": 380,
+   "6.55": 860,
+   "7.20": 900,
+   "7.92": 900
+  },
+  "taps": "a thumb enters from the lower right at 5.90, swipes up 6.15-6.50 and leaves to the right by 6.60; the other hand holds the phone throughout",
+  "cut30": [
+   5.21,
+   7.92
+  ],
+  "placement": "inside the phone held in the left hand, screen 23% of frame width, centred x 50%, y 10-90%; the phone tilts slightly and drops out of frame bottom 7.71-7.92"
+ },
+ "ui_trip_added": {
+  "file": "set/ui_trip_added.jpg",
+  "size": [
+   780,
+   1688
+  ],
+  "what": "phone on the plane: {BRAND_COLOUR} top half with a white suitcase badge, 'Stay added!', 'Your trip still saves 18%', then three white rows Flight / Stay / Car",
+  "cut30": [
+   12.92,
+   15.17
+  ],
+  "placement": "in the hero's left hand, screen tilted about 20 degrees, 4% of frame width, x 56-61%, y 44-60%; static (no scroll)"
+ },
+ "ui_rewards": {
+  "file": "set/ui_rewards.jpg",
+  "size": [
+   780,
+   1688
+  ],
+  "what": "'Your Rewards' screen: back chevron, title, large mark + wordmark, white card with round avatar of the hero, 'Hi, {HERO}' (name in a handwritten script), {BRAND_COLOUR} 'Gold' pill with a dotted-ring icon, 'Trip Cash', '$144.92' very large, navy 'Keep Earning' pill button, tab bar Search / Trips / Inbox / Account",
+  "cut30": [
+   20.54,
+   22.13
+  ],
+  "placement": "in a black dashboard phone mount on the car, screen 14% of frame width at x 47-61%, y 6-62% (top cropped at about 'Your Rewards'); static, the car's motion makes the background drift"
+ },
+ "ui_endcard_logo": {
+  "file": "set/ui_endcard_logo.png",
+  "what": "big centred mark + wordmark, white, x 36-64%, y 43-58%",
+  "cut30": [
+   27.25,
+   28.0
+  ],
+  "animation": "on with the cut at 27.25; holds; 27.75-28.00 shrinks to 45% and rises to the top position of ui_endcard (ease-in-out)"
+ },
+ "ui_endcard": {
+  "file": "set/ui_endcard.png",
+  "parts": [
+   "set/ui_endcard_tagline.png",
+   "set/ui_endcard_border.png"
+  ],
+  "what": "final end card over the aerial: small mark + wordmark centred at y 21.5-26%; tagline in two lines, white: line 1 'THE ONE APP' (tall condensed bold caps, cap height 15% of frame height) + 'you' in a handwritten script; line 2 'need' in script + 'TO GET AWAY' caps; lines centred, x about 22-78%, y 30-58%; a {BRAND_COLOUR} border 14 px (1.1% of width) with 26 px rounded inner corners frames the picture",
+  "words": "{TAGLINE} default 'The one app you need to get away.' set as THE ONE APP you / need TO GET AWAY",
+  "cut30": [
+   28.0,
+   30.0
+  ],
+  "cut15": [
+   13.08,
+   15.0
+  ],
+  "animation": "logo shrink 27.75-28.00; line 1 wipes on left to right 28.00-28.25; line 2 writes on left to right 28.40-28.90; the border grows in from the frame edge 28.42-28.58 (picture scales to 97.8%); all hold to the end"
+ }
+}

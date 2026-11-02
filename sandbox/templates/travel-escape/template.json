@@ -1,0 +1,2176 @@
+{
+ "meta": {
+  "source": "inputs/reference.mp4 (30 s 2026 big-game travel-app spot, toy-miniature world)",
+  "duration": 30.0,
+  "size": "1920x1080",
+  "fps": 24,
+  "shots": 15,
+  "average_shot": 2.0,
+  "median_shot": 2.04,
+  "note": "bin/dissect found 13 shots; two missed cuts (7.92 phone POV -> tower wide, 15.17 under the cloud wipe) are split here, so 15 source shots."
+ },
+ "acts": [
+  {
+   "name": "Hook: the same old beach",
+   "shots": [
+    1,
+    2,
+    3
+   ],
+   "function": "premise in VO, the dream (plane through binoculars), the hero's wish 'I need an adventure.'"
+  },
+  {
+   "name": "The app",
+   "shots": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "function": "he books on the phone, asks the sky about booking a flight now and a stay later, the narrator answers with the product claim; packing, flying"
+  },
+  {
+   "name": "Trip montage",
+   "shots": [
+    8,
+    9,
+    10
+   ],
+   "function": "three vignettes (tea room, pastel street, horse on a plain) under 'the more he travels, the more he saves'"
+  },
+  {
+   "name": "Payoff: the free rental",
+   "shots": [
+    11,
+    12,
+    13,
+    14
+   ],
+   "function": "rewards screen, 'In {HERO} math, it was free.', wrong side of the road gag"
+  },
+  {
+   "name": "End card",
+   "shots": [
+    15
+   ],
+   "function": "aerial, logo, spoken and written tagline"
+  }
+ ],
+ "look": {
+  "world": "Everything is a real toy miniature: 1:6 scale articulated vinyl dolls with sculpted hair and mouths that never move, handmade dioramas, fabric clothes, cotton-wool clouds, plastic props. Photographed like a premium stop-motion film: real lens, real light, shallow depth of field on closes.",
+  "grade": "warm, pastel, golden-hour peach and pink skies, cyan sky blues, the {BRAND_COLOUR} (default tangerine #F58220) repeated on every branded prop (phone case, suitcase, plane, car, parasols)",
+  "contrast": "soft, lifted blacks, no crushed shadows",
+  "light": "soft sun, mostly low and warm; interiors warm practicals",
+  "depth_of_field": "shallow on closes (phone, binoculars, mount), deep on wides",
+  "grain": "none; clean digital",
+  "brightness": "bright exteriors 125-175 (beach 135, tower wide 174, phone POV 153-164), interiors and dusk 77-110 (plane 103-109, tea room 94-100, street 88, car mount 77, road 98-127); end card 101 -> 148"
+ },
+ "text_style": {
+  "bug": "white geometric-sans wordmark with the round mark, top-left x 3-19% / y 5-10%, on from frame 1 until the end card",
+  "legal": "small white geometric sans medium, 15 px at 720p, centred at y 95%, cut with its shot",
+  "end_card": "white: mark + wordmark, then a two-line tagline in tall condensed bold caps with one handwritten script word on each line; written on left to right; a {BRAND_COLOUR} border with rounded inner corners",
+  "case": "caps for the tagline, sentence case elsewhere"
+ },
+ "sound": {
+  "music": "One upbeat instrumental bed at 136 bpm (beat 0.441 s, bar 1.765 s, bars at 1.126 + n x 1.765) under the whole film, entering at 1.1 s after 1 s of surf and gulls, steady at about -15 to -25 dB under the voices, a final hit and ring-out at the end card. set/score.wav is the film's soundtrack with the voices removed (vocal/music separation).",
+  "speech": "Two voices. The narrator: a warm, wry, mid-pitch male documentary-style voice-over, measured and deadpan, about 3 words per second. The hero: a bright, earnest, slightly over-sincere male voice, delivered by a doll whose mouth never moves. They alternate line by line, almost without gaps; the narrator talks to the hero like a 'voice in the sky'.",
+  "mix": "voices on top at about -14 dB RMS, music 6-10 dB under, small stop-motion foley (pops, whooshes, propeller, engine)",
+  "silences": [],
+  "black": []
+ },
+ "set": {
+  "char_hero": {
+   "files": [
+    "set/char_hero_sheet.jpg",
+    "set/char_hero_wardrobe.jpg"
+   ],
+   "fixes": "The hero, an invented articulated vinyl fashion doll of a man in his forties: deep warm brown satin-vinyl skin, glossy sculpted jet-black pompadour with a sharp left part and a silver streak at the right temple, pencil moustache, groomed brows, amber eyes, fixed closed-mouth half-smile, dimpled chin, ball joints. Plastic-perfect and overly groomed. Wardrobe sheet: (1) mint-striped camp shirt + white jeans (beach), (2) terracotta tile-print shirt + coral neck pillow (plane), (3) indigo robe jacket over tangerine tee (tea room), (4) cream linen shirt + crossbody bag (street), (5) sky-blue shirt + tangerine silk scarf (horse, car)."
+  },
+  "char_passengers": {
+   "files": [
+    "set/char_passengers_sheet.jpg"
+   ],
+   "fixes": "Two background passenger dolls for shot 7, cropped at the frame edges: grey-bob woman in sage cardigan and tortoiseshell glasses; ginger-bearded man in oatmeal sweater with navy headphones."
+  },
+  "product_phone": {
+   "files": [
+    "set/product_phone_sheet.jpg"
+   ],
+   "fixes": "Toy phone in a glossy tangerine (#F58220) rubber case, black bezel, blank white screen for compositing."
+  },
+  "product_suitcase": {
+   "files": [
+    "set/product_suitcase_sheet.jpg"
+   ],
+   "fixes": "Tangerine ribbed hard-shell carry-on, silver telescopic handle, black spinner wheels, white {BRAND_MARK} + {BRAND} on the front; plus the top-down open packed view for shot 6."
+  },
+  "product_car": {
+   "files": [
+    "set/product_car_sheet.jpg"
+   ],
+   "fixes": "Tangerine vintage two-seat roadster, top down, chrome round headlights and grille, cream whitewall tyres, tan leather seats, dashboard phone mount; the suitcase rides in the passenger seat."
+  },
+  "product_plane": {
+   "files": [
+    "set/product_plane_sheet.jpg"
+   ],
+   "fixes": "Toy high-wing prop plane: white fuselage, tangerine wings, struts and tail, the round mark on the tail, navy cheat line, black propeller (shot 2)."
+  },
+  "prop_horse": {
+   "files": [
+    "set/prop_horse_binoculars.jpg"
+   ],
+   "fixes": "Chestnut toy horse with dark mane, white socks, brown bridle (shot 10)."
+  },
+  "prop_binoculars": {
+   "files": [
+    "set/prop_horse_binoculars.jpg"
+   ],
+   "fixes": "Small black toy binoculars with a brown strap (shot 3)."
+  },
+  "loc_beach": {
+   "files": [
+    "set/loc_beach.jpg"
+   ],
+   "fixes": "Sunset miniature beach: grey-white lifeguard tower with ramp and ring buoy, tangerine parasols and loungers, peach sand, dark rocks, calm sea, headland right, pink cotton clouds. Brightness about 135."
+  },
+  "loc_tower_sky": {
+   "files": [
+    "set/loc_tower_sky.jpg"
+   ],
+   "fixes": "The same tower from below against a pastel cyan-to-peach sky with small pink clouds and distant palms (shots 3, 5). Brightness 140-175."
+  },
+  "loc_sky_clouds": {
+   "files": [
+    "set/loc_sky_clouds.jpg"
+   ],
+   "fixes": "Pastel sky with pink-lit cotton-wool clouds: shot 2's background and the cloud-wipe element (shots 7-8)."
+  },
+  "loc_packing_rug": {
+   "files": [
+    "set/loc_packing_rug.jpg"
+   ],
+   "fixes": "Pale powder-blue rug with fine woven vertical stripes, top-down (shot 6). Brightness about 135."
+  },
+  "loc_plane_cabin": {
+   "files": [
+    "set/loc_plane_cabin.jpg"
+   ],
+   "fixes": "Miniature cabin: teal plastic seats, grey seatback screens with a flight-map line, oval windows with pink clouds, warm beige walls (shot 7)."
+  },
+  "loc_ryokan": {
+   "files": [
+    "set/loc_ryokan.jpg"
+   ],
+   "fixes": "Tatami tea room: dark wood, paper screens, open window on a snow-capped volcano and pink blossom, low lacquered table with teapot, navy cushions, paper lantern (shot 8). Brightness about 95-100."
+  },
+  "loc_colour_street": {
+   "files": [
+    "set/loc_colour_street.jpg"
+   ],
+   "fixes": "Colonial street of yellow, teal, red and blue facades, turquoise-trim arches, iron balconies, cut-paper bunting, black lamps (shot 9). Brightness about 88."
+  },
+  "loc_mountain_plain": {
+   "files": [
+    "set/loc_mountain_plain.jpg"
+   ],
+   "fixes": "Golden grass plain, adobe farm buildings, jagged snow-dusted range (shot 10). Brightness about 133."
+  },
+  "loc_vineyard_road": {
+   "files": [
+    "set/loc_vineyard_road.jpg"
+   ],
+   "fixes": "Country road through rolling vineyard hills with cypresses and red-roofed farmhouses, golden-hour haze (shots 11-14)."
+  },
+  "loc_hills_aerial": {
+   "files": [
+    "set/loc_hills_aerial.jpg"
+   ],
+   "fixes": "Aerial of the same hills with a winding road, the end card's picture (shot 15)."
+  },
+  "ui": {
+   "files": [
+    "set/ui.json",
+    "set/ui_bug.png",
+    "set/ui_sky_logo.png",
+    "set/ui_app_list.jpg",
+    "set/ui_trip_added.jpg",
+    "set/ui_rewards.jpg",
+    "set/ui_endcard_logo.png",
+    "set/ui_endcard.png",
+    "set/ui_endcard_tagline.png",
+    "set/ui_endcard_border.png",
+    "set/ui_legal_app.png",
+    "set/ui_legal_savings.png",
+    "set/ui_legal_driving.png",
+    "set/ui_legal_endcard.png"
+   ],
+   "fixes": "Every screen, logo and super, flat and full-size with exact copy (invented brand 'Voyalo', tangerine #F58220 / navy #1D2B4F). Timings and placements in set/ui.json."
+  },
+  "lines": {
+   "files": [
+    "set/lines.json",
+    "set/lines/L01.wav",
+    "set/lines/L02.wav",
+    "set/lines/L03.wav",
+    "set/lines/L04.wav",
+    "set/lines/L05.wav",
+    "set/lines/L06.wav",
+    "set/lines/L07.wav",
+    "set/lines/L08.wav",
+    "set/lines/L09.wav",
+    "set/lines/L10.wav",
+    "set/lines/L11.wav",
+    "set/lines/L12.wav",
+    "set/lines/L13.wav",
+    "set/lines/L14.wav",
+    "set/lines/L15.wav"
+   ],
+   "fixes": "The film's 15 recorded lines (voice stem), with brand, hero-name and tagline words muted to silence; word times in lines.json."
+  },
+  "voice_narrator": {
+   "files": [
+    "set/voice_narrator.wav"
+   ],
+   "fixes": "The narrator's timbre: 10.1 s of L01, L06, L09, L11 (no brand words)."
+  },
+  "voice_hero": {
+   "files": [
+    "set/voice_hero.wav"
+   ],
+   "fixes": "The hero's timbre: 7.1 s of L02, L05, L07, L10, L14 (all he says apart from L12)."
+  },
+  "score": {
+   "files": [
+    "set/score.wav",
+    "set/score_30.wav",
+    "set/score_15.wav"
+   ],
+   "fixes": "The soundtrack minus the voices, and its 30 s / 15 s cuts."
+  }
+ },
+ "slots": {
+  "BRAND": {
+   "default": "Voyalo",
+   "where": "bug (all shots), suitcase, plane tail, app screens, end card, spoken in L03 (window 5.42-6.06, 0.64 s) and L15 (27.70-28.16, 0.46 s)",
+   "swap": "the travel app's name, 2-3 syllables, same wordmark treatment"
+  },
+  "BRAND_MARK": {
+   "default": "a tangerine disc with a white half-sun resting on a horizon line",
+   "where": "left of every wordmark",
+   "swap": "the brand's simple round mark"
+  },
+  "BRAND_COLOUR": {
+   "default": "tangerine #F58220 (text navy #1D2B4F)",
+   "where": "phone case, suitcase, plane, car, parasols, scarf, app accents, end-card border",
+   "swap": "the brand colour on every branded prop"
+  },
+  "HERO": {
+   "default": "Dex",
+   "where": "spoken in L03 (4.70-4.95), L08 (15.46-15.71), L12 (22.80-23.05, by the hero himself), L13 (24.16-24.52); written 'Hi, {HERO}' on ui_rewards",
+   "swap": "a one-syllable first name for the doll hero, in the narrator's voice (and the hero's for L12)"
+  },
+  "TAGLINE": {
+   "default": "The one app you need to get away.",
+   "where": "spoken L04 (6.26-8.12, 1.86 s) and L15 (28.16-30.0, 1.84 s), written on ui_endcard as THE ONE APP you / need TO GET AWAY",
+   "swap": "8-9 syllables, read by the narrator in 1.7-1.9 s"
+  },
+  "HERO_CHARACTER": {
+   "default": "char_hero (invented groomed doll, see set)",
+   "swap": "any plastic-perfect toy-doll holidaymaker; never a real toy line's character"
+  },
+  "DESTINATIONS": {
+   "default": "tea room with a snowy volcano, pastel colonial street, mountain plain with a horse, vineyard hills",
+   "swap": "three or four miniature destinations, one vignette each"
+  },
+  "PRODUCT_CLAIM": {
+   "default": "'Book now or add later. You still save.' (L06) and 'Bundling flights, stays and cars.' (L09)",
+   "swap": "the app's claim, same length (2.5 s / 1.95 s)"
+  },
+  "REWARD": {
+   "default": "Trip Cash $144.92, Gold tier",
+   "where": "ui_rewards",
+   "swap": "the loyalty currency and amount"
+  },
+  "LEGAL": {
+   "default": "see ui_legal_* in set/ui.json",
+   "swap": "the brand's own disclaimers"
+  }
+ },
+ "shots": [
+  {
+   "setup": "BEACH_WIDE",
+   "location": "loc_beach",
+   "cast": [],
+   "wardrobe": "none (no people)",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "Empty miniature beach: lifeguard tower right of centre (x 70-80%, y 30-62%, 10% of width), three tangerine parasols at x 10-20%, 38-45%, 56-62% (y 40-55%), loungers below them, dark rocks along the bottom 18% of frame (y 82-100%) right half; sea horizon at y 57%; headland right at x 88-100%; sky 55% of frame with small pink cotton clouds.",
+   "camera": "eye level about 1.5 doll-heights above the sand (low, 5 cm real scale), straight on to the sea, normal lens (~35 mm), deep focus",
+   "camera_move": "locked off; a very slow push in, scale 1.00 -> 1.02 over 1.42 s, linear (measured change 2.8 = barely moving)",
+   "action": "0.00-1.42 the empty sunset beach: parasols still, tiny waves roll in, a tiny plane crosses the far sky right to left at y 18% (x 62% -> 55%). The hero is a dot on the tower deck (x 75%, y 38%, 1% of width).",
+   "light": "low warm sun from the right at the horizon, peach-pink sky, soft long shadows; bright: brightness 134/137/138",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_sky_logo",
+     "file": "set/ui_sky_logo.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "large translucent (32% white) wordmark hanging in the sky, x 18-40%, y 16-28%",
+     "in_out": [
+      0.0,
+      1.42
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: gentle surf and gulls 0.00-1.20 (-35 dB), the music bed starts 1.10-1.30 swelling up into the cut. Narrator L01 starts 0.12: 'When every day feels the same,' (voice-over).",
+   "render": "Picture shot, first + last frame: plate from loc_beach (wide, hero a tiny figure on the tower deck) -> same plate pushed in 2%; 2 s clip trimmed to 1.42. Overlays ui_bug and ui_sky_logo in post.",
+   "n": 1,
+   "start": 0,
+   "end": 1.42,
+   "dur": 1.42,
+   "in": "start",
+   "brightness": {
+    "start": 134,
+    "mid": 137,
+    "end": 138
+   },
+   "colour": "#958579",
+   "change": 2.77,
+   "sound": "-16.8 dBFS RMS mean, -11.1 max (0.1 s windows)",
+   "board": "boards/s01.jpg",
+   "voice": "L01"
+  },
+  {
+   "setup": "BINOC_POV",
+   "location": "loc_sky_clouds",
+   "cast": [
+    "product_plane"
+   ],
+   "wardrobe": "none",
+   "shot_size": "medium (the plane fills 50% of frame width)",
+   "subject_in_frame": "Binocular mask: two overlapping soft-edged circles, black outside, together spanning x 18-82%, y 0-100% (each circle about 47% of width). Inside, the tangerine-and-white prop plane flies left to right, centred x 45%, y 45%, 46% of frame width, slight three-quarter side view, tail with the {BRAND_MARK} at x 20%.",
+   "camera": "POV through binoculars, looking slightly up, long lens feel (~200 mm), plane sharp, clouds soft",
+   "camera_move": "handheld POV float: the mask drifts 3% right and 2% up over 1.54 s (the binoculars track the plane); the plane holds centre; at 2.80-2.96 the view darkens (brightness 127 -> 53) as the binoculars lower",
+   "action": "1.42-2.80 the plane cruises across the pink cotton clouds, propeller spinning, wobbling gently; 2.80-2.96 the image dips dark into the cut.",
+   "light": "soft pastel daylight, clouds lit peach from below; brightness 126/127 then 53 at the end",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed in full (-13 dB mean), a soft propeller drone. Narrator L01 continues: 'one man wants more.' (1.92-3.06, voice-over).",
+   "render": "Picture shot, first + last frame: plane plate on loc_sky_clouds (product_plane_sheet) centred -> same plane 8% further right; binocular mask drawn in code (two circles of radius 33% of width, centres x 34% and 66%, 12 px feather) with a 3% drift and a 0.16 s dip to dark at the end.",
+   "n": 2,
+   "start": 1.42,
+   "end": 2.96,
+   "dur": 1.54,
+   "in": "cut",
+   "brightness": {
+    "start": 126,
+    "mid": 127,
+    "end": 53
+   },
+   "colour": "#8a7b6e",
+   "change": 15.08,
+   "sound": "-13.3 dBFS RMS mean, -10.2 max (0.1 s windows)",
+   "board": "boards/s02.jpg",
+   "voice": "L01"
+  },
+  {
+   "setup": "HERO_TOWER_LOW",
+   "location": "loc_tower_sky",
+   "cast": [
+    "char_hero",
+    "prop_binoculars"
+   ],
+   "wardrobe": "char_hero outfit 1: mint-and-white candy-striped camp-collar shirt (mint #8fd3b6), white jeans; black toy binoculars on a brown strap",
+   "shot_size": "extreme close-up -> medium close-up",
+   "subject_in_frame": "Start (2.96): binoculars at his eyes fill x 30-62%, his head and raised doll hands fill x 20-75%, y 0-100%. End (from 3.21): head-and-chest MCU, head centred x 50%, y 8-45% (head 13% of width), chest to the bottom of frame, binoculars held at chest x 40-60%, y 72-100%; the tower's flat roof spans x 13-90% behind him at y 22-35%, pastel sky above, palm tops at the sides.",
+   "camera": "low angle about 20 degrees up from chest height, normal lens (~40 mm), shallow depth of field (tower slightly soft)",
+   "camera_move": "a snap pull-back 2.96-3.21 (scale 1.9 -> 1.0, ease-out, reads as a stop-motion jump), then locked off 3.21-5.21",
+   "action": "2.96-3.15 the hero has the binoculars to his eyes; 3.15-3.25 he lowers them to his chest in two stop-motion steps and looks up and right past camera, chin raised; 3.14-4.12 he says 'I need an adventure.' with a tiny head tilt (sculpted mouth never moves); 4.12-5.21 he holds the noble gaze, perfectly still.",
+   "light": "bright soft daylight from upper left, pastel sky; brightness 138/144/142",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. L02 hero \"I need an adventure.\" 3.14-4.12 on camera (doll, mouth does not move); narrator L03 'So {HERO} goes to' 4.48-5.21 runs over the end (voice-over) into shot 4.",
+   "render": "Speaking shot: first frame = plate of the MCU end framing (hero on loc_tower_sky, binoculars at chest) + guide_audio set/lines/L02.wav; the opening 0.25 s ECU with binoculars at his eyes is a separate 0.5 s first-frame take (or a 1.9x crop of a binoculars-up plate) hard-joined at 3.21.",
+   "n": 3,
+   "start": 2.96,
+   "end": 5.21,
+   "dur": 2.25,
+   "in": "cut",
+   "brightness": {
+    "start": 138,
+    "mid": 144,
+    "end": 142
+   },
+   "colour": "#988d82",
+   "change": 16.57,
+   "sound": "-17.4 dBFS RMS mean, -10.2 max (0.1 s windows)",
+   "board": "boards/s03.jpg",
+   "boards": [
+    "boards/s03a.jpg",
+    "boards/s03b.jpg"
+   ],
+   "voice": "L01, L02, L03"
+  },
+  {
+   "setup": "PHONE_POV_BEACH",
+   "location": "loc_beach",
+   "cast": [
+    "char_hero",
+    "product_phone"
+   ],
+   "wardrobe": "char_hero's left hand and mint-striped cuff only",
+   "shot_size": "close-up (POV of the phone)",
+   "subject_in_frame": "The hero's left hand enters from lower left and holds the tangerine phone upright, phone centred x 42-60%, y 8-88% (18% of width), screen facing camera; behind it the soft-focus sunset sea, horizon at y 52%, beach below, pink clouds above, a tiny plane far right at y 24%.",
+   "camera": "POV at the hero's eye level, normal lens (~35 mm), phone sharp, sea and sky soft",
+   "camera_move": "handheld float (1-2%); 7.71-7.92 the phone drops out of frame bottom (moves down 60% of frame height, ease-in) revealing only the empty sky and sea",
+   "action": "5.21-5.90 he holds the phone: the {BRAND} hotel list for Tokyo; 5.90-6.55 his right thumb/hand enters from the right, swipes the list up two cards and leaves; 6.55-7.71 the list rests on 'Quiet Hotel' and 'Weekend Tower'; 7.71-7.92 he lowers the phone out of frame.",
+   "light": "warm sunset from the right, peach sky; brightness 162/153/164",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_app",
+     "file": "set/ui_legal_app.png",
+     "words": "Modified app screens.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      5.21,
+      7.92
+     ]
+    },
+    {
+     "item": "ui_app_list",
+     "file": "set/ui_app_list.jpg",
+     "words": "app screen (see set/ui.json)",
+     "position": "on the phone screen",
+     "in_out": [
+      5.21,
+      7.92
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L03 '{BRAND}.' 5.42-6.02 (voice-over), then L04 '{TAGLINE}' 6.34-8.06 (muted in the clip: the new tagline in the narrator's voice, 1.72 s) running 0.14 s over the cut.",
+   "render": "Screen shot: first + last frame plates of the hand holding a blank-screen tangerine phone over the sunset sea (product_phone_sheet, loc_beach) -> phone lowered out of frame; composite set/ui_app_list.jpg onto the screen in post (corner-pin), scrolled per set/ui.json; the swiping hand is in the take.",
+   "n": 4,
+   "start": 5.21,
+   "end": 7.92,
+   "dur": 2.71,
+   "in": "cut",
+   "brightness": {
+    "start": 162,
+    "mid": 153,
+    "end": 164
+   },
+   "colour": "#ac9384",
+   "change": 4.38,
+   "sound": "-15.3 dBFS RMS mean, -11.8 max (0.1 s windows)",
+   "board": "boards/s04.jpg",
+   "boards": [
+    "boards/s04a.jpg",
+    "boards/s04b.jpg"
+   ],
+   "voice": "L03, L04"
+  },
+  {
+   "setup": "TOWER_WIDE_SKY",
+   "location": "loc_tower_sky",
+   "cast": [
+    "char_hero"
+   ],
+   "wardrobe": "char_hero outfit 1 (mint-striped shirt, white jeans)",
+   "shot_size": "wide",
+   "subject_in_frame": "Mostly empty pastel sky (75% of frame). Lifeguard tower bottom-right: roof x 72-100%, y 58-66%, deck rail y 80-90%. The hero stands on the deck at x 78-84%, y 62-100% (full body cut at the knees, 6% of width), right hand shading his eyes, looking up-left at the sky. Tiny palms on the horizon x 60-70%, y 85%; yellow ring buoy x 95%, y 92%.",
+   "camera": "low angle, about 10 degrees up, from the sand some distance away, normal lens (~35 mm), deep focus",
+   "camera_move": "locked off",
+   "action": "7.92-8.35 he shades his eyes and looks up at the sky; 8.35-10.65 he calls up to the sky 'So if I book my flight now but my stay later?', turning his head a little toward camera on 'later?'; 10.65-10.42.. holds (the cut is at 10.42; the line's last syllable runs 0.23 s past it).",
+   "light": "bright even daylight, cyan sky with peach horizon; the brightest shot: 174/174/174",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L04 tail to 8.06. L05 hero \"So if I book my flight now but my stay later?\" 8.35-10.65 on camera (wide, the doll's mouth does not move), his last word 'later?' runs over the cut into shot 6.",
+   "render": "Speaking shot (wide): first frame = plate of the wide tower framing with the hero on the deck shading his eyes + guide_audio set/lines/L05.wav (trim to the shot).",
+   "n": 5,
+   "start": 7.92,
+   "end": 10.42,
+   "dur": 2.5,
+   "in": "cut",
+   "brightness": {
+    "start": 174,
+    "mid": 174,
+    "end": 174
+   },
+   "colour": "#a1b2b8",
+   "change": 4.4,
+   "sound": "-16.4 dBFS RMS mean, -10.4 max (0.1 s windows)",
+   "board": "boards/s05.jpg",
+   "voice": "L04, L05"
+  },
+  {
+   "setup": "SUITCASE_TOPDOWN",
+   "location": "loc_packing_rug",
+   "cast": [
+    "product_suitcase"
+   ],
+   "wardrobe": "none (doll clothes and props being packed)",
+   "shot_size": "medium (top-down flat lay)",
+   "subject_in_frame": "Top-down: the open tangerine suitcase centred x 22-78%, y 8-88% (56% of width), two halves side by side; first, folded doll shirts fill the halves and loose props lie around it (sneakers top-left x 4-12%, a wallet x 5%, a hat x 82%, sunglasses x 84%, a camera x 82%, a guidebook x 90%); the props hop into the case. Last 0.80 s: the closed case stands upright, centred x 40-60%, y 15-95%, front with the {BRAND} logo facing camera, a doll hand gripping the handle top.",
+   "camera": "top-down, straight down, normal lens, deep focus",
+   "camera_move": "locked off (stop-motion animation inside the frame; measured change 18.6)",
+   "action": "10.42-11.90 stop-motion packing: each loose prop jumps into the case on the beat (about every 0.25 s); 11.90-12.05 one half swings shut onto the other; 12.05-12.92 the closed case stands upright and the hero's hand (from the top edge) grips the handle and pulls it up 3% of frame.",
+   "light": "soft even top light, cool pale blue rug; brightness 135/135/152",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_savings",
+     "file": "set/ui_legal_savings.png",
+     "words": "Members only. Savings vary. See site for details.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      10.42,
+      12.92
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed with stop-motion pops/whooshes on each prop jump. Narrator L06 'Book now or add later. You still save.' 10.76-13.26 (voice-over), its last word runs into shot 7. L05's 'later?' tail 10.42-10.65.",
+   "render": "Picture shot (stop-motion), first + last frame: plate A open packed suitcase with loose props around it (product_suitcase_sheet top-down view on loc_packing_rug) -> plate B closed upright case with the hand on the handle; 3 s clip trimmed to 2.50; if the hop doesn't read, build it as two takes hard-joined at 12.05.",
+   "n": 6,
+   "start": 10.42,
+   "end": 12.92,
+   "dur": 2.5,
+   "in": "cut",
+   "brightness": {
+    "start": 135,
+    "mid": 135,
+    "end": 152
+   },
+   "colour": "#878782",
+   "change": 18.56,
+   "sound": "-14.1 dBFS RMS mean, -10.4 max (0.1 s windows)",
+   "board": "boards/s06.jpg",
+   "boards": [
+    "boards/s06a.jpg",
+    "boards/s06b.jpg"
+   ],
+   "voice": "L05, L06"
+  },
+  {
+   "setup": "PLANE_SEAT",
+   "location": "loc_plane_cabin",
+   "cast": [
+    "char_hero",
+    "char_passengers",
+    "product_phone"
+   ],
+   "wardrobe": "char_hero outfit 2: terracotta-and-cream geometric print shirt open over a white tee, olive chinos, coral-orange neck pillow",
+   "shot_size": "medium wide",
+   "subject_in_frame": "The hero sits in a teal seat, three-quarter to camera facing right, head x 33-40%, y 10-30%, body x 28-60%, y 10-95% (32% of width); phone in his left hand at x 55-61%, y 44-60%; his right hand raised, palm out, toward the window. Oval window behind at x 47-60%, y 15-45% with pink clouds outside; two seat backs with screens right x 63-100%; passenger 1 (grey-bob woman) cropped at the left edge x 0-12%, passenger 2 (headphones) cropped right edge x 92-100%.",
+   "camera": "eye level of a seated doll from the aisle, three-quarter front, normal lens (~35 mm), moderate depth of field",
+   "camera_move": "locked off 12.92-14.67; 14.67-15.17 a wall of cotton clouds rolls in from the window and lower right, covering the frame left-ward (wipe, ease-in) by 15.10",
+   "action": "12.92-13.70 he looks at his phone (stay added) and nods; 13.82-14.86 he lifts his right hand to the window and says up to the ceiling 'Thanks, voice in the sky.'; 14.67-15.17 clouds pour in and cover everything.",
+   "light": "soft warm window light from the right, warm beige cabin; brightness 103/109 then 181 as the white clouds fill the frame",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_savings",
+     "file": "set/ui_legal_savings.png",
+     "words": "Members only. Savings vary. See site for details.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      12.92,
+      15.17
+     ]
+    },
+    {
+     "item": "ui_trip_added",
+     "file": "set/ui_trip_added.jpg",
+     "words": "Stay added! / Your trip still saves 18%",
+     "position": "on the phone in his left hand (4% of frame width)",
+     "in_out": [
+      12.92,
+      15.17
+     ]
+    }
+   ],
+   "out": "cloud wipe: the clouds that cover the frame at 15.10 clear away in shot 8",
+   "audio": "Score: music bed. Narrator L06 tail 'save.' to 13.26 (voice-over); L07 hero \"Thanks, voice in the sky.\" 13.82-14.86 on camera (mouth does not move); a soft whoosh under the cloud wipe 14.7-15.2.",
+   "render": "Speaking shot: first frame = plate of the seated hero (char_hero outfit 2 on loc_plane_cabin, passengers at the edges) + guide_audio set/lines/L07.wav padded to the shot; phone screen composited from ui_trip_added; the cloud wall is a separate 0.6 s element (cotton-wool cloud plate pushed across, from loc_sky_clouds) wiped on in post.",
+   "n": 7,
+   "start": 12.92,
+   "end": 15.17,
+   "dur": 2.25,
+   "in": "cut",
+   "brightness": {
+    "start": 103,
+    "mid": 109,
+    "end": 181
+   },
+   "colour": "#6c6d67",
+   "change": 20.0,
+   "sound": "-17.3 dBFS RMS mean, -11.7 max (0.1 s windows)",
+   "board": "boards/s07.jpg",
+   "boards": [
+    "boards/s07a.jpg",
+    "boards/s07b.jpg"
+   ],
+   "voice": "L06, L07"
+  },
+  {
+   "setup": "RYOKAN_WIDE",
+   "location": "loc_ryokan",
+   "cast": [
+    "char_hero",
+    "product_suitcase"
+   ],
+   "wardrobe": "char_hero outfit 3: deep indigo robe jacket over a tangerine tee",
+   "shot_size": "wide",
+   "subject_in_frame": "Symmetrical: the hero kneels behind the low table, centred x 47-55%, y 35-65% (8% of width), holding a tiny tea bowl in both hands; table x 30-72%, y 60-75%; open window behind him x 26-75%, y 18-60% framing the snow-capped volcano (peak x 49%, y 25%); paper lantern hanging top centre x 46-54%, y 0-12%; the upright tangerine suitcase right of him x 60-66%, y 42-62%; shoji screens both sides; two navy cushions bottom.",
+   "camera": "eye level of a kneeling doll, straight on, normal lens (~35 mm), deep focus",
+   "camera_move": "locked off; the cloud wall clears out to the left 15.17-15.55 (ease-out), revealing the room",
+   "action": "15.17-15.55 clouds clear left; 15.55-17.04 he sits serenely and sips tea, a slow nod.",
+   "light": "warm interior light, soft daylight through the window; brightness 131 (clouds) /100/94",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed swells (-15 dB). Narrator L08 'The more {HERO} travels, the more he saves.' 15.18-17.48 (voice-over).",
+   "render": "Picture shot, first + last frame: plate A = clouds covering 80% of the room (cloud element over the ryokan plate) -> plate B = the clear ryokan wide with the hero kneeling; 2 s clip trimmed to 1.87.",
+   "n": 8,
+   "start": 15.17,
+   "end": 17.04,
+   "dur": 1.87,
+   "in": "cloud wipe (clouds clear)",
+   "brightness": {
+    "start": 131,
+    "mid": 100,
+    "end": 94
+   },
+   "colour": "#745f4e",
+   "change": 33.4,
+   "sound": "-13.7 dBFS RMS mean, -10.0 max (0.1 s windows)",
+   "board": "boards/s08.jpg",
+   "boards": [
+    "boards/s08a.jpg",
+    "boards/s08b.jpg"
+   ],
+   "voice": "L08"
+  },
+  {
+   "setup": "STREET_WIDE",
+   "location": "loc_colour_street",
+   "cast": [
+    "char_hero",
+    "product_suitcase"
+   ],
+   "wardrobe": "char_hero outfit 4: cream linen shirt, sand chinos, brown leather crossbody bag",
+   "shot_size": "wide",
+   "subject_in_frame": "Symmetrical street front: the yellow two-storey house centred x 33-67%, y 0-80% with arched doorway; teal and red houses either side; bunting across y 30-45%; lamps at x 13% and 65%. The hero walks away from camera up the middle toward the door, x 42-50%, y 45-85% (6% of width), towing the tangerine suitcase behind him (x 45-52%, y 85-95%).",
+   "camera": "eye level, straight on, normal lens (~35 mm), deep focus",
+   "camera_move": "locked off",
+   "action": "17.04-19.08 he wheels the suitcase up the path to the yellow house, back to camera, and stops at the steps.",
+   "light": "warm late-afternoon sun from the left, saturated colours, moderately dark: 88/89/88",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L09 'Bundling flights, stays and cars.' 17.61-19.56 (voice-over), runs 0.48 s into shot 10.",
+   "render": "Picture shot, first + last frame: hero mid-path with the suitcase -> hero at the steps; 2 s clip trimmed to 2.04.",
+   "n": 9,
+   "start": 17.04,
+   "end": 19.08,
+   "dur": 2.04,
+   "in": "cut",
+   "brightness": {
+    "start": 88,
+    "mid": 89,
+    "end": 88
+   },
+   "colour": "#67563d",
+   "change": 14.37,
+   "sound": "-14.3 dBFS RMS mean, -10.3 max (0.1 s windows)",
+   "board": "boards/s09.jpg",
+   "voice": "L08, L09"
+  },
+  {
+   "setup": "PLAIN_WIDE",
+   "location": "loc_mountain_plain",
+   "cast": [
+    "char_hero",
+    "prop_horse"
+   ],
+   "wardrobe": "char_hero outfit 5 shirt variant: pale sky-blue shirt, cream trousers (tiny in frame)",
+   "shot_size": "extreme wide",
+   "subject_in_frame": "Jagged snowy range across y 15-50%; golden grass foreground y 55-100%; the chestnut horse in profile facing right at x 34-46%, y 47-62% (12% of width); the hero stands facing it at x 49-52%, y 47-63% (3% of width), patting its nose; adobe farm buildings x 60-75%, y 52-58%.",
+   "camera": "low, eye level of the doll, long lens (~85 mm), deep focus",
+   "camera_move": "locked off",
+   "action": "19.08-19.98 he stands by the horse; 19.98-20.58 he pats its nose and says 'Good horsey.'",
+   "light": "low warm sun from the right, clear pale sky; brightness 133/133/132",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L09 tail to 19.56; L10 hero \"Good horsey.\" 19.98-20.58 on camera (tiny in frame, mouth does not move).",
+   "render": "Speaking shot (extreme wide): first frame = plate of the plain with horse and hero + guide_audio set/lines/L10.wav placed at 0.90 s into the take.",
+   "n": 10,
+   "start": 19.08,
+   "end": 20.54,
+   "dur": 1.46,
+   "in": "cut",
+   "brightness": {
+    "start": 133,
+    "mid": 133,
+    "end": 132
+   },
+   "colour": "#8a8281",
+   "change": 3.74,
+   "sound": "-15.1 dBFS RMS mean, -10.9 max (0.1 s windows)",
+   "board": "boards/s10.jpg",
+   "voice": "L09, L10"
+  },
+  {
+   "setup": "CAR_PHONE_MOUNT",
+   "location": "loc_vineyard_road",
+   "cast": [
+    "product_car",
+    "product_phone"
+   ],
+   "wardrobe": "none",
+   "shot_size": "close-up",
+   "subject_in_frame": "The tangerine phone in a black dashboard mount, centred x 47-61%, y 2-70% (14% of width), screen facing camera; the car's tan dashboard edge across the bottom y 65-100%; the windscreen frame top-left; blurred golden vineyard hills behind.",
+   "camera": "from the passenger side at dashboard height, slightly low, long lens (~85 mm), very shallow depth of field",
+   "camera_move": "locked to the car (car-mount); the background slides left (driving), slight road vibration",
+   "action": "20.54-22.13 the rewards screen glows on the phone as they drive; nothing else moves.",
+   "light": "low golden sun from behind left; dark: 77/77/75",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_driving",
+     "file": "set/ui_legal_driving.png",
+     "words": "No one was using a phone while driving in this ad. Trip Cash is not redeemable for cash.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      20.54,
+      22.13
+     ]
+    },
+    {
+     "item": "ui_rewards",
+     "file": "set/ui_rewards.jpg",
+     "words": "Your Rewards / Hi, {HERO} / Gold / Trip Cash / $144.92 / Keep Earning",
+     "position": "on the mounted phone",
+     "in_out": [
+      20.54,
+      22.13
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L11 'He even got this rental with his rewards.' 20.72-22.58 (voice-over), runs 0.45 s into shot 12. L10 tail to 20.58.",
+   "render": "Screen shot: first + last frame plate of the mounted blank-screen phone in the moving car (background slid 10%), ui_rewards composited on the screen in post.",
+   "n": 11,
+   "start": 20.54,
+   "end": 22.13,
+   "dur": 1.59,
+   "in": "cut",
+   "brightness": {
+    "start": 77,
+    "mid": 77,
+    "end": 75
+   },
+   "colour": "#5c483c",
+   "change": 10.86,
+   "sound": "-12.7 dBFS RMS mean, -9.4 max (0.1 s windows)",
+   "board": "boards/s11.jpg",
+   "voice": "L10, L11"
+  },
+  {
+   "setup": "CAR_SIDE",
+   "location": "loc_vineyard_road",
+   "cast": [
+    "char_hero",
+    "product_car",
+    "product_suitcase"
+   ],
+   "wardrobe": "char_hero outfit 5: pale sky-blue shirt, tangerine silk neck scarf streaming behind",
+   "shot_size": "medium",
+   "subject_in_frame": "Side-on along the car moving right: the car's tangerine body fills the bottom y 60-100%, x 0-100%; the tangerine suitcase in the passenger seat x 5-25%, y 30-62%; the hero driving at x 45-60%, y 15-60% (14% of width), facing right, scarf flowing back across x 25-45%; windscreen frame x 65-80%.",
+   "camera": "tracking alongside at car-door height, normal lens (~40 mm), background soft",
+   "camera_move": "tracking right with the car (car-mount), background slides left fast; slight bounce",
+   "action": "22.13-22.66 he drives, scarf flapping; 22.66-24.05 he says 'In {HERO} math, it was free.', a small proud head nod toward camera on 'free'.",
+   "light": "golden low sun from behind, warm; brightness 125/126/127",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_driving",
+     "file": "set/ui_legal_driving.png",
+     "words": "No one was using a phone while driving in this ad. Trip Cash is not redeemable for cash.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      22.13,
+      23.75
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed, wind. Narrator L11 tail to 22.58; L12 hero \"In {HERO} math, it was free.\" 22.66-24.05 on camera (mouth does not move), 'free' runs 0.30 s into shot 13.",
+   "render": "Speaking shot: first frame = plate of the side tracking framing (product_car with hero and suitcase on loc_vineyard_road) + guide_audio set/lines/L12.wav.",
+   "n": 12,
+   "start": 22.13,
+   "end": 23.75,
+   "dur": 1.62,
+   "in": "cut",
+   "brightness": {
+    "start": 125,
+    "mid": 126,
+    "end": 127
+   },
+   "colour": "#a4763e",
+   "change": 12.18,
+   "sound": "-13.6 dBFS RMS mean, -10.9 max (0.1 s windows)",
+   "board": "boards/s12.jpg",
+   "voice": "L11, L12"
+  },
+  {
+   "setup": "ROAD_WIDE",
+   "location": "loc_vineyard_road",
+   "cast": [
+    "char_hero",
+    "product_car",
+    "product_suitcase"
+   ],
+   "wardrobe": "char_hero outfit 5",
+   "shot_size": "wide",
+   "subject_in_frame": "The car drives left to right on the road, side view, x 20-78%, y 45-85% (58% of width) at first; vineyard hills and cypresses behind (horizon y 20%). 24.30-25.20 a tall dark cypress in the near foreground passes right to left across the frame (x 100% -> 0%, 15% of width, full height) as a natural wipe.",
+   "camera": "eye level of the car, from across the road, normal lens (~35 mm)",
+   "camera_move": "slow pan right following the car (about 10% of frame over the shot)",
+   "action": "23.75-25.88 he cruises along, scarf flying; a foreground cypress sweeps through 24.30-25.20; at 25.6 the car drifts toward the left side of the road.",
+   "light": "golden-hour, warm haze; brightness 106/98/103",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_driving",
+     "file": "set/ui_legal_driving.png",
+     "words": "No one was using a phone while driving in this ad. Trip Cash is not redeemable for cash.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      23.75,
+      25.88
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed, engine purr. Narrator L13 '{HERO}, in Italy, they also drive on the right.' 24.24-26.34 (voice-over).",
+   "render": "Picture shot, first + last frame: car left of centre -> car right of centre; the foreground cypress pass is a separate dark element wiped across in post (or in the take).",
+   "n": 13,
+   "start": 23.75,
+   "end": 25.88,
+   "dur": 2.13,
+   "in": "cut",
+   "brightness": {
+    "start": 106,
+    "mid": 98,
+    "end": 103
+   },
+   "colour": "#7c5c3b",
+   "change": 20.96,
+   "sound": "-12.9 dBFS RMS mean, -10.4 max (0.1 s windows)",
+   "board": "boards/s13.jpg",
+   "boards": [
+    "boards/s13a.jpg",
+    "boards/s13b.jpg"
+   ],
+   "voice": "L12, L13"
+  },
+  {
+   "setup": "CAR_FRONT",
+   "location": "loc_vineyard_road",
+   "cast": [
+    "char_hero",
+    "product_car",
+    "product_suitcase"
+   ],
+   "wardrobe": "char_hero outfit 5",
+   "shot_size": "medium",
+   "subject_in_frame": "Head-on: the windscreen and bonnet fill y 55-100%; the hero at the wheel centred x 47-60%, y 10-62% (13% of width), seatbelt across; the suitcase in the seat beside him left x 30-46%, y 10-35%; scarf flowing right; the road and hills recede behind.",
+   "camera": "from the bonnet, low, straight on, normal lens (~35 mm), background soft",
+   "camera_move": "car-mount, locked to the car; the background recedes; 26.40-26.70 a quick swerve: the whole car tilts and shifts 5% right",
+   "action": "25.88-26.40 he drives on, smiling; 26.40-26.70 he notices, jerks the wheel back to the right lane; 26.42-27.66 'Oh, mi scusi.' with a sheepish head tilt.",
+   "light": "golden sun behind him, rim light on hair; brightness 113/115/118",
+   "text": [
+    {
+     "item": "ui_bug",
+     "file": "set/ui_bug.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "top-left, x 3-19%, y 5-10%, white",
+     "in_out": "whole shot"
+    },
+    {
+     "item": "ui_legal_driving",
+     "file": "set/ui_legal_driving.png",
+     "words": "No one was using a phone while driving in this ad. Trip Cash is not redeemable for cash.",
+     "position": "bottom centre, baseline y 95%, white 15 px",
+     "in_out": [
+      25.88,
+      27.25
+     ]
+    }
+   ],
+   "out": "hard cut",
+   "audio": "Score: music bed. Narrator L13 tail to 26.34; L14 hero \"Oh, mi scusi.\" 26.42-27.66 on camera (mock-Italian, mouth does not move), runs 0.41 s into shot 15.",
+   "render": "Speaking shot: first frame = plate of the head-on framing + guide_audio set/lines/L14.wav (the swerve is in the take).",
+   "n": 14,
+   "start": 25.88,
+   "end": 27.25,
+   "dur": 1.37,
+   "in": "cut",
+   "brightness": {
+    "start": 113,
+    "mid": 115,
+    "end": 118
+   },
+   "colour": "#946c41",
+   "change": 27.89,
+   "sound": "-13.0 dBFS RMS mean, -9.7 max (0.1 s windows)",
+   "board": "boards/s14.jpg",
+   "voice": "L13, L14"
+  },
+  {
+   "setup": "AERIAL_ENDCARD",
+   "location": "loc_hills_aerial",
+   "cast": [
+    "product_car"
+   ],
+   "wardrobe": "none",
+   "shot_size": "extreme wide (aerial)",
+   "subject_in_frame": "High aerial over the miniature hills: winding road from bottom-left to centre, the tiny tangerine car at x 50%, y 72% (2% of width) driving up it; vineyards, cypresses, red-roofed farmhouses; horizon at y 18%; end card graphics over it (see text).",
+   "camera": "aerial, about 40 degrees down, wide lens, deep focus",
+   "camera_move": "slow push in and drift up, scale 1.00 -> 1.06 over 2.75 s, linear; at 28.42-28.58 the picture shrinks inside the brand-colour border (to 97.8%)",
+   "action": "27.25-27.75 big centred logo over the aerial; 27.75-28.00 logo shrinks up to the top; 28.00-28.90 the tagline writes on in two lines; 28.42 the brand-colour border frames the picture; holds to 30.0.",
+   "light": "sunset, pink-orange sky, warm; brightness 101/125/148 (the border and white type lift it)",
+   "text": [
+    {
+     "item": "ui_endcard_logo",
+     "file": "set/ui_endcard_logo.png",
+     "words": "{BRAND_MARK} {BRAND}",
+     "position": "centred, x 30-70%, y 43-56%",
+     "in_out": [
+      27.25,
+      28.0
+     ]
+    },
+    {
+     "item": "ui_endcard",
+     "file": "set/ui_endcard.png",
+     "words": "{BRAND} / THE ONE APP you / need TO GET AWAY ({TAGLINE})",
+     "position": "logo y 21.5-26%, tagline y 30-58%, border 14 px",
+     "in_out": [
+      28.0,
+      30.0
+     ]
+    },
+    {
+     "item": "ui_legal_endcard",
+     "file": "set/ui_legal_endcard.png",
+     "words": "© 2026 {BRAND}. All rights reserved. / All characters, places and products shown are fictional miniatures.",
+     "position": "bottom centre, two lines, y 90-94%",
+     "in_out": [
+      27.25,
+      30.0
+     ]
+    }
+   ],
+   "out": "end",
+   "audio": "Score: music bed to the end, final hit and ring-out 29.4-30.0. Narrator L15 '{BRAND}. {TAGLINE}' 27.72-29.93 (both muted in the clip: the new brand name 0.46 s and tagline 1.84 s in the narrator's voice). L14 tail to 27.66.",
+   "render": "Motion graphics over a picture take: first + last frame aerial plate (loc_hills_aerial, tiny car on the road) pushed in 6%; end card drawn in code from ui_endcard_logo, ui_endcard_tagline, ui_endcard_border, ui_legal_endcard with the timings in set/ui.json.",
+   "n": 15,
+   "start": 27.25,
+   "end": 30.0,
+   "dur": 2.75,
+   "in": "cut",
+   "brightness": {
+    "start": 101,
+    "mid": 125,
+    "end": 148
+   },
+   "colour": "#9a7554",
+   "change": 26.16,
+   "sound": "-14.4 dBFS RMS mean, -10.8 max (0.1 s windows)",
+   "board": "boards/s15.jpg",
+   "boards": [
+    "boards/s15a.jpg",
+    "boards/s15b.jpg"
+   ],
+   "voice": "L14, L15"
+  }
+ ],
+ "cut30": {
+  "duration": 30.0,
+  "fps": 24,
+  "average_shot": 2.0,
+  "median_shot": 2.04,
+  "arc": "Hook (0-5.21): an empty sunset beach, 'When every day feels the same, one man wants more.', a plane seen through binoculars, the plastic-perfect hero lowers them: 'I need an adventure.' Middle (5.21-20.54): the app (hotel list scroll), his question shouted at the sky, stop-motion packing, the narrator answering ('Book now or add later. You still save.'), 'Thanks, voice in the sky.', a cloud wipe into a tea room, a pastel street, 'Good horsey.' Payoff (20.54-27.25): rewards screen, 'In {HERO} math, it was free.', driving on the wrong side, 'Oh, mi scusi.' End card (27.25-30.0): aerial, logo, '{BRAND}. {TAGLINE}'.",
+  "note": "The source is 30.0 s, so cut30 is the source shot for shot. Source shots 4/5, 6 and 7/8 were split from the detector's shots (missed cuts at 7.92 and 15.17; 12.05 is a stop-motion change inside shot 6).",
+  "shots": [
+   {
+    "n": 1,
+    "from": 1,
+    "start": 0,
+    "end": 1.42,
+    "dur": 1.42,
+    "src": [
+     0,
+     1.42
+    ],
+    "setup": "BEACH_WIDE",
+    "board": "boards/s01.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 2,
+    "from": 2,
+    "start": 1.42,
+    "end": 2.96,
+    "dur": 1.54,
+    "src": [
+     1.42,
+     2.96
+    ],
+    "setup": "BINOC_POV",
+    "board": "boards/s02.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 3,
+    "from": 3,
+    "start": 2.96,
+    "end": 5.21,
+    "dur": 2.25,
+    "src": [
+     2.96,
+     5.21
+    ],
+    "setup": "HERO_TOWER_LOW",
+    "board": "boards/s03.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 4,
+    "from": 4,
+    "start": 5.21,
+    "end": 7.92,
+    "dur": 2.71,
+    "src": [
+     5.21,
+     7.92
+    ],
+    "setup": "PHONE_POV_BEACH",
+    "board": "boards/s04.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 5,
+    "from": 5,
+    "start": 7.92,
+    "end": 10.42,
+    "dur": 2.5,
+    "src": [
+     7.92,
+     10.42
+    ],
+    "setup": "TOWER_WIDE_SKY",
+    "board": "boards/s05.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 6,
+    "from": 6,
+    "start": 10.42,
+    "end": 12.92,
+    "dur": 2.5,
+    "src": [
+     10.42,
+     12.92
+    ],
+    "setup": "SUITCASE_TOPDOWN",
+    "board": "boards/s06.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 7,
+    "from": 7,
+    "start": 12.92,
+    "end": 15.17,
+    "dur": 2.25,
+    "src": [
+     12.92,
+     15.17
+    ],
+    "setup": "PLANE_SEAT",
+    "board": "boards/s07.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 8,
+    "from": 8,
+    "start": 15.17,
+    "end": 17.04,
+    "dur": 1.87,
+    "src": [
+     15.17,
+     17.04
+    ],
+    "setup": "RYOKAN_WIDE",
+    "board": "boards/s08.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 9,
+    "from": 9,
+    "start": 17.04,
+    "end": 19.08,
+    "dur": 2.04,
+    "src": [
+     17.04,
+     19.08
+    ],
+    "setup": "STREET_WIDE",
+    "board": "boards/s09.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 10,
+    "from": 10,
+    "start": 19.08,
+    "end": 20.54,
+    "dur": 1.46,
+    "src": [
+     19.08,
+     20.54
+    ],
+    "setup": "PLAIN_WIDE",
+    "board": "boards/s10.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 11,
+    "from": 11,
+    "start": 20.54,
+    "end": 22.13,
+    "dur": 1.59,
+    "src": [
+     20.54,
+     22.13
+    ],
+    "setup": "CAR_PHONE_MOUNT",
+    "board": "boards/s11.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 12,
+    "from": 12,
+    "start": 22.13,
+    "end": 23.75,
+    "dur": 1.62,
+    "src": [
+     22.13,
+     23.75
+    ],
+    "setup": "CAR_SIDE",
+    "board": "boards/s12.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 13,
+    "from": 13,
+    "start": 23.75,
+    "end": 25.88,
+    "dur": 2.13,
+    "src": [
+     23.75,
+     25.88
+    ],
+    "setup": "ROAD_WIDE",
+    "board": "boards/s13.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 14,
+    "from": 14,
+    "start": 25.88,
+    "end": 27.25,
+    "dur": 1.37,
+    "src": [
+     25.88,
+     27.25
+    ],
+    "setup": "CAR_FRONT",
+    "board": "boards/s14.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 15,
+    "from": 15,
+    "start": 27.25,
+    "end": 30.0,
+    "dur": 2.75,
+    "src": [
+     27.25,
+     30.0
+    ],
+    "setup": "AERIAL_ENDCARD",
+    "board": "boards/s15.jpg",
+    "change": "unchanged (source ends 30.00 video / 30.07 audio)"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L01",
+    "words": "When every day feels the same, one man wants more.",
+    "speaker": "narrator",
+    "start": 0.06,
+    "end": 3.1,
+    "speech": [
+     0.12,
+     3.06
+    ],
+    "clip": "set/lines/L01.wav",
+    "in_score": false,
+    "placement": "voice-over over shots 1-2"
+   },
+   {
+    "id": "L02",
+    "words": "I need an adventure.",
+    "speaker": "hero",
+    "start": 3.1,
+    "end": 4.3,
+    "speech": [
+     3.14,
+     4.12
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "placement": "on camera, shot 3"
+   },
+   {
+    "id": "L03",
+    "words": "So {HERO} goes to {BRAND}.",
+    "speaker": "narrator",
+    "start": 4.4,
+    "end": 6.16,
+    "speech": [
+     4.48,
+     6.02
+    ],
+    "clip": "set/lines/L03.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 3-4"
+   },
+   {
+    "id": "L04",
+    "words": "{TAGLINE}",
+    "speaker": "narrator",
+    "start": 6.24,
+    "end": 8.16,
+    "speech": [
+     6.34,
+     8.06
+    ],
+    "clip": "set/lines/L04.wav",
+    "in_score": false,
+    "placement": "voice-over, shot 4 (tagline slot, muted clip)"
+   },
+   {
+    "id": "L05",
+    "words": "So if I book my flight now but my stay later?",
+    "speaker": "hero",
+    "start": 8.25,
+    "end": 10.7,
+    "speech": [
+     8.35,
+     10.65
+    ],
+    "clip": "set/lines/L05.wav",
+    "in_score": false,
+    "placement": "on camera (wide), shot 5"
+   },
+   {
+    "id": "L06",
+    "words": "Book now or add later. You still save.",
+    "speaker": "narrator",
+    "start": 10.7,
+    "end": 13.4,
+    "speech": [
+     10.76,
+     13.26
+    ],
+    "clip": "set/lines/L06.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 6-7"
+   },
+   {
+    "id": "L07",
+    "words": "Thanks, voice in the sky.",
+    "speaker": "hero",
+    "start": 13.7,
+    "end": 15.1,
+    "speech": [
+     13.82,
+     14.86
+    ],
+    "clip": "set/lines/L07.wav",
+    "in_score": false,
+    "placement": "on camera, shot 7"
+   },
+   {
+    "id": "L08",
+    "words": "The more {HERO} travels, the more he saves.",
+    "speaker": "narrator",
+    "start": 15.1,
+    "end": 17.52,
+    "speech": [
+     15.18,
+     17.48
+    ],
+    "clip": "set/lines/L08.wav",
+    "in_score": false,
+    "placement": "voice-over, shot 8"
+   },
+   {
+    "id": "L09",
+    "words": "Bundling flights, stays and cars.",
+    "speaker": "narrator",
+    "start": 17.52,
+    "end": 19.9,
+    "speech": [
+     17.61,
+     19.56
+    ],
+    "clip": "set/lines/L09.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 9-10"
+   },
+   {
+    "id": "L10",
+    "words": "Good horsey.",
+    "speaker": "hero",
+    "start": 19.9,
+    "end": 20.62,
+    "speech": [
+     19.98,
+     20.58
+    ],
+    "clip": "set/lines/L10.wav",
+    "in_score": false,
+    "placement": "on camera (extreme wide), shot 10"
+   },
+   {
+    "id": "L11",
+    "words": "He even got this rental with his rewards.",
+    "speaker": "narrator",
+    "start": 20.62,
+    "end": 22.61,
+    "speech": [
+     20.72,
+     22.58
+    ],
+    "clip": "set/lines/L11.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 11-12"
+   },
+   {
+    "id": "L12",
+    "words": "In {HERO} math, it was free.",
+    "speaker": "hero",
+    "start": 22.61,
+    "end": 24.12,
+    "speech": [
+     22.66,
+     24.05
+    ],
+    "clip": "set/lines/L12.wav",
+    "in_score": false,
+    "placement": "on camera, shot 12"
+   },
+   {
+    "id": "L13",
+    "words": "{HERO}, in Italy, they also drive on the right.",
+    "speaker": "narrator",
+    "start": 24.12,
+    "end": 26.38,
+    "speech": [
+     24.24,
+     26.34
+    ],
+    "clip": "set/lines/L13.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 13-14"
+   },
+   {
+    "id": "L14",
+    "words": "Oh, mi scusi.",
+    "speaker": "hero",
+    "start": 26.38,
+    "end": 27.69,
+    "speech": [
+     26.42,
+     27.66
+    ],
+    "clip": "set/lines/L14.wav",
+    "in_score": false,
+    "placement": "on camera, shot 14"
+   },
+   {
+    "id": "L15",
+    "words": "{BRAND}. {TAGLINE}",
+    "speaker": "narrator",
+    "start": 27.69,
+    "end": 30.0,
+    "speech": [
+     27.72,
+     29.93
+    ],
+    "clip": "set/lines/L15.wav",
+    "in_score": false,
+    "placement": "voice-over over the end card (brand + tagline slots, muted clip)"
+   }
+  ],
+  "score": {
+   "file": "set/score_30.wav",
+   "segments": [
+    {
+     "src_in": 0.0,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "as the source: surf 0-1.1, music 1.1-30.0 (136 bpm, bar 1.765 s, bars at 1.126 + n x 1.765)"
+  },
+  "text": [
+   {
+    "item": "ui_bug",
+    "in_out": [
+     0,
+     1.42
+    ],
+    "shot": 1
+   },
+   {
+    "item": "ui_sky_logo",
+    "in_out": [
+     0.0,
+     1.42
+    ],
+    "shot": 1
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     1.42,
+     2.96
+    ],
+    "shot": 2
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     2.96,
+     5.21
+    ],
+    "shot": 3
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     5.21,
+     7.92
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_legal_app",
+    "in_out": [
+     5.21,
+     7.92
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_app_list",
+    "in_out": [
+     5.21,
+     7.92
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     7.92,
+     10.42
+    ],
+    "shot": 5
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     10.42,
+     12.92
+    ],
+    "shot": 6
+   },
+   {
+    "item": "ui_legal_savings",
+    "in_out": [
+     10.42,
+     12.92
+    ],
+    "shot": 6
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     12.92,
+     15.17
+    ],
+    "shot": 7
+   },
+   {
+    "item": "ui_legal_savings",
+    "in_out": [
+     12.92,
+     15.17
+    ],
+    "shot": 7
+   },
+   {
+    "item": "ui_trip_added",
+    "in_out": [
+     12.92,
+     15.17
+    ],
+    "shot": 7
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     15.17,
+     17.04
+    ],
+    "shot": 8
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     17.04,
+     19.08
+    ],
+    "shot": 9
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     19.08,
+     20.54
+    ],
+    "shot": 10
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     20.54,
+     22.13
+    ],
+    "shot": 11
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     20.54,
+     22.13
+    ],
+    "shot": 11
+   },
+   {
+    "item": "ui_rewards",
+    "in_out": [
+     20.54,
+     22.13
+    ],
+    "shot": 11
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     22.13,
+     23.75
+    ],
+    "shot": 12
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     22.13,
+     23.75
+    ],
+    "shot": 12
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     23.75,
+     25.88
+    ],
+    "shot": 13
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     23.75,
+     25.88
+    ],
+    "shot": 13
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     25.88,
+     27.25
+    ],
+    "shot": 14
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     25.88,
+     27.25
+    ],
+    "shot": 14
+   },
+   {
+    "item": "ui_endcard_logo",
+    "in_out": [
+     27.25,
+     28.0
+    ],
+    "shot": 15
+   },
+   {
+    "item": "ui_endcard",
+    "in_out": [
+     28.0,
+     30.0
+    ],
+    "shot": 15
+   },
+   {
+    "item": "ui_legal_endcard",
+    "in_out": [
+     27.25,
+     30.0
+    ],
+    "shot": 15
+   }
+  ],
+  "end_card": {
+   "start": 27.25,
+   "end": 30.0,
+   "logo": [
+    27.25,
+    28.0
+   ],
+   "tagline": [
+    28.0,
+    30.0
+   ],
+   "border": [
+    28.42,
+    30.0
+   ]
+  }
+ },
+ "cut15": {
+  "duration": 15.0,
+  "fps": 24,
+  "average_shot": 1.88,
+  "arc": "Hook (0-3.34): the hero lowers the binoculars, 'I need an adventure.', 'So {HERO} goes to {BRAND}.' on the phone. Proof (3.34-9.04): stop-motion packing under 'Book now or add later. You still save.', 'Thanks, voice in the sky.', the cloud wipe to the tea room. Payoff (9.04-12.25): rewards screen, 'He even got this rental with his rewards.', 'In {HERO} math, it was free.' End card (12.25-15.0): '{BRAND}. {TAGLINE}'.",
+  "shots": [
+   {
+    "n": 1,
+    "from": 3,
+    "start": 0.0,
+    "end": 2.25,
+    "dur": 2.25,
+    "src": [
+     2.96,
+     5.21
+    ],
+    "setup": "HERO_TOWER_LOW",
+    "board": "boards/s03.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 2,
+    "from": 4,
+    "start": 2.25,
+    "end": 3.34,
+    "dur": 1.09,
+    "src": [
+     5.21,
+     6.3
+    ],
+    "setup": "PHONE_POV_BEACH",
+    "board": "boards/s04.jpg",
+    "change": "first 1.09 s only: the phone list before the swipe"
+   },
+   {
+    "n": 3,
+    "from": 6,
+    "start": 3.34,
+    "end": 5.64,
+    "dur": 2.3,
+    "src": [
+     10.62,
+     12.92
+    ],
+    "setup": "SUITCASE_TOPDOWN",
+    "board": "boards/s06.jpg",
+    "change": "starts 0.20 s in, mid-packing"
+   },
+   {
+    "n": 4,
+    "from": 7,
+    "start": 5.64,
+    "end": 7.89,
+    "dur": 2.25,
+    "src": [
+     12.92,
+     15.17
+    ],
+    "setup": "PLANE_SEAT",
+    "board": "boards/s07.jpg",
+    "change": "unchanged, incl. the cloud wipe"
+   },
+   {
+    "n": 5,
+    "from": 8,
+    "start": 7.89,
+    "end": 9.04,
+    "dur": 1.15,
+    "src": [
+     15.17,
+     16.32
+    ],
+    "setup": "RYOKAN_WIDE",
+    "board": "boards/s08.jpg",
+    "change": "first 1.15 s: clouds clear, he sips tea"
+   },
+   {
+    "n": 6,
+    "from": 11,
+    "start": 9.04,
+    "end": 10.63,
+    "dur": 1.59,
+    "src": [
+     20.54,
+     22.13
+    ],
+    "setup": "CAR_PHONE_MOUNT",
+    "board": "boards/s11.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 7,
+    "from": 12,
+    "start": 10.63,
+    "end": 12.25,
+    "dur": 1.62,
+    "src": [
+     22.13,
+     23.75
+    ],
+    "setup": "CAR_SIDE",
+    "board": "boards/s12.jpg",
+    "change": "unchanged"
+   },
+   {
+    "n": 8,
+    "from": 15,
+    "start": 12.25,
+    "end": 15.0,
+    "dur": 2.75,
+    "src": [
+     27.25,
+     30.0
+    ],
+    "setup": "AERIAL_ENDCARD",
+    "board": "boards/s15.jpg",
+    "change": "unchanged"
+   }
+  ],
+  "lines": [
+   {
+    "id": "L02",
+    "words": "I need an adventure.",
+    "speaker": "hero",
+    "start": 0.14,
+    "end": 1.34,
+    "speech": [
+     0.18,
+     1.16
+    ],
+    "clip": "set/lines/L02.wav",
+    "in_score": false,
+    "placement": "on camera, shot 3"
+   },
+   {
+    "id": "L03",
+    "words": "So {HERO} goes to {BRAND}.",
+    "speaker": "narrator",
+    "start": 1.44,
+    "end": 3.2,
+    "speech": [
+     1.52,
+     3.06
+    ],
+    "clip": "set/lines/L03.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 3-4"
+   },
+   {
+    "id": "L06",
+    "words": "Book now or add later. You still save.",
+    "speaker": "narrator",
+    "start": 3.42,
+    "end": 6.12,
+    "speech": [
+     3.48,
+     5.98
+    ],
+    "clip": "set/lines/L06.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 6-7"
+   },
+   {
+    "id": "L07",
+    "words": "Thanks, voice in the sky.",
+    "speaker": "hero",
+    "start": 6.42,
+    "end": 7.82,
+    "speech": [
+     6.54,
+     7.58
+    ],
+    "clip": "set/lines/L07.wav",
+    "in_score": false,
+    "placement": "on camera, shot 7"
+   },
+   {
+    "id": "L11",
+    "words": "He even got this rental with his rewards.",
+    "speaker": "narrator",
+    "start": 9.12,
+    "end": 11.11,
+    "speech": [
+     9.22,
+     11.08
+    ],
+    "clip": "set/lines/L11.wav",
+    "in_score": false,
+    "placement": "voice-over, shots 11-12"
+   },
+   {
+    "id": "L12",
+    "words": "In {HERO} math, it was free.",
+    "speaker": "hero",
+    "start": 11.11,
+    "end": 12.62,
+    "speech": [
+     11.16,
+     12.55
+    ],
+    "clip": "set/lines/L12.wav",
+    "in_score": false,
+    "placement": "on camera, shot 12"
+   },
+   {
+    "id": "L15",
+    "words": "{BRAND}. {TAGLINE}",
+    "speaker": "narrator",
+    "start": 12.69,
+    "end": 15.0,
+    "speech": [
+     12.72,
+     14.93
+    ],
+    "clip": "set/lines/L15.wav",
+    "in_score": false,
+    "placement": "voice-over over the end card (brand + tagline slots, muted clip)"
+   }
+  ],
+  "score": {
+   "file": "set/score_15.wav",
+   "segments": [
+    {
+     "src_in": 2.647,
+     "src_out": 11.714
+    },
+    {
+     "src_in": 24.067,
+     "src_out": 30.0
+    }
+   ],
+   "xfade_ms": 30,
+   "fade_in": 0,
+   "fade_out": 0.15,
+   "sections": "music from the start (src 2.647, a half-beat before the bar at 2.891, so the join lands on the bar); join at 9.067 (bar 11.714 -> bar 24.067), 0.03 s after the picture cut at 9.04; the end-card music lines up within 0.07 s (new 12.25 = src 27.18)."
+  },
+  "text": [
+   {
+    "item": "ui_bug",
+    "in_out": [
+     0.0,
+     2.25
+    ],
+    "shot": 1
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     2.25,
+     3.34
+    ],
+    "shot": 2
+   },
+   {
+    "item": "ui_legal_app",
+    "in_out": [
+     2.25,
+     3.34
+    ],
+    "shot": 2
+   },
+   {
+    "item": "ui_app_list",
+    "in_out": [
+     2.25,
+     3.34
+    ],
+    "shot": 2
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     3.34,
+     5.64
+    ],
+    "shot": 3
+   },
+   {
+    "item": "ui_legal_savings",
+    "in_out": [
+     3.34,
+     5.64
+    ],
+    "shot": 3
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     5.64,
+     7.89
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_legal_savings",
+    "in_out": [
+     5.64,
+     7.89
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_trip_added",
+    "in_out": [
+     5.64,
+     7.89
+    ],
+    "shot": 4
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     7.89,
+     9.04
+    ],
+    "shot": 5
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     9.04,
+     10.63
+    ],
+    "shot": 6
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     9.04,
+     10.63
+    ],
+    "shot": 6
+   },
+   {
+    "item": "ui_rewards",
+    "in_out": [
+     9.04,
+     10.63
+    ],
+    "shot": 6
+   },
+   {
+    "item": "ui_bug",
+    "in_out": [
+     10.63,
+     12.25
+    ],
+    "shot": 7
+   },
+   {
+    "item": "ui_legal_driving",
+    "in_out": [
+     10.63,
+     12.25
+    ],
+    "shot": 7
+   },
+   {
+    "item": "ui_endcard_logo",
+    "in_out": [
+     12.25,
+     13.0
+    ],
+    "shot": 8
+   },
+   {
+    "item": "ui_endcard",
+    "in_out": [
+     13.0,
+     15.0
+    ],
+    "shot": 8
+   },
+   {
+    "item": "ui_legal_endcard",
+    "in_out": [
+     12.25,
+     15.0
+    ],
+    "shot": 8
+   }
+  ],
+  "end_card": {
+   "start": 12.25,
+   "end": 15.0,
+   "logo": [
+    12.25,
+    13.0
+   ],
+   "tagline": [
+    13.0,
+    15.0
+   ],
+   "border": [
+    13.42,
+    15.0
+   ]
+  }
+ }
+}

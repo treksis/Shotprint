@@ -1,0 +1,426 @@
+{
+ "about": "The film's recorded lines, one clip per line (set/lines/Lnn.wav), cut from the soundtrack at phrase boundaries (10 ms fades), 48 kHz mono. Music sits under every line (the dialogue is mixed into the score), so the lines are also inside set/score.wav: in both cuts in_score is true. Use a clip as guide_audio for its speaking shot and as the timing target; never retime. Line text is English; where the source speaks Spanish the original is noted in 'source_language'. 'src' = absolute times in the source film; 'clip_src' = the clip's extent in the source; word times are absolute source times (good to about 0.1 s); 'cut30'/'cut15' = the line's start/end in each cut (null when not in it). Muted windows: the brand word in L01 and the heroine's name in L08 are silence; record the new names there.",
+ "delivery": {
+  "announcer": "big glossy radio-promo / soap-opera announcer, Spanish-accented, rising",
+  "heroine": "comic, breathless panic in the car; full-voiced diva triumph on the practice words",
+  "doctor": "slow, warm, seductive baritone, mock-grave, long pauses between phrases"
+ },
+ "lines": [
+  {
+   "id": "L01",
+   "words": "{BRAND} presents.",
+   "speaker": "announcer",
+   "kind": "voice-over",
+   "src": [
+    0.35,
+    1.9
+   ],
+   "clip": "set/lines/L01.wav",
+   "clip_src": [
+    0.3,
+    2.05
+   ],
+   "word_times": [
+    {
+     "w": "{BRAND}",
+     "start": 0.35,
+     "end": 1.05,
+     "muted": true
+    },
+    {
+     "w": "presents.",
+     "start": 1.1,
+     "end": 1.9
+    }
+   ],
+   "source_language": "Spanish 'presenta' (= presents)",
+   "cut30": [
+    0.35,
+    1.9
+   ],
+   "cut15": null
+  },
+  {
+   "id": "L02",
+   "words": "Get ready for the world's biggest reggaeton show. It's going to be a...",
+   "speaker": "announcer",
+   "kind": "voice-over (car radio)",
+   "src": [
+    2.55,
+    6.48
+   ],
+   "clip": "set/lines/L02.wav",
+   "clip_src": [
+    2.45,
+    6.52
+   ],
+   "word_times": [
+    {
+     "w": "Get",
+     "start": 2.55,
+     "end": 2.7
+    },
+    {
+     "w": "ready",
+     "start": 2.7,
+     "end": 2.98
+    },
+    {
+     "w": "for",
+     "start": 2.98,
+     "end": 3.15
+    },
+    {
+     "w": "the",
+     "start": 3.15,
+     "end": 3.35
+    },
+    {
+     "w": "world's",
+     "start": 3.35,
+     "end": 3.95
+    },
+    {
+     "w": "biggest",
+     "start": 3.95,
+     "end": 4.45
+    },
+    {
+     "w": "reggaeton",
+     "start": 4.45,
+     "end": 5.15
+    },
+    {
+     "w": "show.",
+     "start": 5.15,
+     "end": 5.58
+    },
+    {
+     "w": "It's",
+     "start": 5.85,
+     "end": 5.98
+    },
+    {
+     "w": "going",
+     "start": 5.98,
+     "end": 6.2
+    },
+    {
+     "w": "to",
+     "start": 6.2,
+     "end": 6.3
+    },
+    {
+     "w": "be",
+     "start": 6.3,
+     "end": 6.4
+    },
+    {
+     "w": "a...",
+     "start": 6.4,
+     "end": 6.48
+    }
+   ],
+   "cut30": [
+    2.55,
+    6.48
+   ],
+   "cut15": [
+    0.173,
+    0.803
+   ],
+   "cut15_note": "partial: the cut keeps only this part"
+  },
+  {
+   "id": "L03",
+   "words": "I don't speak Spanish!",
+   "speaker": "heroine",
+   "kind": "on-camera speech",
+   "src": [
+    6.62,
+    7.72
+   ],
+   "clip": "set/lines/L03.wav",
+   "clip_src": [
+    6.5,
+    7.8
+   ],
+   "word_times": [
+    {
+     "w": "I",
+     "start": 6.62,
+     "end": 6.7
+    },
+    {
+     "w": "don't",
+     "start": 6.7,
+     "end": 7.0
+    },
+    {
+     "w": "speak",
+     "start": 7.08,
+     "end": 7.25
+    },
+    {
+     "w": "Spanish!",
+     "start": 7.28,
+     "end": 7.72
+    }
+   ],
+   "cut30": [
+    6.62,
+    7.72
+   ],
+   "cut15": [
+    0.943,
+    2.043
+   ]
+  },
+  {
+   "id": "L04",
+   "words": "...unforgettable.",
+   "speaker": "announcer",
+   "kind": "voice-over (car radio)",
+   "src": [
+    8.05,
+    9.0
+   ],
+   "clip": "set/lines/L04.wav",
+   "clip_src": [
+    8.0,
+    9.02
+   ],
+   "word_times": [
+    {
+     "w": "...unforgettable.",
+     "start": 8.05,
+     "end": 9.0
+    }
+   ],
+   "cut30": [
+    8.05,
+    9.0
+   ],
+   "cut15": [
+    2.373,
+    3.323
+   ]
+  },
+  {
+   "id": "L05",
+   "words": "(scream)",
+   "speaker": "heroine",
+   "kind": "on-camera scream",
+   "src": [
+    9.0,
+    10.1
+   ],
+   "clip": "set/lines/L05.wav",
+   "clip_src": [
+    9.0,
+    10.1
+   ],
+   "word_times": [
+    {
+     "w": "(scream)",
+     "start": 9.0,
+     "end": 10.1
+    }
+   ],
+   "cut30": [
+    9.0,
+    10.052
+   ],
+   "cut15": [
+    3.323,
+    4.375
+   ],
+   "cut30_note": "partial: the cut keeps only this part",
+   "cut15_note": "partial: the cut keeps only this part"
+  },
+  {
+   "id": "L06",
+   "words": "Normally, I wouldn't do this, but you need juicy lips so you can roll those R's.",
+   "speaker": "doctor",
+   "kind": "voice-over over the insert, on camera in the doctor close-up",
+   "src": [
+    36.74,
+    44.8
+   ],
+   "clip": "set/lines/L06.wav",
+   "clip_src": [
+    36.68,
+    44.95
+   ],
+   "word_times": [
+    {
+     "w": "Normally,",
+     "start": 36.74,
+     "end": 37.72
+    },
+    {
+     "w": "I",
+     "start": 38.28,
+     "end": 38.36
+    },
+    {
+     "w": "wouldn't",
+     "start": 38.36,
+     "end": 38.62
+    },
+    {
+     "w": "do",
+     "start": 38.62,
+     "end": 38.75
+    },
+    {
+     "w": "this,",
+     "start": 38.75,
+     "end": 39.2
+    },
+    {
+     "w": "but",
+     "start": 40.48,
+     "end": 40.62
+    },
+    {
+     "w": "you",
+     "start": 40.62,
+     "end": 40.7
+    },
+    {
+     "w": "need",
+     "start": 40.7,
+     "end": 40.82
+    },
+    {
+     "w": "juicy",
+     "start": 41.12,
+     "end": 41.45
+    },
+    {
+     "w": "lips",
+     "start": 41.55,
+     "end": 41.85
+    },
+    {
+     "w": "so",
+     "start": 42.48,
+     "end": 42.62
+    },
+    {
+     "w": "you",
+     "start": 42.62,
+     "end": 42.72
+    },
+    {
+     "w": "can",
+     "start": 42.72,
+     "end": 42.9
+    },
+    {
+     "w": "roll",
+     "start": 43.08,
+     "end": 43.5
+    },
+    {
+     "w": "those",
+     "start": 44.18,
+     "end": 44.42
+    },
+    {
+     "w": "R's.",
+     "start": 44.48,
+     "end": 44.8
+    }
+   ],
+   "source_language": "first word Spanish 'Normalmente' (= Normally); the rest English",
+   "cut30": [
+    10.131,
+    18.191
+   ],
+   "cut15": [
+    4.454,
+    6.914
+   ],
+   "cut15_note": "partial: the cut keeps only this part"
+  },
+  {
+   "id": "L07",
+   "words": "Cheese, fire, cheese, fire!",
+   "speaker": "heroine",
+   "kind": "on-camera speech (sung-spoken)",
+   "src": [
+    95.15,
+    96.8
+   ],
+   "clip": "set/lines/L07.wav",
+   "clip_src": [
+    95.05,
+    96.9
+   ],
+   "word_times": [
+    {
+     "w": "Cheese,",
+     "start": 95.15,
+     "end": 95.5
+    },
+    {
+     "w": "fire,",
+     "start": 95.62,
+     "end": 95.88
+    },
+    {
+     "w": "cheese,",
+     "start": 95.98,
+     "end": 96.18
+    },
+    {
+     "w": "fire!",
+     "start": 96.22,
+     "end": 96.8
+    }
+   ],
+   "source_language": "Spanish practice words 'Queso, fuego, queso, fuego' (= cheese, fire)",
+   "cut30": [
+    20.541,
+    22.191
+   ],
+   "cut15": [
+    8.603,
+    10.253
+   ]
+  },
+  {
+   "id": "L08",
+   "words": "{HEROINE}!",
+   "speaker": "announcer",
+   "kind": "voice-over, sung",
+   "src": [
+    110.25,
+    111.65
+   ],
+   "clip": "set/lines/L08.wav",
+   "clip_src": [
+    110.2,
+    111.75
+   ],
+   "word_times": [
+    {
+     "w": "{HEROINE}!",
+     "start": 110.25,
+     "end": 111.65,
+     "muted": true
+    }
+   ],
+   "cut30": [
+    25.207,
+    26.607
+   ],
+   "cut15": [
+    10.66,
+    12.06
+   ]
+  }
+ ]
+}
