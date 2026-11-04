@@ -67,7 +67,7 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
   return (
     <div className="flex-1 overflow-y-auto">
       <div className="mx-auto w-full max-w-[1120px] px-6 pt-10 pb-24">
-        <p className="text-[12px] font-medium tracking-wide text-muted-foreground uppercase">Build a template</p>
+        <p className="text-[12px] font-medium tracking-wide text-muted-foreground uppercase">Make a template</p>
         <h1 className="mt-1 max-w-[760px] text-[36px] leading-tight font-medium tracking-[-0.01em]">Turn a video that works into a template any agent can run</h1>
         <p className="mt-3 max-w-[720px] text-[15px] text-muted-foreground">
           Upload a reference. Muse Code measures it shot by shot inside its own microVM, writes the template, then proves it

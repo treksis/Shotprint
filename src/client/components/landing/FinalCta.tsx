@@ -9,7 +9,7 @@ export function FinalCta({ onOpenStudio }: FinalCtaProps) {
     <section className="bg-[#111111] text-[#ffffff] py-14 lg:py-20 text-center">
       <div className="max-w-[1200px] mx-auto px-6" data-reveal>
         <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] font-semibold tracking-[-0.02em] leading-[1.08] text-[#ffffff]">
-          Pick a template. The agent makes the film.
+          Download a template. Any agent makes the film.
         </h2>
         <div className="mt-7">
           <button

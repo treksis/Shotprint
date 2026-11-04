@@ -13,13 +13,13 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
     },
     {
       num: '2',
-      title: 'Brief the agent',
-      desc: 'A product photo and one sentence. Muse Code directs in its own microVM.',
+      title: 'Download it',
+      desc: 'The template, its storyboards and assets, and the fill recipe: any agent, any video model.',
     },
     {
       num: '3',
-      title: 'Get your 30 s and 15 s spots',
-      desc: 'Steer it while it is made, on a live canvas.',
+      title: 'Run it',
+      desc: 'With your own agent, or with Muse Code here: your 30 s and 15 s spots, in its own microVM.',
     },
   ];
 

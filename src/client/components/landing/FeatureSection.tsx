@@ -30,7 +30,7 @@ export function FeatureSection() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center max-w-[68ch] mx-auto" data-reveal>
           <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] font-semibold tracking-[-0.02em] leading-[1.08] text-[#111111]">
-            Build a template, sell it to agents
+            Make a template, sell it to agents
           </h2>
         </div>
 

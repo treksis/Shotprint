@@ -42,14 +42,14 @@ Studio is the reference implementation:
 1. **Marketplace**: templates classified by goal (product launch, brand story, comedy, explainer,
    seasonal), industry, tone and cast. Each one is measured shot by shot from a video that already works
    (timing, framing, lens, camera move, light, text, sound), with a storyboard per shot and swappable
-   cast, product and places.
-2. **Make a video** (the reference agent): pick a template, add your product and one sentence. Muse Code, in its own microVM,
-   plans the film, draws every still with Muse Image, renders the shots, checks continuity and lip sync,
-   re-renders takes that drift, and cuts the 30 s and 15 s versions on the beat. Every file lands on a
-   live canvas; you can steer or queue changes mid-run.
-3. **Build a template**: upload your own reference. In its own microVM the agent measures it, writes the
+   cast, product and places. Every template downloads as a package with its fill recipe.
+2. **Make a template**: upload your own reference. In its own microVM the agent measures it, writes the
    template, and benchmarks it: it remakes the reference from the template alone and shows the two side
    by side. Keep it private to your workspace, or list it on the marketplace.
+3. **Run a template** (the reference agent): pick a template, add your product and one sentence. Muse
+   Code, in its own microVM, plans the film, draws every still with Muse Image, renders the shots, checks
+   continuity and lip sync, re-renders takes that drift, and cuts the 30 s and 15 s versions on the beat.
+   Every file lands on a live canvas; you can steer or queue changes mid-run.
 
 Agent-native production brings a top-tier 30-second spot to under $200.
 
@@ -73,7 +73,7 @@ rendering in the Studio is optional, and it is how every listing is benchmarked 
 
 ## How we built it
 
-- **Studio**: React marketplace with search and filters, the Build a template flow, and the production
+- **Studio**: React marketplace with search, filters and template downloads, the Make a template flow, and the production
   view: chat plus a live canvas built from the agent's own files, wired by how each was made
   (plan → still → render → cut).
 - **Sandbox runtime**: one microVM per project and per template build: Apple's `container` runtime

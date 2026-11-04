@@ -88,10 +88,10 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
     <div className="flex-1 overflow-y-auto">
       <div ref={top} className="mx-auto w-full max-w-[1120px] px-6 pt-[9vh] pb-24">
         <div className="mx-auto max-w-[760px] text-center">
-          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What are we making?</h1>
+          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">Run a template</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Describe the video you need. Muse Code plans it, generates every shot in its own microVM and lays each
-            asset out on a live canvas you can review and direct.
+            Muse Code is the reference agent: pick a template, tell it about your product, and it fills the template in
+            its own microVM, every asset on a live canvas. Your own agent can do the same with the downloaded template.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
 
         <section className="mt-16" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
-            <h2 id="tpl-heading" className="text-[18px] font-medium">Start from a template</h2>
+            <h2 id="tpl-heading" className="text-[18px] font-medium">Pick a template</h2>
             <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing videos, each delivering a 30 s and a 15 s cut.</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

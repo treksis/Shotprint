@@ -4,7 +4,7 @@
 
 A stock video template is a project file a person has to edit. A Shotprint template is written for an agent
 to run: every shot's timing, framing, camera, light, text and sound, with a storyboard per shot and
-swappable cast, product and places. Pick one, add one sentence, and Muse Code makes the 30 s and 15 s spots.
+swappable cast, product and places. Download one with its fill recipe and any agent can make the spot.
 
 **Live demo:** https://shotprint.dev (judges: the passcode for Live mode is in the
 submission notes)
@@ -13,15 +13,14 @@ Meta Global AI Developer Hackathon · Startups track
 
 ## How it works
 
-1. **Marketplace**: browse templates by goal, industry, tone and cast. Each is benchmarked: the original
-   is remade from the template alone and shown side by side.
-2. **Make a video**: Muse Code directs the film in the project's own microVM; every file lands on a live
-   canvas you can steer.
-3. **Build a template**: upload a video that works. The agent measures it, writes the template and
-   benchmarks it. Keep it private or list it.
-
-Every template downloads as a package with its fill recipe (`sandbox/kit/.claude/skills/template-fill`),
-so any agent can run it with the image and video models it already uses.
+1. **Marketplace**: browse templates by goal, industry, tone and cast, and download one. The package
+   holds the template and its fill recipe (`sandbox/kit/.claude/skills/template-fill`), so any agent can
+   run it with the image and video models it already uses. Each template is benchmarked: the original is
+   remade from the template alone and shown side by side.
+2. **Make a template**: upload a video that works. In its own microVM the agent measures it, writes the
+   template and benchmarks it. Keep it private or list it.
+3. **Run a template**: Muse Code, the reference agent, fills a template in its own microVM; every file
+   lands on a live canvas you can steer.
 
 ```mermaid
 flowchart LR

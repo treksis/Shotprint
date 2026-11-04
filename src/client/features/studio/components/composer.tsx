@@ -76,7 +76,7 @@ export function Composer({
   busy,
   template,
   onClearTemplate,
-  placeholder = 'Describe the video you want, or pick a template below',
+  placeholder = 'Pick a template below, then tell the agent about your product',
   size = 'md',
   allowFiles = true,
   model,

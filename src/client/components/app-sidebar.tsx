@@ -51,15 +51,15 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Make a video" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
-                  <PenLine />
-                  <span>Make a video</span>
+                <SidebarMenuButton tooltip="Make a template" isActive={route.view === 'build'} onClick={() => onNavigate({ view: 'build' })}>
+                  <Hammer />
+                  <span>Make a template</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Build a template" isActive={route.view === 'build'} onClick={() => onNavigate({ view: 'build' })}>
-                  <Hammer />
-                  <span>Build a template</span>
+                <SidebarMenuButton tooltip="Run a template" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
+                  <PenLine />
+                  <span>Run a template</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

@@ -31,7 +31,7 @@ export function LandingPage({
       <div data-ui className="max-w-[1200px] mx-auto px-6 pt-2">
         <div className="rounded-[8px] bg-[#111111] text-[#ffffff] px-4 py-2.5 text-[15px] flex flex-wrap items-center justify-between gap-3">
           <span>
-            Meta Hackathon review: Try the studio in demo mode, or enter the judge passcode for live generation.
+            Meta Hackathon review: browse and download templates freely; enter the judge passcode to run the agent live.
           </span>
           <button
             type="button"

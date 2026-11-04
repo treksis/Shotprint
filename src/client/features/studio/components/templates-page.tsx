@@ -50,7 +50,7 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
             <p className="mt-3 text-[15px] text-muted-foreground">
               A template here is a production an agent can run, not a project file a person has to edit: measured timing,
               framing, camera, light, text and sound for every shot, a storyboard per shot, and swappable cast, product and
-              places. Every template ships with its fill recipe, so <span className="text-foreground">any agent runs it with any video model</span>; here, Muse Code makes the 30 s and 15 s spots.
+              places. Download a template with its fill recipe and <span className="text-foreground">run it with your own agent and video model</span>, or run it here with Muse Code.
             </p>
           </div>
           <button
@@ -59,7 +59,7 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
             className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-full bg-foreground px-5 text-[14px] font-medium text-background transition-opacity hover:opacity-90"
           >
             <Hammer className="size-4" />
-            Build a template
+            Make a template
           </button>
         </div>
 
@@ -140,7 +140,7 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
             <p className="text-[15px] font-medium">No template matches yet</p>
             <p className="mt-1 text-[13px] text-muted-foreground">Build one from a video that already works for you.</p>
             <button type="button" onClick={onBuild} className="mt-4 h-9 cursor-pointer rounded-full bg-foreground px-4 text-[13px] font-medium text-background">
-              Build a template
+              Make a template
             </button>
           </div>
         )}

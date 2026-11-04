@@ -44,7 +44,7 @@ export function SiteHeader({ onOpenStudio, onOpenVault }: SiteHeaderProps) {
           onClick={onOpenStudio}
           className="h-[44px] px-5 rounded-[8px] bg-[#111111] text-[#ffffff] text-[16px] font-medium cursor-pointer btn-tactile shrink-0"
         >
-          Open studio
+          Open the marketplace
         </button>
       </div>
     </header>

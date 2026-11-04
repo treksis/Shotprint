@@ -75,7 +75,8 @@ export function HeroSection({ fallbackPoster, onOpenStudio }: HeroSectionProps) 
         </h1>
 
         <p className="mt-4 text-[18px] leading-[1.55] text-[#111111] max-w-[48ch] mx-auto">
-          Pick a template built for an agent, not a person. Write one sentence. Muse Code makes your 30 s and 15 s spots.
+          Templates written for an agent, not a person: every shot measured, storyboarded and benchmarked. Download one
+          with its fill recipe, or make your own from a video that works.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
