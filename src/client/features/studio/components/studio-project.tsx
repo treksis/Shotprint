@@ -237,7 +237,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
             model={model}
             onModelChange={(m) => void changeModel(m)}
             allowedModels={isLive || import.meta.env.DEV ? ['spark', 'wonder'] : ['spark']}
-            footnote={sendError ? <span className="text-[var(--negative)]">{sendError}</span> : `Muse Code in a private sandbox · $${usd.toFixed(usd < 1 ? 3 : 2)} spent on this project`}
+            footnote={sendError ? <span className="text-[var(--negative)]">{sendError}</span> : `Muse Code in its own microVM · $${usd.toFixed(usd < 1 ? 3 : 2)} spent on this project`}
           />
         </div>
       </section>
