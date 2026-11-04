@@ -79,3 +79,15 @@ CREATE TABLE IF NOT EXISTS studio_projects (
   updated_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_studio_projects_updated ON studio_projects (updated_at DESC);
+
+-- Cloudflare spend guard: what each project VM life has spent (summed against the caps in wrangler.jsonc).
+CREATE TABLE IF NOT EXISTS vm_spend (
+  project_id TEXT NOT NULL,
+  boot TEXT NOT NULL,
+  usd REAL NOT NULL DEFAULT 0,
+  PRIMARY KEY (project_id, boot)
+);
+CREATE TABLE IF NOT EXISTS vm_activity (
+  project_id TEXT PRIMARY KEY,
+  last_seen INTEGER NOT NULL
+);

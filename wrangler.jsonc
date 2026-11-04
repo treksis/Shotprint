@@ -19,7 +19,7 @@
       "class_name": "ProjectVM",
       "image": "./Dockerfile",
       "instance_type": "standard-2",
-      "max_instances": 5
+      "max_instances": 3
     }
   ],
   "durable_objects": {
@@ -35,5 +35,9 @@
   ],
   // Benchmarks, reference ads and sample-project thumbnails: served only with the judge passcode.
   "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "shotprint-media" }],
+  // Spend guard: agents stop at $12 across all projects, $5 a project, $2.50 per VM life; 30 new projects a day.
+  // STUDIO_PAUSED "1" is the kill switch. Worst case with 3 VMs mid-turn is about $12 + 3 × $2.50.
+  "vars": { "GLOBAL_USD_CAP": "12", "PROJECT_USD_CAP": "5", "STUDIO_USD_CAP": "2.5", "DAILY_PROJECTS": "30", "STUDIO_PAUSED": "0" },
+  "triggers": { "crons": ["* * * * *"] },
   "observability": { "enabled": true }
 }

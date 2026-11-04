@@ -11,6 +11,12 @@ type Env = WorkerBindings & {
   PROJECT_VM: DurableObjectNamespace<ProjectVM>;
   MEDIA: R2Bucket;
   STUDIO_USD_CAP?: string;
+  /** Spend guard (wrangler.jsonc vars): all projects together, one project across VM lives, new projects a day. */
+  GLOBAL_USD_CAP?: string;
+  PROJECT_USD_CAP?: string;
+  DAILY_PROJECTS?: string;
+  /** "1" stops every new turn: the kill switch. */
+  STUDIO_PAUSED?: string;
 };
 
 /**
@@ -22,7 +28,7 @@ export class ProjectVM extends Container<Env> {
   sleepAfter = '20m';
   enableInternet = true;
 
-  constructor(ctx: DurableObjectState, env: Env) {
+  constructor(ctx: DurableObjectState<{}>, env: Env) {
     super(ctx, env);
     this.envVars = { META_API_KEY: env.META_API_KEY ?? '', STUDIO_USD_CAP: env.STUDIO_USD_CAP ?? '1' };
   }
@@ -38,6 +44,59 @@ function isJudge(req: Request, env: Env) {
   const cookie = /(?:^|;\s*)sp_judge=([^;]+)/.exec(req.headers.get('cookie') ?? '')?.[1];
   const given = String(req.headers.get('x-judge-key') || (cookie ? decodeURIComponent(cookie) : '')).trim().toUpperCase();
   return given.length === expected.length && [...given].reduce((m, ch, i) => m | (ch.charCodeAt(0) ^ expected.charCodeAt(i)), 0) === 0;
+}
+
+const SPEND = /^\/api\/studio\/projects\/[^/]+\/(start|turns)$/;
+const ACTIVE_MS = 25 * 60_000;
+
+/** The slim project a VM needs to know who it is (not the canvas layout). */
+function vmRequest(project: StudioProject, req: Request) {
+  const slim: StudioProject = { ...project, state: { positions: {}, seed: (project.state as { seed?: string })?.seed } as never };
+  const headers = new Headers(req.headers);
+  headers.set('x-studio-project', btoa(unescape(encodeURIComponent(JSON.stringify(slim)))));
+  return new Request(req, { headers });
+}
+
+/** Asks a project VM what this life of it has spent (and optionally stops its turn), and records it. */
+async function pollVm(env: Env, project: StudioProject, stop = false) {
+  const res = await getContainer(env.PROJECT_VM, project.id).fetch(vmRequest(project, new Request(`http://vm/__${stop ? 'stop' : 'usage'}`)));
+  const u = (await res.json()) as { boot: string; usd: number };
+  await env.DB!.prepare('INSERT INTO vm_spend (project_id, boot, usd) VALUES (?, ?, ?) ON CONFLICT (project_id, boot) DO UPDATE SET usd = MAX(usd, excluded.usd)')
+    .bind(project.id, u.boot, u.usd)
+    .run();
+}
+
+async function spent(env: Env, projectId?: string) {
+  const all = await env.DB!.prepare('SELECT COALESCE(SUM(usd), 0) AS usd FROM vm_spend').bind().first<{ usd: number }>();
+  const one = projectId ? await env.DB!.prepare('SELECT COALESCE(SUM(usd), 0) AS usd FROM vm_spend WHERE project_id = ?').bind(projectId).first<{ usd: number }>() : null;
+  return { total: all?.usd ?? 0, project: one?.usd ?? 0 };
+}
+
+const caps = (env: Env) => ({ global: Number(env.GLOBAL_USD_CAP || 12), project: Number(env.PROJECT_USD_CAP || 5) });
+
+/** Before a turn starts: the kill switch, then the shared budget and the project's own. */
+async function budgetBlock(env: Env, project: StudioProject) {
+  if (env.STUDIO_PAUSED === '1') return Response.json({ error: 'paused', message: 'Agents are paused on this demo right now.' }, { status: 503 });
+  await pollVm(env, project).catch(() => undefined);
+  const s = await spent(env, project.id);
+  const c = caps(env);
+  if (s.total >= c.global) return Response.json({ error: 'budget', message: `This demo has used its $${c.global} agent budget.` }, { status: 402 });
+  if (s.project >= c.project) return Response.json({ error: 'budget', message: `This project has used its $${c.project} budget. Start a new project.` }, { status: 402 });
+  return null;
+}
+
+async function guard(env: Env) {
+  const { results } = await env.DB!.prepare('SELECT project_id FROM vm_activity WHERE last_seen > ?').bind(Date.now() - ACTIVE_MS).all<{ project_id: string }>();
+  const store = d1Store(env.DB!);
+  const over = async () => (await spent(env)).total >= caps(env).global || env.STUDIO_PAUSED === '1';
+  const polled: Record<string, string> = {};
+  for (const { project_id } of results) {
+    const p = await store.get(project_id);
+    if (!p) continue;
+    const stop = await over();
+    polled[project_id] = await pollVm(env, p, stop).then(() => (stop ? 'stopped' : 'ok'), (e) => `error: ${(e as Error).message}`);
+  }
+  return { active: results.length, polled, ...(await spent(env)) };
 }
 
 const judgeOnly = () => Response.json({ error: 'judge_only', message: 'Running an agent on this demo needs the judge passcode (Live mode).' }, { status: 401 });
@@ -88,7 +147,7 @@ export default {
       },
       templateDetail: async (id) => ((DETAILS as Record<string, TemplateDetail>)[id] ?? null),
       templateFile: async (id, rel) => {
-        const res = await env.ASSETS!.fetch(new URL(`/tpl/${encodeURIComponent(id)}/${rel.split('/').map(encodeURIComponent).join('/')}`, url));
+        const res = await env.ASSETS!.fetch(new Request(new URL(`/tpl/${encodeURIComponent(id)}/${rel.split('/').map(encodeURIComponent).join('/')}`, url)));
         if (!res.ok) return new Response('not found', { status: 404 });
         // Packed as JPEG whatever the source extension.
         return new Response(res.body, { headers: { 'content-type': 'image/jpeg', 'cache-control': 'public, max-age=86400' } });
@@ -116,14 +175,32 @@ export default {
       if (m) {
         const project = await d1Store(env.DB!).get(decodeURIComponent(m[1]));
         if (!project) return Response.json({ error: 'not_found' }, { status: 404 });
-        // The VM needs who it is, not the canvas layout.
-        const slim: StudioProject = { ...project, state: { positions: {}, seed: (project.state as { seed?: string })?.seed } as never };
-        const headers = new Headers(req.headers);
-        headers.set('x-studio-project', btoa(unescape(encodeURIComponent(JSON.stringify(slim)))));
-        return getContainer(env.PROJECT_VM, project.id).fetch(new Request(req, { headers }));
+        if (req.method === 'POST' && SPEND.test(url.pathname)) {
+          const blocked = await budgetBlock(env, project);
+          if (blocked) return blocked;
+        }
+        await env.DB!.prepare('INSERT INTO vm_activity (project_id, last_seen) VALUES (?, ?) ON CONFLICT (project_id) DO UPDATE SET last_seen = excluded.last_seen')
+          .bind(project.id, Date.now())
+          .run();
+        return getContainer(env.PROJECT_VM, project.id).fetch(vmRequest(project, req));
+      }
+      if (url.pathname === '/api/studio/projects' && req.method === 'POST') {
+        const today = await env.DB!.prepare("SELECT COUNT(*) AS n FROM studio_projects WHERE created_at > datetime('now', '-1 day')").bind().first<{ n: number }>();
+        if ((today?.n ?? 0) >= Number(env.DAILY_PROJECTS || 30)) return Response.json({ error: 'limit', message: 'This demo has reached its projects for today.' }, { status: 429 });
       }
     }
 
+    if (url.pathname === '/api/studio/budget') {
+      if (!judge) return judgeOnly();
+      if (url.searchParams.has('refresh')) return Response.json({ ...(await guard(env)), caps: caps(env) });
+      return Response.json({ ...(await spent(env)), caps: caps(env), paused: env.STUDIO_PAUSED === '1' });
+    }
+
     return app.fetch(req, env, ctx);
+  },
+
+  /** Every minute: record what active VMs have spent; past the shared budget, stop their turns. */
+  async scheduled(_e: ScheduledController, env: Env) {
+    console.log('[budget]', JSON.stringify(await guard(env)));
   },
 } satisfies ExportedHandler<Env>;
