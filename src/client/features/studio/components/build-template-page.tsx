@@ -1,5 +1,6 @@
 import { ArrowRight, Box, Film, FolderTree, Lock, Ruler, ScanEye, Store, Upload } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 import { createProject, uploadToProject } from '../api';
 import { newProject } from '../lib';
@@ -116,7 +117,7 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
                 className="mt-1 h-10 w-full rounded-[10px] border border-border bg-background px-3 text-[14px] text-foreground outline-none focus:border-foreground"
               />
             </label>
-            <div className="mt-3 grid grid-cols-3 gap-2">
+            <div className="mt-3 grid grid-cols-[1.5fr_1fr_1fr] gap-2">
               <Field label="Goal" value={goal} options={TEMPLATE_GOALS} onChange={setGoal} />
               <Field label="Tone" value={tone} options={TEMPLATE_TONES} onChange={setTone} />
               <Field label="Cast" value={cast} options={TEMPLATE_CASTS} onChange={setCast} />
@@ -181,17 +182,20 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
 
 function Field({ label, value, options, onChange }: { label: string; value: string; options: readonly string[]; onChange: (v: string) => void }) {
   return (
-    <label className="block text-[12px] font-medium text-muted-foreground">
+    <div className="text-[12px] font-medium text-muted-foreground">
       {label}
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="mt-1 h-10 w-full cursor-pointer rounded-[10px] border border-border bg-background px-2 text-[13px] text-foreground"
-      >
-        {options.map((o) => (
-          <option key={o}>{o}</option>
-        ))}
-      </select>
-    </label>
+      <Select value={value} onValueChange={onChange}>
+        <SelectTrigger aria-label={label} className="mt-1 h-10! w-full cursor-pointer rounded-[10px] px-2.5 text-[13px] text-foreground">
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map((o) => (
+            <SelectItem key={o} value={o}>
+              {o}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 }

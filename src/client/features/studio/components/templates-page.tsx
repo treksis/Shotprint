@@ -1,5 +1,6 @@
 import { Hammer, Search, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 import { listTemplates } from '../api';
 import { TEMPLATE_CASTS, TEMPLATE_GOALS, TEMPLATE_TONES, type StudioTemplate } from '../types';
@@ -76,18 +77,18 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
             <Picker label="Industry" value={f.industry} options={industries} onChange={(industry) => setF({ ...f, industry })} />
             <Picker label="Tone" value={f.tone} options={TEMPLATE_TONES} onChange={(tone) => setF({ ...f, tone })} />
             <Picker label="Cast" value={f.cast} options={TEMPLATE_CASTS} onChange={(cast) => setF({ ...f, cast })} />
-            <select
-              aria-label="Sort"
-              value={sort}
-              onChange={(e) => setSort(e.target.value as keyof typeof SORTS)}
-              className="h-10 cursor-pointer rounded-full border border-border bg-background px-4 text-[14px]"
-            >
-              {Object.entries(SORTS).map(([k, s]) => (
-                <option key={k} value={k}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
+            <Select value={sort} onValueChange={(v) => setSort(v as keyof typeof SORTS)}>
+              <SelectTrigger aria-label="Sort" className="h-10! cursor-pointer rounded-full px-4 text-[14px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(SORTS).map(([k, s]) => (
+                  <SelectItem key={k} value={k}>
+                    {s.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             {[null, ...TEMPLATE_GOALS].map((g) => (
@@ -149,23 +150,28 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
   );
 }
 
+const ANY = '__any';
+
 function Picker({ label, value, options, onChange }: { label: string; value: string | null; options: readonly string[]; onChange: (v: string | null) => void }) {
   return (
-    <select
-      aria-label={label}
-      value={value ?? ''}
-      onChange={(e) => onChange(e.target.value || null)}
-      className={cn(
-        'h-10 cursor-pointer rounded-full border px-4 text-[14px]',
-        value ? 'border-foreground bg-foreground text-background' : 'border-border bg-background',
-      )}
-    >
-      <option value="">{label}: any</option>
-      {options.map((o) => (
-        <option key={o} value={o}>
-          {o}
-        </option>
-      ))}
-    </select>
+    <Select value={value ?? ANY} onValueChange={(v) => onChange(v === ANY ? null : v)}>
+      <SelectTrigger
+        aria-label={label}
+        className={cn(
+          'h-10! cursor-pointer rounded-full px-4 text-[14px]',
+          value && 'border-foreground bg-foreground text-background hover:bg-foreground/90 [&_svg]:text-background!',
+        )}
+      >
+        <SelectValue>{value ? `${label}: ${value}` : `${label}: any`}</SelectValue>
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value={ANY}>Any {label.toLowerCase()}</SelectItem>
+        {options.map((o) => (
+          <SelectItem key={o} value={o}>
+            {o}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }
