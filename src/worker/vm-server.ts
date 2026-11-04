@@ -30,6 +30,8 @@ process.env.STUDIO_OPEN = '1';
 
 /** This VM's life: its spend counter starts over when a sleeping VM wakes, so the Worker sums lives. */
 const BOOT = Math.random().toString(36).slice(2, 10);
+/** A sample project replays its recorded session, spend included; only what is spent after that counts. */
+let baseline: number | null = null;
 
 const port = Number(process.env.PORT || 8080);
 serve({
@@ -55,5 +57,6 @@ async function vmControl(pathname: string, p: StudioProject) {
   s.subscribe(() => undefined)();
   if (pathname === '/__stop') await s.interrupt().catch(() => undefined);
   const v = s.view();
-  return Response.json({ boot: BOOT, usd: v.usd, status: v.status });
+  baseline ??= (p.state as { seed?: string } | undefined)?.seed ? v.usd : 0;
+  return Response.json({ boot: BOOT, usd: Math.max(0, v.usd - baseline), status: v.status });
 }

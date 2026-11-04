@@ -62,9 +62,10 @@ export default function App() {
       .catch(() => setStudioProjects([]));
   }, []);
 
+  // Going live unlocks the projects (the deployed demo lists them to judges only).
   useEffect(() => {
     if (route.view !== 'landing') refreshProjects();
-  }, [route, refreshProjects]);
+  }, [route, isJudgeMode, refreshProjects]);
 
   const openGate = useCallback((reason?: string) => {
     setLiveGateReason(reason);
