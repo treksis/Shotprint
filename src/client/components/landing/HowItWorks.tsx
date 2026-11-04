@@ -14,7 +14,7 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
     {
       num: '2',
       title: 'Brief the agent',
-      desc: 'A product photo and one sentence. Muse Code directs in its own sandbox.',
+      desc: 'A product photo and one sentence. Muse Code directs in its own microVM.',
     },
     {
       num: '3',

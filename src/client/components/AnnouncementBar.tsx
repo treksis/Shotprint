@@ -51,7 +51,7 @@ export function AnnouncementBar({ isLive, onGoLive, onExitLive }: { isLive: bool
         </span>
       ) : (
         <span className="truncate">
-          Every project runs Muse Code in its own sandbox. Judges can enter the passcode from the submission notes to use
+          Every project runs Muse Code in its own microVM. Judges can enter the passcode from the submission notes to use
           Muse Wonder.{' '}
           <button type="button" onClick={onGoLive} className="cursor-pointer font-medium underline underline-offset-2">
             Go live ›
