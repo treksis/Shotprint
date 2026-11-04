@@ -17,10 +17,9 @@ Meta Global AI Developer Hackathon · Startups track
    holds the template and its fill recipe (`sandbox/kit/.claude/skills/template-fill`), so any agent can
    run it with the image and video models it already uses. Each template is benchmarked: the original is
    remade from the template alone and shown side by side.
-2. **Make a template**: upload a video that works. In its own microVM the agent measures it, writes the
-   template and benchmarks it. Keep it private or list it.
-3. **Run a template**: Muse Code, the reference agent, fills a template in its own microVM; every file
-   lands on a live canvas you can steer.
+2. **Studio**: one agent, no forms. Attach a video that works and Muse Code turns it into a template
+   (measured, written, benchmarked; kept private or listed). Pick a template and it makes your spot. Every
+   project runs in its own microVM, every file on a live canvas you can steer.
 
 ```mermaid
 flowchart LR

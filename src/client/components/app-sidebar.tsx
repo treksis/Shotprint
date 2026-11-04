@@ -1,6 +1,6 @@
 import { ShotprintMark } from './ShotprintMark';
 import * as React from 'react';
-import { Hammer, Loader2, PenLine, Store } from 'lucide-react';
+import { Loader2, PenLine, Store } from 'lucide-react';
 import type { Route } from '../App';
 import type { StudioProjectSummary } from '../../shared/studio';
 import {
@@ -51,15 +51,9 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Make a template" isActive={route.view === 'build'} onClick={() => onNavigate({ view: 'build' })}>
-                  <Hammer />
-                  <span>Make a template</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Run a template" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
+                <SidebarMenuButton tooltip="Studio" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
                   <PenLine />
-                  <span>Run a template</span>
+                  <span>Studio</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

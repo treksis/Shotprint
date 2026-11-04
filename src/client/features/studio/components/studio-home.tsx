@@ -1,8 +1,9 @@
-import { ArrowRight, Clapperboard } from 'lucide-react';
+import { ArrowRight, Box, Clapperboard, Film, FolderTree, Ruler, ScanEye, Store } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { createProject, listTemplates, setSessionModel, uploadToProject, type DirectorModel } from '../api';
 import { newProject } from '../lib';
+import { templateBrief, videoSeconds } from '../template-brief';
 import type { StudioProjectSummary, StudioTemplate } from '../types';
 import { Composer } from './composer';
 import { TemplateCard } from './template-card';
@@ -13,10 +14,19 @@ const promptFor = (t: StudioTemplate, seconds = 30) =>
   seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`).replace(/\b30 s\b/, `${seconds} s`);
 
 const SKILLS = [
-  { label: 'Recreate a reference', text: 'Remake this reference video shot for shot with my own subject.' },
+  { label: 'Turn my video into a template', text: 'Turn this video into a template.' },
   { label: 'Feature your product', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
   { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Stories.' },
-  { label: 'Turn a video into a template', text: 'Dissect this video into a template: cuts, camera moves, lines and sound.' },
+];
+
+/** How the agent turns a video into a template, in its microVM. Each step is a tool in sandbox/kit. */
+const STEPS = [
+  { icon: Box, title: 'Its own microVM', tool: 'one VM per project', text: 'Your footage never shares a machine: its own kernel, filesystem, CPU, memory and spend caps.' },
+  { icon: Ruler, title: 'Measure', tool: 'bin/dissect', text: 'Cuts, shot times, loudness, lines and shot boards in about 30 s. No model calls.' },
+  { icon: ScanEye, title: 'Read the craft', tool: 'tools/motion.py', text: 'Optical flow turns camera moves into numbers; Muse Code reads framing, lens, light and text.' },
+  { icon: FolderTree, title: 'Write the template', tool: 'make-template skill', text: 'TEMPLATE.md, template.json, a storyboard per shot and a swappable asset set.' },
+  { icon: Film, title: 'Benchmark', tool: 'bin/template check', text: 'The agent remakes the reference from the template alone, side by side with the original.' },
+  { icon: Store, title: 'Keep or list', tool: 'catalog.json', text: 'Private to your workspace, or listed on the marketplace for any agent.' },
 ];
 
 export interface StudioHomeProps {
@@ -66,6 +76,26 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
   const submit = async (text: string, files: File[]) => {
     setBusy(true);
     setError(null);
+    // A video with no template picked: the agent turns it into a template.
+    const video = template ? undefined : files.find((f) => f.type.startsWith('video/'));
+    if (video && import.meta.env.PROD && !isLive) {
+      setError('Making a template runs the agent live: go live with the judge passcode.');
+      setBusy(false);
+      return;
+    }
+    if (video) {
+      try {
+        const { id, brief } = templateBrief(video.name, await videoSeconds(video), text);
+        const project = await createProject({ ...newProject(brief, null), name: `Template: ${id}` });
+        for (const f of files) await uploadToProject(project.id, f);
+        onProjectsChanged();
+        return onOpenProject(project.id);
+      } catch (e) {
+        setError(String((e as Error).message || e));
+        setBusy(false);
+        return;
+      }
+    }
     // Demo mode on the deployed site replays a recorded run (the template's own, if there is one).
     if (import.meta.env.PROD && !isLive) {
       const replay = projects.find((p) => template && p.templateId === template.id) ?? projects.find((p) => p.templateId) ?? projects[0];
@@ -88,10 +118,10 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
     <div className="flex-1 overflow-y-auto">
       <div ref={top} className="mx-auto w-full max-w-[1120px] px-6 pt-[9vh] pb-24">
         <div className="mx-auto max-w-[760px] text-center">
-          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">Run a template</h1>
+          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What should the agent make?</h1>
           <p className="mt-3 text-[16px] text-muted-foreground">
-            Muse Code is the reference agent: pick a template, tell it about your product, and it fills the template in
-            its own microVM, every asset on a live canvas. Your own agent can do the same with the downloaded template.
+            Attach a video that works and Muse Code turns it into a template. Pick a template and it makes your spot.
+            Every project runs in its own microVM, every file on a live canvas you can steer.
           </p>
         </div>
 
@@ -114,7 +144,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
           {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
           {import.meta.env.PROD && !isLive && !error && (
             <p className="mt-2 px-2 text-center text-[13px] text-muted-foreground">
-              Demo mode replays a recorded run. Go live with the judge passcode to make your own.
+              Demo mode replays a recorded run. Go live with the judge passcode to run the agent yourself.
             </p>
           )}
           <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -131,7 +161,23 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
           </div>
         </div>
 
-        <section className="mt-16" aria-labelledby="tpl-heading">
+        <section className="mt-14" aria-labelledby="how-heading">
+          <h2 id="how-heading" className="mb-4 text-[18px] font-medium">How the agent makes a template</h2>
+          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {STEPS.map((s) => (
+              <li key={s.title} className="rounded-[14px] border border-border p-4">
+                <div className="flex items-center gap-2">
+                  <s.icon className="size-4 text-muted-foreground" />
+                  <span className="text-[14px] font-medium">{s.title}</span>
+                  <code className="ml-auto text-[11px] text-muted-foreground">{s.tool}</code>
+                </div>
+                <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="mt-14" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
             <h2 id="tpl-heading" className="text-[18px] font-medium">Pick a template</h2>
             <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing videos, each delivering a 30 s and a 15 s cut.</p>
