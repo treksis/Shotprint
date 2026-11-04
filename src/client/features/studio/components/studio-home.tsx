@@ -1,4 +1,4 @@
-import { ArrowRight, Box, Clapperboard, Film, FolderTree, Ruler, ScanEye, Store } from 'lucide-react';
+import { ArrowRight, Clapperboard } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { createProject, listTemplates, setSessionModel, uploadToProject, type DirectorModel } from '../api';
@@ -19,25 +19,17 @@ const SKILLS = [
   { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Stories.' },
 ];
 
-/** How the agent turns a video into a template, in its microVM. Each step is a tool in sandbox/kit. */
-const STEPS = [
-  { icon: Box, title: 'Its own microVM', tool: 'one VM per project', text: 'Your footage never shares a machine: its own kernel, filesystem, CPU, memory and spend caps.' },
-  { icon: Ruler, title: 'Measure', tool: 'bin/dissect', text: 'Cuts, shot times, loudness, lines and shot boards in about 30 s. No model calls.' },
-  { icon: ScanEye, title: 'Read the craft', tool: 'tools/motion.py', text: 'Optical flow turns camera moves into numbers; Muse Code reads framing, lens, light and text.' },
-  { icon: FolderTree, title: 'Write the template', tool: 'make-template skill', text: 'TEMPLATE.md, template.json, a storyboard per shot and a swappable asset set.' },
-  { icon: Film, title: 'Benchmark', tool: 'bin/template check', text: 'The agent remakes the reference from the template alone, side by side with the original.' },
-  { icon: Store, title: 'Keep or list', tool: 'catalog.json', text: 'Private to your workspace, or listed on the marketplace for any agent.' },
-];
 
 export interface StudioHomeProps {
   projects: StudioProjectSummary[];
   isLive: boolean;
   onOpenProject: (id: string) => void;
   onProjectsChanged: () => void;
+  onOpenTechnical: () => void;
 }
 
 /** /studio: a brief box first (chat-native), templates under it so a reviewer sees what is possible. */
-export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged }: StudioHomeProps) {
+export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged, onOpenTechnical }: StudioHomeProps) {
   const [templates, setTemplates] = useState<StudioTemplate[] | null>(null);
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
@@ -161,23 +153,11 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
           </div>
         </div>
 
-        <details className="group mx-auto mt-8 max-w-[760px]">
-          <summary className="cursor-pointer list-none text-center text-[13px] text-muted-foreground hover:text-foreground">
-            Technical details: how the agent makes a template <span className="inline-block transition-transform group-open:rotate-90">›</span>
-          </summary>
-          <ol className="mt-4 grid gap-3 sm:grid-cols-2">
-            {STEPS.map((s) => (
-              <li key={s.title} className="rounded-[14px] border border-border p-4">
-                <div className="flex items-center gap-2">
-                  <s.icon className="size-4 text-muted-foreground" />
-                  <span className="text-[14px] font-medium">{s.title}</span>
-                  <code className="ml-auto text-[11px] text-muted-foreground">{s.tool}</code>
-                </div>
-                <p className="mt-1.5 text-[13px] leading-snug text-muted-foreground">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-        </details>
+        <p className="mt-6 text-center text-[13px]">
+          <button type="button" onClick={onOpenTechnical} className="cursor-pointer text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
+            Technical details: how the agent makes a template ›
+          </button>
+        </p>
 
         <section className="mt-14" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">

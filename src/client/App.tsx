@@ -11,11 +11,13 @@ import { listProjects } from './features/studio/api';
 import { StudioHome } from './features/studio/components/studio-home';
 import { StudioProjectPage } from './features/studio/components/studio-project';
 import { TemplatesPage } from './features/studio/components/templates-page';
+import { TechnicalPage } from './features/studio/components/technical-page';
 
 export type Route =
   | { view: 'landing' }
   | { view: 'home' }
   | { view: 'templates' }
+  | { view: 'technical' }
   | { view: 'project'; id: string };
 
 function parseRoute(): Route {
@@ -25,12 +27,13 @@ function parseRoute(): Route {
   if (m) return { view: 'project', id: m[1] };
   if (path === '/studio') return { view: 'home' };
   if (path === '/templates') return { view: 'templates' };
+  if (path === '/technical') return { view: 'technical' };
   if (path === '/templates/build') return { view: 'home' };
   return { view: 'landing' };
 }
 
 export const pathFor = (r: Route) =>
-  r.view === 'project' ? `/studio/${r.id}` : r.view === 'home' ? '/studio' : r.view === 'templates' ? '/templates' : '/';
+  r.view === 'project' ? `/studio/${r.id}` : r.view === 'home' ? '/studio' : r.view === 'templates' ? '/templates' : r.view === 'technical' ? '/technical' : '/';
 
 export default function App() {
   const [route, setRoute] = useState<Route>(parseRoute);
@@ -106,8 +109,10 @@ export default function App() {
                 isLive={isJudgeMode}
                 onOpenProject={(id) => navigate({ view: 'project', id })}
                 onProjectsChanged={refreshProjects}
+                onOpenTechnical={() => navigate({ view: 'technical' })}
               />
             )}
+            {route.view === 'technical' && <TechnicalPage />}
             {route.view === 'templates' && (
               <TemplatesPage
                 onUseTemplate={(templateId, seconds) => {

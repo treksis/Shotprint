@@ -20,7 +20,7 @@ export interface NavbarProps {
 }
 
 export function Navbar({ route, onNavigate, projectName, isJudgeMode, onRequestLive, onExitLive }: NavbarProps) {
-  const section = route.view === 'templates' ? 'Marketplace' : 'Studio';
+  const section = route.view === 'templates' ? 'Marketplace' : route.view === 'technical' ? 'Technical details' : 'Studio';
   return (
     <header className="flex h-12 shrink-0 items-center justify-between gap-2 px-4">
       <div className="flex min-w-0 items-center gap-2">

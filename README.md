@@ -6,7 +6,7 @@ A stock video template is a project file a person has to edit. A Shotprint templ
 to run: every shot's timing, framing, camera, light, text and sound, with a storyboard per shot and
 swappable cast, product and places. Download one with its fill recipe and any agent can make the spot.
 
-**Live demo:** https://shotprint.dev (judges: the passcode for Live mode is in the
+**Live demo:** https://shotprint.dev · technical details at https://shotprint.dev/technical (judges: the passcode for Live mode is in the
 submission notes)
 
 Meta Global AI Developer Hackathon · Startups track
