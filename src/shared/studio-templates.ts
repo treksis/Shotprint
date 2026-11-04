@@ -1,4 +1,4 @@
-import type { StudioTemplate } from './studio';
+import type { StudioTemplate, TemplateCast, TemplateGoal, TemplateTone } from './studio';
 
 /**
  * Template catalog. "ready" = taken apart into sandbox/templates/<id> (recipe, ingredient set, storyboards,
@@ -328,3 +328,28 @@ export const STUDIO_TEMPLATES: StudioTemplate[] = [
     prompt: "Make a 30 s telenovela-parody spot for our new tinted lip oil 'Velvet Dew': a pop singer panics in her car that she can't hit tonight's high note, crashes, and the dashing doctor prescribes the lip oil; she belts it perfectly in a gold gown, the hospital dances, and she kisses the bottle under her script title before our end card.",
   },
 ];
+
+/** Marketplace classification per template: [goal, industries, tone, cast]. */
+const TAGS: Record<string, [TemplateGoal, string[], TemplateTone, TemplateCast]> = {
+  'meta-vr-glasses-launch': ['Product launch', ['Tech'], 'Sleek', 'Ensemble'],
+  'bluechip-factory': ['Brand story', ['Tech', 'Industrial'], 'Inspiring', 'Presenter'],
+  'muse-introduction': ['Explainer', ['Apps'], 'Playful', 'No cast'],
+  'muse-tour': ['Explainer', ['Apps'], 'Playful', 'Presenter'],
+  'phone-reveal': ['Product launch', ['Tech'], 'Epic', 'No cast'],
+  'farm-legacy': ['Brand story', ['Food & drink'], 'Heartfelt', 'Dialogue'],
+  'animal-icons': ['Brand story', ['Food & drink'], 'Heartfelt', 'Animals'],
+  'fan-moments': ['Brand story', ['Food & drink', 'Sports'], 'Epic', 'Ensemble'],
+  'room-makeover': ['Comedy', ['Home', 'Retail'], 'Funny', 'Dialogue'],
+  'deadpan-dialogue': ['Comedy', ['Apps'], 'Funny', 'Dialogue'],
+  'car-launch': ['Product launch', ['Auto'], 'Sleek', 'No cast'],
+  'holiday-story': ['Seasonal', ['Retail'], 'Heartfelt', 'Dialogue'],
+  'athlete-anthem': ['Comedy', ['Sports', 'Fashion'], 'Funny', 'Presenter'],
+  'travel-escape': ['Comedy', ['Travel', 'Apps'], 'Playful', 'Ensemble'],
+  'new-home': ['Brand story', ['Apps', 'Home'], 'Heartfelt', 'Ensemble'],
+  'telenovela-glam': ['Comedy', ['Beauty'], 'Funny', 'Dialogue'],
+};
+for (const t of STUDIO_TEMPLATES) {
+  const tag = TAGS[t.id];
+  if (tag) [t.goal, t.industries, t.tone, t.cast] = tag;
+  t.creator ??= 'Shotprint Originals';
+}

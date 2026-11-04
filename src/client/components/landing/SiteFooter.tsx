@@ -24,7 +24,7 @@ export function SiteFooter({ onOpenStudio, onOpenVault }: SiteFooterProps) {
             onClick={onOpenVault}
             className="text-[#bdbdbd] hover:text-[#ffffff] cursor-pointer"
           >
-            Templates
+            Marketplace
           </button>
           {/* TODO: Replace placeholder with public repository URL */}
           <a href="#" className="text-[#bdbdbd] hover:text-[#ffffff]">

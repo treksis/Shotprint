@@ -69,13 +69,13 @@ export function HeroSection({ fallbackPoster, onOpenStudio }: HeroSectionProps) 
     <section className="pt-10 pb-16 bg-[#ffffff]">
       <div className="max-w-[1200px] mx-auto px-6 text-center">
         <h1 className="text-[24px] sm:text-[48px] lg:text-[64px] font-semibold tracking-[-0.03em] leading-[1.04] text-[#111111] max-w-[24ch] mx-auto">
-          Reverse engineer any video.
+          The video template marketplace
           <br />
-          Swap in your product.
+          for AI agents.
         </h1>
 
         <p className="mt-4 text-[18px] leading-[1.55] text-[#111111] max-w-[48ch] mx-auto">
-          Turn a winning ad into a 30 s or 15 s spot for your own product: same shots, same timing, same sound.
+          Pick a template built for an agent, not a person. Write one sentence. Muse Code makes your 30 s and 15 s spots.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -84,7 +84,7 @@ export function HeroSection({ fallbackPoster, onOpenStudio }: HeroSectionProps) 
             onClick={onOpenStudio}
             className="h-[44px] px-6 rounded-[8px] bg-[#111111] text-[#ffffff] text-[16px] font-medium cursor-pointer btn-tactile"
           >
-            Open studio
+            Browse the marketplace
           </button>
           <button
             type="button"

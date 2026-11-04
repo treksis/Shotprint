@@ -200,4 +200,18 @@ export interface StudioTemplate {
   proof?: Partial<Record<'30' | '15', string>>;
   /** Films made from the template for a new product (not the source's), e.g. the demos for the pitch. */
   examples?: { title: string; video: string; poster?: string }[];
+  /** Marketplace classification, used by the filters. */
+  goal?: TemplateGoal;
+  industries?: string[];
+  tone?: TemplateTone;
+  cast?: TemplateCast;
+  /** Who published it to the marketplace. */
+  creator?: string;
 }
+
+export const TEMPLATE_GOALS = ['Product launch', 'Brand story', 'Comedy', 'Explainer', 'Seasonal'] as const;
+export const TEMPLATE_TONES = ['Epic', 'Sleek', 'Heartfelt', 'Funny', 'Playful', 'Inspiring'] as const;
+export const TEMPLATE_CASTS = ['Presenter', 'Dialogue', 'Ensemble', 'Animals', 'No cast'] as const;
+export type TemplateGoal = (typeof TEMPLATE_GOALS)[number];
+export type TemplateTone = (typeof TEMPLATE_TONES)[number];
+export type TemplateCast = (typeof TEMPLATE_CASTS)[number];

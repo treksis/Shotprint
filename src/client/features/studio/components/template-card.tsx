@@ -57,7 +57,16 @@ export function TemplateCard({
         </span>
         <span className="flex flex-1 flex-col gap-1 p-3.5">
           <span className="text-[15px] font-medium leading-snug">{t.title}</span>
-          <span className="line-clamp-1 text-[13px] text-muted-foreground">{t.source}</span>
+          <span className="line-clamp-1 text-[13px] text-muted-foreground">{t.creator ? `by ${t.creator}` : t.source}</span>
+          {t.goal && (
+            <span className="mt-1.5 flex flex-wrap gap-1">
+              {[t.goal, t.tone, ...(t.industries ?? []).slice(0, 1), t.cast].filter(Boolean).map((tag) => (
+                <span key={tag} className="rounded-[6px] bg-muted px-1.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+                  {tag}
+                </span>
+              ))}
+            </span>
+          )}
           <span className="mt-1.5 truncate text-[12px] text-muted-foreground tabular-nums">
             {t.cuts?.length ? t.cuts.map((c) => `${c} s`).join(' / ') : `${Math.round(t.durationSec)} s`}
             {' · '}
@@ -68,7 +77,7 @@ export function TemplateCard({
             {t.status === 'ready' ? (
               <span className="inline-flex h-6 items-center gap-1 rounded-[6px] bg-[var(--pill-positive-bg)] px-2 text-[12px] font-medium whitespace-nowrap text-[var(--pill-positive-ink)]">
                 {t.proof && <BadgeCheck className="size-3.5" />}
-                {t.proof ? 'Benchmarked' : 'Ready'}
+                {t.proof ? 'Benchmarked' : 'Agent-ready'}
               </span>
             ) : (
               <span className="inline-flex h-6 items-center rounded-[6px] bg-muted px-2 text-[12px] font-medium whitespace-nowrap text-muted-foreground">

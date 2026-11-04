@@ -35,7 +35,7 @@ export function SiteHeader({ onOpenStudio, onOpenVault }: SiteHeaderProps) {
             onClick={onOpenVault}
             className="text-[16px] text-[#111111] hover:text-[#1a4be0] cursor-pointer"
           >
-            Templates
+            Marketplace
           </button>
         </nav>
 

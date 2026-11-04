@@ -11,11 +11,13 @@ import { listProjects } from './features/studio/api';
 import { StudioHome } from './features/studio/components/studio-home';
 import { StudioProjectPage } from './features/studio/components/studio-project';
 import { TemplatesPage } from './features/studio/components/templates-page';
+import { BuildTemplatePage } from './features/studio/components/build-template-page';
 
 export type Route =
   | { view: 'landing' }
   | { view: 'home' }
   | { view: 'templates' }
+  | { view: 'build' }
   | { view: 'project'; id: string };
 
 function parseRoute(): Route {
@@ -25,11 +27,12 @@ function parseRoute(): Route {
   if (m) return { view: 'project', id: m[1] };
   if (path === '/studio') return { view: 'home' };
   if (path === '/templates') return { view: 'templates' };
+  if (path === '/templates/build') return { view: 'build' };
   return { view: 'landing' };
 }
 
 export const pathFor = (r: Route) =>
-  r.view === 'project' ? `/studio/${r.id}` : r.view === 'home' ? '/studio' : r.view === 'templates' ? '/templates' : '/';
+  r.view === 'project' ? `/studio/${r.id}` : r.view === 'home' ? '/studio' : r.view === 'templates' ? '/templates' : r.view === 'build' ? '/templates/build' : '/';
 
 export default function App() {
   const [route, setRoute] = useState<Route>(parseRoute);
@@ -113,7 +116,11 @@ export default function App() {
                   if (seconds) sessionStorage.setItem('studio.template.seconds', String(seconds));
                   navigate({ view: 'home' });
                 }}
+                onBuild={() => navigate({ view: 'build' })}
               />
+            )}
+            {route.view === 'build' && (
+              <BuildTemplatePage onOpenProject={(id) => navigate({ view: 'project', id })} onProjectsChanged={refreshProjects} />
             )}
             {route.view === 'project' && (
               <StudioProjectPage

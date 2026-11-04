@@ -1,6 +1,6 @@
 import { ShotprintMark } from './ShotprintMark';
 import * as React from 'react';
-import { LayoutGrid, Loader2, PenLine } from 'lucide-react';
+import { Hammer, Loader2, PenLine, Store } from 'lucide-react';
 import type { Route } from '../App';
 import type { StudioProjectSummary } from '../../shared/studio';
 import {
@@ -29,11 +29,11 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'home' })} tooltip="Shotprint Studio">
+            <SidebarMenuButton size="lg" onClick={() => onNavigate({ view: 'templates' })} tooltip="Shotprint">
               <ShotprintMark className="size-8 shrink-0" />
               <div className="grid flex-1 text-left text-[14px] leading-tight">
                 <span className="truncate font-semibold">Shotprint</span>
-                <span className="truncate text-[13px] text-muted-foreground">Agent video studio</span>
+                <span className="truncate text-[13px] text-muted-foreground">Templates for AI agents</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -45,15 +45,21 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="New project" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
-                  <PenLine />
-                  <span>New project</span>
+                <SidebarMenuButton tooltip="Marketplace" isActive={route.view === 'templates'} onClick={() => onNavigate({ view: 'templates' })}>
+                  <Store />
+                  <span>Marketplace</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Templates" isActive={route.view === 'templates'} onClick={() => onNavigate({ view: 'templates' })}>
-                  <LayoutGrid />
-                  <span>Templates</span>
+                <SidebarMenuButton tooltip="Make a video" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
+                  <PenLine />
+                  <span>Make a video</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton tooltip="Build a template" isActive={route.view === 'build'} onClick={() => onNavigate({ view: 'build' })}>
+                  <Hammer />
+                  <span>Build a template</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>

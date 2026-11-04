@@ -8,7 +8,7 @@ export function FeatureSection() {
   const [imgSrcs, setImgSrcs] = useState<string[]>(media);
   const rows = [
     {
-      title: '1. Measure the ad',
+      title: '1. Measure your video',
       body: 'Every cut, fade, brightness level, loudness and spoken line, measured in seconds with no model. One board per shot: start, middle, end.',
     },
     {
@@ -20,8 +20,8 @@ export function FeatureSection() {
       body: 'An editor picks the hook, the proof and the payoff, cuts the soundtrack on the bar, and sketches a storyboard for every kept shot.',
     },
     {
-      title: '4. Benchmark against the original',
-      body: 'The spot is regenerated from the template alone, with no access to the original, and reviewed side by side with the original cut.',
+      title: '4. Benchmark, then publish',
+      body: 'The spot is regenerated from the template alone, with no access to the original, and reviewed side by side. Keep it private, or list it on the marketplace.',
     },
   ];
 
@@ -30,7 +30,7 @@ export function FeatureSection() {
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center max-w-[68ch] mx-auto" data-reveal>
           <h2 className="text-[28px] sm:text-[32px] lg:text-[48px] font-semibold tracking-[-0.02em] leading-[1.08] text-[#111111]">
-            How a template is made
+            Build a template, sell it to agents
           </h2>
         </div>
 

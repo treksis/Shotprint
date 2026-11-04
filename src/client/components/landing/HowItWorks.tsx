@@ -9,17 +9,17 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
     {
       num: '1',
       title: 'Pick a template',
-      desc: 'Formats from top-performing ads, each benchmarked against the original.',
+      desc: 'Filter the marketplace by goal, industry, tone and cast. Every template is benchmarked.',
     },
     {
       num: '2',
-      title: 'Add your product',
-      desc: 'A product photo, your people, your lines.',
+      title: 'Brief the agent',
+      desc: 'A product photo and one sentence. Muse Code directs in its own sandbox.',
     },
     {
       num: '3',
       title: 'Get your 30 s and 15 s spots',
-      desc: 'Same shots, same timing, your product.',
+      desc: 'Steer it while it is made, on a live canvas.',
     },
   ];
 
@@ -55,7 +55,7 @@ export function HowItWorks({ onOpenVault }: HowItWorksProps) {
             onClick={onOpenVault}
             className="h-[44px] px-6 rounded-[8px] bg-[#ffffff] border border-[#e5e5e5] text-[#111111] text-[16px] font-medium cursor-pointer btn-tactile"
           >
-            Browse templates
+            Browse the marketplace
           </button>
         </div>
       </div>

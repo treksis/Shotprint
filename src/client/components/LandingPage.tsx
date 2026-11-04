@@ -45,14 +45,14 @@ export function LandingPage({
       <main>
         <HeroSection
           fallbackPoster={STUDIO_TEMPLATES[0]?.thumbnail}
-          onOpenStudio={onOpenStudio}
+          onOpenStudio={onOpenVault}
         />
         <LogoStrip />
         <ProblemSection />
         <FeatureSection />
         <HowItWorks onOpenVault={onOpenVault} />
         <DemoVsLive onOpenStudio={onOpenStudio} onOpenLiveGate={onOpenLiveGate} />
-        <FinalCta onOpenStudio={onOpenStudio} />
+        <FinalCta onOpenStudio={onOpenVault} />
       </main>
       <SiteFooter onOpenStudio={onOpenStudio} onOpenVault={onOpenVault} />
     </div>
