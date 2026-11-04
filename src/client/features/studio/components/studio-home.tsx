@@ -161,9 +161,11 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
           </div>
         </div>
 
-        <section className="mt-14" aria-labelledby="how-heading">
-          <h2 id="how-heading" className="mb-4 text-[18px] font-medium">How the agent makes a template</h2>
-          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <details className="group mx-auto mt-8 max-w-[760px]">
+          <summary className="cursor-pointer list-none text-center text-[13px] text-muted-foreground hover:text-foreground">
+            Technical details: how the agent makes a template <span className="inline-block transition-transform group-open:rotate-90">›</span>
+          </summary>
+          <ol className="mt-4 grid gap-3 sm:grid-cols-2">
             {STEPS.map((s) => (
               <li key={s.title} className="rounded-[14px] border border-border p-4">
                 <div className="flex items-center gap-2">
@@ -175,7 +177,7 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
               </li>
             ))}
           </ol>
-        </section>
+        </details>
 
         <section className="mt-14" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">

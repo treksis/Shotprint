@@ -31,6 +31,19 @@ flowchart LR
   MC --> META[Meta Model API]
 ```
 
+## Technical details
+
+How the agent turns a video into a template, each step a tool in `sandbox/kit`:
+
+| Step | Tool | What it does |
+|---|---|---|
+| Its own microVM | one VM per project | Its own kernel, filesystem, CPU, memory and spend caps |
+| Measure | `bin/dissect` | Cuts, shot times, loudness, lines and shot boards in about 30 s, no model calls |
+| Read the craft | `tools/motion.py` | Camera moves from optical flow; Muse Code reads framing, lens, light and text |
+| Write the template | `make-template` skill | `TEMPLATE.md`, `template.json`, a storyboard per shot, a swappable asset set |
+| Benchmark | `bin/template check` | Remakes the reference from the template alone, side by side with the original |
+| Keep or list | `catalog.json` | Private to the workspace, or listed on the marketplace |
+
 ## Meta models
 
 | Model | Role |
