@@ -27,7 +27,7 @@ export function LandingPage({
 
   return (
     <div className="bg-[#ffffff] text-[#111111]">
-      <SiteHeader onOpenStudio={onOpenStudio} onOpenVault={onOpenVault} />
+      <SiteHeader onOpenStudio={onOpenVault} onOpenVault={onOpenVault} />
       <div data-ui className="max-w-[1200px] mx-auto px-6 pt-2">
         <div className="rounded-[8px] bg-[#111111] text-[#ffffff] px-4 py-2.5 text-[15px] flex flex-wrap items-center justify-between gap-3">
           <span>
