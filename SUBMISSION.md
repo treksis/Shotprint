@@ -1,6 +1,6 @@
-# Shotprint: submission draft
+# Shotprint: submission
 
-Draft for the Meta Global AI Developer Hackathon (Oct 26 – Nov 4, 2026). Not published yet.
+Meta Global AI Developer Hackathon (Oct 26 – Nov 4, 2026).
 
 ## Basics
 
@@ -11,6 +11,7 @@ Draft for the Meta Global AI Developer Hackathon (Oct 26 – Nov 4, 2026). Not p
 | Track | Startups |
 | Problem statement | Build for Your World |
 | Repository | https://github.com/treksis/Shotprint |
+| Live demo | https://shotprint.hosung-jang.workers.dev (Live mode passcode in the submission notes) |
 | Demo video | _link to add_ |
 | Team | _names to add_ |
 
@@ -75,9 +76,9 @@ rendering in the Studio is optional, and it is how every listing is benchmarked 
 - **Studio**: React marketplace with search and filters, the Build a template flow, and the production
   view: chat plus a live canvas built from the agent's own files, wired by how each was made
   (plan → still → render → cut).
-- **Sandbox runtime**: one microVM per project and per template build (Apple's `container` runtime
-  locally, each container its own lightweight VM; Cloudflare's sandbox product in production), with
-  CPU, memory and spend caps and Demo/Live modes. Muse Code runs inside behind a small relay that logs
+- **Sandbox runtime**: one microVM per project and per template build: Apple's `container` runtime
+  locally (each container its own lightweight VM), Cloudflare Containers in the live demo (a Worker with
+  D1 and R2 in front), with CPU, memory and spend caps and Demo/Live modes. Muse Code runs inside behind a small relay that logs
   every protocol event, so turns survive server restarts.
 - **Measuring kit** (`bin/dissect`, `tools/motion.py`): turns a reference video into shot boards, cuts,
   camera moves from optical flow, loudness and lines in about 30 seconds, with no model calls.
@@ -109,9 +110,9 @@ Everything in this repository was built during the event: the Studio and marketp
 sandbox runtime and protocol driver, the canvas, the measuring kit, the template format, the benchmark,
 and the example templates and films. Pre-existing: the GPU setup that renders video clips.
 
-## Notes before publishing
+## Notes
 
 - Example templates are measured from existing ads for demonstration; third-party footage and audio stay
-  out of the repository, cast are invented, and brands are slots.
+  out of the repository and behind the passcode in the demo. Cast are invented, and brands are slots.
 - Market figures: WARC Global Ad Forecast (Q3 2026), Ampere Analysis (Jan 2026), research-firm ranges for
   the creator economy and production services; production costs from 2026 pricing guides (directional).
