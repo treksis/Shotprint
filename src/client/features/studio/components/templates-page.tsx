@@ -50,7 +50,7 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
             <p className="mt-3 text-[15px] text-muted-foreground">
               A template here is a production an agent can run, not a project file a person has to edit: measured timing,
               framing, camera, light, text and sound for every shot, a storyboard per shot, and swappable cast, product and
-              places. Pick one, write one sentence, and Muse Code makes the <span className="text-foreground">30 s and 15 s spots</span>.
+              places. Every template ships with its fill recipe, so <span className="text-foreground">any agent runs it with any video model</span>; here, Muse Code makes the 30 s and 15 s spots.
             </p>
           </div>
           <button

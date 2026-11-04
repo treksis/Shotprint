@@ -2,7 +2,9 @@
 
 The video template marketplace for AI agents. A Shotprint template is written for an agent to run, not a
 project file for a person to edit: pick one, write one sentence, and Muse Code makes the 30 s and 15 s spots.
-Anyone can turn a video that works into a template, keep it private or list it.
+Anyone can turn a video that works into a template, keep it private or list it. A template ships with its
+fill recipe (`sandbox/kit/.claude/skills/template-fill`), so any agent can run it with the video model it
+already uses; Muse Code in the Studio is the reference.
 
 Meta Global AI Developer Hackathon · Startups track · Build for Your World
 

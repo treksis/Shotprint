@@ -17,8 +17,8 @@ Draft for the Meta Global AI Developer Hackathon (Oct 26 – Nov 4, 2026). Not p
 ## One-liner
 
 Shotprint is the video template marketplace for AI agents: templates written for an agent to run, not a
-project file for a person to edit. Pick one, write one sentence, and Muse Code directs the 30 s and 15 s
-spots in its own sandbox while you steer.
+project file for a person to edit. Any agent licenses a template with its fill recipe and runs it with the
+video model it already uses; in the Studio, Muse Code does it in its own microVM while you steer.
 
 ## The problem
 
@@ -35,11 +35,14 @@ to 75% in 18 months. Video is the next craft to go agent-native, and agents need
 
 ## What it does
 
+A buyer gets the template package and its fill recipe; any agent can run it with its own video model. The
+Studio is the reference implementation:
+
 1. **Marketplace**: templates classified by goal (product launch, brand story, comedy, explainer,
    seasonal), industry, tone and cast. Each one is measured shot by shot from a video that already works
    (timing, framing, lens, camera move, light, text, sound), with a storyboard per shot and swappable
    cast, product and places.
-2. **Make a video**: pick a template, add your product and one sentence. Muse Code, in a private sandbox,
+2. **Make a video** (the reference agent): pick a template, add your product and one sentence. Muse Code, in its own microVM,
    plans the film, draws every still with Muse Image, renders the shots, checks continuity and lip sync,
    re-renders takes that drift, and cuts the 30 s and 15 s versions on the beat. Every file lands on a
    live canvas; you can steer or queue changes mid-run.
@@ -52,8 +55,10 @@ Agent-native production brings a top-tier 30-second spot to under $200.
 ## Business model
 
 Two-sided: template creators (directors, motion designers, agencies) list templates; brands, agencies and
-their agents run them. Revenue share on each template run, plus a per-render production fee. Every
-listing is benchmarked, so buyers know the agent can actually reproduce the format.
+their agents license them. Creators earn on every license and Shotprint takes a share. We sell the
+directing knowledge, not rendering: a template plus its fill recipe (the `template-fill` skill) works with
+any agent and any video model, so there is no video API to resell and no GPU margin to defend. Managed
+rendering in the Studio is optional, and it is how every listing is benchmarked before buyers see it.
 
 ## How we use Meta's models
 
