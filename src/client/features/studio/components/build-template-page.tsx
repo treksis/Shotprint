@@ -42,10 +42,15 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
     setBusy(true);
     setError(null);
     const id = (name.trim() || file.name.replace(/\.[^.]+$/, '')).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'my-template';
+    // A short reference keeps its own length: padding it to 30 s only costs time and money.
+    const secs = await videoSeconds(file);
+    const short = secs !== null && secs < 25;
+    const cuts = short ? `a single cut at the source's own length (about ${Math.round(secs)} s; do not pad or loop it to 30 s)` : 'cut30 and cut15';
+    const remake = short ? 'that cut' : 'the 30 s cut';
     const brief = [
       `Turn inputs/${file.name} into a director template named "${id}" with the make-template skill.`,
-      `Run bin/dissect inputs/${file.name} --template ${id}, read the boards, and write templates/${id}/ to docs/template_spec.md: TEMPLATE.md, template.json with cut30 and cut15, a board per shot and the asset set. Finish with bin/template check templates/${id}.`,
-      `Then benchmark it: without opening the original footage again, remake the 30 s cut from the template alone and put the remake next to bin/template reference for a side-by-side.`,
+      `Run bin/dissect inputs/${file.name} --template ${id}, read the boards, and write templates/${id}/ to docs/template_spec.md: TEMPLATE.md, template.json with ${cuts}, a board per shot and the asset set. Finish with bin/template check templates/${id}.`,
+      `Then benchmark it: without opening the original footage again, remake ${remake} from the template alone and put the remake next to bin/template reference for a side-by-side.`,
       `Listing: ${listing === 'marketplace' ? 'publish to the marketplace' : 'private to this workspace'}. Write templates/${id}/catalog.json with goal "${goal}", tone "${tone}", cast "${cast}" and the industries it fits.`,
     ].join('\n\n');
     try {
@@ -198,4 +203,21 @@ function Field({ label, value, options, onChange }: { label: string; value: stri
       </Select>
     </div>
   );
+}
+
+/** The clip's length in seconds, read by the browser; null when it can't tell. */
+function videoSeconds(file: File): Promise<number | null> {
+  return new Promise((resolve) => {
+    const v = document.createElement('video');
+    const url = URL.createObjectURL(file);
+    const done = (s: number | null) => {
+      URL.revokeObjectURL(url);
+      resolve(s);
+    };
+    v.preload = 'metadata';
+    v.onloadedmetadata = () => done(Number.isFinite(v.duration) ? v.duration : null);
+    v.onerror = () => done(null);
+    setTimeout(() => done(null), 5000);
+    v.src = url;
+  });
 }

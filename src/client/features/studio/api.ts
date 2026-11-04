@@ -62,14 +62,33 @@ export const deleteProject = (id: string) => fetch(`/api/studio/projects/${id}`,
 
 // ---- the project's Muse Code session ----------------------------------------------------------
 
-/** Live session events (server-sent). The browser reconnects by itself; every reconnect starts with a snapshot. */
+/**
+ * Live session events (server-sent). The browser reconnects by itself when the stream closes; a stream that
+ * goes silent without closing (the server pings every 15 s) is reopened here. Every connect starts with a snapshot.
+ */
 export function openEvents(projectId: string, onEvent: (e: StudioEvent) => void, onError?: () => void) {
-  const es = new EventSource(`/api/studio/projects/${projectId}/events`);
-  es.onmessage = (m) => {
-    if (m.data) onEvent(JSON.parse(m.data));
+  let es: EventSource;
+  let last = Date.now();
+  const connect = () => {
+    es = new EventSource(`/api/studio/projects/${projectId}/events`);
+    es.onmessage = (m) => {
+      last = Date.now();
+      if (m.data) onEvent(JSON.parse(m.data));
+    };
+    es.addEventListener('ping', () => (last = Date.now()));
+    es.onerror = () => onError?.();
   };
-  es.onerror = () => onError?.();
-  return () => es.close();
+  connect();
+  const watchdog = setInterval(() => {
+    if (Date.now() - last < 40_000) return;
+    es.close();
+    last = Date.now();
+    connect();
+  }, 5_000);
+  return () => {
+    clearInterval(watchdog);
+    es.close();
+  };
 }
 
 export const startProject = (id: string) => post(`/api/studio/projects/${id}/start`).then((r) => json<{ started: boolean }>(r));
