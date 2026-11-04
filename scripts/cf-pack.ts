@@ -34,6 +34,28 @@ for (const t of STUDIO_TEMPLATES) {
 }
 fs.writeFileSync(path.join(CF, 'templates.json'), JSON.stringify(details));
 
+// Downloadable packages: the committed template (no source audio) plus the fill recipe and a README.
+const tracked = execFileSync('git', ['ls-files', 'sandbox/templates'], { encoding: 'utf8' }).split('\n').filter(Boolean);
+const readme = fs.readFileSync('scripts/export-readme.md', 'utf8');
+fs.rmSync(path.join(DIST, 'exports'), { recursive: true, force: true });
+fs.mkdirSync(path.join(DIST, 'exports'), { recursive: true });
+for (const t of STUDIO_TEMPLATES) {
+  const files = tracked.filter((f) => f.startsWith(`sandbox/templates/${t.id}/`));
+  if (!files.length) continue;
+  const stage = path.join(CF, 'export', t.id);
+  fs.rmSync(stage, { recursive: true, force: true });
+  for (const f of files) {
+    const out = path.join(stage, 'template', f.slice(`sandbox/templates/${t.id}/`.length));
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    fs.copyFileSync(f, out);
+  }
+  fs.mkdirSync(path.join(stage, 'recipe'), { recursive: true });
+  fs.copyFileSync('sandbox/kit/.claude/skills/template-fill/SKILL.md', path.join(stage, 'recipe/SKILL.md'));
+  fs.copyFileSync('sandbox/kit/docs/template_spec.md', path.join(stage, 'recipe/template_spec.md'));
+  fs.writeFileSync(path.join(stage, 'README.md'), readme.replace('{{title}}', t.title));
+  execFileSync('zip', ['-qr', path.join(DIST, 'exports', `${t.id}.zip`), t.id], { cwd: path.join(CF, 'export') });
+}
+
 const seeds = fs
   .readdirSync('sandbox/seeds')
   .sort()

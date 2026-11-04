@@ -20,8 +20,8 @@ Meta Global AI Developer Hackathon · Startups track
 3. **Build a template**: upload a video that works. The agent measures it, writes the template and
    benchmarks it. Keep it private or list it.
 
-Every template ships with its fill recipe (`sandbox/kit/.claude/skills/template-fill`), so any agent can
-run it with the video model it already uses.
+Every template downloads as a package with its fill recipe (`sandbox/kit/.claude/skills/template-fill`),
+so any agent can run it with the image and video models it already uses.
 
 ```mermaid
 flowchart LR

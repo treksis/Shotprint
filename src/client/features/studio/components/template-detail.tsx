@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
@@ -202,12 +202,23 @@ export function TemplateDetailDialog({
                     </div>
                   </div>
                 ))}
+                <a
+                  href={`/exports/${t.id}.zip`}
+                  download
+                  className="mt-6 flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-foreground text-[14px] font-medium text-background transition-opacity hover:opacity-90"
+                >
+                  <Download className="size-4" />
+                  Download template
+                </a>
+                <p className="mt-1.5 text-center text-[12px] text-muted-foreground">
+                  The template and its fill recipe, for any agent and any video model.
+                </p>
                 <button
                   type="button"
                   onClick={() => onUse(t, seconds)}
-                  className="mt-6 flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-foreground text-[14px] font-medium text-background transition-opacity hover:opacity-90"
+                  className="mt-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-border bg-background text-[14px] font-medium text-foreground transition-colors hover:bg-muted"
                 >
-                  Create a {seconds} s spot
+                  Make a {seconds} s spot with Muse Code
                   <ArrowRight className="size-4" />
                 </button>
               </aside>
