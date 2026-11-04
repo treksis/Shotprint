@@ -7,7 +7,7 @@ import { TEMPLATE_CASTS, TEMPLATE_GOALS, TEMPLATE_TONES } from '../types';
 
 /** What happens inside the build's sandbox, in order. Each step is a tool in sandbox/kit. */
 const STEPS = [
-  { icon: Box, title: 'Isolated sandbox', tool: 'one per build', text: 'A fresh sandbox boots with its own filesystem, CPU and memory caps and a spend cap. Nothing is shared with other workspaces.' },
+  { icon: Box, title: 'Its own microVM', tool: 'one VM per build', text: 'A fresh lightweight VM boots in under a second: its own Linux kernel, filesystem, CPU and memory caps and a spend cap. Nothing is shared with other workspaces.' },
   { icon: Ruler, title: 'Measure', tool: 'bin/dissect', text: 'Cuts, gradual transitions, shot times, loudness, silences, a transcript and labelled shot boards, in about 30 s. No model calls.' },
   { icon: ScanEye, title: 'Read the craft', tool: 'tools/motion.py', text: 'Optical flow turns each shot’s camera move into numbers; Muse Code reads the boards for framing, lens, light and text.' },
   { icon: FolderTree, title: 'Write the template', tool: 'make-template skill', text: 'TEMPLATE.md and template.json, a storyboard per shot, a swappable asset set, and the 30 s and 15 s cuts with their score.' },
@@ -64,7 +64,7 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
         <p className="text-[12px] font-medium tracking-wide text-muted-foreground uppercase">Build a template</p>
         <h1 className="mt-1 max-w-[760px] text-[36px] leading-tight font-medium tracking-[-0.01em]">Turn a video that works into a template any agent can run</h1>
         <p className="mt-3 max-w-[720px] text-[15px] text-muted-foreground">
-          Upload a reference. Muse Code measures it shot by shot inside its own sandbox, writes the template, then proves it
+          Upload a reference. Muse Code measures it shot by shot inside its own microVM, writes the template, then proves it
           by remaking the reference from the template alone. Keep it private, or list it on the marketplace.
         </p>
 
@@ -153,7 +153,7 @@ export function BuildTemplatePage({ onOpenProject, onProjectsChanged }: { onOpen
               onClick={start}
               className="mt-5 flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-foreground text-[14px] font-medium text-background transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {busy ? 'Starting the sandbox…' : 'Build in a sandbox'}
+              {busy ? 'Booting the microVM…' : 'Build in a microVM'}
               <ArrowRight className="size-4" />
             </button>
             {error && <p className="mt-2 text-[13px] text-[var(--negative)]">{error}</p>}
