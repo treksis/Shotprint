@@ -8,7 +8,7 @@ import { TEMPLATE_CASTS, TEMPLATE_GOALS, TEMPLATE_TONES } from '../types';
 
 /** What happens inside the build's sandbox, in order. Each step is a tool in sandbox/kit. */
 const STEPS = [
-  { icon: Box, title: 'Its own microVM', tool: 'one VM per build', text: 'A fresh lightweight VM boots in under a second: its own Linux kernel, filesystem, CPU and memory caps and a spend cap. Nothing is shared with other workspaces.' },
+  { icon: Box, title: 'Its own microVM', tool: 'one VM per build', text: 'Your footage never shares a machine. A fresh lightweight VM boots in under a second for this build alone: its own Linux kernel, filesystem, CPU, memory and spend caps.' },
   { icon: Ruler, title: 'Measure', tool: 'bin/dissect', text: 'Cuts, gradual transitions, shot times, loudness, silences, a transcript and labelled shot boards, in about 30 s. No model calls.' },
   { icon: ScanEye, title: 'Read the craft', tool: 'tools/motion.py', text: 'Optical flow turns each shot’s camera move into numbers; Muse Code reads the boards for framing, lens, light and text.' },
   { icon: FolderTree, title: 'Write the template', tool: 'make-template skill', text: 'TEMPLATE.md and template.json, a storyboard per shot, a swappable asset set, and the 30 s and 15 s cuts with their score.' },
