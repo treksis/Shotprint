@@ -1,7 +1,8 @@
-# Shotprint Studio
+# Shotprint
 
-Great videos follow a formula. Shotprint measures it, turns it into a template, and an agent makes it again for
-your product. Today: 30 s and 15 s spots from top-performing ads. Next: any format, any length.
+The video template marketplace for AI agents. A Shotprint template is written for an agent to run, not a
+project file for a person to edit: pick one, write one sentence, and Muse Code makes the 30 s and 15 s spots.
+Anyone can turn a video that works into a template, keep it private or list it.
 
 Meta Global AI Developer Hackathon · Startups track · Build for Your World
 
@@ -9,7 +10,7 @@ Meta Global AI Developer Hackathon · Startups track · Build for Your World
 
 | Model | Role |
 |---|---|
-| Muse Code | The production agent. One sandboxed session per project. |
+| Muse Code | The production agent. One microVM per project and per template build. |
 | Muse Spark · Muse Wonder | Its models (Demo · Live). |
 | Muse Image | Plates, cast and product sheets, storyboards. |
 | Muse Voice Transcribe | Measures the spoken lines of an ad. |
@@ -18,17 +19,19 @@ Meta Global AI Developer Hackathon · Startups track · Build for Your World
 
 ## How it works
 
-1. **Measure.** Every cut, fade, loudness curve and line of an ad, in seconds. No model, ~17 s.
-2. **Template.** Each shot's framing, camera, light, text and sound as numbers, plus swappable assets and a
-   storyboard per shot. Cut to 30 s and 15 s on the music's bars.
-3. **Benchmark.** The spot is regenerated from the template alone and compared with the original.
-4. **Produce.** Swap in your product, cast and lines. Every file lands on a live canvas.
+1. **Marketplace.** Templates filtered by goal, industry, tone and cast, each benchmarked.
+2. **Produce.** Pick one, add your product and one sentence. Muse Code directs in its own microVM; every
+   file lands on a live canvas you can steer.
+3. **Build a template.** Upload a reference. In its own microVM the agent measures it (cuts, camera moves,
+   loudness, lines; no model, ~30 s), writes each shot's framing, camera, light, text and sound as numbers
+   with swappable assets and a storyboard per shot, cuts it to 30 s and 15 s, and benchmarks it: the
+   reference is remade from the template alone and compared side by side. Keep it private or list it.
 
 ```mermaid
 flowchart LR
   UI[Studio] --> API[API]
   API --> R[relay]
-  subgraph Sandbox per project
+  subgraph microVM per project
     R --> MC[Muse Code] --> KIT[kit tools]
   end
   MC --> META[Meta Model API]
@@ -41,9 +44,14 @@ flowchart LR
 ```bash
 npm install
 cp .env.example .env      # META_API_KEY
-npm run sandbox:image
+npm run sandbox:image     # Docker; or sandbox:image:vm for Apple's container (macOS 26)
 npm run dev               # http://localhost:5180
 ```
+
+Sandboxes: on a Mac with Apple's `container` installed, each project runs in its own lightweight VM
+(own kernel, CPU and memory caps); otherwise a Docker container. `STUDIO_SANDBOX_RUNTIME=docker|container`
+overrides. Production runs on Cloudflare's sandbox product behind the same interface
+(`src/worker/studio/sandbox.ts`).
 
 ## Notes
 
@@ -53,5 +61,5 @@ npm run dev               # http://localhost:5180
 
 ## Map
 
-`src/client` UI · `src/worker` API and sandbox runtime · `sandbox/kit` agent tools · `sandbox/templates` 16
+`src/client` UI · `src/worker` API and sandbox runtime · `sandbox/kit` agent tools · `sandbox/templates`
 templates · `sandbox/seeds` recorded sessions · `docs/pitch` publishing scripts

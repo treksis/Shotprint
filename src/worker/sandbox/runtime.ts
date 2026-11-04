@@ -18,7 +18,7 @@ import {
   type WorkspaceGraph,
 } from '../../shared/studio';
 import type { ProjectSession, StudioSandbox } from '../studio/sandbox';
-import { connectRelay, containerName, dockerAvailable, ensureContainer, hostRoot, relayRunning, sandboxRoot, seedWorkspace, startRelay } from './docker';
+import { connectRelay, dockerAvailable, ensureContainer, hostRoot, relayRunning, removeContainer, sandboxRoot, seedWorkspace, startRelay } from './docker';
 import { outputsOf, scanWorkspace, type Activity } from './graph';
 import { MspClient, uuid7 } from './msp';
 
@@ -709,7 +709,7 @@ export const dockerSandbox: StudioSandbox = {
   async remove(projectId) {
     runtimes.get(projectId)?.dispose();
     runtimes.delete(projectId);
-    await new Promise((res) => spawn('docker', ['rm', '-f', containerName(projectId)], { stdio: 'ignore' }).on('exit', res));
+    await removeContainer(projectId);
     fs.rmSync(hostRoot(projectId), { recursive: true, force: true });
   },
 };

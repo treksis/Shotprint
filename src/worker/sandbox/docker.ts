@@ -12,20 +12,33 @@ const HOST = path.join(REPO, 'sandbox/host');
 const TEMPLATES = path.join(REPO, 'sandbox/templates');
 const WORKSPACES = path.join(REPO, '.data/workspaces');
 
+/**
+ * The sandbox runtime. On a Mac with Apple's `container` installed every project gets its own lightweight
+ * VM (its own Linux kernel, CPU and memory), the same isolation as Cloudflare's sandbox in production;
+ * otherwise Docker. Both CLIs take the same run/exec/start arguments. STUDIO_SANDBOX_RUNTIME overrides.
+ */
+export const RUNTIME: 'container' | 'docker' =
+  process.env.STUDIO_SANDBOX_RUNTIME === 'docker' || process.env.STUDIO_SANDBOX_RUNTIME === 'container'
+    ? process.env.STUDIO_SANDBOX_RUNTIME
+    : process.platform === 'darwin' && ['/opt/homebrew/bin/container', '/usr/local/bin/container'].some((p) => fs.existsSync(p))
+      ? 'container'
+      : 'docker';
+const CLI = RUNTIME;
+
 export const containerName = (projectId: string) => `museclone-${projectId.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
 export const hostRoot = (projectId: string) => path.join(WORKSPACES, projectId.replace(/[^a-zA-Z0-9_.-]/g, ''));
 
 /**
- * Where the workspace sits inside the container. Muse Code checks that a file it opened resolves to the
+ * Where the workspace sits inside the sandbox. Muse Code checks that a file it opened resolves to the
  * path it asked for; Docker Desktop on macOS reports bind-mounted files under /run/host_virtiofs/<host
- * path>, so the workspace is mounted at exactly that path. On Linux the host path itself works.
+ * path>, so there the workspace is mounted at exactly that path. Apple's VMs and Linux use the host path.
  */
 export const sandboxRoot = (projectId: string) =>
-  process.platform === 'darwin' ? `/run/host_virtiofs${hostRoot(projectId)}` : hostRoot(projectId);
+  RUNTIME === 'docker' && process.platform === 'darwin' ? `/run/host_virtiofs${hostRoot(projectId)}` : hostRoot(projectId);
 
 let dockerOk: Promise<boolean> | null = null;
 export function dockerAvailable(): Promise<boolean> {
-  dockerOk ??= run('docker', ['image', 'inspect', IMAGE, '--format', '{{.Id}}'], { timeout: 8000 })
+  dockerOk ??= run(CLI, ['image', 'inspect', IMAGE], { timeout: 8000 })
     .then(() => true)
     .catch(() => false);
   return dockerOk;
@@ -53,7 +66,12 @@ export function seedWorkspace(projectId: string, opts: { templateId: string | nu
 
 async function state(name: string): Promise<'running' | 'stopped' | 'missing'> {
   try {
-    const { stdout } = await run('docker', ['inspect', '-f', '{{.State.Running}}', name], { timeout: 8000 });
+    if (RUNTIME === 'container') {
+      const { stdout } = await run(CLI, ['inspect', name], { timeout: 8000 });
+      const [c] = JSON.parse(stdout || '[]') as { status?: { state?: string } }[];
+      return !c ? 'missing' : c.status?.state === 'running' ? 'running' : 'stopped';
+    }
+    const { stdout } = await run(CLI, ['inspect', '-f', '{{.State.Running}}', name], { timeout: 8000 });
     return stdout.trim() === 'true' ? 'running' : 'stopped';
   } catch {
     return 'missing';
@@ -66,12 +84,12 @@ export async function ensureContainer(projectId: string): Promise<string> {
   const s = await state(name);
   if (s === 'running') return name;
   if (s === 'stopped') {
-    await run('docker', ['start', name], { timeout: 30_000 });
+    await run(CLI, ['start', name], { timeout: 30_000 });
     return name;
   }
   const root = sandboxRoot(projectId);
   await run(
-    'docker',
+    CLI,
     [
       'run', '-d', '--name', name,
       '--label', `museclone.project=${projectId}`,
@@ -90,7 +108,7 @@ export async function ensureContainer(projectId: string): Promise<string> {
 
 export async function relayRunning(name: string): Promise<boolean> {
   try {
-    await run('docker', ['exec', name, 'test', '-S', '/tmp/studio-msp.sock'], { timeout: 8000 });
+    await run(CLI, ['exec', name, 'test', '-S', '/tmp/studio-msp.sock'], { timeout: 8000 });
     return true;
   } catch {
     return false;
@@ -101,7 +119,7 @@ export async function relayRunning(name: string): Promise<boolean> {
 export async function startRelay(projectId: string, name: string, modelId: string) {
   const root = sandboxRoot(projectId);
   await run(
-    'docker',
+    CLI,
     [
       'exec', '-d', '-w', root, name,
       'node', '/opt/studio/relay.mjs', 'serve', `${root}/.studio/events.jsonl`, '--',
@@ -118,7 +136,12 @@ export async function startRelay(projectId: string, name: string, modelId: strin
 }
 
 export function connectRelay(name: string) {
-  return spawn('docker', ['exec', '-i', name, 'node', '/opt/studio/relay.mjs', 'connect'], { stdio: ['pipe', 'pipe', 'pipe'] });
+  return spawn(CLI, ['exec', '-i', name, 'node', '/opt/studio/relay.mjs', 'connect'], { stdio: ['pipe', 'pipe', 'pipe'] });
+}
+
+/** Tear the project's sandbox down (the workspace stays on the host). */
+export function removeContainer(projectId: string) {
+  return new Promise((res) => spawn(CLI, ['rm', '-f', containerName(projectId)], { stdio: 'ignore' }).on('exit', res).on('error', res));
 }
 
 /** A poster frame for a clip, cached next to the workspace's other Studio files. */

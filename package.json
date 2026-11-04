@@ -11,6 +11,7 @@
     "cf:dev": "wrangler dev",
     "cf:deploy": "npm run build && wrangler deploy",
     "sandbox:image": "docker build -t muse-harness sandbox/image",
+    "sandbox:image:vm": "container build -t muse-harness sandbox/image",
     "db:migrate": "wrangler d1 execute muse-viral-db --local --file=./src/worker/db/schema.sql"
   },
   "dependencies": {
