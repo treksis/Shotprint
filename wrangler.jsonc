@@ -5,6 +5,8 @@
   "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat"],
   "account_id": "9f2c9553ce02bd2f9ff643540f4a847b",
+  "routes": [{ "pattern": "shotprint.dev", "custom_domain": true }],
+  "workers_dev": true,
   // npm run cf:deploy builds the client, packs templates/seeds (scripts/cf-pack.ts) and the VM server bundle.
   "assets": {
     "directory": "./dist",

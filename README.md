@@ -6,7 +6,7 @@ A stock video template is a project file a person has to edit. A Shotprint templ
 to run: every shot's timing, framing, camera, light, text and sound, with a storyboard per shot and
 swappable cast, product and places. Pick one, add one sentence, and Muse Code makes the 30 s and 15 s spots.
 
-**Live demo:** https://shotprint.hosung-jang.workers.dev (judges: the passcode for Live mode is in the
+**Live demo:** https://shotprint.dev (judges: the passcode for Live mode is in the
 submission notes)
 
 Meta Global AI Developer Hackathon · Startups track

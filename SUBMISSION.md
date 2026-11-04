@@ -11,7 +11,7 @@ Meta Global AI Developer Hackathon (Oct 26 – Nov 4, 2026).
 | Track | Startups |
 | Problem statement | Build for Your World |
 | Repository | https://github.com/treksis/Shotprint |
-| Live demo | https://shotprint.hosung-jang.workers.dev (Live mode passcode in the submission notes) |
+| Live demo | https://shotprint.dev (Live mode passcode in the submission notes) |
 | Demo video | _link to add_ |
 | Team | _names to add_ |
 
