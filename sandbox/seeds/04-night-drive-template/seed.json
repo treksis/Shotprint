@@ -1,0 +1,7 @@
+{
+  "name": "Template: night-drive-launch",
+  "prompt": "Turn inputs/quest3-dark.mp4 into a director template named \"night-drive-launch\" with the make-template skill.\n\nRun bin/dissect inputs/quest3-dark.mp4 --template night-drive-launch, read the boards, and write templates/night-drive-launch/ to docs/template_spec.md: TEMPLATE.md, template.json with cut30 and cut15, a board per shot and the asset set. Finish with bin/template check templates/night-drive-launch.\n\nThen benchmark it: without opening the original footage again, remake the 30 s cut from the template alone and put the remake next to bin/template reference for a side-by-side.\n\nListing: publish to the marketplace. Write templates/night-drive-launch/catalog.json with goal \"Product launch\", tone \"Sleek\", cast \"No cast\" and the industries it fits.",
+  "templateId": null,
+  "thumbnail": "dissection/quest3-dark_shots_01.jpg",
+  "model": "spark"
+}

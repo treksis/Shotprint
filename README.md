@@ -52,8 +52,18 @@ npm run dev               # http://localhost:5180
 
 Sandboxes: on a Mac with Apple's `container` installed, each project runs in its own lightweight VM
 (own kernel, CPU and memory caps); otherwise a Docker container. `STUDIO_SANDBOX_RUNTIME=docker|container`
-overrides. Production runs on Cloudflare's sandbox product behind the same interface
-(`src/worker/studio/sandbox.ts`).
+overrides.
+
+Cloudflare: the Worker (`src/worker/cf-entry.ts`) serves the app, keeps projects in D1 and gives every
+project its own Cloudflare container, one microVM running the Studio session server
+(`src/worker/vm-server.ts`, `STUDIO_SANDBOX_RUNTIME=local`) next to Muse Code. Running an agent, and
+footage that isn't ours (kept in R2), need the judge passcode.
+
+```bash
+npx wrangler secret put JUDGE_PASSCODE && npx wrangler secret put META_API_KEY
+npm run db:migrate:remote
+npm run cf:deploy         # vite build, scripts/cf-pack.ts, VM server bundle, wrangler deploy (builds ./Dockerfile)
+```
 
 ## Notes
 

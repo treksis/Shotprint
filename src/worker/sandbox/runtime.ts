@@ -639,7 +639,7 @@ const text = (v: unknown): string | null =>
   v == null ? null : typeof v === 'string' ? v : Array.isArray(v) ? v.map(text).filter(Boolean).join(' · ') : typeof v === 'object' ? Object.values(v as object).map(text).filter(Boolean).join(' · ') : String(v);
 
 /** What the template page shows: the two cuts as storyboard strips, the ingredient set, the summary. */
-function readTemplateDetail(id: string): TemplateDetail | null {
+export function readTemplateDetail(id: string): TemplateDetail | null {
   const dir = path.join(TEMPLATE_DIR, path.basename(id));
   const file = path.join(dir, 'template.json');
   if (!fs.existsSync(file)) return null;

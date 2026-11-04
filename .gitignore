@@ -23,3 +23,6 @@ docs/archive/
 docs/research/
 docs/studio/
 skills-lock.json
+
+# Cloudflare build output (vm-server bundle, template index)
+.cf/

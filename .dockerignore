@@ -1,0 +1,8 @@
+# Only what the project VM image copies.
+*
+!sandbox/host
+!sandbox/kit
+!sandbox/templates
+!sandbox/seeds
+!.cf/vm-server.mjs
+**/.DS_Store

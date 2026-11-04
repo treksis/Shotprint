@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
+import { getJudgeModeState } from '../../../lib/api';
 import { getTemplate, templateFileUrl } from '../api';
 import type { StudioTemplate, TemplateDetail } from '../types';
 
@@ -43,7 +44,9 @@ export function TemplateDetailDialog({
 
   const t = template;
   const cut = detail?.cuts.find((c) => c.seconds === seconds) ?? null;
-  const proof = t?.proof?.[String(seconds) as '30' | '15'];
+  // The deployed demo serves footage that isn't ours (benchmarks, reference ads) to judges only.
+  const locked = import.meta.env.PROD && !getJudgeModeState();
+  const proof = locked ? undefined : t?.proof?.[String(seconds) as '30' | '15'];
   const groups = (['char', 'product', 'loc', 'ui', 'other'] as const)
     .map((k) => ({ k, files: detail?.set.filter((s) => s.kind === k) ?? [] }))
     .filter((g) => g.files.length);
@@ -98,15 +101,23 @@ export function TemplateDetailDialog({
                   </figcaption>
                 </figure>
               ) : (
-                <video
-                  src={t.preview}
-                  poster={t.thumbnail}
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  className="aspect-video w-full rounded-[12px] bg-black object-cover"
-                />
+                <figure>
+                  <video
+                    src={t.preview}
+                    poster={t.thumbnail}
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                    className="aspect-video w-full rounded-[12px] bg-black object-cover"
+                  />
+                  {locked && t.proof && (
+                    <figcaption className="mt-2 text-[13px] text-muted-foreground">
+                      The benchmark (the original next to a remake made from this template alone) opens in Live mode, with
+                      the judge passcode.
+                    </figcaption>
+                  )}
+                </figure>
               )}
             </div>
 
@@ -153,7 +164,7 @@ export function TemplateDetailDialog({
                     </ul>
                   </>
                 )}
-                {t.examples && t.examples.length > 0 && (
+                {!locked && t.examples && t.examples.length > 0 && (
                   <>
                     <h3 className="mt-5 text-[15px] font-medium">Example productions</h3>
                     <div className="mt-2 grid gap-3 sm:grid-cols-2">

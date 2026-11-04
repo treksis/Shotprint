@@ -9,12 +9,16 @@
     "dev:client": "vite",
     "build": "vite build",
     "cf:dev": "wrangler dev",
-    "cf:deploy": "npm run build && wrangler deploy",
+    "cf:deploy": "npm run build && npm run cf:pack && npm run cf:vm && wrangler deploy",
     "sandbox:image": "docker build -t muse-harness sandbox/image",
     "sandbox:image:vm": "container build -t muse-harness sandbox/image",
-    "db:migrate": "wrangler d1 execute muse-viral-db --local --file=./src/worker/db/schema.sql"
+    "db:migrate": "wrangler d1 execute shotprint-db --local --file=./src/worker/db/schema.sql",
+    "cf:vm": "esbuild src/worker/vm-server.ts --bundle --platform=node --format=esm --target=node22 --outfile=.cf/vm-server.mjs --log-level=warning \"--banner:js=import{createRequire}from'module';const require=createRequire(import.meta.url);\"",
+    "cf:pack": "tsx scripts/cf-pack.ts",
+    "db:migrate:remote": "wrangler d1 execute shotprint-db --remote --file=./src/worker/db/schema.sql"
   },
   "dependencies": {
+    "@cloudflare/containers": "^0.3.7",
     "@cloudflare/sandbox": "^1.0.3",
     "@hono/node-server": "^1.13.8",
     "@radix-ui/react-collapsible": "^1.2.1",
@@ -51,10 +55,11 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.2",
+    "esbuild": "^0.28.2",
     "tailwindcss": "^4.0.6",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
-    "wrangler": "^3.109.0"
+    "wrangler": "^4.157.0"
   }
 }

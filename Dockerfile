@@ -1,17 +1,23 @@
-# Cloudflare Sandbox SDK 1.0 MicroVM Image for Shotprint Video Studio
-FROM debian:bookworm-slim
+# A project's microVM on Cloudflare Containers: the Studio session server and Muse Code side by side.
+# Built and pushed by `wrangler deploy` (wrangler.jsonc → containers). Local dev uses sandbox/image instead.
+FROM node:22-bookworm-slim
 
-# Copy the official @cloudflare/sandbox 1.0.3 runtime shim
-COPY --from=docker.io/cloudflare/sandbox:1.0.3 /usr/local/bin/sandbox-shim /usr/local/bin/sandbox-shim
-
-# Install FFmpeg (for frame extraction & MP4 stitching) and Python 3
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ffmpeg \
-    python3 \
-    ca-certificates \
+      ffmpeg python3 perl curl ca-certificates git jq procps \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /workspace
-WORKDIR /workspace
+# Muse Code CLI.
+RUN curl -fsSL https://dev.meta.ai/install.sh | MUSE_INSTALL_DIR=/usr/local/bin bash \
+    && muse --version
 
-CMD ["sleep", "infinity"]
+WORKDIR /app
+COPY sandbox/host sandbox/host
+COPY sandbox/kit sandbox/kit
+COPY sandbox/templates sandbox/templates
+COPY sandbox/seeds sandbox/seeds
+# npm run cf:vm bundles src/worker/vm-server.ts.
+COPY .cf/vm-server.mjs vm-server.mjs
+
+ENV STUDIO_SANDBOX_RUNTIME=local PORT=8080 HOME=/root
+EXPOSE 8080
+CMD ["node", "vm-server.mjs"]

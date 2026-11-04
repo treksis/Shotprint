@@ -27,11 +27,7 @@ export async function seedProjects(store: StudioStore) {
     if (!fs.existsSync(metaFile) || !fs.existsSync(path.join(dir, 'workspace'))) continue;
     const meta = JSON.parse(fs.readFileSync(metaFile, 'utf8')) as SeedMeta;
     const p = await store.create({ name: meta.name, prompt: meta.prompt, templateId: meta.templateId, thumbnail: null, state: { positions: {} } });
-    const root = hostRoot(p.id);
-    fs.cpSync(path.join(dir, 'workspace'), root, { recursive: true });
-    // The brief already ran; there is no live session to resume in a new container.
-    fs.writeFileSync(path.join(root, '.studio/session.json'), JSON.stringify({ briefSent: true, model: meta.model ?? 'spark' }, null, 2));
-    fs.writeFileSync(path.join(root, '.arm'), `museclone-${p.id}`);
+    const root = copySeed(slug, p.id);
     const done = fs.existsSync(path.join(root, 'final'));
     await store.update(p.id, {
       status: done ? 'done' : 'draft',
@@ -39,4 +35,16 @@ export async function seedProjects(store: StudioStore) {
     });
     console.log(`[studio] seeded sample project "${meta.name}" (${p.id})`);
   }
+}
+
+/** Copies a recorded session into a project's workspace (also used by the Cloudflare VM on first open). */
+export function copySeed(slug: string, projectId: string) {
+  const dir = path.join(SEEDS, path.basename(slug));
+  const meta = JSON.parse(fs.readFileSync(path.join(dir, 'seed.json'), 'utf8')) as SeedMeta;
+  const root = hostRoot(projectId);
+  fs.cpSync(path.join(dir, 'workspace'), root, { recursive: true });
+  // The brief already ran; there is no live session to resume in a new container.
+  fs.writeFileSync(path.join(root, '.studio/session.json'), JSON.stringify({ briefSent: true, model: meta.model ?? 'spark' }, null, 2));
+  fs.writeFileSync(path.join(root, '.arm'), `museclone-${projectId}`);
+  return root;
 }

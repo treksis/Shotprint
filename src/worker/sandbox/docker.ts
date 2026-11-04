@@ -16,14 +16,18 @@ const WORKSPACES = path.join(REPO, '.data/workspaces');
  * The sandbox runtime. On a Mac with Apple's `container` installed every project gets its own lightweight
  * VM (its own Linux kernel, CPU and memory), the same isolation as Cloudflare's sandbox in production;
  * otherwise Docker. Both CLIs take the same run/exec/start arguments. STUDIO_SANDBOX_RUNTIME overrides.
+ * "local" is the Studio server running inside the project's own VM (a Cloudflare container in production):
+ * Muse Code runs right next to it, with no second sandbox to start.
  */
-export const RUNTIME: 'container' | 'docker' =
-  process.env.STUDIO_SANDBOX_RUNTIME === 'docker' || process.env.STUDIO_SANDBOX_RUNTIME === 'container'
+export const RUNTIME: 'container' | 'docker' | 'local' =
+  process.env.STUDIO_SANDBOX_RUNTIME === 'docker' || process.env.STUDIO_SANDBOX_RUNTIME === 'container' || process.env.STUDIO_SANDBOX_RUNTIME === 'local'
     ? process.env.STUDIO_SANDBOX_RUNTIME
     : process.platform === 'darwin' && ['/opt/homebrew/bin/container', '/usr/local/bin/container'].some((p) => fs.existsSync(p))
       ? 'container'
       : 'docker';
 const CLI = RUNTIME;
+const RELAY = RUNTIME === 'local' ? path.join(HOST, 'relay.mjs') : '/opt/studio/relay.mjs';
+const SOCK = '/tmp/studio-msp.sock';
 
 export const containerName = (projectId: string) => `museclone-${projectId.replace(/[^a-zA-Z0-9_.-]/g, '')}`;
 export const hostRoot = (projectId: string) => path.join(WORKSPACES, projectId.replace(/[^a-zA-Z0-9_.-]/g, ''));
@@ -38,6 +42,7 @@ export const sandboxRoot = (projectId: string) =>
 
 let dockerOk: Promise<boolean> | null = null;
 export function dockerAvailable(): Promise<boolean> {
+  if (RUNTIME === 'local') return Promise.resolve(fs.existsSync('/usr/local/bin/muse'));
   dockerOk ??= run(CLI, ['image', 'inspect', IMAGE], { timeout: 8000 })
     .then(() => true)
     .catch(() => false);
@@ -81,6 +86,7 @@ async function state(name: string): Promise<'running' | 'stopped' | 'missing'> {
 /** The project's container, created or restarted as needed. It idles on `sleep` between turns. */
 export async function ensureContainer(projectId: string): Promise<string> {
   const name = containerName(projectId);
+  if (RUNTIME === 'local') return name;
   const s = await state(name);
   if (s === 'running') return name;
   if (s === 'stopped') {
@@ -107,6 +113,7 @@ export async function ensureContainer(projectId: string): Promise<string> {
 }
 
 export async function relayRunning(name: string): Promise<boolean> {
+  if (RUNTIME === 'local') return fs.statSync(SOCK, { throwIfNoEntry: false })?.isSocket() ?? false;
   try {
     await run(CLI, ['exec', name, 'test', '-S', '/tmp/studio-msp.sock'], { timeout: 8000 });
     return true;
@@ -118,16 +125,13 @@ export async function relayRunning(name: string): Promise<boolean> {
 /** Start `muse serve` behind the relay (detached, so it outlives this server process). */
 export async function startRelay(projectId: string, name: string, modelId: string) {
   const root = sandboxRoot(projectId);
-  await run(
-    CLI,
-    [
-      'exec', '-d', '-w', root, name,
-      'node', '/opt/studio/relay.mjs', 'serve', `${root}/.studio/events.jsonl`, '--',
-      'muse', 'serve', '--disable-sandbox', '--trust-workspace', '--disable-request-user-input',
-      '--provider', 'meta', '--model', modelId,
-    ],
-    { timeout: 20_000 }
-  );
+  const serve = [
+    'node', RELAY, 'serve', `${root}/.studio/events.jsonl`, '--',
+    'muse', 'serve', '--disable-sandbox', '--trust-workspace', '--disable-request-user-input',
+    '--provider', 'meta', '--model', modelId,
+  ];
+  if (RUNTIME === 'local') spawn(serve[0], serve.slice(1), { cwd: root, detached: true, stdio: 'ignore' }).unref();
+  else await run(CLI, ['exec', '-d', '-w', root, name, ...serve], { timeout: 20_000 });
   for (let i = 0; i < 50; i++) {
     if (await relayRunning(name)) return;
     await new Promise((r) => setTimeout(r, 200));
@@ -136,11 +140,13 @@ export async function startRelay(projectId: string, name: string, modelId: strin
 }
 
 export function connectRelay(name: string) {
+  if (RUNTIME === 'local') return spawn('node', [RELAY, 'connect'], { stdio: ['pipe', 'pipe', 'pipe'] });
   return spawn(CLI, ['exec', '-i', name, 'node', '/opt/studio/relay.mjs', 'connect'], { stdio: ['pipe', 'pipe', 'pipe'] });
 }
 
 /** Tear the project's sandbox down (the workspace stays on the host). */
 export function removeContainer(projectId: string) {
+  if (RUNTIME === 'local') return Promise.resolve(null);
   return new Promise((res) => spawn(CLI, ['rm', '-f', containerName(projectId)], { stdio: 'ignore' }).on('exit', res).on('error', res));
 }
 

@@ -1,42 +1,39 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "muse-viral-studio",
+  "name": "shotprint",
   "main": "src/worker/cf-entry.ts",
-  "compatibility_date": "2025-02-14",
+  "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat"],
+  "account_id": "9f2c9553ce02bd2f9ff643540f4a847b",
+  // npm run cf:deploy builds the client, packs templates/seeds (scripts/cf-pack.ts) and the VM server bundle.
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/media/*", "/templates/proof/*", "/templates/examples/*"]
   },
-  // Secrets: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY (local dev: .env or .dev.vars)
-  // The container below is where each project's Muse Code sandbox runs when deployed (not wired yet).
+  // Secrets: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY
+  // Every project gets its own container (one microVM) running the Studio session server and Muse Code.
   "containers": [
     {
-      "class_name": "MuseSandbox",
+      "class_name": "ProjectVM",
       "image": "./Dockerfile",
+      "instance_type": "standard-2",
       "max_instances": 5
     }
   ],
   "durable_objects": {
-    "bindings": [
-      {
-        "name": "SANDBOX_DO",
-        "class_name": "MuseSandbox"
-      }
-    ]
+    "bindings": [{ "name": "PROJECT_VM", "class_name": "ProjectVM" }]
   },
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": ["MuseSandbox"]
-    }
-  ],
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ProjectVM"] }],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "muse-viral-db",
-      "database_id": "00000000-0000-0000-0000-000000000000"
+      "database_name": "shotprint-db",
+      "database_id": "11301791-4cd3-43ac-b9b3-dee5422997c8"
     }
-  ]
+  ],
+  // Benchmarks, reference ads and sample-project thumbnails: served only with the judge passcode.
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "shotprint-media" }],
+  "observability": { "enabled": true }
 }
