@@ -66,6 +66,11 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
   const submit = async (text: string, files: File[]) => {
     setBusy(true);
     setError(null);
+    // Demo mode on the deployed site replays a recorded run (the template's own, if there is one).
+    if (import.meta.env.PROD && !isLive) {
+      const replay = projects.find((p) => template && p.templateId === template.id) ?? projects.find((p) => p.templateId) ?? projects[0];
+      if (replay) return onOpenProject(replay.id);
+    }
     try {
       // Files go into the new workspace's inputs/ before its first turn, so the brief can use them.
       const project = await createProject(newProject(files.length ? `${text}\n\nMy files are in inputs/.` : text, template));
@@ -107,6 +112,11 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged 
             allowedModels={allowed}
           />
           {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
+          {import.meta.env.PROD && !isLive && !error && (
+            <p className="mt-2 px-2 text-center text-[13px] text-muted-foreground">
+              Demo mode replays a recorded run. Go live with the judge passcode to make your own.
+            </p>
+          )}
           <div className="mt-3 flex flex-wrap justify-center gap-2">
             {SKILLS.map((s) => (
               <button

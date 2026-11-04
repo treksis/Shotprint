@@ -99,6 +99,34 @@ async function guard(env: Env) {
   return { active: results.length, polled, ...(await spent(env)) };
 }
 
+/** Recorded runs anyone can replay in Demo mode (finished films; their source footage stays blocked). */
+const PUBLIC_SEEDS = ['01-meta-vr-glasses-bluechip', '02-render-modes-teaser'];
+const PUBLIC_BLOCKED = /^(inputs\/reference|notes\/ref)|\.(wav|mp3|m4a|aac)$/i;
+
+async function demoReplays(env: Env) {
+  const { results } = await env.DB!.prepare('SELECT id, name, template_id, status, thumbnail, created_at, updated_at, state_json FROM studio_projects')
+    .bind()
+    .all<{ id: string; name: string; template_id: string | null; status: StudioProject['status']; thumbnail: string | null; created_at: string; updated_at: string; state_json: string }>();
+  return results
+    .filter((r) => PUBLIC_SEEDS.includes(JSON.parse(r.state_json)?.seed))
+    .map((r) => ({ id: r.id, name: r.name, templateId: r.template_id, status: r.status, thumbnail: r.thumbnail, createdAt: r.created_at, updatedAt: r.updated_at }));
+}
+
+/** Without the passcode: the recorded runs, read only. */
+async function publicReplay(req: Request, env: Env, url: URL) {
+  if (req.method !== 'GET') return null;
+  await seedOnce(env);
+  const replays = await demoReplays(env);
+  if (url.pathname === '/api/studio/projects') return Response.json({ projects: replays });
+  const m = /^\/api\/studio\/projects\/([^/]+)(?:\/(events|files)\/?(.*))?$/.exec(url.pathname);
+  const id = m && decodeURIComponent(m[1]);
+  if (!id || !replays.some((r) => r.id === id)) return null;
+  if (!m![2]) return 'app' as const;
+  if (m![2] === 'files' && PUBLIC_BLOCKED.test(decodeURIComponent(m![3]))) return new Response('judge passcode required', { status: 401 });
+  const project = await d1Store(env.DB!).get(id);
+  return project ? getContainer(env.PROJECT_VM, id).fetch(vmRequest(project, req)) : null;
+}
+
 const judgeOnly = () => Response.json({ error: 'judge_only', message: 'Running an agent on this demo needs the judge passcode (Live mode).' }, { status: 401 });
 
 /** R2 object with byte ranges, so videos seek. */
@@ -155,7 +183,8 @@ export default {
     });
 
     if (url.pathname.startsWith('/templates/proof/') || url.pathname.startsWith('/templates/examples/') || url.pathname.startsWith('/media/')) {
-      if (!judge) return new Response('judge passcode required', { status: 401 });
+      const publicThumb = PUBLIC_SEEDS.some((slug) => url.pathname.startsWith(`/media/seeds/${slug}/`));
+      if (!judge && !publicThumb) return new Response('judge passcode required', { status: 401 });
       return media(req, env, url.pathname.replace(/^\/(media\/)?/, ''));
     }
 
@@ -169,7 +198,11 @@ export default {
     }
 
     if (url.pathname.startsWith('/api/studio/projects')) {
-      if (!judge) return req.method === 'GET' && url.pathname === '/api/studio/projects' ? Response.json({ projects: [] }) : judgeOnly();
+      if (!judge) {
+        const pub = await publicReplay(req, env, url);
+        if (pub === 'app') return app.fetch(req, env, ctx);
+        return pub ?? judgeOnly();
+      }
       await seedOnce(env);
       const m = SESSION.exec(url.pathname);
       if (m) {
