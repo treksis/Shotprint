@@ -63,7 +63,7 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
           </button>
         </div>
 
-        <div className="sticky top-0 z-10 -mx-6 mt-8 space-y-3 bg-background/95 px-6 py-3 backdrop-blur">
+        <div data-tour="filters" className="sticky top-0 z-10 -mx-6 mt-8 space-y-3 bg-background/95 px-6 py-3 backdrop-blur">
           <div className="flex flex-wrap items-center gap-3">
             <label className="flex h-10 min-w-[260px] flex-1 items-center gap-2 rounded-full border border-border bg-background px-4 focus-within:border-foreground">
               <Search className="size-4 text-muted-foreground" />

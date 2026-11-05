@@ -19,7 +19,7 @@ export function TemplateCard({
   const video = useRef<HTMLVideoElement | null>(null);
   const t = template;
   return (
-    <div className="relative flex">
+    <div data-tour="card" className="relative flex">
       <button
         type="button"
         aria-pressed={selected}
@@ -90,6 +90,7 @@ export function TemplateCard({
       {onDetails && t.status === 'ready' && (
         <button
           type="button"
+          data-tour="compare"
           onClick={() => onDetails(t)}
           className="absolute right-3 bottom-3 inline-flex h-7 cursor-pointer items-center gap-1.5 rounded-full border border-border bg-background px-2.5 text-[12px] font-medium text-foreground transition-colors hover:bg-[var(--chrome)]"
         >

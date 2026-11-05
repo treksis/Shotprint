@@ -80,7 +80,7 @@ export default function App() {
 
   // First visit to the app in Demo mode on the deployed site: offer the tour once.
   useEffect(() => {
-    if (!import.meta.env.PROD || isJudgeMode || route.view === 'landing' || route.view === 'project' || tour !== null) return;
+    if (!import.meta.env.PROD || isJudgeMode || route.view !== 'templates' || tour !== null) return;
     let seen = false;
     try {
       seen = localStorage.getItem('shotprint.tour.v1') === 'done';
@@ -173,8 +173,8 @@ export default function App() {
         </>
       )}
 
-      {tour !== null && route.view !== 'landing' && (
-        <DemoTour step={tour} onStep={setTour} onClose={endTour} onGoLive={() => openGate()} onNavigate={navigate} />
+      {tour !== null && route.view === 'templates' && (
+        <DemoTour step={tour} onStep={setTour} onClose={endTour} />
       )}
       <LiveAccessDialog
         isOpen={showLiveGate}

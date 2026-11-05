@@ -52,7 +52,7 @@ export function AppSidebar({ route, onNavigate, projects, onTour, ...props }: Ap
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Studio" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
+                <SidebarMenuButton data-tour="nav-studio" tooltip="Studio" isActive={route.view === 'home'} onClick={() => onNavigate({ view: 'home' })}>
                   <PenLine />
                   <span>Studio</span>
                 </SidebarMenuButton>
@@ -62,7 +62,7 @@ export function AppSidebar({ route, onNavigate, projects, onTour, ...props }: Ap
         </SidebarGroup>
 
         {projects.length > 0 && (
-          <SidebarGroup className="group-data-[collapsible=icon]:hidden">
+          <SidebarGroup data-tour="projects" className="group-data-[collapsible=icon]:hidden">
             <SidebarGroupLabel>Projects</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
@@ -93,7 +93,7 @@ export function AppSidebar({ route, onNavigate, projects, onTour, ...props }: Ap
             </SidebarMenuItem>
           )}
           <SidebarMenuItem>
-            <SidebarMenuButton tooltip="Technical details" isActive={route.view === 'technical'} onClick={() => onNavigate({ view: 'technical' })}>
+            <SidebarMenuButton data-tour="nav-tech" tooltip="Technical details" isActive={route.view === 'technical'} onClick={() => onNavigate({ view: 'technical' })}>
               <span>Technical details</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
