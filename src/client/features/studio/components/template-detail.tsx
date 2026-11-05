@@ -110,18 +110,43 @@ export function TemplateDetailDialog({
             <div className="px-6 pt-5">
               {sample ? (
                 <figure>
-                  <video
-                    key={sample}
-                    src={sample}
-                    poster={`/templates/sample/${t.id}-${seconds}.jpg`}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="aspect-video w-full rounded-[12px] bg-black"
-                  />
+                  <div className="relative">
+                    <video
+                      key={sample}
+                      src={sample}
+                      poster={`/templates/sample/${t.id}-${seconds}.jpg`}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="aspect-video w-full rounded-[12px] bg-black"
+                    />
+                    {locked && (
+                      <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-black/70 px-3 py-1 text-[12px] font-medium text-white">
+                        Muted in Demo mode
+                      </span>
+                    )}
+                  </div>
                   <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                    A {seconds} s spot made from this template alone{locked ? ' (sound plays in Live mode)' : ''}.
+                    A {seconds} s spot made from this template alone.
                   </figcaption>
+                  {locked && (
+                    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-[#0866ff]/25 bg-[#0866ff]/[0.06] px-4 py-3">
+                      <p className="text-[13px] text-foreground">
+                        Demo mode plays these spots muted: their score comes from the original ad. Go live to hear them
+                        with music and to see the side-by-side benchmark.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onClose();
+                          window.dispatchEvent(new CustomEvent('shotprint:golive'));
+                        }}
+                        className="h-9 shrink-0 cursor-pointer rounded-full bg-[#0866ff] px-4 text-[13px] font-medium text-white hover:opacity-90"
+                      >
+                        Go live with the passcode
+                      </button>
+                    </div>
+                  )}
                 </figure>
               ) : (
                 <video

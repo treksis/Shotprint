@@ -73,6 +73,13 @@ export default function App() {
     setShowLiveGate(true);
   }, []);
 
+  // The template window (and anything else deep in the tree) asks for Live mode with this event.
+  useEffect(() => {
+    const go = () => openGate('Live mode plays the template spots with their music and opens the benchmarks.');
+    window.addEventListener('shotprint:golive', go);
+    return () => window.removeEventListener('shotprint:golive', go);
+  }, [openGate]);
+
   const exitLive = () => {
     setIsJudgeMode(false);
     setJudgeModeState(false);

@@ -179,7 +179,7 @@ export function LiveAccessDialog({
         ) : (
           <form onSubmit={handleSubmitLive} className="mt-5 space-y-4">
             <p className="text-[16px] leading-[1.55] text-[#6b6b6b]">
-              Enter the judge passcode to create new videos from your own links and photos.
+              Enter the judge passcode to hear the template spots with music, open the benchmarks and run the agent yourself.
             </p>
 
             <div>
