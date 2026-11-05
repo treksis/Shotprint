@@ -1,6 +1,6 @@
 import { ShotprintMark } from './ShotprintMark';
 import * as React from 'react';
-import { Cpu, Loader2, PenLine, Store } from 'lucide-react';
+import { Loader2, PenLine, Store } from 'lucide-react';
 import type { Route } from '../App';
 import type { StudioProjectSummary } from '../../shared/studio';
 import {
@@ -56,12 +56,6 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
                   <span>Studio</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Technical details" isActive={route.view === 'technical'} onClick={() => onNavigate({ view: 'technical' })}>
-                  <Cpu />
-                  <span>Technical details</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
@@ -90,6 +84,11 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
 
       <SidebarFooter>
         <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton tooltip="Technical details" isActive={route.view === 'technical'} onClick={() => onNavigate({ view: 'technical' })}>
+              <span>Technical details</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
           <SidebarMenuItem>
             <SidebarMenuButton onClick={() => onNavigate({ view: 'landing' })} tooltip="Back to the website">
               <span>Back to the website</span>
