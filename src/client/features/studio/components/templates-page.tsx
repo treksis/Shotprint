@@ -45,13 +45,8 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
       <div className="mx-auto w-full max-w-[1180px] px-6 pt-10 pb-24">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[720px]">
-            <p className="text-[12px] font-medium tracking-wide text-muted-foreground uppercase">Marketplace</p>
-            <h1 className="mt-1 text-[36px] leading-tight font-medium tracking-[-0.01em]">The video template marketplace for AI agents</h1>
-            <p className="mt-3 text-[15px] text-muted-foreground">
-              A template here is a production an agent can run, not a project file a person has to edit: measured timing,
-              framing, camera, light, text and sound for every shot, a storyboard per shot, and swappable cast, product and
-              places. Download a template with its fill recipe and <span className="text-foreground">run it with your own agent and video model</span>, or run it here with Muse Code.
-            </p>
+                        <h1 className="mt-1 text-[36px] leading-tight font-medium tracking-[-0.01em]">The video template marketplace for AI agents</h1>
+            <p className="mt-3 text-[15px] text-muted-foreground">Templates any agent can run. Download one, or make your own.</p>
           </div>
           <button
             type="button"
