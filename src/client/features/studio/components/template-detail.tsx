@@ -1,5 +1,6 @@
 import { ArrowRight, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { getJudgeModeState } from '../../../lib/api';
@@ -30,6 +31,7 @@ export function TemplateDetailDialog({
   const [detail, setDetail] = useState<TemplateDetail | null>(null);
   const [loading, setLoading] = useState(false);
   const [seconds, setSeconds] = useState(30);
+  const [zoom, setZoom] = useState<{ src: string; label: string } | null>(null);
 
   useEffect(() => {
     if (!template) return;
@@ -53,7 +55,17 @@ export function TemplateDetailDialog({
 
   return (
     <Dialog open={!!t} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-h-[92vh] overflow-y-auto p-0 sm:max-w-[1040px]">
+      <DialogContent
+        className="max-h-[92vh] overflow-y-auto p-0 sm:max-w-[1040px]"
+        onEscapeKeyDown={(e) => {
+          if (zoom) {
+            e.preventDefault();
+            setZoom(null);
+          }
+        }}
+        onPointerDownOutside={(e) => zoom && e.preventDefault()}
+        onInteractOutside={(e) => zoom && e.preventDefault()}
+      >
         {t && (
           <div className="flex flex-col">
             <div className="flex flex-wrap items-end justify-between gap-4 px-6 pt-6">
@@ -134,12 +146,14 @@ export function TemplateDetailDialog({
                       <li key={s.n} className="w-[150px] shrink-0">
                         <div className="aspect-video overflow-hidden rounded-[8px] border border-border bg-white">
                           {s.board && (
-                            <img
-                              src={templateFileUrl(t.id, s.board)}
-                              alt=""
-                              loading="lazy"
-                              className="h-full w-full object-cover"
-                            />
+                            <button
+                              type="button"
+                              aria-label={`Open storyboard ${s.n}`}
+                              onClick={() => setZoom({ src: templateFileUrl(t.id, s.board!), label: `Shot ${s.n} · ${s.start.toFixed(1)}–${s.end.toFixed(1)} s` })}
+                              className="h-full w-full cursor-zoom-in"
+                            >
+                              <img src={templateFileUrl(t.id, s.board)} alt="" loading="lazy" className="h-full w-full object-cover" />
+                            </button>
                           )}
                         </div>
                         <p className="mt-1 text-[12px] font-medium tabular-nums">
@@ -190,14 +204,20 @@ export function TemplateDetailDialog({
                     <p className="text-[12px] font-medium text-muted-foreground">{KIND_LABEL[g.k]}</p>
                     <div className="mt-1 grid grid-cols-3 gap-1.5">
                       {g.files.slice(0, 9).map((f) => (
-                        <img
+                        <button
                           key={f.file}
-                          src={templateFileUrl(t.id, f.file)}
-                          alt={f.file.replace(/^set\//, '')}
-                          title={f.file.replace(/^set\//, '')}
-                          loading="lazy"
-                          className="aspect-video w-full rounded-[6px] border border-border bg-muted object-cover"
-                        />
+                          type="button"
+                          onClick={() => setZoom({ src: templateFileUrl(t.id, f.file), label: f.file.replace(/^set\//, '') })}
+                          className="cursor-zoom-in"
+                        >
+                          <img
+                            src={templateFileUrl(t.id, f.file)}
+                            alt={f.file.replace(/^set\//, '')}
+                            title={f.file.replace(/^set\//, '')}
+                            loading="lazy"
+                            className="aspect-video w-full rounded-[6px] border border-border bg-muted object-cover transition-opacity hover:opacity-80"
+                          />
+                        </button>
                       ))}
                     </div>
                   </div>
@@ -225,6 +245,27 @@ export function TemplateDetailDialog({
             </div>
           </div>
         )}
+        {zoom &&
+          createPortal(
+          <div
+            role="button"
+            tabIndex={0}
+            aria-label="Close"
+            onClick={() => setZoom(null)}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') {
+                e.stopPropagation();
+                setZoom(null);
+              }
+            }}
+            ref={(el) => el?.focus()}
+            className="pointer-events-auto fixed inset-0 z-[100] flex cursor-zoom-out flex-col items-center justify-center gap-3 bg-black/85 p-8 outline-none"
+          >
+            <img src={zoom.src} alt={zoom.label} className="max-h-[82vh] max-w-full rounded-[10px] bg-white object-contain" />
+            <p className="font-mono text-[13px] text-white/80">{zoom.label}</p>
+          </div>,
+            document.body,
+          )}
       </DialogContent>
     </Dialog>
   );
