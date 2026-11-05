@@ -38,7 +38,7 @@ export function TemplateCard({
           selected ? 'border-foreground' : 'border-border hover:border-[#c9c9c6]'
         )}
       >
-        <span className="relative block aspect-video overflow-hidden bg-[#111]">
+        <span className="relative block aspect-video overflow-hidden bg-muted">
           <img src={t.thumbnail} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <video
             ref={video}

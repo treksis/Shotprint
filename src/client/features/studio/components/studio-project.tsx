@@ -171,8 +171,23 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   const suggestions = hasFinal ? ['Make a vertical 9:16 edition', 'Tighten the cut to 20 seconds'] : itemCount === 0 && !project.prompt ? ['Plan a 30-second film about a lighthouse keeper', 'Make three keyframes for a product reveal'] : [];
   const openTodos = todos.filter((t) => t.status !== 'completed');
 
+  // First open: the project's own microVM boots and replays its session before anything arrives.
+  const booting = !connected && itemCount === 0 && nodes.length === 0;
+
   return (
     <div className="relative flex min-h-0 flex-1 overflow-hidden">
+      {booting && (
+        <div className="absolute inset-0 z-30 grid place-items-center bg-background/90 backdrop-blur-sm">
+          <div className="max-w-[420px] px-6 text-center">
+            <Loader2 className="mx-auto size-6 animate-spin text-[#0866ff]" />
+            <p className="mt-4 text-[16px] font-medium">Starting this project’s microVM…</p>
+            <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
+              Every project runs Muse Code in its own VM. It boots, restores the workspace and replays the session. The
+              first open takes about 15 seconds.
+            </p>
+          </div>
+        </div>
+      )}
       <section data-chat-drop aria-label="Muse Code session" className={cn('flex min-h-0 flex-col', showCanvas ? 'w-[460px] shrink-0 border-r border-border max-lg:hidden' : 'flex-1')}>
         <ChatThread
           nodes={nodes}

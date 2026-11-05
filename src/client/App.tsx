@@ -6,6 +6,7 @@ import { AppSidebar } from './components/app-sidebar';
 import { SidebarInset, SidebarProvider } from './components/ui/sidebar';
 import { LandingPage } from './components/LandingPage';
 import { LiveAccessDialog } from './components/LiveAccessDialog';
+import { DemoTour } from './components/demo-tour';
 import { AnnouncementBar } from './components/AnnouncementBar';
 import { listProjects } from './features/studio/api';
 import { StudioHome } from './features/studio/components/studio-home';
@@ -41,6 +42,20 @@ export default function App() {
   const [showLiveGate, setShowLiveGate] = useState(false);
   const [liveGateReason, setLiveGateReason] = useState<string | undefined>(undefined);
   const [studioProjects, setStudioProjects] = useState<StudioProjectSummary[]>([]);
+  const [tour, setTour] = useState<number | null>(null);
+  const startTour = useCallback(() => {
+    setTour(0);
+    setRoute({ view: 'templates' });
+    if (window.location.pathname !== '/templates') window.history.pushState({}, '', '/templates');
+  }, []);
+  const endTour = useCallback(() => {
+    setTour(null);
+    try {
+      localStorage.setItem('shotprint.tour.v1', 'done');
+    } catch {
+      /* private mode */
+    }
+  }, []);
 
   const navigate = useCallback((next: Route) => {
     setRoute(next);
@@ -62,6 +77,19 @@ export default function App() {
       })
       .catch(() => setStudioProjects([]));
   }, []);
+
+  // First visit to the app in Demo mode on the deployed site: offer the tour once.
+  useEffect(() => {
+    if (!import.meta.env.PROD || isJudgeMode || route.view === 'landing' || route.view === 'project' || tour !== null) return;
+    let seen = false;
+    try {
+      seen = localStorage.getItem('shotprint.tour.v1') === 'done';
+    } catch {
+      seen = true;
+    }
+    if (!seen) setTour(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [route.view, isJudgeMode]);
 
   // Going live unlocks the projects (the deployed demo lists them to judges only).
   useEffect(() => {
@@ -100,7 +128,7 @@ export default function App() {
         <>
         <AnnouncementBar isLive={isJudgeMode} onGoLive={() => openGate()} onExitLive={exitLive} />
         <SidebarProvider>
-          <AppSidebar route={route} onNavigate={navigate} projects={studioProjects} />
+          <AppSidebar route={route} onNavigate={navigate} projects={studioProjects} onTour={startTour} />
           <SidebarInset className="h-[calc(100svh-var(--top-offset,0px))] min-h-0 overflow-hidden lg:h-[calc(100svh-var(--top-offset,0px)-1rem)]">
             <Navbar
               route={route}
@@ -145,6 +173,9 @@ export default function App() {
         </>
       )}
 
+      {tour !== null && route.view !== 'landing' && (
+        <DemoTour step={tour} onStep={setTour} onClose={endTour} onGoLive={() => openGate()} onNavigate={navigate} />
+      )}
       <LiveAccessDialog
         isOpen={showLiveGate}
         initialMode="live"
@@ -156,6 +187,7 @@ export default function App() {
         onSelectDemo={() => {
           setShowLiveGate(false);
           exitLive();
+          startTour();
         }}
         onUnlocked={() => {
           setShowLiveGate(false);

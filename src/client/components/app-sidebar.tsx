@@ -20,10 +20,11 @@ import {
 export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   route: Route;
   onNavigate: (route: Route) => void;
+  onTour?: () => void;
   projects: StudioProjectSummary[];
 }
 
-export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebarProps) {
+export function AppSidebar({ route, onNavigate, projects, onTour, ...props }: AppSidebarProps) {
   return (
     <Sidebar variant="inset" collapsible="icon" {...props}>
       <SidebarHeader>
@@ -84,6 +85,13 @@ export function AppSidebar({ route, onNavigate, projects, ...props }: AppSidebar
 
       <SidebarFooter>
         <SidebarMenu>
+          {onTour && (
+            <SidebarMenuItem>
+              <SidebarMenuButton tooltip="Take the tour" onClick={onTour}>
+                <span>Take the tour</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          )}
           <SidebarMenuItem>
             <SidebarMenuButton tooltip="Technical details" isActive={route.view === 'technical'} onClick={() => onNavigate({ view: 'technical' })}>
               <span>Technical details</span>

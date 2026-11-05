@@ -126,6 +126,16 @@ export function TemplatesPage({ onUseTemplate, onBuild }: { onUseTemplate: (id: 
           {templates === null ? 'Loading…' : `${shown.length} of ${templates.length} templates`}
         </p>
         <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {templates === null &&
+            Array.from({ length: 6 }, (_, i) => (
+              <div key={i} className="overflow-hidden rounded-[16px] border border-border">
+                <div className="aspect-video animate-pulse bg-muted" />
+                <div className="space-y-2 p-4">
+                  <div className="h-4 w-2/3 animate-pulse rounded bg-muted" />
+                  <div className="h-3 w-1/2 animate-pulse rounded bg-muted" />
+                </div>
+              </div>
+            ))}
           {shown.map((t) => (
             <TemplateCard
               key={t.id}

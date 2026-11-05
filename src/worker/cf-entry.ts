@@ -214,7 +214,7 @@ export default {
       return media(req, env, url.pathname.replace(/^\/(media\/)?/, ''));
     }
 
-    if (url.pathname.endsWith('.mp4') && req.method === 'GET') return rangedAsset(req, env);
+    if (url.pathname.endsWith('.mp4') && req.method === 'GET' && !url.pathname.startsWith('/api/')) return rangedAsset(req, env);
 
     if (url.pathname === '/api/judge/verify' && req.method === 'POST') {
       const body = (await req.clone().json().catch(() => ({}))) as { passcode?: string };

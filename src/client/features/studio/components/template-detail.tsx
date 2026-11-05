@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, Loader2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
@@ -32,6 +32,7 @@ export function TemplateDetailDialog({
   const [loading, setLoading] = useState(false);
   const [seconds, setSeconds] = useState(30);
   const [zoom, setZoom] = useState<{ src: string; label: string } | null>(null);
+  const [buffering, setBuffering] = useState(true);
 
   useEffect(() => {
     if (!template) return;
@@ -114,12 +115,21 @@ export function TemplateDetailDialog({
                     <video
                       key={sample}
                       src={sample}
+                      onLoadStart={() => setBuffering(true)}
+                      onCanPlay={() => setBuffering(false)}
+                      onWaiting={() => setBuffering(true)}
+                      onPlaying={() => setBuffering(false)}
                       poster={`/templates/sample/${t.id}-${seconds}.jpg`}
                       controls
                       playsInline
                       preload="metadata"
                       className="aspect-video w-full rounded-[12px] bg-black"
                     />
+                    {buffering && (
+                      <span className="pointer-events-none absolute inset-0 grid place-items-center">
+                        <Loader2 className="size-7 animate-spin text-white/80" />
+                      </span>
+                    )}
                     {locked && (
                       <span className="pointer-events-none absolute top-3 left-3 rounded-full bg-black/70 px-3 py-1 text-[12px] font-medium text-white">
                         Muted in Demo mode
@@ -189,7 +199,7 @@ export function TemplateDetailDialog({
                   <ol className="mt-3 flex gap-2 overflow-x-auto pb-2">
                     {cut.shots.map((s) => (
                       <li key={s.n} className="w-[150px] shrink-0">
-                        <div className="aspect-video overflow-hidden rounded-[8px] border border-border bg-white">
+                        <div className="aspect-video overflow-hidden rounded-[8px] border border-border bg-muted">
                           {s.board && (
                             <button
                               type="button"
