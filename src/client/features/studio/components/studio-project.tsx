@@ -32,7 +32,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   const [retry, setRetry] = useState(0);
   // Demo mode (deployed, no passcode): the agent doesn't run; say so plainly instead of failing a send.
   const demo = import.meta.env.PROD && !isLive;
-  const [demoNote, setDemoNote] = useState<{ text: string; template: string | null; same: boolean; arrived: boolean } | null>(null);
+  const [demoNote, setDemoNote] = useState<{ text: string; template: string | null; same: boolean; arrived: boolean; build?: boolean } | null>(null);
   useEffect(() => {
     if (!demo) return setDemoNote(null);
     try {
@@ -260,7 +260,9 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
               </div>
               <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
                 {demoNote.text && <>You asked: “{demoNote.text.length > 140 ? demoNote.text.slice(0, 140) + '…' : demoNote.text}”. </>}
-                {demoNote.arrived
+                {demoNote.arrived && demoNote.build
+                  ? 'The agent doesn’t run in Demo mode, so here is a real recorded template build: Muse Code measures a video, writes the template, and remakes the original from it to benchmark it.'
+                  : demoNote.arrived
                   ? demoNote.same
                     ? 'The agent doesn’t run in Demo mode, so here is a real recorded session of this template: the chat, every file on the canvas, and the finished film.'
                     : `The agent doesn’t run in Demo mode, so here is a real recorded session${demoNote.template ? ` (there isn’t one for ${demoNote.template} yet)` : ''}: the chat, every file on the canvas, and the finished film.`

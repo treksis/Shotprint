@@ -76,7 +76,7 @@ export function Composer({
   busy,
   template,
   onClearTemplate,
-  placeholder = 'Attach a video to make a template, or pick a template below',
+  placeholder = 'Attach a video with +, and add a note if you like',
   size = 'md',
   allowFiles = true,
   model,

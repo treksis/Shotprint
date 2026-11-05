@@ -100,8 +100,8 @@ async function guard(env: Env) {
 }
 
 /** Recorded runs anyone can replay in Demo mode (finished films; their source footage stays blocked). */
-const PUBLIC_SEEDS = ['01-meta-vr-glasses-bluechip', '02-render-modes-teaser'];
-const PUBLIC_BLOCKED = /^(inputs\/reference|notes\/ref)|\.(wav|mp3|m4a|aac)$/i;
+const PUBLIC_SEEDS = ['01-meta-vr-glasses-bluechip', '02-render-modes-teaser', '04-night-drive-template'];
+const PUBLIC_BLOCKED = /^(inputs\/reference|inputs\/.*\.(mp4|mov|webm)$|notes\/ref|notes\/side)|\.(wav|mp3|m4a|aac)$/i;
 
 async function demoReplays(env: Env) {
   const { results } = await env.DB!.prepare('SELECT id, name, template_id, status, thumbnail, created_at, updated_at, state_json FROM studio_projects')
@@ -244,6 +244,19 @@ export default {
           .bind(project.id, Date.now())
           .run();
         return getContainer(env.PROJECT_VM, project.id).fetch(vmRequest(project, req));
+      }
+      // A canvas layout save replaces the project's state; keep which recorded session it was seeded from.
+      const own = /^\/api\/studio\/projects\/([^/]+)$/.exec(url.pathname);
+      if (own && req.method === 'PUT') {
+        const body = (await req.clone().json().catch(() => null)) as { state?: Record<string, unknown> } | null;
+        if (body?.state) {
+          const cur = await d1Store(env.DB!).get(decodeURIComponent(own[1]));
+          const seed = (cur?.state as { seed?: string } | undefined)?.seed;
+          if (seed) {
+            body.state.seed = seed;
+            return app.fetch(new Request(req, { body: JSON.stringify(body) }), env, ctx);
+          }
+        }
       }
       if (url.pathname === '/api/studio/projects' && req.method === 'POST') {
         const today = await env.DB!.prepare("SELECT COUNT(*) AS n FROM studio_projects WHERE created_at > datetime('now', '-1 day')").bind().first<{ n: number }>();

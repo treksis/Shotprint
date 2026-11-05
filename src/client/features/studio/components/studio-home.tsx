@@ -13,11 +13,6 @@ import { TemplateDetailDialog } from './template-detail';
 const promptFor = (t: StudioTemplate, seconds = 30) =>
   seconds === 30 ? t.prompt : t.prompt.replace(/\b30-second\b/, `${seconds}-second`).replace(/\b30 s\b/, `${seconds} s`);
 
-const SKILLS = [
-  { label: 'Turn my video into a template', text: 'Turn this video into a template.' },
-  { label: 'Feature your product', text: 'Keep the film, the camera work and the cuts. Swap the subject for mine.' },
-  { label: 'Vertical 9:16 cut', text: 'Make a vertical 9:16 edition for Reels and Stories.' },
-];
 
 
 export interface StudioHomeProps {
@@ -25,11 +20,11 @@ export interface StudioHomeProps {
   isLive: boolean;
   onOpenProject: (id: string) => void;
   onProjectsChanged: () => void;
-  onOpenTechnical: () => void;
+  onOpenTechnical?: () => void;
 }
 
 /** /studio: a brief box first (chat-native), templates under it so a reviewer sees what is possible. */
-export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged, onOpenTechnical }: StudioHomeProps) {
+export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged }: StudioHomeProps) {
   const [templates, setTemplates] = useState<StudioTemplate[] | null>(null);
   const [draft, setDraft] = useState('');
   const [template, setTemplate] = useState<StudioTemplate | null>(null);
@@ -70,10 +65,24 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged,
     setError(null);
     // A video with no template picked: the agent turns it into a template.
     const video = template ? undefined : files.find((f) => f.type.startsWith('video/'));
-    if (video && import.meta.env.PROD && !isLive) {
-      setError('Making a template runs the agent live: go live with the judge passcode.');
-      setBusy(false);
-      return;
+    // Demo mode on the deployed site replays a recorded run: a template build, or a spot made from a template.
+    if (import.meta.env.PROD && !isLive) {
+      const build = projects.find((p) => !p.templateId && p.name.startsWith('Template:'));
+      const replay = template
+        ? (projects.find((p) => p.templateId === template.id) ?? projects.find((p) => p.templateId))
+        : (build ?? projects[0]);
+      if (replay) {
+        // The project page explains the swap: what they asked, and why they see a recorded run.
+        try {
+          sessionStorage.setItem(
+            'shotprint.demoAsk',
+            JSON.stringify({ text: text || (video ? `(attached ${video.name})` : ''), template: template?.title ?? null, same: !template || replay.templateId === template.id, build: !template }),
+          );
+        } catch {
+          /* private mode */
+        }
+        return onOpenProject(replay.id);
+      }
     }
     if (video) {
       try {
@@ -86,19 +95,6 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged,
         setError(String((e as Error).message || e));
         setBusy(false);
         return;
-      }
-    }
-    // Demo mode on the deployed site replays a recorded run (the template's own, if there is one).
-    if (import.meta.env.PROD && !isLive) {
-      const replay = projects.find((p) => template && p.templateId === template.id) ?? projects.find((p) => p.templateId) ?? projects[0];
-      if (replay) {
-        // The project page explains the swap: what they asked, and why they see a recorded run.
-        try {
-          sessionStorage.setItem('shotprint.demoAsk', JSON.stringify({ text, template: template?.title ?? null, same: !!template && replay.templateId === template.id }));
-        } catch {
-          /* private mode */
-        }
-        return onOpenProject(replay.id);
       }
     }
     try {
@@ -118,11 +114,8 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged,
     <div className="flex-1 overflow-y-auto">
       <div ref={top} className="mx-auto w-full max-w-[1120px] px-6 pt-[9vh] pb-24">
         <div className="mx-auto max-w-[760px] text-center">
-          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">What should the agent make?</h1>
-          <p className="mt-3 text-[16px] text-muted-foreground">
-            Attach a video that works and Muse Code turns it into a template. Pick a template and it makes your spot.
-            Every project runs in its own microVM, every file on a live canvas you can steer.
-          </p>
+          <h1 className="text-[52px] leading-[1.1] font-medium tracking-[-0.01em] text-foreground">Turn a video into a template</h1>
+          <p className="mt-3 text-[16px] text-muted-foreground">Attach a video that works. Muse Code writes a template any agent can run.</p>
         </div>
 
         <div className="mx-auto mt-8 max-w-[760px]">
@@ -142,35 +135,12 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged,
             allowedModels={allowed}
           />
           {error && <p className="mt-2 px-2 text-[13px] text-[var(--negative)]">{error}</p>}
-          {import.meta.env.PROD && !isLive && !error && (
-            <p className="mt-2 px-2 text-center text-[13px] text-muted-foreground">
-              Demo mode replays a recorded run. Go live with the judge passcode to run the agent yourself.
-            </p>
-          )}
-          <div className="mt-3 flex flex-wrap justify-center gap-2">
-            {SKILLS.map((s) => (
-              <button
-                key={s.label}
-                type="button"
-                onClick={() => setDraft(s.text)}
-                className="h-9 cursor-pointer rounded-full bg-[rgba(0,0,0,0.05)] px-4 text-[14px] font-medium text-foreground transition-colors hover:bg-[rgba(0,0,0,0.08)]"
-              >
-                {s.label}
-              </button>
-            ))}
-          </div>
+          {import.meta.env.PROD && !isLive && !error && <p className="mt-2 text-center text-[13px] text-muted-foreground">Demo mode: sending opens a recorded run.</p>}
         </div>
-
-        <p className="mt-6 text-center text-[13px]">
-          <button type="button" onClick={onOpenTechnical} className="cursor-pointer text-muted-foreground underline-offset-4 hover:text-foreground hover:underline">
-            Technical details: how the agent makes a template ›
-          </button>
-        </p>
 
         <section className="mt-14" aria-labelledby="tpl-heading">
           <div className="mb-4 flex items-baseline justify-between">
-            <h2 id="tpl-heading" className="text-[18px] font-medium">Pick a template</h2>
-            <p className="text-[13px] text-muted-foreground">Shot-by-shot formats from top-performing videos, each delivering a 30 s and a 15 s cut.</p>
+            <h2 id="tpl-heading" className="text-[18px] font-medium">Or make a spot from a template</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {templates === null
