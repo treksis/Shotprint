@@ -91,7 +91,15 @@ export function StudioHome({ projects, isLive, onOpenProject, onProjectsChanged,
     // Demo mode on the deployed site replays a recorded run (the template's own, if there is one).
     if (import.meta.env.PROD && !isLive) {
       const replay = projects.find((p) => template && p.templateId === template.id) ?? projects.find((p) => p.templateId) ?? projects[0];
-      if (replay) return onOpenProject(replay.id);
+      if (replay) {
+        // The project page explains the swap: what they asked, and why they see a recorded run.
+        try {
+          sessionStorage.setItem('shotprint.demoAsk', JSON.stringify({ text, template: template?.title ?? null, same: !!template && replay.templateId === template.id }));
+        } catch {
+          /* private mode */
+        }
+        return onOpenProject(replay.id);
+      }
     }
     try {
       // Files go into the new workspace's inputs/ before its first turn, so the brief can use them.

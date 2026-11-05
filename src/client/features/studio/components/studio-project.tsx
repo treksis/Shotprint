@@ -30,6 +30,19 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
   const [draft, setDraft] = useState('');
   const [sendError, setSendError] = useState<string | null>(null);
   const [retry, setRetry] = useState(0);
+  // Demo mode (deployed, no passcode): the agent doesn't run; say so plainly instead of failing a send.
+  const demo = import.meta.env.PROD && !isLive;
+  const [demoNote, setDemoNote] = useState<{ text: string; template: string | null; same: boolean; arrived: boolean } | null>(null);
+  useEffect(() => {
+    if (!demo) return setDemoNote(null);
+    try {
+      const raw = sessionStorage.getItem('shotprint.demoAsk');
+      sessionStorage.removeItem('shotprint.demoAsk');
+      if (raw) setDemoNote({ ...JSON.parse(raw), arrived: true });
+    } catch {
+      /* private mode */
+    }
+  }, [projectId, demo]);
   const status = useSession((s) => s.status);
   const runnable = useSession((s) => s.runnable);
   const connected = useSession((s) => s.connected);
@@ -138,6 +151,7 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
 
   const send = async (text: string, files: File[], mode: 'send' | 'steer' | 'queue' = 'send') => {
     if (!project) return;
+    if (demo) return setDemoNote({ text, template: null, same: false, arrived: false });
     setSendError(null);
     setDraft('');
     try {
@@ -235,6 +249,32 @@ export function StudioProjectPage({ projectId, isLive, onRequestLive, onProjects
               </QueueList>
               <p className="px-2 pb-1 text-[11px] text-muted-foreground">Queued in Muse Code · runs when the current turn ends</p>
             </Queue>
+          )}
+          {demo && demoNote && (
+            <div className="mb-2 rounded-[16px] border border-[#0866ff]/30 bg-[#0866ff]/[0.06] px-4 py-3">
+              <div className="flex items-start justify-between gap-3">
+                <p className="text-[13px] font-medium text-foreground">{demoNote.arrived ? 'Demo mode: a recorded run' : 'Not sent: this is Demo mode'}</p>
+                <button type="button" aria-label="Dismiss" onClick={() => setDemoNote(null)} className="-mt-0.5 cursor-pointer text-muted-foreground hover:text-foreground">
+                  <X className="size-4" />
+                </button>
+              </div>
+              <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
+                {demoNote.text && <>You asked: “{demoNote.text.length > 140 ? demoNote.text.slice(0, 140) + '…' : demoNote.text}”. </>}
+                {demoNote.arrived
+                  ? demoNote.same
+                    ? 'The agent doesn’t run in Demo mode, so here is a real recorded session of this template: the chat, every file on the canvas, and the finished film.'
+                    : `The agent doesn’t run in Demo mode, so here is a real recorded session${demoNote.template ? ` (there isn’t one for ${demoNote.template} yet)` : ''}: the chat, every file on the canvas, and the finished film.`
+                  : 'The agent doesn’t run in Demo mode. Explore this recorded run, or go live to have Muse Code work on your message in its own microVM.'}
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                <button type="button" onClick={() => onRequestLive('Live mode runs Muse Code on your own brief, in its own microVM.')} className="h-8 cursor-pointer rounded-full bg-[#0866ff] px-3.5 text-[12px] font-medium text-white hover:opacity-90">
+                  Go live with the passcode
+                </button>
+                <a href="/templates" className="inline-flex h-8 items-center rounded-full border border-border bg-background px-3.5 text-[12px] font-medium text-foreground hover:bg-muted">
+                  Browse templates
+                </a>
+              </div>
+            </div>
           )}
           {!runnable && connected && (
             <p className="mb-2 rounded-[14px] bg-muted px-4 py-2.5 text-[13px] text-muted-foreground">This server can't start sandboxes (Docker isn't available), so this session is read-only.</p>
