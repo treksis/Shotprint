@@ -61,5 +61,6 @@
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
     "wrangler": "^4.157.0"
-  }
+  },
+  "license": "MIT"
 }

@@ -6,7 +6,7 @@ A stock video template is a project file a person has to edit. A Shotprint templ
 to run: every shot's timing, framing, camera, light, text and sound, with a storyboard per shot and
 swappable cast, product and places. Download one with its fill recipe and any agent can make the spot.
 
-**Live demo:** https://shotprint.dev · technical details at https://shotprint.dev/technical (judges: the passcode for Live mode is in the
+**Demo video:** https://youtu.be/CJ13Z9KZNR4 · **Live demo:** https://shotprint.dev · technical details at https://shotprint.dev/technical (judges: the passcode for Live mode is in the
 submission notes)
 
 Meta Global AI Developer Hackathon · Startups track
@@ -82,5 +82,5 @@ npm run cf:deploy
 | `sandbox/templates` | The templates |
 | `sandbox/seeds` | Recorded sample sessions |
 
-Built during the hackathon (Oct 26 – Nov 4, 2026). Cast are invented and brands are slots; the source ads
+MIT licensed (see `LICENSE`). Built during the hackathon (Oct 26 – Nov 4, 2026). Cast are invented and brands are slots; the source ads
 stay out of this repo.
