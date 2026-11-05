@@ -12,7 +12,7 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*", "/media/*", "/templates/proof/*", "/templates/examples/*"]
+    "run_worker_first": ["/api/*", "/media/*", "/templates/proof/*", "/templates/examples/*", "/templates/samplea/*"]
   },
   // Secrets: npx wrangler secret put JUDGE_PASSCODE / META_API_KEY
   // Every project gets its own container (one microVM) running the Studio session server and Muse Code.

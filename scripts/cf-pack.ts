@@ -77,5 +77,8 @@ for (const dir of ['proof', 'examples']) {
   fs.cpSync(path.join('public/templates', dir), path.join(CF, 'media/templates', dir), { recursive: true });
   fs.rmSync(path.join(DIST, 'templates', dir), { recursive: true, force: true });
 }
+// Sample spots made from each template alone: silent in public (the score can come from the source film);
+// the versions with sound are in R2, behind the passcode (templates/samplea/).
+fs.cpSync(path.join(CF, 'samples/silent'), path.join(DIST, 'templates/sample'), { recursive: true });
 fs.writeFileSync(path.join(DIST, '.assetsignore'), 'templates/proof\ntemplates/examples\n');
 console.log(`templates ${Object.keys(details).length}, images ${images}, seeds ${seeds.length}`);

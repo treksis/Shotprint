@@ -182,7 +182,7 @@ export default {
       },
     });
 
-    if (url.pathname.startsWith('/templates/proof/') || url.pathname.startsWith('/templates/examples/') || url.pathname.startsWith('/media/')) {
+    if (url.pathname.startsWith('/templates/proof/') || url.pathname.startsWith('/templates/examples/') || url.pathname.startsWith('/templates/samplea/') || url.pathname.startsWith('/media/')) {
       const publicThumb = PUBLIC_SEEDS.some((slug) => url.pathname.startsWith(`/media/seeds/${slug}/`));
       if (!judge && !publicThumb) return new Response('judge passcode required', { status: 401 });
       return media(req, env, url.pathname.replace(/^\/(media\/)?/, ''));

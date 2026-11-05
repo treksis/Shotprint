@@ -49,6 +49,8 @@ export function TemplateDetailDialog({
   // The deployed demo serves footage that isn't ours (benchmarks, reference ads) to judges only.
   const locked = import.meta.env.PROD && !getJudgeModeState();
   const proof = locked ? undefined : t?.proof?.[String(seconds) as '30' | '15'];
+  // The spot the agent made from this template alone: silent in public, with sound for judges (deployed only).
+  const sample = import.meta.env.PROD && t?.status === 'ready' ? `/templates/${locked ? 'sample' : 'samplea'}/${t.id}-${seconds}.mp4` : undefined;
   const groups = (['char', 'product', 'loc', 'ui', 'other'] as const)
     .map((k) => ({ k, files: detail?.set.filter((s) => s.kind === k) ?? [] }))
     .filter((g) => g.files.length);
@@ -96,8 +98,34 @@ export function TemplateDetailDialog({
             </div>
 
             <div className="px-6 pt-5">
-              {proof ? (
+              {sample ? (
                 <figure>
+                  <video
+                    key={sample}
+                    src={sample}
+                    poster={`/templates/sample/${t.id}-${seconds}.jpg`}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="aspect-video w-full rounded-[12px] bg-black"
+                  />
+                  <figcaption className="mt-2 text-[13px] text-muted-foreground">
+                    A {seconds} s spot made from this template alone{locked ? ' (sound plays in Live mode)' : ''}.
+                  </figcaption>
+                </figure>
+              ) : (
+                <video
+                  src={t.preview}
+                  poster={t.thumbnail}
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  className="aspect-video w-full rounded-[12px] bg-black object-cover"
+                />
+              )}
+              {proof && (
+                <figure className="mt-5">
                   <video
                     key={proof}
                     src={proof}
@@ -111,24 +139,6 @@ export function TemplateDetailDialog({
                     Benchmark. Left: the original, cut to {seconds} s. Right: generated from this template alone, without
                     access to the original footage.
                   </figcaption>
-                </figure>
-              ) : (
-                <figure>
-                  <video
-                    src={t.preview}
-                    poster={t.thumbnail}
-                    muted
-                    loop
-                    autoPlay
-                    playsInline
-                    className="aspect-video w-full rounded-[12px] bg-black object-cover"
-                  />
-                  {locked && t.proof && (
-                    <figcaption className="mt-2 text-[13px] text-muted-foreground">
-                      The benchmark (the original next to a remake made from this template alone) opens in Live mode, with
-                      the judge passcode.
-                    </figcaption>
-                  )}
                 </figure>
               )}
             </div>
