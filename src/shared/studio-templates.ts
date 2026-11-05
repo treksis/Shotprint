@@ -348,8 +348,28 @@ const TAGS: Record<string, [TemplateGoal, string[], TemplateTone, TemplateCast]>
   'new-home': ['Brand story', ['Apps', 'Home'], 'Heartfelt', 'Ensemble'],
   'telenovela-glam': ['Comedy', ['Beauty'], 'Funny', 'Dialogue'],
 };
+/** The published film each template was measured from (YouTube ids). */
+const SOURCES: Record<string, string> = {
+  'meta-vr-glasses-launch': 'xyD_bmMy5nQ',
+  'bluechip-factory': 'C3E2nsZvT3M',
+  'muse-introduction': 'We8BTITLvb4',
+  'muse-tour': 'wHn0hTjvFoo',
+  'phone-reveal': 'Q3zwkxqh1t0',
+  'farm-legacy': 'EBnLXlvrNng',
+  'animal-icons': 'VCMXA2fy7qk',
+  'fan-moments': 'rTQUWIgalUs',
+  'room-makeover': '9m3ywiWG7N8',
+  'deadpan-dialogue': 'mOr39bQmlhE',
+  'car-launch': 'bEHLAFuHOps',
+  'holiday-story': 'z1bRlnyQeDk',
+  'athlete-anthem': '8rHK18Jdysc',
+  'travel-escape': 'VqB98tCClPQ',
+  'new-home': 'Z1yGy9fELtE',
+  'telenovela-glam': 'ClX4DldtGq0',
+};
 for (const t of STUDIO_TEMPLATES) {
   const tag = TAGS[t.id];
+  if (SOURCES[t.id]) t.sourceUrl ??= `https://www.youtube.com/watch?v=${SOURCES[t.id]}`;
   if (tag) [t.goal, t.industries, t.tone, t.cast] = tag;
   t.creator ??= 'Shotprint Originals';
 }

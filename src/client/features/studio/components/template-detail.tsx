@@ -74,7 +74,17 @@ export function TemplateDetailDialog({
               <div className="min-w-0">
                 <p className="text-[12px] font-medium tracking-wide text-muted-foreground uppercase">{t.format ?? 'Template'}</p>
                 <DialogTitle className="mt-1 text-[24px] font-medium">{t.title}</DialogTitle>
-                <DialogDescription className="mt-1 text-[14px]">{t.source}</DialogDescription>
+                <DialogDescription className="mt-1 text-[14px]">
+                  Measured from {t.source}
+                  {t.sourceUrl && (
+                    <>
+                      {' · '}
+                      <a href={t.sourceUrl} target="_blank" rel="noreferrer" className="text-foreground underline underline-offset-2 hover:opacity-80">
+                        Watch the original ↗
+                      </a>
+                    </>
+                  )}
+                </DialogDescription>
               </div>
               {t.cuts && t.cuts.length > 1 && (
                 <div role="tablist" aria-label="Spot length" className="flex rounded-full bg-muted p-1">

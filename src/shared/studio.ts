@@ -207,6 +207,8 @@ export interface StudioTemplate {
   cast?: TemplateCast;
   /** Who published it to the marketplace. */
   creator?: string;
+  /** The published film the template was measured from. */
+  sourceUrl?: string;
 }
 
 export const TEMPLATE_GOALS = ['Product launch', 'Brand story', 'Comedy', 'Explainer', 'Seasonal'] as const;
