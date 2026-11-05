@@ -147,6 +147,32 @@ async function media(req: Request, env: Env, key: string) {
   return new Response(obj.body, { headers: h });
 }
 
+/** Static videos with byte ranges (the assets server sends whole files, so players could not seek). */
+async function rangedAsset(req: Request, env: Env) {
+  const res = await env.ASSETS!.fetch(new Request(req.url, { headers: { accept: req.headers.get('accept') ?? '*/*' } }));
+  const range = /bytes=(\d*)-(\d*)/.exec(req.headers.get('range') ?? '');
+  if (!res.ok || !range) {
+    const h = new Headers(res.headers);
+    h.set('accept-ranges', 'bytes');
+    return new Response(res.body, { status: res.status, headers: h });
+  }
+  const buf = await res.arrayBuffer();
+  const size = buf.byteLength;
+  const start = range[1] ? Number(range[1]) : Math.max(0, size - Number(range[2]));
+  const end = range[1] && range[2] ? Math.min(Number(range[2]), size - 1) : size - 1;
+  if (start >= size) return new Response(null, { status: 416, headers: { 'content-range': `bytes */${size}` } });
+  return new Response(buf.slice(start, end + 1), {
+    status: 206,
+    headers: {
+      'content-type': res.headers.get('content-type') ?? 'video/mp4',
+      'content-range': `bytes ${start}-${end}/${size}`,
+      'content-length': String(end - start + 1),
+      'accept-ranges': 'bytes',
+      'cache-control': 'public, max-age=3600',
+    },
+  });
+}
+
 /** An empty project list gets the recorded sample projects; their workspaces ship in the VM image. */
 let seeded = false;
 async function seedOnce(env: Env) {
@@ -187,6 +213,8 @@ export default {
       if (!judge && !publicThumb) return new Response('judge passcode required', { status: 401 });
       return media(req, env, url.pathname.replace(/^\/(media\/)?/, ''));
     }
+
+    if (url.pathname.endsWith('.mp4') && req.method === 'GET') return rangedAsset(req, env);
 
     if (url.pathname === '/api/judge/verify' && req.method === 'POST') {
       const body = (await req.clone().json().catch(() => ({}))) as { passcode?: string };
